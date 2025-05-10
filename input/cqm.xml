@@ -274,7 +274,7 @@
       <reference>
         <reference value="Measure/EXM146-FHIR"/>
       </reference>
-      <name value="Cervical Cancer EXM146 - Appropriate Testing for Children with Pharyngitis"/>
+      <name value="EXM146 - Appropriate Testing for Children with Pharyngitis"/>
       <description value="Percentage of children 2-18 years of age who were diagnosed with pharyngitis, ordered an antibiotic and received a group A streptococcus (strep) test for the episode."/>
       <exampleBoolean value="true"/>
     </resource>
