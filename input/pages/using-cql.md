@@ -129,8 +129,8 @@ Consistent with the UCWF IG, [Code Systems]({{site.data.fhir.ver.cql}}/using-cql
 For example:
 
 ```cql
-codesystem "SNOMED CT:2017-09": 'http://snomed.info/sct'
-  version 'http://snomed.info/sct/731000124108/version/201709'
+codesystem "SNOMED CT:20240901": 'http://snomed.info/sct'
+  version 'http://snomed.info/sct/731000124108/version/20240901'
 ```
 
 Snippet 4-6: codesystem definition line from [Terminology.cql](Library-Terminology-FHIR.html#cql-content).
