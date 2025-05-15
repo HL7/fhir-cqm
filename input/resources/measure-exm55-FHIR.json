@@ -2,8 +2,8 @@
   "resourceType": "Measure",
   "id": "EXM55-FHIR",
   "meta": {
-    "profile": [ 
-      "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cvmeasure", 
+    "profile": [
+      "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cvmeasure",
       "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure",
       "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure",
       "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cqlmeasure"
@@ -241,7 +241,6 @@
   }, {
     "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
     "valueCanonical": "#effective-data-requirements-exm55"
-      
     }
   ],
   "url": "http://hl7.org/fhir/uv/cqm/Measure/EXM55-FHIR",
@@ -357,7 +356,7 @@
       }
     }, {
       "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-criteriaReference",
+        "url": "http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference",
         "valueString": "measure-population-identifier"
       }, {
         "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-aggregateMethod",

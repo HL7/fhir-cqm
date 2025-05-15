@@ -1158,7 +1158,7 @@ The criteria referenced from the measure-observation component refers to an expr
 {
   "extension": [
     {
-      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-criteriaReference",
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference",
       "valueString": "measure-population-identifier"
     },
     {
@@ -1227,7 +1227,7 @@ Snippet 3-26: "Measure Observation" function in Snippet 3-23 (Sample CQL (from [
 
 ```json
 {
-  "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-criteriaReference",
+  "url": "http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference",
   "valueString": "measure-population-identifier"
 }
 ```

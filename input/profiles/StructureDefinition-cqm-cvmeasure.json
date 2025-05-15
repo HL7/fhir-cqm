@@ -238,7 +238,7 @@
           {
             "code": "Extension",
             "profile": [
-              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-criteriaReference"
+              "http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference"
             ]
           }
         ],

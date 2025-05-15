@@ -33,7 +33,6 @@
     {
       "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
       "valueCanonical": "#effective-data-requirements-exmlogic"
-
     }
   ],
   "url" : "http://example.org/fhir/measures/measure-ratio-exm",
@@ -213,7 +212,7 @@
           "id" : "denominator-observation",
           "extension" : [
             {
-              "url" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-criteriaReference",
+              "url" : "http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference",
               "valueString" : "denominator"
             },
             {
@@ -239,7 +238,7 @@
           "id" : "numerator-observation",
           "extension" : [
             {
-              "url" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-criteriaReference",
+              "url" : "http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference",
               "valueString" : "numerator"
             },
             {

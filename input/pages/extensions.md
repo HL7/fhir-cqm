@@ -3,7 +3,6 @@
 - [Applies To](StructureDefinition-cqm-appliesTo.html)
 - [Component](StructureDefinition-cqm-component.html)
 - [Composite Scoring](StructureDefinition-cqm-compositeScoring.html)
-- [Criteria Reference](StructureDefinition-cqm-criteriaReference.html)
 - [Effective Period Anchor](StructureDefinition-cqm-effectivePeriodAnchor.html)
 - [Effective Period Duration](StructureDefinition-cqm-effectivePeriodDuration.html)
 - [Group Id](StructureDefinition-cqm-groupId.html)
