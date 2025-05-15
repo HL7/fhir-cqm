@@ -3,6 +3,9 @@
 
 {: #changes}
 
+### Changes and Updates for STU1 Publication (STU1)
+* **Applied**: Software system device profile was removed ([FHIR-50666](https://jira.hl7.org/browse/FHIR-50666)) Applied ([here](device-software-system-example.html))
+
 
 ### STU1 Ballot for FHIR R4 (v1.0.0)
 
