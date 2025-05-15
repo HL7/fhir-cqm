@@ -9,7 +9,7 @@ This implementation guide is not prescriptive about authentication or authorizat
 
 ### Measure and Library Management
 
-Quality measures (QMs) and libraries are specific types of knowledge artifacts, and share common attributes with other knowledge artifact typesand are expected to conform to general artifact management principles defined in [CRMI Knowledge Artifact Management](). This section describes how general artifact management is applied to quality measures and libraries.  
+Quality measures (QMs) and libraries are specific types of knowledge artifacts, and share common attributes with other knowledge artifact types and are expected to conform to general artifact management principles defined in [CRMI Knowledge Artifact Management](). This section describes how general artifact management is applied to quality measures and libraries.  
 
 #### Lifecycle
 
@@ -85,5 +85,5 @@ For libraries and measures, an AuthoringMeasureRepository:
 8. SHOULD support **Approve**: Approve and provide comments on an existing library (regardless of status) 
 
 
-The [CRMIAuthoringArtifactReposiotry]({{site.data.fhir.ver.crmi}}/CapabilityStatement-crmi-authoring-artifact-repository.html) capability statement captures these requirements formally, while the following sections provide a narrative description of them. 
+The [CRMIAuthoringArtifactRepository]({{site.data.fhir.ver.crmi}}/CapabilityStatement-crmi-authoring-artifact-repository.html) capability statement captures these requirements formally, while the following sections provide a narrative description of them. 
 

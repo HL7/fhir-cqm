@@ -343,7 +343,7 @@ Linear Combination scoring vs. Opportunity scoring
 </div>
 
 To better understand the difference between linear combination and opportunity scoring, consider the following table representing a population of 10 patients (A-J) scored against 10 measures.
-For each patient in each measure, if the patient falls in the initial population or denominator, indicate whether the patient is in the numerator population or not (T/F). However, if  the patient did not fall in the initial population or denominator, indciate 'n/a'.
+For each patient in each measure, if the patient falls in the initial population or denominator, indicate whether the patient is in the numerator population or not (T/F). However, if  the patient did not fall in the initial population or denominator, indicate 'n/a'.
 
 <style>
 table, th, td {
