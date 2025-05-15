@@ -911,5 +911,9 @@
       <code value="generate"/>
       <value value="JSON"/>
     </parameter>
+    <parameter>
+      <code value="pin-canonicals"/>
+      <value value="pin-multiples"/>
+    </parameter>
   </definition>
 </ImplementationGuide>

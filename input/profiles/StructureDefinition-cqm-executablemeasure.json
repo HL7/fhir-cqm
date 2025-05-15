@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "The cqm Executable Measure Profile describes minimum expectations for an executable electronic Quality Measure (QM), including a reference to an executable library. For more information on the usage of this profile, refer to the Profiles and Packaging pages in this implementation guide.",
+  "description": "The CQM Executable Measure Profile describes minimum expectations for an executable electronic Quality Measure (QM), including a reference to an executable library. For more information on the usage of this profile, refer to the Profiles and Packaging pages in this implementation guide.",
   "jurisdiction": [
       {
         "coding": [

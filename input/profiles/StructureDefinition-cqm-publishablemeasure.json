@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "The cqm Publishable Measure profile defines the minimum expectations to enable appropriate content management, discovery, and utilization of published Quality Measures (QMs). For more information on the usage of this profile, refer to the Profiles and Packaging pages in this implementation guide.",
+  "description": "The CQM Publishable Measure profile defines the minimum expectations to enable appropriate content management, discovery, and utilization of published Quality Measures (QMs). For more information on the usage of this profile, refer to the Profiles and Packaging pages in this implementation guide.",
   "jurisdiction": [
       {
         "coding": [

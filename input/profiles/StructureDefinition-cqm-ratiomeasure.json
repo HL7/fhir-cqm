@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "The cqm Ratio Measure Profile describes a ratio scoring measure. For more information on the usage of this profile, refer to the Profiles and Packaging pages in this implementation guide.",
+  "description": "The CQM Ratio Measure Profile describes a ratio scoring measure. For more information on the usage of this profile, refer to the Profiles and Packaging pages in this implementation guide.",
   "jurisdiction": [
       {
         "coding": [
