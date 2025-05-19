@@ -3,6 +3,9 @@
 
 {: #changes}
 
+### Changes and Updates for STU1 Publication (STU1)
+* **Applied**: attestation measure population expression shouldn't indicate CQL ([FHIR-49416](https://jira.hl7.org/browse/FHIR-49416)) Applied ([here](Measure-measure-pi-exm.html))
+
 
 ### STU1 Ballot for FHIR R4 (v1.0.0)
 
