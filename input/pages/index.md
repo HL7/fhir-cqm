@@ -22,6 +22,7 @@ Where possible, new and updated content are highlighted with green text and back
 {: #summary}
 
 The Fast Healthcare Interoperability Resource (FHIR) Quality Measure Implementation Guide (QM IG) describes an approach to representing Quality Measures (QMs) using the FHIR Clinical Reasoning Module and Clinical Quality Language (CQL) in the Universal Realm.
+The initial approach to quality measures focused on using the FHIR Clinical Reasoning Module and Clinical Quality Language (CQL) within the US Realm.  Adoption of this IG to use cases outside of US is simplified as a universal realm IG.
 
 This IG is built upon on [FHIR Version R4](http://hl7.org/fhir/R4/index.html) and accounts for content in previous generations of QM standards, the HL7 V3-based Health Quality Measure Format (HQMF) and accompanying implementation guides using FHIR. As an HL7 FHIR Implementation Guide, changes to this specification are managed by the sponsoring Clinical Quality Information Work Group and are incorporated as part of the standard balloting process.
 

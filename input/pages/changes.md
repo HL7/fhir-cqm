@@ -3,6 +3,9 @@
 
 {: #changes}
 
+### Changes and Updates for STU1 Publication (STU1)
+* **Applied**: Update Change Log ([FHIR-49579](https://jira.hl7.org/browse/FHIR-49579)) Applied ([here](index.html))
+
 
 ### STU1 Ballot for FHIR R4 (v1.0.0)
 
