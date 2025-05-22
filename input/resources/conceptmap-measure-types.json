@@ -60,6 +60,28 @@
               "equivalence": "equivalent"
             }
           ]
+        },
+        {
+          "code": "patient-reported-outcome",
+          "display": "patient reported outcome",
+          "target": [
+            {
+              "code": "PRO-PM",
+              "display": "patient reported outcome measure type",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "composite",
+          "display": "Composite",
+          "target": [
+            {
+              "code": "COMPOSITE",
+              "display": "composite measure type",
+              "equivalence": "equivalent"
+            }
+          ]
         }
       ]
     }
