@@ -197,9 +197,21 @@
   </extension>
   <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements">
     <valueCanonical value="http://hl7.org/fhir/uv/cqm/Library/moduledefinition-example"/>
-    </valueCanonical>
   </extension>
-  <url value="http://example.org/fhir/measures/measure-publishable-exm"/>
+  <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.term">
+    <extension url="code">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://example.org/fhir/CodeSystem/measure-terms"/>
+          <code value="example-term-code"/>
+          <display value="Example Term Display"/>
+        </coding>
+      </valueCodeableConcept>    </extension>
+    <extension url="definition">
+      <valueMarkdown value="A term used in the measure that bears clearly definition to communicate the measure intent"/>
+    </extension>
+  </extension>
+  <url value="http://hl7.org/fhir/uv/cqm/Measure/measure-publishable-exm"/>
   <identifier>
     <use value="usual"/>
     <type>
@@ -397,16 +409,6 @@
       <display value="Increased score indicates improvement"/>
     </coding>
   </improvementNotation>
-  <definition>
-    <extension url="http://hl7.org/fhir/StructureDefinition/cqf-definitionTerm">
-      <extension url="term">
-        <valueString value="Term"/>
-      </extension>
-      <extension url="definition">
-        <valueMarkdown value="A term used in the measure that bears clearly definition to communicate the measure intent"/>
-      </extension>
-    </extension>
-  </definition>
   <group id="group-1">
     <population id="initial-population">
       <code>
