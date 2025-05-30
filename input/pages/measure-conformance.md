@@ -1367,7 +1367,7 @@ For multiple population ratio measures that specify 2 initial populations, the p
 
 **Conformance Requirement 3.16 (Multiple Population Indexing):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-16)
 {: #conformance-requirement-3-16}
-1. When specifying multiple populations and/or multiple population groups the following naming scheme SHALL be used
+1. When specifying multiple populations and/or multiple population groups the following naming scheme SHOULD be used
 
 ```
 (Criteria Name) (population group number)( population number)
