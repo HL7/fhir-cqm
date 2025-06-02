@@ -6,6 +6,7 @@
 ### Changes and Updates for STU1 Publication (STU1)
 * **Applied**: Software system device profile was removed ([FHIR-50666](https://jira.hl7.org/browse/FHIR-50666)) Applied ([here](device-software-system-example.html))
 * **Applied**: Extension Issues ([FHIR-49245](https://jira.hl7.org/browse/FHIR-49245)) Applied ([here](StructureDefinition-cqm-cvmeasure.html)), ([here](StructureDefinition-cqm-improvementNotation.html)), ([here](StructureDefinition-cqm-ratiomeasure.html)), ([here](measure-exmratio-FHIR.html)), and ([here](measure-exm55-FHIR.html))
+* **Applied**: remove modelinfo FHIR Model Definition (STU2) ([FHIR-49485](https://jira.hl7.org/browse/FHIR-49485)) Applied ([here](using-cql.html))
 
 ### STU1 Ballot for FHIR R4 (v1.0.0)
 

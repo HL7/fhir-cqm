@@ -101,13 +101,12 @@ Snippet 4-4: Library namespace
 ### Data Model
 {: #data-model}
 
-CQL can be used with any [Data Model]({{site.data.fhir.ver.cql}}/using-cql.html#data-model). In the context of a Measure, any referenced CQL library must identify the same data model.
+CQL can be used with any [Data Model]({{site.data.fhir.ver.cql}}/using-cql.html#data-model).
 
 **Conformance Requirement 4.5 (CQL Data Model):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-5)
 {: #conformance-requirement-4-5}
 1. CQL libraries used by Measures SHALL conform to [UCWF:2.5 (Data Models)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-5)
-1. All libraries and CQL expressions used directly or indirectly within a measure SHALL use FHIR based data models. For example, one could use QI Core and SDOH IGs.
-2. Data Model declarations SHALL include a version declaration.
+2. All libraries and CQL expressions used directly or indirectly within a measure SHALL use FHIR based data models. For example, one could use QI Core and SDOH IGs.
 
 For example:
 
@@ -116,6 +115,8 @@ using FHIR version '4.0.1'
 ```
 
 Snippet 4-5: Data Model line from [EXM146.cql](Library-EXM146-FHIR.html#cql-content)
+
+For additional information on conformance requirements for the use of Model Information as part of FHIR Knowledge Artifacts that make use of CQL, reference the Using CQL with FHIR IG's section on [Using ModelInfo](http://hl7.org/fhir/uv/cql/STU1/using-modelinfo.html)
 
 ### Code Systems
 {: #code-systems}
