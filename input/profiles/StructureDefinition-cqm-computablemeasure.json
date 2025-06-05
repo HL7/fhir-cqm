@@ -64,43 +64,43 @@
         "path" : "Measure",
         "constraint" : [
           {
-            "key" : "cmp-1",
+            "key" : "comp-1",
             "severity" : "error",
             "human" : "Population basis must be specified at the root, or on each group",
             "expression" : "extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis').exists() or group.select(extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis').exists()).allTrue()"
           },
           {
-            "key" : "cmp-2",
+            "key" : "comp-2",
             "severity" : "error",
             "human" : "Scoring must either be specified at the root, or on each group",
             "expression" : "scoring.exists() xor (group.exists() and group.select(extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring').exists()).allTrue())"
           },
           {
-            "key" : "cmp-3",
+            "key" : "comp-3",
             "severity" : "error",
             "human" : "Scoring unit may only be specified at the root if the scoring is also specified at the root",
             "expression" : "extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoringUnit').exists() implies scoring.exists()"
           },
           {
-            "key" : "cmp-4",
+            "key" : "comp-4",
             "severity" : "error",
             "human" : "Improvement notation must be specified for scoring types other than cohort",
 			"expression" : "(scoring.exists() and (scoring.coding.code.contains('proportion') or scoring.coding.code.contains('ratio') or scoring.coding.code.contains('continuous-variable') or scoring.coding.code.contains('composite')) and improvementNotation.exists()) xor (group.exists() and group.select((extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring').exists() and (extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring').value.coding.code.contains('proportion') or extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring').value.coding.code.contains('ratio') or extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring').value.coding.code.contains('continuous-variable') or extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring').value.coding.code.contains('composite')) and  extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-improvementNotation').exists())).allTrue()) xor (scoring.exists() and scoring.coding.code.contains('cohort'))"
           },
           {
-            "key" : "cmp-5",
+            "key" : "comp-5",
             "severity" : "error",
             "human" : "If type is specified at the root, it may not be specified on any group",
             "expression" : "type.exists() implies group.select(extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-type').exists()).allFalse()"
           },
           {
-            "key" : "cmp-6",
+            "key" : "comp-6",
             "severity" : "error",
             "human" : "If riskAdjustment is specified at the root, it may not be specified on any group",
             "expression" : "riskAdjustment.exists() implies group.select(extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-riskAdjustment').exists()).allFalse()"
           },
           {
-            "key" : "cmp-7",
+            "key" : "comp-7",
             "severity" : "error",
             "human" : "If rateAggregation is specified at the root, it may not be specified on any group",
             "expression" : "rateAggregation.exists() implies group.select(extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-rateAggregation').exists()).allFalse()"
@@ -123,7 +123,7 @@
           }
         ],
         "condition" : [
-          "cmp-1"
+          "comp-1"
         ],
         "mustSupport" : true
       },
@@ -142,7 +142,7 @@
           }
         ],
         "condition" : [
-          "cmp-3"
+          "comp-3"
         ],
         "mustSupport" : true
       },
@@ -192,6 +192,12 @@
         }
       },
       {
+        "id" : "Measure.description",
+        "path" : "Measure.description",
+        "short": "Although this element is string-valued, it will be markdown valued in future versions so systems should be able to render markdown content when it appears in this element",
+        "mustSupport" : false
+      },
+      {
         "id" : "Measure.library",
         "path" : "Measure.library",
         "type" : [
@@ -210,9 +216,9 @@
         "id" : "Measure.scoring",
         "path" : "Measure.scoring",
         "condition" : [
-          "cmp-2",
-          "cmp-3",
-          "cmp-4"
+          "comp-2",
+          "comp-3",
+          "comp-4"
         ],
         "mustSupport" : true,
         "binding" : {
@@ -224,7 +230,7 @@
         "id" : "Measure.type",
         "path" : "Measure.type",
         "condition" : [
-          "cmp-5"
+          "comp-5"
         ],
         "mustSupport" : true
       },
@@ -232,7 +238,7 @@
         "id" : "Measure.riskAdjustment",
         "path" : "Measure.riskAdjustment",
         "condition" : [
-          "cmp-6"
+          "comp-6"
         ],
         "mustSupport" : false
       },
@@ -240,7 +246,7 @@
         "id" : "Measure.rateAggregation",
         "path" : "Measure.rateAggregation",
         "condition" : [
-          "cmp-7"
+          "comp-7"
         ],
         "mustSupport" : false
       },
@@ -248,7 +254,7 @@
         "id" : "Measure.improvementNotation",
         "path" : "Measure.improvementNotation",
         "condition" : [
-          "cmp-4"
+          "comp-4"
         ],
         "mustSupport" : true,
         "binding" : {
@@ -261,13 +267,13 @@
         "path" : "Measure.group",
         "constraint" : [
           {
-            "key" : "cmp-8",
+            "key" : "comp-8",
             "severity" : "error",
             "human" : "Scoring unit may only be specified at the root if the scoring is also specified at the root",
             "expression" : "extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoringUnit').exists() implies extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring').exists()"
           },
           {
-            "key" : "cmp-9",
+            "key" : "comp-9",
             "severity" : "error",
             "human" : "Improvement notation must be specified for scoring types other than cohort",
             "expression" : "extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring').exists() and extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring').value in ('proportion' | 'ratio' | 'continuous-variable') implies extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-improvementNotation').exists()"
@@ -290,7 +296,7 @@
           }
         ],
         "condition" : [
-          "cmp-1"
+          "comp-1"
         ],
         "mustSupport" : true
       },
@@ -309,9 +315,9 @@
           }
         ],
         "condition" : [
-          "cmp-2",
-          "cmp-8",
-          "cmp-9"
+          "comp-2",
+          "comp-8",
+          "comp-9"
         ],
         "mustSupport" : true
       },
@@ -330,7 +336,7 @@
           }
         ],
         "condition" : [
-          "cmp-8"
+          "comp-8"
         ],
         "mustSupport" : true
       },
@@ -396,7 +402,7 @@
           }
         ],
         "condition" : [
-          "cmp-5"
+          "comp-5"
         ],
         "mustSupport" : false
       },
@@ -415,7 +421,7 @@
           }
         ],
         "condition" : [
-          "cmp-6"
+          "comp-6"
         ],
         "mustSupport" : false
       },
@@ -434,7 +440,7 @@
           }
         ],
         "condition" : [
-          "cmp-7"
+          "comp-7"
         ],
         "mustSupport" : false
       },
@@ -453,7 +459,7 @@
           }
         ],
         "condition" : [
-          "cmp-9"
+          "comp-9"
         ],
         "mustSupport" : true
       },
@@ -465,6 +471,7 @@
       {
         "id" : "Measure.group.description",
         "path" : "Measure.group.description",
+        "short": "Although this element is string-valued, it will be markdown valued in future versions so systems should be able to render markdown content when it appears in this element",
         "mustSupport" : true
       },
       {
@@ -480,6 +487,7 @@
       {
         "id" : "Measure.group.population.description",
         "path" : "Measure.group.population.description",
+        "short": "Although this element is string-valued, it will be markdown valued in future versions so systems should be able to render markdown content when it appears in this element",
         "mustSupport" : true
       },
       {
@@ -511,6 +519,7 @@
       {
         "id" : "Measure.group.stratifier.description",
         "path" : "Measure.group.stratifier.description",
+        "short": "Although this element is string-valued, it will be markdown valued in future versions so systems should be able to render markdown content when it appears in this element",
         "mustSupport" : true
       },
       {
@@ -541,11 +550,13 @@
       {
         "id" : "Measure.supplementalData.usage",
         "path" : "Measure.supplementalData.usage",
+        "short": "Although this element is string-valued, it will be markdown valued in future versions so systems should be able to render markdown content when it appears in this element",
         "mustSupport" : true
       },
       {
         "id" : "Measure.supplementalData.description",
         "path" : "Measure.supplementalData.description",
+        "short": "Although this element is string-valued, it will be markdown valued in future versions so systems should be able to render markdown content when it appears in this element",
         "mustSupport" : true
       }
     ]
