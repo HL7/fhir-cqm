@@ -20,15 +20,15 @@
   ],
   "description": "The cqm Test Case Profile describes expectations for the definition and exchange of a measure test case, including input data and parameters, as well as expected outcome",
   "jurisdiction": [
-      {
-        "coding": [
-          {
-            "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
-            "code": "001"
-          }
-        ]
-      }
-    ],
+    {
+      "coding": [
+        {
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "001"
+        }
+      ]
+    }
+  ],
   "purpose": "Measure authors must be able to define and communicate test cases that include expected outcomes to allow for validation of measure behavior.",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -92,7 +92,7 @@
         "id": "MeasureReport.extension:operation",
         "path": "MeasureReport.extension",
         "sliceName": "operation",
-        "short" : "If an operation is not specificed, then the test case is assumed to be for $evaluate-measure.",
+        "short": "If an operation is not specificed, then the test case is assumed to be for $evaluate-measure.",
         "min": 0,
         "max": "1",
         "type": [
@@ -167,6 +167,29 @@
       {
         "id": "MeasureReport.group.population",
         "path": "MeasureReport.group.population",
+        "constraint": [
+          {
+            "key": "cntq-1",
+            "severity": "error",
+            "human": "Either count or countQuantity must be provided, but not both.",
+            "expression": "(count.exists() xor extension('http://hl7.org/fhir/StructureDefinition/measurereport-countQuantity').exists())"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MeasureReport.group.population.extension:countQuantity",
+        "path": "MeasureReport.group.population.extension",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/measurereport-countQuantity"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -222,6 +245,29 @@
       {
         "id": "MeasureReport.group.stratifier.stratum.population",
         "path": "MeasureReport.group.stratifier.stratum.population",
+        "constraint": [
+          {
+            "key": "cntq-1",
+            "severity": "error",
+            "human": "Either count or countQuantity must be provided, but not both.",
+            "expression": "(count.exists() xor extension('http://hl7.org/fhir/StructureDefinition/measurereport-countQuantity').exists())"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MeasureReport.group.stratifier.stratum.population.extension:countQuantity",
+        "path": "MeasureReport.group.stratifier.stratum.population.extension",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/measurereport-countQuantity"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
