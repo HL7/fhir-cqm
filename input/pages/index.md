@@ -1,6 +1,33 @@
-
-
 {:toc}
+
+
+<div style="width: 100%;" >
+<h3 id="plain-language-summary-about-hl7-and-this-guide">Plain Language Summary about HL7 and this Guide<a class="anchorjs-link " href="#plain-language-summary-about-hl7-and-this-guide" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a>
+  <button class="btn btn-info btn-lg collapsed" type="button" title="Click to Open or Close the Plain Language Summary" data-toggle="collapse" data-target="#plain-lang-summary" aria-expanded="false" aria-controls="collapseExample">
+    Welcome! Thank-you for wanting to learn about this guide.  Click Here to see the Plain Language Summary
+  </button>
+</h3>
+</div>
+<div class="collapse" id="plain-lang-summary" aria-expanded="false" style="height: 0px;">
+  <div class="card card-body" style="border:1px solid;border-color:#cccccc;padding:10px">
+  
+<h4 id="about-hl7">About HL7<a class="anchorjs-link " href="#about-hl7" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+<p><a href="http://hl7.org/">HL7</a>, which stands for Health Level Seven, creates standards to help different healthcare computer systems talk to each other. These HL7 standards are a special language or set of rules that lets information be shared between hospitals, doctors’ offices (e.g. Electronic Health Record Systems), labs, patients (e.g. via patient portals), pharmacies, and insurers, among others.</p>
+
+<p>One of the HL7 standards is HL7 FHIR (Fast Healthcare Interoperability Resources). It helps connect healthcare systems, making it easier for doctors, nurses, and other healthcare professionals to share important information about patients. For example, if you have a lab test at a hospital, HL7 FHIR helps send the results to your doctor’s office so they can provide the right care.</p>
+
+<p>A goal of HL7 is to make sure everyone involved in your healthcare has the right information at the right time. Our standards help machines and people, including you, work together to make better decisions for your health. HL7 sets rules that computer systems follow, so they can understand and share information in a consistent and reliable way.</p>
+
+<p>To learn more about HL7, you can visit the website <a href="http://hl7.org/">hl7.org</a></p>
+
+<p>The people at HL7 make guides that explain how to use the rules (standards) for different things. These guides bring the rules together and show how to use them for specific purposes.</p>
+
+<h4 id="about-this-guide">About this Guide<a class="anchorjs-link " href="#about-this-guide" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<p>Quality measures are numeric quantification of healthcare quality. The QM IG explains how to create and use quality measures using the FHIR and CQL standards. It's designed to help software developers, measure developers, and healthcare organizations create, share, and implement quality measures consistently.  The QM IG provides structure and conformance guidance to facilitate the development of quality measures.</p>
+
+  </div>
+</div>
 
 {:.stu-note}
 >  This STU 1.0.0 ballot updates the Quality Measure IG, moving it from the US Realm to the Universal Realm. The US realm is still available [here.](https://hl7.org/fhir/us/cqfmeasures/index.html) 
