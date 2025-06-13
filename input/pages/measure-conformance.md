@@ -1046,7 +1046,7 @@ The population types for a Ratio measure are "Initial Population", "Denominator"
 
 | Population | Definition |
 |:----|:----|
-| Initial Population | All entities to be evaluated by a measure which may but are not required to share a common set of specified characteristics within a named measurement set to which the measure belongs. Ratio measures are allowed to have two Initial Populations, one for Numerator and one for Denominator. In most cases, there is only 1 Initial Population |
+| Initial Population | Ratio measures establish a relationship between two distinct populations, one for Numerator and one for Denominator. |
 | Denominator | The same as the Initial Population or a subset of the Initial Population to further constrain the population for the purpose of the measure.                                                                                                                                                                                                      |
 | Denominator Exclusion | Entities that should be removed from the Denominator before determining if Numerator criteria are met. Denominator exclusions are used in Proportion and Ratio measures to help narrow the Denominator.           |
 | Numerator |  The outcomes expected for each entity defined in the respective Initial Population of a Ratio measure.       |
