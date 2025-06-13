@@ -1,4 +1,4 @@
-The following lists test sections and the required resources for those sections. This file was generated using sot.sh at 2024-09-18 07:58:01
+The following lists test sections and the required resources for those sections. This file was generated using sot.sh at 2025-05-09 10:41:48
 /
 ## CodeSystem 1 Shareable 
  https://hl7.org/fhir/R4/codesystem-request-intent.json 
@@ -78,3 +78,24 @@ The following lists test sections and the required resources for those sections.
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20190315 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499 
+## ValueSet 12 POST 
+ http://hl7.org/fhir/ValueSet/care-team-status|4.0.1 
+ http://hl7.org/fhir/ValueSet/care-team-status 
+ http://hl7.org/fhir/ValueSet/care-team-status 
+ http://hl7.org/fhir/ValueSet/care-team-status 
+ http://hl7.org/fhir/ValueSet/care-team-status 
+ http://hl7.org/fhir/ValueSet/care-team-status|4.0.1 
+ http://hl7.org/fhir/ValueSet/care-team-status|4.0.1 
+ http://hl7.org/fhir/ValueSet/care-team-status|4.0.1 
+ http://hl7.org/fhir/ValueSet/care-team-status|4.0.1 
+ http://hl7.org/fhir/ValueSet/care-team-status|4.0.1 
+ http://hl7.org/fhir/ValueSet/care-team-status|4.0.1 
+ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.69|20230308 
+## ValueSet 13 Timeouts 
+ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1034.127 
+ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1079 
+ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1407 
+ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.1004.28 
+ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.199.11.1104 
+ https://github.com/cqframework/ecqm-content-qicore-2024-subset/blob/main/input/resources/library/Manifest-Final-Draft.json 
+ https://github.com/cqframework/ecqm-content-qicore-2024-subset/blob/main/input/resources/library/Manifest-Final-Draft.json 
