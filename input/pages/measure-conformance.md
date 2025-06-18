@@ -786,10 +786,11 @@ For each scoring type, the set of applicable criteria are specified in the [Qual
 
 | Scoring              | Initial Population | Denominator | Denominator Exclusion | Denominator Exception | Numerator | Numerator Exclusion | Measure Population | Measure Population Exclusion |
 |----------------------|:------------------:|:-----------:|:---------------------:|:----------------------:|:---------:|:---------------------:|:-------------------:|:----------------------------:|
-| Proportion           |         R          |      R      |           O           |            O           |     R     |           O           |         NP          |              NP              |
-| Ratio                |        R‡‡         |      R      |           O           |           NP           |     R     |           O           |         NP          |              NP              |
-| Continuous Variable  |         R          |     NP      |          NP           |           NP           |    NP     |          NP           |          R          |              O               |
+| Proportion           |         R          |     R       |          O            |           O            |    R      |          O            |         NP          |              NP              |
+| Ratio                |        R‡‡         |     R       |          O            |           NP           |    R      |          O            |         NP          |              NP              |
+| Continuous Variable  |         R          |     NP      |          NP           |           NP           |    NP     |          NP           |         R           |              O               |
 | Cohort               |         R          |     NP      |          NP           |           NP           |    NP     |          NP           |         NP          |              NP              |
+| Attestation          |         O          |     O       |          O            |           O            |    O      |          O            |         O           |              O               |
 {: .grid}
 
 
