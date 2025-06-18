@@ -62,10 +62,8 @@ Measure Population Exclusions are used in Continuous Variable Measures to define
 #### Numerator
 
 Numerator criteria define the patients, subjects, or events that should be included in the upper portion of a fraction used to calculate a rate, proportion, or ratio. Also called the measure focus, it is the target process, condition, event, or outcome.
-{: .new-content}
 
 Numerator criteria are the processes or outcomes expected for each patient, subject, or event defined in the denominator (for rate and proportion measures) or initial population (for ratio measures). A numerator statement describes the clinical action that satisfies the conditions of the measure.
-{: .new-content}
 
 #### Numerator Exclusion
 
@@ -103,7 +101,7 @@ A ratio is a score that is derived by dividing a count of one type of data by a 
 
 Criteria used to classify populations into one or more characteristics, variables, or other categories. These subsets of the overall population, or stratifications, are a form of risk adjustment, and are used in analysis and interpretation. Examples of stratification include age, discharge status for an inpatient stay, facility location within a hospital (e.g., ICU, Emergency Department), surgical procedures, and specific conditions.
 
-#### Supplemental Data Elements
+#### Supplemental Data Elements (SDE)
 
 Additional variables required for risk adjustment or other purposes of data aggregation. Comparison of results across strata can be used to show where disparities exist or where there is a need to expose differences in results. Examples of supplemental data elements include payer, ethnicity, race and gender.
 
@@ -114,7 +112,7 @@ Additional variables required for risk adjustment or other purposes of data aggr
 | :--- | :---: | :--- |
 | API | --- |	Application Program Interface |
 | CDS |	--- | Clinical Decision Support |
-| CMS |	--- | Centers for Medicare and Medicaid Services |
+| CMS |	--- | Centers for Medicare & Medicaid Services |
 | CQFM | --- |	Clinical Quality Framework Measures |
 | CQL |	--- | Clinical Quality Language |
 | CQM |	--- | Clinical Quality Measures |
@@ -140,6 +138,7 @@ Additional variables required for risk adjustment or other purposes of data aggr
 | SDE |	--- | Supplemental Data Element |
 | SNOMED-CT |	--- | Systematized Nomenclature of Medicine -- Clinical Terms |
 | STU | --- |	FHIR Release (STU) |
+| UCWF | --- | Using CQL with FHIR IG |
 | URI | --- |	Uniform Resource Identifier |
 | URL | --- |	Uniform Resource Locater |
 | XML | --- |	eXtensible Markup Language |
