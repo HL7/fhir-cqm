@@ -4,189 +4,6 @@
     <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablemeasure"/>
     <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure"/>
   </meta>
-  <!--
-  <contained>
-    <Library>
-      <id value="effective-data-requirements"/>
-      <meta>
-        <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-moduledefinitionlibrary"/>
-      </meta>
-      <identifier>
-        <use value="official"/>
-        <system value="http://example.org/fhir/cqi/ecqm/Library/Identifier"/>
-        <value value="effective-data-requirements"/>
-      </identifier>
-       <url value="http://hl7.org/fhir/uv/cqm/Library/effective-data-requirements"/>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
-        <extension url="libraryName">
-          <valueString value="CRMIPublishableLibrary"/>
-        </extension>
-        <extension url="name">
-          <valueString value="SDE Sex"/>
-        </extension>
-        <extension url="statement">
-          <valueString value="define &quot;SDE Sex&quot;:   case     when Patient.gender = 'male' then Code { code: 'M', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Male' }     when Patient.gender = 'female' then Code { code: 'F', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Female' }     else null   end"/>
-        </extension>
-        <extension url="displaySequence">
-          <valueInteger value="0"/>
-        </extension>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
-        <extension url="libraryName">
-          <valueString value="CRMIPublishableLibrary"/>
-        </extension>
-        <extension url="name">
-          <valueString value="SDE Payer"/>
-        </extension>
-        <extension url="statement">
-          <valueString value="define &quot;SDE Payer&quot;:     [Coverage: type in &quot;Payer&quot;] Payer       return {         code: Payer.type,         period: Payer.period       }"/>
-        </extension>
-        <extension url="displaySequence">
-          <valueInteger value="1"/>
-        </extension>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
-        <extension url="libraryName">
-          <valueString value="CRMIPublishableLibrary"/>
-        </extension>
-        <extension url="name">
-          <valueString value="Inpatient Encounter"/>
-        </extension>
-        <extension url="statement">
-          <valueString value="define &quot;Inpatient Encounter&quot; :   [&quot;Encounter&quot;] Encounter     where LengthInDays(Encounter.period) &lt;= 120       and Encounter.period ends during &quot;Measurement Period&quot;"/>
-        </extension>
-        <extension url="displaySequence">
-          <valueInteger value="2"/>
-        </extension>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
-        <extension url="libraryName">
-          <valueString value="CRMIPublishableLibrary"/>
-        </extension>
-        <extension url="name">
-          <valueString value="Initial Population"/>
-        </extension>
-        <extension url="statement">
-          <valueString value="define &quot;Initial Population&quot; :   &quot;Inpatient Encounter&quot; Encounter"/>
-        </extension>
-        <extension url="displaySequence">
-          <valueInteger value="3"/>
-        </extension>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
-        <extension url="libraryName">
-          <valueString value="CRMIPublishableLibrary"/>
-        </extension>
-        <extension url="name">
-          <valueString value="SDE Ethnicity"/>
-        </extension>
-        <extension url="statement">
-          <valueString value="define &quot;SDE Ethnicity&quot;:   (flatten (     Patient.extension Extension       where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity'         return Extension.extension   )) E     where E.url = 'ombCategory'       or E.url = 'detailed'     return E.value as Coding"/>
-        </extension>
-        <extension url="displaySequence">
-          <valueInteger value="4"/>
-        </extension>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
-        <extension url="libraryName">
-          <valueString value="CRMIPublishableLibrary"/>
-        </extension>
-        <extension url="name">
-          <valueString value="SDE Race"/>
-        </extension>
-        <extension url="statement">
-          <valueString value="define &quot;SDE Race&quot;:   (flatten (     Patient.extension Extension       where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-race'         return Extension.extension   )) E     where E.url = 'ombCategory'       or E.url = 'detailed'     return E.value as Coding"/>
-        </extension>
-        <extension url="displaySequence">
-          <valueInteger value="5"/>
-        </extension>
-      </extension>
-      <name value="EffectiveDataRequirements"/>
-      <status value="active"/>
-      <type>
-        <coding>
-          <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
-          <code value="module-definition"/>
-        </coding>
-      </type>
-      <date value="2022-02-22T10:37:03-07:00"/>
-      <relatedArtifact>
-        <type value="depends-on"/>
-        <display value="Library FHIRHelpers"/>
-        <resource value="http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"/>
-      </relatedArtifact>
-      <relatedArtifact>
-        <type value="depends-on"/>
-        <display value="Value set Payer"/>
-        <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"/>
-      </relatedArtifact>
-      <parameter>
-        <name value="Measurement Period"/>
-        <use value="in"/>
-        <min value="0"/>
-        <max value="1"/>
-        <type value="Period"/>
-      </parameter>
-      <parameter>
-        <name value="SDE Sex"/>
-        <use value="out"/>
-        <min value="0"/>
-        <max value="1"/>
-        <type value="Coding"/>
-      </parameter>
-      <parameter>
-        <name value="SDE Payer"/>
-        <use value="out"/>
-        <min value="0"/>
-        <max value="*"/>
-        <type value="Resource"/>
-      </parameter>
-      <parameter>
-        <name value="Initial Population"/>
-        <use value="out"/>
-        <min value="0"/>
-        <max value="*"/>
-        <type value="Encounter"/>
-      </parameter>
-      <parameter>
-        <name value="SDE Ethnicity"/>
-        <use value="out"/>
-        <min value="0"/>
-        <max value="*"/>
-        <type value="Coding"/>
-      </parameter>
-      <parameter>
-        <name value="SDE Race"/>
-        <use value="out"/>
-        <min value="0"/>
-        <max value="*"/>
-        <type value="Coding"/>
-      </parameter>
-      <dataRequirement>
-        <type value="Patient"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
-        <mustSupport value="extension"/>
-        <mustSupport value="value"/>
-        <mustSupport value="url"/>
-      </dataRequirement>
-      <dataRequirement>
-        <type value="Encounter"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
-        <mustSupport value="period"/>
-      </dataRequirement>
-      <dataRequirement>
-        <type value="Coverage"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/Coverage"/>
-        <mustSupport value="period"/>
-        <mustSupport value="type"/>
-        <codeFilter>
-          <path value="type"/>
-          <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"/>
-        </codeFilter>
-      </dataRequirement>
-    </Library>
-  </contained>
-  -->
   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
     <valueCode value="Encounter"/>
   </extension>
@@ -198,7 +15,20 @@
   <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements">
     <valueCanonical value="http://hl7.org/fhir/uv/cqm/Library/moduledefinition-example"/>
   </extension>
-  <url value="http://example.org/fhir/measures/measure-publishable-exm"/>
+  <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.term">
+    <extension url="code">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://example.org/fhir/CodeSystem/measure-terms"/>
+          <code value="example-term-code"/>
+          <display value="Example Term Display"/>
+        </coding>
+      </valueCodeableConcept>    </extension>
+    <extension url="definition">
+      <valueMarkdown value="A term used in the measure that bears clearly definition to communicate the measure intent"/>
+    </extension>
+  </extension>
+  <url value="http://hl7.org/fhir/uv/cqm/Measure/measure-publishable-exm"/>
   <identifier>
     <use value="usual"/>
     <type>
@@ -295,8 +125,8 @@
     </coding>
   </jurisdiction>
   <purpose value="This measure has been developed to support improvement in clinical care."/>
-  <rationale value="The rationale of this measure is to..."/>
   <usage value="Users of this measure should be aware of..."/>
+  <rationale value="The rationale of this measure is to..."/>
   <copyright value="Example Copyright Statement"/>
   <approvalDate value="2019-02-17"/>
   <lastReviewDate value="2019-02-17"/>
@@ -329,7 +159,7 @@
       <valueBoolean value="true"/>
     </extension>
     <type value="citation"/>
-    <citation value="Linder, J.A., D.W. Bates, G.M. Lee, J.A. Finkelstein. 2005. &quot;Antibiotic treatment       of children with sore throat.&quot; JAMA 294(18):2315-2322."/>
+    <citation value="Linder, J.A., D.W. Bates, G.M. Lee, J.A. Finkelstein. 2005. 'Antibiotic treatment       of children with sore throat.' JAMA 294(18):2315-2322."/>
     <url value="https://pubmed.ncbi.nlm.nih.gov/16278359/"/>
     <document>
       <url value="https://pubmed.ncbi.nlm.nih.gov/16278359/"/>
@@ -340,7 +170,7 @@
       <valueBoolean value="true"/>
     </extension>
     <type value="citation"/>
-    <citation value="Infectious Diseases Society of America. 2012. &quot;Clinical Practice Guideline for the Diagnosis and Management of Group A Streptococcal Pharyngitis: 2012 Update.&quot;"/>
+    <citation value="Infectious Diseases Society of America. 2012. 'Clinical Practice Guideline for the Diagnosis and Management of Group A Streptococcal Pharyngitis: 2012 Update.'"/>
     <url value="https://pubmed.ncbi.nlm.nih.gov/23091044/"/>
     <document>
       <url value="https://pubmed.ncbi.nlm.nih.gov/23091044/"/>
@@ -351,7 +181,7 @@
       <valueBoolean value="true"/>
     </extension>
     <type value="citation"/>
-    <citation value="Roberts, R.R., B. Hota, I. Ahmad, et al. &quot;Hospital and Societal Costs of Antimicrobial-Resistant Infections in a Chicago Teaching Hospital: Implications for Antibiotic Stewardship.&quot; Clin Infect Dis. Oct 2009; 49(8):1175-84."/>
+    <citation value="Roberts, R.R., B. Hota, I. Ahmad, et al. 'Hospital and Societal Costs of Antimicrobial-Resistant Infections in a Chicago Teaching Hospital: Implications for Antibiotic Stewardship.' Clin Infect Dis. Oct 2009; 49(8):1175-84."/>
     <url value="https://pubmed.ncbi.nlm.nih.gov/19739972/"/>
     <document>
       <url value="https://pubmed.ncbi.nlm.nih.gov/19739972/"/>
@@ -396,16 +226,6 @@
       <display value="Increased score indicates improvement"/>
     </coding>
   </improvementNotation>
-  <definition>
-    <extension url="http://hl7.org/fhir/StructureDefinition/cqf-definitionTerm">
-      <extension url="term">
-        <valueString value="Term"/>
-      </extension>
-      <extension url="definition">
-        <valueMarkdown value="A term used in the measure that bears clearly definition to communicate the measure intent"/>
-      </extension>
-    </extension>
-  </definition>
   <group id="group-1">
     <population id="initial-population">
       <code>

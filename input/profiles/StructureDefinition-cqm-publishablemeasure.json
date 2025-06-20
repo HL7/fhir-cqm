@@ -20,15 +20,15 @@
   ],
   "description": "The CQM Publishable Measure profile defines the minimum expectations to enable appropriate content management, discovery, and utilization of published Quality Measures (QMs). For more information on the usage of this profile, refer to the Profiles and Packaging pages in this implementation guide.",
   "jurisdiction": [
-      {
-        "coding": [
-          {
-            "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
-            "code": "001"
-          }
-        ]
-      }
-    ],
+    {
+      "coding": [
+        {
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "001"
+        }
+      ]
+    }
+  ],
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -478,63 +478,63 @@
       }],
       "mustSupport" : true
     },
-      {
-        "id" : "Measure.useContext",
-        "path" : "Measure.useContext",
-        "slicing" : {
-          "discriminator" : [{
-            "type" : "value",
-            "path" : "code"
-          }],
-          "rules" : "open"
-        },
-        "requirements" : "A published measure must be able to specify intended contexts of use such as intended venue.",
-        "min" : 0,
-        "max" : "*",
-        "type" : [{
-          "code" : "UsageContext"
+    {
+      "id" : "Measure.useContext",
+      "path" : "Measure.useContext",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "code"
         }],
-        "mustSupport" : true
+        "rules" : "open"
       },
-      {
-        "id" : "Measure.useContext:intendedVenue",
-        "path" : "Measure.useContext",
-        "sliceName" : "intendedVenue",
-        "short" : "What venue?",
-        "definition" : "The intended venue for use for this measure.",
-        "min" : 0,
-        "max" : "*",
-        "mustSupport" : true
+      "requirements" : "A published measure must be able to specify intended contexts of use such as intended venue.",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "UsageContext"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Measure.useContext:intendedVenue",
+      "path" : "Measure.useContext",
+      "sliceName" : "intendedVenue",
+      "short" : "What venue?",
+      "definition" : "The intended venue for use for this measure.",
+      "min" : 0,
+      "max" : "*",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Measure.useContext:intendedVenue.code",
+      "path" : "Measure.useContext.code",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Coding"
+      }],
+      "patternCoding" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code" : "venue"
       },
-      {
-        "id" : "Measure.useContext:intendedVenue.code",
-        "path" : "Measure.useContext.code",
-        "min" : 1,
-        "max" : "1",
-        "type" : [{
-          "code" : "Coding"
-        }],
-        "patternCoding" : {
-          "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
-          "code" : "venue"
-        },
-        "mustSupport" : true
-      },
-      {
-        "id" : "Measure.useContext:intendedVenue.value[x]",
-        "path" : "Measure.useContext.value[x]",
-        "min" : 1,
-        "max" : "1",
-        "type" : [{
-          "code" : "CodeableConcept"
-        }],
-        "mustSupport" : true,
-        "binding" : {
-          "strength" : "extensible",
-          "valueSet" : "http://hl7.org/fhir/uv/cqm/ValueSet/intended-venue"
-        }
-      },
-      {
+      "mustSupport" : true
+    },
+    {
+      "id" : "Measure.useContext:intendedVenue.value[x]",
+      "path" : "Measure.useContext.value[x]",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "http://hl7.org/fhir/uv/cqm/ValueSet/intended-venue"
+      }
+    },
+    {
       "id" : "Measure.purpose",
       "path" : "Measure.purpose",
       "short" : "Why this measure is defined",
@@ -548,7 +548,6 @@
       "id" : "Measure.usage",
       "path" : "Measure.usage",
       "short" : "Allows measure developers to provide additional guidance so that implementers can more easily interpret and implement components of the measure.",
-      "comment": "Although this element is string-valued, it will be markdown valued in future versions so systems should be able to render markdown content when it appears in this element",
       "requirements" : "A published measure should provide clinical usage notes for the measure.",
       "mustSupport" : true
     },
@@ -866,34 +865,6 @@
       }],
       "mustSupport" : true
     },
-      {
-        "id" : "Measure.group.description",
-        "path" : "Measure.group.description",
-        "comment": "Although this element is string-valued, it will be markdown valued in future versions so systems should be able to render markdown content when it appears in this element",
-        "mustSupport" : false
-      },
-      {
-        "id" : "Measure.group.population",
-        "path" : "Measure.group.population",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Measure.group.population.description",
-        "path" : "Measure.group.population.description",
-        "comment": "Although this element is string-valued, it will be markdown valued in future versions so systems should be able to render markdown content when it appears in this element",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Measure.group.stratifier",
-        "path" : "Measure.group.stratifier",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Measure.group.stratifier.description",
-        "path" : "Measure.group.stratifier.description",
-        "comment": "Although this element is string-valued, it will be markdown valued in future versions so systems should be able to render markdown content when it appears in this element",
-        "mustSupport" : true
-      },
 	{
         "id": "Measure.supplementalData",
         "path": "Measure.supplementalData",
@@ -910,13 +881,7 @@
         "profile" : ["http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-includeInReportType"]
       }],
       "mustSupport": true
-	},
-      {
-        "id": "Measure.supplementalData.description",
-        "path": "Measure.supplementalData.description",
-        "comment": "Although this element is string-valued, it will be markdown valued in future versions so systems should be able to render markdown content when it appears in this element",
-        "mustSupport": true
-      }
-    ]
+	}
+	]
   }
 }
