@@ -1,0 +1,27 @@
+{
+  "resourceType": "Library",
+  "id": "AgeStratifiedExample",
+  "url": "http://hl7.org/fhir/uv/cqm/Library/AgeStratifiedExample",
+  "version": "1.0.0",
+  "name": "AgeStratifiedExample",
+  "title": "Age Stratified Example",
+  "status": "active",
+  "experimental": true,
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/library-type",
+        "code": "logic-library"
+      }
+    ]
+  },
+  "date": "2025-06-24",
+  "publisher": "Clinical Quality Information Workgroup",
+  "description": "A library that defines stratification logic based on WHO-defined age ranges.",
+  "content": [
+    {
+      "contentType": "text/cql",
+      "data": "bGlicmFyeSBTYW1wbGVMaWJyYXJ5IHZlcnNpb24gJzEuMC4wJwoKdXNpbmcgRkhJUiB2ZXJzaW9uICc0LjAuMScKCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnIGNhbGxlZCBGSElSSGVscGVycwoKY29udGV4dCBQYXRpZW50CgpkZWZpbmUgIkluaXRpYWxQb3B1bGF0aW9uIjoKICBleGlzdHMoCiAgICAob1tPYnNlcnZhdGlvbjogIlNvbWVNZWFzdXJlUmVsZXZhbnRPYnNlcnZhdGlvbiJdCiAgICAgIHdoZXJlIE9ic2VydmF0aW9uLmVmZmVjdGl2ZS5zdGFydCBkdXJpbmcgSW50ZXJ2YWxbQDIwMjQtMDEtMDEsIEAyMDI0LTEyLTMxXQogICkKKGRlZmluZSAiQWdlR3JvdXAiOgogIGNhc2UKICAgIHdoZW4gQWdlSW5EYXlzKCkgPCA3IHRoZW4gJ3VuZGVyLTdkJwogICAgd2hlbiBBZ2VJbkRheXMoKSA+PSA3IGFuZCBBZ2VJbkRheXMoKSA8IDI4IHRoZW4gJzdtbzI3ZCcKICAgIHdoZW4gQWdlSW5EYXlzKCkgPCAyOCB0aGVuICd1bmRlci0yOGQnCiAgICB3aGVuIEFnZUluWWVhcnMoKSA8IDEgdGhlbiAndW5kZXItMXknCiAgICB3aGVuIEFnZUluWWVhcnMoKSA+PSAxIGFuZCBBZ2VJblllYXJzKCkgPCA0IHRoZW4gJzF0bzN5JwogICAgd2hlbiBBZ2VJblllYXJzKCkgPj0gMSBhbmQgQWdlSW5ZZWFycygpIDwgMTAgdGhlbiAnMXRvOXknCiAgICB3aGVuIEFnZUluWWVhcnMoKSA+PSAxMCBhbmQgQWdlSW5ZZWFycygpIDwgMjAgdGhlbiAnMTB0bzE5eScKICAgIHdoZW4gQWdlSW5ZZWFycygpID49IDIwIGFuZCBBZ2VJblllYXJzKCkgPCA2MCB0aGVuICcyMHBsdXN5JwogICAgZWxzZSc2MHBsdXN5CgpkZWZpbmUgZnVuY3Rpb24gQWdlSW5EYXlzKCk6CiAgZGlmZmVyZW5jZSBpbiBkYXlzIGJldHdlZW4gUGF0aWVudC5iaXJ0aERhdGUgYW5kIFRvZGF5KCkKCmRlZmluZSBmdW5jdGlvbiBBZ2VJblllYXJzKCk6CiAgZGlmZmVyZW5jZSBpbiB5ZWFycyBiZXR3ZWVuIFBhdGllbnQuYmlydGhEYXRlIGFuZCBUb2RheSgpCg=="
+    }
+  ]
+}

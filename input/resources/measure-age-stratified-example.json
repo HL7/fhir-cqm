@@ -1,0 +1,68 @@
+{
+  "resourceType": "Measure",
+  "id": "age-stratified-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Measure Age Stratified Example</h2><p><strong>Publisher:</strong> Clinical Quality Information Workgroup</p><p><strong>Status:</strong> draft</p><p><strong>Scoring:</strong> Proportion</p><h3>Population Criteria</h3><ul><li><a name=\"measure-age-stratified-example-group-1-initial-population\"></a><strong>Initial Population:</strong> Patients meeting the criteria defined by the CQL expression <code>InitialPopulation</code>.</li></ul><h3>Stratifiers</h3><ul><li><strong>Age Group:</strong> Stratifies patients using WHO-based age ranges defined in the ValueSet <code>measure-stratifier-ages-example</code>.</li></ul></div>"
+  },
+  "url": "http://hl7.org/fhir/uv/cqm/Measure/age-stratified-example",
+  "version": "1.0.0",
+  "name": "MeasureAgeStratifiedExample",
+  "title": "Measure Age Stratified Example",
+  "status": "draft",
+  "experimental": true,
+  "date": "2025-06-24",
+  "publisher": "Clinical Quality Information Workgroup",
+  "description": "A sample measure demonstrating age stratification using WHO-based age ranges.",
+  "library": [
+    "http://hl7.org/fhir/uv/cqm/Library/AgeStratifiedExample"
+  ],
+  "scoring": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+        "code": "proportion"
+      }
+    ]
+  },
+  "group": [
+    {
+      "id": "group-1",
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/cql-identifier",
+            "expression": "InitialPopulation"
+          }
+        }
+      ],
+      "stratifier": [
+        {
+          "id": "age-stratifier",
+          "code": {
+            "text": "Age Group"
+          },
+          "description": "Stratifies patients by WHO-based age ranges.",
+          "criteria": {
+            "language": "text/cql-identifier",
+            "expression": "AgeGroup"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-valueSet",
+              "valueCanonical": "http://hl7.org/fhir/uv/cqm/ValueSet/measure-stratifier-ages-example"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

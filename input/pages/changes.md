@@ -20,7 +20,8 @@
 * **Applied**: Allow for count as a quantity ([FHIR-43090](https://jira.hl7.org/browse/FHIR-43090)) Applied ([here](StructureDefinition-cqm-testcase.html))
 * **Applied**: Provide guidance regarding description elements ([FHIR-50925](https://jira.hl7.org/browse/FHIR-50925)) Applied ([here](measure-conformance.html)), ([here](StructureDefinition-cqm-publishablemeasure.html)), and ([here](StructureDefinition-cqm-computablemeasure.html))
 * **Applied**: Correct definitionTerm extension usage ([FHIR-50265](https://jira.hl7.org/browse/FHIR-50265)) Applied ([here](StructureDefinition-cqm-publishablemeasure.html)) and ([here](Measure-measure-publishable-exm.html))
-
+* **Applied**: Allow specification of a ValueSet for stratifiers and supplemental data ([FHIR-49756](https://jira.hl7.org/browse/FHIR-49756)) Applied ([here](StructureDefinition-cqm-computablemeasure.html)), ([here](codesystem-measure-stratifier-type.html)), ([here](extensions.html)), ([here](StructureDefinition-cqm-valueset.html)), ([here](Library-AgeStratifiedExample.html)), ([here](codesystem-measure-stratifier-ages-example.html)), ([here](measure-age-stratified-example.html)), ([here](valueset-measure-stratifier-ages-example.html)), and ([here](valueset-measure-stratifier-type.html))
+* 
 ### STU1 Ballot for FHIR R4 (v1.0.0)
 
 * **Applied**: Consider universal realm	([FHIR-45883](https://jira.hl7.org/browse/FHIR-45883)) Applied ([here](index.html))

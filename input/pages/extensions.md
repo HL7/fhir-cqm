@@ -18,4 +18,5 @@
 - [Scoring Unit](StructureDefinition-cqm-scoringUnit.html)
 - [Test Case Description](StructureDefinition-cqm-testCaseDescription.html)
 - [Type](StructureDefinition-cqm-type.html)
+- [ValueSet](StructureDefinition-cqm-valueset.html)
 - [Weight](StructureDefinition-cqm-weight.html)
