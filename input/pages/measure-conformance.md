@@ -823,6 +823,12 @@ In addition to the measure scoring, measures generally fall into two categories,
 
 1. The [`cqm-populationBasis`](StructureDefinition-cqm-populationBasis.html) extension SHALL be used to identify the result type of population criteria used in the measure
 2. Expressions used in population criteria SHALL return a value of the type specified by the populationBasis for the measure.
+3. If a DataRequirement is used to specify an allowed type for a population, the `type` SHALL be present and `profile`, and `codeFilter` elements MAY be present. Other elements SHALL NOT be present.
+   1. Add an invariant to the cqm-populationBases extension to enforce this conformance requirement.
+4. If a DataRequirement is used to specify an allowed type for a population, instances SHALL be:
+a. of the type specified in `type`
+b. conform to ALL the profiles specified in `profile`
+c. match ALL the codeFilters specified
 
 Snippet 3-16 illustrates the use of the populationBasis extension for a patient-based measure:
 
@@ -831,6 +837,16 @@ Snippet 3-16 illustrates the use of the populationBasis extension for a patient-
     {
       "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis",
       "valueCode": "boolean"
+    },
+    {
+        "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis",
+        "valueDataRequirement": 
+        {
+            "type": "Patient",
+            "profile": [
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient"
+            ]
+        }
     }
   ]
 ```
@@ -844,6 +860,17 @@ Snippet 3-17 illustrates the use of the populationBasis extension for an non-pat
     {
       "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis",
       "valueCode": "Encounter"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis",
+      "valueDataRequirement": 
+      {
+         "type": "Encounter",  
+         "profile": 
+         [
+            "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
+         ]
+      }
     }
   ]
 ```
