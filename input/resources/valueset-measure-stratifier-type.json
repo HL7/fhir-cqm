@@ -1,0 +1,25 @@
+{
+  "resourceType": "ValueSet",
+  "id": "measure-stratifier-type",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+    ]
+  },
+  "url": "http://terminology.HL7.org/ValueSet/measure-stratifier-type",
+  "version": "1.0.0",
+  "name": "MeasureStratifierType",
+  "title": "Measure Stratifier Type",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-06-24T23:21:03-06:00",
+  "publisher": "Clinical Quality Information Workgroup",
+  "description": "Identifier subgroups in a population for measuring purposes.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.HL7.org/CodeSystem/measure-stratifier-type"
+      }
+    ]
+  }
+}

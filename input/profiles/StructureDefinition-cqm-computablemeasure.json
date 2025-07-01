@@ -20,15 +20,15 @@
   ],
   "description": "The CQM Computable Measure Profile describes minimum expectations for a computable electronic Quality Measure (QM), including the use of a computable library. For more information on the usage of this profile, refer to the Profiles and Packaging pages in this implementation guide. Implementations SHOULD support using the `id` elements of group, population, stratifier, and supplementalData as a backwards-compatible mechanism for linking between Measure and MeasureReport",
   "jurisdiction": [
-      {
-        "coding": [
-          {
-            "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
-            "code": "001"
-          }
-        ]
-      }
-    ],
+    {
+      "coding": [
+        {
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "001"
+        }
+      ]
+    }
+  ],
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -85,7 +85,7 @@
             "key" : "comp-4",
             "severity" : "error",
             "human" : "If scoring is specified on the root and the scoring type is 'proportion','ratio', or 'continuous-variable' then the improvementNotation element is required on the root.",
-			"expression" : "scoring.exists() and (scoring.coding.code in ('proportion' | 'ratio' | 'continuous-variable')) implies improvementNotation.exists()"
+            "expression" : "scoring.exists() and (scoring.coding.code in ('proportion' | 'ratio' | 'continuous-variable')) implies improvementNotation.exists()"
           },
           {
             "key" : "comp-5",
@@ -172,7 +172,7 @@
           {
             "code" : "Extension",
             "profile" : [
-             "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoringPrecision"
+              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoringPrecision"
             ]
           }
         ]
@@ -186,7 +186,7 @@
         "min" : 0,
         "max" : "1",
         "mustSupport" : true,
-               "binding" : {
+        "binding" : {
           "strength" : "extensible",
           "valueSet" : "http://hl7.org/fhir/uv/cqm/ValueSet/subject-type"
         }
@@ -326,7 +326,7 @@
           {
             "code" : "Extension",
             "profile" : [
-               "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring"
+              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring"
             ]
           }
         ],
@@ -347,7 +347,7 @@
           {
             "code" : "Extension",
             "profile" : [
-               "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoringUnit"
+              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoringUnit"
             ]
           }
         ],
@@ -413,7 +413,7 @@
           {
             "code" : "Extension",
             "profile" : [
-             "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-type"
+              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-type"
             ]
           }
         ],
@@ -451,7 +451,7 @@
           {
             "code" : "Extension",
             "profile" : [
-             "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-rateAggregation"
+              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-rateAggregation"
             ]
           }
         ],
@@ -470,7 +470,7 @@
           {
             "code" : "Extension",
             "profile" : [
-               "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-improvementNotation"
+              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-improvementNotation"
             ]
           }
         ],
@@ -537,7 +537,7 @@
           {
             "code" : "Extension",
             "profile" : [
-               "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-appliesTo"
+              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-appliesTo"
             ]
           }
         ],
@@ -560,9 +560,29 @@
         "mustSupport": true
       },
       {
-        "id" : "Measure.group.stratifier.code",
-        "path" : "Measure.group.stratifier.code",
-        "mustSupport" : true
+        "id": "Measure.group.stratifier.extension:valueSet",
+        "path": "Measure.group.stratifier.extension",
+        "sliceName": "valueSet",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-valueSet"
+            ]
+          }
+        ],
+        "mustSupport": false
+      },
+      {
+        "id": "Measure.group.stratifier.code",
+        "path": "Measure.group.stratifier.code",
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://terminology.HL7.org/ValueSet/measure-stratifier-type"
+        }
       },
       {
         "id" : "Measure.group.stratifier.description",
@@ -592,9 +612,29 @@
         "mustSupport": true
       },
       {
-        "id" : "Measure.group.stratifier.component.code",
-        "path" : "Measure.group.stratifier.component.code",
-        "mustSupport" : true
+        "id": "Measure.group.stratifier.component.extension:valueSet",
+        "path": "Measure.group.stratifier.component.extension",
+        "sliceName": "valueSet",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-valueSet"
+            ]
+          }
+        ],
+        "mustSupport": false
+      },
+      {
+        "id": "Measure.group.stratifier.component.code",
+        "path": "Measure.group.stratifier.component.code",
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://terminology.HL7.org/ValueSet/measure-stratifier-type"
+        }
       },
       {
         "id" : "Measure.group.stratifier.component.description",
@@ -624,9 +664,25 @@
         "mustSupport": true
       },
       {
-        "id" : "Measure.supplementalData.code",
-        "path" : "Measure.supplementalData.code",
-        "mustSupport" : true
+        "id": "Measure.supplementalData.extension:valueSet",
+        "path": "Measure.supplementalData.extension",
+        "sliceName": "valueSet",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-valueSet"
+            ]
+          }
+        ],
+        "mustSupport": false
+      },
+      {
+        "id": "Measure.supplementalData.code",
+        "path": "Measure.supplementalData.code",
+        "mustSupport": true
       },
       {
         "id" : "Measure.supplementalData.usage",

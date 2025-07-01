@@ -1,0 +1,60 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "MeasureStratifierAgesExample",
+  "id": "measure-stratifier-ages-example",
+  "title": "Measure Stratifier Ages Example",
+  "version": "1.0.0",
+  "url": "http://hl7.org/fhir/uv/cqm/CodeSystem/measure-stratifier-ages-example",
+  "experimental": false,
+  "description": "Age ranges based on WHO definitions.",
+  "caseSensitive": true,
+  "concept": [
+    {
+      "code": "under-7d",
+      "display": "Early Neonatal",
+      "definition": "Age less than 7 days old."
+    },
+    {
+      "code": "7to27d",
+      "display": "Late Neonatal",
+      "definition": "Age between 7 and 27 days old."
+    },
+    {
+      "code": "under-28d",
+      "display": "Neonatal",
+      "definition": "Age less than 28 days old."
+    },
+    {
+      "code": "under-1y",
+      "display": "Infant",
+      "definition": "Age less than 1 year old."
+    },
+    {
+      "code": "1to3y",
+      "display": "Toddler",
+      "definition": "Age 1 to 3 years old."
+    },
+    {
+      "code": "1to9y",
+      "display": "Child",
+      "definition": "Age 1 to 9 years old (up to 14/19 in some)."
+    },
+    {
+      "code": "10to19y",
+      "display": "Adolescent",
+      "definition": "Age 10 to 19 years old."
+    },
+    {
+      "code": "20plusy",
+      "display": "Adult",
+      "definition": "Age greater than 19 years old."
+    },
+    {
+      "code": "60plusy",
+      "display": "Older Adult",
+      "definition": "Age greater than 59 years old."
+    }
+  ]
+}

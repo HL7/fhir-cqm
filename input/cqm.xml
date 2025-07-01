@@ -360,6 +360,14 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Measure/age-stratified-example"/>
+      </reference>
+      <name value="Age Stratified Example"/>
+      <description value="This example illustrates the use of codesystem and valueset measure-stratifier-ages-example."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Device/software-system-example"/>
       </reference>
       <name value="Device - Software System Example"/>

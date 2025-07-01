@@ -1,0 +1,30 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "MeasureStratifierType",
+  "id": "measure-stratifier-type",
+  "title": "Measure Stratifier Type",
+  "version": "1.0.0",
+  "url": "http://terminology.HL7.org/CodeSystem/measure-stratifier-type",
+  "experimental": false,
+  "description": "Identifier subgroups in a population for measuring purposes.",
+  "caseSensitive": true,
+  "concept": [
+    {
+      "code": "age-range",
+      "display": "Age range",
+      "definition": "A range of ages."
+    },
+    {
+      "code": "region",
+      "display": "Region",
+      "definition": "A geographical area."
+    },
+    {
+      "code": "facility",
+      "display": "Facility",
+      "definition": "A specific location."
+    }
+  ]
+}
