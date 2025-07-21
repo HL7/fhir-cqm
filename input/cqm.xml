@@ -53,7 +53,7 @@
   <dependsOn id="cql">
     <uri value="http://hl7.org/fhir/uv/cql/ImplementationGuide/hl7.fhir.uv.cql"/>
      <packageId value="hl7.fhir.uv.cql"/>
-     <version value="1.0.0"/>
+     <version value="2.0.0"/>
   </dependsOn>
   <definition>
     <!--

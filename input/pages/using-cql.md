@@ -116,7 +116,7 @@ using FHIR version '4.0.1'
 
 Snippet 4-5: Data Model line from [EXM146.cql](Library-EXM146-FHIR.html#cql-content)
 
-For additional information on conformance requirements for the use of Model Information as part of FHIR Knowledge Artifacts that make use of CQL, reference the Using CQL with FHIR IG's section on [Using ModelInfo](http://hl7.org/fhir/uv/cql/STU1/using-modelinfo.html)
+For additional information on conformance requirements for the use of Model Information as part of FHIR Knowledge Artifacts that make use of CQL, reference the Using CQL with FHIR IG's section on [Using ModelInfo](http://hl7.org/fhir/uv/cql/using-modelinfo.html)
 
 ### Code Systems
 {: #code-systems}
