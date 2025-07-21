@@ -63,10 +63,18 @@
         "id": "Extension",
         "path": "Extension",
         "short": "What type of population",
+        "constraint" : [
+          {
+            "key": "popBasis-1",
+            "severity": "error",
+            "human": "If DataRequirement.type is present, it may only contain the elements 'profile' and 'codeFilter'.",
+            "expression": "value.exists() and value.is(DataRequirement) implies (  value.as(DataRequirement).type.exists() and  value.as(DataRequirement).limit.empty() and  value.as(DataRequirement).sort.empty() and  value.as(DataRequirement).dateFilter.empty() and  value.as(DataRequirement).subject.empty() and  value.as(DataRequirement).mustSupport.empty())"
+          }
+        ],
         "definition": "The population basis specifies the type of elements in the population. For a subject-based measure, this is boolean (because the subject and the population basis are the same, and the population criteria define yes/no values for each individual in the population). For measures that have a population basis that is different than the subject, this element specifies the type of the population basis. For example, an encounter-based measure has a subject of Patient and a population basis of Encounter, and the population criteria all return lists of Encounters.",
-        "comment": "In Health Quality Measure Format, this was referred to as the Item Count metadata attribute.",
+        "comment": "In Health Quality Measure Format, this was referred to as the Item Count metadata attribute. If the populationBasis is specified as a data requirement, the type SHALL be present, profile and codeFilter MAY be present, and no other elements are allowed. This usage allows population basis to be stated with more specificity, e.g. CT Scans, rather than just DiagnosticReport.",
         "min": 0,
-        "max": "1"
+        "max": "*"
       },
       {
         "id": "Extension.url",
@@ -84,6 +92,9 @@
         "type": [
           {
             "code": "code"
+          },
+          {
+            "code": "DataRequirement"
           }
         ],
         "binding": {

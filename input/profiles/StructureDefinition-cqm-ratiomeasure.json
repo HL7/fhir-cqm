@@ -140,7 +140,7 @@
         "sliceName": "populationBasis",
         "short": "Allows the populationBasis for that population to be overridden. If not present, the populationBasis of the measure (or group) is used. If present, it specifies the population basis for all the expressions that use it as the initial population in the ratio measure.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "type": [
           {
             "code": "Extension",
