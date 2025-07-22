@@ -5663,6 +5663,83 @@
                   "response": []
                 },
                 {
+                  "name": "ValueSet 11.1.1 GET Expand on Id (Latest) with expansion profile using manifest",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "//SOT@## ValueSet 11 GET @SOT",
+                          "// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20240105 @SOT",
+                          "pm.test(\"Response status code is 200\", function () {\r",
+                          "    pm.expect(pm.response.code).to.equal(200);\r",
+                          "});\r",
+                          "\r",
+                          "// profile\r",
+                          "pm.test(\"Executable profile is present in meta\", function () {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
+                          "    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+                          "       console.log(responseData);",
+                          "    }",
+                          "});\r",
+                          "\r",
+                          "// url\r",
+                          "pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005\", function () {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.url).equal(\"http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005\");\r",
+                          "});\r",
+                          "\r",
+                          "// version\r",
+                          "// NOTE: This is based on latest as of this test date\r",
+                          "pm.test(\"Version is 20240105\", function () {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.version).to.equal(\"20240105\", \"Invalid version\");\r",
+                          "});\r",
+                          "\r",
+                          "pm.test(\"Expansion is present\", function () {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.expansion).exist;\r",
+                          "});\r",
+                          "\r",
+                          "pm.test(\"Code is present\", function() {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.expansion.contains.find(function(obj) { return obj.system == \"http://snomed.info/sct\" && obj.code == \"14693006\" })).exist;\r",
+                          "});",
+                          "// as of 7/16/2025 getting \"Request was rejected. Either the input specification contains invalid elements, or the server failed to process it due to internal errors.\""
+                        ],
+                        "type": "text/javascript",
+                        "packages": {}
+                      }
+                    }
+                  ],
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005/$expand?manifest=http://cts.nlm.nih.gov/fhir/Library/most-recent-code-system-versionsin-vsac-with-codes-in-active-status",
+                      "host": [
+                        "{{SERVER_URL}}ValueSet"
+                      ],
+                      "path": [
+                        "2.16.840.1.113883.3.464.1003.198.12.1005",
+                        "$expand"
+                      ],
+                      "query": [
+                        {
+                          "key": "manifest",
+                          "value": "http://cts.nlm.nih.gov/fhir/Library/most-recent-code-system-versionsin-vsac-with-codes-in-active-status"
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
+                },                {
                   "name": "ValueSet 11.2 GET Expand On Version Id",
                   "event": [
                     {
@@ -9265,6 +9342,19 @@
                       "",
                       "    pm.expect(responseData.codeSystem).to.exist.and.to.not.be.empty;",
                       "",
+                      "});",
+                      "pm.test(\"Check SNOMED version is a string that equals http://snomed.info/sct/731000124108/version/20250301\", function () {",
+                      "    const responseData = pm.response.json();",
+                      "    const codeSystems = responseData.codeSystem;",
+                      "    let found = false;",
+                      "    codeSystems.forEach(cs => {",
+                      "        if (cs.uri === \"http://snomed.info/sct\") {",
+                      "            pm.expect(cs.version).to.be.a(\"string\");",
+                      "            pm.expect(cs.version).to.eql(\"http://snomed.info/sct/731000124108/version/20250301\");",
+                      "            found = true;",
+                      "        }",
+                      "    });",
+                      "    pm.expect(found, \"Expected SNOMED uri not found in codeSystem array\").to.be.true;",
                       "});"
                     ],
                     "type": "text/javascript"
