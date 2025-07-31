@@ -136,7 +136,7 @@
       "relatedArtifact": [ {
         "type": "depends-on",
         "display": "Library FHIRHelpers",
-        "resource": "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
+        "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.1"
       }, {
         "type": "depends-on",
         "display": "Value set Screening Procedure Types",
@@ -230,7 +230,7 @@
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
       "code": "venue",
-      "display": "Venue"
+      "display": "Clinical Venue"
     },
     "valueCodeableConcept": {
       "coding": [{
@@ -244,6 +244,9 @@
   "group": [ {
     "id": "group-1",
     "extension": [ {
+      "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId",
+      "valueString": "Patients"
+    },{
       "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis",
       "valueCode": "Patient"
     }, {
@@ -281,6 +284,10 @@
       "text": "Patients"
     },
     "population": [ {
+      "extension": [ {
+        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+        "valueString": "primary-multirateexample-initial-population"
+      }],
       "code": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/measure-population",
@@ -293,6 +300,10 @@
         "expression": "Patients"
       }
     }, {
+      "extension": [ {
+        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+        "valueString": "primary-multirateexample-patients"
+      }],
       "code": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/measure-population",
@@ -308,6 +319,10 @@
       "extension": [ {
         "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-aggregateMethod",
         "valueCode": "sum"
+      },
+      {
+        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+        "valueString": "primary-multirateexample-tonumber"
       } ],
       "code": {
         "coding": [ {
@@ -324,6 +339,9 @@
   }, {
     "id": "group-2",
     "extension": [ {
+      "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId",
+      "valueString": "Practitioners"
+    },{
       "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis",
       "valueCode": "PractitionerRole"
     }, {
@@ -361,6 +379,10 @@
       "text": "Practitioners"
     },
     "population": [ {
+      "extension": [ {
+        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+        "valueString": "primary-multirateexample-initial-population"
+      }],
       "code": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/measure-population",
@@ -373,6 +395,10 @@
         "expression": "Practitioners"
       }
     }, {
+      "extension": [ {
+        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+        "valueString": "primary-multirateexample-measure-population"
+      }],
       "code": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/measure-population",
@@ -388,6 +414,10 @@
       "extension": [ {
         "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-aggregateMethod",
         "valueCode": "sum"
+      },
+      {
+        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+        "valueString": "primary-multirateexample-measure-observation"
       } ],
       "code": {
         "coding": [ {
@@ -404,6 +434,9 @@
   }, {
     "id": "group-3",
     "extension": [ {
+      "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId",
+      "valueString": "Beds"
+    },{
       "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis",
       "valueCode": "Device"
     }, {
@@ -441,6 +474,10 @@
       "text": "Beds"
     },
     "population": [ {
+      "extension": [ {
+        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+        "valueString": "primary-multirateexample-beds-initial-population"
+      }],
       "code": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/measure-population",
@@ -453,6 +490,10 @@
         "expression": "Beds"
       }
     }, {
+      "extension": [ {
+        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+        "valueString": "primary-multirateexample-beds-measure-population"
+      }],
       "code": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/measure-population",
@@ -466,6 +507,9 @@
       }
     }, {
       "extension": [ {
+        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+        "valueString": "primary-multirateexample-beds-measure-observation-population"
+      },{
         "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-aggregateMethod",
         "valueCode": "sum"
       } ],
@@ -484,6 +528,9 @@
   }, {
     "id": "group-4",
     "extension": [ {
+      "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId",
+      "valueString": "Screening-procedures"
+    },{
       "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis",
       "valueCode": "Procedure"
     }, {
@@ -521,6 +568,10 @@
       "text": "Screening Procedures"
     },
     "population": [ {
+      "extension": [ {
+        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+        "valueString": "primary-multirateexample-procedures-initial-population"
+      }],
       "code": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/measure-population",
@@ -533,6 +584,10 @@
         "expression": "Procedures"
       }
     }, {
+      "extension": [ {
+        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+        "valueString": "primary-multirateexample-procedures-measure-population"
+      }],
       "code": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/measure-population",
@@ -545,7 +600,11 @@
         "expression": "Procedures"
       }
     }, {
-      "extension": [ {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+          "valueString": "primary-multirateexample-procedures-measure-observation-population"
+        },{
         "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-aggregateMethod",
         "valueCode": "sum"
       } ],
@@ -564,6 +623,9 @@
   }, {
     "id": "group-5",
     "extension": [ {
+      "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId",
+      "valueString": "patient-screenings"
+    },{
       "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis",
       "valueCode": "Patient"
     }, {
@@ -601,6 +663,10 @@
       "text": "Patients that recevied screenings"
     },
     "population": [ {
+      "extension": [ {
+        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+        "valueString": "primary-multirateexample-patients-initial-population"
+      }],
       "code": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/measure-population",
@@ -613,6 +679,10 @@
         "expression": "Initial Population"
       }
     }, {
+      "extension": [ {
+        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+        "valueString": "primary-multirateexample-patients-denominator"
+      }],
       "code": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/measure-population",
@@ -625,6 +695,10 @@
         "expression": "Denominator"
       }
     }, {
+      "extension": [ {
+        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+        "valueString": "primary-multirateexample-patients-numerator"
+      }],
       "code": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/measure-population",
@@ -640,6 +714,9 @@
   }, {
     "id": "group-6",
     "extension": [ {
+      "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId",
+      "valueString": "weighted-average-capacity"
+    },{
       "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositeScoring",
       "valueCodeableConcept": {
         "coding": [ {

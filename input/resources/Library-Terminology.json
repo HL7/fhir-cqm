@@ -25,7 +25,7 @@
   }, {
     "type": "depends-on",
     "display": "Library FHIRHelpers",
-    "resource": "http://fhir.org/guides/common/Library/FHIRHelpers|4.0.1"
+    "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.1"
   }, {
     "type": "depends-on",
     "display": "Code system SNOMED CT:2017-09",

@@ -79,7 +79,7 @@
                     {
                         "type": "depends-on",
                         "display": "Library FHIRHelpers",
-                        "resource": "http://fhir.org/guides/cqf/Library/FHIRHelpers|4.0.1"
+                        "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.1"
                     },
                     {
                         "type": "depends-on",
@@ -208,7 +208,7 @@
                     {
                         "type": "depends-on",
                         "display": "Library FHIRHelpers",
-                        "resource": "http://fhir.org/guides/cqf/Library/FHIRHelpers|4.0.1"
+                        "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.1"
                     },
                     {
                         "type": "depends-on",
@@ -433,7 +433,7 @@
                     {
                         "type": "depends-on",
                         "display": "Library FHIRHelpers",
-                        "resource": "http://fhir.org/guides/cqf/Library/FHIRHelpers|4.0.1"
+                        "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.1"
                     },
                     {
                         "type": "depends-on",
@@ -571,7 +571,7 @@
                     {
                         "type": "depends-on",
                         "display": "Library FHIRHelpers",
-                        "resource": "http://fhir.org/guides/cqf/Library/FHIRHelpers|4.0.1"
+                        "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.1"
                     },
                     {
                         "type": "depends-on",
@@ -1434,7 +1434,7 @@
                             {
                                 "type": "depends-on",
                                 "display": "Library FHIRHelpers",
-                                "resource": "http://fhir.org/guides/cqf/Library/FHIRHelpers|4.0.1"
+                                "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.1"
                             },
                             {
                                 "type": "depends-on",

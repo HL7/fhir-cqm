@@ -49,7 +49,7 @@
   }, {
     "type": "depends-on",
     "display": "Library FHIRHelpers",
-    "resource": "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
+    "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.1"
   }, {
     "type": "depends-on",
     "display": "Library Hospice",
@@ -66,14 +66,6 @@
     "type": "depends-on",
     "display": "Library SDE",
     "resource": "http://hl7.org/fhir/uv/cqm/Library/SupplementalDataElements"
-  }, {
-    "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
-  }, {
-    "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
   }, {
     "type": "depends-on",
     "display": "Library Global",

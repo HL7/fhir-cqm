@@ -49,15 +49,11 @@
   }, {
     "type": "depends-on",
     "display": "Library FHIRHelpers",
-    "resource": "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
+    "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.1"
   }, {
     "type": "depends-on",
     "display": "Library Global",
     "resource": "http://hl7.org/fhir/uv/cqm/Library/MATGlobalCommonFunctions|5.0.000"
-  }, {
-    "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
   }, {
     "type": "depends-on",
     "display": "Value set Intensive Care Unit",
