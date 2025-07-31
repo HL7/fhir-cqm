@@ -6493,6 +6493,83 @@
                   "response": []
                 },
                 {
+                  "name": "ValueSet 12.1.1 POST Expand on Id (Latest) with expansion profile using manifest",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "//SOT@## ValueSet 12.1.1 POST @SOT",
+                          "// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.11.1090 @SOT",
+                          "pm.test(\"Response status code is 200\", function () {\r",
+                          "    pm.expect(pm.response.code).to.equal(200);\r",
+                          "});\r",
+                          "\r",
+                          "// profile\r",
+                          "pm.test(\"Executable profile is present in meta\", function () {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
+                          "    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+                          "       console.log(responseData);",
+                          "    }",
+                          "});\r",
+                          "\r",
+                          "// url\r",
+                          "pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.11.1090\", function () {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.url).equal(\"http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.11.1090\");\r",
+                          "});\r",
+                          "\r",
+                          "// version\r",
+                          "// NOTE: This is based on latest as of this test date\r",
+                          "pm.test(\"Version is 20180310\", function () {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.version).to.equal(\"20180310\", \"Invalid version\");\r",
+                          "});\r",
+                          "\r",
+                          "pm.test(\"Expansion is present\", function () {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.expansion).exist;\r",
+                          "});\r",
+                          "\r",
+                          "pm.test(\"Code is present\", function() {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.expansion.contains.find(function(obj) { return obj.system == \"http://hl7.org/fhir/sid/icd-10-cm\" && obj.code == \"M45.7\" })).exist;\r",
+                          "});"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {}
+                      }
+                    }
+                  ],
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.464.1003.113.11.1090/$expand?manifest=http://cts.nlm.nih.gov/fhir/Library/most-recent-code-system-versionsin-vsac-with-codes-in-active-status",
+                      "host": [
+                        "{{SERVER_URL}}ValueSet"
+                      ],
+                      "path": [
+                        "2.16.840.1.113883.3.464.1003.113.11.1090",
+                        "$expand"
+                      ],
+                      "query": [
+                        {
+                          "key": "manifest",
+                          "value": "http://cts.nlm.nih.gov/fhir/Library/most-recent-code-system-versionsin-vsac-with-codes-in-active-status"
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
                   "name": "ValueSet 12.2 POST Expand With Active Only",
                   "event": [
                     {
