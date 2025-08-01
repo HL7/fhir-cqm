@@ -24,6 +24,7 @@
 * **Applied**: Not all types of measures are represented in the current Measure Type ValueSet ([FHIR-51242](https://jira.hl7.org/browse/FHIR-51242)) Applied ([here](StructureDefinition-cqm-type.html)))
 * **Applied**: Support different bases for ratio measures ([FHIR-51380](https://jira.hl7.org/browse/FHIR-51380)) Applied ([here](measure-conformance.html))
 * **Applied**: Allow specification of a ValueSet for stratifiers and supplemental data ([FHIR-49756](https://jira.hl7.org/browse/FHIR-49756)) Applied ([here](StructureDefinition-cqm-computablemeasure.html)), ([here](StructureDefinition-cqm-valueset.html)), ([here](CodeSystem-iso-8601-derived-periods.html)), ([here](ValueSet-iso-8601-derived-periods.html)), ([here](valueSet-measure-stratifier-type.html)), ([here](codesystem-measure-stratifier-type.html)), ([here](extensions.html)), ([here](Library-AgeStratifiedExample.html)), and ([here](measure-age-stratified-example.html))
+* **Applied**: Additional metadata for measure report | quality statement ([FHIR-20699](https://jira.hl7.org/browse/FHIR-20699)) Applied ([here](StructureDefinition-cqm-publishablemeasure.html)), ([here](StructureDefinition-cqm-limitations.html)), ([here](StructureDefinition-cqm-trendingIssues.html)), and ([here](Measure-measure-cqm-publishable-example.html))
   
 
 ### STU1 Ballot for FHIR R4 (v1.0.0)

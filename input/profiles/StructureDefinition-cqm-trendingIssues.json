@@ -1,0 +1,96 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cqm-trendingIssues",
+  "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-trendingIssues",
+  "version": "1.0.0",
+  "name": "CQMTrendingIssues",
+  "title": "CQM Trending Issues",
+  "status": "active",
+  "experimental": false,
+  "publisher": "Clinical Quality Information WG",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cqi/index.cfm"
+        }
+      ]
+    }
+  ],
+  "description": "identifies what issues might affect the interpretation of trending results, including changes in geographic coverage, data quality, coding standards and classification changes (for example, a new ICD standard)",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "001"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "objimpl",
+      "uri": "http://hl7.org/fhir/object-implementation",
+      "name": "Object Implementation Information"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Measure"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "definition": "identifies what issues might affect the interpretation of trending results.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-trendingIssues"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "markdown"
+          }
+        ]
+      }
+    ]
+  }
+}

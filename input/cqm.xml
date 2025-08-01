@@ -352,6 +352,14 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Measure/measure-cqm-publishable-example"/>
+      </reference>
+      <name value="MeasureCQMPublishableExample"/>
+      <description value="A measure to demonstrate limitations and trendingIssues extensions."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Measure/Terminology-FHIR"/>
       </reference>
       <name value="Terminology FHIR"/>
