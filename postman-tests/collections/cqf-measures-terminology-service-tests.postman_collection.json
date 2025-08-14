@@ -4353,7 +4353,7 @@
           "description": "Tests version-independent and version-specific read. Both should result in the ValueSet resource directly (not in a bundle). The version-independent read should provide the latest active version of the value set, the version-specific should provide the expected version of the value set."
         },
         {
-          "name": "ValueSet 7.2B Read Version-Specific - Does not include version in compose/include",
+          "name": "ValueSet 7.2B Read Version-Specific",
           "event": [
             {
               "listen": "test",
@@ -5663,6 +5663,83 @@
                   "response": []
                 },
                 {
+                  "name": "ValueSet 11.1.1 GET Expand on Id (Latest) with expansion profile using manifest",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "//SOT@## ValueSet 11 GET @SOT",
+                          "// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20240105 @SOT",
+                          "pm.test(\"Response status code is 200\", function () {\r",
+                          "    pm.expect(pm.response.code).to.equal(200);\r",
+                          "});\r",
+                          "\r",
+                          "// profile\r",
+                          "pm.test(\"Executable profile is present in meta\", function () {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
+                          "    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+                          "       console.log(responseData);",
+                          "    }",
+                          "});\r",
+                          "\r",
+                          "// url\r",
+                          "pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005\", function () {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.url).equal(\"http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005\");\r",
+                          "});\r",
+                          "\r",
+                          "// version\r",
+                          "// NOTE: This is based on latest as of this test date\r",
+                          "pm.test(\"Version is 20240105\", function () {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.version).to.equal(\"20240105\", \"Invalid version\");\r",
+                          "});\r",
+                          "\r",
+                          "pm.test(\"Expansion is present\", function () {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.expansion).exist;\r",
+                          "});\r",
+                          "\r",
+                          "pm.test(\"Code is present\", function() {\r",
+                          "    const responseData = pm.response.json();\r",
+                          "\r",
+                          "    pm.expect(responseData.expansion.contains.find(function(obj) { return obj.system == \"http://snomed.info/sct\" && obj.code == \"14693006\" })).exist;\r",
+                          "});",
+                          "// as of 7/16/2025 getting \"Request was rejected. Either the input specification contains invalid elements, or the server failed to process it due to internal errors.\""
+                        ],
+                        "type": "text/javascript",
+                        "packages": {}
+                      }
+                    }
+                  ],
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005/$expand?manifest=http://cts.nlm.nih.gov/fhir/Library/most-recent-code-system-versionsin-vsac-with-codes-in-active-status",
+                      "host": [
+                        "{{SERVER_URL}}ValueSet"
+                      ],
+                      "path": [
+                        "2.16.840.1.113883.3.464.1003.198.12.1005",
+                        "$expand"
+                      ],
+                      "query": [
+                        {
+                          "key": "manifest",
+                          "value": "http://cts.nlm.nih.gov/fhir/Library/most-recent-code-system-versionsin-vsac-with-codes-in-active-status"
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
+                },                {
                   "name": "ValueSet 11.2 GET Expand On Version Id",
                   "event": [
                     {
@@ -6487,6 +6564,176 @@
                       ],
                       "path": [
                         "$expand"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "ValueSet 12.1.1 POST Expand on Id (Latest) with expansion profile using manifest",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "//  NOTE: this uses a PUT right now because if the test is run once then the manifest exists on the server and a POST gives an error because of that",
+
+                          "//SOT@## ValueSet 12.1.1 POST @SOT",
+                          "// Based on source of truth: SOT@ TBD @SOT",
+                          " const responseData = pm.response.json();\r",
+                          " const response_Code = pm.response.code;\r",
+                          " if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+                          "    console.log(responseData);",
+                          " }",
+                          "// 1.1 successful POST",
+                          "pm.test(\"Response status code is 201 create\", function () {\r",
+                          "    pm.expect(response_Code).to.equal(201);\r",
+                          "});\r",
+                          "\r",
+                          "// 1.1.1 location header \r",
+                          "pm.test(\"location header is https://uat-cts.nlm.nih.gov/fhir/Library/ecqm-fhir-update-2025\", function () {\r",
+                          "    pm.expect(pm.response.headers.get(\"Content-Location\")).equals(\"https://uat-cts.nlm.nih.gov/fhir/Library/ecqm-fhir-update-2025\");\r",
+                          "});\r",
+                          "\r",
+                          "// 1.2 access by ID \r",
+                          "// Send follow-up GET request to verify Library resource",
+                          "pm.sendRequest({",
+                          "  url: pm.variables.replaceIn(\"{{SERVER_URL}}\") + \"Library/ecqm-fhir-update-2025\",",
+                          "  method: 'GET',",
+                          "  header: {",
+                          "    'Accept': 'application/fhir+json'",
+                          "  }",
+                          "}, function (err, res) {",
+                          "  if (err) {",
+                          "    console.error('Request failed:', err);",
+                          "  } else {",
+                          "      const jsonData = res.json();",
+                          "    pm.test(\"1.2 access by ID \", function () {",
+                          "      pm.expect(res.code).to.eql(200);",
+                          "      pm.expect(jsonData.resourceType).to.eql(\"Library\");",
+                          "      pm.expect(jsonData.id).to.eql(\"ecqm-fhir-update-2025\");",
+                          "      pm.expect(jsonData.meta.profile).to.include(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\");",
+                          "    });",
+                          "// 1.3 expansion profile \r",
+                          "    pm.test(\"Expansion profile is created and correct\", function () {",
+                          "      pm.expect(jsonData.contained).exist;",
+                          "      pm.expect(jsonData.contained[0].resourceType).to.eql(\"Parameters\");",
+                          "      pm.expect(jsonData.contained[0].id).to.eql(\"exp-params\");",
+                          "    });",
+                          "  }",
+                          "});",
+                          "// 1.4 expansion \r",
+                          "// ",
+                          "pm.sendRequest({",
+                          "  url: pm.variables.replaceIn(\"{{SERVER_URL}}\") + \"ValueSet/2.16.840.1.113762.1.4.1110.68/$expand?manifest=http://cts.nlm.nih.gov/fhir/Library/ecqm-fhir-update-2025\",",
+                          "  method: 'GET',",
+                          "  header: {",
+                          "    'Accept': 'application/fhir+json'",
+                          "  }",
+                          "}, function (err, res) {",
+                          "  if (err) {",
+                          "    console.error('Request failed:', err);",
+                          "  } else {",
+                          "      const jsonData = res.json();",
+                          "}",
+                          "});"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {}
+                      }
+                    }
+                  ],
+                  "request": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n\"resourceType\": \"Library\",\n\"id\": \"ecqm-fhir-update-2025\",\n\"meta\": {\n\"profile\": [\n\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\"\n]\n},\n\"contained\": [\n{\n\"resourceType\": \"Parameters\",\n\"id\": \"exp-params\",\n\"parameter\": [\n{\n\"name\": \"activeOnly\",\n\"valueBoolean\": true\n},\n{\n\"name\": \"includeDraft\",\n\"valueBoolean\": false\n},\n{\n\"name\": \"system-version\",\n\"valueCanonical\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0\",\n\"_valueCanonical\": {\n\"extension\": [\n{\n\"url\": \"http://hl7.org/fhir/StructureDefinition/display\",\n\"valueString\": \"ActCode, 9.0.0\"\n}\n]\n}\n}\n]\n}\n],\n\"extension\": [\n{\n\"url\": \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-partOf\",\n\"valueCanonical\": \"http://hl7.org/fhir/us/cqfmeasures/Library/ecqm-quality-program\"\n}\n],\n\"url\": \"http://cts.nlm.nih.gov/fhir/Library/ecqm-fhir-update-2025\",\n\"identifier\": [\n{\n\"use\": \"official\",\n\"system\": \"http://cts.nlm.nih.gov/fhir/cqi/ecqm/Library/Identifier\",\n\"value\": \"ecqm-fhir-update-2025\"\n}\n],\n\"version\": \"1.0.0\",\n\"name\": \"eCQMFHIRUpdate2025\",\n\"title\": \"eCQM FHIR Update 2025\",\n\"status\": \"draft\",\n\"experimental\": false,\n\"type\": {\n\"coding\": [\n{\n\"system\": \"http://terminology.hl7.org/CodeSystem/library-type\",\n\"code\": \"asset-collection\"\n}\n]\n},\n\"date\": \"2025-07-25\",\n\"publisher\": \"Centers for Medicare and Medicaid Services (CMS)\",\n\"contact\": [\n{\n\"telecom\": [\n{\n\"system\": \"url\",\n\"value\": \"https://www.cms.gov/\"\n}\n]\n}\n],\n\"description\": \"eCQM FHIR Update 2025\",\n\"useContext\": [\n{\n\"code\": {\n\"system\": \"http://terminology.hl7.org/CodeSystem/usage-context-type\",\n\"code\": \"program\"\n},\n\"valueCodeableConcept\": {\n\"coding\": [\n{\n\"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n\"code\": \"ep-ec\",\n\"display\": \"EP/EC\"\n},\n{\n\"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n\"code\": \"eh-cah\",\n\"display\": \"EH/CAH\"\n}\n]\n}\n}\n],\n\"jurisdiction\": [\n{\n\"coding\": [\n{\n\"system\": \"urn:iso:std:iso:3166\",\n\"code\": \"US\"\n}\n]\n}\n]\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{SERVER_URL}}Library/ecqm-fhir-update-2025",
+                      "host": [
+                        "{{SERVER_URL}}Library/ecqm-fhir-update-2025"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "ValueSet 12.1.2 PUT modified manifest library",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "//SOT@## ValueSet 12.1.2 PUT modified manifest library @SOT",
+                          "// Based on source of truth: SOT@ TBD @SOT",
+                          "const responseData = pm.response.json();",
+                          "const response_Code = pm.response.code;",
+                          "if (pm.environment.get(\"VALUESET_DEBUG\") === true) {",
+                          "  console.log(responseData);",
+                          "}",
+                          "",
+                          "// successful PUT",
+                          "pm.test(\"Response status code is 200 and Library is valid\", function () {",
+                          "  pm.expect(response_Code).to.eql(200);",
+                          "  pm.expect(responseData.resourceType).to.eql(\"Library\");",
+                          "  pm.expect(responseData.id).to.eql(\"ecqm-fhir-update-2025\");",
+                          "  pm.expect(responseData.meta.profile).to.include(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\");",
+                          "  pm.expect(responseData.contained).to.exist;",
+                          "  pm.expect(responseData.contained[0].resourceType).to.eql(\"Parameters\");",
+                          "  pm.expect(responseData.contained[0].id).to.eql(\"exp-params\");",
+                          "});",
+                          "",
+                          "// 1.3 and 1.4 GET the Library by ID and recheck",
+                          "pm.sendRequest({",
+                          "  url: pm.variables.replaceIn(\"{{SERVER_URL}}\") + \"Library/ecqm-fhir-update-2025\",",
+                          "  method: 'GET',",
+                          "  header: {",
+                          "    'Accept': 'application/fhir+json'",
+                          "  }",
+                          "}, function (err, res) {",
+                          "  if (err) {",
+                          "    console.error('Request failed:', err);",
+                          "  } else {",
+                          "    const jsonData = res.json();",
+                          "    pm.test(\"Verify update actually happened\", function () {",
+                          "      pm.expect(jsonData.description).to.eql(\"eCQM FHIR Update 2025 updated for PUT test\");",
+                          "    });",
+                          "    pm.test(\"Expansion profile is present and correct\", function () {",
+                          "      pm.expect(jsonData.contained).to.exist;",
+                          "      pm.expect(jsonData.contained[0].resourceType).to.eql(\"Parameters\");",
+                          "      pm.expect(jsonData.contained[0].id).to.eql(\"exp-params\");",
+                          "    });",
+                          "  }",
+                          "});"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {}
+                      }
+                    }
+                  ],
+                  "request": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n\"resourceType\": \"Library\",\n\"id\": \"ecqm-fhir-update-2025\",\n\"meta\": {\n\"profile\": [\n\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\"\n]\n},\n\"contained\": [\n{\n\"resourceType\": \"Parameters\",\n\"id\": \"exp-params\",\n\"parameter\": [\n{\n\"name\": \"activeOnly\",\n\"valueBoolean\": true\n},\n{\n\"name\": \"includeDraft\",\n\"valueBoolean\": false\n},\n{\n\"name\": \"system-version\",\n\"valueCanonical\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0\",\n\"_valueCanonical\": {\n\"extension\": [\n{\n\"url\": \"http://hl7.org/fhir/StructureDefinition/display\",\n\"valueString\": \"ActCode, 9.0.0\"\n}\n]\n}\n}\n]\n}\n],\n\"extension\": [\n{\n\"url\": \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-partOf\",\n\"valueCanonical\": \"http://hl7.org/fhir/us/cqfmeasures/Library/ecqm-quality-program\"\n}\n],\n\"url\": \"http://cts.nlm.nih.gov/fhir/Library/ecqm-fhir-update-2025\",\n\"identifier\": [\n{\n\"use\": \"official\",\n\"system\": \"http://cts.nlm.nih.gov/fhir/cqi/ecqm/Library/Identifier\",\n\"value\": \"ecqm-fhir-update-2025\"\n}\n],\n\"version\": \"1.0.0\",\n\"name\": \"eCQMFHIRUpdate2025\",\n\"title\": \"eCQM FHIR Update 2025\",\n\"status\": \"draft\",\n\"experimental\": false,\n\"type\": {\n\"coding\": [\n{\n\"system\": \"http://terminology.hl7.org/CodeSystem/library-type\",\n\"code\": \"asset-collection\"\n}\n]\n},\n\"date\": \"2025-07-25\",\n\"publisher\": \"Centers for Medicare and Medicaid Services (CMS)\",\n\"contact\": [\n{\n\"telecom\": [\n{\n\"system\": \"url\",\n\"value\": \"https://www.cms.gov/\"\n}\n]\n}\n],\n\"description\": \"eCQM FHIR Update 2025 updated for PUT test\",\n\"useContext\": [\n{\n\"code\": {\n\"system\": \"http://terminology.hl7.org/CodeSystem/usage-context-type\",\n\"code\": \"program\"\n},\n\"valueCodeableConcept\": {\n\"coding\": [\n{\n\"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n\"code\": \"ep-ec\",\n\"display\": \"EP/EC\"\n},\n{\n\"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n\"code\": \"eh-cah\",\n\"display\": \"EH/CAH\"\n}\n]\n}\n}\n],\n\"jurisdiction\": [\n{\n\"coding\": [\n{\n\"system\": \"urn:iso:std:iso:3166\",\n\"code\": \"US\"\n}\n]\n}\n]\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{SERVER_URL}}Library/ecqm-fhir-update-2025",
+                      "host": [
+                        "{{SERVER_URL}}Library/ecqm-fhir-update-2025"
                       ]
                     }
                   },
@@ -8819,7 +9066,69 @@
         },
         {
           "name": "Quality Program 7 Package",
-          "item": []
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "//SOT@## Quality Program 7 Package @SOT",
+                  "// Based on FHIR R4 source of truth: SOT@ https://madie.cms.gov/Library/PCSDepressionScreenAndFollowUpFHIR @SOT",
+                  "// NOTE: all package operations are specific to a server. Different servers support packaging for different resources. To see possible resources: https://build.fhir.org/ig/HL7/crmi-ig/OperationDefinition-crmi-package.html",
+                  "// Description of the $package operation https://build.fhir.org/ig/HL7/crmi-ig/distribution.html",
+                  "// As of 11/29/2024 the only server I have found that supports $package is the cqf-ruler",
+                  "\r",
+                  "pm.test(\"Response status code is 200\", function () {\r",
+                  "    pm.expect(pm.response.code).to.equal(200);\r",
+                  "    if (pm.environment.get(\"QUALITY_PROGRAM_DEBUG\") === true){",
+                  "    const responseData = pm.response.json();\r",
+                  "       console.log(responseData);",
+                  "    }",
+                  "});\r",
+                  "\r",
+                  "// resourceType\r",
+                  "pm.test(\"A resourceType of 'Bundle' is returned.\", function () {\r",
+                  "    const responseData = pm.response.json();\r",
+                  "\r",
+                  "    pm.expect(responseData.resourceType).equal(\"Bundle\", \"Invalid return resourceType\");\r",
+                  "});\r",
+                  "\r",
+                  "// bundle type\r",
+                  "// NOTE: This is based on latest as of this test date\r",
+                  "pm.test(\"Bundle type is 'collection'\", function () {\r",
+                  "    const responseData = pm.response.json();\r",
+                  "\r",
+                  "    pm.expect(responseData.type).to.equal(\"collection\", \"Invalid bundle type\");\r",
+                  "});\r",
+                  "\r"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"resourceType\": \"Parameters\",\n    \"parameter\": [\n        {\n            \"name\": \"terminologyEndpoint\",\n            \"resource\": {\n                \"resourceType\": \"Endpoint\",\n                \"id\": \"vsac-creds\",\n                \"extension\": [\n                    { \"url\": \"vsacUsername\", \"valueString\": \"{{basicUser}}\" },\n                    { \"url\": \"apiKey\", \"valueString\": \"{{basicPass}}\" }\n                ],\n                \"status\": \"active\",\n                \"connectionType\": {\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\",\n                    \"code\": \"hl7-fhir-rest\"\n                },\n                \"payloadType\": [\n                    {\n                        \"coding\": [\n                            {\n                                \"system\": \"http://hl7.org/fhir/ValueSet/endpoint-payload-type\",\n                                \"code\": \"any\"\n                            }\n                        ]\n                    }\n                ],\n                \"address\": \"https://cloud.alphora.com/ufl/r4/\"\n            }\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{SERVER_URL}}PlanDefinition/opioidcds-01$package",
+              "host": [
+                "{{SERVER_URL}}PlanDefinition"
+              ],
+              "path": [
+                "opioidcds-01",
+                "$package"
+              ]
+            }
+          },
+          "response": []
         },
         {
           "name": "Release 8",
@@ -8839,10 +9148,14 @@
                           "if ([200, 201].includes(pm.response.code))",
                           "{",
                           "    pm.test(\"Response status code is 200 or 201\", function () {",
-                          "        pm.expect([200, 201].includes(pm.response.code)).to.be.true;",
+                      "    pm.expect(pm.response.code).to.oneOf([200, 201]);",
                           "    });",
                           "    ",
+                      "",
+                      "pm.test(\"Resource Type should not be empty\", function () {",
                           "        const responseData = pm.response.json();",
+                      "",
+                      "    pm.expect(responseData.resourceType).to.exist.and.to.not.be.empty;",
                           "        if (pm.environment.get(\"QUALITY_PROGRAM_DEBUG\") === true){",
                           "           console.log(responseData);",
                           "        }",
@@ -8852,52 +9165,19 @@
                           "        pm.expect(responseData.resourceType).to.equal(\"Library\");",
                           "    });",
                           "    ",
-                          "    pm.test(\"Test that id is Manifest-Final-Draft\", function () {",
-                          "        const responseData = pm.response.json();",
-                          "    ",
-                          "        pm.expect(responseData.id).to.equal(\"Manifest-Final-Draft\");",
-                          "    });",
-                          "    ",
-                          "    pm.test(\"Contains system-version 'http://loinc.org|2.76'\", function () {",
+                      "pm.test(\"Resource Type should be transaction-response\", function (){",
                           "    const responseData = pm.response.json();",
-                          "    const expParams = responseData.contained.find(",
-                          "    r => r.resourceType === \"Parameters\" && r.id === \"exp-params\"",
-                          "    );",
-                          "    pm.expect(expParams).to.be.an(\"object\", \"exp-params not found\");",
-                          "    const hasLoinc = expParams.parameter.some(",
-                          "    p => p.name === \"system-version\" && p.valueUri === \"http://loinc.org|2.76\"",
-                          "    );",
-                          "    pm.expect(hasLoinc).to.be.true;",
-                          "    });",
+                      "",
+                      "    pm.expect(responseData.type).to.exist.and.to.not.be.empty;",
+                      "})",
                           "    ",
-                          "    pm.test(\"Contains endpointUri 'https://uat-cts.nlm.nih.gov/fhir/'\", function () {",
+                      "",
+                      "pm.test(\"Test that id is not empty\", function () {",
                           "    const responseData = pm.response.json();",
-                          "    const endpoints = responseData.contained.find(",
-                          "    r => r.resourceType === \"Parameters\" && r.id === \"endpoints\"",
-                          "    );",
-                          "    pm.expect(endpoints).to.be.an(\"object\", \"endpoints not found\");",
-                          "    const hasEndpoint = endpoints.parameter.some(config =>",
-                          "    config.name === \"artifactEndpointConfiguration\" && config.part?.some(p =>",
-                          "    p.name === \"endpointUri\" && p.valueUri === \"https://uat-cts.nlm.nih.gov/fhir/\")",
-                          "    );",
-                          "     pm.expect(hasEndpoint).to.be.true;",
+                      "",
+                      "    pm.expect(responseData.id).to.exist.and.to.not.be.empty;",
                           "    });",
-                          "    ",
-                          "    pm.test(\"Contains relatedArtifact 'Hospital Harm - Severe Hyperglycemia' measure\", function () {",
-                          "    const responseData = pm.response.json();",
-                          "    const hasArtifact = responseData.relatedArtifact?.some(artifact =>",
-                          "    artifact.resource === \"https://madie.cms.gov/Measure/HospitalHarmHyperglycemiainHospitalizedPatientsFHIR|0.1.000\"",
-                          "    );",
-                          "    pm.expect(hasArtifact).to.be.true;",
-                          "    });",
-                          "} else if (pm.response.code === 400) {",
-                          "    const responseData = pm.response.json();",
-                          "    if (responseData.issue[0].diagnostics.includes(\"already exists\")){",
-                          "        console.log(\"This Library has already been POSTed\")",
-                          "    }else{",
-                          "        pm.expect([200, 201].includes(pm.response.code)).to.be.true;",
-                          "    }",
-                          "}"
+                      ""
                         ],
                         "type": "text/javascript"
                       }
@@ -8908,7 +9188,7 @@
                     "header": [],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\"resourceType\":\"Library\",\"id\":\"Manifest-Final-Draft\",\"meta\":{\"profile\":[\"http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary\"]},\"contained\":[{\"resourceType\":\"Parameters\",\"id\":\"exp-params\",\"parameter\":[{\"name\":\"system-version\",\"valueUri\":\"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20230901\"},{\"name\":\"system-version\",\"valueUri\":\"http://loinc.org|2.76\"},{\"name\":\"system-version\",\"valueUri\":\"http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0\"},{\"name\":\"system-version\",\"valueUri\":\"http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender|3.0.0\"},{\"name\":\"system-version\",\"valueUri\":\"http://terminology.hl7.org/CodeSystem/CD2|2.0.1\"},{\"name\":\"system-version\",\"valueUri\":\"urn:oid:2.16.840.1.113883.6.238|1.2\"},{\"name\":\"system-version\",\"valueUri\":\"http://www.ama-assn.org/go/cpt|3.0.1\"},{\"name\":\"system-version\",\"valueUri\":\"http://hl7.org/fhir/sid/cvx|4.0.0\"},{\"name\":\"system-version\",\"valueUri\":\"http://terminology.hl7.org/CodeSystem/HCPCS-all-codes|3.0.0\"},{\"name\":\"system-version\",\"valueUri\":\"http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets|1.0.2\"},{\"name\":\"system-version\",\"valueUri\":\"http://hl7.org/fhir/sid/icd-10-cm|2.0.1\"},{\"name\":\"system-version\",\"valueUri\":\"http://www.cms.gov/Medicare/Coding/ICD10|2.0.1\"},{\"name\":\"system-version\",\"valueUri\":\"http://terminology.hl7.org/CodeSystem/icd9cm|2.0.1\"},{\"name\":\"system-version\",\"valueUri\":\"http://terminology.hl7.org/CodeSystem/v2-0895|2.2.0\"},{\"name\":\"system-version\",\"valueUri\":\"http://www.nlm.nih.gov/research/umls/rxnorm|3.0.1\"},{\"name\":\"system-version\",\"valueUri\":\"https://nahdo.org/sopt|1.0.1\"}]},{\"resourceType\":\"Parameters\",\"id\":\"endpoints\",\"parameter\":[{\"name\":\"artifactEndpointConfiguration\",\"part\":[{\"name\":\"artifactRoute\",\"valueUri\":\"http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1167|20220820\"},{\"name\":\"endpointUri\",\"valueUri\":\"https://example.org/fhir/\"}]},{\"name\":\"artifactEndpointConfiguration\",\"part\":[{\"name\":\"artifactRoute\",\"valueUri\":\"http://cts.nlm.nih.gov/fhir/\"},{\"name\":\"endpointUri\",\"valueUri\":\"https://uat-cts.nlm.nih.gov/fhir/\"}]},{\"name\":\"artifactEndpointConfiguration\",\"part\":[{\"name\":\"artifactRoute\",\"valueUri\":\"http://terminology.hl7.org/\"},{\"name\":\"endpointUri\",\"valueUri\":\"https://tx.fhir.org/r4/\"}]},{\"name\":\"artifactEndpointConfiguration\",\"part\":[{\"name\":\"artifactRoute\",\"valueUri\":\"http://hl7.org/fhir/\"},{\"name\":\"endpointUri\",\"valueUri\":\"https://tx.fhir.org/r4/\"}]}]}],\"extension\":[{\"url\":\"http://hl7.org/fhir/StructureDefinition/cqf-expansionParameters\",\"valueReference\":{\"reference\":\"#exp-params\"}},{\"url\":\"http://hl7.org/fhir/StructureDefinition/cqf-endpointConfiguration\",\"valueReference\":{\"reference\":\"#endpoints\"}}],\"url\":\"http://hl7.org/fhir/us/cqfmeasures/Library/ecqm-update-2024\",\"identifier\":[{\"use\":\"official\",\"system\":\"http://example.org/fhir/cqi/ecqm/Library/Identifier\",\"value\":\"eCQM Update 2024\"}],\"version\":\"1.0.0\",\"name\":\"ECQMUpdate2024\",\"title\":\"eCQM Update 2024\",\"status\":\"draft\",\"experimental\":true,\"type\":{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/library-type\",\"code\":\"asset-collection\"}]},\"date\":\"2024-04-23\",\"publisher\":\"Clinical Quality Information WG\",\"contact\":[{\"telecom\":[{\"system\":\"url\",\"value\":\"http://www.hl7.org/Special/committees/cqi\"}]}],\"description\":\"This library is an example final draft of a version manifest (also referred to as an expansion profile) that specifies expansion rules for a set of value sets used for an example set of EP/EC measures.\",\"jurisdiction\":[{\"coding\":[{\"system\":\"urn:iso:std:iso:3166\",\"code\":\"US\"}]}],\"purpose\":\"This library is defined to illustrate a Version Manifest in final draft status, as it would look at the end of an eCQM Annual Update cycle, approved on April 23rd, 2024. The latest available version of code systems used at that time is specified to provide stability for value set expansion during the testing and implementation phase. Terminology.HL7.org, in particular, was version 5.5.0 at the time, and FHIR code system versions are chosen from that release.\",\"approvalDate\":\"2024-04-23\",\"lastReviewDate\":\"2024-04-23\",\"relatedArtifact\":[{\"type\":\"composed-of\",\"display\":\"Measure Discharged on Antithrombotic TherapyFHIR, 0.9.000\",\"resource\":\"https://madie.cms.gov/Measure/DischargedonAntithromboticTherapyFHIR|0.9.000\"},{\"type\":\"composed-of\",\"display\":\"Measure Global Malnutrition CompositeFHIR, 0.2.000\",\"resource\":\"https://madie.cms.gov/Measure/GlobalMalnutritionCompositeFHIR|0.2.000\"},{\"type\":\"composed-of\",\"display\":\"Measure HIV ScreeningFHIR, 0.2.000\",\"resource\":\"https://madie.cms.gov/Measure/HIVScreeningFHIR|0.2.000\"},{\"type\":\"composed-of\",\"display\":\"Measure Hospital Harm - Severe HyperglycemiaFHIR, 0.1.000\",\"resource\":\"https://madie.cms.gov/Measure/HospitalHarmHyperglycemiainHospitalizedPatientsFHIR|0.1.000\"},{\"type\":\"composed-of\",\"display\":\"Measure Core Clinical Data Elements for the Hybrid Hospital Wide All Condition All Procedure Risk Standardized Mortality Measure HWMFHIR, 0.0.001\",\"resource\":\"https://madie.cms.gov/Measure/HybridHospitalWideMortalityFHIR|0.0.001\"},{\"type\":\"composed-of\",\"display\":\"Measure Primary Caries Prevention Intervention as Offered by DentistsFHIR, 0.0.002\",\"resource\":\"https://madie.cms.gov/Measure/PrimaryCariesPreventionasOfferedbyDentistsFHIR|0.0.002\"},{\"type\":\"composed-of\",\"display\":\"Measure Severe Obstetric ComplicationsFHIR, 0.1.000\",\"resource\":\"https://madie.cms.gov/Measure/SevereObstetricComplicationsFHIR|0.1.000\"}]}",
+                  "raw": "{\n    \"resourceType\": \"Library\",\n    \"id\": \"postLibraryTest\",\n    \"title\": \"Post Library Test\",\n    \"status\": \"draft\",\n    \"version\": \"0.0.1\",\n    \"url\": \"postLibraryTest\",\n    \"type\": {\n        \"coding\": [\n            {\n                \"system\": \"http://terminology.hl7.org/CodeSystem/library-type\",\n                \"code\": \"logic-library\",\n                \"display\": \"Logic Library\"\n            }\n        ],\n        \"text\": \"Test Logic Library\"\n    }\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -8938,7 +9218,11 @@
                           "    pm.expect(pm.response.code).to.oneOf([200, 201]);",
                           "});",
                           "",
+                      "",
+                      "pm.test(\"Resource Type should not be empty\", function () {",
                           "    const responseData = pm.response.json();",
+                      "",
+                      "    pm.expect(responseData.resourceType).to.exist.and.to.not.be.empty;",
                           "    if (pm.environment.get(\"QUALITY_PROGRAM_DEBUG\") === true){",
                           "       console.log(responseData);",
                           "    }",
@@ -8948,44 +9232,19 @@
                           "    pm.expect(responseData.resourceType).to.equal(\"Library\");",
                           "});",
                           "",
-                          "pm.test(\"Test that id is Manifest-Final-Draft\", function () {",
-                          "    const responseData = pm.response.json();",
-                          "",
-                          "    pm.expect(responseData.id).to.equal(\"Manifest-Final-Draft\");",
-                          "});",
-                          "",
-                          "pm.test(\"Contains system-version 'http://loinc.org|2.76'\", function () {",
+                      "pm.test(\"Resource Type should be transaction-response\", function (){",
                           "const responseData = pm.response.json();",
-                          "const expParams = responseData.contained.find(",
-                          "r => r.resourceType === \"Parameters\" && r.id === \"exp-params\"",
-                          ");",
-                          "pm.expect(expParams).to.be.an(\"object\", \"exp-params not found\");",
-                          "const hasLoinc = expParams.parameter.some(",
-                          "p => p.name === \"system-version\" && p.valueUri === \"http://loinc.org|2.76\"",
-                          ");",
-                          "pm.expect(hasLoinc).to.be.true;",
-                          "});",
+                      "",
+                      "    pm.expect(responseData.type).to.exist.and.to.not.be.empty;",
+                      "})",
                           "",
-                          "pm.test(\"Contains endpointUri 'https://uat-cts.nlm.nih.gov/fhir/'\", function () {",
+                      "",
+                      "pm.test(\"Test that id is not empty\", function () {",
                           "const responseData = pm.response.json();",
-                          "const endpoints = responseData.contained.find(",
-                          "r => r.resourceType === \"Parameters\" && r.id === \"endpoints\"",
-                          ");",
-                          "pm.expect(endpoints).to.be.an(\"object\", \"endpoints not found\");",
-                          "const hasEndpoint = endpoints.parameter.some(config =>",
-                          "config.name === \"artifactEndpointConfiguration\" && config.part?.some(p =>",
-                          "p.name === \"endpointUri\" && p.valueUri === \"https://uat-cts.nlm.nih.gov/fhir/\")",
-                          ");",
-                          " pm.expect(hasEndpoint).to.be.true;",
+                      "",
+                      "    pm.expect(responseData.id).to.exist.and.to.not.be.empty;",
                           "});",
-                          "",
-                          "pm.test(\"Contains relatedArtifact 'Hospital Harm - Severe Hyperglycemia' measure\", function () {",
-                          "const responseData = pm.response.json();",
-                          "const hasArtifact = responseData.relatedArtifact?.some(artifact =>",
-                          "artifact.resource === \"https://madie.cms.gov/Measure/HospitalHarmHyperglycemiainHospitalizedPatientsFHIR|0.1.000\"",
-                          ");",
-                          "pm.expect(hasArtifact).to.be.true;",
-                          "});"
+                      ""
                         ],
                         "type": "text/javascript"
                       }
@@ -8996,7 +9255,7 @@
                     "header": [],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\"resourceType\":\"Library\",\"id\":\"Manifest-Final-Draft\",\"meta\":{\"profile\":[\"http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary\"],\"lastUpdated\": \"2025-05-09T00:00:00Z\"},\"contained\":[{\"resourceType\":\"Parameters\",\"id\":\"exp-params\",\"parameter\":[{\"name\":\"system-version\",\"valueUri\":\"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20230901\"},{\"name\":\"system-version\",\"valueUri\":\"http://loinc.org|2.76\"},{\"name\":\"system-version\",\"valueUri\":\"http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0\"},{\"name\":\"system-version\",\"valueUri\":\"http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender|3.0.0\"},{\"name\":\"system-version\",\"valueUri\":\"http://terminology.hl7.org/CodeSystem/CD2|2.0.1\"},{\"name\":\"system-version\",\"valueUri\":\"urn:oid:2.16.840.1.113883.6.238|1.2\"},{\"name\":\"system-version\",\"valueUri\":\"http://www.ama-assn.org/go/cpt|3.0.1\"},{\"name\":\"system-version\",\"valueUri\":\"http://hl7.org/fhir/sid/cvx|4.0.0\"},{\"name\":\"system-version\",\"valueUri\":\"http://terminology.hl7.org/CodeSystem/HCPCS-all-codes|3.0.0\"},{\"name\":\"system-version\",\"valueUri\":\"http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets|1.0.2\"},{\"name\":\"system-version\",\"valueUri\":\"http://hl7.org/fhir/sid/icd-10-cm|2.0.1\"},{\"name\":\"system-version\",\"valueUri\":\"http://www.cms.gov/Medicare/Coding/ICD10|2.0.1\"},{\"name\":\"system-version\",\"valueUri\":\"http://terminology.hl7.org/CodeSystem/icd9cm|2.0.1\"},{\"name\":\"system-version\",\"valueUri\":\"http://terminology.hl7.org/CodeSystem/v2-0895|2.2.0\"},{\"name\":\"system-version\",\"valueUri\":\"http://www.nlm.nih.gov/research/umls/rxnorm|3.0.1\"},{\"name\":\"system-version\",\"valueUri\":\"https://nahdo.org/sopt|1.0.1\"}]},{\"resourceType\":\"Parameters\",\"id\":\"endpoints\",\"parameter\":[{\"name\":\"artifactEndpointConfiguration\",\"part\":[{\"name\":\"artifactRoute\",\"valueUri\":\"http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1167|20220820\"},{\"name\":\"endpointUri\",\"valueUri\":\"https://example.org/fhir/\"}]},{\"name\":\"artifactEndpointConfiguration\",\"part\":[{\"name\":\"artifactRoute\",\"valueUri\":\"http://cts.nlm.nih.gov/fhir/\"},{\"name\":\"endpointUri\",\"valueUri\":\"https://uat-cts.nlm.nih.gov/fhir/\"}]},{\"name\":\"artifactEndpointConfiguration\",\"part\":[{\"name\":\"artifactRoute\",\"valueUri\":\"http://terminology.hl7.org/\"},{\"name\":\"endpointUri\",\"valueUri\":\"https://tx.fhir.org/r4/\"}]},{\"name\":\"artifactEndpointConfiguration\",\"part\":[{\"name\":\"artifactRoute\",\"valueUri\":\"http://hl7.org/fhir/\"},{\"name\":\"endpointUri\",\"valueUri\":\"https://tx.fhir.org/r4/\"}]}]}],\"extension\":[{\"url\":\"http://hl7.org/fhir/StructureDefinition/cqf-expansionParameters\",\"valueReference\":{\"reference\":\"#exp-params\"}},{\"url\":\"http://hl7.org/fhir/StructureDefinition/cqf-endpointConfiguration\",\"valueReference\":{\"reference\":\"#endpoints\"}}],\"url\":\"http://hl7.org/fhir/us/cqfmeasures/Library/ecqm-update-2024\",\"identifier\":[{\"use\":\"official\",\"system\":\"http://example.org/fhir/cqi/ecqm/Library/Identifier\",\"value\":\"eCQM Update 2024\"}],\"version\":\"1.0.0\",\"name\":\"ECQMUpdate2024\",\"title\":\"eCQM Update 2024\",\"status\":\"draft\",\"experimental\":true,\"type\":{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/library-type\",\"code\":\"asset-collection\"}]},\"date\":\"2024-04-23\",\"publisher\":\"Clinical Quality Information WG\",\"contact\":[{\"telecom\":[{\"system\":\"url\",\"value\":\"http://www.hl7.org/Special/committees/cqi\"}]}],\"description\":\"This library is an example final draft of a version manifest (also referred to as an expansion profile) that specifies expansion rules for a set of value sets used for an example set of EP/EC measures.\",\"jurisdiction\":[{\"coding\":[{\"system\":\"urn:iso:std:iso:3166\",\"code\":\"US\"}]}],\"purpose\":\"This library is defined to illustrate a Version Manifest in final draft status, as it would look at the end of an eCQM Annual Update cycle, approved on April 23rd, 2024. The latest available version of code systems used at that time is specified to provide stability for value set expansion during the testing and implementation phase. Terminology.HL7.org, in particular, was version 5.5.0 at the time, and FHIR code system versions are chosen from that release.\",\"approvalDate\":\"2024-04-23\",\"lastReviewDate\":\"2024-04-23\",\"relatedArtifact\":[{\"type\":\"composed-of\",\"display\":\"Measure Discharged on Antithrombotic TherapyFHIR, 0.9.000\",\"resource\":\"https://madie.cms.gov/Measure/DischargedonAntithromboticTherapyFHIR|0.9.000\"},{\"type\":\"composed-of\",\"display\":\"Measure Global Malnutrition CompositeFHIR, 0.2.000\",\"resource\":\"https://madie.cms.gov/Measure/GlobalMalnutritionCompositeFHIR|0.2.000\"},{\"type\":\"composed-of\",\"display\":\"Measure HIV ScreeningFHIR, 0.2.000\",\"resource\":\"https://madie.cms.gov/Measure/HIVScreeningFHIR|0.2.000\"},{\"type\":\"composed-of\",\"display\":\"Measure Hospital Harm - Severe HyperglycemiaFHIR, 0.1.000\",\"resource\":\"https://madie.cms.gov/Measure/HospitalHarmHyperglycemiainHospitalizedPatientsFHIR|0.1.000\"},{\"type\":\"composed-of\",\"display\":\"Measure Core Clinical Data Elements for the Hybrid Hospital Wide All Condition All Procedure Risk Standardized Mortality Measure HWMFHIR, 0.0.001\",\"resource\":\"https://madie.cms.gov/Measure/HybridHospitalWideMortalityFHIR|0.0.001\"},{\"type\":\"composed-of\",\"display\":\"Measure Primary Caries Prevention Intervention as Offered by DentistsFHIR, 0.0.002\",\"resource\":\"https://madie.cms.gov/Measure/PrimaryCariesPreventionasOfferedbyDentistsFHIR|0.0.002\"},{\"type\":\"composed-of\",\"display\":\"Measure Severe Obstetric ComplicationsFHIR, 0.1.000\",\"resource\":\"https://madie.cms.gov/Measure/SevereObstetricComplicationsFHIR|0.1.000\"}]}",
+                  "raw": "{\n    \"resourceType\": \"Library\",\n    \"id\": \"postLibraryTest\",\n    \"title\": \"Post Library Test\",\n    \"status\": \"draft\",\n    \"version\": \"0.0.1\",\n    \"url\": \"postLibraryTest\",\n    \"type\": {\n        \"coding\": [\n            {\n                \"system\": \"http://terminology.hl7.org/CodeSystem/library-type\",\n                \"code\": \"logic-library\",\n                \"display\": \"Logic Library\"\n            }\n        ],\n        \"text\": \"Test Logic Library, test using PUT to update\"\n    }\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -9004,9 +9263,12 @@
                       }
                     },
                     "url": {
-                      "raw": "{{SERVER_URL}}Library/Manifest-Final-Draft",
+                  "raw": "{{SERVER_URL}}Library/postLibraryTest",
                       "host": [
-                        "{{SERVER_URL}}Library/Manifest-Final-Draft"
+                    "{{SERVER_URL}}Library"
+                  ],
+                  "path": [
+                    "postLibraryTest"
                       ]
                     }
                   },
@@ -9021,7 +9283,7 @@
                         "exec": [
                           "",
                           "pm.test(\"Response status code is 200\", function () {",
-                          "    pm.expect(pm.response.code === \"200\");",
+                      "    pm.expect(pm.response.code).equals(\"200\");",
                           "});",
                           "",
                           "",
@@ -9034,7 +9296,7 @@
                           "    }",
                           "});",
                           "",
-                          "pm.test(\"Resource Type should not be transaction-response\", function (){",
+                          "pm.test(\"Resource Type should be transaction-response\", function (){",
                           "    const responseData = pm.response.json();",
                           "",
                           "    pm.expect(responseData.type).to.exist.and.to.not.be.empty;",
@@ -9091,7 +9353,7 @@
                         "exec": [
                           "",
                           "pm.test(\"Response status code is 200\", function () {",
-                          "    pm.expect(pm.response.code === \"200\");",
+                          "    pm.expect(pm.response.code).equals(\"200\");",
                           "});",
                           "",
                           "",
@@ -9220,7 +9482,8 @@
                   "response": []
                 }
               ]
-            }           ]
+            }
+          ]
         }
       ]
     },
@@ -9391,12 +9654,13 @@
           "name": "Server 2 Batch Operations",
           "item": [
             {
-              "name": "Server 2 Batch CodeSystem Read",
+              "name": "Server 2.1 Batch CodeSystem Read",
               "event": [
                 {
                   "listen": "test",
                   "script": {
                     "exec": [
+                      "//NOTE: the OperationOutcome for the entries is: diagnostics: 'Invalid request: The FHIR endpoint on this server does not know how to handle GET operation[ValueSet] with parameters [[uri]]'",
                       "",
                       "pm.test(\"Response status code is 200\", function () {",
                       "    pm.expect(pm.response.code).to.equal(200);",
