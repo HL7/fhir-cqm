@@ -4550,6 +4550,100 @@
 									"response": []
 								},
 								{
+									"name": "ValueSet 8.1.2 Search By Url with _elements",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"//SOT@## ValueSet 8 Search @SOT",
+													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611 @SOT",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"pm.test(\"Resource is a ValueSet\", function () {",
+													"        const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.entry[0].resource.resourceType).equals(\"ValueSet\");",
+													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+													"       console.log(responseData);",
+													"    }",
+													"});",
+													"",
+													"pm.test(\"Name is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasName = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.name !== 'undefined' && e.resource.name !== null;",
+													"    });",
+													"    pm.expect(hasName, 'Expected at least one entry.resource.name').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Title is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasTitle = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.title !== 'undefined' && e.resource.title !== null;",
+													"    });",
+													"    pm.expect(hasTitle, 'Expected at least one entry.resource.title').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Description is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasDescription = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.description !== 'undefined' && e.resource.description !== null;",
+													"    });",
+													"    pm.expect(hasDescription, 'Expected at least one entry.resource.description').to.be.true;",
+													"});",
+													"",
+													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
+													"  const responseData = pm.response.json();",
+													"  const tags = responseData.entry[0].resource.meta;",
+													"  const hasSubsetted = tags.some(function (t) {",
+													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
+													"  });",
+													"  pm.expect(hasSubsetted, 'Expected SUBSETTED tag').to.be.true;",
+													"});",
+													"",
+													"pm.test('No compose or expansion elements', function () {",
+													"  const vs = pm.response.json().entry[0].resource;",
+													"  pm.expect(vs).to.not.have.property('compose');",
+													"  pm.expect(vs).to.not.have.property('expansion');",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SERVER_URL}}ValueSet/?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611&_element=name,title,description",
+											"host": [
+												"{{SERVER_URL}}ValueSet"
+											],
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "url",
+													"value": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611"
+												},
+												{
+													"key": "_elements",
+													"value": "name,title,description"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
 									"name": "ValueSet 8.2 Search By Version",
 									"event": [
 										{
@@ -4602,6 +4696,104 @@
 									"response": []
 								},
 								{
+									"name": "ValueSet 8.2.1 Search By Version with _elements",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 @SOT",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"pm.test(\"Resource is a ValueSet\", function () {",
+													"        const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.entry[0].resource.resourceType).equals(\"ValueSet\");",
+													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+													"       console.log(responseData);",
+													"    }",
+													"});",
+													"",
+													"pm.test(\"Name is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasName = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.name !== 'undefined' && e.resource.name !== null;",
+													"    });",
+													"    pm.expect(hasName, 'Expected at least one entry.resource.name').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Title is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasTitle = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.title !== 'undefined' && e.resource.title !== null;",
+													"    });",
+													"    pm.expect(hasTitle, 'Expected at least one entry.resource.title').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Description is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasDescription = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.description !== 'undefined' && e.resource.description !== null;",
+													"    });",
+													"    pm.expect(hasDescription, 'Expected at least one entry.resource.description').to.be.true;",
+													"});",
+													"",
+													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
+													"  const responseData = pm.response.json();",
+													"  const tags = responseData.entry[0].resource.meta;",
+													"  const hasSubsetted = tags.some(function (t) {",
+													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
+													"  });",
+													"  pm.expect(hasSubsetted, 'Expected SUBSETTED tag').to.be.true;",
+													"});",
+													"",
+													"pm.test('No compose or expansion elements', function () {",
+													"  const vs = pm.response.json().entry[0].resource;",
+													"  pm.expect(vs).to.not.have.property('compose');",
+													"  pm.expect(vs).to.not.have.property('expansion');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SERVER_URL}}ValueSet/?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611&version=20200319&_element=name,title,description",
+											"host": [
+												"{{SERVER_URL}}ValueSet"
+											],
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "url",
+													"value": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611"
+												},
+												{
+													"key": "version",
+													"value": "20200319"
+												},
+												{
+													"key": "_elements",
+													"value": "name,title,description"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
 									"name": "ValueSet 8.3 Search By Identifier",
 									"event": [
 										{
@@ -4609,6 +4801,8 @@
 											"script": {
 												"exec": [
 													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 @SOT",
+													"//NOTE: as of 11/25/2025 hl7 does not find this valueset using identifier nor system|identifier",
+													"// hl7 does find this valueset using 2.16.840.1.113762.1.4.1047.611 as the id and the exact identifier is present ",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
 													"});",
@@ -4649,6 +4843,102 @@
 												{
 													"key": "identifier",
 													"value": "urn:oid:2.16.840.1.113762.1.4.1047.611"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ValueSet 8.3.1 Search By Identifier with _elements",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 @SOT",
+													"//NOTE: as of 11/25/2025 hl7 does not find this valueset using identifier nor system|identifier",
+													"// and vsac does not work with _elements",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"pm.test(\"Resource is a ValueSet\", function () {",
+													"        const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.entry[0].resource.resourceType).equals(\"ValueSet\");",
+													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+													"       console.log(responseData);",
+													"    }",
+													"});",
+													"",
+													"pm.test(\"Name is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasName = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.name !== 'undefined' && e.resource.name !== null;",
+													"    });",
+													"    pm.expect(hasName, 'Expected at least one entry.resource.name').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Title is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasTitle = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.title !== 'undefined' && e.resource.title !== null;",
+													"    });",
+													"    pm.expect(hasTitle, 'Expected at least one entry.resource.title').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Description is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasDescription = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.description !== 'undefined' && e.resource.description !== null;",
+													"    });",
+													"    pm.expect(hasDescription, 'Expected at least one entry.resource.description').to.be.true;",
+													"});",
+													"",
+													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
+													"  const responseData = pm.response.json();",
+													"  const tags = responseData.entry[0].resource.meta;",
+													"  const hasSubsetted = tags.some(function (t) {",
+													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
+													"  });",
+													"  pm.expect(hasSubsetted, 'Expected SUBSETTED tag').to.be.true;",
+													"});",
+													"",
+													"pm.test('No compose or expansion elements', function () {",
+													"  const vs = pm.response.json().entry[0].resource;",
+													"  pm.expect(vs).to.not.have.property('compose');",
+													"  pm.expect(vs).to.not.have.property('expansion');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SERVER_URL}}ValueSet/?identifier=urn:oid:2.16.840.1.113762.1.4.1047.611&_elements=name,title,description",
+											"host": [
+												"{{SERVER_URL}}ValueSet"
+											],
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "urn:oid:2.16.840.1.113762.1.4.1047.611"
+												},
+												{
+													"key": "_elements",
+													"value": "name,title,description"
 												}
 											]
 										}
@@ -4769,6 +5059,100 @@
 									"response": []
 								},
 								{
+									"name": "ValueSet 8.4.2 Search By Name with _elements",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611 @SOT",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"pm.test(\"Resource is a ValueSet\", function () {",
+													"        const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.entry[0].resource.resourceType).equals(\"ValueSet\");",
+													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+													"       console.log(responseData);",
+													"    }",
+													"});",
+													"",
+													"pm.test(\"Name is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasName = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.name !== 'undefined' && e.resource.name !== null;",
+													"    });",
+													"    pm.expect(hasName, 'Expected at least one entry.resource.name').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Title is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasTitle = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.title !== 'undefined' && e.resource.title !== null;",
+													"    });",
+													"    pm.expect(hasTitle, 'Expected at least one entry.resource.title').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Description is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasDescription = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.description !== 'undefined' && e.resource.description !== null;",
+													"    });",
+													"    pm.expect(hasDescription, 'Expected at least one entry.resource.description').to.be.true;",
+													"});",
+													"",
+													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
+													"  const responseData = pm.response.json();",
+													"  const tags = responseData.entry[0].resource.meta;",
+													"  const hasSubsetted = tags.some(function (t) {",
+													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
+													"  });",
+													"  pm.expect(hasSubsetted, 'Expected SUBSETTED tag').to.be.true;",
+													"});",
+													"",
+													"pm.test('No compose or expansion elements', function () {",
+													"  const vs = pm.response.json().entry[0].resource;",
+													"  pm.expect(vs).to.not.have.property('compose');",
+													"  pm.expect(vs).to.not.have.property('expansion');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SERVER_URL}}ValueSet/?name=N3MirrorGoldmannExam&_element=name,title,description",
+											"host": [
+												"{{SERVER_URL}}ValueSet"
+											],
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "name",
+													"value": "N3MirrorGoldmannExam"
+												},
+												{
+													"key": "_elements",
+													"value": "name,title,description"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
 									"name": "ValueSet 8.5 Search By Title",
 									"event": [
 										{
@@ -4822,6 +5206,100 @@
 												{
 													"key": "title",
 													"value": "ACEis and ARBs"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ValueSet 8.5.1 Search By Title with _elements",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 @SOT",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"pm.test(\"Resource is a ValueSet\", function () {",
+													"        const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.entry[0].resource.resourceType).equals(\"ValueSet\");",
+													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+													"       console.log(responseData);",
+													"    }",
+													"});",
+													"",
+													"pm.test(\"Name is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasName = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.name !== 'undefined' && e.resource.name !== null;",
+													"    });",
+													"    pm.expect(hasName, 'Expected at least one entry.resource.name').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Title is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasTitle = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.title !== 'undefined' && e.resource.title !== null;",
+													"    });",
+													"    pm.expect(hasTitle, 'Expected at least one entry.resource.title').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Description is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasDescription = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.description !== 'undefined' && e.resource.description !== null;",
+													"    });",
+													"    pm.expect(hasDescription, 'Expected at least one entry.resource.description').to.be.true;",
+													"});",
+													"",
+													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
+													"  const responseData = pm.response.json();",
+													"  const tags = responseData.entry[0].resource.meta;",
+													"  const hasSubsetted = tags.some(function (t) {",
+													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
+													"  });",
+													"  pm.expect(hasSubsetted, 'Expected SUBSETTED tag').to.be.true;",
+													"});",
+													"",
+													"pm.test('No compose or expansion elements', function () {",
+													"  const vs = pm.response.json().entry[0].resource;",
+													"  pm.expect(vs).to.not.have.property('compose');",
+													"  pm.expect(vs).to.not.have.property('expansion');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SERVER_URL}}ValueSet/?title=3 Mirror Goldmann exam&_element=name,title,description",
+											"host": [
+												"{{SERVER_URL}}ValueSet"
+											],
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "title",
+													"value": "3 Mirror Goldmann exam"
+												},
+												{
+													"key": "_elements",
+													"value": "name,title,description"
 												}
 											]
 										}
@@ -4937,6 +5415,100 @@
 									"response": []
 								},
 								{
+									"name": "ValueSet 8.7.1 Search By Description with _elements",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1489|20230217 @SOT",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"pm.test(\"Resource is a ValueSet\", function () {",
+													"        const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.entry[0].resource.resourceType).equals(\"ValueSet\");",
+													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+													"       console.log(responseData);",
+													"    }",
+													"});",
+													"",
+													"pm.test(\"Name is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasName = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.name !== 'undefined' && e.resource.name !== null;",
+													"    });",
+													"    pm.expect(hasName, 'Expected at least one entry.resource.name').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Title is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasTitle = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.title !== 'undefined' && e.resource.title !== null;",
+													"    });",
+													"    pm.expect(hasTitle, 'Expected at least one entry.resource.title').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Description is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasDescription = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.description !== 'undefined' && e.resource.description !== null;",
+													"    });",
+													"    pm.expect(hasDescription, 'Expected at least one entry.resource.description').to.be.true;",
+													"});",
+													"",
+													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
+													"  const responseData = pm.response.json();",
+													"  const tags = responseData.entry[0].resource.meta;",
+													"  const hasSubsetted = tags.some(function (t) {",
+													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
+													"  });",
+													"  pm.expect(hasSubsetted, 'Expected SUBSETTED tag').to.be.true;",
+													"});",
+													"",
+													"pm.test('No compose or expansion elements', function () {",
+													"  const vs = pm.response.json().entry[0].resource;",
+													"  pm.expect(vs).to.not.have.property('compose');",
+													"  pm.expect(vs).to.not.have.property('expansion');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SERVER_URL}}ValueSet/?description=Value%20Set%20Title%20Changed%20--%20from%20Allergen%20to%20Ingredient%20--%20to%20reflect%20true%20value%20set%20content.&_element=name,title,description",
+											"host": [
+												"{{SERVER_URL}}ValueSet"
+											],
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "description",
+													"value": "Value%20Set%20Title%20Changed%20--%20from%20Allergen%20to%20Ingredient%20--%20to%20reflect%20true%20value%20set%20content."
+												},
+												{
+													"key": "_elements",
+													"value": "name,title,description"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
 									"name": "ValueSet 8.8 Search By Code",
 									"event": [
 										{
@@ -4994,6 +5566,102 @@
 									"response": []
 								},
 								{
+									"name": "ValueSet 8.8.1 Search By Code with _elements",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 @SOT",
+													"// this test returns 10 valuesets with differing results for _elements. ",
+													"// ",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"pm.test(\"Resource is a ValueSet\", function () {",
+													"        const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.entry[0].resource.resourceType).equals(\"ValueSet\");",
+													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+													"       console.log(responseData);",
+													"    }",
+													"});",
+													"",
+													"pm.test(\"Name is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasName = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.name !== 'undefined' && e.resource.name !== null;",
+													"    });",
+													"    pm.expect(hasName, 'Expected at least one entry.resource.name').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Title is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasTitle = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.title !== 'undefined' && e.resource.title !== null;",
+													"    });",
+													"    pm.expect(hasTitle, 'Expected at least one entry.resource.title').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Description is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasDescription = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.description !== 'undefined' && e.resource.description !== null;",
+													"    });",
+													"    pm.expect(hasDescription, 'Expected at least one entry.resource.description').to.be.true;",
+													"});",
+													"",
+													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
+													"  const responseData = pm.response.json();",
+													"  const tags = responseData.entry[0].resource.meta;",
+													"  const hasSubsetted = tags.some(function (t) {",
+													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
+													"  });",
+													"  pm.expect(hasSubsetted, 'Expected SUBSETTED tag').to.be.true;",
+													"});",
+													"",
+													"pm.test('No compose or expansion elements', function () {",
+													"  const vs = pm.response.json().entry[0].resource;",
+													"  pm.expect(vs).to.not.have.property('compose');",
+													"  pm.expect(vs).to.not.have.property('expansion');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SERVER_URL}}ValueSet/?code=420523002&_element=name,title,description",
+											"host": [
+												"{{SERVER_URL}}ValueSet"
+											],
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "code",
+													"value": "420523002"
+												},
+												{
+													"key": "_elements",
+													"value": "name,title,description"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
 									"name": "ValueSet 8.9 Search By Keyword",
 									"event": [
 										{
@@ -5040,6 +5708,99 @@
 												{
 													"key": "keyword",
 													"value": "PC-02"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ValueSet 8.9.1 Search By Keyword with _elements",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.105|20210611 @SOT",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"pm.test(\"Resource is a ValueSet\", function () {",
+													"        const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.entry[0].resource.resourceType).equals(\"ValueSet\");",
+													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+													"       console.log(responseData);",
+													"    }",
+													"});",
+													"",
+													"pm.test(\"Name is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasName = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.name !== 'undefined' && e.resource.name !== null;",
+													"    });",
+													"    pm.expect(hasName, 'Expected at least one entry.resource.name').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Title is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasTitle = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.title !== 'undefined' && e.resource.title !== null;",
+													"    });",
+													"    pm.expect(hasTitle, 'Expected at least one entry.resource.title').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Description is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasDescription = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.description !== 'undefined' && e.resource.description !== null;",
+													"    });",
+													"    pm.expect(hasDescription, 'Expected at least one entry.resource.description').to.be.true;",
+													"});",
+													"",
+													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
+													"  const responseData = pm.response.json();",
+													"  const tags = responseData.entry[0].resource.meta;",
+													"  const hasSubsetted = tags.some(function (t) {",
+													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
+													"  });",
+													"  pm.expect(hasSubsetted, 'Expected SUBSETTED tag').to.be.true;",
+													"});",
+													"",
+													"pm.test('No compose or expansion elements', function () {",
+													"  const vs = pm.response.json().entry[0].resource;",
+													"  pm.expect(vs).to.not.have.property('compose');",
+													"  pm.expect(vs).to.not.have.property('expansion');",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SERVER_URL}}ValueSet/?keyword=PC-02&_element=name,title,description",
+											"host": [
+												"{{SERVER_URL}}ValueSet"
+											],
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "keyword",
+													"value": "PC-02"
+												},
+												{
+													"key": "_elements",
+													"value": "name,title,description"
 												}
 											]
 										}
@@ -5118,6 +5879,101 @@
 									"response": []
 								},
 								{
+									"name": "ValueSet 8.10.1 Search By Id with _elements",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20240105 @SOT",
+													"//NOTE: This test should really be two part, in that the id is server-assigned...",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"pm.test(\"Resource is a ValueSet\", function () {",
+													"        const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.entry[0].resource.resourceType).equals(\"ValueSet\");",
+													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+													"       console.log(responseData);",
+													"    }",
+													"});",
+													"",
+													"pm.test(\"Name is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasName = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.name !== 'undefined' && e.resource.name !== null;",
+													"    });",
+													"    pm.expect(hasName, 'Expected at least one entry.resource.name').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Title is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasTitle = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.title !== 'undefined' && e.resource.title !== null;",
+													"    });",
+													"    pm.expect(hasTitle, 'Expected at least one entry.resource.title').to.be.true;",
+													"});",
+													"",
+													"pm.test(\"Description is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasDescription = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.description !== 'undefined' && e.resource.description !== null;",
+													"    });",
+													"    pm.expect(hasDescription, 'Expected at least one entry.resource.description').to.be.true;",
+													"});",
+													"",
+													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
+													"  const responseData = pm.response.json();",
+													"  const tags = responseData.entry[0].resource.meta;",
+													"  const hasSubsetted = tags.some(function (t) {",
+													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
+													"  });",
+													"  pm.expect(hasSubsetted, 'Expected SUBSETTED tag').to.be.true;",
+													"});",
+													"",
+													"pm.test('No compose or expansion elements', function () {",
+													"  const vs = pm.response.json().entry[0].resource;",
+													"  pm.expect(vs).to.not.have.property('compose');",
+													"  pm.expect(vs).to.not.have.property('expansion');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SERVER_URL}}ValueSet/?_id=2.16.840.1.113883.3.464.1003.198.12.1005&_element=name,title,description",
+											"host": [
+												"{{SERVER_URL}}ValueSet"
+											],
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "_id",
+													"value": "2.16.840.1.113883.3.464.1003.198.12.1005"
+												},
+												{
+													"key": "_elements",
+													"value": "name,title,description"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
 									"name": "ValueSet 8.11 Search By VersionId",
 									"event": [
 										{
@@ -5189,96 +6045,57 @@
 									"response": []
 								},
 								{
-									"name": "ValueSet 8.12 Search By URL and _elements",
+									"name": "ValueSet 8.11.1 Search By VersionId with _elements",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
 												"exec": [
-													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611 @SOT",
-													"console.log(\"Note that currently (11/21/2025) VSAC and OCL do not support returning the _elements search. hl7 (http://tx.fhir.org/r4/) does.\");",
-													"",
+													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20190315 @SOT",
+													"//NOTE: This test should really be multi-part since id is server-assigned",
 													"pm.test(\"Response status code is 200\", function () {",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true) {",
-													"        const responseData = pm.response.json();",
-													"        console.log(\"responseData == \", responseData);",
-													"    }",
 													"    pm.expect(pm.response.code).to.equal(200);",
 													"});",
 													"",
 													"pm.test(\"Resource is a ValueSet\", function () {",
-													"    const body = pm.response.json();",
-													"    pm.expect(body.entry[0].resource.resourceType).to.equal(\"ValueSet\");",
+													"        const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.entry[0].resource.resourceType).equals(\"ValueSet\");",
+													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+													"       console.log(responseData);",
+													"    }",
 													"});",
 													"",
-													"// ---------- CONFIGURATION ----------",
-													"// All possible elements that may be requested via _elements",
-													"const allElementOptions = [",
-													"  '_id',",
-													"  'url',",
-													"  'version',",
-													"  'identifier',",
-													"  'name',",
-													"  'title',",
-													"  'status',",
-													"  'description',",
-													"  'code',",
-													"  'keyword',",
-													"  '_text',",
-													"  '_content',",
-													"  'library'",
-													"];",
-													"",
-													"// FHIR-required elements ALWAYS allowed",
-													"const requiredElements = ['resourceType', 'id', 'meta'];",
-													"",
-													"// Allowed nested elements by parent",
-													"const allowedNested = {",
-													"  meta: ['versionId', 'lastUpdated', 'profile', 'tag'],",
-													"  identifier: ['system', 'value']",
-													"};",
-													"",
-													"// ---------- HELPERS ----------",
-													"function getRequestedElements() {",
-													"  const url = pm.request.url;",
-													"  let requested = [];",
-													"",
-													"  if (url && url.query && typeof url.query.all === 'function') {",
-													"    url.query.all().forEach(function (q) {",
-													"      if (q.key === '_elements' && q.value) {",
-													"        requested = q.value",
-													"          .split(',')",
-													"          .map(function (v) { return v.trim(); })",
-													"          .filter(function (v) { return v.length > 0; });",
-													"      }",
+													"pm.test(\"Name is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasName = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.name !== 'undefined' && e.resource.name !== null;",
 													"    });",
-													"  }",
+													"    pm.expect(hasName, 'Expected at least one entry.resource.name').to.be.true;",
+													"});",
 													"",
-													"  // If _elements is not present, default to all known options",
-													"  if (requested.length === 0) {",
-													"    requested = allElementOptions.slice();",
-													"  }",
+													"pm.test(\"Title is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasTitle = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.title !== 'undefined' && e.resource.title !== null;",
+													"    });",
+													"    pm.expect(hasTitle, 'Expected at least one entry.resource.title').to.be.true;",
+													"});",
 													"",
-													"  return requested;",
-													"}",
-													"",
-													"const requestedElements = getRequestedElements();",
-													"",
-													"// Map _elements search params to actual property names on the resource",
-													"function mapToPropertyName(elementName) {",
-													"  // Simple heuristic: _id -> id, _text -> text, _content -> content, etc.",
-													"  if (elementName.charAt(0) === '_') {",
-													"    return elementName.substring(1);",
-													"  }",
-													"  return elementName;",
-													"}",
-													"",
-													"// ---------- COMMON TESTS ----------",
+													"pm.test(\"Description is present\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const entries = responseData.entry || [];",
+													"    const hasDescription = entries.some(function (e) {",
+													"        return e.resource && typeof e.resource.description !== 'undefined' && e.resource.description !== null;",
+													"    });",
+													"    pm.expect(hasDescription, 'Expected at least one entry.resource.description').to.be.true;",
+													"});",
 													"",
 													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
-													"  const body = pm.response.json();",
-													"  const vs = body.entry[0].resource;",
-													"  const tags = (((vs.meta || {}).tag) || []);",
+													"  const responseData = pm.response.json();",
+													"  const tags = responseData.entry[0].resource.meta;",
 													"  const hasSubsetted = tags.some(function (t) {",
 													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
 													"  });",
@@ -5290,235 +6107,7 @@
 													"  pm.expect(vs).to.not.have.property('compose');",
 													"  pm.expect(vs).to.not.have.property('expansion');",
 													"});",
-													"",
-													"pm.test('Requested _elements are among known options', function () {",
-													"  const unknown = requestedElements.filter(function (e) {",
-													"    return allElementOptions.indexOf(e) === -1;",
-													"  });",
-													"  pm.expect(",
-													"    unknown,",
-													"    'Unknown elements requested via _elements: ' + JSON.stringify(unknown)",
-													"  ).to.be.empty;",
-													"});",
-													"",
-													"// Ensure the resulting ValueSet does not include unrequested elements (other than required)",
-													"pm.test('Only requested + required top-level elements are present', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"",
-													"  const allowedTopLevel = new Set(",
-													"    requiredElements.concat(",
-													"      requestedElements.map(function (el) {",
-													"        return mapToPropertyName(el);",
-													"      })",
-													"    )",
-													"  );",
-													"",
-													"  const actualKeys = Object.keys(vs);",
-													"  const disallowed = actualKeys.filter(function (key) {",
-													"    return !allowedTopLevel.has(key);",
-													"  });",
-													"",
-													"  pm.expect(",
-													"    disallowed,",
-													"    'Disallowed top-level elements found: ' + JSON.stringify(disallowed)",
-													"  ).to.be.empty;",
-													"});",
-													"",
-													"// Nested element validation",
-													"pm.test('Nested elements contain only allowed sub-elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"",
-													"  Object.keys(allowedNested).forEach(function (parent) {",
-													"    if (vs[parent]) {",
-													"      const allowedSubs = new Set(allowedNested[parent]);",
-													"",
-													"      if (Array.isArray(vs[parent])) {",
-													"        vs[parent].forEach(function (item, idx) {",
-													"          const keys = Object.keys(item);",
-													"          const disallowed = keys.filter(function (k) {",
-													"            return !allowedSubs.has(k);",
-													"          });",
-													"          pm.expect(",
-													"            disallowed,",
-													"            'Disallowed sub-elements in ' + parent + '[' + idx + ']: ' + JSON.stringify(disallowed)",
-													"          ).to.be.empty;",
-													"        });",
-													"      } else {",
-													"        const keys = Object.keys(vs[parent]);",
-													"        const disallowed = keys.filter(function (k) {",
-													"          return !allowedSubs.has(k);",
-													"        });",
-													"        pm.expect(",
-													"          disallowed,",
-													"          'Disallowed sub-elements in ' + parent + ': ' + JSON.stringify(disallowed)",
-													"        ).to.be.empty;",
-													"      }",
-													"    }",
-													"  });",
-													"});",
-													"",
-													"// ---------- PER-_ELEMENT TESTS (one pm.expect per _element) ----------",
-													"",
-													"pm.test('Element _id presence matches _elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"  const el = '_id';",
-													"  const propName = mapToPropertyName(el);",
-													"  if (requestedElements.indexOf(el) !== -1) {",
-													"    pm.expect(",
-													"      vs,",
-													"      'Expected \"' + propName + '\" when _elements includes ' + el",
-													"    ).to.have.property(propName);",
-													"  } else {",
-													"    pm.expect(",
-													"      vs,",
-													"      'Did not expect \"' + propName + '\" when _elements omits ' + el",
-													"    ).to.not.have.property(propName);",
-													"  }",
-													"});",
-													"",
-													"pm.test('Element url presence matches _elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"  const el = 'url';",
-													"  const propName = mapToPropertyName(el);",
-													"  if (requestedElements.indexOf(el) !== -1) {",
-													"    pm.expect(vs, 'Expected \"' + propName + '\" when _elements includes ' + el).to.have.property(propName);",
-													"  } else {",
-													"    pm.expect(vs, 'Did not expect \"' + propName + '\" when _elements omits ' + el).to.not.have.property(propName);",
-													"  }",
-													"});",
-													"",
-													"pm.test('Element version presence matches _elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"  const el = 'version';",
-													"  const propName = mapToPropertyName(el);",
-													"  if (requestedElements.indexOf(el) !== -1) {",
-													"    pm.expect(vs, 'Expected \"' + propName + '\" when _elements includes ' + el).to.have.property(propName);",
-													"  } else {",
-													"    pm.expect(vs, 'Did not expect \"' + propName + '\" when _elements omits ' + el).to.not.have.property(propName);",
-													"  }",
-													"});",
-													"",
-													"pm.test('Element identifier presence matches _elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"  const el = 'identifier';",
-													"  const propName = mapToPropertyName(el);",
-													"  if (requestedElements.indexOf(el) !== -1) {",
-													"    pm.expect(vs, 'Expected \"' + propName + '\" when _elements includes ' + el).to.have.property(propName);",
-													"  } else {",
-													"    pm.expect(vs, 'Did not expect \"' + propName + '\" when _elements omits ' + el).to.not.have.property(propName);",
-													"  }",
-													"});",
-													"",
-													"pm.test('Element name presence matches _elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"  const el = 'name';",
-													"  const propName = mapToPropertyName(el);",
-													"  if (requestedElements.indexOf(el) !== -1) {",
-													"    pm.expect(vs, 'Expected \"' + propName + '\" when _elements includes ' + el).to.have.property(propName);",
-													"  } else {",
-													"    pm.expect(vs, 'Did not expect \"' + propName + '\" when _elements omits ' + el).to.not.have.property(propName);",
-													"  }",
-													"});",
-													"",
-													"pm.test('Element title presence matches _elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"  const el = 'title';",
-													"  const propName = mapToPropertyName(el);",
-													"  if (requestedElements.indexOf(el) !== -1) {",
-													"    pm.expect(vs, 'Expected \"' + propName + '\" when _elements includes ' + el).to.have.property(propName);",
-													"  } else {",
-													"    pm.expect(vs, 'Did not expect \"' + propName + '\" when _elements omits ' + el).to.not.have.property(propName);",
-													"  }",
-													"});",
-													"",
-													"pm.test('Element status presence matches _elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"  const el = 'status';",
-													"  const propName = mapToPropertyName(el);",
-													"  if (requestedElements.indexOf(el) !== -1) {",
-													"    pm.expect(vs, 'Expected \"' + propName + '\" when _elements includes ' + el).to.have.property(propName);",
-													"  } else {",
-													"    pm.expect(vs, 'Did not expect \"' + propName + '\" when _elements omits ' + el).to.not.have.property(propName);",
-													"  }",
-													"});",
-													"",
-													"pm.test('Element description presence matches _elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"  const el = 'description';",
-													"  const propName = mapToPropertyName(el);",
-													"  if (requestedElements.indexOf(el) !== -1) {",
-													"    pm.expect(vs, 'Expected \"' + propName + '\" when _elements includes ' + el).to.have.property(propName);",
-													"  } else {",
-													"    pm.expect(vs, 'Did not expect \"' + propName + '\" when _elements omits ' + el).to.not.have.property(propName);",
-													"  }",
-													"});",
-													"",
-													"pm.test('Element code presence matches _elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"  const el = 'code';",
-													"  const propName = mapToPropertyName(el);",
-													"  if (requestedElements.indexOf(el) !== -1) {",
-													"    pm.expect(vs, 'Expected \"' + propName + '\" when _elements includes ' + el).to.have.property(propName);",
-													"  } else {",
-													"    pm.expect(vs, 'Did not expect \"' + propName + '\" when _elements omits ' + el).to.not.have.property(propName);",
-													"  }",
-													"});",
-													"",
-													"pm.test('Element keyword presence matches _elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"  const el = 'keyword';",
-													"  const propName = mapToPropertyName(el);",
-													"  if (requestedElements.indexOf(el) !== -1) {",
-													"    pm.expect(vs, 'Expected \"' + propName + '\" when _elements includes ' + el).to.have.property(propName);",
-													"  } else {",
-													"    pm.expect(vs, 'Did not expect \"' + propName + '\" when _elements omits ' + el).to.not.have.property(propName);",
-													"  }",
-													"});",
-													"",
-													"pm.test('Element _text presence matches _elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"  const el = '_text';",
-													"  const propName = mapToPropertyName(el);",
-													"  if (requestedElements.indexOf(el) !== -1) {",
-													"    pm.expect(",
-													"      vs,",
-													"      'Expected \"' + propName + '\" when _elements includes ' + el",
-													"    ).to.have.property(propName);",
-													"  } else {",
-													"    pm.expect(",
-													"      vs,",
-													"      'Did not expect \"' + propName + '\" when _elements omits ' + el",
-													"    ).to.not.have.property(propName);",
-													"  }",
-													"});",
-													"",
-													"pm.test('Element _content presence matches _elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"  const el = '_content';",
-													"  const propName = mapToPropertyName(el);",
-													"  if (requestedElements.indexOf(el) !== -1) {",
-													"    pm.expect(",
-													"      vs,",
-													"      'Expected \"' + propName + '\" when _elements includes ' + el",
-													"    ).to.have.property(propName);",
-													"  } else {",
-													"    pm.expect(",
-													"      vs,",
-													"      'Did not expect \"' + propName + '\" when _elements omits ' + el",
-													"    ).to.not.have.property(propName);",
-													"  }",
-													"});",
-													"",
-													"pm.test('Element library presence matches _elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"  const el = 'library';",
-													"  const propName = mapToPropertyName(el);",
-													"  if (requestedElements.indexOf(el) !== -1) {",
-													"    pm.expect(vs, 'Expected \"' + propName + '\" when _elements includes ' + el).to.have.property(propName);",
-													"  } else {",
-													"    pm.expect(vs, 'Did not expect \"' + propName + '\" when _elements omits ' + el).to.not.have.property(propName);",
-													"  }",
-													"});"
+													""
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -5529,7 +6118,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{SERVER_URL}}ValueSet/?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611&_elements=_id,url,version,identifier,name,title,status,description,code,keyword,_text,_content,library",
+											"raw": "{{SERVER_URL}}ValueSet/?_id=2.16.840.1.113883.3.464.1003.198.12.1005-20190315&_element=name,title,description",
 											"host": [
 												"{{SERVER_URL}}ValueSet"
 											],
@@ -5538,12 +6127,12 @@
 											],
 											"query": [
 												{
-													"key": "url",
-													"value": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611"
+													"key": "_id",
+													"value": "2.16.840.1.113883.3.464.1003.198.12.1005-20190315"
 												},
 												{
 													"key": "_elements",
-													"value": "_id,url,version,identifier,name,title,status,description,code,keyword,_text,_content,library"
+													"value": "name,title,description"
 												}
 											]
 										}
