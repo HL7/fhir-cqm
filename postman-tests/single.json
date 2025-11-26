@@ -1,0 +1,229 @@
+{
+  "info": {
+    "_postman_id": "8cc76755-a8fa-4981-944a-e1f27b91dd38",
+    "name": "cqf-measures-terminology-service-tests",
+    "description": "This test suite validates capability described in the Quality Measure IG Measure Terminology Service:\n\n[https://build.fhir.org/ig/HL7/cqf-measures/measure-terminology-service.html](https://build.fhir.org/ig/HL7/cqf-measures/measure-terminology-service.html)\n\nSpecifically, there are test case folders for each section of the capability statement:\n\n- Code Systems (10.1.2: [https://build.fhir.org/ig/HL7/cqf-measures/measure-terminology-service.html#code-systems](https://build.fhir.org/ig/HL7/cqf-measures/measure-terminology-service.html#code-systems))\n    \n- Value Sets (10.1.3: [https://build.fhir.org/ig/HL7/cqf-measures/measure-terminology-service.html#value-sets](https://build.fhir.org/ig/HL7/cqf-measures/measure-terminology-service.html#value-sets))\n    \n- Quality Programs (10.1.4: [https://build.fhir.org/ig/HL7/cqf-measures/measure-terminology-service.html#quality-programs-artifact-collections](https://build.fhir.org/ig/HL7/cqf-measures/measure-terminology-service.html#quality-programs-artifact-collections))\n    \n- Server Operations (10.1.5: [https://build.fhir.org/ig/HL7/cqf-measures/measure-terminology-service.html#server-operations](https://build.fhir.org/ig/HL7/cqf-measures/measure-terminology-service.html#server-operations))\n    \n- Capability Statement (10.1.6: [https://build.fhir.org/ig/HL7/cqf-measures/measure-terminology-service.html#capability-statement](https://build.fhir.org/ig/HL7/cqf-measures/measure-terminology-service.html#capability-statement))\n    \n\nTests are named according to the requirement that they are testing. More documentation is available in the testing folders and individual test cases.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "269238"
+  },
+  "item": [
+    {
+      "name": "Quality Program 1 Shareable",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Why does this not require the Shareable profile in the meta???\r",
+              "pm.test(\"Response status code is 200\", function () {\r",
+              "    pm.expect(pm.response.code).to.equal(200);\r",
+              "});\r",
+              "\r",
+              "// resourceType\r",
+              "pm.test(\"ResourceType is Library\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(responseData.resourceType).to.equal(\"Library\");\r",
+              "    if (pm.environment.get(\"QUALITY_PROGRAM_DEBUG\") === true){",
+              "       console.log(responseData);",
+              "    }",
+              "});\r",
+              "\r",
+              "// profile\r",
+              "pm.test(\"Publishable profile is present in meta\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "if (pm.environment.get(\"VERSION\") === \"STU4\"){",
+              "    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-library-cqfm\");\r",
+              "} else if (pm.environment.get(\"VERSION\") === \"STU5\"){",
+              "    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary\");\r",
+              "}",
+              "    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\");\r",
+              "});\r",
+              "\r",
+              "// url\r",
+              "pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/Library/ecqm-update-2022-05-05\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(responseData.url).equal(\"http://cts.nlm.nih.gov/fhir/Library/ecqm-update-2022-05-05\");\r",
+              "});\r",
+              "\r",
+              "// version\r",
+              "pm.test(\"Version is 1.0.0\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(responseData.version).to.equal(\"1.0.0\", \"Invalid version\");\r",
+              "});\r",
+              "\r",
+              "// Quality Program Required Items\r",
+              "// identifier\r",
+              "pm.test(\"Identifier is present\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(responseData.identifier[0].system).exist;\r",
+              "});\r",
+              "\r",
+              "// name\r",
+              "pm.test(\"name is present\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(responseData.name).exist;\r",
+              "});\r",
+              "\r",
+              "// title\r",
+              "pm.test(\"title is present\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(responseData.title).exist;\r",
+              "});\r",
+              "\r",
+              "// status\r",
+              "pm.test(\"status is present\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(responseData.status).exist;\r",
+              "});\r",
+              "\r",
+              "// experimental\r",
+              "pm.test(\"experimental is present\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(responseData.experimental).exist;\r",
+              "});\r",
+              "\r",
+              "// type\r",
+              "pm.test(\"type is present\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(responseData.type.coding[0].system).exist;\r",
+              "});\r",
+              "\r",
+              "// date\r",
+              "pm.test(\"date is present\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(responseData.date).exist;\r",
+              "});\r",
+              "\r",
+              "// publisher\r",
+              "pm.test(\"publisher is present\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(responseData.publisher).exist;\r",
+              "});\r",
+              "\r",
+              "// description\r",
+              "pm.test(\"description is present\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect(responseData.description).exist;\r",
+              "});\r",
+              "\r",
+              "\r",
+              "// Quality Program MS Items\r",
+              "// directReferenceCode",
+              "pm.test(\"directReferenceCode is present\", function () {",
+              "  const responseData = pm.response.json();",
+              "  const url = \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode\";",
+              "  const extensions = (responseData.extension);",
+              "  const hit = extensions.find(ext => ext && ext.url === url);",
+              "  pm.expect(hit, \"directReferenceCode extension not found\").to.exist;",
+              "});",
+              "\r",
+              "// not found currently and not in fhir definition of Library",
+              "// cqlOptions\r",
+              "// expansionParameters\r",
+
+              "// useContext:qualityProgram\r",
+              "pm.test(\"useContext:qualityProgram is present\", function () {",
+              "  const responseData = pm.response.json();",
+              "  const system = \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\";",
+              "  const codings = (responseData.useContext).flatMap(uc => (uc.valueCodeableConcept && uc.valueCodeableConcept.coding));",
+              "  const hasSystem = codings.some(c => c && c.system === system);",
+              "  pm.expect(hasSystem, \"useContext:qualityProgram not found\").to.exist;",
+              "});",
+              "\r",
+              "// jurisdiction\r",
+              "pm.test(\"jurisdiction is present\", function () {",
+              "  const responseData = pm.response.json();",
+              "  pm.expect(responseData.jurisdiction[0].coding[0].system, \"Jurisdiction not found\").to.exist;",
+              "});",
+              "\r",
+              "// effectivePeriod\r",
+              "pm.test(\"effectivePeriod is present\", function () {",
+              "  const responseData = pm.response.json();",
+              "  pm.expect(responseData.effectivePeriod, \"Jurisdiction not found\").to.exist;",
+              "});",
+              "\r",
+              "// relatedArtifact:measure\r",
+              "pm.test(\"relatedArtifact:measure is present\", function () {\r",
+              "    const responseData = pm.response.json();\r",
+              "\r",
+              "    pm.expect((responseData.relatedArtifact).some(rf => typeof rf?.display === \"string\" && /measure/i.test(rf.display)), 'No relatedArtifact display contains \"measure\"').to.be.true;\r",
+              "});\r",
+              "\r",
+              "// relatedArtifact:dependency\r",
+              "pm.test(\"relatedArtifact has type depends-on\", function () {",
+              "  const data = pm.response.json();",
+              "  const hasDependsOn = (data.relatedArtifact).some(ra => ra.type === \"depends-on\");",
+              "  if (!hasDependsOn) console.log(\"relatedArtifact:\", res?.relatedArtifact);",
+              "  pm.expect(hasDependsOn, 'No relatedArtifact with type \"depends-on\"').to.be.true;",
+              "});",
+              "\r"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{SERVER_URL}}Library/ecqm-update-2022-05-05",
+          "host": [
+            "{{SERVER_URL}}Library"
+          ],
+          "path": [
+            "ecqm-update-2022-05-05"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "password",
+        "value": "{{basicPass}}",
+        "type": "string"
+      },
+      {
+        "key": "username",
+        "value": "{{basicUser}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.request.headers.add({key: 'Accept', value: 'application/fhir+json' })"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
