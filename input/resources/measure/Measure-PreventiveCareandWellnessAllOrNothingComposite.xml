@@ -1,97 +1,109 @@
 <Measure xmlns="http://hl7.org/fhir">
-   <id value="PreventiveCareandWellnessAllOrNothingComposite"></id>
+   <id value="PreventiveCareandWellnessAllOrNothingComposite"/>
    <meta>
-      <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositemeasure"></profile>
-      <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure"></profile>
+      <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositemeasure"/>
+      <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure"/>
    </meta>
-   <language value="en"></language>
-   <url value="http://hl7.org/fhir/uv/cqm/Measure/PreventiveCareandWellnessAllOrNothingComposite"></url>
-   <version value="0.0.001"></version>
-   <name value="PreventiveCareandWellnessAllOrNothingComposite"></name>
-   <title value="Preventive Care and Wellness All-Or-Nothing Composite"></title>
-   <status value="active"></status>
-   <experimental value="true"></experimental>
-   <publisher value="National Committee for Quality Assurance"></publisher>
-   <description value="This artifact is an example of an all-or-nothing composite measure that uses a mixture of single-rate or multi-rate component measures that have different measure bases."></description>
+   <language value="en"/>
+   <url value="http://hl7.org/fhir/uv/cqm/Measure/PreventiveCareandWellnessAllOrNothingComposite"/>
+   <version value="0.0.001"/>
+   <name value="PreventiveCareandWellnessAllOrNothingComposite"/>
+   <title value="Preventive Care and Wellness All-Or-Nothing Composite"/>
+   <status value="active"/>
+   <experimental value="true"/>
+   <publisher value="National Committee for Quality Assurance"/>
+   <description
+      value="This artifact is an example of an all-or-nothing composite measure that uses a mixture of single-rate or multi-rate component measures that have different measure bases."/>
    <useContext>
       <code>
-         <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"></system>
-         <code value="venue"></code>
-         <display value="Clinical Venue"></display>
+         <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+         <code value="venue"/>
+         <display value="Clinical Venue"/>
       </code>
       <valueCodeableConcept>
          <coding>
-            <system value="http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes"></system>
-            <code value="ec"></code>
-            <display value="EC"></display>
+            <system value="http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes"/>
+            <code value="ec"/>
+            <display value="EC"/>
          </coding>
       </valueCodeableConcept>
    </useContext>
    <effectivePeriod>
-      <start value="2022-01-01"></start>
-      <end value="2022-12-31"></end>
+      <start value="2022-01-01"/>
+      <end value="2022-12-31"/>
    </effectivePeriod>
-   <relatedArtifact>
-      <type value="composed-of"></type>
-      <display value="Breast Cancer Screening"></display>
-      <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent"></resource>
-   </relatedArtifact>
-   <relatedArtifact>
-      <type value="composed-of"></type>
-      <display value="High Blood Pressure Screening"></display>
-      <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent"></resource>
-   </relatedArtifact>
-   <relatedArtifact>
-      <type value="composed-of"></type>
-      <display value="Colorectal Cancer Screening"></display>
-      <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent"></resource>
-   </relatedArtifact>
-   <relatedArtifact>
-      <type value="composed-of"></type>
-      <display value="Pneumococcal Vaccination Status"></display>
-      <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent"></resource>
-   </relatedArtifact>
-   <relatedArtifact>
-      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-         <valueString value="group-1"></valueString>
-      </extension>
-      <type value="composed-of"></type>
-      <display value="Tobacco Use Screening and Cessation, Group 1"></display>
-      <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent"></resource>
-   </relatedArtifact>
-   <relatedArtifact>
-      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-         <valueString value="group-2"></valueString>
-      </extension>
-      <type value="composed-of"></type>
-      <display value="Tobacco Use Screening and Cessation, Group 2"></display>
-      <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent"></resource>
-   </relatedArtifact>
    <scoring>
       <coding>
-         <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"></system>
-         <code value="composite"></code>
-         <display value="Composite"></display>
+         <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"/>
+         <code value="composite"/>
+         <display value="Composite"/>
       </coding>
    </scoring>
    <compositeScoring>
       <coding>
-         <system value="http://terminology.hl7.org/CodeSystem/composite-measure-scoring"></system>
-         <code value="all-or-nothing"></code>
-         <display value="All-or-nothing"></display>
+         <system value="http://terminology.hl7.org/CodeSystem/composite-measure-scoring"/>
+         <code value="all-or-nothing"/>
+         <display value="All-or-nothing"/>
       </coding>
    </compositeScoring>
    <type>
       <coding>
-         <system value="http://terminology.hl7.org/CodeSystem/measure-type"></system>
-         <code value="process"></code>
-         <display value="Process"></display>
+         <system value="http://terminology.hl7.org/CodeSystem/measure-type"/>
+         <code value="process"/>
+         <display value="Process"/>
       </coding>
    </type>
    <improvementNotation>
       <coding>
-         <system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"></system>
-         <code value="increase"></code>
+         <system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"/>
+         <code value="increase"/>
       </coding>
    </improvementNotation>
+   <group>
+      <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
+         <valueString value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|0.0.001"/>
+         </valueRelatedArtifact>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|0.0.001"/>
+         </valueRelatedArtifact>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|0.0.001"/>
+         </valueRelatedArtifact>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|0.0.001"/>
+         </valueRelatedArtifact>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+            <valueString value="group-1"/>
+         </extension>
+         <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>
+         </valueRelatedArtifact>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+            <valueString value="group-2"/>
+         </extension>
+         <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>
+         </valueRelatedArtifact>
+      </extension>
+   </group>
 </Measure>

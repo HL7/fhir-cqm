@@ -109,44 +109,6 @@
         "mustSupport" : true
       },
       {
-        "id" : "Measure.extension:populationBasis",
-        "path" : "Measure.extension",
-        "sliceName" : "populationBasis",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis"
-            ]
-          }
-        ],
-        "condition" : [
-          "comp-1"
-        ],
-        "mustSupport" : true
-      },
-      {
-        "id" : "Measure.extension:scoringUnit",
-        "path" : "Measure.extension",
-        "sliceName" : "scoringUnit",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoringUnit"
-            ]
-          }
-        ],
-        "condition" : [
-          "comp-3"
-        ],
-        "mustSupport" : true
-      },
-      {
         "id" : "Measure.extension:effectiveDataRequirements",
         "path" : "Measure.extension",
         "sliceName" : "effectiveDataRequirements",
@@ -161,21 +123,6 @@
           }
         ],
         "mustSupport" : true
-      },
-      {
-        "id" : "Measure.extension:scoringPrecision",
-        "path" : "Measure.extension",
-        "sliceName" : "scoringPrecision",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoringPrecision"
-            ]
-          }
-        ]
       },
       {
         "id" : "Measure.subject[x]",

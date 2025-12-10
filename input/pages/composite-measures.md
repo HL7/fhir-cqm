@@ -3,12 +3,12 @@
 
 {: #composite-measures}
 
-Composite measures make use of multiple component measures to produce a combined score. In the most general case, a composite measure is akin to a continuous variable measure, where the measure observation for each population member is some combination of the individual's component measure scores. However, the calculation logic involved is detailed, and a higher-level representation of the most common composite measure calculation approaches enables a much simpler representation to work with and understand. Note that composite measures must be constructed from existing component measures or groups. Composites do not introduce any new measure logic beyond the composite score calculation. If a composite needs to introduce new logic, a new component measure or group must be developed that can then be included in the composite.
+Composite measures make use of multiple component measures to produce a combined score. In the most general case, a composite measure is akin to a continuous variable measure, where the measure observation for each population member is some combination of the individual's component measure scores. However, the calculation logic involved is detailed, and a higher-level representation of the most common composite measure calculation approaches enables a much simpler representation to work with and understand. Note that composite measures can only be defined on Measure.group and must be constructed from existing component measures or groups. Composites do not introduce any new measure logic beyond the composite score calculation. If a composite needs to introduce new logic, a new component measure or group must be developed that can then be included in the composite.
 
 **Conformance Requirement 5.1 (Composite Measures):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-1)
 {: #conformance-requirement-5-1}
     1. Composite Measures SHALL conform to the CQMCompositeMeasure profile
-    2. Composite Measures SHALL specify a composite measure scoring method
+    2. Composite Measures SHALL specify a composite measure scoring methodelements with a type of composed-of as shown in Snippet 23
 
 The example illustrates the use of these elements of a measure to specify a composite measure:
 
@@ -69,46 +69,55 @@ All-or-nothing scoring includes an individual in the numerator of the composite 
 
 </details>
 
-An example of an “All-or-nothing” scored composite measure has been included in [Preventive Care and Wellness (All-or-nothing)](Measure-PreventiveCareandWellnessAllOrNothingComposite.html). This measure specifies the composite, and references the component measures using `relatedArtifact` elements with a type of `composed-of` as shown in Snippet 23:
+An example of an “All-or-nothing” scored composite measure has been included in [Preventive Care and Wellness (All-or-nothing)](Measure-PreventiveCareandWellnessAllOrNothingComposite.html). This measure specifies the composite, and references the component measures using `component` slice on Measure.group as shown in Snippet 23:
 
 ```xml
-<relatedArtifact>
-   <type value="composed-of"/>
-   <display value="Breast Cancer Screening"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <type value="composed-of"/>
-   <display value="High Blood Pressure Screening"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <type value="composed-of"/>
-   <display value="Colorectal Cancer Screening"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <type value="composed-of"/>
-   <display value="Pneumococcal Vaccination Status"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-      <valueString value="group-1"/>
-   </extension>
-   <type value="composed-of"/>
-   <display value="Tobacco Use Screening and Cessation, Group 1"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-      <valueString value="group-2"/>
-   </extension>
-   <type value="composed-of"/>
-   <display value="Tobacco Use Screening and Cessation, Group 2"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>
-</relatedArtifact>
- ```
+<group>
+    <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>
+    <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>
+    <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>
+    <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension> 
+    <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+            <valueString value="group-1"/>
+        </extension>    
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>
+    <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+            <valueString value="group-2"/>
+        </extension>    
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>
+...
+</group>
+ ``` 
 
 Snippet 23: Components of an example All-or-nothing scored composite measure from Preventive Care and Wellness (All-or-nothing).
 
@@ -409,63 +418,71 @@ Computationally, this method is simply the weighted average of the component mea
 A "weighted" score composite measure specifies the weights of each component using the [weight](StructureDefinition-cqm-weight.html) extension on each component measure, as in the example below:
 
 ```xml
-<relatedArtifact>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-      <valueDecimal value="0.2"/>
-   </extension>
-   <type value="composed-of"/>
-   <display value="Breast Cancer Screening"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-      <valueDecimal value="0.2"/>
-   </extension>
-   <type value="composed-of"/>
-   <display value="High Blood Pressure Screening"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-      <valueDecimal value="0.2"/>
-   </extension>
-   <type value="composed-of"/>
-   <display value="Colorectal Cancer Screening"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-      <valueDecimal value="0.2"/>
-   </extension>
-   <type value="composed-of"/>
-   <display value="Pneumococcal Vaccination Status"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-      <valueString value="group-1"/>
-   </extension>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-      <valueDecimal value="0.1"/>
-   </extension>
-   <type value="composed-of"/>
-   <display value="Tobacco Use Screening and Cessation, Group 1"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-      <valueString value="group-2"/>
-   </extension>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-      <valueDecimal value="0.1"/>
-   </extension>
-   <type value="composed-of"/>
-   <display value="Tobacco Use Screening and Cessation, Group 2"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>
-</relatedArtifact>
- ```
+<group>
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.2"/>
+        </extension>    
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.2"/>
+        </extension>    
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.2"/>
+        </extension>    
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension> 
+ <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.2"/>
+        </extension>    
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>
+ <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+            <valueString value="group-1"/>
+        </extension>        
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.1"/>
+        </extension>    
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>  
+ <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+            <valueString value="group-2"/>
+        </extension>        
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.1"/>
+        </extension>    
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>       
+</group>
+```
 
-Snippet 29: Weighted composite measure relatedArtifact elements
+Snippet 29: Weighted composite measure defined using .group component slices
 
 ### Improvement Notation
 {: #improvement-notation}
@@ -584,63 +601,71 @@ For individual-based composite scoring methods, additional data elements are col
         c. Multiple groups within the same measure may be referenced as different components of the same composite
     3. A composite QM SHALL have at least two components
 
-Regardless of the scoring method, a composite QM will include any number of component measures to be included in the composite calculations. Each component results in the appearance of a relatedArtifact element referencing a Measure by _url_, possibly including the _version_ and, if necessary, specifying the particular _group_ that should be used as the component, and the _weight_ of that component's contribution to the composite score (for weighted composite scoring methods). The following example illustrates a simple composite:
+Regardless of the scoring method, a composite QM will include any number of component measures to be included in the composite calculations. Each component results in the appearance of a component (extension) element on Measure.group, referencing a Measure by _url_, possibly including the _version_ via `extension.value`, if necessary, specifying the particular _group_ that should be used as the component, and the _weight_ of that component's contribution to the composite score (for weighted composite scoring methods). The following example illustrates a simple composite:
 
 ```xml
-<relatedArtifact>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-      <valueDecimal value="0.2"/>
-   </extension>
-   <type value="composed-of"/>
-   <display value="Breast Cancer Screening"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-      <valueDecimal value="0.2"/>
-   </extension>
-   <type value="composed-of"/>
-   <display value="High Blood Pressure Screening"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-      <valueDecimal value="0.2"/>
-   </extension>
-   <type value="composed-of"/>
-   <display value="Colorectal Cancer Screening"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-      <valueDecimal value="0.2"/>
-   </extension>
-   <type value="composed-of"/>
-   <display value="Pneumococcal Vaccination Status"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-      <valueString value="group-1"/>
-   </extension>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-      <valueDecimal value="0.1"/>
-   </extension>
-   <type value="composed-of"/>
-   <display value="Tobacco Use Screening and Cessation, Group 1"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>
-</relatedArtifact>
-<relatedArtifact>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-      <valueString value="group-2"/>
-   </extension>
-   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-      <valueDecimal value="0.1"/>
-   </extension>
-   <type value="composed-of"/>
-   <display value="Tobacco Use Screening and Cessation, Group 2"/>
-   <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>
-</relatedArtifact>
- ```
+<group>
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.2"/>
+        </extension>    
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.2"/>
+        </extension>    
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.2"/>
+        </extension>    
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension> 
+ <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.2"/>
+        </extension>    
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>
+ <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+            <valueString value="group-1"/>
+        </extension>        
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.1"/>
+        </extension>    
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>  
+ <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+            <valueString value="group-2"/>
+        </extension>        
+        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.1"/>
+        </extension>    
+        <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>            
+        </valueRelatedArtifact>
+    </extension>       
+</group>
+```
 
-Snippet 30: Composite measure relatedArtifacts
+Snippet 30: Composite measure group component slices

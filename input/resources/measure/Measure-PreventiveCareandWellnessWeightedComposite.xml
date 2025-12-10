@@ -31,60 +31,6 @@
       <start value="2022-01-01"></start>
       <end value="2022-12-31"></end>
    </effectivePeriod>
-   <relatedArtifact>
-      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-         <valueDecimal value="0.2"></valueDecimal>
-      </extension>
-      <type value="composed-of"></type>
-      <display value="Breast Cancer Screening"></display>
-      <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent"></resource>
-   </relatedArtifact>
-   <relatedArtifact>
-      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-         <valueDecimal value="0.2"></valueDecimal>
-      </extension>
-      <type value="composed-of"></type>
-      <display value="High Blood Pressure Screening"></display>
-      <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent"></resource>
-   </relatedArtifact>
-   <relatedArtifact>
-      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-         <valueDecimal value="0.2"></valueDecimal>
-      </extension>
-      <type value="composed-of"></type>
-      <display value="Colorectal Cancer Screening"></display>
-      <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent"></resource>
-   </relatedArtifact>
-   <relatedArtifact>
-      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-         <valueDecimal value="0.2"></valueDecimal>
-      </extension>
-      <type value="composed-of"></type>
-      <display value="Pneumococcal Vaccination Status"></display>
-      <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent"></resource>
-   </relatedArtifact>
-   <relatedArtifact>
-      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-         <valueString value="group-1"></valueString>
-      </extension>
-      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-         <valueDecimal value="0.1"></valueDecimal>
-      </extension>
-      <type value="composed-of"></type>
-      <display value="Tobacco Use Screening and Cessation, Group 1"></display>
-      <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent"></resource>
-   </relatedArtifact>
-   <relatedArtifact>
-      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-         <valueString value="group-2"></valueString>
-      </extension>
-      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-         <valueDecimal value="0.1"></valueDecimal>
-      </extension>
-      <type value="composed-of"></type>
-      <display value="Tobacco Use Screening and Cessation, Group 2"></display>
-      <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent"></resource>
-   </relatedArtifact>
    <scoring>
       <coding>
          <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"></system>
@@ -112,4 +58,69 @@
          <code value="increase"></code>
       </coding>
    </improvementNotation>
+   <group>
+      <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
+         <valueString value="1"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.2"/>
+         </extension>    
+         <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|0.0.001"/>            
+         </valueRelatedArtifact>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.2"/>
+         </extension>    
+         <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|0.0.001"/>            
+         </valueRelatedArtifact>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.2"/>
+         </extension>    
+         <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|0.0.001"/>            
+         </valueRelatedArtifact>
+      </extension> 
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.2"/>
+         </extension>    
+         <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|0.0.001"/>            
+         </valueRelatedArtifact>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+            <valueString value="group-1"/>
+         </extension>        
+         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.1"/>
+         </extension>    
+         <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>            
+         </valueRelatedArtifact>
+      </extension>  
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+            <valueString value="group-2"/>
+         </extension>        
+         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+            <valueDecimal value="0.1"/>
+         </extension>    
+         <valueRelatedArtifact>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>            
+         </valueRelatedArtifact>
+      </extension>       
+   </group>
 </Measure>
