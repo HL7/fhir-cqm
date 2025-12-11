@@ -1,126 +1,128 @@
 <Measure xmlns="http://hl7.org/fhir">
-   <id value="PreventiveCareandWellnessWeightedComposite"></id>
+   <id value="PreventiveCareandWellnessWeightedComposite"/>
    <meta>
-      <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositemeasure"></profile>
-      <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure"></profile>
+      <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositemeasure"/>
+      <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure"/>
    </meta>
-   <language value="en"></language>
-   <url value="http://hl7.org/fhir/uv/cqm/Measure/PreventiveCareandWellnessWeightedComposite"></url>
-   <version value="0.0.001"></version>
-   <name value="PreventiveCareandWellnessWeightedComposite"></name>
-   <title value="Preventive Care and Wellness Weighted Composite"></title>
-   <status value="active"></status>
-   <experimental value="true"></experimental>
-   <publisher value="National Committee for Quality Assurance"></publisher>
-   <description value="This artifact is an example of a weighted composite measure that uses a mixture of single-rate or multi-rate component measures that have different measure bases."></description>
+   <language value="en"/>
+   <url value="http://hl7.org/fhir/uv/cqm/Measure/PreventiveCareandWellnessWeightedComposite"/>
+   <version value="0.0.001"/>
+   <name value="PreventiveCareandWellnessWeightedComposite"/>
+   <title value="Preventive Care and Wellness Weighted Composite"/>
+   <status value="active"/>
+   <experimental value="true"/>
+   <publisher value="National Committee for Quality Assurance"/>
+   <description
+      value="This artifact is an example of a weighted composite measure that uses a mixture of single-rate or multi-rate component measures that have different measure bases."/>
    <useContext>
       <code>
-         <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"></system>
-         <code value="venue"></code>
-         <display value="Clinical Venue"></display>
+         <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+         <code value="venue"/>
+         <display value="Clinical Venue"/>
       </code>
       <valueCodeableConcept>
          <coding>
-            <system value="http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes"></system>
-            <code value="ec"></code>
-            <display value="EC"></display>
+            <system value="http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes"/>
+            <code value="ec"/>
+            <display value="EC"/>
          </coding>
       </valueCodeableConcept>
    </useContext>
    <effectivePeriod>
-      <start value="2022-01-01"></start>
-      <end value="2022-12-31"></end>
+      <start value="2022-01-01"/>
+      <end value="2022-12-31"/>
    </effectivePeriod>
    <scoring>
       <coding>
-         <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"></system>
-         <code value="composite"></code>
-         <display value="Composite"></display>
+         <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"/>
+         <code value="composite"/>
+         <display value="Composite"/>
       </coding>
    </scoring>
    <compositeScoring>
       <coding>
-         <system value="http://terminology.hl7.org/CodeSystem/composite-measure-scoring"></system>
-         <code value="weighted"></code>
-         <display value="Weighted"></display>
+         <system value="http://terminology.hl7.org/CodeSystem/composite-measure-scoring"/>
+         <code value="weighted"/>
+         <display value="Weighted"/>
       </coding>
    </compositeScoring>
    <type>
       <coding>
-         <system value="http://terminology.hl7.org/CodeSystem/measure-type"></system>
-         <code value="process"></code>
-         <display value="Process"></display>
+         <system value="http://terminology.hl7.org/CodeSystem/measure-type"/>
+         <code value="process"/>
+         <display value="Process"/>
       </coding>
    </type>
    <improvementNotation>
       <coding>
-         <system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"></system>
-         <code value="increase"></code>
+         <system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"/>
+         <code value="increase"/>
       </coding>
    </improvementNotation>
+   <!-- Composite Measure group -->
    <group>
       <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
          <valueString value="1"/>
       </extension>
       <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.2"/>
-         </extension>    
          <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+               <valueDecimal value="0.2"/>
+            </extension>
             <type value="composed-of"/>
-            <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|0.0.001"/>            
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent"/>
          </valueRelatedArtifact>
       </extension>
       <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.2"/>
-         </extension>    
          <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+               <valueDecimal value="0.2"/>
+            </extension>
             <type value="composed-of"/>
-            <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|0.0.001"/>            
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent"/>
          </valueRelatedArtifact>
       </extension>
       <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.2"/>
-         </extension>    
          <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+               <valueDecimal value="0.2"/>
+            </extension>
             <type value="composed-of"/>
-            <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|0.0.001"/>            
-         </valueRelatedArtifact>
-      </extension> 
-      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.2"/>
-         </extension>    
-         <valueRelatedArtifact>
-            <type value="composed-of"/>
-            <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|0.0.001"/>            
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent"/>
          </valueRelatedArtifact>
       </extension>
       <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-            <valueString value="group-1"/>
-         </extension>        
-         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.1"/>
-         </extension>    
          <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+               <valueDecimal value="0.2"/>
+            </extension>
             <type value="composed-of"/>
-            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>            
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent"/>
          </valueRelatedArtifact>
-      </extension>  
+      </extension>
       <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-            <valueString value="group-2"/>
-         </extension>        
-         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.1"/>
-         </extension>    
          <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+               <valueString value="group-1"/>
+            </extension>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+               <valueDecimal value="0.1"/>
+            </extension>
             <type value="composed-of"/>
-            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>            
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent"/>
          </valueRelatedArtifact>
-      </extension>       
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+               <valueString value="group-2"/>
+            </extension>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+               <valueDecimal value="0.1"/>
+            </extension>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent"/>
+         </valueRelatedArtifact>
+      </extension>
    </group>
 </Measure>

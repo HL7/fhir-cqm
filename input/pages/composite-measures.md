@@ -419,62 +419,62 @@ A "weighted" score composite measure specifies the weights of each component usi
 
 ```xml
 <group>
-  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.2"/>
-        </extension>    
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">  
         <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+                <valueDecimal value="0.2"/>
+            </extension>        
             <type value="composed-of"/>
             <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|0.0.001"/>            
         </valueRelatedArtifact>
-    </extension>
-  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.2"/>
-        </extension>    
-        <valueRelatedArtifact>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">    
+       <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+                 <valueDecimal value="0.2"/>
+            </extension>       
             <type value="composed-of"/>
             <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|0.0.001"/>            
         </valueRelatedArtifact>
-    </extension>
-  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.2"/>
-        </extension>    
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">    
         <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+                 <valueDecimal value="0.2"/>
+             </extension>        
             <type value="composed-of"/>
             <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|0.0.001"/>            
         </valueRelatedArtifact>
-    </extension> 
- <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.2"/>
-        </extension>    
+  </extension> 
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
         <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+                <valueDecimal value="0.2"/>
+            </extension>        
             <type value="composed-of"/>
             <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|0.0.001"/>            
         </valueRelatedArtifact>
-    </extension>
- <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-            <valueString value="group-1"/>
-        </extension>        
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.1"/>
-        </extension>    
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">    
         <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+                <valueString value="group-1"/>
+            </extension>        
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+                 <valueDecimal value="0.1"/>
+            </extension>        
             <type value="composed-of"/>
             <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>            
         </valueRelatedArtifact>
-    </extension>  
- <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-            <valueString value="group-2"/>
-        </extension>        
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.1"/>
-        </extension>    
+  </extension>  
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">   
         <valueRelatedArtifact>
+             <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+                   <valueString value="group-2"/>
+             </extension>        
+             <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+                    <valueDecimal value="0.1"/>
+             </extension>         
             <type value="composed-of"/>
             <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>            
         </valueRelatedArtifact>
@@ -605,62 +605,62 @@ Regardless of the scoring method, a composite QM will include any number of comp
 
 ```xml
 <group>
-  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.2"/>
-        </extension>    
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">  
         <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+                <valueDecimal value="0.2"/>
+            </extension>        
             <type value="composed-of"/>
             <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|0.0.001"/>            
         </valueRelatedArtifact>
-    </extension>
-  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.2"/>
-        </extension>    
-        <valueRelatedArtifact>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">    
+       <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+                 <valueDecimal value="0.2"/>
+            </extension>       
             <type value="composed-of"/>
             <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|0.0.001"/>            
         </valueRelatedArtifact>
-    </extension>
-  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.2"/>
-        </extension>    
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">    
         <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+                 <valueDecimal value="0.2"/>
+             </extension>        
             <type value="composed-of"/>
             <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|0.0.001"/>            
         </valueRelatedArtifact>
-    </extension> 
- <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.2"/>
-        </extension>    
+  </extension> 
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
         <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+                <valueDecimal value="0.2"/>
+            </extension>        
             <type value="composed-of"/>
             <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|0.0.001"/>            
         </valueRelatedArtifact>
-    </extension>
- <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-            <valueString value="group-1"/>
-        </extension>        
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.1"/>
-        </extension>    
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">    
         <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+                <valueString value="group-1"/>
+            </extension>        
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+                 <valueDecimal value="0.1"/>
+            </extension>        
             <type value="composed-of"/>
             <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>            
         </valueRelatedArtifact>
-    </extension>  
- <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-            <valueString value="group-2"/>
-        </extension>        
-        <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
-            <valueDecimal value="0.1"/>
-        </extension>    
+  </extension>  
+  <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">   
         <valueRelatedArtifact>
+             <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+                   <valueString value="group-2"/>
+             </extension>        
+             <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+                    <valueDecimal value="0.1"/>
+             </extension>         
             <type value="composed-of"/>
             <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>            
         </valueRelatedArtifact>

@@ -167,7 +167,7 @@
         ],
         "mustSupport": true
       },
-      {
+        {
         "id" : "Measure.group.extension:component",
         "path" : "Measure.group.extension",
         "sliceName" : "component",

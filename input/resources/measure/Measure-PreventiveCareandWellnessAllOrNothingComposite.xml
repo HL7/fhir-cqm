@@ -59,6 +59,7 @@
          <code value="increase"/>
       </coding>
    </improvementNotation>
+   <!-- Composite Measure group -->
    <group>
       <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
          <valueString value="1"/>
@@ -66,43 +67,49 @@
       <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
          <valueRelatedArtifact>
             <type value="composed-of"/>
-            <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|0.0.001"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent"/>
          </valueRelatedArtifact>
       </extension>
       <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
          <valueRelatedArtifact>
             <type value="composed-of"/>
-            <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|0.0.001"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent"/>
          </valueRelatedArtifact>
       </extension>
       <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
          <valueRelatedArtifact>
             <type value="composed-of"/>
-            <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|0.0.001"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent"/>
          </valueRelatedArtifact>
       </extension>
       <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
          <valueRelatedArtifact>
             <type value="composed-of"/>
-            <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|0.0.001"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent"/>
          </valueRelatedArtifact>
       </extension>
       <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-            <valueString value="group-1"/>
-         </extension>
          <valueRelatedArtifact>
             <type value="composed-of"/>
-            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>
+            <resource value=""/>
          </valueRelatedArtifact>
       </extension>
       <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
-         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
-            <valueString value="group-2"/>
-         </extension>
          <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+               <valueString value="group-1"/>
+            </extension>
             <type value="composed-of"/>
-            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent|0.0.001"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent"/>
+         </valueRelatedArtifact>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+               <valueString value="group-2"/>
+            </extension>
+            <type value="composed-of"/>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent"/>
          </valueRelatedArtifact>
       </extension>
    </group>
