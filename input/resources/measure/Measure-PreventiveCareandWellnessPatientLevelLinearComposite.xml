@@ -63,6 +63,9 @@
       <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
          <valueString value="1"/>
       </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+         <valueCode value="Patient"/>
+      </extension>
       <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
          <valueRelatedArtifact>
             <type value="composed-of"/>
