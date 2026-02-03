@@ -153,3 +153,11 @@ the exchange of quality information and quality measure reporting (e.g. for
 transferring quality information from a healthcare provider to a payer). The
 DEQM expects to use quality measures specified in accordance with the Quality
 Measure IG and QI-Core.
+
+##### Canonical Resource Management Infrastructure (CRMI)
+{: #canonical-resource-management-infrastructure-implementation-guide-(crmi)}
+
+The Canonical Resource Management Infrastructure implementation guide defines profiles, 
+operations, capability statements and guidance to facilitate the content management 
+lifecycle for authoring, publishing, distribution, and implementation of FHIR knowledge 
+artifacts such as value sets, profiles, libraries, rules, and measures.
