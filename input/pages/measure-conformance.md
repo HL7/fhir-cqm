@@ -1261,7 +1261,7 @@ Note also that when a measure has multiple population groups, the expectation is
     2. Results in a type that MAY be different than the basis of the measure.
 4. Stratification descriptions SHOULD be in markdown (see [Conformance statement 3.1](#conformance-requirement-3-1) item 4 for more information)
 
-Stratification is represented using the `stratifier` element. The semantics of this element are unchanged from Quality Reporting ([Section 14.6.1.4.1](https://build.fhir.org/clinicalreasoning-quality-reporting.html#stratification)) where there is a complete explanation of stratifiers.
+Stratification is represented using the `stratifier` element. The semantics of this element are unchanged from Quality Reporting ([Section 17.6.1.4.1](https://hl7.org/fhir/6.0.0-ballot4/clinicalreasoning-quality-reporting.html#stratification)) where there is a complete explanation of stratifiers.
 
 Stratification criteria are specified either as a reference to a CQL named expression within a Library (e.g. CMS146.AgesUpToNine), or as FHIR resource paths (e.g. Patient.deceased).
 
