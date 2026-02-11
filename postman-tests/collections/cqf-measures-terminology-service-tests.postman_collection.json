@@ -1697,12 +1697,6 @@
 													"    }",
 													"});",
 													"",
-													"pm.test(\"Resource version is 0.5.0\", function () {",
-													"        const responseData = pm.response.json();",
-													"",
-													"    pm.expect(responseData.entry[0].resource.version).equals(\"0.5.0\");",
-													"});",
-													"",
 													"pm.test(\"Resource name is AllergyIntoleranceClinicalStatusCodes\", function () {",
 													"        const responseData = pm.response.json();",
 													"",
@@ -1721,10 +1715,10 @@
 													"    pm.expect(responseData.entry[0].resource.experimental).is.false;",
 													"});",
 													"",
-													"pm.test(\"Resource publisher is FHIR Project team\", function () {",
+													"pm.test(\"Resource publisher is Health Level Seven International\", function () {",
 													"        const responseData = pm.response.json();",
 													"",
-													"    pm.expect(responseData.entry[0].resource.publisher).equals(\"FHIR Project team\");",
+													"    pm.expect(responseData.entry[0].resource.publisher).equals(\"Health Level Seven International\");",
 													"});",
 													"",
 													"pm.test(\"Resource title is AllergyIntolerance Clinical Status Codes\", function () {",
@@ -2922,7 +2916,7 @@
 													"pm.test(\"Description is expected\", function () {",
 													"    const responseData = pm.response.json();",
 													"",
-													"    pm.expect(responseData.entry[0].resource.description).to.equal(\"The US Core Condition Category Codes support the separate concepts of problems and health concerns in Condition.category in order for API consumers to be able to separate health concerns and problems. However this is not mandatory for 2015 certification\", \"Description error\");",
+													"    pm.expect(responseData.entry[0].resource.description).to.equal(\"The US Core Condition Category Codes support the separate concepts of problems and health concerns in Condition.category in order for API consumers to be able to separate health concerns and problems. However this is not mandatory for 2015 certification\", \"Description error\");",
 													"});",
 													"",
 													""
@@ -3928,12 +3922,12 @@
 													"        }",
 													"    }",
 													"    pm.expect(extension).to.exist;",
-													"    pm.expect(extension.valueDate).to.equal(\"2023-02-17\", \"effectiveDate error\");",
+													"    pm.expect(extension.valueDateTime).to.equal(\"2023-02-17\", \"effectiveDate error\");",
 													"});",
 													"",
 													"// expirationDate",
 													"// lastReviewDate",
-													"pm.test(\"LastReviewDate is 2023-02-17\", function() {",
+													"pm.test(\"LastReviewDate is 2025-04-07\", function() {",
 													"    const responseData = pm.response.json();",
 													"    const extensions = responseData.entry[0].resource.extension;",
 													"    let extension = null;",
@@ -3944,14 +3938,14 @@
 													"        }",
 													"    }",
 													"    pm.expect(extension).to.exist;",
-													"    pm.expect(extension.valueDate).to.equal(\"2023-02-17\", \"lastReviewDate error\");",
+													"    pm.expect(extension.valueDate).to.equal(\"2025-04-07\", \"lastReviewDate error\");",
 													"});",
 													"",
 													"// author",
-													"pm.test(\"Publisher is TJC EH Author\", function() {",
+													"pm.test(\"Publisher is TJC EH Steward\", function() {",
 													"    const responseData = pm.response.json();",
 													"    const publisher = responseData.entry[0].resource.publisher;",
-													"    pm.expect(publisher).to.equal(\"TJC EH Author\", \"Publisher error\");",
+													"    pm.expect(publisher).to.equal(\"TJC EH Steward\", \"Publisher error\");",
 													"});",
 													"",
 													"// keyWord",
@@ -4397,14 +4391,14 @@
 											"})\r",
 											"\r",
 											"// version\r",
-											"pm.test(\"Version is not present in the include\", function () {\r",
+											"pm.test(\"Version should not be present in the include\", function () {\r",
 											"    const responseData = pm.response.json();\r",
 											"\r",
-											"    const includes = body.compose && body.compose.include;",
+											"    const includes = responseData.compose && responseData.compose.include;",
 											"    pm.expect(includes).to.be.an(\"array\");",
 											"    includes.forEach((include, idx) => {",
-											"        pm.expect(include).to.not.have.property(\"version\", `compose.include[${idx}] SHOULD NOT have a 'version'`);",
-											"    });",
+											"    pm.expect(include, `compose.include[${idx}] SHOULD NOT have a 'version'`).to.not.have.property('version');",
+											"  });",
 											"});\r",
 											"\r",
 											""
@@ -4556,8 +4550,9 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"//SOT@## ValueSet 8 Search @SOT",
-													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611 @SOT",
+													"//SOT@ ValueSet 8.1.2 Search By Url with _elements @SOT",
+													"// Based on source of truth: SOT@ https://terminology.hl7.org/3.1.0/ValueSet-v3-ActEncounterCode.json version: \"2.0.0\"@SOT",
+													"// NOTE: Hosted content is actually based on FHIR for this THO value set...",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
 													"});",
@@ -4600,7 +4595,7 @@
 													"",
 													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
 													"  const responseData = pm.response.json();",
-													"  const tags = responseData.entry[0].resource.meta;",
+													"  const tags = responseData.entry[0].resource.meta.tag;",
 													"  const hasSubsetted = tags.some(function (t) {",
 													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
 													"  });",
@@ -4622,7 +4617,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{SERVER_URL}}ValueSet/?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611&_element=name,title,description",
+											"raw": "{{SERVER_URL}}ValueSet/?url=http://terminology.hl7.org/ValueSet/v3-ActEncounterCode&version=2.0.0&_element=name,title,description",
 											"host": [
 												"{{SERVER_URL}}ValueSet"
 											],
@@ -4632,11 +4627,15 @@
 											"query": [
 												{
 													"key": "url",
-													"value": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611"
+													"value": "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode"
 												},
 												{
 													"key": "_elements",
 													"value": "name,title,description"
+												},
+												{
+													"key": "version",
+													"value": "2.0.0"
 												}
 											]
 										}
@@ -4702,7 +4701,9 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 @SOT",
+													"//SOT@ ValueSet 8.2.1 Search By Version with _elements @SOT",
+													"// Based on source of truth: SOT@ https://terminology.hl7.org/3.1.0/ValueSet-v3-ActEncounterCode.json @SOT",
+													"// NOTE: Hosted content is actually based on FHIR for this THO value set...",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
 													"});",
@@ -4745,7 +4746,7 @@
 													"",
 													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
 													"  const responseData = pm.response.json();",
-													"  const tags = responseData.entry[0].resource.meta;",
+													"  const tags = responseData.entry[0].resource.meta.tag;",
 													"  const hasSubsetted = tags.some(function (t) {",
 													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
 													"  });",
@@ -4768,7 +4769,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{SERVER_URL}}ValueSet/?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611&version=20200319&_element=name,title,description",
+											"raw": "{{SERVER_URL}}ValueSet/?url=http://terminology.hl7.org/ValueSet/v3-ActEncounterCode&version=2.0.0&_element=name,title,description",
 											"host": [
 												"{{SERVER_URL}}ValueSet"
 											],
@@ -4778,22 +4779,21 @@
 											"query": [
 												{
 													"key": "url",
-													"value": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611"
-												},
-												{
-													"key": "version",
-													"value": "20200319"
+													"value": "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode"
 												},
 												{
 													"key": "_elements",
 													"value": "name,title,description"
+												},
+												{
+													"key": "version",
+													"value": "2.0.0"
 												}
 											]
 										}
 									},
 									"response": []
-								},
-								{
+								},								{
 									"name": "ValueSet 8.3 Search By Identifier",
 									"event": [
 										{
@@ -4856,9 +4856,9 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 @SOT",
-													"//NOTE: as of 11/25/2025 hl7 does not find this valueset using identifier nor system|identifier",
-													"// and vsac does not work with _elements",
+													"//SOT@ ValueSet 8.2.1 Search By Version with _elements @SOT",
+													"// Based on source of truth: SOT@ https://terminology.hl7.org/3.1.0/ValueSet-v3-ActEncounterCode.json @SOT",
+													"// NOTE: Hosted content is actually based on FHIR for this THO value set...",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
 													"});",
@@ -4901,7 +4901,7 @@
 													"",
 													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
 													"  const responseData = pm.response.json();",
-													"  const tags = responseData.entry[0].resource.meta;",
+													"  const tags = responseData.entry[0].resource.meta.tag;",
 													"  const hasSubsetted = tags.some(function (t) {",
 													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
 													"  });",
@@ -4924,7 +4924,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{SERVER_URL}}ValueSet/?identifier=urn:oid:2.16.840.1.113762.1.4.1047.611&_elements=name,title,description",
+											"raw": "{{SERVER_URL}}ValueSet/?identifier=urn:oid:2.16.840.1.113883.1.11.13955&_elements=name,title,description",
 											"host": [
 												"{{SERVER_URL}}ValueSet"
 											],
@@ -4934,7 +4934,7 @@
 											"query": [
 												{
 													"key": "identifier",
-													"value": "urn:oid:2.16.840.1.113762.1.4.1047.611"
+													"value": "urn:oid:2.16.840.1.113883.1.11.13955"
 												},
 												{
 													"key": "_elements",
@@ -5065,7 +5065,9 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611 @SOT",
+													"//SOT@ ValueSet 8.2.1 Search By Version with _elements @SOT",
+													"// Based on source of truth: SOT@ https://terminology.hl7.org/3.1.0/ValueSet-v3-ActEncounterCode.json @SOT",
+													"// NOTE: Hosted content is actually based on FHIR for this THO value set...",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
 													"});",
@@ -5108,7 +5110,7 @@
 													"",
 													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
 													"  const responseData = pm.response.json();",
-													"  const tags = responseData.entry[0].resource.meta;",
+													"  const tags = responseData.entry[0].resource.meta.tag;",
 													"  const hasSubsetted = tags.some(function (t) {",
 													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
 													"  });",
@@ -5131,7 +5133,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{SERVER_URL}}ValueSet/?name=N3MirrorGoldmannExam&_element=name,title,description",
+											"raw": "{{SERVER_URL}}ValueSet/?name=ActEncounterCode&_element=name,title,description",
 											"host": [
 												"{{SERVER_URL}}ValueSet"
 											],
@@ -5141,7 +5143,7 @@
 											"query": [
 												{
 													"key": "name",
-													"value": "N3MirrorGoldmannExam"
+													"value": "ActEncounterCode"
 												},
 												{
 													"key": "_elements",
@@ -5219,7 +5221,9 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 @SOT",
+													"//SOT@ ValueSet 8.5.1 Search By Version with _elements @SOT",
+													"// Based on source of truth: SOT@ https://terminology.hl7.org/3.1.0/ValueSet-v3-ActEncounterCode.json @SOT",
+													"// NOTE: Hosted content is actually based on FHIR for this THO value set...",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
 													"});",
@@ -5262,7 +5266,7 @@
 													"",
 													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
 													"  const responseData = pm.response.json();",
-													"  const tags = responseData.entry[0].resource.meta;",
+													"  const tags = responseData.entry[0].resource.meta.tag;",
 													"  const hasSubsetted = tags.some(function (t) {",
 													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
 													"  });",
@@ -5285,7 +5289,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{SERVER_URL}}ValueSet/?title=3 Mirror Goldmann exam&_element=name,title,description",
+											"raw": "{{SERVER_URL}}ValueSet/?title=ActEncounterCode&_element=name,title,description",
 											"host": [
 												"{{SERVER_URL}}ValueSet"
 											],
@@ -5295,7 +5299,7 @@
 											"query": [
 												{
 													"key": "title",
-													"value": "3 Mirror Goldmann exam"
+													"value": "ActEncounterCode"
 												},
 												{
 													"key": "_elements",
@@ -5421,7 +5425,9 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1489|20230217 @SOT",
+													"//SOT@ ValueSet 8.7.1 Search By Title with _elements @SOT",
+													"// Based on source of truth: SOT@ https://terminology.hl7.org/3.1.0/ValueSet-v3-ActEncounterCode.json @SOT",
+													"// NOTE: Hosted content is actually based on FHIR for this THO value set...",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
 													"});",
@@ -5464,7 +5470,7 @@
 													"",
 													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
 													"  const responseData = pm.response.json();",
-													"  const tags = responseData.entry[0].resource.meta;",
+													"  const tags = responseData.entry[0].resource.meta.tag;",
 													"  const hasSubsetted = tags.some(function (t) {",
 													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
 													"  });",
@@ -5487,7 +5493,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{SERVER_URL}}ValueSet/?description=Value%20Set%20Title%20Changed%20--%20from%20Allergen%20to%20Ingredient%20--%20to%20reflect%20true%20value%20set%20content.&_element=name,title,description",
+											"raw": "{{SERVER_URL}}ValueSet/?description=Domain provides codes that qualify the ActEncounterClass (ENC)&_element=name,title,description",
 											"host": [
 												"{{SERVER_URL}}ValueSet"
 											],
@@ -5497,7 +5503,7 @@
 											"query": [
 												{
 													"key": "description",
-													"value": "Value%20Set%20Title%20Changed%20--%20from%20Allergen%20to%20Ingredient%20--%20to%20reflect%20true%20value%20set%20content."
+													"value": "Domain provides codes that qualify the ActEncounterClass (ENC)"
 												},
 												{
 													"key": "_elements",
@@ -5628,7 +5634,7 @@
 													"",
 													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
 													"  const responseData = pm.response.json();",
-													"  const tags = responseData.entry[0].resource.meta;",
+													"  const tags = responseData.entry[0].resource.meta.tag;",
 													"  const hasSubsetted = tags.some(function (t) {",
 													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
 													"  });",
@@ -5732,7 +5738,8 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.105|20210611 @SOT",
+													"// Based on source of truth: SOT@ https://uat-cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.649 @SOT",
+													"// NOTE: This test searches by keyword, but also searches by name to limit return values.",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
 													"});",
@@ -5775,7 +5782,7 @@
 													"",
 													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
 													"  const responseData = pm.response.json();",
-													"  const tags = responseData.entry[0].resource.meta;",
+													"  const tags = responseData.entry[0].resource.meta.tag;",
 													"  const hasSubsetted = tags.some(function (t) {",
 													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
 													"  });",
@@ -5797,7 +5804,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{SERVER_URL}}ValueSet/?keyword=PC-02&_element=name,title,description",
+											"raw": "{{SERVER_URL}}ValueSet/?keyword=G_Common&name=AbdominalCrampsSNOMED&_element=name,title,description",
 											"host": [
 												"{{SERVER_URL}}ValueSet"
 											],
@@ -5807,11 +5814,15 @@
 											"query": [
 												{
 													"key": "keyword",
-													"value": "PC-02"
+													"value": "G_Common"
 												},
 												{
 													"key": "_elements",
 													"value": "name,title,description"
+												},
+												{
+													"key": "name",
+													"value": "AbdominalCrampsSNOMED"
 												}
 											]
 										}
@@ -5896,7 +5907,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20240105 @SOT",
+													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.649-20210121 @SOT",
 													"//NOTE: This test should really be two part, in that the id is server-assigned...",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
@@ -5940,7 +5951,7 @@
 													"",
 													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
 													"  const responseData = pm.response.json();",
-													"  const tags = responseData.entry[0].resource.meta;",
+													"  const tags = responseData.entry[0].resource.meta.tag;",
 													"  const hasSubsetted = tags.some(function (t) {",
 													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
 													"  });",
@@ -5963,7 +5974,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{SERVER_URL}}ValueSet/?_id=2.16.840.1.113883.3.464.1003.198.12.1005&_element=name,title,description",
+											"raw": "{{SERVER_URL}}ValueSet/?_id=2.16.840.1.113762.1.4.1146.649-20210121&_element=name,title,description",
 											"host": [
 												"{{SERVER_URL}}ValueSet"
 											],
@@ -5973,7 +5984,7 @@
 											"query": [
 												{
 													"key": "_id",
-													"value": "2.16.840.1.113883.3.464.1003.198.12.1005"
+													"value": "2.16.840.1.113762.1.4.1146.649-20210121"
 												},
 												{
 													"key": "_elements",
@@ -6525,7 +6536,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"resourceType\": \"Parameters\",\n    \"parameter\": [\n        {\n            \"name\": \"url\",\n            \"valueUri\": \"http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611\"\n        },\n        {\n            \"name\": \"code\",\n            \"valueString\": \"420523002\"\n        },\n        {\n            \"name\": \"system\",\n            \"valueString\": \"urn:oid:2.16.840.1.113762.1.4.1047.611\"\n        }\n    ]\n}",
+									"raw": "{\n    \"resourceType\": \"Parameters\",\n    \"parameter\": [\n        {\n            \"name\": \"url\",\n            \"valueUri\": \"http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611\"\n        },\n        {\n            \"name\": \"code\",\n            \"valueString\": \"420523002\"\n        },\n        {\n            \"name\": \"system\",\n            \"valueString\": \"http://snomed.info/sct\"\n        }\n    ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -6684,7 +6695,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005/$expand?manifest=http://cts.nlm.nih.gov/fhir/Library/most-recent-code-system-versionsin-vsac-with-codes-in-active-status",
+											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005/$expand?manifest=http://cts.nlm.nih.gov/fhir/Library/latest-active",
 											"host": [
 												"{{SERVER_URL}}ValueSet"
 											],
@@ -6695,7 +6706,7 @@
 											"query": [
 												{
 													"key": "manifest",
-													"value": "http://cts.nlm.nih.gov/fhir/Library/most-recent-code-system-versionsin-vsac-with-codes-in-active-status"
+													"value": "http://cts.nlm.nih.gov/fhir/Library/latest-active"
 												}
 											]
 										}
@@ -8046,6 +8057,7 @@
 											"script": {
 												"exec": [
 													"// Based on source of truth: SOT@ http://hl7.org/fhir/ValueSet/care-team-status @SOT",
+													"// NOTE: Test is for in progress functionality based on Tx ecosystem analysis, not supported by VSAC at this time.",
 													"",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
@@ -8132,6 +8144,7 @@
 											"script": {
 												"exec": [
 													"// Based on source of truth: SOT@ http://hl7.org/fhir/ValueSet/care-team-status @SOT",
+													"// NOTE: Test is for in progress functionality based on Tx ecosystem analysis, not supported by VSAC at this time.",
 													"",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
@@ -10604,7 +10617,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\"resourceType\": \"Bundle\",\n \"type\": \"batch\",\n  \"entry\": [{\n  \"request\": {\n  \"method\": \"GET\",\n  \"url\": \"ValueSet/$validate-code?system=http://loinc.org&code=59127-1&uri=urn:oid:1.2.840.10008.6.1.601\"\n  }\n  },\n  {\"request\": {\n  \"method\": \"GET\",\n  \"url\": \"ValueSet/$validate-code?system=http://snomed.info/sct&code=399027007&uri=urn:oid:1.2.840.10008.6.1.601\"\n }\n  }]\n  }",
+									"raw": "{\n\"resourceType\": \"Bundle\",\n \"type\": \"batch\",\n  \"entry\": [{\n  \"request\": {\n  \"method\": \"GET\",\n  \"url\": \"ValueSet/$validate-code?system=http://snomed.info/sct&code=420523002&url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611\"\n  }\n  },\n  {\"request\": {\n  \"method\": \"GET\",\n  \"url\": \"ValueSet/$validate-code?system=http://snomed.info/sct&code=104981000119104&url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010\"\n }\n  }]\n  }",
 									"options": {
 										"raw": {
 											"language": "json"
