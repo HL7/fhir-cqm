@@ -10069,6 +10069,7 @@
 										"exec": [
 											"//SOT@## ValueSet 8.1 POST Manifest Library @SOT",
 											"// Based on source of truth: SOT@ http://hl7.org/fhir/ValueSet/care-team-status|4.0.1 @SOT",
+											"// NOTE: This test is difficult because after DELETE in VSAC that succeeds with a 204 returned still returns the Library in a GET in an API client ",
 											"",
 											"const body = pm.response.json();",
 											"",
@@ -10432,6 +10433,7 @@
 									"script": {
 										"type": "text/javascript",
 										"exec": [
+											"// NOTE: This test is difficult because after DELETE in VSAC that succeeds with a 204 returned still returns the Library in a GET in an API client ",
 											"const baseUrl = pm.variables.replaceIn(\"{{SERVER_URL}}\");",
 											"const libId = pm.variables.get('LIB_ID') || pm.variables.replaceIn(\"{{LIB_ID}}\");",
 											"const libUrl = baseUrl + 'Library/' + libId;",
