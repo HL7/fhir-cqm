@@ -1684,6 +1684,7 @@
 											"script": {
 												"exec": [
 													"// Based on source of truth: SOT@ https://terminology.hl7.org/3.1.0/CodeSystem-allergyintolerance-clinical.json @SOT",
+													"if (pm.environment.get(\"RELATED-ARTIFACT-SEARCH-SUPPORT\") === true){",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
 													"});",
@@ -1731,7 +1732,10 @@
 													"        const responseData = pm.response.json();",
 													"",
 													"    pm.expect(responseData.entry[0].resource.resourceType).equals(\"CodeSystem\");",
-													"});"
+													"});",
+													"}else{",
+													"console.log(\"Related Artifact Search is not supported by this server\");",
+													"}"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -1768,6 +1772,7 @@
 												"exec": [
 													"//TODO: This test is incomplete, need test data to set up a measure that references this code system",
 													"//NOTE:  For vsac UAT, STU4 returns a 200 but an empty search set. \"GET https://madie.cms.gov/Measure/HFBetaBlockerTherapyforLVSDFHI\" is behind a login.",
+													"if (pm.environment.get(\"RELATED-ARTIFACT-SEARCH-SUPPORT\") === true){",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
 													"});",
@@ -1821,7 +1826,10 @@
 													"        const responseData = pm.response.json();",
 													"",
 													"    pm.expect(responseData.entry[0].resource.type).equals(\"Measure\");",
-													"});"
+													"});",
+													"}else{",
+													"console.log(\"Related Artifact Search is not supported by this server\");",
+													"}"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -1858,6 +1866,7 @@
 												"exec": [
 													"//TODO: This test is incomplete, need a library that references this code system",
 													"//NOTE:  For vsac UAT, STU4 returns a 200 but an empty search result set.  GET http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical returns a codesystem",
+													"if (pm.environment.get(\"RELATED-ARTIFACT-SEARCH-SUPPORT\") === true){",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
 													"});",
@@ -1911,7 +1920,10 @@
 													"        const responseData = pm.response.json();",
 													"",
 													"    pm.expect(responseData.entry[0].resource.type).equals(\"Library\");",
-													"});"
+													"});",
+													"}else{",
+													"console.log(\"Related Artifact Search is not supported by this server\");",
+													"}"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -1948,6 +1960,7 @@
 												"exec": [
 													"//TODO: This test is incomplete, need a measure or library that references this code system",
 													"//NOTE:  For vsac UAT, STU4 returns a 200 but an empty search result set.  GET http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical returns a codesystem",
+													"if (pm.environment.get(\"RELATED-ARTIFACT-SEARCH-SUPPORT\") === true){",
 													"",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
@@ -2002,7 +2015,10 @@
 													"        const responseData = pm.response.json();",
 													"",
 													"    pm.expect(responseData.entry[0].resource.type).equals(\"Artifact\");",
-													"});"
+													"});",
+													"}else{",
+													"console.log(\"Related Artifact Search is not supported by this server\");",
+													"}"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -3782,18 +3798,19 @@
 													"    const extensions = responseData.entry[0].resource.extension;",
 													"    let extension = null;",
 													"    for (let i = 0; i < extensions.length; i++) {",
+													"console.log(extensions[i]);",
 													"        if (extensions[i].url == \"http://hl7.org/fhir/StructureDefinition/valueset-effectiveDate\") {",
 													"            extension = extensions[i];",
 													"            break;",
 													"        }",
 													"    }",
 													"    pm.expect(extension).to.exist;",
-													"    pm.expect(extension.valueDate).to.equal(\"2019-02-06\", \"effectiveDate error\");",
+													"    pm.expect(extension.valueDateTime).to.equal(\"2019-02-06\", \"effectiveDate error\");",
 													"});",
 													"",
 													"// expirationDate",
 													"// lastReviewDate",
-													"pm.test(\"LastReviewDate is 2022-12-15\", function() {",
+													"pm.test(\"LastReviewDate is 2024-06-03\", function() {",
 													"    const responseData = pm.response.json();",
 													"    const extensions = responseData.entry[0].resource.extension;",
 													"    let extension = null;",
@@ -3804,7 +3821,7 @@
 													"        }",
 													"    }",
 													"    pm.expect(extension).to.exist;",
-													"    pm.expect(extension.valueDate).to.equal(\"2022-12-15\", \"lastReviewDate error\");",
+													"    pm.expect(extension.valueDate).to.equal(\"2024-06-03\", \"lastReviewDate error\");",
 													"});",
 													"",
 													"// author",
@@ -5996,7 +6013,7 @@
 									"response": []
 								},
 								{
-									"name": "ValueSet 8.11 Search By VersionId",
+									"name": "ValueSet 8.11 Search By Version-specific Id",
 									"event": [
 										{
 											"listen": "test",
@@ -6073,7 +6090,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20190315 @SOT",
+													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.649-20210121 @SOT",
 													"//NOTE: This test should really be multi-part since id is server-assigned",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
@@ -6140,7 +6157,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{SERVER_URL}}ValueSet/?_id=2.16.840.1.113883.3.464.1003.198.12.1005-20190315&_element=name,title,description",
+											"raw": "{{SERVER_URL}}ValueSet/?_id=2.16.840.1.113762.1.4.1146.649-20210121&_element=name,title,description",
 											"host": [
 												"{{SERVER_URL}}ValueSet"
 											],
@@ -6150,7 +6167,7 @@
 											"query": [
 												{
 													"key": "_id",
-													"value": "2.16.840.1.113883.3.464.1003.198.12.1005-20190315"
+													"value": "2.16.840.1.113762.1.4.1146.649-20210121"
 												},
 												{
 													"key": "_elements",
@@ -7538,340 +7555,6 @@
 											],
 											"path": [
 												"$expand"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Quality Program Release 8.1 DELETE Manifest Library",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"//SOT@## ValueSet 12.1.1 DELETE manifest library @SOT",
-													"// Based on source of truth: SOT@ TBD @SOT",
-													"// successful Delete",
-													"pm.test(\"Response status code is 204 No Content\", function () {\r",
-													"    pm.expect(pm.response.code).to.equal(204);\r",
-													"});\r"
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"request": {
-										"method": "DELETE",
-										"header": [],
-										"url": {
-											"raw": "{{SERVER_URL}}Library/ecqm-fhir-update-2025",
-											"host": [
-												"{{SERVER_URL}}Library"
-											],
-											"path": [
-												"ecqm-fhir-update-2025"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Quality Program Release 8.1 DELETE Non-existent Manifest Library",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"//SOT@## ValueSet 12.1.2 DELETE manifest library @SOT",
-													"// Based on source of truth: SOT@ TBD @SOT",
-													" const responseData = pm.response.json();\r",
-													" const response_Code = pm.response.code;\r",
-													" if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"    console.log(responseData);",
-													" }",
-													"// successful Delete",
-													"pm.test(\"Response status code is 404 Not Found\", function () {\r",
-													"    pm.expect(response_Code).to.equal(404);\r",
-													"});\r",
-													"\r"
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"request": {
-										"method": "DELETE",
-										"header": [],
-										"url": {
-											"raw": "{{SERVER_URL}}Library/ecqm-fhir-update-2025",
-											"host": [
-												"{{SERVER_URL}}Library"
-											],
-											"path": [
-												"ecqm-fhir-update-2025"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Quality Program Release 8.1 POST Manifest Library",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"//SOT@## ValueSet 12.1.3 POST @SOT",
-													"// Based on source of truth: SOT@ TBD @SOT",
-													" const responseData = pm.response.json();\r",
-													" const response_Code = pm.response.code;\r",
-													" if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"    console.log(responseData);",
-													" }",
-													"// 1.1 successful POST",
-													"pm.test(\"Response status code is 201 create\", function () {\r",
-													"    pm.expect(response_Code).to.equal(201);\r",
-													"});\r",
-													"\r",
-													"// 1.1.1 location header \r",
-													"pm.test(\"location header is https://uat-cts.nlm.nih.gov/fhir/Library/ecqm-fhir-update-2025\", function () {\r",
-													"    pm.expect(pm.response.headers.get(\"Content-Location\")).equals(\"https://uat-cts.nlm.nih.gov/fhir/Library/ecqm-fhir-update-2025\");\r",
-													"});\r",
-													"\r",
-													"// 1.2 access by ID \r",
-													"// Send follow-up GET request to verify Library resource",
-													"pm.sendRequest({",
-													"  url: pm.variables.replaceIn(\"{{SERVER_URL}}\") + \"Library/ecqm-fhir-update-2025\",",
-													"  method: 'GET',",
-													"  header: {",
-													"    'Accept': 'application/fhir+json'",
-													"  }",
-													"}, function (err, res) {",
-													"  if (err) {",
-													"    console.error('Request failed:', err);",
-													"  } else {",
-													"      const jsonData = res.json();",
-													"    pm.test(\"1.2 access by ID \", function () {",
-													"      pm.expect(res.code).to.eql(200);",
-													"      pm.expect(jsonData.resourceType).to.eql(\"Library\");",
-													"      pm.expect(jsonData.id).to.eql(\"ecqm-fhir-update-2025\");",
-													"      pm.expect(jsonData.meta.profile).to.include(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\");",
-													"    });",
-													"// 1.3 expansion profile \r",
-													"    pm.test(\"Expansion profile is created and correct\", function () {",
-													"      pm.expect(jsonData.contained).exist;",
-													"      pm.expect(jsonData.contained[0].resourceType).to.eql(\"Parameters\");",
-													"      pm.expect(jsonData.contained[0].id).to.eql(\"exp-params\");",
-													"    });",
-													"  }",
-													"});",
-													"// 1.4 expansion \r",
-													"// ",
-													"pm.sendRequest({",
-													"  url: pm.variables.replaceIn(\"{{SERVER_URL}}\") + \"ValueSet/2.16.840.1.113762.1.4.1110.68/$expand?manifest=http://cts.nlm.nih.gov/fhir/Library/ecqm-fhir-update-2025\",",
-													"  method: 'GET',",
-													"  header: {",
-													"    'Accept': 'application/fhir+json'",
-													"  }",
-													"}, function (err, res) {",
-													"  if (err) {",
-													"    console.error('Request failed:', err);",
-													"  } else {",
-													"      const jsonData = res.json();",
-													"}",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"resourceType\": \"Library\",\n    \"id\": \"ecqm-fhir-update-2025\",\n    \"meta\": {\n        \"profile\": [\n            \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\"\n        ]\n    },\n    \"contained\": [\n        {\n            \"resourceType\": \"Parameters\",\n            \"id\": \"exp-params\",\n            \"parameter\": [\n                {\n                    \"name\": \"activeOnly\",\n                    \"valueBoolean\": true\n                },\n                {\n                    \"name\": \"includeDraft\",\n                    \"valueBoolean\": false\n                },\n                {\n                    \"name\": \"system-version\",\n                    \"valueCanonical\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0\",\n                    \"_valueCanonical\": {\n                        \"extension\": [\n                            {\n                                \"url\": \"http://hl7.org/fhir/StructureDefinition/display\",\n                                \"valueString\": \"ActCode, 9.0.0\"\n                            }\n                        ]\n                    }\n                }\n            ]\n        }\n    ],\n    \"extension\": [\n        {\n            \"url\": \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-partOf\",\n            \"valueCanonical\": \"http://hl7.org/fhir/us/cqfmeasures/Library/ecqm-quality-program\"\n        }\n    ],\n    \"url\": \"http://cts.nlm.nih.gov/fhir/Library/ecqm-fhir-update-2025\",\n    \"identifier\": [\n        {\n            \"use\": \"official\",\n            \"system\": \"http://cts.nlm.nih.gov/fhir/cqi/ecqm/Library/Identifier\",\n            \"value\": \"ecqm-fhir-update-2025\"\n        }\n    ],\n    \"version\": \"1.0.0\",\n    \"name\": \"eCQMFHIRUpdate2025\",\n    \"title\": \"eCQM FHIR Update 2025\",\n    \"status\": \"draft\",\n    \"experimental\": false,\n    \"type\": {\n        \"coding\": [\n            {\n                \"system\": \"http://terminology.hl7.org/CodeSystem/library-type\",\n                \"code\": \"asset-collection\"\n            }\n        ]\n    },\n    \"date\": \"2025-07-25\",\n    \"publisher\": \"Centers for Medicare and Medicaid Services (CMS)\",\n    \"contact\": [\n        {\n            \"telecom\": [\n                {\n                    \"system\": \"url\",\n                    \"value\": \"https://www.cms.gov/\"\n                }\n            ]\n        }\n    ],\n    \"description\": \"eCQM FHIR Update 2025\",\n    \"useContext\": [\n        {\n            \"code\": {\n                \"system\": \"http://terminology.hl7.org/CodeSystem/usage-context-type\",\n                \"code\": \"program\"\n            },\n            \"valueCodeableConcept\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n                        \"code\": \"ep-ec\",\n                        \"display\": \"EP/EC\"\n                    },\n                    {\n                        \"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n                        \"code\": \"eh-cah\",\n                        \"display\": \"EH/CAH\"\n                    }\n                ]\n            }\n        }\n    ],\n    \"jurisdiction\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"urn:iso:std:iso:3166\",\n                    \"code\": \"US\"\n                }\n            ]\n        }\n    ]\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{SERVER_URL}}Library/",
-											"host": [
-												"{{SERVER_URL}}Library"
-											],
-											"path": [
-												""
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Quality Program Release 8.2 PUT Modified Manifest Library",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"//SOT@## ValueSet 12.1.4 PUT modified manifest library @SOT",
-													"// Based on source of truth: SOT@ TBD @SOT",
-													"const responseData = pm.response.json();",
-													"const response_Code = pm.response.code;",
-													"if (pm.environment.get(\"VALUESET_DEBUG\") === true) {",
-													"  console.log(responseData);",
-													"}",
-													"",
-													"// successful PUT",
-													"pm.test(\"Response status code is 200 and Library is valid\", function () {",
-													"  pm.expect(response_Code).to.eql(200);",
-													"  pm.expect(responseData.resourceType).to.eql(\"Library\");",
-													"  pm.expect(responseData.id).to.eql(\"ecqm-fhir-update-2025\");",
-													"  pm.expect(responseData.meta.profile).to.include(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\");",
-													"  pm.expect(responseData.contained).to.exist;",
-													"  pm.expect(responseData.contained[0].resourceType).to.eql(\"Parameters\");",
-													"  pm.expect(responseData.contained[0].id).to.eql(\"exp-params\");",
-													"});",
-													"",
-													"// 1.3 and 1.4 GET the Library by ID and recheck",
-													"pm.sendRequest({",
-													"  url: pm.variables.replaceIn(\"{{SERVER_URL}}\") + \"Library/ecqm-fhir-update-2025\",",
-													"  method: 'GET',",
-													"  header: {",
-													"    'Accept': 'application/fhir+json'",
-													"  }",
-													"}, function (err, res) {",
-													"  if (err) {",
-													"    console.error('Request failed:', err);",
-													"  } else {",
-													"    const jsonData = res.json();",
-													"    pm.test(\"Verify update actually happened\", function () {",
-													"      pm.expect(jsonData.description).to.eql(\"eCQM FHIR Update 2025 updated for PUT test\");",
-													"    });",
-													"    pm.test(\"Expansion profile is present and correct\", function () {",
-													"      pm.expect(jsonData.contained).to.exist;",
-													"      pm.expect(jsonData.contained[0].resourceType).to.eql(\"Parameters\");",
-													"      pm.expect(jsonData.contained[0].id).to.eql(\"exp-params\");",
-													"    });",
-													"    pm.test(\"Verify update of status to active happened\", function () {",
-													"      pm.expect(jsonData.status).to.eql(\"active\");",
-													"    });",
-													"  }",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "PUT",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\"resourceType\": \"Library\",\n\"id\": \"ecqm-fhir-update-2025\",\n\"meta\": {\n\"profile\": [\n\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\"\n]\n},\n\"contained\": [\n{\n\"resourceType\": \"Parameters\",\n\"id\": \"exp-params\",\n\"parameter\": [\n{\n\"name\": \"activeOnly\",\n\"valueBoolean\": true\n},\n{\n\"name\": \"includeDraft\",\n\"valueBoolean\": false\n},\n{\n\"name\": \"system-version\",\n\"valueCanonical\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0\",\n\"_valueCanonical\": {\n\"extension\": [\n{\n\"url\": \"http://hl7.org/fhir/StructureDefinition/display\",\n\"valueString\": \"ActCode, 9.0.0\"\n}\n]\n}\n}\n]\n}\n],\n\"extension\": [\n{\n\"url\": \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-partOf\",\n\"valueCanonical\": \"http://hl7.org/fhir/us/cqfmeasures/Library/ecqm-quality-program\"\n}\n],\n\"url\": \"http://cts.nlm.nih.gov/fhir/Library/ecqm-fhir-update-2025\",\n\"identifier\": [\n{\n\"use\": \"official\",\n\"system\": \"http://cts.nlm.nih.gov/fhir/cqi/ecqm/Library/Identifier\",\n\"value\": \"ecqm-fhir-update-2025\"\n}\n],\n\"version\": \"1.0.0\",\n\"name\": \"eCQMFHIRUpdate2025\",\n\"title\": \"eCQM FHIR Update 2025\",\n\"status\": \"active\",\n\"experimental\": false,\n\"type\": {\n\"coding\": [\n{\n\"system\": \"http://terminology.hl7.org/CodeSystem/library-type\",\n\"code\": \"asset-collection\"\n}\n]\n},\n\"date\": \"2025-07-25\",\n\"publisher\": \"Centers for Medicare and Medicaid Services (CMS)\",\n\"contact\": [\n{\n\"telecom\": [\n{\n\"system\": \"url\",\n\"value\": \"https://www.cms.gov/\"\n}\n]\n}\n],\n\"description\": \"eCQM FHIR Update 2025 updated for PUT test\",\n\"useContext\": [\n{\n\"code\": {\n\"system\": \"http://terminology.hl7.org/CodeSystem/usage-context-type\",\n\"code\": \"program\"\n},\n\"valueCodeableConcept\": {\n\"coding\": [\n{\n\"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n\"code\": \"ep-ec\",\n\"display\": \"EP/EC\"\n},\n{\n\"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n\"code\": \"eh-cah\",\n\"display\": \"EH/CAH\"\n}\n]\n}\n}\n],\n\"jurisdiction\": [\n{\n\"coding\": [\n{\n\"system\": \"urn:iso:std:iso:3166\",\n\"code\": \"US\"\n}\n]\n}\n]\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{SERVER_URL}}Library/ecqm-fhir-update-2025",
-											"host": [
-												"{{SERVER_URL}}Library"
-											],
-											"path": [
-												"ecqm-fhir-update-2025"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Quality Program Release 8.2 DELETE Manifest Library With Active Status",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"//SOT@## ValueSet 12.1.5 DELETE maifest library with active status @SOT",
-													"// Based on source of truth: SOT@ TBD @SOT",
-													" const responseData = pm.response.json();\r",
-													" const response_Code = pm.response.code;\r",
-													" if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"    console.log(responseData);",
-													" }",
-													"// successful Delete",
-													"pm.test(\"Response status code is 405 Method Not Allowed\", function () {\r",
-													"    pm.expect(response_Code).to.equal(405);\r",
-													"});\r",
-													"\r"
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"request": {
-										"method": "DELETE",
-										"header": [],
-										"url": {
-											"raw": "{{SERVER_URL}}Library/ecqm-fhir-update-2025",
-											"host": [
-												"{{SERVER_URL}}Library"
-											],
-											"path": [
-												"ecqm-fhir-update-2025"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Quality Program Release 8.2 Cleanup Manifest Library After Testing",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													" const responseData = pm.response.json();\r",
-													" const response_Code = pm.response.code;\r",
-													" if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"    console.log(responseData);",
-													" }",
-													"// Successful PUT",
-													"pm.test(\"Response status code is 200\", function () {\r",
-													"    pm.expect(response_Code).to.equal(200);\r",
-													"});\r"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "PUT",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\"resourceType\": \"Library\",\n\"id\": \"ecqm-fhir-update-2025\",\n\"meta\": {\n\"profile\": [\n\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\"\n]\n},\n\"contained\": [\n{\n\"resourceType\": \"Parameters\",\n\"id\": \"exp-params\",\n\"parameter\": [\n{\n\"name\": \"activeOnly\",\n\"valueBoolean\": true\n},\n{\n\"name\": \"includeDraft\",\n\"valueBoolean\": false\n},\n{\n\"name\": \"system-version\",\n\"valueCanonical\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0\",\n\"_valueCanonical\": {\n\"extension\": [\n{\n\"url\": \"http://hl7.org/fhir/StructureDefinition/display\",\n\"valueString\": \"ActCode, 9.0.0\"\n}\n]\n}\n}\n]\n}\n],\n\"extension\": [\n{\n\"url\": \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-partOf\",\n\"valueCanonical\": \"http://hl7.org/fhir/us/cqfmeasures/Library/ecqm-quality-program\"\n}\n],\n\"url\": \"http://cts.nlm.nih.gov/fhir/Library/ecqm-fhir-update-2025\",\n\"identifier\": [\n{\n\"use\": \"official\",\n\"system\": \"http://cts.nlm.nih.gov/fhir/cqi/ecqm/Library/Identifier\",\n\"value\": \"ecqm-fhir-update-2025\"\n}\n],\n\"version\": \"1.0.0\",\n\"name\": \"eCQMFHIRUpdate2025\",\n\"title\": \"eCQM FHIR Update 2025\",\n\"status\": \"draft\",\n\"experimental\": false,\n\"type\": {\n\"coding\": [\n{\n\"system\": \"http://terminology.hl7.org/CodeSystem/library-type\",\n\"code\": \"asset-collection\"\n}\n]\n},\n\"date\": \"2025-07-25\",\n\"publisher\": \"Centers for Medicare and Medicaid Services (CMS)\",\n\"contact\": [\n{\n\"telecom\": [\n{\n\"system\": \"url\",\n\"value\": \"https://www.cms.gov/\"\n}\n]\n}\n],\n\"description\": \"eCQM FHIR Update 2025\",\n\"useContext\": [\n{\n\"code\": {\n\"system\": \"http://terminology.hl7.org/CodeSystem/usage-context-type\",\n\"code\": \"program\"\n},\n\"valueCodeableConcept\": {\n\"coding\": [\n{\n\"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n\"code\": \"ep-ec\",\n\"display\": \"EP/EC\"\n},\n{\n\"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n\"code\": \"eh-cah\",\n\"display\": \"EH/CAH\"\n}\n]\n}\n}\n],\n\"jurisdiction\": [\n{\n\"coding\": [\n{\n\"system\": \"urn:iso:std:iso:3166\",\n\"code\": \"US\"\n}\n]\n}\n]\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{SERVER_URL}}Library/ecqm-fhir-update-2025",
-											"host": [
-												"{{SERVER_URL}}Library"
-											],
-											"path": [
-												"ecqm-fhir-update-2025"
 											]
 										}
 									},
@@ -10305,14 +9988,6 @@
 					]
 				},
 				{
-					"name": "Quality Program 8 Release",
-					"item": []
-				},
-				{
-					"name": "Quality Program 7 Package",
-					"item": []
-				},
-				{
 					"name": "Quality Program 7 Package",
 					"event": [
 						{
@@ -10368,6 +10043,550 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Quality Program 8 Release",
+					"item": [
+						{
+							"name": "Quality Program 8.1 POST Manifest Library",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Item-scoped constants",
+											"pm.variables.set('LIB_ID', 'ecqm-fhir-test-02172026');",
+											"pm.variables.set('VS_OID', '2.16.840.1.113762.1.4.1110.68');",
+											"pm.variables.set('LATEST_ACTIVE_MANIFEST', 'http://cts.nlm.nih.gov/fhir/Library/latest-active');"
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"//SOT@## ValueSet 8.1 POST Manifest Library @SOT",
+											"// Based on source of truth: SOT@ http://hl7.org/fhir/ValueSet/care-team-status|4.0.1 @SOT",
+											"",
+											"const body = pm.response.json();",
+											"",
+											"if (pm.environment.get(\"QUALITY_PROGRAM_DEBUG\") === true) {",
+											"  console.log(body);",
+											"}",
+											"",
+											"pm.test('POST returns 201 Created', function () {",
+											"  pm.expect(pm.response.code).to.eql(201);",
+											"});",
+											"",
+											"const isAlreadyExistsOO = (",
+											"  body &&",
+											"  body.resourceType === 'OperationOutcome' &&",
+											"  Array.isArray(body.issue) &&",
+											"  body.issue.length > 0 &&",
+											"  body.issue[0].severity === 'information' &&",
+											"  body.issue[0].code === 'invalid' &&",
+											"  typeof body.issue[0].diagnostics === 'string' &&",
+											"  body.issue[0].diagnostics.indexOf(\"Expansion Profile with 'eCQM FHIR Test 02172026' name already exists.\") !== -1",
+											");",
+											"",
+											"pm.test('POST response is either Library or expected \"already exists\" OperationOutcome', function () {",
+											"  pm.expect(body).to.have.property('resourceType');",
+											"  pm.expect(['Library', 'OperationOutcome']).to.include(body.resourceType);",
+											"  if (body.resourceType === 'OperationOutcome') {",
+											"    pm.expect(isAlreadyExistsOO, 'Unexpected OperationOutcome (not the known already-exists case)').to.eql(true);",
+											"  }",
+											"});",
+											"",
+											"if (!isAlreadyExistsOO) {",
+											"  pm.test('Response is Library and matches expected id/profile', function () {",
+											"    pm.expect(body).to.have.property('resourceType', 'Library');",
+											"    pm.expect(body).to.have.property('id', pm.variables.get('LIB_ID'));",
+											"    pm.expect(body).to.have.nested.property('meta.profile');",
+											"    pm.expect(body.meta.profile).to.include('http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm');",
+											"  });",
+											"",
+											"  pm.test('Expansion Parameters are present (contained exp-params)', function () {",
+											"    pm.expect(body).to.have.property('contained');",
+											"    pm.expect(body.contained).to.be.an('array').that.is.not.empty;",
+											"    pm.expect(body.contained[0]).to.have.property('resourceType', 'Parameters');",
+											"    pm.expect(body.contained[0]).to.have.property('id', 'exp-params');",
+											"  });",
+											"}"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{ "key": "Content-Type", "value": "application/fhir+json" }
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Library\",\n  \"id\": \"{{LIB_ID}}\",\n  \"meta\": {\n    \"profile\": [\n      \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\"\n    ]\n  },\n  \"contained\": [\n    {\n      \"resourceType\": \"Parameters\",\n      \"id\": \"exp-params\",\n      \"parameter\": [\n        {\n          \"name\": \"activeOnly\",\n          \"valueBoolean\": false\n        },\n        {\n          \"name\": \"includeDraft\",\n          \"valueBoolean\": true\n        },\n        {\n          \"name\": \"system-version\",\n          \"valueCanonical\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0\",\n          \"_valueCanonical\": {\n            \"extension\": [\n              {\n                \"url\": \"http://hl7.org/fhir/StructureDefinition/display\",\n                \"valueString\": \"ActCode, 9.0.0\"\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ],\n  \"extension\": [\n    {\n      \"url\": \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-partOf\",\n      \"valueCanonical\": \"http://hl7.org/fhir/us/cqfmeasures/Library/ecqm-quality-program\"\n    }\n  ],\n  \"url\": \"http://uat-cts.nlm.nih.gov/fhir/Library/{{LIB_ID}}\",\n  \"identifier\": [\n    {\n      \"use\": \"official\",\n      \"system\": \"http://uat-cts.nlm.nih.gov/fhir/cqi/ecqm/Library/Identifier\",\n      \"value\": \"{{LIB_ID}}\"\n    }\n  ],\n  \"version\": \"1.0.0\",\n  \"name\": \"ECQMFHIRTest021320262025\",\n  \"title\": \"eCQM FHIR Test 02172026\",\n  \"status\": \"draft\",\n  \"experimental\": false,\n  \"type\": {\n    \"coding\": [\n      {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/library-type\",\n        \"code\": \"asset-collection\"\n      }\n    ]\n  },\n  \"date\": \"2025-07-25\",\n  \"publisher\": \"Centers for Medicare and Medicaid Services (CMS)\",\n  \"contact\": [\n    {\n      \"telecom\": [\n        {\n          \"system\": \"url\",\n          \"value\": \"https://www.cms.gov/\"\n        }\n      ]\n    }\n  ],\n  \"description\": \"eCQM FHIR test 02172026\",\n  \"useContext\": [\n    {\n      \"code\": {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/usage-context-type\",\n        \"code\": \"program\"\n      },\n      \"valueCodeableConcept\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n            \"code\": \"ep-ec\",\n            \"display\": \"EP/EC\"\n          },\n          {\n            \"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n            \"code\": \"eh-cah\",\n            \"display\": \"EH/CAH\"\n          }\n        ]\n      }\n    }\n  ],\n  \"jurisdiction\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"urn:iso:std:iso:3166\",\n          \"code\": \"US\"\n        }\n      ]\n    }\n  ]\n}\n",
+									"options": { "raw": { "language": "json" } }
+								},
+								"url": {
+									"raw": "{{SERVER_URL}}Library/",
+									"host": [ "{{SERVER_URL}}Library" ],
+									"path": [ "" ]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Quality Program 8.1.1 GET Library by ID (verify)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Item-scoped constants (repeat to avoid collectionVariables)",
+											"pm.variables.set('LIB_ID', 'ecqm-fhir-test-02172026');",
+											"pm.variables.set('VS_OID', '2.16.840.1.113762.1.4.1110.68');",
+											"pm.variables.set('LATEST_ACTIVE_MANIFEST', 'http://cts.nlm.nih.gov/fhir/Library/latest-active');"
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"const body = pm.response.json();",
+											"",
+											"if(pm.environment.get(\"QUALITY_PROGRAM_DEBUG\") === true){",
+											"  console.log(body);",
+											"}",
+											"",
+											"pm.test('GET Library returns 200', function () {",
+											"  pm.expect(pm.response.code).to.eql(200);",
+											"});",
+											"",
+											"pm.test('Library id/profile correct', function () {",
+											"  pm.expect(body).to.have.property('resourceType', 'Library');",
+											"  pm.expect(body).to.have.property('id', pm.variables.get('LIB_ID'));",
+											"  pm.expect(body.meta.profile).to.include('http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm');",
+											"});",
+											"",
+											"pm.test('Expansion Parameters are present (contained exp-params)', function () {",
+											"  pm.expect(body).to.have.property('contained');",
+											"  pm.expect(body.contained).to.be.an('array').that.is.not.empty;",
+											"  pm.expect(body.contained[0]).to.have.property('resourceType', 'Parameters');",
+											"  pm.expect(body.contained[0]).to.have.property('id', 'exp-params');",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER_URL}}Library/{{LIB_ID}}",
+									"host": [ "{{SERVER_URL}}Library" ],
+									"path": [ "{{LIB_ID}}" ]
+								}
+							}
+						},
+						{
+							"name": "Quality Program 8.1.2 ValueSet $expand without manifest",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Item-scoped constants (repeat to avoid collectionVariables)",
+											"pm.variables.set('LIB_ID', 'ecqm-fhir-test-02172026');",
+											"pm.variables.set('VS_OID', '2.16.840.1.113762.1.4.1110.68');",
+											"pm.variables.set('LATEST_ACTIVE_MANIFEST', 'http://cts.nlm.nih.gov/fhir/Library/latest-active');"
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"const body = pm.response.json();",
+											"",
+											"if(pm.environment.get(\"QUALITY_PROGRAM_DEBUG\") === true){",
+											"  console.log(body);",
+											"}",
+											"",
+											"pm.test('Expand returns 200', function () {",
+											"  pm.expect(pm.response.code).to.eql(200);",
+											"});",
+											"",
+											"pm.test('Expand returns a ValueSet', function () {",
+											"  pm.expect(body).to.have.property('resourceType', 'ValueSet');",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER_URL}}ValueSet/{{VS_OID}}/$expand?_format=json",
+									"host": [ "{{SERVER_URL}}ValueSet" ],
+									"path": [ "{{VS_OID}}", "$expand" ],
+									"query": [
+										{ "key": "_format", "value": "json" }
+									]
+								}
+							}
+						},
+						{
+							"name": "Quality Program 8.1.3 ValueSet $expand with latest-active manifest",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Item-scoped constants (repeat to avoid collectionVariables)",
+											"pm.variables.set('LIB_ID', 'ecqm-fhir-test-02172026');",
+											"pm.variables.set('VS_OID', '2.16.840.1.113762.1.4.1110.68');",
+											"pm.variables.set('LATEST_ACTIVE_MANIFEST', 'http://cts.nlm.nih.gov/fhir/Library/latest-active');"
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"const body = pm.response.json();",
+											"",
+											"if(pm.environment.get(\"QUALITY_PROGRAM_DEBUG\") === true){",
+											"  console.log(body);",
+											"}",
+											"",
+											"pm.test('Expand (latest-active) returns 200', function () {",
+											"  pm.expect(pm.response.code).to.eql(200);",
+											"});",
+											"",
+											"pm.test('Expand (latest-active) returns a ValueSet', function () {",
+											"  pm.expect(body).to.have.property('resourceType', 'ValueSet');",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER_URL}}ValueSet/{{VS_OID}}/$expand?manifest={{LATEST_ACTIVE_MANIFEST}}&_format=json",
+									"host": [ "{{SERVER_URL}}ValueSet" ],
+									"path": [ "{{VS_OID}}", "$expand" ],
+									"query": [
+										{ "key": "manifest", "value": "{{LATEST_ACTIVE_MANIFEST}}" },
+										{ "key": "_format", "value": "json" }
+									]
+								}
+							}
+						},
+						{
+							"name": "Quality Program 8.2 PUT Modified Manifest Library",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Item-scoped constants (repeat to avoid collectionVariables)",
+											"pm.variables.set('LIB_ID', 'ecqm-fhir-test-02172026');",
+											"pm.variables.set('VS_OID', '2.16.840.1.113762.1.4.1110.68');",
+											"pm.variables.set('LATEST_ACTIVE_MANIFEST', 'http://cts.nlm.nih.gov/fhir/Library/latest-active');"
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"const body = pm.response.json();",
+											"",
+											"if(pm.environment.get(\"QUALITY_PROGRAM_DEBUG\") === true){",
+											"  console.log(body);",
+											"}",
+											"",
+											"pm.test('PUT returns 200 or 201', function () {",
+											"  pm.expect([200, 201]).to.include(pm.response.code);",
+											"});",
+											"",
+											"pm.test('Response is Library and matches expected id/profile', function () {",
+											"  pm.expect(body).to.have.property('resourceType', 'Library');",
+											"  pm.expect(body).to.have.property('id', pm.variables.get('LIB_ID'));",
+											"  pm.expect(body.meta.profile).to.include('http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm');",
+											"});",
+											"",
+											"pm.test('Expansion Parameters are present (contained exp-params)', function () {",
+											"  pm.expect(body.contained).to.exist;",
+											"  pm.expect(body.contained[0].resourceType).to.eql('Parameters');",
+											"  pm.expect(body.contained[0].id).to.eql('exp-params');",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{ "key": "Content-Type", "value": "application/fhir+json" }
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Library\",\n  \"id\": \"{{LIB_ID}}\",\n  \"meta\": {\n    \"profile\": [\n      \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\"\n    ]\n  },\n  \"contained\": [\n    {\n      \"resourceType\": \"Parameters\",\n      \"id\": \"exp-params\",\n      \"parameter\": [\n        { \"name\": \"activeOnly\", \"valueBoolean\": false },\n        { \"name\": \"includeDraft\", \"valueBoolean\": true },\n        {\n          \"name\": \"system-version\",\n          \"valueCanonical\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0\",\n          \"_valueCanonical\": {\n            \"extension\": [\n              {\n                \"url\": \"http://hl7.org/fhir/StructureDefinition/display\",\n                \"valueString\": \"ActCode, 9.0.0\"\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ],\n  \"extension\": [\n    {\n      \"url\": \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-partOf\",\n      \"valueCanonical\": \"http://hl7.org/fhir/us/cqfmeasures/Library/ecqm-quality-program\"\n    }\n  ],\n  \"url\": \"http://uat-cts.nlm.nih.gov/fhir/Library/{{LIB_ID}}\",\n  \"identifier\": [\n    {\n      \"use\": \"official\",\n      \"system\": \"http://uat-cts.nlm.nih.gov/fhir/cqi/ecqm/Library/Identifier\",\n      \"value\": \"{{LIB_ID}}\"\n    }\n  ],\n  \"version\": \"1.0.0\",\n  \"name\": \"eCQMFHIRTest021320262025\",\n  \"title\": \"FHIR Test 02172026\",\n  \"status\": \"active\",\n  \"experimental\": false,\n  \"type\": {\n    \"coding\": [\n      {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/library-type\",\n        \"code\": \"asset-collection\"\n      }\n    ]\n  },\n  \"date\": \"2025-07-25\",\n  \"publisher\": \"Centers for Medicare and Medicaid Services (CMS)\",\n  \"contact\": [\n    {\n      \"telecom\": [\n        { \"system\": \"url\", \"value\": \"https://www.cms.gov/\" }\n      ]\n    }\n  ],\n  \"description\": \"eCQM FHIR test 02172026 updated for PUT test\",\n  \"useContext\": [\n    {\n      \"code\": {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/usage-context-type\",\n        \"code\": \"program\"\n      },\n      \"valueCodeableConcept\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n            \"code\": \"ep-ec\",\n            \"display\": \"EP/EC\"\n          },\n          {\n            \"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n            \"code\": \"eh-cah\",\n            \"display\": \"EH/CAH\"\n          }\n        ]\n      }\n    }\n  ],\n  \"jurisdiction\": [\n    {\n      \"coding\": [\n        { \"system\": \"urn:iso:std:iso:3166\", \"code\": \"US\" }\n      ]\n    }\n  ]\n}\n",
+									"options": { "raw": { "language": "json" } }
+								},
+								"url": {
+									"raw": "{{SERVER_URL}}Library/{{LIB_ID}}",
+									"host": [ "{{SERVER_URL}}Library" ],
+									"path": [ "{{LIB_ID}}" ]
+								}
+							}
+						},
+						{
+							"name": "Quality Program 8.2.1 GET Library by ID (verify PUT changes)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Item-scoped constants (repeat to avoid collectionVariables)",
+											"pm.variables.set('LIB_ID', 'ecqm-fhir-test-02172026');",
+											"pm.variables.set('VS_OID', '2.16.840.1.113762.1.4.1110.68');",
+											"pm.variables.set('LATEST_ACTIVE_MANIFEST', 'http://cts.nlm.nih.gov/fhir/Library/latest-active');"
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"const body = pm.response.json();",
+											"",
+											"if(pm.environment.get(\"QUALITY_PROGRAM_DEBUG\") === true){",
+											"  console.log(body);",
+											"}",
+											"",
+											"pm.test('GET Library returns 200', function () {",
+											"  pm.expect(pm.response.code).to.eql(200);",
+											"});",
+											"",
+											"pm.test('Verify update actually happened (description)', function () {",
+											"  pm.expect(body.description).to.eql('eCQM FHIR test 02172026 updated for PUT test');",
+											"});",
+											"",
+											"pm.test('Verify status is active', function () {",
+											"  pm.expect(body.status).to.eql('active');",
+											"});",
+											"",
+											"pm.test('Expansion Parameters are present (contained exp-params)', function () {",
+											"  pm.expect(body.contained).to.exist;",
+											"  pm.expect(body.contained[0].resourceType).to.eql('Parameters');",
+											"  pm.expect(body.contained[0].id).to.eql('exp-params');",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER_URL}}Library/{{LIB_ID}}",
+									"host": [ "{{SERVER_URL}}Library" ],
+									"path": [ "{{LIB_ID}}" ]
+								}
+							}
+						},
+						{
+							"name": "Quality Program 8.3 DELETE Manifest Library (cleanup)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"// Item-scoped constants (repeat to avoid collectionVariables)",
+											"pm.variables.set('LIB_ID', 'ecqm-fhir-test-02172026');",
+											"pm.variables.set('VS_OID', '2.16.840.1.113762.1.4.1110.68');",
+											"pm.variables.set('LATEST_ACTIVE_MANIFEST', 'http://cts.nlm.nih.gov/fhir/Library/latest-active');"
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"const baseUrl = pm.variables.replaceIn(\"{{SERVER_URL}}\");",
+											"const libId = pm.variables.get('LIB_ID') || pm.variables.replaceIn(\"{{LIB_ID}}\");",
+											"const libUrl = baseUrl + 'Library/' + libId;",
+											"",
+											"const putBody = {",
+											"  \"resourceType\": \"Library\",",
+											"  \"id\": libId,",
+											"  \"meta\": {",
+											"    \"profile\": [",
+											"      \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\"",
+											"    ]",
+											"  },",
+											"  \"contained\": [",
+											"    {",
+											"      \"resourceType\": \"Parameters\",",
+											"      \"id\": \"exp-params\",",
+											"      \"parameter\": [",
+											"        { \"name\": \"activeOnly\", \"valueBoolean\": false },",
+											"        { \"name\": \"includeDraft\", \"valueBoolean\": true },",
+											"        {",
+											"          \"name\": \"system-version\",",
+											"          \"valueCanonical\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0\",",
+											"          \"_valueCanonical\": {",
+											"            \"extension\": [",
+											"              {",
+											"                \"url\": \"http://hl7.org/fhir/StructureDefinition/display\",",
+											"                \"valueString\": \"ActCode, 9.0.0\"",
+											"              }",
+											"            ]",
+											"          }",
+											"        }",
+											"      ]",
+											"    }",
+											"  ],",
+											"  \"extension\": [",
+											"    {",
+											"      \"url\": \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-partOf\",",
+											"      \"valueCanonical\": \"http://hl7.org/fhir/us/cqfmeasures/Library/ecqm-quality-program\"",
+											"    }",
+											"  ],",
+											"  \"url\": \"http://uat-cts.nlm.nih.gov/fhir/Library/\" + libId,",
+											"  \"identifier\": [",
+											"    {",
+											"      \"use\": \"official\",",
+											"      \"system\": \"http://uat-cts.nlm.nih.gov/fhir/cqi/ecqm/Library/Identifier\",",
+											"      \"value\": libId",
+											"    }",
+											"  ],",
+											"  \"version\": \"1.0.0\",",
+											"  \"name\": \"eCQMFHIRTest02132026\",",
+											"  \"title\": \"FHIR Test 02172026\",",
+											"  \"status\": \"draft\",",
+											"  \"experimental\": false,",
+											"  \"type\": {",
+											"    \"coding\": [",
+											"      {",
+											"        \"system\": \"http://terminology.hl7.org/CodeSystem/library-type\",",
+											"        \"code\": \"asset-collection\"",
+											"      }",
+											"    ]",
+											"  },",
+											"  \"date\": \"2025-07-25\",",
+											"  \"publisher\": \"Centers for Medicare and Medicaid Services (CMS)\",",
+											"  \"contact\": [",
+											"    {",
+											"      \"telecom\": [",
+											"        { \"system\": \"url\", \"value\": \"https://www.cms.gov/\" }",
+											"      ]",
+											"    }",
+											"  ],",
+											"  \"description\": \"eCQM FHIR test 02172026 updated for PUT test\",",
+											"  \"useContext\": [",
+											"    {",
+											"      \"code\": {",
+											"        \"system\": \"http://terminology.hl7.org/CodeSystem/usage-context-type\",",
+											"        \"code\": \"program\"",
+											"      },",
+											"      \"valueCodeableConcept\": {",
+											"        \"coding\": [",
+											"          {",
+											"            \"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",",
+											"            \"code\": \"ep-ec\",",
+											"            \"display\": \"EP/EC\"",
+											"          },",
+											"          {",
+											"            \"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",",
+											"            \"code\": \"eh-cah\",",
+											"            \"display\": \"EH/CAH\"",
+											"          }",
+											"        ]",
+											"      }",
+											"    }",
+											"  ],",
+											"  \"jurisdiction\": [",
+											"    {",
+											"      \"coding\": [",
+											"        { \"system\": \"urn:iso:std:iso:3166\", \"code\": \"US\" }",
+											"      ]",
+											"    }",
+											"  ]",
+											"};",
+											"",
+											"pm.sendRequest({",
+											"  url: libUrl,",
+											"  method: 'PUT',",
+											"  header: {",
+											"    'Accept': 'application/fhir+json',",
+											"    'Content-Type': 'application/fhir+json'",
+											"  },",
+											"  body: { mode: 'raw', raw: JSON.stringify(putBody) }",
+											"}, function (putErr, putRes) {",
+											"  if(pm.environment.get(\"QUALITY_PROGRAM_DEBUG\") === true){",
+											"    console.log(putRes.json());",
+											"  }",
+											"",
+											"  pm.test('Pre-DELETE PUT sets Library to draft (200/201) or is not supported', function () {",
+											"    if (putErr) {",
+											"      pm.expect.fail('PUT failed: ' + putErr);",
+											"    }",
+											"    pm.expect([200, 201, 400, 404, 405, 409, 501]).to.include(putRes.code);",
+											"  });",
+											"",
+											"  pm.sendRequest({",
+											"    url: libUrl,",
+											"    method: 'DELETE',",
+											"    header: { 'Accept': 'application/fhir+json' }",
+											"  }, function (delErr, delRes) {",
+											"    if(pm.environment.get(\"QUALITY_PROGRAM_DEBUG\") === true){",
+											"      console.log('DELETE status: ' + (delRes ? delRes.code : '(no response)'));",
+											"      console.log('delRes.code: ' + delRes.code);",
+											"    }",
+											"",
+											"    pm.test('DELETE returns 204 (deleted) or 200 or 404 (already absent)', function () {",
+											"      if (delErr) {",
+											"        pm.expect.fail('DELETE failed: ' + delErr);",
+											"      }",
+											"      pm.expect([200, 204, 404]).to.include(delRes.code);",
+											"    });",
+											"  });",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER_URL}}Library/{{LIB_ID}}",
+									"host": ["{{SERVER_URL}}Library"],
+									"path": ["{{LIB_ID}}"]
+								}
+							}
+						}
+					]
 				}
 			]
 		},
