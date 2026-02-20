@@ -7900,10 +7900,10 @@
 													"});\r",
 													"\r",
 													"// version\r",
-													"pm.test(\"Version is 20170504\", function () {\r",
+													"pm.test(\"Version is 20220217\", function () {\r",
 													"    const responseData = pm.response.json();\r",
 													"\r",
-													"    pm.expect(responseData.version).to.equal(\"20170504\", \"Invalid version\");\r",
+													"    pm.expect(responseData.version).to.equal(\"20220217\", \"Invalid version\");\r",
 													"});\r",
 													"\r",
 													"pm.test(\"Expansion is present\", function () {\r",
@@ -7912,17 +7912,34 @@
 													"    pm.expect(responseData.expansion).exist;\r",
 													"});\r",
 													"\r",
-													"pm.test(\"Expansion identifier is eCQM Update 2017-05-05\", function() {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.expansion.identifier).equal(\"eCQM Update 2017-05-05\");\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Manifest parameter is present\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.expansion.parameter.find(function (obj) { return obj.name == \"manifest\" && obj.valueString == \"http://cts.nlm.nih.gov/fhir/Library/ecqm-update-2017-05-05\" })).exist;\r",
-													"});\r",
+													"pm.test(\"$expand echoes count/offset parameters\", function () {",
+													"  const vs = pm.response.json();",
+													"  pm.expect(vs).to.have.property(\"expansion\");",
+													"  const exp = vs.expansion;",
+													"",
+													"  // NOTE: without expectedCount being 3, 8 codes are returned.",
+													"  const expectedCount = 3;",
+													"  const expectedOffset = 0;",
+													"",
+													"  function getParamValues(name) {",
+													"    const params = Array.isArray(exp.parameter) ? exp.parameter : [];",
+													"    return params",
+													"      .filter(p => p && p.name === name)",
+													"      .map(p => (p.valueInteger !== undefined ? p.valueInteger : p.valueString));",
+													"  }",
+													"",
+													"  pm.expect(exp).to.have.property(\"offset\");",
+													"  pm.expect(exp.offset).to.eql(expectedOffset);",
+													"",
+													"  const countVals = getParamValues(\"count\");",
+													"  const offsetVals = getParamValues(\"offset\");",
+													"",
+													"  pm.expect(countVals.length, \"No 'count' parameter returned in expansion.parameter\").to.be.greaterThan(0);",
+													"  pm.expect(offsetVals.length, \"No 'offset' parameter returned in expansion.parameter\").to.be.greaterThan(0);",
+													"",
+													"  pm.expect(countVals.map(String)).to.include(String(expectedCount));",
+													"  pm.expect(offsetVals.map(String)).to.include(String(expectedOffset));",
+													"});",
 													"\r",
 													"pm.test(\"Code is present\", function () {\r",
 													"    const responseData = pm.response.json();\r",
@@ -7939,7 +7956,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.600.1.1499/$expand?expansion=eCQM%20Update%202017-05-05",
+											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.600.1.1499/$expand?count=3&offset=0",
 											"host": [
 												"{{SERVER_URL}}ValueSet"
 											],
@@ -7949,8 +7966,12 @@
 											],
 											"query": [
 												{
-													"key": "expansion",
-													"value": "eCQM%20Update%202017-05-05"
+													"key": "count",
+													"value": "3"
+												},
+												{
+													"key": "offset",
+													"value": "0"
 												}
 											]
 										}
@@ -8698,6 +8719,35 @@
 													"    const responseData = pm.response.json();",
 													"",
 													"    pm.expect(responseData.expansion).exist;",
+													"});",
+													"\r",
+													"pm.test(\"$expand echoes count/offset parameters\", function () {",
+													"  const vs = pm.response.json();",
+													"  pm.expect(vs).to.have.property(\"expansion\");",
+													"  const exp = vs.expansion;",
+													"",
+													"  // NOTE: without expectedCount being 3, 5 codes are returned.",
+													"  const expectedCount = 3;",
+													"  const expectedOffset = 0;",
+													"",
+													"  function getParamValues(name) {",
+													"    const params = Array.isArray(exp.parameter) ? exp.parameter : [];",
+													"    return params",
+													"      .filter(p => p && p.name === name)",
+													"      .map(p => (p.valueInteger !== undefined ? p.valueInteger : p.valueString));",
+													"  }",
+													"",
+													"  pm.expect(exp).to.have.property(\"offset\");",
+													"  pm.expect(exp.offset).to.eql(expectedOffset);",
+													"",
+													"  const countVals = getParamValues(\"count\");",
+													"  const offsetVals = getParamValues(\"offset\");",
+													"",
+													"  pm.expect(countVals.length, \"No 'count' parameter returned in expansion.parameter\").to.be.greaterThan(0);",
+													"  pm.expect(offsetVals.length, \"No 'offset' parameter returned in expansion.parameter\").to.be.greaterThan(0);",
+													"",
+													"  pm.expect(countVals.map(String)).to.include(String(expectedCount));",
+													"  pm.expect(offsetVals.map(String)).to.include(String(expectedOffset));",
 													"});"
 												],
 												"type": "text/javascript"
@@ -8709,7 +8759,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": " {\n  \"resourceType\" : \"Parameters\",\n  \"parameter\" : [\n     {\n     \"name\" : \"url\",\n     \"valueUri\": \"http://hl7.org/fhir/ValueSet/care-team-status\"},\n     {\n     \"name\" : \"limitedExpansion\",\n     \"valueBoolean\": \"true\"\n     }\n  ]\n}",
+											"raw": "{\n  \"resourceType\" : \"Parameters\",\n  \"parameter\" : [\n     {\n     \"name\" : \"url\",\n     \"valueUri\": \"http://hl7.org/fhir/ValueSet/care-team-status\"},\n     {\n     \"name\" : \"count\",\n     \"valueInteger\": 3},\n     {\n     \"name\" : \"offset\",\n     \"valueInteger\": 0     }\n  ]\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -8723,6 +8773,20 @@
 											],
 											"path": [
 												"$expand"
+											],
+											"query": [
+												{
+													"key": "url",
+													"value": "http://hl7.org/fhir/ValueSet/care-team-status"
+												},
+												{
+													"key": "count",
+													"value": "3"
+												},
+												{
+													"key": "offset",
+													"value": "0"
+												}
 											]
 										}
 									},
