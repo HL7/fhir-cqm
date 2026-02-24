@@ -1252,64 +1252,47 @@ Note also that when a measure has multiple population groups, the expectation is
 **Conformance Requirement 3.17 (Stratification Criteria):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-17)
 {: #conformance-requirement-3-17}
 
-1. Stratifier criteria expression SHALL result in either
-    1. the same type as other population criteria expressions in the measure (i.e. the population basis), or
-    2. the stratum value
-2. If component stratifiers are used, all the component expressions SHALL return the same type within a stratifier (i.e. within a stratifier, all the component expression must use the same stratification approach)
-3. Stratification descriptions SHOULD be in markdown (see [Conformance statement 3.1](#conformance-requirement-3-1) item 4 for more information)
+1. Stratifier criteria SHALL be either criteria-based or value-based.
+2. Criteria-based stratification: 
+    1. SHALL be on the root.
+    2. Results SHALL be in the same type as the basis of the measure.
+3. Value-based stratification: 
+    1. SHALL be on the component.
+    2. Results in a type that MAY be different than the basis of the measure.
+4. Stratification descriptions SHOULD be in markdown (see [Conformance statement 3.1](#conformance-requirement-3-1) item 4 for more information)
 
-Stratification is represented using the `stratifier` element. The semantics of this element are unchanged from the base [Measure]({{site.data.fhir.path}}measure.html) specification.
+Stratification is represented using the `stratifier` element. The semantics of this element are unchanged from Quality Reporting ([Section 17.6.1.4.1](https://hl7.org/fhir/6.0.0-ballot4/clinicalreasoning-quality-reporting.html#stratification)) where there is a complete explanation of stratifiers.
 
-Snippet 3-29 shows an example stratifier that stratifies results for two sub-populations. Snippet 3-30 shows the CQL representation of the stratifier.
+Stratification criteria are specified either as a reference to a CQL named expression within a Library (e.g. CMS146.AgesUpToNine), or as FHIR resource paths (e.g. Patient.deceased).
 
-```json
-"stratifier": [
-  {
-    "identifier": {
-      "value": "stratifier-1-identifier"
-    },
-    "criteria": {
-      "language": "text/cql-identifier",
-      "expression": "Stratification 1"
-    }
-  }
-]
-```
+**Criteria-based Stratifiers**
 
-Snippet 3-29: Example Stratifier from [measure-exm55-FHIR.json](Measure-EXM55-FHIR.json.html)
+Criteria-based stratifiers are another set of population criteria and the expressions must be consistent with the basis of the measure (return the same type).
+
+Snippet 3-29 shows an example of criteria-based stratifiers.
 
 ```cql
-define "Stratification 1":
-  "Inpatient Encounter" Encounter
-    where not (PrincipalDiagnosis(Encounter).code in "Psychiatric/Mental Health Patient")
+define "Denominator":
+  Patient.active is true
+define "Numerator":
+  Exists ([Encounter: “Well-Visit Encounter Codes”])
+define "Stratifier Male":
+  Patient.gender = ‘male’
+define "Stratifier Female":
+  Patient.gender = ‘female’
 ```
 
-Snippet 3-30: Example Stratifier from [EXM55.cql](Library-EXM55.html#cql-content)
+Value-based Stratifiers
 
-Alternatively, the stratifier expression may return the actual stratum value:
-
-```cql
-define "Gender Stratification":
-  Patient.gender
-```
-
-Snippet 3-31: Example of stratification by gender
-
-If component stratifiers are used and the component expressions return the same type as other population criteria expressions in the measure, population semantics are applied to determine the stratifier population (i.e. true/false for subject-based measures, intersection of events for non-subject-based measures). If component stratifiers are used and the component expressions return the stratum value, the combination of the component values are considered the stratum value.
-
-For example, given the following two component stratifier expressions in a subject-based measure:
-
-```cql
-define "Gender Stratification":
-  Patient.gender
-
-define "Payer Stratification":
-  Coverage.type
-```
+Value-based stratifiers are a set of stratifier components that identify a path that returns a value of a type other than the basis. Component stratifiers and the component expressions return the value of the stratfier for each member of the population.
 
 Snippet 3-32: Stratification by gender and payer type
 
-The stratum value for a given Patient would be the combination of gender and payer type.
+```cql
+define "Gender Stratification":
+  Patient.gender
+```
+The stratum value for a given Patient would be the gender value.
 
 #### Supplemental Data Elements
 {: #supplemental-data-elements}
