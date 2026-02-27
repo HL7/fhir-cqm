@@ -7834,7 +7834,51 @@
 													"    const responseData = pm.response.json();\r",
 													"\r",
 													"    pm.expect(responseData.expansion.contains.find(function(obj) { return obj.system == \"http://snomed.info/sct\" && obj.code == \"414820001\" && obj.inactive == false; })).exist;\r",
-													"});",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113762.1.4.1146.359/$expand?valueSetVersion=20230122&activeOnly=false",
+											"host": [
+												"{{SERVER_URL}}ValueSet"
+											],
+											"path": [
+												"2.16.840.1.113762.1.4.1146.359",
+												"$expand"
+											],
+											"query": [
+												{
+													"key": "valueSetVersion",
+													"value": "20230122"
+												},
+												{
+													"key": "activeOnly",
+													"value": "false"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ValueSet 11.4.1 GET Expand On Id With Active Only and lastActiveVersion",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.359|20230122 @SOT",
+													"pm.test(\"Response status code is 200\", function () {\r",
+													"    pm.expect(pm.response.code).to.equal(200);\r",
+													"});\r",
+													"\r",
 													"pm.test(\"Inactive concepts have lastActiveVersion with valid date (if present)\", function () {",
 													"    const responseData = pm.response.json();",
 													"",
