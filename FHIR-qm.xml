@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/cqm/2025Jan" ciUrl="https://build.fhir.org/ig/HL7/fhir-cqm" defaultVersion="1.0.0" defaultWorkgroup="cqi" gitUrl="https://github.com/HL7/fhir-cqm" url="http://hl7.org/fhir/uv/cqm">
-<version code="current" url="https://build.fhir.org/ig/HL7/fhir-cqm"/>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/cqm/2025Jan" ciUrl="http://build.fhir.org/ig/HL7/fhir-cqm" defaultVersion="1.0.0" defaultWorkgroup="cqi" gitUrl="https://github.com/HL7/fhir-cqm" url="http://hl7.org/fhir/uv/cqm">
+<version code="current" url="http://build.fhir.org/ig/HL7/fhir-cqm"/>
 <version code="1.0.0" url="http://hl7.org/fhir/uv/cqm/STU1"/>
 <version code="1.0.0-ballot" deprecated="true" url="http://hl7.org/fhir/uv/cqm/2025Jan"/>
 <artifactPageExtension value="-definitions"/>
@@ -145,7 +145,7 @@
 <page key="composite-measures" name="Composites"/>
 <page key="downloads" name="Downloads"/>
 <page key="examples" name="Examples"/>
-<page deprecated="true" key="extensions" name="Extensions"/>
+<page key="extensions" name="Extensions"/>
 <page key="glossary" name="Glossary"/>
 <page key="introduction" name="Introduction"/>
 <page key="measure-repository-service" name="Measure Repository Service"/>
