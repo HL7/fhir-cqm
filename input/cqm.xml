@@ -343,11 +343,6 @@
     <generation value="markdown"/>
   </page>
   <page>
-    <nameUrl value="extensions.html"/>
-    <title value="Extensions"/>
-    <generation value="markdown"/>
-  </page>
-  <page>
     <nameUrl value="terminology.html"/>
     <title value="Terminology"/>
     <generation value="markdown"/>

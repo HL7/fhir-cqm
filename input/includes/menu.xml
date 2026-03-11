@@ -11,7 +11,6 @@
     </a>
     <ul class="dropdown-menu">
       <li><a href="profiles.html" class="item">Profiles</a></li>
-      <li><a href="extensions.html" class="item">Extensions</a></li>
       <li><a href="terminology.html" class="item">Terminology</a></li>
       <li><a href="capabilities.html" class="item">Capabilities</a></li>
       <li><a href="operations.html" class="item">Operations</a></li>

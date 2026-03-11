@@ -35,7 +35,6 @@ page in the menu bar:
 -  **[Packaging](packaging.html)**: This page describes measure packaging and distribution requirements for QMs.
 - **FHIR Artifacts**
   - **[Profiles](profiles.html)**: This page lists the set of profiles defined for use by QMs.
-  - **[Extensions](extensions.html)**: This page lists the set of extensions defined for use by QMs.
   - **[Terminology](terminology.html)**: This page lists value sets and code systems defined in this IG.
   - **[Capabilities](capabilities.html)**: This page defines the workflows and roles for QMs and contains the capability statements.
   - **[Operations](operations.html)**: This page defines services and operations in support of authoring, publishing, and distributing QMs.
