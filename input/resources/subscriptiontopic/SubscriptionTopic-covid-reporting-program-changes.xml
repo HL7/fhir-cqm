@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubscriptionTopic xmlns="http://hl7.org/fhir">
+    <id value="covid-reporting-program-changes"/>
+    <url value="http://hl7.org/fhir/uv/cqm/SubscriptionTopic/covid-reporting-program-changes"/>
+    <title value="Monitor for changes in the CDC Covid Reporting Program"/>
+    <status value="active"/>
+    <description value="Changed to the CDC Covid Reporting Program"/>
+    <resourceTrigger>
+        <description value="CDC Reporting Program Measure resource update"/>
+        <resource value="http://hl7.org/fhir/StructureDefinition/Measure"/>
+        <supportedInteraction value="update"/>
+        <fhirPathCriteria value="%previous.version &lt; %current.version"/>
+    </resourceTrigger>
+    <notificationShape>
+        <resource value="Measure"/>
+        <include value="Measure:extension"/>
+        <include value="Measure:url"/>
+        <include value="Measure:version"/>
+        <include value="Measure:name"/>
+        <include value="Measure:status"/>
+        <include value="Measure:date"/>
+        <include value="Measure:description"/>
+        <include value="Measure:scoring"/>
+        <include value="Measure:group"/>
+    </notificationShape>
+</SubscriptionTopic>

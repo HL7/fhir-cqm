@@ -268,6 +268,13 @@ Snippet 3-7: Example of [effectivePeriodAnchor extension](StructureDefinition-cq
 1. FHIR-based QMs SHALL provide either an `effectivePeriod` element, or an `cqm-effectivePeriodAnchor` and `cqm-effectivePeriodDuration` extension
 2. Measurement Period SHALL be either the `effectivePeriod` as specified, or an appropriate interval of length duration, starting at the specified anchor
 
+#### Subscriptions Support for changes in Reporting Timing
+
+It may be of interest for downstream systems to be informed of additions, deletions or changes to measures, including changes to the frequency of reporting in emergency situations. Downstream systems can use subscriptions to provide this capability.
+
+Notes:
+- The effectivePeriod is used to distinguish when the updated measure specification should be used (as opposed to when the notification is received).
+- The reportingPeriod still governs the duration the report covers.
 
 ### Terminology
 {: #terminology}
@@ -1491,4 +1498,3 @@ For resource instances claiming to conform to Quality Measure IG profiles, Must 
   * For example, for systems using '9999' to indicate unknown data values, do not include '9999' in the resource instance.
 * When consuming resource instances, evaluating systems SHALL interpret missing data elements within resource instances as data not present for the artifact.
 * Submitting and receiving systems using Quality Measure artifacts to perform data exchange or artifact evaluation operations SHALL respect the must support requirements of the profiles used by the artifact to describe the data involved in the operation.
-
