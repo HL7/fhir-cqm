@@ -1,11 +1,11 @@
 {
     "package-id" : "hl7.fhir.uv.cqm",
-    "version": "1.0.0",
-    "path": "http://hl7.org/fhir/uv/cqm/STU1",
+    "version": "2.0.0-ballot",
+    "path": "http://hl7.org/fhir/uv/cqm/2026May",
     "mode": "milestone",
-    "status": "trial-use",
-    "sequence": "STU 1",
-    "desc": "Release 1.0.0 STU 1",
-    "descmd": "This STU 1 release moves the QM IG from US Realm to Universal Realm, as well as incorporating updates based on implementation and connectathon feedback. For a detailed change log, please refer to the Changes page of the implementation guide.",
+    "status": "ballot",
+    "sequence": "STU 2",
+    "desc": "STU 2 Ballot",
+    "descmd": "This May 2026 STU 2 ballot incorporates updates based on implementation and connectathon feedback. For a detailed change log, please refer to the Changes page of the implementation guide.",
     "first" : false
 }
