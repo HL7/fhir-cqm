@@ -44,6 +44,10 @@
     {
       "type": "element",
       "expression": "Measure.group"
+    },
+    {
+      "type": "element",
+      "expression": "MeasureReport.group"
     }
   ],
   "type": "Extension",
