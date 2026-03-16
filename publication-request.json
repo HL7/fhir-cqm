@@ -2,10 +2,10 @@
     "package-id" : "hl7.fhir.uv.cqm",
     "version": "2.0.0-ballot",
     "path": "http://hl7.org/fhir/uv/cqm/2026May",
-    "mode": "milestone",
+    "mode": "working",
     "status": "ballot",
     "sequence": "STU 2",
-    "desc": "STU 2 Ballot",
-    "descmd": "This May 2026 STU 2 ballot incorporates updates based on implementation and connectathon feedback. For a detailed change log, please refer to the Changes page of the implementation guide.",
+    "desc": "This STU 2 ballot adds support for advanced quality measurement use cases including value-based stratifiers, supporting evidence, and guidance for using ratios of continuous variable measures for specifying risk-adjusted measures.",
+    "descmd": "This STU 2 ballot adds support for advanced quality measurement use cases including value-based stratifiers, supporting evidence, and guidance for using ratios of continuous variable measures for specifying risk-adjusted measures.",
     "first" : false
 }

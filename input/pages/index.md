@@ -21,7 +21,7 @@ This IG is built on [FHIR Version R4](http://hl7.org/fhir/R4/index.html) and acc
 
 Refer to the [QI-Core implementation guide](http://hl7.org/fhir/us/qicore) for examples of how to represent data involved in calculation of quality measures.
 
-### How to read this Guide
+### How to Read this Guide
 {: #how-to-read-this-guide}
 
 This Guide is divided into several pages which are listed at the top of each
@@ -35,7 +35,6 @@ page in the menu bar:
 -  **[Packaging](packaging.html)**: This page describes measure packaging and distribution requirements for QMs.
 - **FHIR Artifacts**
   - **[Profiles](profiles.html)**: This page lists the set of profiles defined for use by QMs.
-  - **[Extensions](extensions.html)**: This page lists the set of extensions defined for use by QMs.
   - **[Terminology](terminology.html)**: This page lists value sets and code systems defined in this IG.
   - **[Capabilities](capabilities.html)**: This page defines the workflows and roles for QMs and contains the capability statements.
   - **[Operations](operations.html)**: This page defines services and operations in support of authoring, publishing, and distributing QMs.
