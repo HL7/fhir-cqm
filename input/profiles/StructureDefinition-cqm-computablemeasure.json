@@ -178,9 +178,9 @@
         ]
       },
        {
-        "id" : "Measure.extension:cqm-reportingTiming",
+        "id" : "Measure.extension:reportingTiming",
         "path" : "Measure.extension",
-        "sliceName" : "cqm-reportingTiming",
+        "sliceName" : "reportingTiming",
         "min" : 0,
         "max" : "1",
         "type" : [
@@ -322,7 +322,6 @@
         "path": "Measure.group.extension",
         "sliceName": "linkId",
         "short": "Unique id of the group",
-        "definition": "Unique id of the group",
         "min": 1,
         "max": "1",
         "type": [
@@ -538,7 +537,6 @@
         "path": "Measure.group.population.extension",
         "sliceName": "linkId",
          "short": "Unique id of the population",
-        "definition": "Unique id of the population",
         "min": 1,
         "max": "1",
         "type": [
@@ -605,7 +603,6 @@
         "path": "Measure.group.stratifier.extension",
         "sliceName": "linkId",
          "short": "Unique id of the stratifier",
-        "definition": "Unique id of the stratifier",
         "min": 1,
         "max": "1",
         "type": [
@@ -659,7 +656,6 @@
         "path": "Measure.group.stratifier.component.extension",
         "sliceName": "linkId",
          "short": "Unique id of the stratifier component",
-        "definition": "Unique id of the statifier component",
         "min": 1,
         "max": "1",
         "type": [
@@ -713,7 +709,6 @@
         "path": "Measure.supplementalData.extension",
         "sliceName": "linkId",
          "short": "Unique id of the supplemental data",
-        "definition": "Unique id of the supplemental data",
         "min": 1,
         "max": "1",
         "type": [

@@ -10,7 +10,7 @@
             <frequency value="1"/>
             <period value="1"/>
             <periodUnit value="d"/>
-            <timeOfDay value="23:59:59"/>
+            <timeOfDay value="00:00:00"/>
          </repeat>
       </valueTiming>
    </extension>

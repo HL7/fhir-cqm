@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "Specifies the reporting period in order to support Subscription capabilities.",
+  "description": "Specifies the reporting period of a measure as a Timing datatype. This extension allows more complex reporting periods to be communicated as part of the measure specification.",
   "jurisdiction": [
     {
       "coding": [
@@ -29,7 +29,7 @@
       ]
     }
   ],
-  "purpose": "Supports Subscription use cases.",
+  "purpose": "This extension allows more complex reporting periods to be communicated as part of the measure specification.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -54,8 +54,8 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "Date of first effective use",
-        "definition": "Specifies the anchor date for the effective period as defined by a starting date and a range.",
+        "short": "When and how often the measure should be reported",
+        "definition": "Specifies when the measure should be reported as a Timing data type",
         "min": 0,
         "max": "1"
       },

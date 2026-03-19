@@ -268,7 +268,7 @@ Snippet 3-7: Example of [effectivePeriodAnchor extension](StructureDefinition-cq
 1. FHIR-based QMs SHALL provide either an `effectivePeriod` element, or an `cqm-effectivePeriodAnchor` and `cqm-effectivePeriodDuration` extension
 2. Measurement Period SHALL be either the `effectivePeriod` as specified, or an appropriate interval of length duration, starting at the specified anchor
 
-#### Subscriptions Support for changes in Reporting Timing
+#### Subscription-based Support for Changes to Measure Specifications
 
 It may be of interest for downstream systems to be informed of additions, deletions or changes to measures, including changes to the frequency of reporting in emergency situations. Downstream systems can use subscriptions to provide this capability.
 
