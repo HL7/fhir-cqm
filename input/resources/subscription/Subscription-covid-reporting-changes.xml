@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Subscription xmlns="http://hl7.org/fhir">
+    <id value="covid-reporting-changes"/>    
+    <status value="requested"/> 
+    <contact> 
+        <system value="phone"/> 
+        <value value="555-555-5555"/> 
+    </contact> 
+    <end value="2027-01-01T00:00:00Z"/> 
+    <reason value="ACME hospital to listen of changes tothe CDC Covid Reporting Program"/> 
+    <criteria value="Measure?url=http://example.org/fhir/Measure/BedCapacityMeasureMonthly"/> 
+    <channel> 
+        <type value="rest-hook"/> 
+        <endpoint value="https://cdc.gov/fhir/updates/measures"/> 
+        <payload value="application/fhir+json"/> 
+        <header value="Authorization: Bearer secret-token-abc-123"/> 
+    </channel>   
+</Subscription> 

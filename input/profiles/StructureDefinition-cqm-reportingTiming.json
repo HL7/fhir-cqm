@@ -1,0 +1,86 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cqm-reportingTiming",
+  "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-reportingTiming",
+  "version": "1.0.0",
+  "name": "CQMReportingTiming",
+  "title": "CQM Reporting Timing",
+  "status": "active",
+  "experimental": false,
+  "publisher": "Clinical Quality Information WG",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cqi/index.cfm"
+        }
+      ]
+    }
+  ],
+  "description": "Specifies the reporting period of a measure as a Timing datatype. This extension allows more complex reporting periods to be communicated as part of the measure specification.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "001"
+        }
+      ]
+    }
+  ],
+  "purpose": "This extension allows more complex reporting periods to be communicated as part of the measure specification.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Measure"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "When and how often the measure should be reported",
+        "definition": "Specifies when the measure should be reported as a Timing data type",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-reportingTiming"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "Timing",
+            "profile": [
+              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-datatype-timing"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

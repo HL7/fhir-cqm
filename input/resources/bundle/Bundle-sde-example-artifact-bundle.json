@@ -586,7 +586,7 @@
                     {
                         "type": "depends-on",
                         "display": "Code system Specimen Type",
-                        "resource": "http://terminology.hl7.org/CodeSystem/v2-0487"
+                        "resource": "http://terminology.hl7.org/CodeSystem/v2-0487|2.3.0"
                     },
                     {
                         "type": "depends-on",

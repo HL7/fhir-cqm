@@ -308,6 +308,62 @@
       <description value="The input expansion parameters resource for this implementation guide, specifying SNOMED Edition and version. This resource will be contained within the published implementation guide with all pinned references."/>
       <exampleBoolean value="false"/>
     </resource>
+     <resource>
+      <reference>
+        <reference value="StructureDefinition/cqm-reportingTiming"/>
+      </reference>
+      <name value="CQM Reporting Timing"/>
+      <description value="Specifies the reporting period in order to support Subscription capabilities."/>
+      <exampleBoolean value="false"/>
+    </resource>
+     <resource>
+      <reference>
+        <reference value="StructureDefinition/cqm-datatype-timing"/>
+      </reference>
+      <name value="CQM DataType Timing"/>
+      <description value="Quality Measure IG constraints on the Timing datatype used in reportingTiming."/>
+      <exampleBoolean value="false"/>
+    </resource>
+     <resource>
+      <reference>
+        <reference value="Measure/BedCapacityMeasure-daily"/>
+      </reference>
+      <name value="Bed Capacity Measure - Daily Reporting"/>
+      <description value="This example Measure represents CDC's bed capacity reporting measure during emergent circumstances (i.e. increased reporting frequency during emergent/surge scenarios)"/>
+      <exampleBoolean value="true"/>
+    </resource>
+     <resource>
+      <reference>
+        <reference value="Measure/BedCapacityMeasure-monthly"/>
+      </reference>
+      <name value="Bed Capacity Measure - Monthly Reporting"/>
+      <description value="This example Measure represents CDC's typical bed capacity reporting measure during non-emergent circumstances"/>
+      <exampleBoolean value="true"/>
+    </resource>
+     <resource>
+      <reference>
+        <reference value="Subscription/covid-reporting-changes"/>
+      </reference>
+      <name value="Reporting Program Subscription listener"/>
+      <description value="Subscription for ACME hostital to listen for changes to the CDC Covid Reporting Program"/>
+      <exampleBoolean value="true"/>
+    </resource>
+     <resource>
+      <reference>
+        <reference value="SubscriptionTopic/covid-reporting-program-changes"/>
+      </reference>
+      <name value="Reporting Program Changes"/>
+      <description value="SubscriptionTopic conveying changes to the CDC Covid Reporting Program"/>
+      <exampleBoolean value="true"/>
+    </resource>
+     <resource>
+      <reference>
+        <reference value="Bundle/EmergencyCapacityReportingExample"/>
+      </reference>
+      <name value="Reporting Measure Change Scenario"/>
+      <description value="Example Bundle containing artifacts used to notify jurisdictions of increased reporting frequency during emergencies"/>
+      <exampleBoolean value="true"/>
+    </resource>
     <page>
       <nameUrl value="index.html"/>
       <title value="Quality Measure Implementation Guide Homepage"/>
@@ -406,7 +462,7 @@
     </parameter>
     <parameter>
       <code value="releaselabel"/>
-      <value value="CI Build"/>
+      <value value="ballot"/>
     </parameter>
     <parameter>
       <code value="copyrightyear"/>
@@ -451,6 +507,14 @@
     <parameter>
       <code value="path-resource"/>
       <value value="input/resources/searchparameter"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources/subscription"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources/subscriptiontopic"/>
     </parameter>
     <parameter>
       <code value="path-resource"/>
