@@ -10,21 +10,21 @@
     "extension": [ {
       "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
       "valueCoding": {
-        "system": "http://terminology.hl7.org/CodeSystem/iso-8601-derived-periods",
+        "system": "http://terminology.hl7.org/CodeSystem/time-period-ranges",
         "code": "P10Y--P15Y",
         "display": "10-14 years"
       }
     }, {
       "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
       "valueCoding": {
-        "system": "http://terminology.hl7.org/CodeSystem/iso-8601-derived-periods",
+        "system": "http://terminology.hl7.org/CodeSystem/time-period-ranges",
         "code": "P15Y--P20Y",
         "display": "15-19 years"
       }
     }, {
       "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
       "valueCoding": {
-        "system": "http://terminology.hl7.org/CodeSystem/iso-8601-derived-periods",
+        "system": "http://terminology.hl7.org/CodeSystem/time-period-ranges",
         "code": "P20Y--P9999Y",
         "display": "20+ years"
       }
@@ -88,8 +88,8 @@
       "resource": "http://hl7.org/fhir/uv/cql/Library/FHIRHelpers|4.0.1"
     }, {
       "type": "depends-on",
-      "display": "Code system ISO-8601-Derived Periods",
-      "resource": "http://terminology.hl7.org/CodeSystem/iso-8601-derived-periods"
+      "display": "Code system Time Period Ranges",
+      "resource": "http://terminology.hl7.org/CodeSystem/time-period-ranges"
     } ],
     "parameter": [ {
       "name": "Measurement Period",

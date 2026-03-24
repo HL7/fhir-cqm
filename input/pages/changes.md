@@ -3,6 +3,10 @@
 
 {: #changes}
 
+### Changes for STU 2 Ballot
+
+In Progress...
+
 ### Changes and Updates for STU 1 Publication (v1.0.0)
 
 #### Non-Compatible Changes
@@ -17,7 +21,7 @@
 * [FHIR-50925](https://jira.hl7.org/browse/FHIR-50925): Provide guidance regarding description elements (Applied ([here](measure-conformance.html)), ([here](StructureDefinition-cqm-publishablemeasure.html)), and ([here](StructureDefinition-cqm-computablemeasure.html)))
 * [FHIR-49978](https://jira.hl7.org/browse/FHIR-49978): Measures With Multiple Populations (Applied ([here](measure-conformance.html#measures-with-multiple-populations)))
 * [FHIR-49859](https://jira.hl7.org/browse/FHIR-49859): align deqm-2/4 and cmp-4/9 (Applied ([here](StructureDefinition-cqm-computablemeasure.html)))
-* [FHIR-49756](https://jira.hl7.org/browse/FHIR-49756): Allow specification of a ValueSet for stratifiers and supplemental data (Applied ([here](StructureDefinition-cqm-computablemeasure.html)), ([here](StructureDefinition-cqm-valueSet.html)), ([here](CodeSystem-iso-8601-derived-periods.html)), ([here](ValueSet-iso-8601-derived-periods.html)), ([here](ValueSet-measure-stratifier-type.html)), ([here](CodeSystem-measure-stratifier-type.html)), ([here](Library-AgeStratificationExample.html)), and ([here](Measure-age-stratified-example.html)))
+* [FHIR-49756](https://jira.hl7.org/browse/FHIR-49756): Allow specification of a ValueSet for stratifiers and supplemental data (Applied ([here](StructureDefinition-cqm-computablemeasure.html)), ([here](StructureDefinition-cqm-valueSet.html)), ([here](ValueSet-measure-stratifier-type.html)), ([here](CodeSystem-measure-stratifier-type.html)), ([here](Library-AgeStratificationExample.html)), and ([here](Measure-age-stratified-example.html)))
 * [FHIR-49669](https://jira.hl7.org/browse/FHIR-49669): Clarify guidance on linking support to MeasureReport (Applied ([here](StructureDefinition-cqm-computablemeasure.html)))
 * [FHIR-48491](https://jira.hl7.org/browse/FHIR-48491): Surface population basis in human readable to ease implementer confusion (Applied ([here](StructureDefinition-cqm-populationBasis.html)), and ([here](measure-conformance.html)))
 * [FHIR-43090](https://jira.hl7.org/browse/FHIR-43090): Allow for count as a quantity (Applied ([here](StructureDefinition-cqm-testcase.html)))

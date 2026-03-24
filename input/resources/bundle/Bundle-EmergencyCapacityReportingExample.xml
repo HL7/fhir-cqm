@@ -50,7 +50,7 @@
                     value="Measure?url=http://example.org/fhir/Measure/BedCapacityMeasureMonthly"/>
                 <channel>
                     <type value="rest-hook"/>
-                    <endpoint value="https://cdc.gov/fhir/updates/measures"/>
+                    <endpoint value="https://example.org/fhir/updates/measures"/>
                     <payload value="application/fhir+json"/>
                     <header value="Authorization: Bearer secret-token-abc-123"/>
                 </channel>
@@ -99,6 +99,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-1"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -128,6 +132,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-2"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -159,6 +167,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-3"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -188,6 +200,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-4"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -219,6 +235,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-5"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -248,6 +268,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-6"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -279,6 +303,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-7"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -308,6 +336,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-8"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -339,6 +371,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-9"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -368,6 +404,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-10"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -399,6 +439,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-11"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -428,6 +472,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-12"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -459,6 +507,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-13"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -488,6 +540,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-14"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -519,6 +575,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-15"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -548,6 +608,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-16"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -579,6 +643,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-17"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -608,6 +676,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-18"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -639,6 +711,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-19"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -668,6 +744,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-20"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -699,6 +779,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-21"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -728,6 +812,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-22"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -759,6 +847,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-23"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -788,6 +880,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-24"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -819,6 +915,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-25"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -848,6 +948,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-26"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -879,6 +983,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-27"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -908,6 +1016,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-28"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -939,6 +1051,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-29"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -968,6 +1084,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-30"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -999,6 +1119,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-31"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1028,6 +1152,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-32"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1060,6 +1188,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-33"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1089,6 +1221,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-34"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1120,6 +1256,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-35"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1149,6 +1289,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-36"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1180,6 +1324,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-37"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1209,6 +1357,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-38"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1240,6 +1392,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-39"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1269,6 +1425,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-40"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1300,6 +1460,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-41"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1329,6 +1493,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-42"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1360,6 +1528,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-43"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1389,6 +1561,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-44"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1420,6 +1596,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-45"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1449,6 +1629,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-46"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1480,6 +1664,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-47"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1509,6 +1697,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-48"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1540,6 +1732,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-49"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1569,6 +1765,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-50"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1600,6 +1800,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-51"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1629,6 +1833,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-52"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1660,6 +1868,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-53"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1690,6 +1902,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-54"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1719,6 +1935,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-55"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1751,6 +1971,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-56"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1781,6 +2005,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-57"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1813,6 +2041,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-58"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1842,6 +2074,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-59"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1874,6 +2110,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-60"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1904,6 +2144,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-61"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1936,6 +2180,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-62"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -1966,6 +2214,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-63"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -1998,6 +2250,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-64"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2027,6 +2283,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-65"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2058,6 +2318,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-66"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2087,6 +2351,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-67"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2119,6 +2387,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-68"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2148,6 +2420,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-69"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2179,6 +2455,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-70"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2208,6 +2488,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-71"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2239,6 +2523,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-72"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2268,6 +2556,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-73"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2339,6 +2631,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-1"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2368,6 +2664,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-2"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2399,6 +2699,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-3"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2428,6 +2732,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-4"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2459,6 +2767,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-5"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2488,6 +2800,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-6"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2519,6 +2835,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-7"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2548,6 +2868,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-8"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2579,6 +2903,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-9"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2608,6 +2936,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-10"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2639,6 +2971,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-11"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2668,6 +3004,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-12"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2699,6 +3039,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-13"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2728,6 +3072,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-14"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2759,6 +3107,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-15"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2788,6 +3140,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-16"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2819,6 +3175,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-17"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2848,6 +3208,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-18"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2879,6 +3243,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-19"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2908,6 +3276,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-20"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2939,6 +3311,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-21"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -2968,6 +3344,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-22"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -2999,6 +3379,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-23"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3028,6 +3412,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-24"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3059,6 +3447,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-25"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3088,6 +3480,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-26"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3119,6 +3515,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-27"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3148,6 +3548,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-28"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3179,6 +3583,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-29"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3208,6 +3616,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-30"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3239,6 +3651,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-31"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3268,6 +3684,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-32"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3300,6 +3720,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-33"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3329,6 +3753,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-34"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3360,6 +3788,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-35"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3389,6 +3821,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-36"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3420,6 +3856,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-37"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3449,6 +3889,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-38"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3480,6 +3924,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-39"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3509,6 +3957,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-40"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3540,6 +3992,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-41"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3569,6 +4025,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-42"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3600,6 +4060,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-43"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3629,6 +4093,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-44"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3660,6 +4128,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-45"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3689,6 +4161,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-46"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3720,6 +4196,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-47"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3749,6 +4229,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-48"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3780,6 +4264,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-49"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3809,6 +4297,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-50"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3840,6 +4332,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-51"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3869,6 +4365,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-52"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3900,6 +4400,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-53"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3930,6 +4434,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-54"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -3959,6 +4467,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-55"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -3991,6 +4503,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-56"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -4021,6 +4537,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-57"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -4053,6 +4573,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-58"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -4082,6 +4606,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-59"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -4114,6 +4642,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-60"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -4144,6 +4676,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-61"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -4176,6 +4712,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-62"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -4206,6 +4746,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-63"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -4238,6 +4782,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-64"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -4267,6 +4815,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-65"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -4298,6 +4850,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-66"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -4327,6 +4883,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-67"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -4359,6 +4919,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-68"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -4388,6 +4952,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-69"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -4419,6 +4987,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-70"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -4448,6 +5020,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-71"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>
@@ -4479,6 +5055,10 @@
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-72"/>
                     </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
+                    </extension>
                     <code>
                         <coding>
                             <system value="http://loinc.org"/>
@@ -4508,6 +5088,10 @@
                     <extension
                         url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
                         <valueString value="group-73"/>
+                    </extension>
+                    <extension
+                        url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+                        <valueCode value="Device"/>
                     </extension>
                     <code>
                         <coding>

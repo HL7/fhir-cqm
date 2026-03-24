@@ -81,3 +81,7 @@ The dependency on QI-Core is included for the purposes of example validation onl
 ### IP Statements
 
 {% lang-fragment ip-statements.xhtml %}
+
+### Expansion Parameters
+
+{% lang-fragment expansion-params.xhtml %}

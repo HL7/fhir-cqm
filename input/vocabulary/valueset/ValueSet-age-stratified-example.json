@@ -18,7 +18,7 @@
   "compose": {
     "include": [
       {
-        "system": "http://terminology.hl7.org/CodeSystem/iso-8601-derived-periods",
+        "system": "http://terminology.hl7.org/CodeSystem/time-period-ranges",
         "concept": [
           {
             "code": "P10Y--P15Y",
