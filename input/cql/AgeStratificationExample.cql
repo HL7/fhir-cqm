@@ -4,12 +4,12 @@ using FHIR version '4.0.1'
 
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
 
-codesystem "ISO-8601-Derived Periods": 'http://terminology.hl7.org/CodeSystem/iso-8601-derived-periods' // { 'P0Y--P1Y', 'P1Y--P5Y', ... }
+codesystem "Time Period Ranges": 'http://terminology.hl7.org/CodeSystem/time-period-ranges' // { 'P0Y--P1Y', 'P1Y--P5Y', ... }
 
 // Age Groups
-code "P10Y--P15Y": 'P10Y--P15Y' from "ISO-8601-Derived Periods" display '10-14 years'
-code "P15Y--P20Y": 'P15Y--P20Y' from "ISO-8601-Derived Periods" display '15-19 years'
-code "P20Y--P9999Y": 'P20Y--P9999Y' from "ISO-8601-Derived Periods" display '20+ years'
+code "P10Y--P15Y": 'P10Y--P15Y' from "Time Period Ranges" display '10-14 years'
+code "P15Y--P20Y": 'P15Y--P20Y' from "Time Period Ranges" display '15-19 years'
+code "P20Y--P9999Y": 'P20Y--P9999Y' from "Time Period Ranges" display '20+ years'
 
 parameter "Measurement Period" Interval<Date> default Interval[@2020-01-01, @2020-12-31]
 

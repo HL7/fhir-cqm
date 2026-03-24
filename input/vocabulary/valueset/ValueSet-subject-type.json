@@ -33,11 +33,11 @@
           "concept": [
           {
             "code": "PractitionerRole",
-            "display": "Practitioner Role"
+            "display": "PractitionerRole"
           },
           {
             "code": "RelatedPerson",
-            "display": "Related Person"
+            "display": "RelatedPerson"
           }
         ]
       }

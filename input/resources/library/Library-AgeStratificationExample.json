@@ -63,7 +63,7 @@
       "code": "logic-library"
     } ]
   },
-  "description": "This library provides an illustration of using the ISO-8601-Dervied Periods code system to construct computable age ranges as a stratification for measures.",
+  "description": "This library provides an illustration of using the Time Period Ranges code system to construct computable age ranges as a stratification for measures.",
   "relatedArtifact": [ {
     "type": "depends-on",
     "display": "FHIR model information",
@@ -74,8 +74,8 @@
     "resource": "http://hl7.org/fhir/uv/cql/Library/FHIRHelpers|4.0.1"
   }, {
     "type": "depends-on",
-    "display": "Code system ISO-8601-Derived Periods",
-    "resource": "http://terminology.hl7.org/CodeSystem/iso-8601-derived-periods"
+    "display": "Code system Time Period Ranges",
+    "resource": "http://terminology.hl7.org/CodeSystem/time-period-ranges"
   } ],
   "parameter": [ {
     "name": "Measurement Period",
