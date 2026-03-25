@@ -11,7 +11,7 @@
     <criteria value="Measure?url=http://example.org/fhir/Measure/BedCapacityMeasureMonthly"/> 
     <channel> 
         <type value="rest-hook"/> 
-        <endpoint value="https://cdc.gov/fhir/updates/measures"/> 
+        <endpoint value="https://example.org/fhir/updates/measures"/> 
         <payload value="application/fhir+json"/> 
         <header value="Authorization: Bearer secret-token-abc-123"/> 
     </channel>   

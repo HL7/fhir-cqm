@@ -455,7 +455,7 @@
     </parameter>
     <parameter>
       <code value="releaselabel"/>
-      <value value="ballot"/>
+      <value value="STU 2 Ballot"/>
     </parameter>
     <parameter>
       <code value="copyrightyear"/>

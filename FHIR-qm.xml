@@ -98,8 +98,8 @@
 <artifact deprecated="true" id="Library/fhir-model-definition-FHIR2" key="Library-fhir-model-definition-FHIR2" name="FHIR Model Definition (STU2)"/>
 <artifact id="Library/HBPComponent" key="Library-HBPComponent" name="HBP Component Library"/>
 <artifact id="Library/Hospice" key="Library-Hospice" name="Hospice FHIR Library"/>
-<artifact id="ValueSet/iso-8601-derived-periods" key="ValueSet-iso-8601-derived-periods" name="ISO-8601-Derived Periods"/>
-<artifact id="CodeSystem/iso-8601-derived-periods" key="CodeSystem-iso-8601-derived-periods" name="ISO-8601-Derived Periods Codes"/>
+<artifact deprecated="true" id="ValueSet/iso-8601-derived-periods" key="ValueSet-iso-8601-derived-periods" name="ISO-8601-Derived Periods"/>
+<artifact deprecated="true" id="CodeSystem/iso-8601-derived-periods" key="CodeSystem-iso-8601-derived-periods" name="ISO-8601-Derived Periods Codes"/>
 <artifact id="ConceptMap/improvement-notations" key="ConceptMap-improvement-notations" name="Improvement Notation Mapping"/>
 <artifact id="Parameters/manifest" key="Parameters-manifest" name="Input Expansion Parameters"/>
 <artifact id="ValueSet/intended-venue" key="ValueSet-intended-venue" name="Intended Venue"/>

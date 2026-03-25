@@ -68,7 +68,7 @@
     }, {
       "type": "depends-on",
       "display": "Value set Encounter Inpatient SNOMEDCT Value Set",
-      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.7.307|20160929"
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307|20260210"
     } ],
     "parameter": [ {
       "name": "Initial Population",
@@ -83,7 +83,7 @@
       "mustSupport": [ "type", "status" ],
       "codeFilter": [ {
         "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.7.307|20160929"
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307|20260210"
       } ]
     } ]
   } ],

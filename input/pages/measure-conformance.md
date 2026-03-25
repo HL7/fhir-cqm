@@ -295,7 +295,7 @@ Snippet 3-8: CQL declaration of a codesystem (from [CommonTerminologies.cql](Lib
 
 ```cql
 valueset "Encounter Inpatient SNOMEDCT Value Set":
-   'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.7.307|20160929'
+   'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307|20260210'
 
 code "Venous foot pump, device (physical object)": '442023007' from "SNOMED-CT:2017-09"
 ```
@@ -324,7 +324,7 @@ For measures that use CQL, valuesets and direct-reference codes that are associa
     "codeFilter": [
       {
         "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.7.307|20160929"
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307|20260210"
       }
     ]
   }
@@ -380,7 +380,7 @@ The data criteria section defines the patient data of interest for the measure a
     "codeFilter": [
       {
         "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.7.307|20160929"
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307|20260210"
       }
     ]
   }

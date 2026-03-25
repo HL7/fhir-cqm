@@ -754,24 +754,29 @@ ERROR: ValueSet/chronic-liver-disease-legacy-example: ValueSet.compose.include[1
 ERROR: ValueSet/chronic-liver-disease-legacy-example: ValueSet.compose.include[1].concept[0].system: A definition for CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/731000124108/version/20150301' could not be found, so the code cannot be validated. Valid versions: http://snomed.info/sct/11000146104/version/20240930, http://snomed.info/sct/11000172109/version/20231115, http://snomed.info/sct/2011000195101/version/20230607, http://snomed.info/sct/32506021000036107/version/20230731, http://snomed.info/sct/45991000052106/version/20231130, http://snomed.info/sct/554471000005108/version/20250930, http://snomed.info/sct/731000124108/version/20230301, http://snomed.info/sct/731000124108/version/20240301, http://snomed.info/sct/731000124108/version/20250901, http://snomed.info/sct/827022005/version/20241216, http://snomed.info/sct/83821000000107/version/20230412, http://snomed.info/sct/900000000000207008/version/20240201, http://snomed.info/sct/900000000000207008/version/20250201 and http://snomed.info/xsct/900000000000207008/version/20250814
 
 # 2.0.0-ballot:009 - We are not yet using the publisher to do CQL processing, so it is okay that the publisher is not inferring data requirements, this is handled outside the publisher
-WARNING: Measure-BCSComponent.xml: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-CCSComponent.xml: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-EXM108-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-EXM124-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-EXM125-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-EXM130-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-EXM146-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-EXM55-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-EXMLogic-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-EXMRatio-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-HBPComponent.xml: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-MultiRateExample-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-PVSComponent.xml: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-TSCComponent.xml: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-Terminology-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-age-stratified-example.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: Measure-measure-publishable-exm.xml: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-BCSComponent.xml: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-CCSComponent.xml: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-EXM108-FHIR.json: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-EXM124-FHIR.json: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-EXM125-FHIR.json: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-EXM130-FHIR.json: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-EXM146-FHIR.json: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-EXM55-FHIR.json: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-EXMLogic-FHIR.json: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-EXMRatio-FHIR.json: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-HBPComponent.xml: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-MultiRateExample-FHIR.json: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-PVSComponent.xml: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-TSCComponent.xml: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-Terminology-FHIR.json: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-age-stratified-example.json: Artifact library could not be found so no data requirements were inferred.
+WARNING: %Measure-measure-publishable-exm.xml: Artifact library could not be found so no data requirements were inferred.
 
 # 2.0.0-ballot:010 - Accepted reference to deprecated value set
 INFORMATION: SubscriptionTopic/covid-reporting-program-changes: SubscriptionTopic.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 
+# 2.0.0-ballot:011 - This code system is a grammar, the codes are valid, but tx.fhir.org does not yet know how to validate these codes. Though I will note that the message here does not seem right, the code system content is marked as "not-present" in THO, not "fragment"?
+WARNING: Measure/age-stratified-example: Measure.contained[0]/*Library/effective-data-requirements*/.extension[0].value.ofType(Coding).code: Unknown Code 'P10Y--P15Y' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/time-period-ranges' version '1.0.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Measure/age-stratified-example: Measure.contained[0]/*Library/effective-data-requirements*/.extension[1].value.ofType(Coding).code: Unknown Code 'P15Y--P20Y' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/time-period-ranges' version '1.0.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Measure/age-stratified-example: Measure.contained[0]/*Library/effective-data-requirements*/.extension[2].value.ofType(Coding).code: Unknown Code 'P20Y--P9999Y' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/time-period-ranges' version '1.0.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: ValueSet.where(id = 'age-stratified-example'): Error from https://tx.fhir.org/r4: Error: The code system definition for http://terminology.hl7.org/CodeSystem/time-period-ranges has no content, so this expansion cannot be performed

@@ -16,7 +16,7 @@ include CommonTerminologies version '1.0.0' called Common
 // References to specific versions of code systems and value sets should be used only when necessary
 
 valueset "Encounter Inpatient SNOMEDCT Value Set":
-   'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.7.307|20160929'
+   'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307|20260210'
 
 code "Venous foot pump, device (physical object)": '442023007' from Common."SNOMED CT:2017-09"
 code "Right foot": '7769000' from Common."SNOMED CT:2017-09"
