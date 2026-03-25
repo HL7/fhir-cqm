@@ -5,7 +5,25 @@
 
 ### Changes for STU 2 Ballot
 
-In Progress...
+#### Non-Compatible Changes
+
+* [FHIR-53286](https://jira.hl7.org/browse/FHIR-53286): Composite measure elements should be at the group level
+* [FHIR-53140](https://jira.hl7.org/browse/FHIR-53140): Clarify expectations for value-based stratification expressions
+
+#### Compatible, Substantive Changes
+
+* [FHIR-56009](https://jira.hl7.org/browse/FHIR-56009): Expand context of "limitations" and "trendingIssues" extensions
+* [FHIR-55982](https://jira.hl7.org/browse/FHIR-55982): Add MeasureReport.group to context of use for compositeScoring
+* [FHIR-53432](https://jira.hl7.org/browse/FHIR-53432): Consider the ability to return supporting evidence throughout a measure
+* [FHIR-51395](https://jira.hl7.org/browse/FHIR-51395): Subscription Approach
+
+#### Non-Substantive Changes
+
+* [FHIR-55969](https://jira.hl7.org/browse/FHIR-55969): Update quality improvement ecosystem diagram
+* [FHIR-52882](https://jira.hl7.org/browse/FHIR-52882): Mention CRMI operations on operations page
+* [FHIR-52881](https://jira.hl7.org/browse/FHIR-52881): Add note about CRMI on introduction page
+* [FHIR-52821](https://jira.hl7.org/browse/FHIR-52821): Restore the note about data requirements parameters
+* [FHIR-51841](https://jira.hl7.org/browse/FHIR-51841): Clarify cqf-criteriaReference with linkId
 
 ### Changes and Updates for STU 1 Publication (v1.0.0)
 
