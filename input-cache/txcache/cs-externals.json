@@ -1,11 +1,21 @@
 {
-  "urn:ietf:bcp:13|null" : null,
+  "http://unstats.un.org/unsd/methods/m49/m49.htm" : null,
+  "http://example.org/fhir/CodeSystem/measure-terms" : null,
   "http://example.org/fhir/|null" : null,
-  "http://example.org/fhir/CodeSystem/measure-terms|null" : null,
-  "http://unstats.un.org/unsd/methods/m49/m49.htm|null" : null,
+  "http://example.org/stratification" : null,
   "http://example.org/stratification|null" : null,
-  "http://example.org/group|null" : null,
   "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20150301" : null,
   "http://snomed.info/sct|http://snomed.info/sct/900000000000207008" : null,
-  "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/201709" : null
+  "urn:ietf:bcp:13|null" : null,
+  "http://example.org/fhir/CodeSystem/measure-terms|null" : null,
+  "urn:ietf:bcp:13" : null,
+  "http://unstats.un.org/unsd/methods/m49/m49.htm|null" : null,
+  "http://example.org/group" : null,
+  "http://example.org/group|null" : null,
+  "http://example.org/fhir/" : null,
+  "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/201709" : null,
+  "http://snomed.info/sct" : {
+    "server" : "http://tx.fhir.org/r4",
+    "filename" : "cs-aa277734-c751-4294-a9a1-d64077eba646.json"
+  }
 }
