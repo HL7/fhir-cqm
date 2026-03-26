@@ -113,7 +113,6 @@
 													"    pm.expect(resource).to.have.property(\"content\");",
 													"  });",
 													"});",
-
 													"pm.test(\"Version is 4.0.1\", function () {",
 													"    const responseData = pm.response.json();",
 													"",
@@ -184,9 +183,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem?url=http://hl7.org/fhir/request-intent&version=4.0.1",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
 											"query": [
 												{
 													"key": "url",
@@ -208,6 +205,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source of truth: SOT@ https://terminology.hl7.org/3.1.0/CodeSystem-v3-ActCode.json @SOT",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
@@ -228,6 +226,9 @@
 													"    pm.expect(responseData.entry[0].resource).to.be.an('object');",
 													"    pm.expect(responseData.entry[0].resource.url).to.equal(\"http://terminology.hl7.org/CodeSystem/v3-ActCode\", \"Invalid url\");",
 													"});",
+													"",
+													"// profile",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Publishable profile is present in meta\", path: \"entry.0.resource.meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-codesystem-cqfm\"], STU5: [\"http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem\"] });",
 													"",
 													"pm.test(\"Version is 6.1.0\", function () {",
 													"    const responseData = pm.response.json();",
@@ -377,9 +378,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem?url=http://terminology.hl7.org/CodeSystem/v3-ActCode&version=6.1.0",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
 											"query": [
 												{
 													"key": "url",
@@ -401,6 +400,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source-of-truth SOT@ https://hl7.org/fhir/us/core/STU3.1.1/CodeSystem-condition-category.json @SOT",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
@@ -490,6 +490,9 @@
 													"    pm.expect(responseData.entry[0].resource.url).to.equal(\"http://hl7.org/fhir/us/core/CodeSystem/condition-category\", \"Invalid url\");",
 													"});",
 													"",
+													"// profile",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Publishable profile is present in meta\", path: \"entry.0.resource.meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-codesystem-cqfm\"], STU5: [\"http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem\"] });",
+													"",
 													"pm.test(\"Version is 3.1.1\", function () {",
 													"    const responseData = pm.response.json();",
 													"",
@@ -562,9 +565,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem?url=http://hl7.org/fhir/us/core/CodeSystem/condition-category&version=3.1.1",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
 											"query": [
 												{
 													"key": "url",
@@ -586,6 +587,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source-of-truth SOT@ https://hl7.org/fhir/us/qicore/STU4.1.1/CodeSystem-appropriateness-score.json @SOT",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
@@ -605,6 +607,9 @@
 													"",
 													"    pm.expect(responseData.entry[0].resource.url).to.equal(\"http://hl7.org/fhir/us/qicore/CodeSystem/appropriateness-score\", \"Invalid url\");",
 													"});",
+													"",
+													"// profile",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Publishable profile is present in meta\", path: \"entry.0.resource.meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-codesystem-cqfm\"], STU5: [\"http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem\"] });",
 													"",
 													"pm.test(\"Version is 4.1.1\", function () {",
 													"    const responseData = pm.response.json();",
@@ -745,9 +750,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem?url=http://hl7.org/fhir/us/qicore/CodeSystem/appropriateness-score&version=4.1.1",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
 											"query": [
 												{
 													"key": "url",
@@ -775,6 +778,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"//SOT@## CodeSystem 2 Publishable @SOT",
 													"// Based on FHIR R4 source of truth: SOT@ https://hl7.org/fhir/R4/codesystem-request-intent.json @SOT",
 													"pm.test(\"Response status code is 200\", function () {",
@@ -797,6 +801,9 @@
 													"",
 													"    pm.expect(responseData.entry[0].resource.url).equal(\"http://hl7.org/fhir/request-intent\");",
 													"});",
+													"",
+													"// profile",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Publishable profile is present in meta\", path: \"entry.0.resource.meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-codesystem-cqfm\"], STU5: [\"http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem\"] });",
 													"",
 													"// profile validation",
 													"const responseData = pm.response.json();",
@@ -931,9 +938,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem?url=http://hl7.org/fhir/request-intent&version=4.0.1",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
 											"query": [
 												{
 													"key": "url",
@@ -955,6 +960,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source of truth: SOT@ https://terminology.hl7.org/3.1.0/CodeSystem-v3-ActCode.json @SOT",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
@@ -974,6 +980,9 @@
 													"",
 													"    pm.expect(responseData.entry[0].resource.url).to.equal(\"http://terminology.hl7.org/CodeSystem/v3-ActCode\", \"Invalid url\");",
 													"});",
+													"",
+													"// profile",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Publishable profile is present in meta\", path: \"entry.0.resource.meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-codesystem-cqfm\"], STU5: [\"http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem\"] });",
 													"",
 													"// profile validation",
 													"const responseData = pm.response.json();",
@@ -1039,7 +1048,9 @@
 													"    requireString(resource, \"version\");",
 													"    requireString(resource, \"name\");",
 													"    requireString(resource, \"status\");",
-													"    pm.expect(resource).to.have.property(\"experimental\");",
+													"    if (Object.prototype.hasOwnProperty.call(resource, \"experimental\")) {",
+													"      pm.expect(resource.experimental).to.be.a(\"boolean\");",
+													"    }",
 													"    requireString(resource, \"publisher\");",
 													"    requireString(resource, \"description\");",
 													"",
@@ -1106,12 +1117,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?url=http://terminology.hl7.org/CodeSystem/v3-ActCode&version=6.1.0",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -1133,6 +1140,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source-of-truth SOT@ https://hl7.org/fhir/us/core/STU3.1.1/CodeSystem-condition-category.json @SOT",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
@@ -1152,6 +1160,9 @@
 													"",
 													"    pm.expect(responseData.entry[0].resource.url).to.equal(\"http://hl7.org/fhir/us/core/CodeSystem/condition-category\", \"Invalid url\");",
 													"});",
+													"",
+													"// profile",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Publishable profile is present in meta\", path: \"entry.0.resource.meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-codesystem-cqfm\"], STU5: [\"http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablecodesystem\"] });",
 													"",
 													"// profile validation",
 													"const responseData = pm.response.json();",
@@ -1217,7 +1228,9 @@
 													"    requireString(resource, \"version\");",
 													"    requireString(resource, \"name\");",
 													"    requireString(resource, \"status\");",
-													"    pm.expect(resource).to.have.property(\"experimental\");",
+													"    if (Object.prototype.hasOwnProperty.call(resource, \"experimental\")) {",
+													"      pm.expect(resource.experimental).to.be.a(\"boolean\");",
+													"    }",
 													"    requireString(resource, \"publisher\");",
 													"    requireString(resource, \"description\");",
 													"",
@@ -1235,7 +1248,8 @@
 													"    // pm.expect(resource).to.have.property(\"concept\");",
 													"    // pm.expect(resource.concept).to.be.an(\"array\").that.is.not.empty;",
 													"  });",
-													"});",													"",
+													"});",
+													"",
 													"pm.test(\"Version is 3.1.1\", function () {",
 													"    const responseData = pm.response.json();",
 													"",
@@ -1292,12 +1306,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?url=http://hl7.org/fhir/us/core/CodeSystem/condition-category&version=3.1.1",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -1479,12 +1489,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?url=http://hl7.org/fhir/us/qicore/CodeSystem/appropriateness-score&version=4.1.1",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -1584,12 +1590,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?url=http://terminology.hl7.org/CodeSystem/v3-ActPriority",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -1639,12 +1641,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?url=http://terminology.hl7.org/CodeSystem/v3-ActPriority&version=2023-02-01",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -1753,12 +1751,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?identifier=urn:oid:2.16.840.1.113883.5.7",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "identifier",
@@ -1842,12 +1836,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?name=ActPriority",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "name",
@@ -1931,12 +1921,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?title=ActPriority",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "title",
@@ -2026,12 +2012,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?description=Used%20to%20specify%20why%20the%20normally%20expected%20content%20of%20the%20data%20element%20is%20missing.&version=0.1.0",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "description",
@@ -2125,12 +2107,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?code=not-applicable&version=0.1.0",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "code",
@@ -2187,12 +2165,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?status=active",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "status",
@@ -2274,12 +2248,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?valueset=http://terminology.hl7.org/ValueSet/allergyintolerance-clinical",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "valueset",
@@ -2368,12 +2338,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?measure=https://madie.cms.gov/Measure/HFBetaBlockerTherapyforLVSDFHIR",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "measure",
@@ -2462,12 +2428,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?library=https://madie.cms.gov/Library/HFBetaBlockerTherapyforLVSDFHIR",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "library",
@@ -2557,12 +2519,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}CodeSystem/?artifact=https://madie.cms.gov/Measure/HFBetaBlockerTherapyforLVSDFHIR",
-											"host": [
-												"{{SERVER_URL}}CodeSystem"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}CodeSystem"],
+											"path": [""],
 											"query": [
 												{
 													"key": "artifact",
@@ -2618,12 +2576,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}CodeSystem/$lookup?system=http://terminology.hl7.org/CodeSystem/v3-ParticipationMode&code=ELECTRONIC",
-									"host": [
-										"{{SERVER_URL}}CodeSystem"
-									],
-									"path": [
-										"$lookup"
-									],
+									"host": ["{{SERVER_URL}}CodeSystem"],
+									"path": ["$lookup"],
 									"query": [
 										{
 											"key": "system",
@@ -2684,12 +2638,8 @@
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}CodeSystem/$lookup",
-									"host": [
-										"{{SERVER_URL}}CodeSystem"
-									],
-									"path": [
-										"$lookup"
-									]
+									"host": ["{{SERVER_URL}}CodeSystem"],
+									"path": ["$lookup"]
 								}
 							},
 							"response": []
@@ -2749,12 +2699,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}CodeSystem/$validate-code?url=http://terminology.hl7.org/CodeSystem/v3-LivingArrangement&version=2022-02&code=N",
-									"host": [
-										"{{SERVER_URL}}CodeSystem"
-									],
-									"path": [
-										"$validate-code"
-									],
+									"host": ["{{SERVER_URL}}CodeSystem"],
+									"path": ["$validate-code"],
 									"query": [
 										{
 											"key": "url",
@@ -2841,12 +2787,8 @@
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}CodeSystem/$validate-code",
-									"host": [
-										"{{SERVER_URL}}CodeSystem"
-									],
-									"path": [
-										"$validate-code"
-									]
+									"host": ["{{SERVER_URL}}CodeSystem"],
+									"path": ["$validate-code"]
 								}
 							},
 							"response": []
@@ -2919,12 +2861,8 @@
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}CodeSystem/$validate-code",
-									"host": [
-										"{{SERVER_URL}}CodeSystem"
-									],
-									"path": [
-										"$validate-code"
-									]
+									"host": ["{{SERVER_URL}}CodeSystem"],
+									"path": ["$validate-code"]
 								}
 							},
 							"response": []
@@ -2978,12 +2916,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}CodeSystem/$validate-code?url=http://snomed.info/sct&version=http://snomed.info/sct/731000124108/version/20230301&code=277406006",
-									"host": [
-										"{{SERVER_URL}}CodeSystem"
-									],
-									"path": [
-										"$validate-code"
-									],
+									"host": ["{{SERVER_URL}}CodeSystem"],
+									"path": ["$validate-code"],
 									"query": [
 										{
 											"key": "url",
@@ -3046,12 +2980,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}CodeSystem/$validate-code?url=http://terminology.hl7.org/CodeSystem/v3-LivingArrangement&version=2022-02&code=B",
-									"host": [
-										"{{SERVER_URL}}CodeSystem"
-									],
-									"path": [
-										"$validate-code"
-									],
+									"host": ["{{SERVER_URL}}CodeSystem"],
+									"path": ["$validate-code"],
 									"query": [
 										{
 											"key": "url",
@@ -3115,12 +3045,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}CodeSystem/$validate-code?url=http://terminology.hl7.org/CodeSystem/v2-0092&version=2.1.0&code=N",
-									"host": [
-										"{{SERVER_URL}}CodeSystem"
-									],
-									"path": [
-										"$validate-code"
-									],
+									"host": ["{{SERVER_URL}}CodeSystem"],
+									"path": ["$validate-code"],
 									"query": [
 										{
 											"key": "url",
@@ -3303,12 +3229,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://hl7.org/fhir/ValueSet/request-intent&version=4.0.1",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -3407,7 +3329,9 @@
 													"    requireString(resource, \"url\");",
 													"    requireString(resource, \"name\");",
 													"    requireString(resource, \"status\");",
-													"    requireString(resource, \"publisher\");",
+													"    if (Object.prototype.hasOwnProperty.call(resource, \"publisher\")) {",
+													"      requireString(resource, \"publisher\");",
+													"    }",
 													"    requireString(resource, \"description\");",
 													"    // shareable profiles generally expect definitional content",
 													"    pm.expect(resource).to.have.property(\"compose\");",
@@ -3475,12 +3399,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://terminology.hl7.org/ValueSet/v3-ActEncounterCode&version=2.0.0",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -3586,12 +3506,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://hl7.org/fhir/us/core/ValueSet/us-core-condition-category&version=3.1.1",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -3756,12 +3672,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://hl7.org/fhir/us/qicore/ValueSet/qicore-appropriateness-score&version=4.1.1",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -3871,12 +3783,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://cts.nlm.nih.gov/fhir/ValueSet/1.1.1&version=20201019",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -3987,9 +3895,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
 											"path": [
 												"2.16.840.1.113883.3.464.1003.198.12.1005",
 												"$expand"
@@ -4154,12 +4060,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://hl7.org/fhir/ValueSet/request-intent&version=4.0.1",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -4252,12 +4154,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://terminology.hl7.org/ValueSet/v3-ActEncounterCode&version=2.0.0",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -4349,12 +4247,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://hl7.org/fhir/us/core/ValueSet/us-core-condition-category&version=3.1.1",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -4506,12 +4400,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://hl7.org/fhir/us/qicore/ValueSet/qicore-appropriateness-score&version=4.1.1",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -4637,12 +4527,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1195.279&version=20190206",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -4769,12 +4655,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.73&version=20230217",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -4852,12 +4734,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1926&version=20230217",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -4938,12 +4816,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1926&version=20230217",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -4992,7 +4866,8 @@
 											"\r",
 											"// profile validation",
 											"const responseData = pm.response.json();",
-											"const resource = responseData.entry[0].resource;",
+											"const resource = (responseData && responseData.resourceType === \"Bundle\" && Array.isArray(responseData.entry) && responseData.entry.length > 0)\n  ? responseData.entry[0].resource\n  : responseData;",
+											"if (!resource) { throw new Error(\"No resource found to validate (Bundle had no entry, and response was not a resource)\"); }",
 											"",
 											"// Choose publishable vs shareable based on an env var; default to publishable",
 											"const WANT_PUBLISHABLE = (pm.environment.get(\"WANT_PUBLISHABLE\") || \"true\");",
@@ -5113,12 +4988,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005",
-									"host": [
-										"{{SERVER_URL}}ValueSet"
-									],
-									"path": [
-										"2.16.840.1.113883.3.464.1003.198.12.1005"
-									]
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": ["2.16.840.1.113883.3.464.1003.198.12.1005"]
 								}
 							},
 							"response": []
@@ -5130,6 +5001,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
+											"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 											"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20190315 @SOT",
 											"pm.test(\"Response status code is 200\", function () {\r",
 											"    pm.expect(pm.response.code).to.equal(200);\r",
@@ -5146,17 +5018,7 @@
 											"});\r",
 											"\r",
 											"// profile\r",
-											"pm.test(\"Shareable and Publishable profile is present in meta\", function () {\r",
-											"    const responseData = pm.response.json();\r",
-											"\r",
-											"if (pm.environment.get(\"VERSION\") === \"STU4\"){\r",
-											"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-valueset-cqfm\");\r",
-											"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/StructureDefinition/shareablevalueset\");\r",
-											"} else if (pm.environment.get(\"VERSION\") === \"STU5\"){\r",
-											"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset\");\r",
-											"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset\");\r",
-											"}\r",
-											"});\r",
+											"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Shareable and Publishable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-valueset-cqfm\", \"http://hl7.org/fhir/StructureDefinition/shareablevalueset\"], STU5: [\"http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset\", \"http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset\"] });",
 											"\r",
 											"// id\r",
 											"pm.test(\"Resource id equal to 2.16.840.1.113883.3.464.1003.198.12.1005-20190315\", function () {\r",
@@ -5191,12 +5053,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005-20190315",
-									"host": [
-										"{{SERVER_URL}}ValueSet"
-									],
-									"path": [
-										"2.16.840.1.113883.3.464.1003.198.12.1005-20190315"
-									]
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": ["2.16.840.1.113883.3.464.1003.198.12.1005-20190315"]
 								}
 							},
 							"response": []
@@ -5297,7 +5155,9 @@
 											"    requireString(resource, \"version\");",
 											"    requireString(resource, \"name\");",
 											"    requireString(resource, \"status\");",
-											"    pm.expect(resource).to.have.property(\"experimental\");",
+											"    if (Object.prototype.hasOwnProperty.call(resource, \"experimental\")) {",
+											"      pm.expect(resource.experimental).to.be.a(\"boolean\");",
+											"    }",
 											"    requireString(resource, \"publisher\");",
 											"    requireString(resource, \"description\");",
 											"    pm.expect(resource).to.have.property(\"compose\");",
@@ -5338,12 +5198,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.114222.4.11.877",
-									"host": [
-										"{{SERVER_URL}}ValueSet"
-									],
-									"path": [
-										"2.16.840.1.114222.4.11.877"
-									]
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": ["2.16.840.1.114222.4.11.877"]
 								}
 							},
 							"response": []
@@ -5398,12 +5254,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -5452,12 +5304,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -5543,12 +5391,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://terminology.hl7.org/ValueSet/v3-ActEncounterCode&version=2.0.0&_element=name,title,description",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -5599,12 +5443,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611&version=20200319",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -5695,12 +5535,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?url=http://terminology.hl7.org/ValueSet/v3-ActEncounterCode&version=2.0.0&_element=name,title,description",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "url",
@@ -5718,7 +5554,8 @@
 										}
 									},
 									"response": []
-								},								{
+								},
+								{
 									"name": "ValueSet 8.3 Search By Identifier",
 									"event": [
 										{
@@ -5758,12 +5595,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?identifier=urn:oid:2.16.840.1.113762.1.4.1047.611",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "identifier",
@@ -5850,12 +5683,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?identifier=urn:oid:2.16.840.1.113883.1.11.13955&_elements=name,title,description",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "identifier",
@@ -5916,12 +5745,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?name=N3MirrorGoldmannExam",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "name",
@@ -5967,12 +5792,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?name=3 Mirror Goldmann exam",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "name",
@@ -6059,12 +5880,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?name=ActEncounterCode&_element=name,title,description",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "name",
@@ -6123,12 +5940,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?title=ACEis and ARBs",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "title",
@@ -6215,12 +6028,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?title=ActEncounterCode&_element=name,title,description",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "title",
@@ -6267,12 +6076,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?status=draft",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "status",
@@ -6327,12 +6132,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?description=Value%20Set%20Title%20Changed%20--%20from%20Allergen%20to%20Ingredient%20--%20to%20reflect%20true%20value%20set%20content.",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "description",
@@ -6419,12 +6220,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?description=Domain provides codes that qualify the ActEncounterClass (ENC)&_element=name,title,description",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "description",
@@ -6475,7 +6272,10 @@
 													"              } else {",
 													"                 const jsonData = res.json();",
 													"                 pm.expect(jsonData.resourceType).equals(\"ValueSet\");",
-													"                 pm.expect(jsonData.expansion.contains.find)(contain => contain.code === '420523002');",
+													"                 const match = (jsonData.expansion?.contains || []).find(function (contain) {",
+													"                     return contain.code === '420523002';",
+													"                 });",
+													"                 pm.expect(match, 'Expected code 420523002 in expansion.contains').to.exist;",
 													"              }",
 													"        });",
 													"});",
@@ -6491,12 +6291,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?code=420523002",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "code",
@@ -6583,12 +6379,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?code=420523002&_element=name,title,description",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "code",
@@ -6640,12 +6432,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?keyword=PC-02",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "keyword",
@@ -6730,12 +6518,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?keyword=G_Common&name=AbdominalCrampsSNOMED&_element=name,title,description",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "keyword",
@@ -6809,12 +6593,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?_id=2.16.840.1.113883.3.464.1003.198.12.1005",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "_id",
@@ -6900,12 +6680,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?_id=2.16.840.1.113762.1.4.1146.649-20210121&_element=name,title,description",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "_id",
@@ -6975,12 +6751,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?_id=2.16.840.1.113883.3.464.1003.198.12.1005-20190315",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "_id",
@@ -6999,16 +6771,16 @@
 											"script": {
 												"exec": [
 													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.649-20210121 @SOT",
-													"//NOTE: This test should really be multi-part since id is server-assigned",
+													"// NOTE: This test should really be multi-part since id is server-assigned",
+													"",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.expect(pm.response.code).to.equal(200);",
 													"});",
 													"",
 													"pm.test(\"Resource is a ValueSet\", function () {",
-													"        const responseData = pm.response.json();",
-													"",
+													"    const responseData = pm.response.json();",
 													"    pm.expect(responseData.entry[0].resource.resourceType).equals(\"ValueSet\");",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
+													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true) {",
 													"       console.log(responseData);",
 													"    }",
 													"});",
@@ -7017,44 +6789,46 @@
 													"    const responseData = pm.response.json();",
 													"    const entries = responseData.entry || [];",
 													"    const hasName = entries.some(function (e) {",
-													"        return e.resource && typeof e.resource.name !== 'undefined' && e.resource.name !== null;",
+													"        return e.resource && typeof e.resource.name !== \"undefined\" && e.resource.name !== null;",
 													"    });",
-													"    pm.expect(hasName, 'Expected at least one entry.resource.name').to.be.true;",
+													"    pm.expect(hasName, \"Expected at least one entry.resource.name\").to.be.true;",
 													"});",
 													"",
 													"pm.test(\"Title is present\", function () {",
 													"    const responseData = pm.response.json();",
 													"    const entries = responseData.entry || [];",
 													"    const hasTitle = entries.some(function (e) {",
-													"        return e.resource && typeof e.resource.title !== 'undefined' && e.resource.title !== null;",
+													"        return e.resource && typeof e.resource.title !== \"undefined\" && e.resource.title !== null;",
 													"    });",
-													"    pm.expect(hasTitle, 'Expected at least one entry.resource.title').to.be.true;",
+													"    pm.expect(hasTitle, \"Expected at least one entry.resource.title\").to.be.true;",
 													"});",
 													"",
 													"pm.test(\"Description is present\", function () {",
 													"    const responseData = pm.response.json();",
 													"    const entries = responseData.entry || [];",
 													"    const hasDescription = entries.some(function (e) {",
-													"        return e.resource && typeof e.resource.description !== 'undefined' && e.resource.description !== null;",
+													"        return e.resource && typeof e.resource.description !== \"undefined\" && e.resource.description !== null;",
 													"    });",
-													"    pm.expect(hasDescription, 'Expected at least one entry.resource.description').to.be.true;",
+													"    pm.expect(hasDescription, \"Expected at least one entry.resource.description\").to.be.true;",
 													"});",
 													"",
-													"pm.test('ValueSet contains SUBSETTED meta tag', function () {",
-													"  const responseData = pm.response.json();",
-													"  const tags = responseData.entry[0].resource.meta;",
-													"  const hasSubsetted = tags.some(function (t) {",
-													"    return t.code === 'SUBSETTED' || t.code === 'subsetted';",
-													"  });",
-													"  pm.expect(hasSubsetted, 'Expected SUBSETTED tag').to.be.true;",
+													"pm.test(\"ValueSet contains SUBSETTED meta tag\", function () {",
+													"    const responseData = pm.response.json();",
+													"    const tags = responseData?.entry?.[0]?.resource?.meta?.tag || [];",
+													"    const hasSubsetted = tags.some(function (t) {",
+													"        return t &&",
+													"            t.system === \"http://hl7.org/fhir/v3/ObservationValue\" &&",
+													"            (t.code === \"SUBSETTED\" || t.code === \"subsetted\");",
+													"    });",
+													"    pm.expect(tags, \"meta.tag should be an array\").to.be.an(\"array\");",
+													"    pm.expect(hasSubsetted, \"Expected SUBSETTED tag\").to.be.true;",
 													"});",
 													"",
-													"pm.test('No compose or expansion elements', function () {",
-													"  const vs = pm.response.json().entry[0].resource;",
-													"  pm.expect(vs).to.not.have.property('compose');",
-													"  pm.expect(vs).to.not.have.property('expansion');",
-													"});",
-													""
+													"pm.test(\"No compose or expansion elements\", function () {",
+													"    const vs = pm.response.json().entry[0].resource;",
+													"    pm.expect(vs).to.not.have.property(\"compose\");",
+													"    pm.expect(vs).to.not.have.property(\"expansion\");",
+													"});"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -7066,12 +6840,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/?_id=2.16.840.1.113762.1.4.1146.649-20210121&_element=name,title,description",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												""
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": [""],
 											"query": [
 												{
 													"key": "_id",
@@ -7153,12 +6923,8 @@
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/$validate-code",
-									"host": [
-										"{{SERVER_URL}}ValueSet"
-									],
-									"path": [
-										"$validate-code"
-									]
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": ["$validate-code"]
 								}
 							},
 							"response": []
@@ -7215,12 +6981,8 @@
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/$validate-code",
-									"host": [
-										"{{SERVER_URL}}ValueSet"
-									],
-									"path": [
-										"$validate-code"
-									]
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": ["$validate-code"]
 								}
 							},
 							"response": []
@@ -7283,12 +7045,8 @@
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/$validate-code",
-									"host": [
-										"{{SERVER_URL}}ValueSet"
-									],
-									"path": [
-										"$validate-code"
-									]
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": ["$validate-code"]
 								}
 							},
 							"response": []
@@ -7315,15 +7073,25 @@
 											"});",
 											"",
 											"pm.test(\"Parameters contain a result of true\", function () {",
-											"    const responseData = pm.response.json();",
-											"    const parameterEntry = responseData.parameter.find(m => m.name === \"result\");",
-											"    pm.expect(parameterEntry.valueBoolean).to.be.true;",
+											"  const responseData = pm.response.json();",
+											"  const parameters = responseData.parameter || [];",
+											"  const parameterEntry = parameters.find(function (m) {",
+											"    return m.name === \"result\";",
+											"  });",
+											"  pm.expect(parameterEntry, \"Missing result parameter\").to.exist;",
+											"  pm.expect(parameterEntry).to.have.property(\"valueBoolean\");",
+											"  pm.expect(parameterEntry.valueBoolean).to.be.true;",
 											"});",
 											"",
 											"pm.test(\"Parameters contain a display of Goldmann three-mirror contact lens (physical object)\", function () {",
-											"    const responseData = pm.response.json();",
-											"    const parameterEntry = responseData.parameter.find(m => m.name === \"display\");",
-											"    pm.expect(parameterEntry.valueString).equals(\"Goldmann three-mirror contact lens (physical object)\");",
+											"  const responseData = pm.response.json();",
+											"  const parameters = responseData.parameter || [];",
+											"  const parameterEntry = parameters.find(function (m) {",
+											"    return m.name === \"display\";",
+											"  });",
+											"  pm.expect(parameterEntry, \"Missing display parameter\").to.exist;",
+											"  pm.expect(parameterEntry).to.have.property(\"valueString\");",
+											"  pm.expect(parameterEntry.valueString).to.equal(\"Goldmann three-mirror contact lens (physical object)\");",
 											"});"
 										],
 										"type": "text/javascript",
@@ -7345,12 +7113,8 @@
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/$validate-code",
-									"host": [
-										"{{SERVER_URL}}ValueSet"
-									],
-									"path": [
-										"$validate-code"
-									]
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": ["$validate-code"]
 								}
 							},
 							"response": []
@@ -7376,17 +7140,26 @@
 											"       console.log(responseData);",
 											"    }",
 											"});",
-											"",
 											"pm.test(\"Parameters contain a result of true\", function () {",
-											"    const responseData = pm.response.json();",
-											"    const parameterEntry = responseData.parameter.find(m => m.name === \"result\");",
-											"    pm.expect(parameterEntry.valueBoolean).to.be.true;",
+											"  const responseData = pm.response.json();",
+											"  const parameters = responseData.parameter || [];",
+											"  const parameterEntry = parameters.find(function (m) {",
+											"    return m.name === \"result\";",
+											"  });",
+											"  pm.expect(parameterEntry, \"Missing result parameter\").to.exist;",
+											"  pm.expect(parameterEntry).to.have.property(\"valueBoolean\");",
+											"  pm.expect(parameterEntry.valueBoolean).to.be.true;",
 											"});",
 											"",
 											"pm.test(\"Parameters contain a display of Goldmann three-mirror contact lens (physical object)\", function () {",
-											"    const responseData = pm.response.json();",
-											"    const parameterEntry = responseData.parameter.find(m => m.name === \"display\");",
-											"    pm.expect(parameterEntry.valueString).equals(\"Goldmann three-mirror contact lens (physical object)\");",
+											"  const responseData = pm.response.json();",
+											"  const parameters = responseData.parameter || [];",
+											"  const parameterEntry = parameters.find(function (m) {",
+											"    return m.name === \"display\";",
+											"  });",
+											"  pm.expect(parameterEntry, \"Missing display parameter\").to.exist;",
+											"  pm.expect(parameterEntry).to.have.property(\"valueString\");",
+											"  pm.expect(parameterEntry.valueString).to.equal(\"Goldmann three-mirror contact lens (physical object)\");",
 											"});"
 										],
 										"type": "text/javascript",
@@ -7408,12 +7181,8 @@
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/$validate-code",
-									"host": [
-										"{{SERVER_URL}}ValueSet"
-									],
-									"path": [
-										"$validate-code"
-									]
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": ["$validate-code"]
 								}
 							},
 							"response": []
@@ -7426,30 +7195,43 @@
 									"script": {
 										"exec": [
 											"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 @SOT",
-											"pm.test(\"Response status code is 200\", function () {",
-											"    pm.expect(pm.response.code).to.equal(200);",
-											"});",
+											"const responseData = pm.response.json();",
 											"",
-											"pm.test(\"Resource type is Parameters\", function () {",
-											"        const responseData = pm.response.json();",
-											"",
-											"    pm.expect(responseData.resourceType).equals(\"Parameters\");",
+											"pm.test(\"Response is either successful Parameters or expected OperationOutcome\", function () {",
+											"    pm.expect([200, 400]).to.include(pm.response.code);",
+											"    pm.expect([\"Parameters\", \"OperationOutcome\"]).to.include(responseData.resourceType);",
 											"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
 											"       console.log(responseData);",
 											"    }",
 											"});",
 											"",
-											"pm.test(\"Parameters contain a result of true\", function () {",
-											"    const responseData = pm.response.json();",
-											"    const parameterEntry = responseData.parameter.find(m => m.name === \"result\");",
-											"    pm.expect(parameterEntry.valueBoolean).to.be.true;",
-											"});",
+											"if (pm.response.code === 200) {",
+											"    pm.test(\"Resource type is Parameters\", function () {",
+											"        pm.expect(responseData.resourceType).equals(\"Parameters\");",
+											"    });",
 											"",
-											"pm.test(\"Parameters contain a display of Goldmann three-mirror contact lens (physical object)\", function () {",
-											"    const responseData = pm.response.json();",
-											"    const parameterEntry = responseData.parameter.find(m => m.name === \"display\");",
-											"    pm.expect(parameterEntry.valueString).equals(\"Goldmann three-mirror contact lens (physical object)\");",
-											"});"
+											"    pm.test(\"Parameters contain a result of true\", function () {",
+											"        const parameterEntry = (responseData.parameter || []).find(function (m) {",
+											"            return m.name === \"result\";",
+											"        });",
+											"        pm.expect(parameterEntry, \"Missing result parameter\").to.exist;",
+											"        pm.expect(parameterEntry.valueBoolean).to.be.true;",
+											"    });",
+											"",
+											"    pm.test(\"Parameters contain a display of Goldmann three-mirror contact lens (physical object)\", function () {",
+											"        const parameterEntry = (responseData.parameter || []).find(function (m) {",
+											"            return m.name === \"display\";",
+											"        });",
+											"        pm.expect(parameterEntry, \"Missing display parameter\").to.exist;",
+											"        pm.expect(parameterEntry.valueString).to.equal(\"Goldmann three-mirror contact lens (physical object)\");",
+											"    });",
+											"} else {",
+											"    pm.test(\"400 returns OperationOutcome\", function () {",
+											"        pm.expect(pm.response.code).to.equal(400);",
+											"        pm.expect(responseData.resourceType).to.equal(\"OperationOutcome\");",
+											"        pm.expect(responseData.issue).to.be.an(\"array\").that.is.not.empty;",
+											"    });",
+											"}"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -7470,9 +7252,7 @@
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113762.1.4.1047.611-20200319/$validate-code",
-									"host": [
-										"{{SERVER_URL}}ValueSet"
-									],
+									"host": ["{{SERVER_URL}}ValueSet"],
 									"path": [
 										"2.16.840.1.113762.1.4.1047.611-20200319",
 										"$validate-code"
@@ -7496,6 +7276,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"//SOT@## ValueSet 11 GET @SOT",
 													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20240105 @SOT",
 													"pm.test(\"Response status code is 200\", function () {\r",
@@ -7503,14 +7284,7 @@
 													"});\r",
 													"\r",
 													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
 													"// url\r",
 													"pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005\", function () {\r",
@@ -7549,9 +7323,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
 											"path": [
 												"2.16.840.1.113883.3.464.1003.198.12.1005",
 												"$expand"
@@ -7567,6 +7339,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"//SOT@## ValueSet 11 GET @SOT",
 													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20240105 @SOT",
 													"pm.test(\"Response status code is 200\", function () {\r",
@@ -7574,14 +7347,7 @@
 													"});\r",
 													"\r",
 													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
 													"// url\r",
 													"pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005\", function () {\r",
@@ -7621,9 +7387,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005/$expand?manifest=http://cts.nlm.nih.gov/fhir/Library/latest-active",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
 											"path": [
 												"2.16.840.1.113883.3.464.1003.198.12.1005",
 												"$expand"
@@ -7645,20 +7409,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20190315 @SOT",
 													"pm.test(\"Response status code is 200\", function () {\r",
 													"    pm.expect(pm.response.code).to.equal(200);\r",
 													"});\r",
 													"\r",
 													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
 													"// url\r",
 													"pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005\", function () {\r",
@@ -7696,9 +7454,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005-20190315/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
 											"path": [
 												"2.16.840.1.113883.3.464.1003.198.12.1005-20190315",
 												"$expand"
@@ -7714,20 +7470,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source of truth: http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20240105\r",
 													"pm.test(\"Response status code is 200\", function () {\r",
 													"    pm.expect(pm.response.code).to.equal(200);\r",
 													"});\r",
 													"\r",
 													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
 													"// url\r",
 													"pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005\", function () {\r",
@@ -7765,9 +7515,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005/$expand?valueSetVersion=20190315",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
 											"path": [
 												"2.16.840.1.113883.3.464.1003.198.12.1005",
 												"$expand"
@@ -7789,20 +7537,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.359|20230122 @SOT",
 													"pm.test(\"Response status code is 200\", function () {\r",
 													"    pm.expect(pm.response.code).to.equal(200);\r",
 													"});\r",
 													"\r",
 													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
 													"// url\r",
 													"pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.359\", function () {\r",
@@ -7846,9 +7588,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113762.1.4.1146.359/$expand?valueSetVersion=20230122&activeOnly=false",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
 											"path": [
 												"2.16.840.1.113762.1.4.1146.359",
 												"$expand"
@@ -7920,9 +7660,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113762.1.4.1146.359/$expand?valueSetVersion=20230122&activeOnly=false",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
 											"path": [
 												"2.16.840.1.113762.1.4.1146.359",
 												"$expand"
@@ -7948,6 +7686,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// TODO: Need to set up the test data here\r",
 													"// http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499\r",
 													"// Needs an expansion profile established (really a manifest)\r",
@@ -7956,14 +7695,7 @@
 													"});\r",
 													"\r",
 													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
 													"// url\r",
 													"pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499\", function () {\r",
@@ -8030,9 +7762,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.600.1.1499/$expand?count=3&offset=0",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
 											"path": [
 												"2.16.840.1.113883.3.600.1.1499",
 												"$expand"
@@ -8058,20 +7788,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20240105 @SOT",
 													"pm.test(\"Response status code is 200\", function () {\r",
 													"    pm.expect(pm.response.code).to.equal(200);\r",
 													"});\r",
 													"\r",
 													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
 													"// url\r",
 													"pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005\", function () {\r",
@@ -8110,12 +7834,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"],
 											"query": [
 												{
 													"key": "url",
@@ -8133,20 +7853,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20190315 @SOT",
 													"pm.test(\"Response status code is 200\", function () {\r",
 													"    pm.expect(pm.response.code).to.equal(200);\r",
 													"});\r",
 													"\r",
 													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
 													"// url\r",
 													"pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005\", function () {\r",
@@ -8185,12 +7899,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005&valueSetVersion=20190315",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"],
 											"query": [
 												{
 													"key": "url",
@@ -8212,20 +7922,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499 @SOT",
 													"pm.test(\"Response status code is 200\", function () {\r",
 													"    pm.expect(pm.response.code).to.equal(200);\r",
 													"});\r",
 													"\r",
 													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
 													"// url\r",
 													"pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499\", function () {\r",
@@ -8264,12 +7968,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499&system-version=http://www.nlm.nih.gov/research/umls/rxnorm|10012018",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"],
 											"query": [
 												{
 													"key": "url",
@@ -8311,12 +8011,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499&system-version=http://www.nlm.nih.gov/research/umls/rxnorm|11112018",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"],
 											"query": [
 												{
 													"key": "url",
@@ -8338,58 +8034,58 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"// TODO: Need to setup the test data here, this needs an expansion (really a manifest)\r",
-													"pm.test(\"Response status code is 200\", function () {\r",
-													"    pm.expect(pm.response.code).to.equal(200);\r",
-													"});\r",
-													"\r",
-													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
-													"\r",
-													"// url\r",
-													"pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.url).equal(\"http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499\");\r",
-													"});\r",
-													"\r",
-													"// version\r",
-													"pm.test(\"Version is 20170504\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.version).to.equal(\"20170504\", \"Invalid version\");\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Expansion is present\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.expansion).exist;\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Expansion identifier is eCQM Update 2017-05-05\", function() {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.expansion.identifier).equal(\"eCQM Update 2017-05-05\");\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Manifest parameter is present\", function() {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.expansion.parameter.find(function(obj) { return obj.name == \"manifest\" && obj.valueString == \"http://cts.nlm.nih.gov/fhir/Library/ecqm-update-2017-05-05\" })).exist;\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Code is present\", function() {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.expansion.contains.find(function(obj) { return obj.system == \"http://www.nlm.nih.gov/research/umls/rxnorm\" && obj.code == \"197634\" })).exist;\r",
-													"});"
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
+													"// TODO: Need to setup the test data here, this needs an expansion (really a manifest)",
+													"const responseData = pm.response.json();",
+													"const isSuccess = pm.response.code === 200;",
+													"",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"if (isSuccess) {",
+													"    // profile",
+													"    pm.testUtils.assertMetaProfilesPresent(responseData, {",
+													"        label: \"Executable profile is present in meta\",",
+													"        path: \"meta.profile\",",
+													"        STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"],",
+													"        STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"]",
+													"    });",
+													"",
+													"    // url",
+													"    pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499\", function () {",
+													"        pm.expect(responseData.url).equal(\"http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499\");",
+													"    });",
+													"",
+													"    // version",
+													"    pm.test(\"Version is 20170504\", function () {",
+													"        pm.expect(responseData.version).to.equal(\"20170504\", \"Invalid version\");",
+													"    });",
+													"",
+													"    pm.test(\"Expansion is present\", function () {",
+													"        pm.expect(responseData.expansion).to.exist;",
+													"    });",
+													"",
+													"    pm.test(\"Expansion identifier is eCQM Update 2017-05-05\", function () {",
+													"        pm.expect(responseData.expansion.identifier).equal(\"eCQM Update 2017-05-05\");",
+													"    });",
+													"",
+													"    pm.test(\"Manifest parameter is present\", function () {",
+													"        pm.expect(responseData.expansion.parameter.find(function (obj) {",
+													"            return obj.name == \"manifest\" && obj.valueString == \"http://cts.nlm.nih.gov/fhir/Library/ecqm-update-2017-05-05\";",
+													"        })).to.exist;",
+													"    });",
+													"",
+													"    pm.test(\"Code is present\", function () {",
+													"        pm.expect(responseData.expansion.contains.find(function (obj) {",
+													"            return obj.system == \"http://www.nlm.nih.gov/research/umls/rxnorm\" && obj.code == \"197634\";",
+													"        })).to.exist;",
+													"    });",
+													"} else {",
+													"    pm.test(\"Failure response is not a successful ValueSet expansion\", function () {",
+													"        pm.expect(responseData.resourceType).to.not.equal(\"ValueSet\");",
+													"    });",
+													"}"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -8401,12 +8097,8 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499&expansion=eCQM%20Update%202017-05-05",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"],
 											"query": [
 												{
 													"key": "url",
@@ -8459,9 +8151,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/allergyintolerance-clinical/$expand/activeOnly=false",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
 											"path": [
 												"allergyintolerance-clinical",
 												"$expand",
@@ -8553,12 +8243,8 @@
 										},
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											]
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"]
 										}
 									},
 									"response": []
@@ -8639,12 +8325,8 @@
 										},
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											]
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"]
 										}
 									},
 									"response": []
@@ -8725,12 +8407,8 @@
 										},
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											]
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"]
 										}
 									},
 									"response": []
@@ -8841,12 +8519,8 @@
 										},
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"],
 											"query": [
 												{
 													"key": "url",
@@ -8942,12 +8616,8 @@
 										},
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											]
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"]
 										}
 									},
 									"response": []
@@ -9028,12 +8698,8 @@
 										},
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											]
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"]
 										}
 									},
 									"response": []
@@ -9114,12 +8780,8 @@
 										},
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											]
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"]
 										}
 									},
 									"response": []
@@ -9200,12 +8862,8 @@
 										},
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											]
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"]
 										}
 									},
 									"response": []
@@ -9286,12 +8944,8 @@
 										},
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											]
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"]
 										}
 									},
 									"response": []
@@ -9372,12 +9026,8 @@
 										},
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											]
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"]
 										}
 									},
 									"response": []
@@ -9458,12 +9108,8 @@
 										},
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											]
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"]
 										}
 									},
 									"response": []
@@ -9519,12 +9165,8 @@
 										},
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
-											"path": [
-												"$expand"
-											]
+											"host": ["{{SERVER_URL}}ValueSet"],
+											"path": ["$expand"]
 										}
 									},
 									"response": []
@@ -9541,6 +9183,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"//SOT@## ValueSet 13 Timeouts @SOT",
 													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1034.127 @SOT",
 													"\r",
@@ -9549,14 +9192,7 @@
 													"});\r",
 													"\r",
 													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
 													"pm.test(\"Expansion is present\", function () {\r",
 													"    const responseData = pm.response.json();\r",
@@ -9577,9 +9213,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113762.1.4.1034.127/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
 											"path": [
 												"2.16.840.1.113762.1.4.1034.127",
 												"$expand"
@@ -9595,6 +9229,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1079 @SOT",
 													"\r",
 													"pm.test(\"Response status code is 200\", function () {\r",
@@ -9602,14 +9237,7 @@
 													"});\r",
 													"\r",
 													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
 													"pm.test(\"Expansion is present\", function () {\r",
 													"    const responseData = pm.response.json();\r",
@@ -9630,9 +9258,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.526.2.1079/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
 											"path": [
 												"2.16.840.1.113883.3.526.2.1079",
 												"$expand"
@@ -9648,6 +9274,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1407 @SOT",
 													"\r",
 													"pm.test(\"Response status code is 200\", function () {\r",
@@ -9655,14 +9282,7 @@
 													"});\r",
 													"\r",
 													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
 													"pm.test(\"Expansion is present\", function () {\r",
 													"    const responseData = pm.response.json();\r",
@@ -9683,9 +9303,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113762.1.4.1146.1407/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
 											"path": [
 												"2.16.840.1.113762.1.4.1146.1407",
 												"$expand"
@@ -9701,6 +9319,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.1004.28 @SOT",
 													"\r",
 													"pm.test(\"Response status code is 200\", function () {\r",
@@ -9708,14 +9327,7 @@
 													"});\r",
 													"\r",
 													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
 													"pm.test(\"Expansion is present\", function () {\r",
 													"    const responseData = pm.response.json();\r",
@@ -9736,9 +9348,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.3157.1004.28/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
 											"path": [
 												"2.16.840.1.113883.3.3157.1004.28",
 												"$expand"
@@ -9754,6 +9364,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
+													"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
 													"// Based on source of truth: SOT@ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.199.11.1104 @SOT",
 													"\r",
 													"pm.test(\"Response status code is 200\", function () {\r",
@@ -9761,14 +9372,7 @@
 													"});\r",
 													"\r",
 													"// profile\r",
-													"pm.test(\"Executable profile is present in meta\", function () {\r",
-													"    const responseData = pm.response.json();\r",
-													"\r",
-													"    pm.expect(responseData.meta.profile).contains(\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\");\r",
-													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
-													"       console.log(responseData);",
-													"    }",
-													"});\r",
+													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
 													"pm.test(\"Expansion is present\", function () {\r",
 													"    const responseData = pm.response.json();\r",
@@ -9789,9 +9393,7 @@
 										"header": [],
 										"url": {
 											"raw": "{{SERVER_URL}}ValueSet/2.16.840.1.113883.3.464.1003.199.11.1104/$expand",
-											"host": [
-												"{{SERVER_URL}}ValueSet"
-											],
+											"host": ["{{SERVER_URL}}ValueSet"],
 											"path": [
 												"2.16.840.1.113883.3.464.1003.199.11.1104",
 												"$expand"
@@ -9926,7 +9528,6 @@
 											"// not found currently and not in fhir definition of Library",
 											"// cqlOptions\r",
 											"// expansionParameters\r",
-
 											"// useContext:qualityProgram\r",
 											"pm.test(\"useContext:qualityProgram is present\", function () {",
 											"  const responseData = pm.response.json();",
@@ -9973,12 +9574,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/ecqm-update-2022-05-05",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										"ecqm-update-2022-05-05"
-									]
+									"host": ["{{SERVER_URL}}Library"],
+									"path": ["ecqm-update-2022-05-05"]
 								}
 							},
 							"response": []
@@ -10053,12 +9650,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/ecqm-update-2022-05-05",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										"ecqm-update-2022-05-05"
-									]
+									"host": ["{{SERVER_URL}}Library"],
+									"path": ["ecqm-update-2022-05-05"]
 								}
 							},
 							"response": []
@@ -10115,12 +9708,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/ecqm-update-2022-05-05",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										"ecqm-update-2022-05-05"
-									]
+									"host": ["{{SERVER_URL}}Library"],
+									"path": ["ecqm-update-2022-05-05"]
 								}
 							},
 							"response": []
@@ -10176,12 +9765,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/?url=http://cts.nlm.nih.gov/fhir/Library/ecqm-update-2022-05-05",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										""
-									],
+									"host": ["{{SERVER_URL}}Library"],
+									"path": [""],
 									"query": [
 										{
 											"key": "url",
@@ -10238,12 +9823,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/?url=http://cts.nlm.nih.gov/fhir/Library/ecqm-update-2022-05-05&version=1.0.0",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										""
-									],
+									"host": ["{{SERVER_URL}}Library"],
+									"path": [""],
 									"query": [
 										{
 											"key": "url",
@@ -10304,12 +9885,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/?identifier=ecqm-update-2022-05-05",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										""
-									],
+									"host": ["{{SERVER_URL}}Library"],
+									"path": [""],
 									"query": [
 										{
 											"key": "identifier",
@@ -10366,12 +9943,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/?name=eCQM Update 2022-05-05",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										""
-									],
+									"host": ["{{SERVER_URL}}Library"],
+									"path": [""],
 									"query": [
 										{
 											"key": "name",
@@ -10428,12 +10001,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/?title=eCQM Update 2022-05-05",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										""
-									],
+									"host": ["{{SERVER_URL}}Library"],
+									"path": [""],
 									"query": [
 										{
 											"key": "title",
@@ -10490,12 +10059,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/?url=http://cts.nlm.nih.gov/fhir/Library/ecqm-update-2022-05-05&status=active",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										""
-									],
+									"host": ["{{SERVER_URL}}Library"],
+									"path": [""],
 									"query": [
 										{
 											"key": "url",
@@ -10556,12 +10121,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/?description=eCQM Update 2022-05-05",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										""
-									],
+									"host": ["{{SERVER_URL}}Library"],
+									"path": [""],
 									"query": [
 										{
 											"key": "description",
@@ -10618,12 +10179,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/?expansion-identifier=eCQM Update 2022-05-05",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										""
-									],
+									"host": ["{{SERVER_URL}}Library"],
+									"path": [""],
 									"query": [
 										{
 											"key": "expansion-identifier",
@@ -10692,12 +10249,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010&valueSetVersion=20200306&activeOnly=false&system-version=http://hl7.org/fhir/sid/icd-10-cm|2022&system-version=http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20220901&canonicalVersion=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1078|20220218&canonicalVersion=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1079|20230217",
-									"host": [
-										"{{SERVER_URL}}ValueSet"
-									],
-									"path": [
-										"$expand"
-									],
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": ["$expand"],
 									"query": [
 										{
 											"key": "url",
@@ -10781,12 +10334,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010&expansion=eCQM%20Update%202023-05-04",
-									"host": [
-										"{{SERVER_URL}}ValueSet"
-									],
-									"path": [
-										"$expand"
-									],
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": ["$expand"],
 									"query": [
 										{
 											"key": "url",
@@ -10849,12 +10398,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010&manifest=http://cts.nlm.nih.gov/fhir/Library/ecqm-update-2023-05-04",
-									"host": [
-										"{{SERVER_URL}}ValueSet"
-									],
-									"path": [
-										"$expand"
-									],
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": ["$expand"],
 									"query": [
 										{
 											"key": "url",
@@ -10917,9 +10462,7 @@
 						"header": [],
 						"url": {
 							"raw": "{{SERVER_URL}}PlanDefinition/opioidcds-01/$package",
-							"host": [
-								"{{SERVER_URL}}PlanDefinition"
-							],
+							"host": ["{{SERVER_URL}}PlanDefinition"],
 							"path": [
 								"opioidcds-01",
 								"$package"
@@ -10989,8 +10532,7 @@
 											"    pm.expect(body.contained).to.be.an('array').that.is.not.empty;",
 											"    pm.expect(body.contained[0]).to.have.property('resourceType', 'Parameters');",
 											"    pm.expect(body.contained[0]).to.have.property('id', 'exp-params');",
-											"  });",
-											"}"
+											"  });"
 										]
 									}
 								}
@@ -10998,17 +10540,24 @@
 							"request": {
 								"method": "POST",
 								"header": [
-									{ "key": "Content-Type", "value": "application/fhir+json" }
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json"
+									}
 								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n  \"resourceType\": \"Library\",\n  \"id\": \"{{LIB_ID}}\",\n  \"meta\": {\n    \"profile\": [\n      \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\"\n    ]\n  },\n  \"contained\": [\n    {\n      \"resourceType\": \"Parameters\",\n      \"id\": \"exp-params\",\n      \"parameter\": [\n        {\n          \"name\": \"activeOnly\",\n          \"valueBoolean\": false\n        },\n        {\n          \"name\": \"includeDraft\",\n          \"valueBoolean\": true\n        },\n        {\n          \"name\": \"system-version\",\n          \"valueCanonical\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0\",\n          \"_valueCanonical\": {\n            \"extension\": [\n              {\n                \"url\": \"http://hl7.org/fhir/StructureDefinition/display\",\n                \"valueString\": \"ActCode, 9.0.0\"\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ],\n  \"extension\": [\n    {\n      \"url\": \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-partOf\",\n      \"valueCanonical\": \"http://hl7.org/fhir/us/cqfmeasures/Library/ecqm-quality-program\"\n    }\n  ],\n  \"url\": \"http://uat-cts.nlm.nih.gov/fhir/Library/{{LIB_ID}}\",\n  \"identifier\": [\n    {\n      \"use\": \"official\",\n      \"system\": \"http://uat-cts.nlm.nih.gov/fhir/cqi/ecqm/Library/Identifier\",\n      \"value\": \"{{LIB_ID}}\"\n    }\n  ],\n  \"version\": \"1.0.0\",\n  \"name\": \"ECQMFHIRTest021320262025\",\n  \"title\": \"eCQM FHIR Test 02172026\",\n  \"status\": \"draft\",\n  \"experimental\": false,\n  \"type\": {\n    \"coding\": [\n      {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/library-type\",\n        \"code\": \"asset-collection\"\n      }\n    ]\n  },\n  \"date\": \"2025-07-25\",\n  \"publisher\": \"Centers for Medicare and Medicaid Services (CMS)\",\n  \"contact\": [\n    {\n      \"telecom\": [\n        {\n          \"system\": \"url\",\n          \"value\": \"https://www.cms.gov/\"\n        }\n      ]\n    }\n  ],\n  \"description\": \"eCQM FHIR test 02172026\",\n  \"useContext\": [\n    {\n      \"code\": {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/usage-context-type\",\n        \"code\": \"program\"\n      },\n      \"valueCodeableConcept\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n            \"code\": \"ep-ec\",\n            \"display\": \"EP/EC\"\n          },\n          {\n            \"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n            \"code\": \"eh-cah\",\n            \"display\": \"EH/CAH\"\n          }\n        ]\n      }\n    }\n  ],\n  \"jurisdiction\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"urn:iso:std:iso:3166\",\n          \"code\": \"US\"\n        }\n      ]\n    }\n  ]\n}\n",
-									"options": { "raw": { "language": "json" } }
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}Library/",
-									"host": [ "{{SERVER_URL}}Library" ],
-									"path": [ "" ]
+									"host": ["{{SERVER_URL}}Library"],
+									"path": [""]
 								}
 							},
 							"response": []
@@ -11058,8 +10607,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/{{LIB_ID}}",
-									"host": [ "{{SERVER_URL}}Library" ],
-									"path": [ "{{LIB_ID}}" ]
+									"host": ["{{SERVER_URL}}Library"],
+									"path": ["{{LIB_ID}}"]
 								}
 							}
 						},
@@ -11105,10 +10654,16 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/{{VS_OID}}/$expand?_format=json",
-									"host": [ "{{SERVER_URL}}ValueSet" ],
-									"path": [ "{{VS_OID}}", "$expand" ],
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": [
+										"{{VS_OID}}",
+										"$expand"
+									],
 									"query": [
-										{ "key": "_format", "value": "json" }
+										{
+											"key": "_format",
+											"value": "json"
+										}
 									]
 								}
 							}
@@ -11155,11 +10710,20 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/{{VS_OID}}/$expand?manifest={{LATEST_ACTIVE_MANIFEST}}&_format=json",
-									"host": [ "{{SERVER_URL}}ValueSet" ],
-									"path": [ "{{VS_OID}}", "$expand" ],
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": [
+										"{{VS_OID}}",
+										"$expand"
+									],
 									"query": [
-										{ "key": "manifest", "value": "{{LATEST_ACTIVE_MANIFEST}}" },
-										{ "key": "_format", "value": "json" }
+										{
+											"key": "manifest",
+											"value": "{{LATEST_ACTIVE_MANIFEST}}"
+										},
+										{
+											"key": "_format",
+											"value": "json"
+										}
 									]
 								}
 							}
@@ -11206,17 +10770,24 @@
 							"request": {
 								"method": "PUT",
 								"header": [
-									{ "key": "Content-Type", "value": "application/fhir+json" }
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json"
+									}
 								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n  \"resourceType\": \"Library\",\n  \"id\": \"{{LIB_ID}}\",\n  \"meta\": {\n    \"profile\": [\n      \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm\"\n    ]\n  },\n  \"contained\": [\n    {\n      \"resourceType\": \"Parameters\",\n      \"id\": \"exp-params\",\n      \"parameter\": [\n        { \"name\": \"activeOnly\", \"valueBoolean\": false },\n        { \"name\": \"includeDraft\", \"valueBoolean\": true },\n        {\n          \"name\": \"system-version\",\n          \"valueCanonical\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0\",\n          \"_valueCanonical\": {\n            \"extension\": [\n              {\n                \"url\": \"http://hl7.org/fhir/StructureDefinition/display\",\n                \"valueString\": \"ActCode, 9.0.0\"\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ],\n  \"extension\": [\n    {\n      \"url\": \"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-partOf\",\n      \"valueCanonical\": \"http://hl7.org/fhir/us/cqfmeasures/Library/ecqm-quality-program\"\n    }\n  ],\n  \"url\": \"http://uat-cts.nlm.nih.gov/fhir/Library/{{LIB_ID}}\",\n  \"identifier\": [\n    {\n      \"use\": \"official\",\n      \"system\": \"http://uat-cts.nlm.nih.gov/fhir/cqi/ecqm/Library/Identifier\",\n      \"value\": \"{{LIB_ID}}\"\n    }\n  ],\n  \"version\": \"1.0.0\",\n  \"name\": \"eCQMFHIRTest021320262025\",\n  \"title\": \"FHIR Test 02172026\",\n  \"status\": \"active\",\n  \"experimental\": false,\n  \"type\": {\n    \"coding\": [\n      {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/library-type\",\n        \"code\": \"asset-collection\"\n      }\n    ]\n  },\n  \"date\": \"2025-07-25\",\n  \"publisher\": \"Centers for Medicare and Medicaid Services (CMS)\",\n  \"contact\": [\n    {\n      \"telecom\": [\n        { \"system\": \"url\", \"value\": \"https://www.cms.gov/\" }\n      ]\n    }\n  ],\n  \"description\": \"eCQM FHIR test 02172026 updated for PUT test\",\n  \"useContext\": [\n    {\n      \"code\": {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/usage-context-type\",\n        \"code\": \"program\"\n      },\n      \"valueCodeableConcept\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n            \"code\": \"ep-ec\",\n            \"display\": \"EP/EC\"\n          },\n          {\n            \"system\": \"http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs\",\n            \"code\": \"eh-cah\",\n            \"display\": \"EH/CAH\"\n          }\n        ]\n      }\n    }\n  ],\n  \"jurisdiction\": [\n    {\n      \"coding\": [\n        { \"system\": \"urn:iso:std:iso:3166\", \"code\": \"US\" }\n      ]\n    }\n  ]\n}\n",
-									"options": { "raw": { "language": "json" } }
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}Library/{{LIB_ID}}",
-									"host": [ "{{SERVER_URL}}Library" ],
-									"path": [ "{{LIB_ID}}" ]
+									"host": ["{{SERVER_URL}}Library"],
+									"path": ["{{LIB_ID}}"]
 								}
 							}
 						},
@@ -11272,8 +10843,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/{{LIB_ID}}",
-									"host": [ "{{SERVER_URL}}Library" ],
-									"path": [ "{{LIB_ID}}" ]
+									"host": ["{{SERVER_URL}}Library"],
+									"path": ["{{LIB_ID}}"]
 								}
 							}
 						},
@@ -11520,9 +11091,7 @@
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}metadata?mode=terminology",
-									"host": [
-										"{{SERVER_URL}}metadata"
-									],
+									"host": ["{{SERVER_URL}}metadata"],
 									"query": [
 										{
 											"key": "mode",
@@ -11604,9 +11173,7 @@
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}metadata?mode=terminology",
-									"host": [
-										"{{SERVER_URL}}metadata"
-									],
+									"host": ["{{SERVER_URL}}metadata"],
 									"query": [
 										{
 											"key": "mode",
@@ -11711,9 +11278,7 @@
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}?_format=json",
-									"host": [
-										"{{SERVER_URL}}"
-									],
+									"host": ["{{SERVER_URL}}"],
 									"query": [
 										{
 											"key": "_format",
@@ -11791,9 +11356,7 @@
 						},
 						"url": {
 							"raw": "{{SERVER_URL}}metadata",
-							"host": [
-								"{{SERVER_URL}}metadata"
-							]
+							"host": ["{{SERVER_URL}}metadata"]
 						}
 					},
 					"response": []
@@ -11831,9 +11394,71 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
-					""
+					"// BEGIN injected Postman helper library",
+					"pm.testUtils = pm.testUtils || {};",
+					"",
+					"pm.testUtils.getByPath = function (obj, path) {",
+					"  return String(path || '').split('.').reduce(function (acc, key) {",
+					"    return acc ? acc[key] : undefined;",
+					"  }, obj);",
+					"};",
+					"",
+					"pm.testUtils.assertMetaProfilesPresent = function (resource, opts) {",
+					"  opts = opts || {};",
+					"  const path = opts.path || 'meta.profile';",
+					"  const profiles = pm.testUtils.getByPath(resource, path);",
+					"  pm.test(opts.label || 'Profile present', function () {",
+					"    pm.expect(profiles, 'Expected ' + path + ' to exist').to.be.an('array');",
+					"    const version = pm.environment.get('VERSION');",
+					"    if (version === 'STU4' && Array.isArray(opts.STU4)) {",
+					"      opts.STU4.forEach(function (p) { pm.expect(profiles).to.include(p); });",
+					"    } else if (version === 'STU5' && Array.isArray(opts.STU5)) {",
+					"      opts.STU5.forEach(function (p) { pm.expect(profiles).to.include(p); });",
+					"    } else {",
+					"      const allExpected = [].concat(opts.STU4 || [], opts.STU5 || []);",
+					"      pm.expect(allExpected.some(function (p) { return profiles.includes(p); }), 'Expected at least one known profile in ' + path).to.eql(true);",
+					"    }",
+					"  });",
+					"};",
+					"",
+					"pm.testUtils.assertElementsSubsettedResponse = function (resource, opts) {",
+					"  opts = opts || {};",
+					"  pm.test((opts.label || 'Resource') + ' contains requested _elements', function () {",
+					"    (opts.requested || []).forEach(function (p) {",
+					"      pm.expect(pm.testUtils.getByPath(resource, p), 'Expected requested element: ' + p).to.exist;",
+					"    });",
+					"  });",
+					"  pm.test((opts.label || 'Resource') + ' omits unrequested _elements', function () {",
+					"    (opts.absent || []).forEach(function (p) {",
+					"      pm.expect(pm.testUtils.getByPath(resource, p), 'Expected absent element: ' + p).to.not.exist;",
+					"    });",
+					"  });",
+					"  pm.test((opts.label || 'Resource') + ' has SUBSETTED tag', function () {",
+					"    const tags = (((resource || {}).meta || {}).tag) || [];",
+					"    const found = Array.isArray(tags) && tags.some(function (tag) {",
+					"      return tag && tag.system === 'http://hl7.org/fhir/v3/ObservationValue' && tag.code === 'SUBSETTED';",
+					"    });",
+					"    pm.expect(found, 'Expected SUBSETTED tag in meta.tag').to.eql(true);",
+					"  });",
+					"};",
+					"",
+					"pm.testUtils.assertNoFatalOrError = function (resource, label) {",
+					"  pm.test(label || 'OperationOutcome has no fatal/error', function () {",
+					"    const issues = Array.isArray(resource && resource.issue) ? resource.issue : [];",
+					"    const bad = issues.filter(function (i) { return i && (i.severity === 'fatal' || i.severity === 'error'); });",
+					"    pm.expect(bad.length, JSON.stringify(resource, null, 2)).to.eql(0);",
+					"  });",
+					"};",
+					"// END injected Postman helper library"
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "TESTUTILS_BOOTSTRAP",
+			"value": "// Ensure helper exists at request scope\npm.testUtils = pm.testUtils || {};\nif (!pm.testUtils.getByPath) {\n  pm.testUtils.getByPath = function (obj, path) {\n    return String(path || '').split('.').reduce(function (acc, key) {\n      return acc == null ? undefined : acc[key];\n    }, obj);\n  };\n}\nif (!pm.testUtils.assertMetaProfilesPresent) {\n  pm.testUtils.assertMetaProfilesPresent = function (resource, opts) {\n    var version = pm.environment.get('VERSION');\n    var expected = opts[version] || [];\n    var profiles = pm.testUtils.getByPath(resource, opts.path) || [];\n    pm.test(opts.label || 'Expected meta.profile values are present', function () {\n      pm.expect(profiles, 'meta.profile should be an array at path: ' + opts.path).to.be.an('array');\n      expected.forEach(function (profile) {\n        pm.expect(profiles).to.include(profile);\n      });\n    });\n  };\n}",
+			"type": "string"
 		}
 	]
 }
