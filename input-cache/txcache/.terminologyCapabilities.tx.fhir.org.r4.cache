@@ -2,11 +2,11 @@
   "resourceType" : "TerminologyCapabilities",
   "id" : "FhirServer",
   "url" : "https://node.tx.fhir.org/r4/TerminologyCapabilities/tx",
-  "version" : "0.7.5",
+  "version" : "0.8.0",
   "name" : "FHIRTerminologyServer",
   "title" : "FHIR Terminology Server",
   "status" : "active",
-  "date" : "2026-03-24T18:58:31.277Z",
+  "date" : "2026-03-29T02:44:30.140Z",
   "contact" : [{
     "telecom" : [{
       "system" : "other",
@@ -2509,13 +2509,13 @@
     }],
     "uri" : "http://hl7.org/fhir/sid/icd-10-cm",
     "version" : [{
-      "code" : "2024"
+      "code" : "2026-04-01"
     }]
   },
   {
     "extension" : [{
       "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-TerminologyCapabilities.codeSystem.content",
-      "valueCode" : "fragment"
+      "valueCode" : "complete"
     }],
     "uri" : "http://hl7.org/fhir/sid/icd-9-cm",
     "version" : [{
@@ -2795,7 +2795,17 @@
     }],
     "uri" : "http://hl7.org/fhir/uv/sdc/CodeSystem/assemble-expectation",
     "version" : [{
-      "code" : "4.0.0-ballot"
+      "code" : "4.0.0"
+    }]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-TerminologyCapabilities.codeSystem.content",
+      "valueCode" : "complete"
+    }],
+    "uri" : "http://hl7.org/fhir/uv/sdc/CodeSystem/AustralianStateCodes",
+    "version" : [{
+      "code" : "4.0.0"
     }]
   },
   {
@@ -2805,7 +2815,7 @@
     }],
     "uri" : "http://hl7.org/fhir/uv/sdc/CodeSystem/chf-codes",
     "version" : [{
-      "code" : "4.0.0-ballot"
+      "code" : "4.0.0"
     }]
   },
   {
@@ -2815,7 +2825,7 @@
     }],
     "uri" : "http://hl7.org/fhir/uv/sdc/CodeSystem/collapsible",
     "version" : [{
-      "code" : "4.0.0-ballot"
+      "code" : "4.0.0"
     }]
   },
   {
@@ -2825,7 +2835,7 @@
     }],
     "uri" : "http://hl7.org/fhir/uv/sdc/CodeSystem/CSPHQ9",
     "version" : [{
-      "code" : "4.0.0-ballot"
+      "code" : "4.0.0"
     }]
   },
   {
@@ -2835,7 +2845,7 @@
     }],
     "uri" : "http://hl7.org/fhir/uv/sdc/CodeSystem/entryMode",
     "version" : [{
-      "code" : "4.0.0-ballot"
+      "code" : "4.0.0"
     }]
   },
   {
@@ -2845,7 +2855,7 @@
     }],
     "uri" : "http://hl7.org/fhir/uv/sdc/CodeSystem/keyboardType",
     "version" : [{
-      "code" : "4.0.0-ballot"
+      "code" : "4.0.0"
     }]
   },
   {
@@ -2855,7 +2865,7 @@
     }],
     "uri" : "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext",
     "version" : [{
-      "code" : "4.0.0-ballot"
+      "code" : "4.0.0"
     }]
   },
   {
@@ -2865,7 +2875,7 @@
     }],
     "uri" : "http://hl7.org/fhir/uv/sdc/CodeSystem/observation-extract-relationship",
     "version" : [{
-      "code" : "4.0.0-ballot"
+      "code" : "4.0.0"
     }]
   },
   {
@@ -2875,7 +2885,17 @@
     }],
     "uri" : "http://hl7.org/fhir/uv/sdc/CodeSystem/questionnaire-answer-constraint",
     "version" : [{
-      "code" : "4.0.0-ballot"
+      "code" : "4.0.0"
+    }]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-TerminologyCapabilities.codeSystem.content",
+      "valueCode" : "complete"
+    }],
+    "uri" : "http://hl7.org/fhir/uv/sdc/CodeSystem/questionnaire-behavior-condition",
+    "version" : [{
+      "code" : "4.0.0"
     }]
   },
   {
@@ -2885,7 +2905,7 @@
     }],
     "uri" : "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
     "version" : [{
-      "code" : "4.0.0-ballot"
+      "code" : "4.0.0"
     }]
   },
   {
@@ -14769,7 +14789,7 @@
     }],
     "uri" : "http://www.nlm.nih.gov/research/umls/rxnorm",
     "version" : [{
-      "code" : "02032025"
+      "code" : "03022026"
     }]
   },
   {
@@ -14800,6 +14820,16 @@
     "uri" : "https://fhir-terminology.ohdsi.org",
     "version" : [{
       "code" : "20240716"
+    }]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-TerminologyCapabilities.codeSystem.content",
+      "valueCode" : "supplement"
+    }],
+    "uri" : "https://terminology.dhp.uz/fhir/CodeSystem/loinc-supplement-uz",
+    "version" : [{
+      "code" : "2.80"
     }]
   },
   {
@@ -14917,9 +14947,6 @@
     }],
     "uri" : "urn:iso:std:iso:3166",
     "version" : [{
-      "code" : "20210120"
-    },
-    {
       "code" : "2018"
     }]
   },
