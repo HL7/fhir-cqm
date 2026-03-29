@@ -22,12 +22,11 @@ parameter "Measurement Period" Interval<DateTime>
 context Patient
 
 define "Qualifying Encounters":
-	(
-    [Encounter: "Office Visit"]
-  		union [Encounter: "Annual Wellness Visit"]
-  		union [Encounter: "Preventive Care Services - Established Office Visit, 18 and Up"]
-  		union [Encounter: "Preventive Care Services-Initial Office Visit, 18 and Up"]
-  		union [Encounter: "Home Healthcare Services"]
+  ([Encounter: "Office Visit"]
+    union [Encounter: "Annual Wellness Visit"]
+    union [Encounter: "Preventive Care Services - Established Office Visit, 18 and Up"]
+    union [Encounter: "Preventive Care Services-Initial Office Visit, 18 and Up"]
+    union [Encounter: "Home Healthcare Services"]
   ) ValidEncounter
-		where ValidEncounter.period during "Measurement Period"
-  		and ValidEncounter.status  = 'finished'
+    where ValidEncounter.period during "Measurement Period"
+      and ValidEncounter.status  = 'finished'

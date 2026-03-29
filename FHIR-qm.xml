@@ -51,6 +51,7 @@
 <artifact id="StructureDefinition/cqm-publishablemeasure" key="StructureDefinition-cqm-publishablemeasure" name="CQM Publishable Measure"/>
 <artifact id="StructureDefinition/cqm-rateAggregation" key="StructureDefinition-cqm-rateAggregation" name="CQM Rate Aggregation"/>
 <artifact id="StructureDefinition/cqm-ratiomeasure" key="StructureDefinition-cqm-ratiomeasure" name="CQM Ratio Measure"/>
+<artifact id="StructureDefinition/cqm-renderMissingElements" key="StructureDefinition-cqm-renderMissingElements" name="CQM Render Missing Elements"/>
 <artifact id="StructureDefinition/cqm-reportingTiming" key="StructureDefinition-cqm-reportingTiming" name="CQM Reporting Timing"/>
 <artifact id="StructureDefinition/cqm-riskAdjustment" key="StructureDefinition-cqm-riskAdjustment" name="CQM Risk Adjustment"/>
 <artifact id="StructureDefinition/cqm-scoring" key="StructureDefinition-cqm-scoring" name="CQM Scoring"/>

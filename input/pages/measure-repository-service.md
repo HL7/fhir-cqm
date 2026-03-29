@@ -1,6 +1,6 @@
 {:toc}
 
-## Overview
+### Overview
 This page documents the use cases and conformance expectations of a measure repository service to support authoring, publishing, and distribution of FHIR-based quality measure specifications as described in this implementation guide.
 
 The measure repository service described here is a specific case of the more general knowledge repository service and is built upon operations and capabilities defined in the [Canonical Resource Management Infrastructure Implementation Guide (CRMI IG)](http://hl7.org/fhir/uv/crmi).  

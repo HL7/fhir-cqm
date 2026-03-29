@@ -9,6 +9,7 @@ library Terminology version '1.0.0'
 using FHIR version '4.0.1'
 
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
+include hl7.fhir.uv.cql.FHIRCommon version '2.0.0' called FHIRCommon
 
 include CommonTerminologies version '1.0.0' called Common
 
@@ -28,9 +29,9 @@ define "Inpatient Encounter":
     where E.status = 'finished'
 
 define "Venous Foot Pumps Applied":
-  ["Procedure": code in "Venous foot pump, device (physical object)"] D
+  ["Procedure": code ~ "Venous foot pump, device (physical object)"] D
     where D.status = 'completed'
-      and D.bodySite ~ ToConcept("Right foot")
+      and D.bodySite.includesCode("Right foot")
 
 define "Initial Population":
   "Inpatient Encounter"

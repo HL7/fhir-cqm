@@ -16,3 +16,7 @@ See the [Artifact Index - Value Sets](artifacts.html#terminology-value-sets) for
 {: #conceptmap-resources}
 
 See the [Artifact Index - Concept Maps](artifacts.html#terminology-concept-maps) for an alphabetical index of extensions defined in this implementation guide.
+
+### Expansion Parameters
+
+{% lang-fragment expansion-params.xhtml %}

@@ -1,6 +1,6 @@
 {: #profiles}
 
-## Capability Profiles
+### Capability Profiles
 {: #capability-profiles}
 
 To define the exchange expectations for measure and library artifacts at different points along the content lifecycle, this implementation guide uses four general categories of profiles, aligned with those established by the Canonical Resource Management Infrastructure (CRMI) implementation guide:
@@ -10,7 +10,7 @@ To define the exchange expectations for measure and library artifacts at differe
 * Publishable - Define elements that are relevant for publishing and distribution concerns
 * Executable - Define elements that are important for the run-time and implementation-level concerns
 
-### Measure Profiles
+#### Measure Profiles
 {: #measure-profiles}
 
 Measure profiles supported in this IG are defined to allow for use independently or in combination with each other to support a wide range of use cases. The diagram depicts these capability profiles and their relationships to the profiles defined in CRMI and the Using CQL With FHIR IGs:
@@ -47,7 +47,7 @@ As well, the profiles are designed to separate communication of the computable a
   <tr><td>ELM</td><td><a href="StructureDefinition-cqm-elmmeasure.html">ELMMeasure</a></td></tr>
 </table>
 
-### Library Profile Usage
+#### Library Profile Usage
 {: #library-profile-usage}
 
 This implementation guide makes use of Library resources in two ways:
@@ -55,7 +55,7 @@ This implementation guide makes use of Library resources in two ways:
 1. As the container for computable and/or executable representations of expression logic used as criteria in quality measure specifications.
 2. As a [_manifest_]({{site.data.fhir.ver.crmi}}/version-manifest.html) for communicating the information required to make use of a set of measure specifications, including dependency and version information.
 
-#### Logic Library Profile Usage
+##### Logic Library Profile Usage
 {: #logic-library-profile-usage}
 
 This implementation guide does not introduce any new logic library profiles, but makes use of library profiles defined in the Canonical Resource Management Infrastructure and Using CQL With FHIR implementation guides:
@@ -72,7 +72,7 @@ For measures that use Clinical Quality Language to represent expression logic, t
 | N/A | [CQLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-cql-library.html) | N/A | [ELM JSON Library]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) <br/> [ELM XML Library]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-xml-library.html)  |
 {: .grid }
 
-#### Manifest Library Profile Usage
+##### Manifest Library Profile Usage
 {: #manifest-library-profile-usage}
 
 | **Shareable** | **Publishable** |
@@ -80,7 +80,7 @@ For measures that use Clinical Quality Language to represent expression logic, t
 | [CRMIShareableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablelibrary.html) | [CRMIPublishableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-publishablelibrary.html) <br/>[CRMIManifestLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-manifestlibrary.html) |
 {: .grid }
 
-### Terminology Profile Usage
+#### Terminology Profile Usage
 {: #terminology-profile-usage}
 
 This implementation guide does not introduce any new terminology profiles, but makes use of terminology profiles defined in the Canonical Resource Management Infrastructure implementation guide:
@@ -93,7 +93,7 @@ This implementation guide does not introduce any new terminology profiles, but m
 
 * Note that due to the varying terminology capabilities of target environments, terminology profiles do not necessarily correspond to the capabilities of the measure and library resources. For example, a Computable measure package may include both Computable and Expanded value set resources, depending on the expected capabilities of the target environment with respect to each code system involved. 
 
-### Additional Profiles
+#### Additional Profiles
 {: #additional-profiles}
 
 To support packaging, testing, and distribution of measure and library artifacts, this implementation guide defines the following additional profiles: 
@@ -105,6 +105,10 @@ To support packaging, testing, and distribution of measure and library artifacts
 | [CQMTestCase](StructureDefinition-cqm-testcase.html) | A measure report profile that allows definition and exchange of test cases for a measure.  |
 {: .grid }
 
-## Alphabetical Listing
+### Global Profiles
+
+{% lang-fragment globals-table.xhtml %}
+
+### Alphabetical Listing
 
 See the [Artifact Index - Structures: Resource Profiles](artifacts.html#structures-resource-profiles) for an alphabetical index of profiles defined in this implementation guide.

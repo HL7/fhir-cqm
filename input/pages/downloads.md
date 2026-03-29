@@ -2,40 +2,14 @@
 
 {: #downloads }
 
-### Full Implementation Guide
-{: #full-ig}
+### Links
 
-The following file contains the complete, downloadable implementation guide:
+This implementation guide is web-based and is intended to be browsed online. However, for the convenience of implementers, both this implementation guide, various sub-packages of it, and some of the source specifications are available for download. The following links allow you to download various parts of this implementation guide and other referenced implementation guides for local use.
 
--  [Full IG](full-ig.zip)
+* This [full IG](../full-ig.zip)
+* The [resource definitions](../definitions.json.zip) from this IG for use with the FHIR validator (see below)
+* Example files: [json](../examples.json.zip), [ttl](../examples.ttl.zip), and [xml](../examples.xml.zip)
+* The full [FHIR R4 core]({{site.data.fhir.path}}fhir-spec.zip) specifications and other [FHIR core downloads]({{site.data.fhir.path}}downloads.html)
+* A [validator](https://fhir.github.io/latest-ig-validator/org.hl7.fhir.validator.jar) that can be used to check FHIR resource instance validity and [instructions on how to use it](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator)
 
-### IG Package
-{: #package}
-
-The following file is the FHIR IG Package [NPM Subset](https://confluence.hl7.org/display/FHIR/NPM+Package+Specification)
-
-- [package.tgz](../package.tgz)
-
-### Definitions
-{: #definitions}
-
-In addition to the above, we have provided format-specific _definitions_:
-
--  [XML](../definitions.xml.zip)
--  [JSON](../definitions.json.zip)
--  [TTL](../definitions.ttl.zip)
-
-These files should be the first choice whenever generating any implementation artifacts since they contain all of the
-rules about what makes these Quality Measure profiles valid. Implementers will still need to be familiar with the content of the
-specification and profiles that apply in order to make a conformant implementation. See the overview on
-[validating FHIR profiles and resources](http://hl7.org/fhir/validation.html) for more information about validating
-profiles and how to use these artifacts.
-
-### Examples
-{: #examples}
-
-All examples used in this Implementation Guide:
-
--  [XML](../examples.xml.zip)
--  [JSON](../examples.json.zip)
--  [TTl](../examples.ttl.zip)
+{% lang-fragment cross-version-analysis-inline.xhtml %}

@@ -68,20 +68,8 @@ Health level seven. Clinical Quality Framework - HL7 Clinical Quality Informatio
 ### Dependencies
 The dependency on QI-Core is included for the purposes of example validation only.  In addition, the dependency on VSAC packages is indirect via the QI Core and US Core.  The conformance profiles in this IG do not make use of the value sets in VSAC.
 
-{% lang-fragment dependency-table.xhtml %}
-
-### Cross Version Analysis
-
-{% lang-fragment cross-version-analysis.xhtml %}
-
-### Global Profiles
-
-{% lang-fragment globals-table.xhtml %}
+{% lang-fragment dependency-table-nontech.xhtml %}
 
 ### IP Statements
 
 {% lang-fragment ip-statements.xhtml %}
-
-### Expansion Parameters
-
-{% lang-fragment expansion-params.xhtml %}

@@ -529,12 +529,10 @@
       <code value="path-pages"/>
       <value value="input/pages"/>
     </parameter>
-    <!-- Use CQF-Tooling to refresh content
     <parameter>
       <code value="path-binary"/>
       <value value="input/cql"/>
     </parameter>
-    -->
     <parameter>
       <code value="path-liquid-ig"/>
       <value value="templates/liquid"/>
