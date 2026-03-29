@@ -550,9 +550,9 @@
         "mustSupport": true
       },
        {
-        "id": "Measure.group.population.extension:cqf-supportingEvidenceDefinition",
+        "id": "Measure.group.population.extension:supportingEvidenceDefinition",
         "path": "Measure.group.population.extension",
-        "sliceName": "cqf-supportingEvidenceDefinition",
+        "sliceName": "supportingEvidenceDefinition",
         "min": 0,
         "max": "1",
         "type": [

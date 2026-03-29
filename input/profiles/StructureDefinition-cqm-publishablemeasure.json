@@ -72,6 +72,20 @@
       "mustSupport" : true
     },
     {
+      "id" : "Measure.extension:renderMissingElements",
+      "path" : "Measure.extension",
+      "sliceName": "renderMissingElements",
+      "type": [
+        {
+          "code": "Extension",
+          "profile": [
+            "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements"
+          ]
+        }
+      ],
+      "mustSupport" : false
+    },
+    {
       "id" : "Measure.extension:limitations",
       "path" : "Measure.extension",
       "sliceName": "limitations",

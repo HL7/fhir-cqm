@@ -1,0 +1,83 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cqm-renderMissingElements",
+  "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements",
+  "version": "1.0.0",
+  "name": "CQMRenderMissingElements",
+  "title": "CQM Render Missing Elements",
+  "status": "active",
+  "experimental": false,
+  "publisher": "Clinical Quality Information WG",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cqi/index.cfm"
+        }
+      ]
+    }
+  ],
+  "description": "Indicates whether to render missing elements in measure narrative. True indicates that missing elements should be rendered with an appropriate indicator (such as None, or N/A) when elements that would be expected to be present are not specified in a measure. For example, the denominator exclusion criteria for a proportion measure will be rendered as None if it is not present in a proportion measure.",
+  "jurisdiction": [
+      {
+        "coding": [
+          {
+            "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+            "code": "001"
+          }
+        ]
+      }
+    ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Measure.group"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Render missing elements?",
+        "definition": "Indicates whether to render missing elements (including population criteria, stratifiers, and supplemental data elements) in measure narrative. True indicates that missing elements should be rendered with an appropriate indicator (such as None, or N/A) when elements that would be expected to be present are not specified in a measure. For example, the denominator exclusion criteria for a proportion measure will be rendered as None if it is not present in a proportion measure.",
+        "comment": "If this extension is not present, measure narrative will render as though it is false (i.e. missing elements will not render in the measure narrative)",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      }
+    ]
+  }
+}
