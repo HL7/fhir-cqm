@@ -1,0 +1,220 @@
+{
+  "id": "CAUTIRateExample",
+  "resourceType": "Measure",
+  "url": "http://hl7.org/fhir/uv/cqm/Measure/CAUTIRateExample",
+  "name": "CAUTIRateExample",
+  "title": "Example Catheter-Associated Urinary Tract Infection Rate",
+  "status": "draft",
+  "experimental": true,
+  "date": "2025-08-13",
+  "description": "Example measure illustrating an approach to representing the Catheter-Associated Urinary Tract Infection (CAUTI) Rate per 1000 indwelling urinary catheter (IUC) days. See https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/blob/master/Source/Cooking%20With%20CQL/93/CAUTI.md for more detailed discussion of the example.",
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US"
+    } ]
+  } ],
+  "topic": [ {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "57024-2",
+      "display": "Health Quality Measure Document"
+    } ]
+  } ],
+  "library": [
+    "http://hl7.org/fhir/uv/cqm/Library/CAUTIRate"
+  ],
+  "group": [
+    {
+      "id": "group-1",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId",
+          "valueString": "group-1"
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis",
+          "valueCode": "Location"
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring",
+          "valueCodeableConcept": {
+            "coding": [{
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }]
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoringUnit",
+          "valueCodeableConcept": {
+            "coding": [{
+              "system": "http://unitsofmeasure.org",
+              "code": "/1000.d",
+              "display": "/1000.d"
+            }],
+            "text": "per 1000 catheter days"
+          }
+        }
+      ],
+      "population": [
+        {
+          "id": "denominator-initial-population",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+              "valueString": "denominator-initial-population"
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population",
+                "display": "Initial Population"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/cql-identifier",
+            "expression": "Denominator Initial Population"
+          }
+        },
+        {
+          "id": "denominator",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+              "valueString": "denominator"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference",
+              "valueString": "denominator-initial-population"
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator",
+                "display": "Denominator"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/cql-identifier",
+            "expression": "Denominator"
+          }
+        },
+        {
+          "id": "denominator-observation",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+              "valueString": "denominator-observation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference",
+              "valueString": "denominator"
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-aggregateMethod",
+              "valueCode": "sum"
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "measure-observation",
+                "display": "Measure Observation"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/cql-identifier",
+            "expression": "Denominator Observation"
+          }
+        },
+        {
+          "id": "numerator-initial-population",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+              "valueString": "numerator-initial-population"
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population",
+                "display": "Initial Population"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/cql-identifier",
+            "expression": "Numerator Initial Population"
+          }
+        },
+        {
+          "id": "numerator",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+              "valueString": "numerator"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference",
+              "valueString": "numerator-initial-population"
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "numerator",
+                "display": "Numerator"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/cql-identifier",
+            "expression": "Numerator"
+          }
+        },
+        {
+          "id": "numerator-observation",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId",
+              "valueString": "numerator-observation"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference",
+              "valueString": "numerator"
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-aggregateMethod",
+              "valueCode": "sum"
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "measure-observation",
+                "display": "Measure Observation"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/cql-identifier",
+            "expression": "Numerator Observation"
+          }
+        }
+      ]
+    }]
+}

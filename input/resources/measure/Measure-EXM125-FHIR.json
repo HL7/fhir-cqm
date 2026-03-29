@@ -9,7 +9,7 @@
     "valueCode": "boolean"
   }, {
     "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements",
-    "valueBoolean": "true"
+    "valueBoolean": true
   } ],
   "url": "http://hl7.org/fhir/uv/cqm/Measure/EXM125-FHIR",
   "identifier": [ {

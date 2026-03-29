@@ -11,6 +11,7 @@
 * [**Common Library Example**](Library-Common.html) Usage example illustrating a library to share logic between measures
 * [**Supplemental Data Elements Example**](Library-SupplementalDataElements.html) Library illustrating common supplemental data elements
 * [**Age Stratified Example**](Measure-age-stratified-example.html) Measure illustrating value-based stratification by age group - [Library](Library-AgeStratificationExample.html)
+* [**Supporting Evidence Example**](Measure-SupportingEvidenceExample.html) Measure illustrating the use of supporting evidence - [Library](Library-SupportingEvidenceExample.html)
 
 ### Screening Measures
 
@@ -31,6 +32,18 @@ These examples illustrate subject-based screening measures
 ### Multiple-Rate Measures
 
 * [**Multi-Rate Example**](Measure-MultiRateExample-FHIR.html) Example measure illustrating multiple rates in a single Measure resource - [Library](Library-MultiRateExample.html)
+
+### Ratio Measures
+
+A common use case involves reporting a ratio such as 'per 1000 catheter days'. These types of measures are represented as a ratio of continuous variable measures, as illustrated by the following example:
+
+* [**Catheter-associated Urinary Tract Infection (CAUTI) Rate**](Measure-CAUTIRateExample.html)
+
+### Risk-adjusted Measures
+
+Applying risk-adjustment models to measures often involves calculation of a predicted denominator, such as the CAUTI SIR measure:
+
+* [**Catheter-associated Urinary Tract Infection (CAUTI) Standardized Infection Ratio (SIR)**](Measure-CAUTISIRExample.html)
 
 ### Composite Measures
 

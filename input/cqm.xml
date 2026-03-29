@@ -242,7 +242,15 @@
         <reference value="Measure/age-stratified-example"/>
       </reference>
       <name value="Age Stratified Example"/>
-      <description value="This example illustrates the use of codesystem and valueset measure-stratifier-ages-example."/>
+      <description value="This example illustrates the use of codesystem and valueset measure-stratifier-ages-example, as well as value-based stratifiers."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Measure/SupportingEvidenceExample"/>
+      </reference>
+      <name value="Supporting Evidence Example Measure"/>
+      <description value="This example illustrates the use of supporting evidence to report additional information for specific populations within a measure."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>

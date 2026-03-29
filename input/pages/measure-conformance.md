@@ -896,6 +896,8 @@ The difference between a ratio measure and a proportion measure is that in a pro
 
 For ratio measures that include a Measure Observation, the measure observation is defined as a function that takes a single parameter of the type of elements returned by the population criteria. This is also how it is specified for continuous variable measures. In particular, for non-patient based ratio measures the Measure Observation is defined as a function that takes a single argument of the same type as the elements returned by all the population criteria, and the aggregation method is specified in the Measure resource. For patient based ratio measures the Measure Observation is defined as a function that takes no parameters.
 
+Common use cases for ratio measures include reporting measures such as [Catheter-Associated Urinary Tract Infection (CAUTI) Rate (per 1000 catheter days)](Measure-CAUTIRateExample.html) and risk-adjusted measures such as [Catheter Associated Urinary Tract Infection (CAUTI) Standardized Infection Ratio (SIR)](Measure-CAUTISIRExample.html).
+
 ##### Ratio measure scoring
 {: #ratio-measure-scoring}
 

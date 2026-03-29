@@ -1,0 +1,36 @@
+{
+  "resourceType": "Library",
+  "id": "CAUTIElements",
+  "extension": [ {
+      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+      "valueInteger" : 1
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode" : "cds"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+      "valueCode" : "informative"
+    } ],
+  "url": "http://hl7.org/fhir/uv/cqm/Library/CAUTIElements",
+  "name": "CAUTIElements",
+  "title": "CAUTI Elements",
+  "status": "draft",
+  "experimental": true,
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/library-type",
+      "code": "logic-library"
+    } ]
+  },
+  "description": "DRAFT Data elements used in the calculation of NHSN Catheter-associated Urinary Tract Infection measures.",
+  "topic": [ {
+    "text": "FHIR"
+  }, {
+    "text": "CQL"
+  } ],
+  "content": [ {
+    "id": "ig-loader-CAUTIElements.cql"
+  } ]
+}

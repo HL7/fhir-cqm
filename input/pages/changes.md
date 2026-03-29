@@ -20,6 +20,7 @@
 #### Non-Substantive Changes
 
 * [FHIR-55969](https://jira.hl7.org/browse/FHIR-55969): Update quality improvement ecosystem diagram
+* [FHIR-55952](https://jira.hl7.org/browse/FHIR-55952): Added risk-adjusted measure example
 * [FHIR-52882](https://jira.hl7.org/browse/FHIR-52882): Mention CRMI operations on operations page
 * [FHIR-52881](https://jira.hl7.org/browse/FHIR-52881): Add note about CRMI on introduction page
 * [FHIR-52821](https://jira.hl7.org/browse/FHIR-52821): Restore the note about data requirements parameters

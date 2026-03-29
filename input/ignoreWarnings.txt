@@ -374,6 +374,8 @@ INFORMATION: ValueSet/intended-venue: ValueSet.extension[1]: This element does n
 INFORMATION: ValueSet/intended-venue: ValueSet.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Measure/CCSComponent: Measure.contained[0]/*Library/effective-data-requirements*/.dataRequirement[29].extension[0].extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/cqf-relatedRequirement|5.3.0-ballot-tc1 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Measure/EXM108-FHIR: Measure.contained[0]/*Library/effective-data-requirements*/.dataRequirement[12].extension[0].extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/cqf-relatedRequirement|5.3.0-ballot-tc1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Measure/EXM125-FHIR: Measure.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-proportionmeasure|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Measure/EXM125-FHIR: Measure.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # 1.0.0:011 - These are due to the templates not being able to determine unique identifiers for function overloads in CQL. An issue has been logged to the CQL translator to address this (https://github.com/cqframework/clinical_quality_language/issues/1598)
 %Bundle-sde-example-artifact-bundle.html: The html source has duplicate anchor Ids: cql-content
@@ -391,6 +393,8 @@ INFORMATION: Measure/EXM108-FHIR: Measure.contained[0]/*Library/effective-data-r
 %Measure-PVSComponent.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
 %Measure-TSCComponent.html: The html source has duplicate anchor Ids: fhirhelpers-todatetime,fhirhelpers-tostring
 %Measure-measure-publishable-exm.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
+WARNING: Measure/CAUTIRateExample: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhircommon-references (2x), fhirhelpers-todatetime (2x), fhirhelpers-tostring (3x)
+WARNING: Measure/CAUTISIRExample: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhircommon-references (2x), fhirhelpers-todatetime (2x), fhirhelpers-tostring (3x)
 WARNING: Measure/BCSComponent: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-tostring (7x)
 WARNING: Measure/CCSComponent: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-tostring (7x)
 WARNING: Measure/CCSComponent: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-todatetime (2x), fhirhelpers-tostring (7x)
@@ -425,6 +429,8 @@ WARNING: Measure/PVSComponent: Measure.text.div: The XHTML  the resource contain
 %Measure-EXM130-FHIR.html: The html source has duplicate anchor Ids: fhirhelpers-todatetime,fhirhelpers-tostring
 %Measure-EXMRatio-FHIR.html: The html source has duplicate anchor Ids: fhirhelpers-todatetime
 %Measure-PVSComponent.html: The html source has duplicate anchor Ids: fhirhelpers-todatetime,fhirhelpers-tostring
+%Measure-CAUTIRateExample.html: The html source has duplicate anchor Ids: fhircommon-references,fhirhelpers-todatetime,fhirhelpers-tostring
+%Measure-CAUTISIRExample.html: The html source has duplicate anchor Ids: fhircommon-references,fhirhelpers-todatetime,fhirhelpers-tostring
 
 # 2.0.0-ballot:001 - Conformance language is in the structure definition. Note that this is repeated language for ease of reference within the structure definition, it is stated in conformance narrative on the quality measures page as well
 INFORMATION: en/StructureDefinition-cqm-computablemeasure.html: The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause: ' The CQM Computable Measure Profile describes minimum expectations for a computable electronic Quality Measure (QM), including the use of a computable library. For more information on the usage of this profile, refer to the Profiles and Packaging pages in this implementation guide. Implementations SHOULD support using the id elements of group, population, stratifier, and supplementalData as a backwards-compatible mechanism for linking between Measure and MeasureReport  '
@@ -834,25 +840,6 @@ WARNING: Measure/PVSComponent: Measure.contained[0]/*Library/effective-data-requ
 ERROR: ValueSet/chronic-liver-disease-legacy-example: ValueSet.compose.include[1].concept[0]: The code '111370006' is not valid in the system http://snomed.info/sct version http://snomed.info/sct/731000124108/version/20150301 (111370006)
 ERROR: ValueSet/chronic-liver-disease-legacy-example: ValueSet.compose.include[1].concept[0].system: A definition for CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/731000124108/version/20150301' could not be found, so the code cannot be validated. Valid versions: http://snomed.info/sct/11000146104/version/20240930, http://snomed.info/sct/11000172109/version/20231115, http://snomed.info/sct/2011000195101/version/20230607, http://snomed.info/sct/32506021000036107/version/20230731, http://snomed.info/sct/45991000052106/version/20231130, http://snomed.info/sct/554471000005108/version/20250930, http://snomed.info/sct/731000124108/version/20230301, http://snomed.info/sct/731000124108/version/20240301, http://snomed.info/sct/731000124108/version/20250901, http://snomed.info/sct/827022005/version/20241216, http://snomed.info/sct/83821000000107/version/20230412, http://snomed.info/sct/900000000000207008/version/20240201, http://snomed.info/sct/900000000000207008/version/20250201 and http://snomed.info/xsct/900000000000207008/version/20250814
 
-# 2.0.0-ballot:009 - We are not yet using the publisher to do CQL processing, so it is okay that the publisher is not inferring data requirements, this is handled outside the publisher
-WARNING: %Measure-BCSComponent.xml: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-CCSComponent.xml: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-EXM108-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-EXM124-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-EXM125-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-EXM130-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-EXM146-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-EXM55-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-EXMLogic-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-EXMRatio-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-HBPComponent.xml: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-MultiRateExample-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-PVSComponent.xml: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-TSCComponent.xml: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-Terminology-FHIR.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-age-stratified-example.json: Artifact library could not be found so no data requirements were inferred.
-WARNING: %Measure-measure-publishable-exm.xml: Artifact library could not be found so no data requirements were inferred.
-
 # 2.0.0-ballot:010 - Accepted reference to deprecated value set
 INFORMATION: SubscriptionTopic/covid-reporting-program-changes: SubscriptionTopic.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 
@@ -863,23 +850,24 @@ WARNING: Measure/age-stratified-example: Measure.contained[0]/*Library/effective
 WARNING: ValueSet.where(id = 'age-stratified-example'): Error from https://tx.fhir.org/r4: Error: The code system definition for http://terminology.hl7.org/CodeSystem/time-period-ranges has no content, so this expansion cannot be performed
 
 # 2.0.0-ballot:012 - Accepted warning about identifier hiding
-WARNING: CCSComponent: An alias identifier Colonoscopy is hiding another identifier of the same name.
-WARNING: EXM108: An alias identifier Warfarin is hiding another identifier of the same name.
-WARNING: EXM130: An alias identifier Colonoscopy is hiding another identifier of the same name.
-WARNING: EXM146: An alias identifier Pharyngitis is hiding another identifier of the same name.
-WARNING: EXMComputableLibrary.cql: An operand identifier Encounter is hiding another identifier of the same name.
-WARNING: EXMExecutableLibrary.cql: An operand identifier Encounter is hiding another identifier of the same name.
-WARNING: EXMExecutableLibrary: An alias identifier Payer is hiding another identifier of the same name.
-WARNING: EXMLogic.cql: An operand identifier Encounter is hiding another identifier of the same name.
-WARNING: EXMLogic: An alias identifier Payer is hiding another identifier of the same name.
-WARNING: EXMPublishableLibrary.cql: An operand identifier Encounter is hiding another identifier of the same name.
-WARNING: EXMPublishableLibrary: An alias identifier Payer is hiding another identifier of the same name.
-WARNING: HBPComponent.cql: An operand identifier res is hiding another identifier of the same name.
-WARNING: HBPComponent.cql: An operand identifier url is hiding another identifier of the same name.
-WARNING: SupplementalDataElements: An alias identifier Payer is hiding another identifier of the same name.
-WARNING: TSCComponent.cql: An operand identifier res is hiding another identifier of the same name.
-WARNING: TSCComponent.cql: An operand identifier url is hiding another identifier of the same name.
-WARNING: VTEICU.cql: An operand identifier Encounter is hiding another identifier of the same name.
+%CCSComponent: An alias identifier Colonoscopy is hiding another identifier of the same name.
+%EXM108: An alias identifier Warfarin is hiding another identifier of the same name.
+%EXM130: An alias identifier Colonoscopy is hiding another identifier of the same name.
+%EXM146: An alias identifier Pharyngitis is hiding another identifier of the same name.
+%EXMComputableLibrary.cql: An operand identifier Encounter is hiding another identifier of the same name.
+%EXMComputableLibrary: An alias identifier Payer is hiding another identifier of the same name.
+%EXMExecutableLibrary.cql: An operand identifier Encounter is hiding another identifier of the same name.
+%EXMExecutableLibrary: An alias identifier Payer is hiding another identifier of the same name.
+%EXMLogic.cql: An operand identifier Encounter is hiding another identifier of the same name.
+%EXMLogic: An alias identifier Payer is hiding another identifier of the same name.
+%EXMPublishableLibrary.cql: An operand identifier Encounter is hiding another identifier of the same name.
+%EXMPublishableLibrary: An alias identifier Payer is hiding another identifier of the same name.
+%HBPComponent.cql: An operand identifier res is hiding another identifier of the same name.
+%HBPComponent.cql: An operand identifier url is hiding another identifier of the same name.
+%SupplementalDataElements: An alias identifier Payer is hiding another identifier of the same name.
+%TSCComponent.cql: An operand identifier res is hiding another identifier of the same name.
+%TSCComponent.cql: An operand identifier url is hiding another identifier of the same name.
+%VTEICU.cql: An operand identifier Encounter is hiding another identifier of the same name.
 
 # 2.0.0-ballot:014 - Accepted membership operator, data access layers can resolve this
 WARNING: EXM55: Could not resolve membership operator for terminology target of the retrieve.
@@ -891,56 +879,29 @@ WARNING: MATGlobalCommonFunctions: Could not resolve membership operator for ter
 WARNING: TSCComponent: Could not resolve membership operator for terminology target of the retrieve.
 
 # 2.0.0-ballot:013 - Warning about potentially unsupported type mappings, these mappings are supported, CQL subsystem needs mapping updated, coming soon
-WARNING: BCSComponent.cql: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: CCSComponent.cql: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: EXM108.cql: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: EXM108.cql: Result type List of tuple of QualifyingEncounter: Encounter, SelectedProcedure: Procedure of definition Encounter With Principal Procedure of SCIP VTE Selected Surgery is not supported; implementations may not be able to use the result of this expression
-WARNING: EXM108.cql: Result type List of choice<FHIR.ServiceRequest,FHIR.Procedure> of definition Intervention Comfort Measures is not supported; implementations may not be able to use the result of this expression
-WARNING: EXM108.cql: Result type List of choice<FHIR.Encounter,tuple{QualifyingEncounter:FHIR.Encounter,SelectedProcedure:FHIR.Procedure}> of definition Denominator Exclusion is not supported; implementations may not be able to use the result of this expression
-WARNING: EXM108.cql: Result type List of choice<FHIR.Procedure,FHIR.MedicationAdministration> of definition VTE Prophylaxis by Medication Administered or Device Applied is not supported; implementations may not be able to use the result of this expression
-WARNING: EXM108.cql: Result type List of choice<FHIR.MedicationRequest,FHIR.MedicationAdministration> of definition No VTE Prophylaxis Medication Administered or Ordered is not supported; implementations may not be able to use the result of this expression
-WARNING: EXM108.cql: Result type List of choice<tuple{id:FHIR.id,requestStatusReason:FHIR.Extension,authoredOn:FHIR.dateTime},tuple{id:FHIR.id,requestStatusReason:FHIR.CodeableConcept,authoredOn:choice<FHIR.base64Binary,FHIR.boolean,FHIR.canonical,FHIR.code,FHIR.date,FHIR.dateTime,FHIR.decimal,FHIR.id,FHIR.instant,FHIR.integer,FHIR.markdown,FHIR.oid,FHIR.positiveInt,FHIR.string,FHIR.time,FHIR.unsignedInt,FHIR.uri,FHIR.url,FHIR.uuid,FHIR.Address,FHIR.Age,FHIR.Annotation,FHIR.Attachment,FHIR.CodeableConcept,FHIR.Coding,FHIR.ContactPoint,FHIR.Count,FHIR.Distance,FHIR.Duration,FHIR.HumanName,FHIR.Identifier,FHIR.Money,FHIR.Period,FHIR.Quantity,FHIR.Range,FHIR.Ratio,FHIR.Reference,FHIR.SampledData,FHIR.Signature,FHIR.Timing,FHIR.ContactDetail,FHIR.Contributor,FHIR.DataRequirement,FHIR.Expression,FHIR.ParameterDefinition,FHIR.RelatedArtifact,FHIR.TriggerDefinition,FHIR.UsageContext,FHIR.Dosage,FHIR.Meta>}> of definition No VTE Prophylaxis Device Applied or Ordered is not supported; implementations may not be able to use the result of this expression
-WARNING: EXM108.cql: Result type List of choice<FHIR.MedicationRequest,tuple{id:FHIR.id,requestStatusReason:FHIR.Extension,authoredOn:FHIR.dateTime},tuple{id:FHIR.id,requestStatusReason:FHIR.CodeableConcept,authoredOn:choice<FHIR.base64Binary,FHIR.boolean,FHIR.canonical,FHIR.code,FHIR.date,FHIR.dateTime,FHIR.decimal,FHIR.id,FHIR.instant,FHIR.integer,FHIR.markdown,FHIR.oid,FHIR.positiveInt,FHIR.string,FHIR.time,FHIR.unsignedInt,FHIR.uri,FHIR.url,FHIR.uuid,FHIR.Address,FHIR.Age,FHIR.Annotation,FHIR.Attachment,FHIR.CodeableConcept,FHIR.Coding,FHIR.ContactPoint,FHIR.Count,FHIR.Distance,FHIR.Duration,FHIR.HumanName,FHIR.Identifier,FHIR.Money,FHIR.Period,FHIR.Quantity,FHIR.Range,FHIR.Ratio,FHIR.Reference,FHIR.SampledData,FHIR.Signature,FHIR.Timing,FHIR.ContactDetail,FHIR.Contributor,FHIR.DataRequirement,FHIR.Expression,FHIR.ParameterDefinition,FHIR.RelatedArtifact,FHIR.TriggerDefinition,FHIR.UsageContext,FHIR.Dosage,FHIR.Meta>},FHIR.MedicationAdministration> of definition No VTE Prophylaxis Medication or Device Due to Patient Refusal is not supported; implementations may not be able to use the result of this expression
-WARNING: EXM124.cql: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: EXM124.cql: Result type List of choice<FHIR.Procedure,FHIR.Condition> of definition Absence of Cervix is not supported; implementations may not be able to use the result of this expression
-WARNING: EXM125.cql: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: EXM130.cql: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: EXMComputableLibrary: An alias identifier Payer is hiding another identifier of the same name.
-WARNING: EXMComputableLibrary.cql: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: EXMExecutableLibrary.cql: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: EXMLogic.cql: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: EXMPublishableLibrary.cql: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: HBPComponent.cql: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: PVSComponent.cql: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: SupplementalDataElements.cql: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: TJCOverall.cql: Result type List of choice<FHIR.ServiceRequest,FHIR.Procedure> of definition Intervention Comfort Measures is not supported; implementations may not be able to use the result of this expression
-WARNING: TSCComponent.cql: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: CQL Library Packaging: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: CQL Library Packaging: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
-WARNING: CQL Library Packaging: Result type List of choice<FHIR.Encounter,tuple{QualifyingEncounter:FHIR.Encounter,SelectedProcedure:FHIR.Procedure}> of definition Denominator Exclusion is not supported; implementations may not be able to use the result of this expression
-WARNING: CQL Library Packaging: Result type List of tuple of code: CodeableConcept, period: Period of definition SDE Payer is not supported; implementations may not be able to use the result of this expression
+%is not supported; implementations may not be able to use the result of this expression
 
 # 2.0.0-ballot:015 - Accepted warning about loading the right FHIR ModelInfo
-INFORMATION: Measure-BCSComponent.xml: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-CCSComponent.xml: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-EXM108-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-EXM124-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-EXM125-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-EXM130-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-EXM146-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-EXM55-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-EXMLogic-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-EXMRatio-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-HBPComponent.xml: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-MultiRateExample-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-PVSComponent.xml: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-TSCComponent.xml: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-Terminology-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-age-stratified-example.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-INFORMATION: Measure-measure-publishable-exm.xml: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
-
-
-
+%Measure-BCSComponent.xml: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-CAUTIRateExample.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-CAUTISIRExample.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-CCSComponent.xml: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-EXM108-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-EXM124-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-EXM125-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-EXM130-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-EXM146-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-EXM55-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-EXMLogic-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-EXMRatio-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-HBPComponent.xml: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-MultiRateExample-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-PVSComponent.xml: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-TSCComponent.xml: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-Terminology-FHIR.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-age-stratified-example.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-measure-publishable-exm.xml: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-SupportingEvidenceExample.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
 
 # 2.0.0-ballot:016 - With direct-reference codes inferred from logic referencing elements with required bindings, the translator does not have enough information to infer the system, yet...
 WARNING: Measure/BCSComponent: Measure.contained[0]/*Library/effective-data-requirements*/.dataRequirement[17].codeFilter[1].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
@@ -996,6 +957,9 @@ WARNING: Measure/measure-publishable-exm: Measure.contained[0]/*Library/effectiv
 
 # 2.0.0-ballot:017 - Logic definitions do contain embedded tags to support linking in the measure narrative
 INFORMATION: Measure/CCSComponent: Measure.contained[0]/*Library/effective-data-requirements*/.extension[32].extension[2].value.ofType(string): The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+INFORMATION: Measure/CAUTIRateExample: Measure.contained[0]/*Library/effective-data-requirements*/.extension[18].extension[2].value.ofType(string): The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+INFORMATION: Measure/CAUTISIRExample: Measure.contained[0]/*Library/effective-data-requirements*/.extension[4].extension[2].value.ofType(string): The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+INFORMATION: Measure/CAUTISIRExample: Measure.contained[0]/*Library/effective-data-requirements*/.extension[27].extension[2].value.ofType(string): The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 INFORMATION: Measure/BCSComponent: Measure.contained[0]/*Library/effective-data-requirements*/.extension[30].extension[2].value.ofType(string): The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 INFORMATION: Measure/EXM108-FHIR: Measure.contained[0]/*Library/effective-data-requirements*/.extension[64].extension[2].value.ofType(string): The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 INFORMATION: Measure/EXM124-FHIR: Measure.contained[0]/*Library/effective-data-requirements*/.extension[22].extension[2].value.ofType(string): The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
@@ -1006,4 +970,13 @@ INFORMATION: Measure/HBPComponent: Measure.contained[0]/*Library/effective-data-
 INFORMATION: Measure/PVSComponent: Measure.contained[0]/*Library/effective-data-requirements*/.extension[29].extension[2].value.ofType(string): The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 INFORMATION: Measure/TSCComponent: Measure.contained[0]/*Library/effective-data-requirements*/.extension[31].extension[2].value.ofType(string): The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 
+# 2.0.0-ballot:018 - Measure stratifier validation does not recognize cql-identifier
+WARNING: Measure/EXM55-FHIR: Measure.group[0].stratifier[0].criteria: The expression language text/cql-identifier is not supported, so can't be validated
+WARNING: Measure/EXM55-FHIR: Measure.group[0].stratifier[1].criteria: The expression language text/cql-identifier is not supported, so can't be validated
+WARNING: Measure/EXM55-FHIR: Measure.group[0].stratifier[2].criteria: The expression language text/cql-identifier is not supported, so can't be validated
+WARNING: Measure/EXMLogic-FHIR: Measure.group[0].stratifier[0].criteria: The expression language text/cql-identifier is not supported, so can't be validated
+WARNING: Measure/EXMLogic-FHIR: Measure.group[0].stratifier[1].criteria: The expression language text/cql-identifier is not supported, so can't be validated
+WARNING: Measure/EXMLogic-FHIR: Measure.group[0].stratifier[2].criteria: The expression language text/cql-identifier is not supported, so can't be validated
+WARNING: Measure/EXMLogic-FHIR: Measure.group[0].stratifier[3].criteria: The expression language text/cql-identifier is not supported, so can't be validated
+WARNING: Measure/age-stratified-example: Measure.group[0].stratifier[0].criteria: The expression language text/cql-identifier is not supported, so can't be validated
 

@@ -18,6 +18,10 @@
 <artifact id="Measure/BedCapacityMeasure-monthly" key="Measure-BedCapacityMeasure-monthly" name="Bed Capacity Measure - Monthly Reporting"/>
 <artifact id="Measure/BCSComponent" key="Measure-BCSComponent" name="Breast Cancer Screening"/>
 <artifact id="Bundle/measurereport-bundle-example" key="Bundle-bundle-example" name="Bundle example"/>
+<artifact id="Library/CAUTIElements" key="Library-CAUTIElements" name="CAUTI Elements"/>
+<artifact id="Library/CAUTIParameters" key="Library-CAUTIParameters" name="CAUTI Parameters"/>
+<artifact id="Library/CAUTIRate" key="Library-CAUTIRate" name="CAUTI Rate"/>
+<artifact id="Library/CAUTISIR" key="Library-CAUTISIR" name="CAUTI Standardized Infection Ratio (SIR)"/>
 <artifact id="Library/CCSComponent" key="Library-CCSComponent" name="CCS Component Library"/>
 <artifact id="CapabilityStatement/authoring-measure-repository" key="CapabilityStatement-authoring-measure-repository" name="CQF Measures Authoring Measure Repository Capability Statement"/>
 <artifact id="CapabilityStatement/publishable-measure-repository" key="CapabilityStatement-publishable-measure-repository" name="CQF Measures Publishable Measure Repository Capability Statement"/>
@@ -90,6 +94,8 @@
 <artifact id="Measure/EXM55-FHIR" key="Measure-EXM55-FHIR" name="EXM55 - Median Emergency Department Visit Duration"/>
 <artifact id="Library/EXM55" key="Library-EXM55-FHIR" name="EXM55 - Median Emergency Department Visit Duration Library (Example Continuous Variable Measure Library)"/>
 <artifact id="Library/EXMRatio" key="Library-EXMRatio-FHIR" name="EXMRatio - Example Ratio Measure Library"/>
+<artifact id="Measure/CAUTIRateExample" key="Measure-CAUTIRateExample" name="Example Catheter-Associated Urinary Tract Infection Rate"/>
+<artifact id="Measure/CAUTISIRExample" key="Measure-CAUTISIRExample" name="Example Catheter-Associated Urinary Tract Infection Standardized Infection Ratio (SIR)"/>
 <artifact id="Library/EXMComputableLibrary" key="Library-EXMComputableLibrary" name="Example Computable Library"/>
 <artifact id="Library/EXMExecutableLibrary" key="Library-EXMExecutableLibrary" name="Example Executable Library"/>
 <artifact id="Library/EXMLogic" key="Library-EXMLogic-FHIR" name="Example Logic Library"/>
@@ -137,6 +143,8 @@
 <artifact id="SearchParameter/ValueSet-keyword" key="SearchParameter-ValueSet-keyword" name="Search Parameter - Valuset Keyword"/>
 <artifact id="ValueSet/subject-type" key="ValueSet-subject-type" name="Subject Type Value Set"/>
 <artifact id="Library/SupplementalDataElements" key="Library-SupplementalDataElements" name="Supplemental Data Elements"/>
+<artifact id="Measure/SupportingEvidenceExample" key="Measure-SupportingEvidenceExample" name="Supporting Evidence Example"/>
+<artifact id="Library/SupportingEvidenceExample" key="Library-SupportingEvidenceExample" name="Supporting Evidence Example"/>
 <artifact id="Library/TJCOverall" key="Library-TJCOverall" name="TJC Overall Library"/>
 <artifact id="Library/TSCComponent" key="Library-TSCComponent" name="TSC Component Library"/>
 <artifact id="Measure/Terminology-FHIR" key="Measure-Terminology-FHIR" name="Terminology FHIR"/>
