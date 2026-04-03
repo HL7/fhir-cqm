@@ -143,8 +143,8 @@
 <artifact id="SearchParameter/ValueSet-keyword" key="SearchParameter-ValueSet-keyword" name="Search Parameter - Valuset Keyword"/>
 <artifact id="ValueSet/subject-type" key="ValueSet-subject-type" name="Subject Type Value Set"/>
 <artifact id="Library/SupplementalDataElements" key="Library-SupplementalDataElements" name="Supplemental Data Elements"/>
-<artifact id="Measure/SupportingEvidenceExample" key="Measure-SupportingEvidenceExample" name="Supporting Evidence Example"/>
 <artifact id="Library/SupportingEvidenceExample" key="Library-SupportingEvidenceExample" name="Supporting Evidence Example"/>
+<artifact id="Measure/SupportingEvidenceExample" key="Measure-SupportingEvidenceExample" name="Supporting Evidence Example Measure"/>
 <artifact id="Library/TJCOverall" key="Library-TJCOverall" name="TJC Overall Library"/>
 <artifact id="Library/TSCComponent" key="Library-TSCComponent" name="TSC Component Library"/>
 <artifact id="Measure/Terminology-FHIR" key="Measure-Terminology-FHIR" name="Terminology FHIR"/>
