@@ -15,7 +15,7 @@
     <valueMarkdown value="This implementation guide is the Universal Realm successor of the US-based [Quality Measure IG STU 5](http://hl7.org/fhir/us/cqfmeasures), and incorporates all the stakeholder feedback and implementation experience from that specification."/>
   </extension>
   <url value="http://hl7.org/fhir/uv/cqm/ImplementationGuide/hl7.fhir.uv.cqm"/>
-  <version value="2.0.0-ballot"/>
+  <version value="2.0.0-cibuild"/>
   <name value="CQMeasures"/>
   <title value="Quality Measure Implementation Guide"/>
   <status value="active"/>
@@ -40,7 +40,9 @@
   <dependsOn id="ext">
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
      <packageId value="hl7.fhir.uv.extensions.r4"/>
-     <version value="5.3.0-ballot-tc1"/>
+     <!-- Dev dependency for the latest build of extensions pack which includes needed extensions -->
+     <version value="dev"/>
+     <!--version value="5.3.0-ballot-tc1"/-->
   </dependsOn>
   <dependsOn id="crmi">
     <uri value="http://hl7.org/fhir/uv/crmi/ImplementationGuide/hl7.fhir.uv.crmi"/>
@@ -450,7 +452,7 @@
     </parameter>
     <parameter>
       <code value="releaselabel"/>
-      <value value="STU 2 Ballot"/>
+      <value value="CI Build"/>
     </parameter>
     <parameter>
       <code value="copyrightyear"/>
