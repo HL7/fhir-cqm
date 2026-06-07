@@ -1187,7 +1187,7 @@ define "Measure Population Membership":
 
 define "Measure Score":
   Avg("Measure Population Membership" PopulationMember
-      return "Median ED Time"(PopulationMember)
+      return all "Median ED Time"(PopulationMember)
   )
 ```
 
