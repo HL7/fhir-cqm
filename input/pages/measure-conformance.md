@@ -738,7 +738,7 @@ define "Denominator": true
 
 In this variant, the "Denominator" is utilizing the measure dependencies but this dependency is not explicitly expressed in the CQL; this is referred to as an implicit dependency.
 
-If population criteria evaluate to null for a subject-based measure it is interpreted as false. If population criteria evaluate to null for a non-subject-based measure it is interpreted as an empty list.
+For subject-based measures, a null result is interpreted as false. For non-subject-based measures, a null result is interpreted as an empty list, and null elements within the resulting list do not contribute to the result.
 
 #### Proportion Measures
 {: #proportion-measures}
