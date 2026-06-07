@@ -752,8 +752,8 @@ The referenced expressions return either an indication that a patient meets the 
 
 | Measure | Denominator | Numerator |
 |:--------|:------------:|:----------:|
-| Subject-based | All patients with condition A that had one or more encounters during the measurement period. | All patients with condition A that underwent procedure B during the measurement period. |
-| Non-subject-based | All diagnostic studies (CT scans) during the measurement period. | Diagnostic studies (CT scans) exceeding radiation dosage thresholds during the measurement period. |
+| Subject-based | All patients with condition A who have at least one encounter during the measurement period. | All patients with condition A who underwent procedure B during the measurement period. |
+| Non-subject-based | All diagnostic studies (CT scans) performed during the measurement period. | Diagnostic studies (CT scans) exceeding radiation dosage thresholds during the measurement period. |
 | Non-subject-based | All encounters where patients have condition A during the measurement period. | All encounters where patients have condition A during the measurement period and procedure B was performed during the encounter. |
 {: .grid}
 
