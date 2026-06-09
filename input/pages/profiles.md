@@ -105,10 +105,6 @@ To support packaging, testing, and distribution of measure and library artifacts
 | [CQMTestCase](StructureDefinition-cqm-testcase.html) | A measure report profile that allows definition and exchange of test cases for a measure.  |
 {: .grid }
 
-### Global Profiles
-
-{% lang-fragment globals-table.xhtml %}
-
 ### Alphabetical Listing
 
 See the [Artifact Index - Structures: Resource Profiles](artifacts.html#structures-resource-profiles) for an alphabetical index of profiles defined in this implementation guide.
