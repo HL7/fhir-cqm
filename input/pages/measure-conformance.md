@@ -626,8 +626,7 @@ In addition, the formula for calculating the measure score is implied by the sco
 
 The context of a measure is indicated using the subject element of the FHIR resource.  The subject element will be a reference to a FHIR resource type, specifically including Patient, Location, Organization, Practitioner, and Device as currently specified in the extensible SubjectType binding.  It is important to note that other resource types may be used, but it must be a FHIR resource type. We should also note that although the discussion is focused on Patient as the subject, the discussion applies to other subject types as well.
 
-In addition to the measure scoring, measures generally fall into two categories, subject-based, and non-subject-based. In general, subject-based measures count the number of patients in each population, while non-subject-based measures count the number of items (such as encounters) in each population. Although the calculation formulas are conceptually the same for both categories, for ease of expression, population criteria for subject-based measures indicates whether a patient matches the population criteria (true) or not (false). Non-subject-based measures return the item to be counted such as an encounter or procedure.
-
+In addition to the measure scoring, measures generally fall into two categories, subject-based (previously referred to as patient based), and non-subject-based (previously most often referred to episode of care or encounter based). In general, subject-based measures count the number of patients in each population, while non-subject-based measures count the number of items (such as encounters) in each population. Although the calculation formulas are conceptually the same for both categories, for ease of expression, population criteria for subject-based measures indicates whether a patient matches the population criteria (true) or not (false). Non-subject-based measures return the item to be counted such as an encounter or procedure.
 
 **Conformance Requirement 3.10 (Population Basis):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-10)
 {: #conformance-requirement-3-10}
@@ -738,7 +737,7 @@ define "Denominator": true
 
 In this variant, the "Denominator" is utilizing the measure dependencies but this dependency is not explicitly expressed in the CQL; this is referred to as an implicit dependency.
 
-If population criteria evaluate to null for a subject-based measure it is interpreted as false. If population criteria evaluate to null for a non-subject-based measure it is interpreted as an empty list.
+For subject-based measures, a null result is interpreted as false. For non-subject-based measures, a null result is interpreted as an empty list, and null elements within the resulting list do not contribute to the result.
 
 #### Proportion Measures
 {: #proportion-measures}
@@ -753,14 +752,14 @@ The referenced expressions return either an indication that a patient meets the 
 
 | Measure | Denominator | Numerator |
 |:--------|:------------:|:----------:|
-| Subject-based | All patients with condition A that had one or more encounters during the measurement period. | All patients with condition A that underwent procedure B during the measurement period. |
-| Non-subject-based | All diagnostic studies (CT scans) during the measurement period. | Diagnostic studies (CT scans) exceeding radiation dosage thresholds during the measurement period. |
+| Subject-based | All patients with condition A who have at least one encounter during the measurement period. | All patients with condition A who underwent procedure B during the measurement period. |
+| Non-subject-based | All diagnostic studies (CT scans) performed during the measurement period. | Diagnostic studies (CT scans) exceeding radiation dosage thresholds during the measurement period. |
 | Non-subject-based | All encounters where patients have condition A during the measurement period. | All encounters where patients have condition A during the measurement period and procedure B was performed during the encounter. |
 {: .grid}
 
 In Table 3-2, the first measure is an example of a subject-based measure. Each patient may contribute at most one count to the denominator and numerator, regardless of how many encounters they had. The second measure is a non-subject-based measure where each patient may contribute zero or more CT scans to the denominator and numerator counts. The third measure is another non-subject-based measure where each patient may contribute zero or more encounters to the denominator and numerator counts.
 
-For complete examples of patient based proportion measures, see the Screening Measure [Examples](examples.html). For a complete example of an non-subject-based proportion measure, see the [EXM108](Measure-EXM108-FHIR.html) measure included in this implementation guide.
+For complete examples of subject-based proportion measures, see the Screening Measure [Examples](examples.html). For a complete example of an non-subject-based proportion measure, see the [EXM108](Measure-EXM108-FHIR.html) measure included in this implementation guide.
 
 **Conformance Requirement 3.12 (Proportion Measures):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-12)
 {: #conformance-requirement-3-12}
@@ -787,7 +786,7 @@ The population types for a Proportion measure are "Initial Population", "Denomin
 
 | Population | Definition |
 |:----|:----|
-| Initial Population | The initial population criteria refers to all patients, subjects, or events to be evaluated by a quality measure involving patients or subjects who share a common set of specified characteristics. All patients, subjects, or events counted (for example, as numerator, as denominator) are drawn from the initial population.                                                       |
+| Initial Population | The initial population criteria refers to all subjects (patients), or non-subjects (events) to be evaluated by a quality measure involving subjects or non-subjects that share a common set of specified characteristics. All subjects or non-subjects counted (for example, as numerator, as denominator) are drawn from the initial population.                                  |
 | Denominator | Denominator criteria define the patients, subjects, or events that should be included in the lower portion of a fraction used to calculate a rate, proportion, or ratio. The denominator can be the same as the initial population, or a subset of the initial population to further constrain the population for the purpose of the measure.                                              |
 | Denominator Exclusion | Denominator exclusion criteria define patients, subjects, or events that should be excluded from the denominator. Denominator exclusions are used in proportion and ratio measures to help narrow the denominator. For example, patients with bilateral lower extremity amputations would be listed as a denominator exclusion for a measure requiring foot exams.                              |
 |  Numerator | Numerator criteria define the patients, subjects, or events that should be included in the upper portion of a fraction used to calculate a proportion measure. Also called the measure focus, it is the target process, condition, event, or outcome. Numerator criteria are the processes or outcomes expected for each patient, subject, or event defined in the denominator (for proportion measures) or initial population (for ratio measures). A numerator statement describes the clinical action that satisfies the conditions of the measure. |
@@ -1188,7 +1187,7 @@ define "Measure Population Membership":
 
 define "Measure Score":
   Avg("Measure Population Membership" PopulationMember
-      return "Median ED Time"(PopulationMember)
+      return all "Median ED Time"(PopulationMember)
   )
 ```
 
