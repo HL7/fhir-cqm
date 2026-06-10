@@ -143,9 +143,7 @@ A quality measurement data model defines the structured clinical and administrat
 The Data Exchange for Quality Measures Implementation Guide, or DEQM,
 provides a framework that defines conformance profiles and guidance to enable
 the exchange of quality information and quality measure reporting (e.g. for
-transferring quality information from a healthcare provider to a payer). The
-DEQM expects to use quality measures specified in accordance with the Quality
-Measure IG and QI-Core.
+transferring quality information from a healthcare provider to a payer). The DEQM expects to use quality measures specified in accordance with the Quality Measure IG.
 
 ##### Canonical Resource Management Infrastructure (CRMI)
 {: #canonical-resource-management-infrastructure-implementation-guide-(crmi)}
