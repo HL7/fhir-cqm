@@ -7,7 +7,7 @@ This implementation guide defines capability statements, use cases, and conforma
 * [**Measure Repository**](measure-repository-service.html) - Measure specification use cases in this IG are supported by the Measure Repository Service capability statements, which are measure-specific specializations of the artifact repository services defined in CRMI.
 * **Terminology Service** - Terminology service use cases in this IG are supported by the [Artifact Terminology Service Capabilities as defined in CRMI]({{site.data.fhir.ver.crmi}}/artifact-terminology-service.html). In particular, see the [Manifest](measure-conformance.html#manifest) discussion in the Measure Conformance topic regarding the use of the [CRMI Manifest Library]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-manifestlibrary.html).
 * [**Example Measure Calculation Service**](CapabilityStatement-measure-calculation-service-example.html) - This example capability statement illustrates the use of the [cqf-supportedCqlVersion]({{site.data.fhir.ver.ext}}/StructureDefinition-cqf-supportedCqlVersion.html) extension to support advertising the version of CQL supported by the service.
-* See the capability statements defined in the [Data Exchange for Quality Measures](https://hl7.org/fhir/us/davinci-deqm/) implementation guide for the Submitting and Receiving System roles.
+* See the capability statements defined in the [Data Exchange for Quality Measures](http://hl7.org/fhir/uv/deqm) implementation guide for the Submitting and Receiving System roles.
 
 ### Measure Specification Workflow Summary
 
