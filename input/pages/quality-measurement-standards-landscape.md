@@ -12,7 +12,7 @@ diagram:
 
 </summary>
 
-{% include img.html img="quality-measurement-standards-landscape.png" %}
+{% include img.html img="quality-measurement-standards-landscape_MAY_2026.png" %}
 
 </details>
 
