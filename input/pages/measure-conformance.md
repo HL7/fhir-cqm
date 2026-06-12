@@ -279,11 +279,11 @@ Notes:
 ### Terminology
 {: #terminology}
 
-This section describes how to use codes and valuesets from codesystems like LOINC, SNOMED-CT, and others within FHIR-based QMs.
+This section describes how to use codes and vValueSets from codesystems like LOINC, SNOMED-CT, and others within FHIR-based QMs.
 
 When terminology artifacts are defined and distributed as part of quality measure content, guidance provided as part of the [Canonical Resource Management Infrastructure IG]({{site.data.fhir.ver.crmi}}/packaging.html#artifact-terminology) should be followed.
 
-When using CQL to represent measure criteria, valuesets and direct-reference codes used by the expressions are declared in the header section of the CQL using the CQL valueset and code constructs. Examples of code system, valueset, and code declarations can be seen in the accompanying [CommonTerminologies.cql](Library-CommonTerminologies.html#cql-content) and [Terminology.cql](Library-Terminology.html#cql-content).
+When using CQL to represent measure criteria, ValueSets and direct-reference codes used by the expressions are declared in the header section of the CQL using the CQL ValueSet and code constructs. Examples of code system, ValueSet, and code declarations can be seen in the accompanying [CommonTerminologies.cql](Library-CommonTerminologies.html#cql-content) and [Terminology.cql](Library-Terminology.html#cql-content).
 
 
 ```cql
@@ -300,9 +300,9 @@ valueset "Encounter Inpatient SNOMEDCT Value Set":
 code "Venous foot pump, device (physical object)": '442023007' from "SNOMED-CT:2017-09"
 ```
 
-Further discussion of codesystem, valueset, and code can be found in the [Using CQL Chapter](using-cql.html) of this IG, sections [4.3](using-cql.html#code-systems), [4.4](using-cql.html#value-sets), and [4.5](using-cql.html#codes).
+Further discussion of codesystem, ValueSet, and code can be found in the [Using CQL Chapter](using-cql.html) of this IG, sections [4.3](using-cql.html#code-systems), [4.4](using-cql.html#value-sets), and [4.5](using-cql.html#codes).
 
-For measures that use CQL, valuesets and direct-reference codes that are associated with data access expressions can be found in the `dataRequirement` elements of the effective data requirements Library for the Measure.
+For measures that use CQL, ValueSets and direct-reference codes that are associated with data access expressions can be found in the `dataRequirement` elements of the effective data requirements Library for the Measure.
 
 ```json
 "dataRequirement": [
@@ -333,20 +333,20 @@ For measures that use CQL, valuesets and direct-reference codes that are associa
 
 Snippet 3-9: Example Library terminology definitions (from [library-Terminology.json](Library-Terminology.json.html))
 
-Regardless of whether a measure uses CQL, all valuesets and direct-reference codes referenced by the measure are surfaced in the [_effective data requirements_](StructureDefinition-cqm-computablemeasure-definitions.html#diff_Measure.extension:effectiveDataRequirements) library for a computable measure. 
+Regardless of whether a measure uses CQL, all ValueSets and direct-reference codes referenced by the measure are surfaced in the [_effective data requirements_](StructureDefinition-cqm-computablemeasure-definitions.html#diff_Measure.extension:effectiveDataRequirements) library for a computable measure. 
 
 **Conformance Requirement 3.5 (Terminology Inclusion):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-5)
 {: #conformance-requirement-3-5}
 
-Measures using valueset and/or direct-reference codes SHALL conform to the requirements of Conformance Requirement 3.5.
+Measures using ValueSet and/or direct-reference codes SHALL conform to the requirements of Conformance Requirement 3.5.
 
-1. All valuesets referenced by the measure SHALL be included in the _effective data requirements_ Library using relatedArtifact elements:
+1. All ValueSets referenced by the measure SHALL be included in the _effective data requirements_ Library using relatedArtifact elements:
   a. The code element of the relatedArtifact SHALL be depends-on
   b. The resource element of the relatedArtifact SHALL be the canonical URL of the referenced value set.
-  c. If the library valueset declaration includes a version, the canonical URL SHALL include the version specified in the declaration using canonical URL version syntax (i.e. `|version`)
+  c. If the library ValueSet declaration includes a version, the canonical URL SHALL include the version specified in the declaration using canonical URL version syntax (i.e. `|version`)
   d. The display element of the relatedArtifact SHALL include either
-    1. The identifier of the valueset declaration in the CQL, if the measure is using CQL
-    2. The `name` of the valueset
+    1. The identifier of the ValueSet declaration in the CQL, if the measure is using CQL
+    2. The `name` of the ValueSet
 2. All direct-reference codes referenced by the measure SHALL be included in the _effective data requirements_ Library using the cqf-directReferenceCode extension:
   a. The code and system elements of the Coding SHALL be set to the code and system of the declaration, if the measure is using CQL
   b. If the code declaration includes a display, it SHALL be used as the display of the Coding, otherwise, the identifier of the code declaration SHALL be used as the display
