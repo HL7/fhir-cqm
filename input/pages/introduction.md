@@ -41,7 +41,7 @@ Member attribution is a significant component of measuring performance of health
 ### Conventions
 {: #conventions}
 
-The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT, MAY, and NEED NOT in this document are to be interpreted as defined in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt). Unlike RFC 2119, however, this specification allows that different applications may not be able to interoperate because of how they use optional features. In particular
+The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT, MAY, and NEED NOT in this document are to be interpreted as defined in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt). Unlike RFC 2119, this specification acknowledges that varying use of optional features may prevent interoperability between applications. In particular
 
 * SHALL: an absolute requirement for all implementations
 * SHALL NOT: an absolute prohibition against inclusion for all implementations
@@ -84,7 +84,7 @@ HQMF is a structured document markup standard “…for representing a health qu
 
 Note that HQMF is not an HL7 V3 Clinical Document Architecture (CDA) standard, but is similar to CDA in being a structured document markup standard.
 
-HQMF is now a normative HL7 V3 based standard that defines a header for classification and management of the quality measure as well as important metadata. HQMF also defines a document body that carries the content of the quality measure. It standardizes a measure’s structure, metadata, definitions, and logic, the HQMF ensures measure consistency and unambiguous interpretation.
+HQMF is a normative HL7 V3 based standard designed to represent electronic quality measures. It functions by separating the administrative and descriptive metadata of a measure from the technical data criteria and population logic. It standardizes a measure’s structure, metadata, definitions, and logic, the HQMF ensures measure consistency and unambiguous interpretation.
 
 The FHIR Clinical Reasoning module replaces HQMF by defining the Measure resource.
 
