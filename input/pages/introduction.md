@@ -84,7 +84,7 @@ HQMF is a structured document markup standard “…for representing a health qu
 
 Note that HQMF is not an HL7 V3 Clinical Document Architecture (CDA) standard, but is similar to CDA in being a structured document markup standard.
 
-HQMF is a normative HL7 V3 based standard designed to represent electronic quality measures. It functions by separating the administrative and descriptive metadata of a measure from the technical data criteria and population logic. It standardizes a measure’s structure, metadata, definitions, and logic, the HQMF ensures measure consistency and unambiguous interpretation.
+HQMF is a normative HL7 V3 based standard designed to represent electronic quality measures. It functions by separating the administrative and descriptive metadata of a measure from the technical data criteria and population logic. It standardizes a measure’s structure, metadata, definitions, and logic. HQMF ensures measure consistency and unambiguous interpretation.
 
 The FHIR Clinical Reasoning module replaces HQMF by defining the Measure resource.
 
