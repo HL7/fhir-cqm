@@ -32,11 +32,11 @@ The ShareableMeasureRepository capability statement defines the minimum expectat
 
 A ShareableMeasureRepository: 
 
-1. SHALL Represent basic Library information, as specified by the [CRMIShareableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablelibrary.html) profile, which includes url, identifier, version, name, title, type, status, experimental, date, publisher, contact, description, useContext, and jurisdiction. 
+1. SHALL Represent basic Library information, as specified by the [CRMIShareableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablelibrary.html) profile, which includes URL, identifier, version, name, title, type, status, experimental, date, publisher, contact, description, useContext, and jurisdiction. 
 2. For computable libraries, SHALL represent computable Library information, as specified by the [CRMIComputableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-computablelibrary.html) profile. 
 3. For executable libraries, SHALL represent executable Library information, as specified by the [ELMLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profile. 
 4. For published libraries, SHALL represent publishable Library information, as specified by the [CRMIPublishableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-publishablelibrary.html) profile. 
-5. SHALL Represent basic Measure information, as specified by the [CRMIShareableMeasure]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablemeasure.html) profile, which includes url, identifier, version, name, title, type, status, experimental, date, publisher, contact, description, useContext, and jurisdiction. 
+5. SHALL Represent basic Measure information, as specified by the [CRMIShareableMeasure]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablemeasure.html) profile, which includes URL, identifier, version, name, title, type, status, experimental, date, publisher, contact, description, useContext, and jurisdiction. 
 6. For computable measures, SHALL represent computable Measure information, as specified by the [CQMComputableMeasure](StructureDefinition-cqm-computablemeasure.html) profile. 
 7. For published measures, SHALL represent publishable Measure information, as specified by the [CQMPublishableMeasure](StructureDefinition-cqm-publishablemeasure.html) profile.
 

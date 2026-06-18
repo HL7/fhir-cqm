@@ -2,7 +2,7 @@
 
 This topic discusses the use of Clinical Quality Language (CQL) to provide computable and/or executable representation of the various criteria of a measure through the expression-valued elements of the Measure resource. The [CQLMeasure](StructureDefinition-cqm-cqlmeasure.html) and [ELMMeasure](StructureDefinition-cqm-elmmeasure.html) profiles define the expectations for measures that make use of CQL and/or ELM. Support for the use of other expression languages is possible, but is out of scope for this implementation guide.
 
-Measures that use CQL do so with libaries to contain the logic used to define the various criteria of the measure. CQL libraries are used in accordance with the [Using CQL With FHIR]({{site.data.fhir.ver.cql}}) (UCWF) implementation guide, as well as additional conformance requirements specific to the use of measures, as detailed in the following sections.
+Measures that use CQL do so with libraries to contain the logic used to define the various criteria of the measure. CQL libraries are used in accordance with the [Using CQL With FHIR]({{site.data.fhir.ver.cql}}) (UCWF) implementation guide, as well as additional conformance requirements specific to the use of measures, as detailed in the following sections.
 
 > For ease of reference, conformance requirements from the Using CQL With FHIR IG are referred to with the following notation: UCWF:2.1, which refers to Conformance Requirement 2.1 in the Using CQL With FHIR implementation guide.
 
@@ -156,7 +156,7 @@ For example:
 valueset "Acute Pharyngitis": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.102.12.1011'
 ```
 
-Snippet 4-7: Valueset reference from [EXM146.cql](Library-EXM146.html#cql-content)
+Snippet 4-7: ValueSet reference from [EXM146.cql](Library-EXM146.html#cql-content)
 
 The canonical URL for a value set is typically defined by the value set author, though it may be provided by the
 publisher as well. For example, value sets defined in the Value Set Authority Center and exposed via the VSAC FHIR
@@ -178,21 +178,21 @@ valueset "Acute Pharyngitis (1)": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840
 valueset "Acute Pharyngitis (2)": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.102.12.1011.2'
 ```
 
-Snippet 4-8: Valueset declarations for different value sets with the same name
+Snippet 4-8: ValueSet declarations for different value sets with the same name
 
-Note carefully that although this URL may be resolveable for some terminology implementations, this is not necessarily the
+Note carefully that although this URL may be resolvable for some terminology implementations, this is not necessarily the
 case. This use of a canonical URL can be resolved as a search by the `url` element:
 
 ```
 GET fhir/ValueSet?url=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2F2.16.840.1.113883.3.464.1003.102.12.1011.1
 ```
 
-Snippet 4-9: FHIR API query to retrieve a value set by it's canonical identifier using the url search parameter
+Snippet 4-9: FHIR API query to retrieve a value set by its canonical identifier using the url search parameter
 
 #### Value Set Version
 {: #value-set-version}
 
-Consistent with the UCWF IG, [Value Set Version]({{site.data.fhir.ver.cql}}/using-cql.html#value-set-version) information is not required to be included. As a best-practice, terminology versioning information is specified externally using a version manifest. However, if versioning information is included, it must be done in accordnace with terminology usage specified by FHIR.
+Consistent with the UCWF IG, [Value Set Version]({{site.data.fhir.ver.cql}}/using-cql.html#value-set-version) information is not required to be included. As a best-practice, terminology versioning information is specified externally using a version manifest. However, if versioning information is included, it must be done in  accordance with terminology usage specified by FHIR.
 
 **Conformance Requirement 4.8 (Value Set Specification By Version):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-8)
 {: #conformance-requirement-4-8}
@@ -205,15 +205,15 @@ valueset "Encounter Inpatient SNOMEDCT Value Set":
    'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307|20260210'
 ```
 
-Snippet 4-10: valueset definition from [Terminology.cql](Library-Terminology.html#cql-content).
+Snippet 4-10: ValueSet definition from [Terminology.cql](Library-Terminology.html#cql-content).
 
-This is a _version specific value set reference_, and can be resolved as a search by the `url` and `version` elements:
+This is a _version-specific value set reference_, and can be resolved as a search by the `url` and `version` elements:
 
 ```
 GET fhir/ValueSet?url=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2F2.16.840.1.113883.3.666.7.307&version=20160929
 ```
 
-Snippet 4-11: FHIR API query to retrieve a value set by it's url and version
+Snippet 4-11: FHIR API query to retrieve a value set by its url and version
 
 #### Value Set Expansion
 
@@ -312,7 +312,7 @@ Consistent with the UCWF IG, CQL used by Measures must refer to [Element Names](
 
 Note that when FHIR and FHIR IGs are used as the data model, the term "element" is synonymous with "attribute". Some data models, such as QDM, use the "attribute".
 
-**Conformance Requirement 4-15 (Element Names):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-15)
+**Conformance Requirement 4.15 (Element Names):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-15)
 {: #conformance-requirement-4-15}
 1. CQL libraries used by Measures SHALL conform to [UCWF:2.15 (Element Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-15)
 

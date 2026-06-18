@@ -12,8 +12,8 @@ Measure packages are a special case of the more general [Artifact Packaging]({{s
 To support usage of a logic library, the library package contains the following general components:
 
 * Structured representation of the library and associated metadata (the Library resource)
-* Human readable description of the library contents (the Narrative of the Library resource)
-* Machine readable description of the population criteria (in the Library resource as additional attachments containing the Expression Logical Model (ELM) content for the CQL)
+* Human-readable description of the library contents (the Narrative of the Library resource)
+* Machine-readable description of the population criteria (in the Library resource as additional attachments containing the Expression Logical Model (ELM) content for the CQL)
 * Optionally, all the required libraries referenced by the library, recursively (included as Library resources)
 * Optionally, all the required terminologies referenced by the library, or any required libraries (included as CodeSystem and/or ValueSet resources)
 
@@ -36,9 +36,9 @@ To support usage of a quality measure, the quality measure package contains the 
 general components:
 
 * Structured representation of the quality measure and associated metadata (the Measure resource)
-* Human readable description of the quality measure and population criteria (the Narrative of the Measure resource)
+* Human-readable description of the quality measure and population criteria (the Narrative of the Measure resource)
 * The primary logic library for the quality measure (the Library resource containing at least the Clinical Quality Language (CQL) source)
-* Machine readable description of the population criteria (in the Library resource as additional attachment elements containing the Expression Logical Model (ELM) content for the CQL)
+* Machine-readable description of the population criteria (in the Library resource as additional attachment elements containing the Expression Logical Model (ELM) content for the CQL)
 * Optionally, all the required libraries referenced by the primary library of the quality measure, recursively (included as Library resources)
 * Optionally, all the required terminologies referenced by the primary library or any required libraries (included as CodeSystem and/or ValueSet resources)
 * Optionally, any test cases defined for the quality measure
