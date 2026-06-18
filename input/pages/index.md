@@ -16,6 +16,8 @@ The initial approach to quality measures focused on using the FHIR Clinical Reas
 
 This IG is built on [FHIR Version R4](http://hl7.org/fhir/R4/index.html) and accounts for content in previous generations of QM standards, the HL7 V3-based Health Quality Measure Format (HQMF) and accompanying implementation guides using FHIR. As an HL7 FHIR Implementation Guide, changes to this specification are managed by the sponsoring Clinical Quality Information Work Group and are incorporated as part of the standard balloting process.
 
+Quality measures are increasingly represented using standardized, computable approaches across the healthcare ecosystem. Terms such as electronic Clinical Quality Measure (eCQM) and digital Quality Measure (dQM) are used throughout the industry to describe specific formats of quality measures. For the purposes of this IG, all such measures are referred to as "quality measures."
+
 #### Examples
 {: #examples}
 
@@ -66,7 +68,7 @@ Michaels, M. (2023). Adapting Clinical Guidelines for the Digital Age: Summary o
 Health level seven. Clinical Quality Framework - HL7 Clinical Quality Information Work Group Confluence Page. [Online]. Available from: [https://confluence.hl7.org/display/CQIWC/Clinical Quality Framework](https://confluence.hl7.org/display/CQIWC/Clinical%20Quality%20Framework) [Accessed 11 October 2019].
 
 ### Dependencies
-The dependency on QI-Core is included for the purposes of example validation only.  In addition, the dependency on VSAC packages is indirect via the QI Core and US Core.  The conformance profiles in this IG do not make use of the value sets in VSAC.
+The dependency on QI-Core is included for the purposes of example validation only.  In addition, the dependency on Value Set Authority Center (VSAC) packages is indirect via the QI Core and US Core.  The conformance profiles in this IG do not make use of the value sets in VSAC.
 
 {% lang-fragment dependency-table-nontech.xhtml %}
 
