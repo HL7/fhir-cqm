@@ -5,13 +5,13 @@
 ### Purpose
 {: #purpose}
 
-[The National Academy of Medicine, formerly called the Institute of Medicine (IOM),](https://www.nationalacademies.org/) defines quality as: "The degree to which health services for individuals and populations increase the likelihood of desired health outcomes and are consistent with current professional knowledge." For care quality to be evaluated, standard quality metrics need to be developed and communicated to the appropriate organizations. To that end, the FHIR Quality Measure Implementation Guide (this IG) has been written to provide guidance for authoring electronic Clinical Quality Measures ([eCQMs]( https://ecqi.healthit.gov/ecqms/about-ecqms)) which are Clinical Quality Measures specified in a standard electronic format and designed to use structured, encoded data present in the electronic health record. This implementation guide references the following standards for creating QMs:
+[The National Academy of Medicine, formerly called the Institute of Medicine (IOM),](https://www.nationalacademies.org/) defines quality as: "The degree to which health services for individuals and populations increase the likelihood of desired health outcomes and are consistent with current professional knowledge." For care quality to be evaluated, standard quality metrics need to be developed and communicated to the appropriate organizations. To that end, the FHIR Quality Measure Implementation Guide (this IG) has been written to provide guidance for authoring electronic Clinical Quality Measures ([eCQMs]( https://ecqi.healthit.gov/ecqms/about-ecqms)) which are Clinical Quality Measures specified in a standard electronic format and designed to use structured, encoded data present in the electronic health record. This implementation guide references the following standards for creating quality measures:
 
 * [Fast Healthcare Interoperability Resources (FHIR) R4](http://hl7.org/fhir/R4)
 * [Clinical Quality Language (CQL) R1+](http://cql.hl7.org)
 * [QI-Core Implementation Guide (QI-Core)](http://hl7.org/fhir/us/qicore)
 
-To avoid variation in the use of FHIR Resources and metadata across QMs and clinical decision support (CDS), a quality-related implementation guide based on a logical data model is essential. Quality measures should use a standard data model that is compatible with FHIR to maintain consistency. Other FHIR-based data models are also acceptable for use.
+To avoid variation in the use of FHIR Resources and metadata across quality measures and clinical decision support (CDS), a quality-related implementation guide based on a logical data model is essential. Quality measures should use a standard data model that is compatible with FHIR to maintain consistency. Other FHIR-based data models are also acceptable for use.
 
 Although the specification is based on the R1 version of CQL, backwards-compatible future versions of CQL can be used as well. In addition, if necessary, prior versions of CQL can be used without loss of functionality for this Implementation Guide.
 
@@ -66,14 +66,14 @@ This Implementation Guide (Figure 2-1(b)) is the successor of the CQL-based HQMF
 #### Clinical Quality Language R1
 {: #clinical-quality-language-r1}
 
-[Clinical Quality Language R1 (CQL)](http://cql.hl7.org) is an HL7/ANSI Normative standard. It is part of the effort to harmonize standards between quality measures (QMs) and clinical decision support (CDS). CQL provides the ability to express logic that is human readable yet structured enough for processing a query electronically.
+[Clinical Quality Language R1 (CQL)](http://cql.hl7.org) is an HL7/ANSI Normative standard. It is part of the effort to harmonize standards between quality measures and clinical decision support (CDS). CQL provides the ability to express logic that is human readable yet structured enough for processing a query electronically.
 
 #### CQL-based HQMF IG R1 STU4.1
 {: #cql-based-hqmf-ig-r1-stu4.1}
 
 The first version of the CQL-based HQMF IG was released in September 2015 and was intended to be used in conjunction with the pre-existing QDM based HQMF R1 IG. Since 2015, the community and the standards have evolved; beginning from version 5.4, QDM no longer contains expression logic representation, ceding this functionality to CQL. The CQL-based HQMF IG is the sole guide describing how to use QDM, CQL, and HQMF in combination (Figure 2-1a).
 
-A result of replacing QDM-based logic with CQL is that all QDM logic elements previously encoded in HQMF were replaced with CQL. This means that QDM data criteria specify only the data of interest (e.g. value sets, effective time, properties) for the QM, and the previous use of QDM expressions that captured interrelationships between data criteria (such as “starts after end of”) or identified subsets of data (such as min, max, last, and first) are now represented with CQL expressions. The Quality Measures Implementation Guide (this IG) documents the full approach in detail starting in [QMs](measure-conformance.html), covering the use of FHIR, CQL, and QI-Core to represent quality measures.
+A result of replacing QDM-based logic with CQL is that all QDM logic elements previously encoded in HQMF were replaced with CQL. This means that QDM data criteria specify only the data of interest (e.g. value sets, effective time, properties) for the quality measure, and the previous use of QDM expressions that captured interrelationships between data criteria (such as “starts after end of”) or identified subsets of data (such as min, max, last, and first) are now represented with CQL expressions. The Quality Measures Implementation Guide (this IG) documents the full approach in detail starting in [Quality Meaures](measure-conformance.html), covering the use of FHIR, CQL, and QI-Core to represent quality measures.
 
 #### HQMF
 {: #hqmf}
