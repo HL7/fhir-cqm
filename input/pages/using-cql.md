@@ -286,7 +286,7 @@ Consistent with the UCWF IG, CQL used by Measures should use descriptive and mea
 ### Data Type Names
 {: #data-type-names}
 
-Consistent with the UCWF IG, CQL used by Measures must refer to [Data Type Names]({{site.data.fhir.ver.cql}}/using-cql.html#data-type-names) as dictated by the CQL specification, as well as the Data Models in use. For FHIR-based Quality Measures using QI-Core profiles, these will be the author-friendly identifiers for the QI-Core profiles.
+Consistent with the UCWF IG, CQL used by Measures must refer to [Data Type Names]({{site.data.fhir.ver.cql}}/using-cql.html#data-type-names) as dictated by the CQL specification, as well as the Data Models in use. For FHIR-based quality measures using QI-Core profiles, these will be the author-friendly identifiers for the QI-Core profiles.
 
 **Conformance Requirement 4.14 (Data Type Names):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-14)
 {: #conformance-requirement-4-14}
