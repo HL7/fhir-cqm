@@ -1,6 +1,6 @@
 {:toc}
 
-In FHIR, a Quality Measure (QM) is represented as a [Measure](http://hl7.org/fhir/R4/measure.html) resource containing metadata ([Section 3.1](#metadata)) and terminology ([Section 3.2](#terminology)), a population criteria section ([Section 3.4](#population-criteria)), a data criteria section ([Section 3.3](#data-criteria)) and a FHIR Library resource containing the logic used to define the criteria used in the measure. The population criteria section typically contains initial population criteria, denominator criteria, and numerator criteria sub-components, among others. Snippet 3-1 shows the structure of a FHIR Measure.
+In FHIR, a quality measure is represented as a [Measure](http://hl7.org/fhir/R4/measure.html) resource containing metadata ([Section 3.1](#metadata)) and terminology ([Section 3.2](#terminology)), a population criteria section ([Section 3.4](#population-criteria)), a data criteria section ([Section 3.3](#data-criteria)) and a FHIR Library resource containing the logic used to define the criteria used in the measure. The population criteria section typically contains initial population criteria, denominator criteria, and numerator criteria sub-components, among others. Snippet 3-1 shows the structure of a FHIR Measure.
 
 ```xml
 <Measure>
@@ -75,14 +75,14 @@ Note that for string-valued description elements, these elements are markdown va
 ### Metadata
 {: #metadata}
 
-The header of a QM identifies and classifies the measure and provides important metadata about the measure. 
+The header of a quality measure identifies and classifies the measure and provides important metadata about the measure. 
 
 The rest of this section describes some of the more important components to the header, such as “Related Documents” ([Section 3.1.1](#related-documents)), “Measurement Period” ([Section 3.1.2](#measurement-period)), and “Data Criteria” ([Section 3.3](#data-criteria)).
 
 #### Related Documents
 {: #related-documents}
 
-[Clinical Quality Language R1](http://cql.hl7.org) can be used in conjunction with the FHIR Measure resource to construct CQL-based quality measures. CQL is a domain specific language used in the Clinical Quality Measurement and Clinical Decision Support domains. Measures written in CQL leverage the expressivity and computability of CQL to define the population criteria used in the QM. This implementation guide supports the use of CQL version 1.5 (currently published as Errata 2, version 1.5.3), however any future backward-compatible version of the specification may be used.
+[Clinical Quality Language R1](http://cql.hl7.org) can be used in conjunction with the FHIR Measure resource to construct CQL-based quality measures. CQL is a domain specific language used in the Clinical Quality Measurement and Clinical Decision Support domains. Measures written in CQL leverage the expressivity and computability of CQL to define the population criteria used in the quality measure. This implementation guide supports the use of CQL version 1.5 (currently published as Errata 2, version 1.5.3), however any future backward-compatible version of the specification may be used.
 
 For measures that make use of CQL, any included CQL library must contain a library declaration line as its first line as in Snippet 3-2.
 
@@ -94,7 +94,7 @@ Snippet 3-2: Library declaration line from [EXM146.cql](Library-EXM146.html#cql-
 
 When using multiple CQL libraries to define a measure, refer to the [Nested Libraries]({{site.data.fhir.ver.cql}}/using-cql.html#nested-libraries) section of the [Using CQL](using-cql.html) topic of this guide.
 
-Inclusion of CQL in a FHIR QM is accomplished through the use of a FHIR Library resource as shown in Snippet 3-4. These libraries are then incorporated into the FHIR QM using the `library` element of the Measure (Snippet 3). CQL library content is encoded as `base64` and included as the `content` element of the Library resource.
+Inclusion of CQL in a FHIR quality measure is accomplished through the use of a FHIR Library resource as shown in Snippet 3-4. These libraries are then incorporated into the FHIR quality measure using the `library` element of the Measure (Snippet 3). CQL library content is encoded as `base64` and included as the `content` element of the Library resource.
 
 ```xml
 <library value="http://hl7.org/fhir/uv/cqm/Library/EXMLogic"/>
@@ -197,7 +197,7 @@ Snippet 3-4 illustrates a FHIR Library resource containing a CQL library with a 
 
 Snippet 3-4: Example CQL Library (from [library-EXM146.json](Library-EXM146.html#cql-content))
 
-Inclusion of CQL libraries within the FHIR-based QM framework must conform to [Conformance Requirement 3.2](#conformance-requirement-3-2).
+Inclusion of CQL libraries within the FHIR-based quality measure framework must conform to [Conformance Requirement 3.2](#conformance-requirement-3-2).
 
 ##### Including ELM
 {: #including-elm}
@@ -265,7 +265,7 @@ Snippet 3-7: Example of [effectivePeriodAnchor extension](StructureDefinition-cq
 **Conformance Requirement 3.4 (Measurement Period):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-4)
 {: #conformance-requirement-3-4}
 
-1. FHIR-based QMs SHALL provide either an `effectivePeriod` element, or an `cqm-effectivePeriodAnchor` and `cqm-effectivePeriodDuration` extension
+1. FHIR-based quality measures SHALL provide either an `effectivePeriod` element, or an `cqm-effectivePeriodAnchor` and `cqm-effectivePeriodDuration` extension
 2. Measurement Period SHALL be either the `effectivePeriod` as specified, or an appropriate interval of length duration, starting at the specified anchor
 
 #### Subscription-based Support for Changes to Measure Specifications
@@ -279,7 +279,7 @@ Notes:
 ### Terminology
 {: #terminology}
 
-This section describes how to use codes and vValueSets from codesystems like LOINC, SNOMED-CT, and others within FHIR-based QMs.
+This section describes how to use codes and vValueSets from codesystems like LOINC, SNOMED-CT, and others within FHIR-based quality measures.
 
 When terminology artifacts are defined and distributed as part of quality measure content, guidance provided as part of the [Canonical Resource Management Infrastructure IG]({{site.data.fhir.ver.crmi}}/packaging.html#artifact-terminology) should be followed.
 
@@ -396,7 +396,7 @@ Snippet 3-11: Example data criteria (from [library-Terminology.json](Library-Ter
 
 For measures that use CQL, these data requirements may be inferred by analysis of the retrieve expressions used by the measure criteria. As discussed in the Using CQL With FHIR implementation guide, Library resources used to contain CQL libraries should surface the dependencies, terminologies, and data requirements of the CQL. Whether using CQL or some other expression representation, the dependencies, terminologies, and data requirements used by expressions referenced by the measure are surfaced in the _effective data requirements_ Library for the measure to promote structured review of the data criteria for a Library (and by examining Libraries referenced by a Measure, for a Measure or set of Measures) for the following use cases:
 
-* Determining the set of data used by a particular QM.
+* Determining the set of data used by a particular quality measure.
 * Limited “scoop-and-filter” for creation of quality reports. Implementations desiring or required to comply with privacy policies that mandate or recommend fine-grained filtering should examine the expression logic (CQL, ELM, or otherwise) to determine additional data constraints necessary for adherence to those policies.
 
 Section 3.3.1 describes a means for deriving data requirements from CQL data references as found in the Retrieve elements of the compiled ELM.
@@ -581,7 +581,7 @@ Snippet 3-16: CQL definition of the "Initial Population" criteria (from [EXM146.
 
 To encourage consistency among measures, the following guidelines for specifying population criteria within a measure are proposed. The measure population criteria names used here are defined by the [MeasurePopulationType]({{site.data.fhir.path}}codesystem-measure-population.html) code system in the base FHIR specification.
 
-The codes within the [MeasurePopulationType]({{site.data.fhir.path}}codesystem-measure-population.html) code system in the base FHIR specification are explicitly spelled out, whereas the measure population code [based on HQMF](http://terminology.hl7.org/ValueSet/v3-ActCode) are abbreviated. In order to make the development of QMs straightforward and clear, [this concept map](ConceptMap-measure-populations.html) provides mapping from HQMF codes to FHIR codes for each of the measure component code.
+The codes within the [MeasurePopulationType]({{site.data.fhir.path}}codesystem-measure-population.html) code system in the base FHIR specification are explicitly spelled out, whereas the measure population code [based on HQMF](http://terminology.hl7.org/ValueSet/v3-ActCode) are abbreviated. In order to make the development of quality measures straightforward and clear, [this concept map](ConceptMap-measure-populations.html) provides mapping from HQMF codes to FHIR codes for each of the measure component code.
 
 **Conformance Requirement 3.9 (Criteria Names):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-9)
 {: #conformance-requirement-3-9}
@@ -715,7 +715,7 @@ The base FHIR Measure resource defines a set of measure population components th
 {: #conformance-requirement-3-11}
 
 1. Expressions used as measure population criteria SHALL be evaluated taking relevant dependencies into account, as specified by the membership determination formulas defined for each scoring type.
-2. Expressions MAY include explicit dependencies that duplicate the implicit FHIR-based QM population dependencies.
+2. Expressions MAY include explicit dependencies that duplicate the implicit FHIR-based quality measure population dependencies.
 3. Expressions SHALL use a FHIR resource type (e.g. Patient) as the context, and SHALL be expressed within the context of a single subject record of that type.
 
 For example, Snippet 3-18 defines the "Initial Population" and "Denominator" for a measure.
@@ -920,7 +920,7 @@ The population types for a Ratio measure are "Initial Population", "Denominator"
 | Denominator | The same as the Initial Population or a subset of the Initial Population to further constrain the population for the purpose of the measure.                                                                                                                                                                                                      |
 | Denominator Exclusion | Entities that should be removed from the Denominator before determining if Numerator criteria are met. Denominator exclusions are used in Proportion and Ratio measures to help narrow the Denominator.           |
 | Numerator |  The outcomes expected for each entity defined in the respective Initial Population of a Ratio measure.       |
-| Numerator Exclusion | Entities that should be removed from the QM's Numerator before determining if Numerator criteria are met. Numerator Exclusions are used in Proportion and Ratio measures to help narrow the Numerator.              |
+| Numerator Exclusion | Entities that should be removed from the quality measure's Numerator before determining if Numerator criteria are met. Numerator Exclusions are used in Proportion and Ratio measures to help narrow the Numerator.              |
 {: .grid}
 
 Take the following steps to add labels to each case to determine population membership:
@@ -1145,9 +1145,9 @@ The population types for a Continuous Variable measure are "Initial Population",
 
 | Population | Definition |
 |:----|:----|
-| Initial Population | All entities to be evaluated by a QM which may but are not required to share a common set of specified characteristics within a named measurement set to which the QM belongs. |
-| Measure Population | Continuous Variable measures do not have a Denominator, but instead define a Measure Population, as shown in the figure above. Rather than reporting a Numerator and Denominator, a Continuous Variable measure defines variables that are computed across the Measure Population (e.g., average wait time in the emergency department). A Measure Population may be the same as the Initial Population or a subset of the Initial Population to further constrain the population for the purpose of the QM. |
-| Measure Population Exclusion | Patients who should be removed from the QM's Initial Population and Measure Population before determining the outcome of one or more continuous variables defined within a Measure Observation. Measure Population Exclusions are used in Continuous Variable measures to help narrow the Measure Population. |
+| Initial Population | All entities to be evaluated by a quality measure which may but are not required to share a common set of specified characteristics within a named measurement set to which the quality measure belongs. |
+| Measure Population | Continuous Variable measures do not have a Denominator, but instead define a Measure Population, as shown in the figure above. Rather than reporting a Numerator and Denominator, a Continuous Variable measure defines variables that are computed across the Measure Population (e.g., average wait time in the emergency department). A Measure Population may be the same as the Initial Population or a subset of the Initial Population to further constrain the population for the purpose of the quality measure. |
+| Measure Population Exclusion | Patients who should be removed from the quality measure's Initial Population and Measure Population before determining the outcome of one or more continuous variables defined within a Measure Observation. Measure Population Exclusions are used in Continuous Variable measures to help narrow the Measure Population. |
 {: .grid}
 
 Take the following steps to add labels to each case to determine population membership:
@@ -1215,7 +1215,7 @@ In a cohort measure, a population is identified from the population of all items
 
 | Population | Definition |
 |:----|:----|
-| Initial Population | All entities to be evaluated by a QM which may but are not required to share a common set of specified characteristics within a named measurement set to which the QM belongs. (Also known as a Cohort Population) |
+| Initial Population | All entities to be evaluated by a quality measure which may but are not required to share a common set of specified characteristics within a named measurement set to which the quality measure belongs. (Also known as a Cohort Population) |
 {: .grid}
 
 * Initial population: Identify those cases that meet the Initial Population criteria.
@@ -1314,7 +1314,7 @@ The stratum value for a given Patient would be the gender value.
 4. Supplemental data elements descriptions SHOULD be in markdown (see [Conformance statement 3.1](#conformance-requirement-3-1) item 4 for more information)
 
 
-Part of the definition of a quality measure involves the ability to specify additional information to be returned for each member of a population. Within a FHIR-based QM, these supplemental data elements are specified using expressions, typically involving patient characteristics (such as Race, Ethnicity, Payer, and Administrative Sex) and then marking them with an SDE code within the FHIR Measure resource. Snippet 3-33 demonstrates an example supplemental data definition using the `supplementalData` element.
+Part of the definition of a quality measure involves the ability to specify additional information to be returned for each member of a population. Within a FHIR-based quality measure, these supplemental data elements are specified using expressions, typically involving patient characteristics (such as Race, Ethnicity, Payer, and Administrative Sex) and then marking them with an SDE code within the FHIR Measure resource. Snippet 3-33 demonstrates an example supplemental data definition using the `supplementalData` element.
 
 ```json
 "supplementalData": [
@@ -1472,7 +1472,7 @@ In all these cases, a Library conforming to the CRMIManifestLibrary profile can 
 
 ### HQMF Mapping
 
-HQMF is a normative HL7 V3 based standard that defines a header for classification and management of the quality measure, a document body that carries the content of the quality measure as well as important metadata. It standardizes a measure’s structure, metadata, definitions, and logic, the HQMF ensures measure consistency and unambiguous interpretation. The approach of representing Quality Measures (QMs) using FHIR and specifically the FHIR Clinical Reasoning Module have generated code systems and value sets based on the FHIR R4 specification.
+HQMF is a normative HL7 V3 based standard that defines a header for classification and management of the quality measure, a document body that carries the content of the quality measure as well as important metadata. It standardizes a measure’s structure, metadata, definitions, and logic, the HQMF ensures measure consistency and unambiguous interpretation. The approach of representing quality measures using FHIR and specifically the FHIR Clinical Reasoning Module have generated code systems and value sets based on the FHIR R4 specification.
 
 Refer to the [ConceptMap Resources section](terminology.html#conceptmap-resources) under "Terminology" for the concept mapping of code systems and value sets between HL7 V3 to FHIR R4.
 
