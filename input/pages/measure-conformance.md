@@ -57,7 +57,7 @@ Snippet 3-1: FHIR Measure structure - abridged for clarity (from sample [Measure
 **Conformance Requirement 3.1 (Measure Specifications):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-1)
 {: #conformance-requirement-3-1}
 
-1. FHIR-based Quality Measures SHALL consist of a FHIR Measure resource conforming to at least the [CRMIShareableMeasure profile]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablemeasure.html).
+1. FHIR-based quality measures SHALL consist of a FHIR Measure resource conforming to at least the [CRMIShareableMeasure profile]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablemeasure.html).
 2. In addition, measures with a status of active SHALL conform to the [CRMIPublishableMeasure profile]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-publishablemeasure.html) in particular. 
 3. FHIR-based measures SHALL contain a narrative containing a human-readable representation of the measure content.
     a. Narrative should be consistent with the narratives in this IG. Liquid templates are provided as informative resources to facilitate consistency across measures. [Measure.liquid](https://github.com/cqframework/sample-content-ig/blob/master/templates/liquid/Measure.liquid)
@@ -1498,4 +1498,4 @@ For resource instances claiming to conform to Quality Measure IG profiles, Must 
 * In situations where information on a particular data element is not present and the reason for absence is unknown, authoring and repository systems SHALL NOT include the data elements in the resource instance.
   * For example, for systems using '9999' to indicate unknown data values, do not include '9999' in the resource instance.
 * When consuming resource instances, evaluating systems SHALL interpret missing data elements within resource instances as data not present for the artifact.
-* Submitting and receiving systems using Quality Measure artifacts to perform data exchange or artifact evaluation operations SHALL respect the must support requirements of the profiles used by the artifact to describe the data involved in the operation.
+* Submitting and receiving systems using quality measure artifacts to perform data exchange or artifact evaluation operations SHALL respect the must support requirements of the profiles used by the artifact to describe the data involved in the operation.
