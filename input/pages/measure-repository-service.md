@@ -13,7 +13,7 @@ Quality measures and libraries are specific types of knowledge artifacts, and sh
 
 #### Lifecycle
 
-Quality measure and libraries following a general, high-level workflow for content development: draft, active, and retired as defined in [CRMI Artifact Lifecycle]()
+Quality measures and libraries following a general, high-level workflow for content development: draft, active, and retired as defined in [CRMI Artifact Lifecycle]()
 
 #### Identity
 
