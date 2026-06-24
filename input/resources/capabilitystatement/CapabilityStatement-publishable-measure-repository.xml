@@ -143,6 +143,20 @@
                 <definition value="http://hl7.org/fhir/SearchParameter/Library-predecessor"/>
                 <type value="reference"/>
             </searchParam>
+            <operation>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHALL"/>
+                </extension>
+                <name value="package"/>
+                <definition value="http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-package"/>
+            </operation>
+            <operation>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHALL"/>
+                </extension>
+                <name value="data-requirements"/>
+                <definition value="http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-data-requirements"/>
+            </operation>
         </resource>
         <resource>
             <type value="Measure"/>
@@ -250,6 +264,20 @@
                 <definition value="http://hl7.org/fhir/SearchParameter/Measure-predecessor"/>
                 <type value="reference"/>
             </searchParam>
+            <operation>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHALL"/>
+                </extension>
+                <name value="package"/>
+                <definition value="http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-package"/>
+            </operation>
+            <operation>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHALL"/>
+                </extension>
+                <name value="data-requirements"/>
+                <definition value="http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-data-requirements"/>
+            </operation>
         </resource>
         <resource>
             <type value="MeasureReport"/>
@@ -277,27 +305,20 @@
                 <definition value="http://hl7.org/fhir/SearchParameter/MeasureReport-measure"/>
                 <type value="reference"/>
             </searchParam>
+            <operation>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHALL"/>
+                </extension>
+                <name value="package"/>
+                <definition value="http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-package"/>
+            </operation>
         </resource>
         <operation>
             <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
                 <valueCode value="SHALL"/>
             </extension>
-            <name value="package"/>
-            <definition value="http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-package"/>
-        </operation>
-        <operation>
-            <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-                <valueCode value="SHALL"/>
-            </extension>
-            <name value="package"/>
-            <definition value="http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-package"/>
-        </operation>
-        <operation>
-            <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-                <valueCode value="SHALL"/>
-            </extension>
-            <name value="package"/>
-            <definition value="http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-package"/>
+            <name value="data-requirements"/>
+            <definition value="http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-data-requirements"/>
         </operation>
     </rest>
 </CapabilityStatement>
