@@ -11,10 +11,12 @@
 ### Summary
 {: #summary}
 
-The Fast Healthcare Interoperability Resource (FHIR) Quality Measure Implementation Guide (QM IG) describes an approach to representing Quality Measures (QMs) using the FHIR Clinical Reasoning Module and Clinical Quality Language (CQL) in the Universal Realm.
+The Fast Healthcare Interoperability Resource (FHIR) Quality Measure Implementation Guide (QM IG) describes an approach to representing quality measures using the FHIR Clinical Reasoning Module and Clinical Quality Language (CQL) in the Universal Realm.
 The initial approach to quality measures focused on using the FHIR Clinical Reasoning Module and Clinical Quality Language (CQL) within the US Realm.  Adoption of this IG to use cases outside of US is simplified as a universal realm IG.
 
-This IG is built on [FHIR Version R4](http://hl7.org/fhir/R4/index.html) and accounts for content in previous generations of QM standards, the HL7 V3-based Health Quality Measure Format (HQMF) and accompanying implementation guides using FHIR. As an HL7 FHIR Implementation Guide, changes to this specification are managed by the sponsoring Clinical Quality Information Work Group and are incorporated as part of the standard balloting process.
+This IG is built on [FHIR Version R4](http://hl7.org/fhir/R4/index.html) and accounts for content in previous generations of quality measure standards, the HL7 V3-based Health Quality Measure Format (HQMF) and accompanying implementation guides using FHIR. As an HL7 FHIR Implementation Guide, changes to this specification are managed by the sponsoring Clinical Quality Information Work Group and are incorporated as part of the standard balloting process.
+
+Quality measures are increasingly represented using standardized, computable approaches across the healthcare ecosystem. Terms such as electronic Clinical Quality Measure (eCQM) and digital Quality Measure (dQM) are used throughout the industry to describe specific formats of quality measures. For the purposes of this IG, all such measures are referred to as "quality measures."
 
 #### Examples
 {: #examples}
@@ -29,16 +31,16 @@ page in the menu bar:
 
 -  **[Home](index.html)**: The home page provides the summary and background information for the FHIR Quality Measure Implementation Guide.
 -  **[Introduction](introduction.html)**: The introduction provides a more detailed overview of quality measurement and the background for this guide.
--  **[QMs](measure-conformance.html)**: This page describes measure representation and conformance requirements for QMs.
--  **[Using CQL](using-cql.html)**: This page covers using Clinical Quality Language to author QMs.
+-  **[Quality Measures](measure-conformance.html)**: This page describes measure representation and conformance requirements for quality measures.
+-  **[Using CQL](using-cql.html)**: This page covers using Clinical Quality Language to author quality measures.
 -  **[Composites](composite-measures.html)**: This page covers composite measure representation and conformance requirements.
--  **[Packaging](packaging.html)**: This page describes measure packaging and distribution requirements for QMs.
+-  **[Packaging](packaging.html)**: This page describes measure packaging and distribution requirements for quality measures.
 - **FHIR Artifacts**
-  - **[Profiles](profiles.html)**: This page lists the set of profiles defined for use by QMs.
+  - **[Profiles](profiles.html)**: This page lists the set of profiles defined for use by quality measures.
   - **[Terminology](terminology.html)**: This page lists value sets and code systems defined in this IG.
-  - **[Capabilities](capabilities.html)**: This page defines the workflows and roles for QMs and contains the capability statements.
-  - **[Operations](operations.html)**: This page defines services and operations in support of authoring, publishing, and distributing QMs.
-  - **[Artifacts Summary](artifacts.html)**: This page defines the workflows and roles for QMs and contains the capability statements.
+  - **[Capabilities](capabilities.html)**: This page defines the workflows and roles for quality measures and contains the capability statements.
+  - **[Operations](operations.html)**: This page defines services and operations in support of authoring, publishing, and distributing quality measures.
+  - **[Artifacts Summary](artifacts.html)**: This page defines the workflows and roles for quality measures and contains the capability statements.
 -  **[Examples](examples.html)**: This page provides examples used in the other pages, as well as by the Data Exchange for Quality.
 -  **[Glossary](glossary.html)** This page defines terms related to quality measurement.
 -  **[Downloads](downloads.html)**: This page provides links to downloadable artifacts for implementations.
@@ -66,7 +68,7 @@ Michaels, M. (2023). Adapting Clinical Guidelines for the Digital Age: Summary o
 Health level seven. Clinical Quality Framework - HL7 Clinical Quality Information Work Group Confluence Page. [Online]. Available from: [https://confluence.hl7.org/display/CQIWC/Clinical Quality Framework](https://confluence.hl7.org/display/CQIWC/Clinical%20Quality%20Framework) [Accessed 11 October 2019].
 
 ### Dependencies
-The dependency on QI-Core is included for the purposes of example validation only.  In addition, the dependency on VSAC packages is indirect via the QI Core and US Core.  The conformance profiles in this IG do not make use of the value sets in VSAC.
+The dependency on QI-Core is included for the purposes of example validation only.  In addition, the dependency on Value Set Authority Center (VSAC) packages is indirect via the QI Core and US Core.  The conformance profiles in this IG do not make use of the value sets in VSAC.
 
 {% lang-fragment dependency-table-nontech.xhtml %}
 

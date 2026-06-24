@@ -33,7 +33,7 @@ Denominator exclusion criteria define patients, subjects, or events that should 
 
 #### Direct Reference Code
 
-A direct reference code (DRC) is a specific code that is referenced directly in the QM logic to describe a data element or one of its attributes. Direct reference code metadata include the description of the code, the code system from which the code is derived, and the version of that code system.
+A direct reference code (DRC) is a specific code that is referenced directly in the quality measure logic to describe a data element or one of its attributes. Direct reference code metadata include the description of the code, the code system from which the code is derived, and the version of that code system.
 
 #### Digital Quality Measure (dQM)
 
