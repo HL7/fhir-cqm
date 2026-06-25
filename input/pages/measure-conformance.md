@@ -270,7 +270,11 @@ Snippet 3-7: Example of [effectivePeriodAnchor extension](StructureDefinition-cq
 
 #### Subscription-based Support for Changes to Measure Specifications
 
-It may be of interest for downstream systems to be informed of additions, deletions or changes to measures, including changes to the frequency of reporting in emergency situations. Downstream systems can use subscriptions to provide this capability.
+While many quality measurement use cases use set measurement periods, in some scenarios, such as emerging public health events, outbreaks, natural disasters, or other emergency situations, it may be necessary to adjust reporting frequency.
+
+During a public health emergency, the reporting authority may determine that more frequent reporting is necessary to support situational awareness and response activities. In this case, the reporting authority can update [reportingTiming](StructureDefinition-cqm-reportingTiming.html) defined for the measure of interest to the determined frequency and republish the specification.
+
+To support timely notification of reporting requirement changes, reporting organizations may use FHIR Subscriptions. A reporting organization can establish a Subscription to receive notifications when reporting program metadata, reporting schedules, or related reporting artifacts are updated. For example, if the reporting authority changes the [reportingTiming](StructureDefinition-cqm-reportingTiming.html) from monthly to daily reporting, a Subscription notification can be sent automatically to subscribed systems. Receipt of the notification may trigger local workflow updates, alert reporting personnel, or automatically adjust reporting schedules and submission processes. This approach enables reporting organizations to respond more quickly to changing reporting requirements while reducing reliance on manual communication and coordination. Additional details on the use of Subscriptions in FHIR R4 can be found in the [Subscriptions R5 Backport IG](https://hl7.org/fhir/uv/subscriptions-backport/).
 
 Notes:
 - The effectivePeriod is used to distinguish when the updated measure specification should be used (as opposed to when the notification is received).
