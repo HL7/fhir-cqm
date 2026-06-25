@@ -40,9 +40,7 @@
   <dependsOn id="ext">
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
      <packageId value="hl7.fhir.uv.extensions.r4"/>
-     <!-- Dev dependency for the latest build of extensions pack which includes needed extensions -->
-     <version value="dev"/>
-     <!--version value="5.3.0-ballot-tc1"/-->
+    <version value="5.3.0"/>
   </dependsOn>
   <dependsOn id="crmi">
     <uri value="http://hl7.org/fhir/uv/crmi/ImplementationGuide/hl7.fhir.uv.crmi"/>
