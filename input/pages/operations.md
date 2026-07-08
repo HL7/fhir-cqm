@@ -10,7 +10,7 @@ This implementation guide defines operations related to packaging.
 
 These operations are defined to support artifact packaging and dependency tracing, including data requirements determination. When invoking the $data-requirements operation for a Measure, periodStart and periodEnd are provided in the parameters parameter.
 See the [Packaging](packaging.html) discussion for more information.
-For more information on packaging, dependency management, terminology and artifact authoring, see [Canonical Resource Management Infrastructure (CRMI) Implementation Guide](https://build.fhir.org/ig/HL7/crmi-ig/operations.html).
+For more information on packaging, dependency management, terminology and artifact authoring, see [Canonical Resource Management Infrastructure (CRMI) Implementation Guide](https://hl7.org/fhir/uv/crmi/STU2/en/operations.html).
 
 | **Operation** | **Description** |
 |----|----|
