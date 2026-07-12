@@ -1,0 +1,11 @@
+{
+  "resourceType": "Observation",
+  "id": "ivy-obs-0",
+  "status": "final",
+  "code": {
+    "text": "example observation"
+  },
+  "subject": {
+    "reference": "Patient/ivy"
+  }
+}

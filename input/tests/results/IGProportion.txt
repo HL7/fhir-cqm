@@ -1,0 +1,91 @@
+CQL: c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\cql
+Extension version: 0.9.8
+Clinical Reasoning version: 4.8.0
+Engine version: 4.9.0
+Language Server version: 4.10.0
+Translator version: 4.9.0
+Terminology: c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\vocabulary\valueset
+Test cases:
+ada - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGProportion\ada
+ben - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGProportion\ben
+cyd - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGProportion\cyd
+dev - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGProportion\dev
+eve - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGProportion\eve
+fin - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGProportion\fin
+gus - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGProportion\gus
+hana - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGProportion\hana
+ivy - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGProportion\ivy
+
+Denominator=true
+Denominator Exception=false
+Denominator Exclusion=false
+Initial Population=true
+Numerator=true
+Numerator Exclusion=false
+Patient=Patient(id=ada)
+
+Denominator=true
+Denominator Exception=false
+Denominator Exclusion=false
+Initial Population=true
+Numerator=false
+Numerator Exclusion=false
+Patient=Patient(id=ben)
+
+Denominator=true
+Denominator Exception=false
+Denominator Exclusion=false
+Initial Population=false
+Numerator=true
+Numerator Exclusion=false
+Patient=Patient(id=cyd)
+
+Denominator=true
+Denominator Exception=false
+Denominator Exclusion=true
+Initial Population=true
+Numerator=true
+Numerator Exclusion=false
+Patient=Patient(id=dev)
+
+Denominator=true
+Denominator Exception=false
+Denominator Exclusion=false
+Initial Population=true
+Numerator=true
+Numerator Exclusion=true
+Patient=Patient(id=eve)
+
+Denominator=true
+Denominator Exception=true
+Denominator Exclusion=false
+Initial Population=true
+Numerator=false
+Numerator Exclusion=false
+Patient=Patient(id=fin)
+
+Denominator=true
+Denominator Exception=true
+Denominator Exclusion=false
+Initial Population=true
+Numerator=true
+Numerator Exclusion=false
+Patient=Patient(id=gus)
+
+Denominator=false
+Denominator Exception=false
+Denominator Exclusion=true
+Initial Population=false
+Numerator=false
+Numerator Exclusion=false
+Patient=Patient(id=hana)
+
+Denominator=false
+Denominator Exception=false
+Denominator Exclusion=false
+Initial Population=true
+Numerator=true
+Numerator Exclusion=false
+Patient=Patient(id=ivy)
+
+elapsed: 0.969 seconds

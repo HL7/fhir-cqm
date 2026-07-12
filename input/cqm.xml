@@ -360,6 +360,334 @@
       <description value="Example Bundle containing artifacts used to notify jurisdictions of increased reporting frequency during emergencies"/>
       <exampleBoolean value="true"/>
     </resource>
+     <resource>
+      <reference>
+        <reference value="Bundle/scoring-test-patients"/>
+      </reference>
+      <name value="Scoring Test Patients"/>
+      <description value="Bundle of nine (9) test patients and associated data that exhaustively illustrate population criteria semantics across the four scoring types: proportion, ratio, continuous-variable, and cohort."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGCohort-ada"/>
+      </reference>
+      <name value="MeasureReport IGCohort Ada"/>
+      <description value="Cohort test case — Ada has an Encounter, so is counted in the cohort; other resources are present but not evaluated (cohort has no exclusions)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGCohort-ben"/>
+      </reference>
+      <name value="MeasureReport IGCohort Ben"/>
+      <description value="Cohort test case — Ben has an Encounter, so is counted in the cohort; other resources are present but not evaluated (cohort has no exclusions)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGCohort-cyd"/>
+      </reference>
+      <name value="MeasureReport IGCohort Cyd"/>
+      <description value="Cohort test case — Cyd has no Encounter, so is not in the cohort."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGCohort-dev"/>
+      </reference>
+      <name value="MeasureReport IGCohort Dev"/>
+      <description value="Cohort test case — Dev has an Encounter, so is counted in the cohort; other resources are present but not evaluated (cohort has no exclusions)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGCohort-eve"/>
+      </reference>
+      <name value="MeasureReport IGCohort Eve"/>
+      <description value="Cohort test case — Eve has an Encounter, so is counted in the cohort; other resources are present but not evaluated (cohort has no exclusions)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGCohort-fin"/>
+      </reference>
+      <name value="MeasureReport IGCohort Fin"/>
+      <description value="Cohort test case — Fin has an Encounter, so is counted in the cohort; other resources are present but not evaluated (cohort has no exclusions)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGCohort-gus"/>
+      </reference>
+      <name value="MeasureReport IGCohort Gus"/>
+      <description value="Cohort test case — Gus has an Encounter, so is counted in the cohort; other resources are present but not evaluated (cohort has no exclusions)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGCohort-hana"/>
+      </reference>
+      <name value="MeasureReport IGCohort Hana"/>
+      <description value="Cohort test case — Hana has no Encounter, so is not in the cohort."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGCohort-ivy"/>
+      </reference>
+      <name value="MeasureReport IGCohort Ivy"/>
+      <description value="Cohort test case — Ivy has an Encounter, so is counted in the cohort; other resources are present but not evaluated (cohort has no exclusions)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGCohort-summary"/>
+      </reference>
+      <name value="MeasureReport IGCohort Summary"/>
+      <description value="Summary test case for cohort measure IGCohort over the nine shared example patients. Expected initial-population 7; the cohort score is that member count."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGContinuousVariable-ada"/>
+      </reference>
+      <name value="MeasureReport IGContinuousVariable Ada"/>
+      <description value="Continuous-variable test case — Ada is a measure-population member; its observation value 2 feeds the aggregate."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGContinuousVariable-ben"/>
+      </reference>
+      <name value="MeasureReport IGContinuousVariable Ben"/>
+      <description value="Continuous-variable test case — Ben is a measure-population member; its observation value 0 feeds the aggregate."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGContinuousVariable-cyd"/>
+      </reference>
+      <name value="MeasureReport IGContinuousVariable Cyd"/>
+      <description value="Continuous-variable test case — Cyd is not in the initial population (no Encounter); its observation value 9 is not counted."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGContinuousVariable-dev"/>
+      </reference>
+      <name value="MeasureReport IGContinuousVariable Dev"/>
+      <description value="Continuous-variable test case — Dev is measure-population-excluded (deceased); its observation value 4 is not counted."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGContinuousVariable-eve"/>
+      </reference>
+      <name value="MeasureReport IGContinuousVariable Eve"/>
+      <description value="Continuous-variable test case — Eve is a measure-population member; its observation value 1 feeds the aggregate."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGContinuousVariable-fin"/>
+      </reference>
+      <name value="MeasureReport IGContinuousVariable Fin"/>
+      <description value="Continuous-variable test case — Fin is a measure-population member; its observation value 0 feeds the aggregate."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGContinuousVariable-gus"/>
+      </reference>
+      <name value="MeasureReport IGContinuousVariable Gus"/>
+      <description value="Continuous-variable test case — Gus is a measure-population member; its observation value 3 feeds the aggregate."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGContinuousVariable-hana"/>
+      </reference>
+      <name value="MeasureReport IGContinuousVariable Hana"/>
+      <description value="Continuous-variable test case — Hana is not in the initial population (no Encounter); its observation value 0 is not counted."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGContinuousVariable-ivy"/>
+      </reference>
+      <name value="MeasureReport IGContinuousVariable Ivy"/>
+      <description value="Continuous-variable test case — Ivy is in the initial population only (no Procedure); its observation value 7 is not counted."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGContinuousVariable-summary"/>
+      </reference>
+      <name value="MeasureReport IGContinuousVariable Summary"/>
+      <description value="Summary test case for continuous-variable measure IGContinuousVariable over the nine shared example patients. Expected initial-population 7, measure-population 6, measure-population-exclusion 1, measure-observation 5; observations [0, 0, 1, 2, 3] aggregated by median = 1."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGProportion-ada"/>
+      </reference>
+      <name value="MeasureReport IGProportion Ada"/>
+      <description value="Proportion test case — Ada is in the Denominator and meets the Numerator (a proportion pass)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGProportion-ben"/>
+      </reference>
+      <name value="MeasureReport IGProportion Ben"/>
+      <description value="Proportion test case — Ben is in the Denominator but does not meet the Numerator."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGProportion-cyd"/>
+      </reference>
+      <name value="MeasureReport IGProportion Cyd"/>
+      <description value="Proportion test case — Cyd is not in the initial population (no Encounter), so the Denominator and Numerator criteria evaluate true but are gated out."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGProportion-dev"/>
+      </reference>
+      <name value="MeasureReport IGProportion Dev"/>
+      <description value="Proportion test case — Dev is Denominator-excluded (deceased), so the Numerator is gated out even though its criterion evaluates true."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGProportion-eve"/>
+      </reference>
+      <name value="MeasureReport IGProportion Eve"/>
+      <description value="Proportion test case — Eve is meets the Numerator but is then Numerator-excluded."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGProportion-fin"/>
+      </reference>
+      <name value="MeasureReport IGProportion Fin"/>
+      <description value="Proportion test case — Fin is a Denominator exception — no Numerator, with a qualifying Condition."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGProportion-gus"/>
+      </reference>
+      <name value="MeasureReport IGProportion Gus"/>
+      <description value="Proportion test case — Gus is in the Denominator and meets the Numerator (a proportion pass)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGProportion-hana"/>
+      </reference>
+      <name value="MeasureReport IGProportion Hana"/>
+      <description value="Proportion test case — Hana is not in the initial population (no Encounter), so the Denominator and Numerator criteria evaluate true but are gated out."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGProportion-ivy"/>
+      </reference>
+      <name value="MeasureReport IGProportion Ivy"/>
+      <description value="Proportion test case — Ivy is in the initial population but not the Denominator (no Procedure)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGProportion-summary"/>
+      </reference>
+      <name value="MeasureReport IGProportion Summary"/>
+      <description value="Summary test case for proportion measure IGProportion over the nine shared example patients. Expected initial-population 7, denominator 6, denominator-exclusion 1, numerator 3, numerator-exclusion 1, denominator-exception 1; measure score 0.5 = (3 − 1) / (6 − 1 − 1)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGRatio-ada"/>
+      </reference>
+      <name value="MeasureReport IGRatio Ada"/>
+      <description value="Ratio test case — Ada: denominator branch = in the denominator; numerator branch = in the numerator."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGRatio-ben"/>
+      </reference>
+      <name value="MeasureReport IGRatio Ben"/>
+      <description value="Ratio test case — Ben: denominator branch = in the denominator; numerator branch = not in the initial population."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGRatio-cyd"/>
+      </reference>
+      <name value="MeasureReport IGRatio Cyd"/>
+      <description value="Ratio test case — Cyd: denominator branch = not in the initial population; numerator branch = in the numerator — counts in the numerator with no denominator, which a proportion measure cannot represent."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGRatio-dev"/>
+      </reference>
+      <name value="MeasureReport IGRatio Dev"/>
+      <description value="Ratio test case — Dev: denominator branch = denominator-excluded; numerator branch = in the numerator — stays in the numerator despite denominator exclusion, since the branches are independent."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGRatio-eve"/>
+      </reference>
+      <name value="MeasureReport IGRatio Eve"/>
+      <description value="Ratio test case — Eve: denominator branch = in the denominator; numerator branch = numerator-excluded."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGRatio-fin"/>
+      </reference>
+      <name value="MeasureReport IGRatio Fin"/>
+      <description value="Ratio test case — Fin: denominator branch = in the denominator; numerator branch = not in the initial population."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGRatio-gus"/>
+      </reference>
+      <name value="MeasureReport IGRatio Gus"/>
+      <description value="Ratio test case — Gus: denominator branch = in the denominator; numerator branch = in the numerator."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGRatio-hana"/>
+      </reference>
+      <name value="MeasureReport IGRatio Hana"/>
+      <description value="Ratio test case — Hana: denominator branch = not in the initial population; numerator branch = not in the initial population."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGRatio-ivy"/>
+      </reference>
+      <name value="MeasureReport IGRatio Ivy"/>
+      <description value="Ratio test case — Ivy: denominator branch = in the initial population only; numerator branch = not in the initial population."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/IGRatio-summary"/>
+      </reference>
+      <name value="MeasureReport IGRatio Summary"/>
+      <description value="Summary test case for ratio measure IGRatio over the nine shared example patients. Expected initial-population 1 (denominator branch) 7, initial-population 2 (numerator branch) 5, denominator 6, denominator-exclusion 1, numerator 5, numerator-exclusion 1; ratio 0.8 = (5 − 1) / (6 − 1), counted independently."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
     <page>
       <nameUrl value="index.html"/>
       <title value="Quality Measure Implementation Guide Homepage"/>

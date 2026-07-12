@@ -1,0 +1,824 @@
+{
+  "resourceType": "Bundle",
+  "id": "scoring-test-patients",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/fhir/ResearchStudy/cqm-example-study",
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "cqm-example-study",
+        "status": "completed",
+        "title": "Example research study"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/ada",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "ada",
+        "name": [
+          {
+            "family": "Example",
+            "given": [
+              "Ada"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Encounter/ada-enc-0",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "ada-enc-0",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "Patient/ada"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Procedure/ada-proc-0",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "ada-proc-0",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/ada"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/ada-obs-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ada-obs-0",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/ada"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/ada-obs-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ada-obs-1",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/ada"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Immunization/ada-imm-0",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "ada-imm-0",
+        "status": "completed",
+        "vaccineCode": {
+          "text": "example vaccine"
+        },
+        "patient": {
+          "reference": "Patient/ada"
+        },
+        "occurrenceDateTime": "2024-01-01"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/ben",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "ben",
+        "name": [
+          {
+            "family": "Example",
+            "given": [
+              "Ben"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Encounter/ben-enc-0",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "ben-enc-0",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "Patient/ben"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Procedure/ben-proc-0",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "ben-proc-0",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/ben"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/cyd",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "cyd",
+        "name": [
+          {
+            "family": "Example",
+            "given": [
+              "Cyd"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Procedure/cyd-proc-0",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "cyd-proc-0",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/cyd"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/cyd-obs-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "cyd-obs-0",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/cyd"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/cyd-obs-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "cyd-obs-1",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/cyd"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/cyd-obs-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "cyd-obs-2",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/cyd"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/cyd-obs-3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "cyd-obs-3",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/cyd"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/cyd-obs-4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "cyd-obs-4",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/cyd"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/cyd-obs-5",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "cyd-obs-5",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/cyd"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/cyd-obs-6",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "cyd-obs-6",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/cyd"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/cyd-obs-7",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "cyd-obs-7",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/cyd"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/cyd-obs-8",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "cyd-obs-8",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/cyd"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Immunization/cyd-imm-0",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "cyd-imm-0",
+        "status": "completed",
+        "vaccineCode": {
+          "text": "example vaccine"
+        },
+        "patient": {
+          "reference": "Patient/cyd"
+        },
+        "occurrenceDateTime": "2024-01-01"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/dev",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "dev",
+        "name": [
+          {
+            "family": "Example",
+            "given": [
+              "Dev"
+            ]
+          }
+        ],
+        "deceasedBoolean": true
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Encounter/dev-enc-0",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "dev-enc-0",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "Patient/dev"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Procedure/dev-proc-0",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "dev-proc-0",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/dev"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/dev-obs-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dev-obs-0",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/dev"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/dev-obs-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dev-obs-1",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/dev"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/dev-obs-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dev-obs-2",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/dev"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/dev-obs-3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dev-obs-3",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/dev"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Immunization/dev-imm-0",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "dev-imm-0",
+        "status": "completed",
+        "vaccineCode": {
+          "text": "example vaccine"
+        },
+        "patient": {
+          "reference": "Patient/dev"
+        },
+        "occurrenceDateTime": "2024-01-01"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/eve",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "eve",
+        "name": [
+          {
+            "family": "Example",
+            "given": [
+              "Eve"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Encounter/eve-enc-0",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "eve-enc-0",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "Patient/eve"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Procedure/eve-proc-0",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "eve-proc-0",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/eve"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/eve-obs-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "eve-obs-0",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/eve"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Immunization/eve-imm-0",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "eve-imm-0",
+        "status": "completed",
+        "vaccineCode": {
+          "text": "example vaccine"
+        },
+        "patient": {
+          "reference": "Patient/eve"
+        },
+        "occurrenceDateTime": "2024-01-01"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/ResearchSubject/eve-subject-0",
+      "resource": {
+        "resourceType": "ResearchSubject",
+        "id": "eve-subject-0",
+        "status": "on-study",
+        "study": {
+          "reference": "ResearchStudy/cqm-example-study"
+        },
+        "individual": {
+          "reference": "Patient/eve"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/fin",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "fin",
+        "name": [
+          {
+            "family": "Example",
+            "given": [
+              "Fin"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Encounter/fin-enc-0",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "fin-enc-0",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "Patient/fin"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Procedure/fin-proc-0",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "fin-proc-0",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/fin"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Condition/fin-cond-0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "fin-cond-0",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/fin"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/gus",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "gus",
+        "name": [
+          {
+            "family": "Example",
+            "given": [
+              "Gus"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Encounter/gus-enc-0",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "gus-enc-0",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "Patient/gus"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Procedure/gus-proc-0",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "gus-proc-0",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/gus"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/gus-obs-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "gus-obs-0",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/gus"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/gus-obs-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "gus-obs-1",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/gus"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/gus-obs-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "gus-obs-2",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/gus"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Condition/gus-cond-0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "gus-cond-0",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/gus"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Immunization/gus-imm-0",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "gus-imm-0",
+        "status": "completed",
+        "vaccineCode": {
+          "text": "example vaccine"
+        },
+        "patient": {
+          "reference": "Patient/gus"
+        },
+        "occurrenceDateTime": "2024-01-01"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/hana",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "hana",
+        "name": [
+          {
+            "family": "Example",
+            "given": [
+              "Hana"
+            ]
+          }
+        ],
+        "deceasedBoolean": true
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/ivy",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "ivy",
+        "name": [
+          {
+            "family": "Example",
+            "given": [
+              "Ivy"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Encounter/ivy-enc-0",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "ivy-enc-0",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "Patient/ivy"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/ivy-obs-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ivy-obs-0",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/ivy"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/ivy-obs-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ivy-obs-1",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/ivy"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/ivy-obs-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ivy-obs-2",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/ivy"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/ivy-obs-3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ivy-obs-3",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/ivy"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/ivy-obs-4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ivy-obs-4",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/ivy"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/ivy-obs-5",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ivy-obs-5",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/ivy"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/ivy-obs-6",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ivy-obs-6",
+        "status": "final",
+        "code": {
+          "text": "example observation"
+        },
+        "subject": {
+          "reference": "Patient/ivy"
+        }
+      }
+    }
+  ]
+}

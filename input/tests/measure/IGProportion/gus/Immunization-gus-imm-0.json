@@ -1,0 +1,12 @@
+{
+  "resourceType": "Immunization",
+  "id": "gus-imm-0",
+  "status": "completed",
+  "vaccineCode": {
+    "text": "example vaccine"
+  },
+  "patient": {
+    "reference": "Patient/gus"
+  },
+  "occurrenceDateTime": "2024-01-01"
+}

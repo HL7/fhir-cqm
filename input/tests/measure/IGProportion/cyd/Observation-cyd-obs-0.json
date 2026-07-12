@@ -1,0 +1,11 @@
+{
+  "resourceType": "Observation",
+  "id": "cyd-obs-0",
+  "status": "final",
+  "code": {
+    "text": "example observation"
+  },
+  "subject": {
+    "reference": "Patient/cyd"
+  }
+}

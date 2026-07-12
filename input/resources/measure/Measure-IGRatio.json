@@ -1,0 +1,136 @@
+{
+  "resourceType": "Measure",
+  "id": "IGRatio",
+  "url": "http://hl7.org/fhir/uv/cqm/Measure/IGRatio",
+  "name": "IGRatio",
+  "title": "IG Ratio Measure",
+  "status": "active",
+  "experimental": true,
+  "description": "None",
+  "effectivePeriod": {
+    "start": "2027-01-01",
+    "end": "2027-12-31"
+  },
+  "library": [ "http://hl7.org/fhir/uv/cqm/Library/IGRatio" ],
+  "group": [ {
+    "id": "Group_1",
+    "extension": [ {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+          "code": "ratio",
+          "display": "Ratio"
+        } ]
+      }
+    }, {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis",
+      "valueCode": "boolean"
+    }, {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-type",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
+          "code": "process",
+          "display": "Process"
+        } ]
+      }
+    }, {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-improvementNotation",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+          "code": "increase",
+          "display": "Increased score indicates improvement"
+        } ]
+      }
+    } ],
+    "population": [ {
+      "id": "InitialPopulation_1",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "initial-population",
+          "display": "Initial Population"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql-identifier",
+        "expression": "Initial Population 1"
+      }
+    }, {
+      "id": "InitialPopulation_2",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "initial-population",
+          "display": "Initial Population"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql-identifier",
+        "expression": "Initial Population 2"
+      }
+    }, {
+      "id": "Denominator_1",
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference",
+        "valueString": "InitialPopulation_1"
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "denominator",
+          "display": "Denominator"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql-identifier",
+        "expression": "Denominator"
+      }
+    }, {
+      "id": "DenominatorExclusion_1",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "denominator-exclusion",
+          "display": "Denominator Exclusion"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql-identifier",
+        "expression": "Denominator Exclusion"
+      }
+    }, {
+      "id": "Numerator_1",
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference",
+        "valueString": "InitialPopulation_2"
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "numerator",
+          "display": "Numerator"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql-identifier",
+        "expression": "Numerator"
+      }
+    }, {
+      "id": "NumeratorExclusion_1",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "numerator-exclusion",
+          "display": "Numerator Exclusion"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql-identifier",
+        "expression": "Numerator Exclusion"
+      }
+    } ]
+  } ]
+}

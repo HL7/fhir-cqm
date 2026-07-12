@@ -532,7 +532,7 @@ CQL provides the logical expression language that is used to define population c
     },
     "criteria": {
       "language": "text/cql-identifier",
-      "expression": "\"Initial Population\""
+      "expression": "Initial Population"
   }
   }
 ]
@@ -543,12 +543,13 @@ Snippet 3-15: Defining a population via reference to a CQL expression (from [mea
 Snippet 3-16 shows several examples of a CQL expression calling another, e.g. the "Initial Population" expression references another CQL expression: "Pharyngitis Encounters With Antibiotics". In this example the referenced expressions are all contained within the same CQL file (EXM146.cql) and some are included above. The "Is Between 2 and 17 Years of Age at Start of Measurement Period" expression uses the built-in CQL function AgeInYearsAt(). The definition of "Pharyngitis Encounters With Antibiotics" uses the function "Includes Or Starts During", defined in another CQL library (Common as described in Common.cql), further explanation of nested libraries is given in the “Nested Libraries” section of the Using CQL topic of this IG.
 
 ```cql
-library EXM146_FHIR version '4.0.0'
+library EXM146 version '4.0.0'
 
-using FHIR version '3.0.0'
+using FHIR version '4.0.1'
 
-include FHIRHelpers version '3.0.0' called FHIRHelpers
-include Common_FHIR version '2.0.0' called Common
+include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
+
+include Common version '2.0.0' called Common
 
 define "Is Between 2 and 17 Years of Age at Start of Measurement Period":
    AgeInYearsAt(start of "Measurement Period") >= 2
@@ -575,8 +576,8 @@ Snippet 3-16: CQL definition of the "Initial Population" criteria (from [EXM146.
 
 **Conformance Requirement 3.8 (Referential Integrity):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-8)
 {: #conformance-requirement-3-8}
-1. All Measure population criteria components
-    a. SHALL reference exactly one expression.
+1. All Measure population criteria components  
+    a. SHALL reference exactly one expression.  
     b. SHALL reference the same library.
 2. For measures that use CQL, references to expressions SHALL use the `text/cql-identifier` media type defined in the [CQL specification](https://cql.hl7.org/07-physicalrepresentation.html#media-types-and-namespaces).
 
@@ -636,12 +637,14 @@ In addition to the measure scoring, measures generally fall into two categories,
 {: #conformance-requirement-3-10}
 
 1. The [`cqm-populationBasis`](StructureDefinition-cqm-populationBasis.html) extension SHALL be used to identify the result type of population criteria used in the measure, group, or population
-2. Expressions used in population criteria SHALL return a value of the type specified by the populationBasis for the measure, group, or population.
+2. Expressions used in population criteria SHALL have a return type as specified by the populationBasis for the measure, group, or population.  
+    a. For subject-based measures, a null result is interpreted as false.  
+    b. For non-subject-based measures, a null result is interpreted as an empty list, and null elements within the resulting list do not contribute to the result.  
 3. If a DataRequirement is used to specify an allowed type for a population, the `type` SHALL be present and `profile`, and `codeFilter` elements MAY be present. Other elements SHALL NOT be present.
-4. If a DataRequirement is used to specify an allowed type for a population, instances SHALL be:
-    a. of the type specified in `type`
-    b. conform to ALL the profiles specified in `profile`
-    c. match ALL the codeFilters specified
+4. If a DataRequirement is used to specify an allowed type for a population, instances SHALL be:  
+    a. of the type specified in `type`  
+    b. conform to ALL the profiles specified in `profile`  
+    c. match ALL the codeFilters specified  
 
 Snippet 3-16 illustrates the use of the populationBasis extension for a subject-based measure:
 
@@ -709,7 +712,7 @@ Snippet 3-19: illustrates the use of the populationBasis extension for a non-pat
 
 Snippet 3-19: Population basis for an non-patient-based measure with a valueDataRequirement
 
-Note that this extension is specifically bound to the FHIRAllTypes ValueSet (i.e. the set of all types in FHIR, including data types and resource types, both abstract and concrete). The FHIRAllTypes value set is appropriate for the specification since it's possible to have population criteria that result in "abstract" types. Authoring environments may wish to limit the selection of population basis based on the content implementation guides used in authoring the measure, but that would be a content-driven validation, not a restriction enforced by the specification.
+Note that this extension is specifically bound to the FHIRAllTypes ValueSet (i.e. the set of all types in FHIR, including data types and resource types, both abstract and concrete). The FHIRAllTypes value set is appropriate for the specification since it is possible to have population criteria that result in "abstract" types. Authoring environments may wish to limit the selection of population basis based on the content implementation guides used in authoring the measure, but that would be a content-driven validation, not a restriction enforced by the specification.
 
 #### Measure Population Semantics
 
@@ -741,7 +744,25 @@ define "Denominator": true
 
 In this variant, the "Denominator" is utilizing the measure dependencies but this dependency is not explicitly expressed in the CQL; this is referred to as an implicit dependency.
 
-For subject-based measures, a null result is interpreted as false. For non-subject-based measures, a null result is interpreted as an empty list, and null elements within the resulting list do not contribute to the result.
+Note that all the scoring types share the "Initial Population" criteria, allowing for common treatment across the scoring types. Note also that subject attribution is deliberately out of scope to ensure that the same measure specification can be used across different attribution models. Specifically:
+
+<div>
+<img src="measure-attribution-calculation.png">
+</div>
+
+As the above diagram illustrates, the measure scoring types all start with an initial population criteria, and measure calculation can be thought of as starting from _all subjects_, optionally narrowed to the set of _attributed subjects_, then narrowed to the _initial population_ for the measure. The discussions for each scoring type that follow start from this assumption. An example population of 9 patients is used to explicitly demonstrate the calculation semantics for each of the scoring types.
+
+Crucially, measure populations are set-based, and the workflow illustrations do not depict duplicate elimination as a result of these set semantics.
+
+For every scoring type, the membership for each population criteria is the criterion result **intersected with membership in its parent population(s)**. This means that a criterion can evaluate `true` and still contribute zero if the patient is not in the required parent set. As a summary:
+
+| Scoring type | Distinguishing mechanic | Headline result | Folder |
+|---|---|---|---|
+| Proportion | numerator ⊆ denominator; exception fires only if the numerator was not met | score **0.5** = (3 − 1) / (6 − 1 − 1) | [`Proportion Measures`](#proportion-measures) |
+| Ratio | numerator and denominator are independent branches, each with its own initial population | ratio **0.8** = (5 − 1) / (6 − 1) | [`Ratio Measures`](#ratio-measures) |
+| Continuous variable | no numerator or denominator; a measure observation runs per member and is aggregated | median **1** over [0, 0, 1, 2, 3] | [`Continuous Variable Measures`](#continuous-variable-measures) |
+| Cohort | initial population only; membership equals the criterion, so nothing is ever gated | count **7** | [`Cohort Measures`](#cohort-measures) |
+{: .grid}
 
 #### Proportion Measures
 {: #proportion-measures}
@@ -781,7 +802,7 @@ The population types for a Proportion measure are "Initial Population", "Denomin
 **Figure 3-2: Population criteria relationships for Proportion measures illustration**
 
 <div>
-<img src="OutcomeFlow__Proportion_version.png">
+<img src="proportion-measure-calculation.png">
 </div>
 <br>
 
@@ -813,6 +834,25 @@ The “performance rate” is a ratio of patients in the Numerator (accounting f
 ```
 Performance rate = (Numerator - Numerator Exclusion) / (Denominator – Denominator Exclusion – Denominator Exception)
 ```
+
+The following table illustrates the result of evaluating the [IGProportion](Measure-IGProportion.html) measure against the [Scoring Test Patients](Bundle-scoring-test-patients.html):
+
+Cell legend: **✓** counted in the `MeasureReport`, **⚠** criterion met but gated out, **–** criterion false.
+
+| Patient | IPP (Encounter) | DENOM (Procedure) | DENEX (deceased) | NUMER (Observation) | NUMEX (ResearchSubject) | DENEXCEP (Condition) | Outcome |
+|---|:--:|:--:|:--:|:--:|:--:|:--:|---|
+| Ada | ✓ | ✓ | – | ✓ | – | – | [numerator](MeasureReport-IGProportion-ada.html) |
+| Ben | ✓ | ✓ | – | – | – | – | [numer miss](MeasureReport-IGProportion-ben.html) |
+| Cyd | – | ⚠ | – | ⚠ | – | – | [out of scope](MeasureReport-IGProportion-cyd.html) |
+| Dev | ✓ | ✓ | ✓ | ⚠ | – | – | [excluded](MeasureReport-IGProportion-dev.html) |
+| Eve | ✓ | ✓ | – | ✓ | ✓ | – | [numer excluded](MeasureReport-IGProportion-eve.html) |
+| Fin | ✓ | ✓ | – | – | – | ✓ | [exception](MeasureReport-IGProportion-fin.html) |
+| Gus | ✓ | ✓ | – | ✓ | – | ⚠ | [numerator](MeasureReport-IGProportion-gus.html) |
+| Hana | – | – | ⚠ | – | – | – | [out of scope](MeasureReport-IGProportion-hana.html) |
+| Ivy | ✓ | – | – | ⚠ | – | – | [init pop only](MeasureReport-IGProportion-ivy.html) |
+{: .grid}
+
+[Report](MeasureReport-IGProportion-summary.html): IPP 7, DENOM 6, DENEX 1, NUMER 3, NUMEX 1, DENEXCEP 1 · score = (3 − 1) / (6 − 1 − 1) = **2/4 = 0.5**
 
 Here is an example of using population types to select data on diabetes patients for a Proportion measure:
 
@@ -910,7 +950,7 @@ The population types for a Ratio measure are "Initial Population", "Denominator"
 **Figure 3-3: The two initial populations from which the denominator and numerator are derived.**
 
 <div>
-<img src="OutcomeFlow_Ratio_DenNum.png">
+<img src="ratio-measure-calculation.png">
 </div>
 
 ✧ The ratio diagrams depict a ratio measure. Ratio measures may also include continuous variable calculations for the numerator and denominator (continuous variable ratio measures) but the diagrams do not depict the continuous variable ratio measures.
@@ -936,6 +976,26 @@ Take the following steps to add labels to each case to determine population memb
 * For each case labeled "numerator" that meets the Numerator Exclusion criteria, add the label "numerator-exclusion".
 
 Population counts are then determined by simply counting the number of cases that are labeled with each population type code.
+
+The following table illustrates the result of evaluating the [IGRatio](Measure-IGRatio.html) measure against the [Scoring Test Patients](Bundle-scoring-test-patients.html):
+
+Cell legend: **✓** counted in the `MeasureReport`, **⚠** criterion met but gated out, **–** criterion false.
+
+| Patient | IPP 1 (Encounter) | DENOM (Procedure) | DENEX (deceased) | IPP 2 (Immunization) | NUMER (Observation) | NUMEX (ResearchSubject) | Denominator side | Numerator side |
+|---|:--:|:--:|:--:|:--:|:--:|:--:|---|---|
+| [Ada](MeasureReport-IGRatio-ada.html) | ✓ | ✓ | – | ✓ | ✓ | – | denominator | numerator |
+| [Ben](MeasureReport-IGRatio-ben.html) | ✓ | ✓ | – | – | – | – | denominator | — |
+| [Cyd](MeasureReport-IGRatio-cyd.html) | – | ⚠ | – | ✓ | ✓ | – | — | numerator |
+| [Dev](MeasureReport-IGRatio-dev.html) | ✓ | ✓ | ✓ | ✓ | ✓ | – | excluded | numerator |
+| [Eve](MeasureReport-IGRatio-eve.html) | ✓ | ✓ | – | ✓ | ✓ | ✓ | denominator | excluded |
+| [Fin](MeasureReport-IGRatio-fin.html) | ✓ | ✓ | – | – | – | – | denominator | — |
+| [Gus](MeasureReport-IGRatio-gus.html) | ✓ | ✓ | – | ✓ | ✓ | – | denominator | numerator |
+| [Hana](MeasureReport-IGRatio-hana.html) | – | – | ⚠ | – | – | – | — | — |
+| [Ivy](MeasureReport-IGRatio-ivy.html) | ✓ | – | – | – | ⚠ | – | ip only | — |
+{: .grid}
+
+[Report](MeasureReport-IGRatio-summary.html): IPP 1 = 7, DENOM 6, DENEX 1, IPP 2 = 5, NUMER 5, NUMEX 1 · ratio = (5 − 1) / (6 − 1) = **4/5 = 0.8**
+
 
 Here is an example of using the population types to select data on patients with central line catheters for a ratio measure:
 
@@ -1054,7 +1114,7 @@ The criteria referenced from the measure-observation component refers to an expr
       }
     ]
   },
-  "criteria": "\"Measure Observation\""
+  "criteria": "Measure Observation"
 }
 ```
 
@@ -1142,7 +1202,7 @@ The population types for a Continuous Variable measure are "Initial Population",
 **Figure 3-4: Population criteria for Continuous Variable measures illustration**
 
 <div>
-<img src="OutcomeFlow_CV_Version.png">
+<img src="continuous-variable-measure-calculation.png">
 </div>
 
 **Table 3-5: Population Criteria Definitions for Continuous Variable Measures**
@@ -1160,6 +1220,27 @@ Take the following steps to add labels to each case to determine population memb
 * For each case labeled "measure-population" that meets Measure Population Exclusion criteria, add the label "measure-population-exclusion".
 
 Population counts are then determined by simply counting the number of cases that are labeled with each population type code.
+
+The following table illustrates the result of evaluating the [IGContinuousVariable](Measure-IGContinuousVariable.html) measure against the [Scoring Test Patients](Bundle-scoring-test-patients.html):
+
+Cell legend: **✓** counted in the `MeasureReport`, **⚠** criterion met but gated out, **–** criterion false.
+
+`Measure Observation` = `Count([Observation])` per member; membership decides whether the value feeds the aggregate.
+
+| Patient | IPP (Encounter) | MPOP (Procedure) | MPOPEX (deceased) | Observation | Feeds score |
+|---|:--:|:--:|:--:|:--:|---|
+| Ada | ✓ | ✓ | – | 2 | [in population](MeasureReport-IGContinuousVariable-ada.html) |
+| Ben | ✓ | ✓ | – | 0 | [in population](MeasureReport-IGContinuousVariable-ben.html) |
+| Cyd | – | ⚠ | – | 9 | [out of scope](MeasureReport-IGContinuousVariable-cyd.html) |
+| Dev | ✓ | ✓ | ✓ | 4 | [excluded](MeasureReport-IGContinuousVariable-dev.html) |
+| Eve | ✓ | ✓ | – | 1 | [in population](MeasureReport-IGContinuousVariable-eve.html) |
+| Fin | ✓ | ✓ | – | 0 | [in population](MeasureReport-IGContinuousVariable-fin.html) |
+| Gus | ✓ | ✓ | – | 3 | [in population](MeasureReport-IGContinuousVariable-gus.html) |
+| Hana | – | – | ⚠ | 0 | [out of scope](MeasureReport-IGContinuousVariable-hana.html) |
+| Ivy | ✓ | – | – | 7 | [init pop only](MeasureReport-IGContinuousVariable-ivy.html) |
+{: .grid}
+
+[Report](MeasureReport-IGContinuousVariable-summary.html): IPP 7, MPOP 6, MPOPEX 1 · aggregated values [0, 0, 1, 2, 3] · median = **1** (sum 6, mean 1.2, count 5)
 
 Here is an example of using the population types to select data on emergency department patients for a Continuous Variable measure:
 
@@ -1212,7 +1293,7 @@ In a cohort measure, a population is identified from the population of all items
 **Figure 3-5: Population criteria for Cohort measures illustration**
 
 <div>
-<img src="Cohort1.png">
+<img src="cohort-measure-calculation.png">
 </div>
 
 **Table 3-6: Population Criteria Definitions for Cohort Measures**
@@ -1223,6 +1304,27 @@ In a cohort measure, a population is identified from the population of all items
 {: .grid}
 
 * Initial population: Identify those cases that meet the Initial Population criteria.
+
+The following table illustrates the result of evaluating the [IGCohort](Measure-IGCohort.html) measure against the [Scoring Test Patients](Bundle-scoring-test-patients.html):
+
+Cell legend: **✓** counted in the `MeasureReport`, **⚠** criterion met but gated out, **–** criterion false.
+
+Only the `Initial Population` criterion exists — membership equals the criterion, so the **⚠** state cannot occur.
+
+| Patient | Initial Population (Encounter) | Other data (not evaluated) | Cohort |
+|---|:--:|---|---|
+| Ada | ✓ | Procedure, Observation, Immunization | [in cohort](MeasureReport-IGCohort-ada.html) |
+| Ben | ✓ | Procedure | [in cohort](MeasureReport-IGCohort-ben.html) |
+| Cyd | – | Procedure, Observation, Immunization | [out of scope](MeasureReport-IGCohort-cyd.html) |
+| Dev | ✓ | deceased, Procedure, Observation, Immunization | [in cohort](MeasureReport-IGCohort-dev.html) |
+| Eve | ✓ | Procedure, Observation, ResearchSubject, Immunization | [in cohort](MeasureReport-IGCohort-eve.html) |
+| Fin | ✓ | Procedure, Condition | [in cohort](MeasureReport-IGCohort-fin.html) |
+| Gus | ✓ | Procedure, Observation, Condition, Immunization | [in cohort](MeasureReport-IGCohort-gus.html) |
+| Hana | – | deceased | [out of scope](MeasureReport-IGCohort-hana.html) |
+| Ivy | ✓ | Observation | [in cohort](MeasureReport-IGCohort-ivy.html) |
+{: .grid}
+
+[Report](MeasureReport-IGCohort-summary.html): initial-population 7 · cohort score (count) = **7**
 
 Here is an example of using the population types to select data on patients who have received immunizations for a Cohort measure:
 

@@ -1,0 +1,8 @@
+{
+  "resourceType": "Procedure",
+  "id": "eve-proc-0",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/eve"
+  }
+}

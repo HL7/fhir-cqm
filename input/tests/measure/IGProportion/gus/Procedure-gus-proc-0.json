@@ -1,0 +1,8 @@
+{
+  "resourceType": "Procedure",
+  "id": "gus-proc-0",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/gus"
+  }
+}
