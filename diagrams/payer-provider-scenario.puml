@@ -1,0 +1,20 @@
+@startuml Payer_Provider_Scenario
+title Payer Provider Exchange Scenario
+participant "Measure Authority" as MA
+participant "Provider"
+participant "Payer"
+participant "Measure Calculator" as MC
+
+Payer <-> Provider: Share ATR Group
+note left: ATR, Push or Pull?
+note right: Payer shares **Population Definition** with provider
+Provider <-> Payer: Clinical Data
+note left: DEQM Data Exchange Bundles, Push or Pull?
+note right: Provider shares **Clinical Data** for population with payer
+Payer -> MC: Clinical and Claims Data
+note left: DEQM Data Exchange Bundles, Push or Pull?
+note right: Payer shares **Clinical and Claims Data** for population with calculator
+MC -> Payer: Calculator shares **Patient-level calculated reports** with payer
+Payer-> Provider: Payer shares **Patient-level calculated reports** with provider
+Payer -> MA: Payer shares **population-level calculated reports** with measure authority
+@enduml

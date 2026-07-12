@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="cqm-data-requirements"/>
+  <url value="http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-data-requirements"/>
+  <name value="DataRequirements"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2026-06-22"/>
+  <description value="The data-requirements operation aggregates and returns the parameters and data requirements for a measure or set of measures and all dependencies as a single module definition"/>
+  <code value="data-requirements"/>
+  <comment value="The effect of invoking this operation is to determine the aggregate set of data requirements and dependencies for the measure or set of measures. The result is a Library resource with a type of module-definition that contains all the parameter definitions and data requirements of the libraries referenced by the measures. Implementations SHOULD aggregate data requirements intelligently (i.e. by collapsing overlapping data requirements). This operation defines what resources are subsequently referenced in the evaluatedResources element of the MeasureReport when submitting measure data"/>
+  <resource value="Measure"/>
+  <resource value="Library"/>
+  <system value="true"/>
+  <type value="true"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="url"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Identifies a measure or other artifact for which data requirements will be determined (specified as an optionally-versioned canonical reference). The server must know the measure or artifact (i.e. it is defined explicitly in the server's measures or artifacts). It is an error to use this parameter when the operation is invoked on an instance. Note that for backwards compatibility, canonical references in artifact operation parameters are represented using the `uri` type, rather than the R4 `canonical` type."/>
+    <type value="uri"/>
+  </parameter>
+  <parameter>
+    <anem value="parameters"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Any input parameters for the artifact(s). If the artifact is a logic library, or references logic libraries, parameters defined in this input will be bound by name to parameters defined in the logic library (or referenced libraries). If the logic library is a CQL library, parameter types are mapped to CQL as specified in the Using CQL with FHIR implementation guide. If a parameter appears more than once in the input Parameters resource, it is represented with a List in the input CQL. If a parameter has parts, it is represented as a Tuple in the input CQL."/>
+    <type value="Paramters"/>
+  </parameter>
+  <parameter>
+    <name value="periodStart"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The start of the measurement period. In keeping with the semantics of the date parameter used in the FHIR search operation, the period will start at the beginning of the period implied by the supplied timestamp. E.g. a value of 2014 would set the period start to be 2014-01-01T00:00:00 inclusive"/>
+    <type value="date"/>
+  </parameter>
+  <parameter>
+    <name value="periodEnd"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The end of the measurement period. The period will end at the end of the period implied by the supplied timestamp. E.g. a value of 2014 would set the period end to be 2014-12-31T23:59:59 inclusive"/>
+    <type value="date"/>
+  </parameter>
+  <parameter>
+    <name value="defaultArtifactVersion"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Specifies a version to use for a canonical or artifact resource if the artifact referencing &#xA;the resource does not already specify a version. The format is the same as a canonical URL:&#xA;[url]|[version] - e.g. http://loinc.org|2.56 &#xA;&#xA;Note that this is a generalization of the `system-version` parameter defined in the $expand operation &#xA;to apply to any canonical resource, including code systems."/>
+    <type value="uri"/>
+  </parameter>
+  <parameter>
+    <name value="checkArtifactVersion"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Edge Case: Specifies a version to use for a canonical or artifact resource. If the artifact referencing &#xA;the resource specifies a different version, an error is returned instead of the package. The&#xA;format is the same as a canonical URL: [url]|[version] - e.g. http://loinc.org|2.56 &#xA;&#xA;Note that this is a generalization of the `check-system-version` parameter defined in the $expand operation to &#xA;apply to any canonical resource, including code systems."/>
+    <type value="uri"/>
+  </parameter>
+  <parameter>
+    <name value="forceArtifactVersion"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Edge Case: Specifies a version to use for a canonical or artifact resource. This parameter overrides any&#xA;specified version in the artifact (and any artifacts it depends on). The&#xA;format is the same as a canonical URL: [system]|[version] - e.g.&#xA;http://loinc.org|2.56. Note that this has obvious safety issues, in that it may&#xA;result in a value set expansion giving a different list of codes that is both&#xA;wrong and unsafe, and implementers should only use this capability reluctantly.&#xA;&#xA;It primarily exists to deal with situations where specifications have fallen&#xA;into decay as time passes. If the version of a canonical is overridden, the version used SHALL&#xA;explicitly be represented in the expansion parameters. &#xA;&#xA;Note that this is a generalization of the `force-system-version` parameter defined in the $expand operation &#xA;to apply to any canonical resource, including code systems."/>
+    <type value="uri"/>
+  </parameter>
+  <parameter>
+    <name value="manifest"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Specifies an asset-collection library that defines version&#xA;bindings for code systems and other canonical resources referenced by the value&#xA;set(s) being expanded and other canonical resources referenced by the artifact.&#xA;When specified, the expansion parameters of the manifest are used to provide expansion&#xA;behavior and canonical resolution for dependencies encountered while processing the &#xA;operation."/>
+    <type value="canonical"/>
+    <targetProfile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary"/>
+  </parameter>
+  <parameter>
+    <name value="artifactEndpointConfiguration"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Configuration information to resolve canonical artifacts&#xA;* `artifactRoute`: An optional route used to determine whether this endpoint is expected to be able to resolve artifacts that match the route (i.e. start with the route, up to and including the entire url)&#xA;* `endpointUri`: The URI of the endpoint, exclusive with the `endpoint` parameter&#xA;* `endpoint`: An Endpoint resource describing the endpoint, exclusive with the `endpointUri` parameter&#xA;&#xA;**Processing semantics**:&#xA;&#xA;Create a canonical-like reference (e.g.&#xA;`{canonical.url}|{canonical.version}` or similar extensions for non-canonical artifacts).&#xA;&#xA;* Given a single `artifactEndpointConfiguration`&#xA;  * When `artifactRoute` is present&#xA;    * And canonical or artifact reference *starts with* `artifactRoute`&#xA;    * Then attempt to resolve with `endpointUri` or `endpoint`&#xA;  * When `artifactRoute` is not present&#xA;    * Then attempt to resolve with `endpointUri` or `endpoint`&#xA;* Given multiple `artifactEndpointConfiguration`s&#xA;  * Then rank order each configuration (see below)&#xA;  * And attempt to resolve with `endpointUri` or `endpoint` in order until resolved&#xA;&#xA;Rank each `artifactEndpointConfiguration` such that:&#xA;* if `artifactRoute` is present *and* canonical or artifact reference *starts with* `artifactRoute`: rank based on number of matching characters &#xA;* if `artifactRoute` is *not* present: include but rank lower&#xA;&#xA;NOTE: For evenly ranked `artifactEndpointConfiguration`s, order as defined in the&#xA;OperationDefinition."/>
+    <part>
+      <name value="artifactRoute"/>
+      <use value="in"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type value="uri"/>
+    </part>
+    <part>
+      <name value="endpointUri"/>
+      <use value="in"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type value="uri"/>
+    </part>
+    <part>
+      <name value="endpoint"/>
+      <use value="in"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type value="Endpoint"/>
+    </part>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The result of the requirements gathering is a module-definition Library that describes the aggregate parameters, data requirements, and dependencies of the measure(s)."/>
+    <type value="Library"/>
+  </parameter>
+</OperationDefinition>
