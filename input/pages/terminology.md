@@ -18,5 +18,6 @@ See the [Artifact Index - Value Sets](artifacts.html#terminology-value-sets) for
 See the [Artifact Index - Concept Maps](artifacts.html#terminology-concept-maps) for an alphabetical index of extensions defined in this implementation guide.
 
 ### Expansion Parameters
-
 {% lang-fragment expansion-params.xhtml %}
+
+This table documents the expansion parameters and terminology versions used in the publication of this IG. For example, this IG uses v4.0.0 of the Intended Venue code system. These parameters represent all artifact dependencies within the IG.
