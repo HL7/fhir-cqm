@@ -12,12 +12,14 @@ using FHIR version '4.0.1'
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
 
 codesystem "Diagnosis Role": 'http://terminology.hl7.org/CodeSystem/diagnosis-role'
+codesystem "Diagnosis Type": 'http://terminology.hl7.org/CodeSystem/ex-diagnosistype'
 
 valueset "Emergency Department Visit" : 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292'
 valueset "Psychiatric/Mental Health Patient" : 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.299'
 valueset "Hospital Settings" : 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.126'
 
 code "Billing": 'billing' from "Diagnosis Role" display 'Billing'
+code "Principal Diagnosis": 'principal' from "Diagnosis Type" display 'Principal Diagnosis'
 
 parameter "Measurement Period" Interval<DateTime>
 
@@ -44,10 +46,6 @@ define "Measure Population Exclusion" :
         and ED.status = 'finished'
         and ED.hospitalization.admitSource in "Hospital Settings"
 
-define function "PrincipalDiagnosis"(Encounter Encounter):
-	(singleton from (Encounter.diagnosis D where D.use ~ ToConcept("Billing") and D.rank.value = 1)) PD
-		return singleton from ([Condition: id in "GetId"(PD.condition.reference)])
-
 define function "LengthInDays"(Value Interval<DateTime>):
 	difference in days between start of Value and end of Value
 
@@ -56,15 +54,49 @@ define function "GetId"(uri String):
 
 define "Stratification 1" :
   "Inpatient Encounter" Encounter
-    where not (PrincipalDiagnosis(Encounter).code in "Psychiatric/Mental Health Patient")
+    where not (
+      Encounter.principalDiagnosis().diagnosis as FHIR.CodeableConcept in "Psychiatric/Mental Health Patient"
+      or exists(
+        [Condition: id in "GetId"((Encounter.principalDiagnosis().diagnosis as FHIR.Reference).reference)] C
+        where C.code in "Psychiatric/Mental Health Patient"
+      )
+    )
 
 define "Stratification 2" :
   "Inpatient Encounter" Encounter
-    where PrincipalDiagnosis(Encounter).code in "Psychiatric/Mental Health Patient"
+    where (
+      Encounter.principalDiagnosis().diagnosis as FHIR.CodeableConcept in "Psychiatric/Mental Health Patient"
+      or exists(
+        [Condition: id in "GetId"((Encounter.principalDiagnosis().diagnosis as FHIR.Reference).reference)] C
+        where C.code in "Psychiatric/Mental Health Patient"
+      )
+    )
 
 define "Stratification 3" :
   "Inpatient Encounter" Encounter
-    where PrincipalDiagnosis(Encounter) is null
+    where Encounter.principalDiagnosis() is null
+
+define fluent function principalDiagnosis(encounter Encounter):
+singleton from (
+     (encounter.claimDiagnosis()) CD
+       where CD.type.includesCode("Principal Diagnosis")
+   )
+
+define fluent function claimDiagnosis(encounter Encounter):
+  encounter E
+    let 
+      claim: ([Claim] C where C.status = 'active' and C.use = 'claim' and exists (C.item I where I.encounter.references(E))),
+      claimItem: (claim.item I where I.encounter.references(E))
+    return claim.diagnosis D where D.sequence in claimItem.diagnosisSequence
+
+define fluent function references(reference FHIR.Reference, resource FHIR.Resource):
+  resource.id = Last(Split(reference.reference, '/'))  
+
+define fluent function references(references List<FHIR.Reference>, resource FHIR.Resource):
+  exists (references R where R.references(resource))
+
+define fluent function includesCode(codeList List<CodeableConcept>, code Concept):
+  exists (codeList C where C ~ code)
 
 //Measure Observation
 define function "Related ED Visit" (Encounter "Encounter" ) :
