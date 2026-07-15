@@ -19,4 +19,6 @@ See the [Artifact Index - Concept Maps](artifacts.html#terminology-concept-maps)
 
 ### Expansion Parameters
 
+This table documents the expansion parameters and terminology versions used in the publication of this IG. For example, this IG uses v4.0.0 of the Intended Venue code system. These parameters represent all artifact dependencies within the IG.
+
 {% lang-fragment expansion-params.xhtml %}
