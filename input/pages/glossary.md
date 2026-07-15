@@ -121,9 +121,9 @@ Additional variables required for risk adjustment or other purposes of data aggr
 | CQL |	--- | Clinical Quality Language |
 | CQM |	--- | Clinical Quality Measures |
 | CRMI | --- | Canonical Resource Management Infrastructure |
+| DEQM | --- |	Data Exchange for Quality Measures |
 | dQM | --- | Digital Quality Measure |
 | eCQM | --- | 	electronic Clinical Quality Measures |
-| DEQM | --- |	Data Exchange for Quality Measures |
 | EHR |	--- | Electronic Health Record |
 | ELM |	--- | Expression Logical Model |
 | FHIR | --- |	Fast Healthcare Interoperability Resources |
