@@ -1,0 +1,11 @@
+{
+  "resourceType": "ResearchSubject",
+  "id": "eve-subject-0",
+  "status": "on-study",
+  "study": {
+    "reference": "ResearchStudy/cqm-example-study"
+  },
+  "individual": {
+    "reference": "Patient/eve"
+  }
+}
