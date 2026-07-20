@@ -28,7 +28,7 @@ In addition to identity, lifecycle, and versioning, measure and libraries typica
 
 ### Shareable Measure Repository
 
-The ShareableMeasureRepository capability statement defines the minimum expectations for a measure repository that provides basic access to shareable measure content. It describes the minimum required functionality for sharing FHIR-based measure content. 
+The [ShareableMeasureRepository capability statement](CapabilityStatement-shareable-measure-repository.html) defines the minimum expectations for a measure repository that provides basic access to shareable measure content. It describes the minimum required functionality for sharing FHIR-based measure content. 
 
 A ShareableMeasureRepository: 
 
@@ -44,7 +44,7 @@ The CQMShareableMeasureRepository capability statement captures these requiremen
 
 ### Publishable Measure Repository 
 
-The PublishableMeasureRepository capability statement expresses additional functionality that is provided in support of providing published FHIR quality measures including additional searching and packaging capabilities. 
+The [PublishableMeasureRepository capability statement](CapabilityStatement-publishable-measure-repository.html) expresses additional functionality that is provided in support of providing published FHIR quality measures including additional searching and packaging capabilities. 
 
 A PublishableMeasureRepository:  
 
