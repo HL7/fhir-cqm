@@ -12,7 +12,7 @@ Quality measurement enables the LHS cycle by identifying variation in care, reve
 
 </summary>
 
-{% include img.html img="Clinical Quality Lifecycle Graphic-July13.png" %}
+{% include img.html img="Clinical Quality Lifecycle Graphic-July17.png" %}
 
 </details>
 
