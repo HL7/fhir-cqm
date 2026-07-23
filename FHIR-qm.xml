@@ -74,6 +74,7 @@
 <artifact id="Library/CommonTerminologies" key="Library-CommonTerminologies" name="Common Terminology Library"/>
 <artifact id="ConceptMap/composite-measure-scoring" key="ConceptMap-composite-measure-scoring" name="Composite Measure Scoring mapping"/>
 <artifact id="ConceptMap/data-usages" key="ConceptMap-data-usages" name="Data Usage Mapping"/>
+<artifact id="OperationDefinition/cqm-data-requirements" key="OperationDefinition-cqm-data-requirements" name="DataRequirements"/>
 <artifact id="Device/software-system-example" key="Device-software-system-example" name="Device - Software System Example"/>
 <artifact id="Library/EXMAggregate" key="Library-EXMAggregate" name="EXM Aggregate"/>
 <artifact id="Library/EXMIA" key="Library-EXMIA" name="EXM Improvement Activities"/>
@@ -186,7 +187,7 @@
 <artifact id="Subscription/covid-reporting-changes" key="Subscription-covid-reporting-changes" name="Reporting Program Subscription listener"/>
 <artifact deprecated="true" id="Measure/measure-risk-adjustment-FHIR2" key="Measure-measure-risk-adjustment-FHIR2" name="Risk Adjustment FHIR DSTU2"/>
 <artifact deprecated="true" id="Library/risk-adjustment-FHIR2" key="Library-risk-adjustment-FHIR2" name="RiskAdjustment_FHIR2"/>
-<artifact id="Bundle/scoring-patients" key="Bundle-scoring-patients" name="Scoring Test Patients"/>
+<artifact id="Bundle/scoring-test-patients" key="Bundle-scoring-test-patients" name="Scoring Test Patients"/>
 <artifact id="SearchParameter/Library-contained-parameter-name" key="SearchParameter-Library-contained-parameter-name" name="Search Parameter - Library contained parameter name"/>
 <artifact id="SearchParameter/Library-expansion-identifier" key="SearchParameter-Library-expansion-identifier" name="Search Parameter - Library expansion identifier"/>
 <artifact id="SearchParameter/ValueSet-keyword" key="SearchParameter-ValueSet-keyword" name="Search Parameter - Valuset Keyword"/>

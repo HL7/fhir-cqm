@@ -6,5 +6,723 @@
   "title" : "Narrative Conformance Statements",
   "status" : "active",
   "experimental" : false,
-  "description" : "Conformance statements found throughout the narrative of the IG consolidated into this computable resource for traceability purposes"
+  "description" : "Conformance statements found throughout the narrative of the IG consolidated into this computable resource for traceability purposes",
+  "statement" : [{
+    "key" : "1",
+    "conformance" : ["SHALL"],
+    "requirement" : "deqm-01: Composite Measures **SHALL** conform to the CQMCompositeMeasure profile"
+  },
+  {
+    "key" : "2",
+    "conformance" : ["SHALL"],
+    "requirement" : "deqm-01: Composite Measures **SHALL** conform to the CQMCompositeMeasure profile"
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
+      "valueBoolean" : true
+    }],
+    "key" : "deqm-03",
+    "conformance" : ["SHALL",
+    "SHOULD-NOT",
+    "SHOULD",
+    "MAY"],
+    "requirement" : "The keywords **SHALL**, **SHALL NOT**, **SHOULD**, **SHOULD NOT**, **MAY**, and NEED NOT in this document are to be interpreted as defined in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt)."
+  },
+  {
+    "key" : "deqm-04",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL**: an absolute requirement for all implementations"
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
+      "valueBoolean" : true
+    }],
+    "key" : "deqm-05",
+    "requirement" : "**SHALL NOT**: an absolute prohibition against inclusion for all implementations"
+  },
+  {
+    "key" : "deqm-06",
+    "conformance" : ["SHOULD-NOT",
+    "SHOULD"],
+    "requirement" : "**SHOULD**/**SHOULD NOT**: a best practice or recommendation to be considered by implementers within the context of their particular implementation; there may be valid reasons to ignore an item, but the full implications must be understood and carefully weighed before choosing a different course"
+  },
+  {
+    "key" : "deqm-07",
+    "conformance" : ["MAY"],
+    "requirement" : "**MAY**/NEED NOT: truly optional; can be included or omitted as the implementer decides with no implications"
+  },
+  {
+    "key" : "deqm-08",
+    "conformance" : ["SHALL"],
+    "requirement" : "FHIR-based quality measures **SHALL** consist of a FHIR Measure resource conforming to at least the [CRMIShareableMeasure profile](http://hl7.org/fhir/uv/crmi/STU1/StructureDefinition-crmi-shareablemeasure.html)."
+  },
+  {
+    "key" : "deqm-09",
+    "conformance" : ["SHALL"],
+    "requirement" : "In addition, measures with a status of active **SHALL** conform to the [CRMIPublishableMeasure profile](http://hl7.org/fhir/uv/crmi/STU1/StructureDefinition-crmi-publishablemeasure.html) in particular."
+  },
+  {
+    "key" : "deqm-10",
+    "conformance" : ["SHALL"],
+    "requirement" : "FHIR-based measures **SHALL** contain a narrative containing a human-readable representation of the measure content."
+  },
+  {
+    "key" : "deqm-11",
+    "conformance" : ["SHOULD"],
+    "requirement" : "Note that for string-valued description elements, these elements are markdown valued in future versions so systems **SHOULD** be able to render markdown content when it appears in these elements:"
+  },
+  {
+    "key" : "deqm-12",
+    "conformance" : ["SHALL"],
+    "requirement" : "FHIR-based measures that make use of CQL **SHALL** use the [CQLLibrary](http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library) profile."
+  },
+  {
+    "key" : "deqm-13",
+    "conformance" : ["MAY"],
+    "requirement" : "FHIR-based measures that use CQL **MAY** reference other CQL libraries, but only the primary measure library is specified in the library element of the measure."
+  },
+  {
+    "key" : "deqm-14",
+    "conformance" : ["SHOULD"],
+    "requirement" : "To support implementations that cannot compile CQL, an ELM translation **SHOULD** be provided, in either XML or JSON format."
+  },
+  {
+    "key" : "deqm-15",
+    "conformance" : ["SHALL"],
+    "requirement" : "FHIR-based measures that make use of ELM **SHALL** use the [ELMLibrary](http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library) or [ELMJSONLibrary](http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library) profile."
+  },
+  {
+    "key" : "deqm-16",
+    "conformance" : ["SHALL"],
+    "requirement" : "When ELM translations are provided, they **SHALL** be semantically equivalent to the corresponding CQL library"
+  },
+  {
+    "key" : "deqm-17",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL** reference exactly one expression."
+  },
+  {
+    "key" : "deqm-18",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL** reference the same library."
+  },
+  {
+    "key" : "deqm-19",
+    "conformance" : ["SHALL"],
+    "requirement" : "For measures that use CQL, references to expressions **SHALL** use the `text/cql-identifier` media type defined in the [CQL specification](https://cql.hl7.org/07-physicalrepresentation.html#media-types-and-namespaces)."
+  },
+  {
+    "key" : "deqm-20",
+    "conformance" : ["SHOULD"],
+    "requirement" : "The name of an expression specifying a population criteria within a measure **SHOULD** always be the name of the criteria type††:"
+  },
+  {
+    "key" : "deqm-21",
+    "conformance" : ["SHALL"],
+    "requirement" : "The [`cqm-populationBasis`](StructureDefinition-cqm-populationBasis.html) extension **SHALL** be used to identify the result type of population criteria used in the measure, group, or population"
+  },
+  {
+    "key" : "deqm-22",
+    "conformance" : ["SHALL"],
+    "requirement" : "Expressions used in population criteria **SHALL** have a return type as specified by the populationBasis for the measure, group, or population."
+  },
+  {
+    "key" : "deqm-23",
+    "conformance" : ["SHALL",
+    "MAY"],
+    "requirement" : "If a DataRequirement is used to specify an allowed type for a population, the `type` **SHALL** be present and `profile`, and `codeFilter` elements **MAY** be present."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
+      "valueBoolean" : true
+    }],
+    "key" : "deqm-24",
+    "requirement" : "Other elements **SHALL NOT** be present."
+  },
+  {
+    "key" : "deqm-25",
+    "conformance" : ["SHALL"],
+    "requirement" : "If a DataRequirement is used to specify an allowed type for a population, instances **SHALL** be:"
+  },
+  {
+    "key" : "deqm-26",
+    "conformance" : ["SHALL"],
+    "requirement" : "Expressions used as measure population criteria **SHALL** be evaluated taking relevant dependencies into account, as specified by the membership determination formulas defined for each scoring type."
+  },
+  {
+    "key" : "deqm-27",
+    "conformance" : ["MAY"],
+    "requirement" : "Expressions **MAY** include explicit criteria that duplicate the implicit measure population dependencies."
+  },
+  {
+    "key" : "deqm-28",
+    "conformance" : ["SHALL"],
+    "requirement" : "Expressions **SHALL** use a FHIR resource type (e.g."
+  },
+  {
+    "key" : "deqm-29",
+    "conformance" : ["SHALL"],
+    "requirement" : "Patient) as the context, and **SHALL** be expressed within the context of a single subject record of that type."
+  },
+  {
+    "key" : "deqm-30",
+    "conformance" : ["SHALL"],
+    "requirement" : "Proportion measures **SHALL** conform to the [CQM Proportion Measure](StructureDefinition-cqm-proportionmeasure.html) profile."
+  },
+  {
+    "key" : "deqm-31",
+    "conformance" : ["SHALL"],
+    "requirement" : "Population criteria **SHALL** each reference a single expression as defined by [Conformance Requirement 3.8](measure-conformance.html#conformance-requirement-3-8)."
+  },
+  {
+    "key" : "deqm-32",
+    "conformance" : ["SHALL"],
+    "requirement" : "Expressions for subject-based measures **SHALL** return a Boolean to indicate whether a patient matches the population criteria (true) or not (false)."
+  },
+  {
+    "key" : "deqm-33",
+    "conformance" : ["SHALL"],
+    "requirement" : "Expressions for non-subject-based measures **SHALL** return a List of events of the same type, such as an Encounter or Procedure."
+  },
+  {
+    "key" : "deqm-34",
+    "conformance" : ["SHALL"],
+    "requirement" : "Ratio measures **SHALL** conform to the [CQM Ratio Measure](StructureDefinition-cqm-ratiomeasure.html) profile."
+  },
+  {
+    "key" : "deqm-35",
+    "conformance" : ["SHALL"],
+    "requirement" : "Population criteria **SHALL** each reference a single expression as defined by [Conformance Requirement 3.8](measure-conformance.html#conformance-requirement-3-8)."
+  },
+  {
+    "key" : "deqm-36",
+    "conformance" : ["SHALL"],
+    "requirement" : "measure-observation criteria **SHALL** reference expressions as defined by [Conformance Requirement 3.14](measure-conformance.html#conformance-requirement-3-14), with the exception that instead of a measure-population, the criteriaReference element **SHALL** reference a numerator or denominator criteria."
+  },
+  {
+    "key" : "deqm-37",
+    "conformance" : ["SHALL"],
+    "requirement" : "Expressions for subject-based criteria **SHALL** return a Boolean to indicate whether a patient matches the population criteria (true) or not (false)."
+  },
+  {
+    "key" : "deqm-38",
+    "conformance" : ["SHALL"],
+    "requirement" : "Expressions for non-subject-based criteria **SHALL** return a List of events of the same type, such as an Encounter or Procedure."
+  },
+  {
+    "key" : "deqm-39",
+    "conformance" : ["SHALL"],
+    "requirement" : "Population basis **SHALL** be consistent across denominator and numerator criteria:"
+  },
+  {
+    "key" : "deqm-40",
+    "conformance" : ["SHALL"],
+    "requirement" : "Population basis **SHALL** be specified on each initial-population criteria if it is different from the population basis for the group or measure."
+  },
+  {
+    "key" : "deqm-41",
+    "conformance" : ["SHALL"],
+    "requirement" : "Criteria reference **SHALL** be specified on denominator, denominator exclusion, numerator, numerator exclusion, and measure observation criteria if the input source is different for the denominator and numerator criteria sets."
+  },
+  {
+    "key" : "deqm-42",
+    "conformance" : ["SHALL"],
+    "requirement" : "Continuous variable measures **SHALL** conform to the [CQM Continuous Variable Measure](StructureDefinition-cqm-cvmeasure.html) profile."
+  },
+  {
+    "key" : "deqm-43",
+    "conformance" : ["SHALL"],
+    "requirement" : "Population criteria **SHALL** each reference a single expression as defined by [Conformance Requirement 3.8](measure-conformance.html#conformance-requirement-3-8)."
+  },
+  {
+    "key" : "deqm-44",
+    "conformance" : ["SHALL"],
+    "requirement" : "The aggregateMethod extension **SHALL** be used on the measureObservation criteria to indicate the aggregate method for the observations."
+  },
+  {
+    "key" : "deqm-45",
+    "conformance" : ["SHALL"],
+    "requirement" : "Expressions referenced from measure-observation criteria elements **SHALL** be consistent with the context used for the population criteria of the measure."
+  },
+  {
+    "key" : "deqm-46",
+    "conformance" : ["SHALL"],
+    "requirement" : "The population element of a measure-observation criteria **SHALL** contain a criteriaReference extension that refers to the population criteria within the same population group that is the target population criteria for the measure-observation"
+  },
+  {
+    "key" : "deqm-47",
+    "conformance" : ["SHALL"],
+    "requirement" : "Functions referenced from a measure-observation criteria **SHALL**:"
+  },
+  {
+    "key" : "deqm-48",
+    "conformance" : ["SHALL"],
+    "requirement" : "Cohort Measures **SHALL** conform to the [CQMCohortMeasure](StructureDefinition-cqm-cohortmeasure.html) profile"
+  },
+  {
+    "key" : "deqm-49",
+    "conformance" : ["SHOULD"],
+    "requirement" : "When specifying multiple populations and/or multiple population groups the following naming scheme **SHOULD** be used"
+  },
+  {
+    "key" : "deqm-50",
+    "conformance" : ["SHALL"],
+    "requirement" : "Stratifier criteria **SHALL** be either criteria-based or value-based."
+  },
+  {
+    "key" : "deqm-51",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL** be on the root."
+  },
+  {
+    "key" : "deqm-52",
+    "conformance" : ["SHALL"],
+    "requirement" : "Results **SHALL** be in the same type as the basis of the measure."
+  },
+  {
+    "key" : "deqm-53",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL** be on the component."
+  },
+  {
+    "key" : "deqm-54",
+    "conformance" : ["MAY"],
+    "requirement" : "Results in a type that **MAY** be different than the basis of the measure."
+  },
+  {
+    "key" : "deqm-55",
+    "conformance" : ["SHOULD"],
+    "requirement" : "Stratification descriptions **SHOULD** be in markdown (see [Conformance statement 3.1](measure-conformance.html#conformance-requirement-3-1) item 4 for more information)"
+  },
+  {
+    "key" : "deqm-56",
+    "conformance" : ["SHALL"],
+    "requirement" : "Supplemental Data Elements **SHALL** be included within the supplementalData element using a usage element of supplemental-data."
+  },
+  {
+    "key" : "deqm-57",
+    "conformance" : ["SHOULD"],
+    "requirement" : "Supplemental Data Elements **SHOULD** reference a single expression definition, with a name beginning with SDE."
+  },
+  {
+    "key" : "deqm-58",
+    "conformance" : ["MAY"],
+    "requirement" : "Supplemental data element criteria expressions **MAY** be of any type, including lists"
+  },
+  {
+    "key" : "deqm-59",
+    "conformance" : ["SHOULD"],
+    "requirement" : "Supplemental data elements descriptions **SHOULD** be in markdown (see [Conformance statement 3.1](measure-conformance.html#conformance-requirement-3-1) item 4 for more information)"
+  },
+  {
+    "key" : "deqm-60",
+    "conformance" : ["SHALL"],
+    "requirement" : "Risk Adjustment Data **SHALL** be included within the supplementalData element using a usage element of risk-adjustment-factor"
+  },
+  {
+    "key" : "deqm-61",
+    "conformance" : ["SHOULD"],
+    "requirement" : "Risk Adjustment Data **SHOULD** reference a single CQL expression definition, with a name beginning with RAF"
+  },
+  {
+    "key" : "deqm-62",
+    "conformance" : ["SHALL"],
+    "requirement" : "This flag is used to indicate that the element plays a critical role in defining and sharing quality measures, and implementations **SHALL** understand and process the element."
+  },
+  {
+    "key" : "deqm-63",
+    "conformance" : ["SHALL"],
+    "requirement" : "For resource instances claiming to conform to Quality Measure IG profiles, Must Support on any profile data element **SHALL** be interpreted as follows:"
+  },
+  {
+    "key" : "deqm-64",
+    "conformance" : ["SHALL"],
+    "requirement" : "Authoring systems and knowledge repositories **SHALL** be capable of populating all Must Support data elements."
+  },
+  {
+    "key" : "deqm-65",
+    "conformance" : ["SHALL"],
+    "requirement" : "Evaluating systems **SHALL** be capable of processing resource instances containing Must Support data elements without generating an error or causing the evaluation to fail."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
+      "valueBoolean" : true
+    }],
+    "key" : "deqm-66",
+    "requirement" : "In situations where information on a particular data element is not present and the reason for absence is unknown, authoring and repository systems **SHALL NOT** include the data elements in the resource instance."
+  },
+  {
+    "key" : "deqm-67",
+    "conformance" : ["SHALL"],
+    "requirement" : "When consuming resource instances, evaluating systems **SHALL** interpret missing data elements within resource instances as data not present for the artifact."
+  },
+  {
+    "key" : "deqm-68",
+    "conformance" : ["SHALL"],
+    "requirement" : "Submitting and receiving systems using quality measure artifacts to perform data exchange or artifact evaluation operations **SHALL** respect the must support requirements of the profiles used by the artifact to describe the data involved in the operation."
+  },
+  {
+    "key" : "deqm-69",
+    "conformance" : ["SHOULD"],
+    "requirement" : "As a best practice, measure and library versions **SHOULD** follow semantic versioning."
+  },
+  {
+    "key" : "deqm-70",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL** Represent basic Library information, as specified by the [CRMIShareableLibrary](http://hl7.org/fhir/uv/crmi/STU1/StructureDefinition-crmi-shareablelibrary.html) profile, which includes URL, identifier, version, name, title, type, status, experimental, date, publisher, contact, description, useContext, and jurisdiction."
+  },
+  {
+    "key" : "deqm-71",
+    "conformance" : ["SHALL"],
+    "requirement" : "For computable libraries, **SHALL** represent computable Library information, as specified by the [CRMIComputableLibrary](http://hl7.org/fhir/uv/crmi/STU1/StructureDefinition-crmi-computablelibrary.html) profile."
+  },
+  {
+    "key" : "deqm-72",
+    "conformance" : ["SHALL"],
+    "requirement" : "For executable libraries, **SHALL** represent executable Library information, as specified by the [ELMLibrary](http://hl7.org/fhir/uv/cql/STU2/StructureDefinition-elm-json-library.html) profile."
+  },
+  {
+    "key" : "deqm-73",
+    "conformance" : ["SHALL"],
+    "requirement" : "For published libraries, **SHALL** represent publishable Library information, as specified by the [CRMIPublishableLibrary](http://hl7.org/fhir/uv/crmi/STU1/StructureDefinition-crmi-publishablelibrary.html) profile."
+  },
+  {
+    "key" : "deqm-74",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL** Represent basic Measure information, as specified by the [CRMIShareableMeasure](http://hl7.org/fhir/uv/crmi/STU1/StructureDefinition-crmi-shareablemeasure.html) profile, which includes URL, identifier, version, name, title, type, status, experimental, date, publisher, contact, description, useContext, and jurisdiction."
+  },
+  {
+    "key" : "deqm-75",
+    "conformance" : ["SHALL"],
+    "requirement" : "For computable measures, **SHALL** represent computable Measure information, as specified by the [CQMComputableMeasure](StructureDefinition-cqm-computablemeasure.html) profile."
+  },
+  {
+    "key" : "deqm-76",
+    "conformance" : ["SHALL"],
+    "requirement" : "For published measures, **SHALL** represent publishable Measure information, as specified by the [CQMPublishableMeasure](StructureDefinition-cqm-publishablemeasure.html) profile."
+  },
+  {
+    "key" : "deqm-77",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL** support library packaging: [Library/$package](http://hl7.org/fhir/uv/crmi/STU1/OperationDefinition-crmi-package.html) operation"
+  },
+  {
+    "key" : "deqm-78",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL** support library requirements analysis: [Library/$data-requirements](OperationDefinition-cqm-data-requirements.html) operation"
+  },
+  {
+    "key" : "deqm-79",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL** support measure packaging: [Measure/$package](http://hl7.org/fhir/uv/crmi/STU1/OperationDefinition-crmi-package.html) operation"
+  },
+  {
+    "key" : "deqm-80",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL** support measure requirements analysis: [Measure/$data-requirements](OperationDefinition-cqm-data-requirements.html) operation"
+  },
+  {
+    "key" : "deqm-81",
+    "conformance" : ["SHOULD"],
+    "requirement" : "**SHOULD** support measure search using additional publishable metadata"
+  },
+  {
+    "key" : "deqm-82",
+    "conformance" : ["SHOULD"],
+    "requirement" : "**SHOULD** support library search using additional publishable metadata"
+  },
+  {
+    "key" : "deqm-83",
+    "conformance" : ["SHOULD"],
+    "requirement" : "**SHOULD** support minimum measure write capability (Publish, Retire, Archive)"
+  },
+  {
+    "key" : "deqm-84",
+    "conformance" : ["SHOULD"],
+    "requirement" : "**SHOULD** support minimum library write capability (Publish, Retire, Archive)"
+  },
+  {
+    "key" : "deqm-85",
+    "conformance" : ["MAY"],
+    "requirement" : "**MAY** support representation of test cases using the [CQMTestCase](StructureDefinition-cqm-testcase.html) profile."
+  },
+  {
+    "key" : "deqm-86",
+    "conformance" : ["MAY"],
+    "requirement" : "**MAY** support retrieval of test cases by server-specific id through the MeasureReport/read interaction"
+  },
+  {
+    "key" : "deqm-87",
+    "conformance" : ["MAY"],
+    "requirement" : "**MAY** support searching of test cases by the measure search parameter"
+  },
+  {
+    "key" : "deqm-88",
+    "conformance" : ["MAY"],
+    "requirement" : "**MAY** support including test cases in measure packages."
+  },
+  {
+    "key" : "deqm-89",
+    "conformance" : ["MAY"],
+    "requirement" : "**MAY** support test case packaging: [MeasureReport/$package](OperationDefinition-cqm-package.html) operation"
+  },
+  {
+    "key" : "deqm-90",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL** support **Submit**: Post a new library in draft status"
+  },
+  {
+    "key" : "deqm-91",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL** support **Revise**: Update an existing library in draft status"
+  },
+  {
+    "key" : "deqm-92",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL** support **Draft**: Draft a new version of an existing library in active status"
+  },
+  {
+    "key" : "deqm-93",
+    "conformance" : ["SHALL"],
+    "requirement" : "**SHALL** support **Release**: Update an existing draft library to active"
+  },
+  {
+    "key" : "deqm-94",
+    "conformance" : ["SHOULD"],
+    "requirement" : "**SHOULD** support **Clone**: Clone a new library based on the contents of an existing library(regardless of status)"
+  },
+  {
+    "key" : "deqm-95",
+    "conformance" : ["SHOULD"],
+    "requirement" : "**SHOULD** support **Withdraw**: Delete a draft library"
+  },
+  {
+    "key" : "deqm-96",
+    "conformance" : ["SHOULD"],
+    "requirement" : "**SHOULD** support **Review**: Review and provide comments on an existing library (regardless of status)"
+  },
+  {
+    "key" : "deqm-97",
+    "conformance" : ["SHOULD"],
+    "requirement" : "**SHOULD** support **Approve**: Approve and provide comments on an existing library (regardless of status)"
+  },
+  {
+    "key" : "deqm-98",
+    "conformance" : ["SHALL"],
+    "requirement" : "The first entry in a Library bundle **SHALL** be a Library resource conforming"
+  },
+  {
+    "key" : "deqm-99",
+    "conformance" : ["MAY"],
+    "requirement" : "Library bundles **MAY** include any libraries referenced by the primary library"
+  },
+  {
+    "key" : "deqm-100",
+    "conformance" : ["MAY"],
+    "requirement" : "Library bundles **MAY** include any code systems and value sets referenced by the primary library or any required libraries."
+  },
+  {
+    "key" : "deqm-101",
+    "conformance" : ["SHOULD"],
+    "requirement" : "If the target environment supports the use of CQL directly, Library resources **SHOULD** conform to the [CQLLibrary](http://hl7.org/fhir/uv/cql/STU2/StructureDefinition-cql-library.html) profile."
+  },
+  {
+    "key" : "deqm-102",
+    "conformance" : ["SHOULD"],
+    "requirement" : "If the target environment supports the use of ELM directly, Library resources **SHOULD** conform to one (or both) of the [ELMXMLLibrary](http://hl7.org/fhir/uv/cql/STU2/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary](http://hl7.org/fhir/uv/cql/STU2/StructureDefinition-elm-json-library.html) profiles."
+  },
+  {
+    "key" : "deqm-103",
+    "conformance" : ["SHALL"],
+    "requirement" : "The first entry in a Measure bundle **SHALL** be a Measure resource"
+  },
+  {
+    "key" : "deqm-104",
+    "conformance" : ["SHALL"],
+    "requirement" : "The second entry in a Measure bundle **SHALL** be the primary Library resource for the measure"
+  },
+  {
+    "key" : "deqm-105",
+    "conformance" : ["MAY"],
+    "requirement" : "Measure bundles **MAY** include any libraries referenced by the primary library"
+  },
+  {
+    "key" : "deqm-106",
+    "conformance" : ["MAY"],
+    "requirement" : "Measure bundles **MAY** include any code systems and value sets referenced by the primary library or any required libraries."
+  },
+  {
+    "key" : "deqm-107",
+    "conformance" : ["MAY"],
+    "requirement" : "Measure bundles **MAY** include any test case bundles defined for the measure"
+  },
+  {
+    "key" : "deqm-108",
+    "conformance" : ["SHALL"],
+    "requirement" : "The Measure resource **SHALL** conform to the [CQMComputableMeasure](StructureDefinition-cqm-computablemeasure.html) profile."
+  },
+  {
+    "key" : "deqm-109",
+    "conformance" : ["SHALL"],
+    "requirement" : "The Library resource(s) **SHALL** conform to the [CRMIComputableLibrary](http://hl7.org/fhir/uv/crmi/STU1/StructureDefinition-crmi-computablelibrary.html) profile."
+  },
+  {
+    "key" : "deqm-110",
+    "conformance" : ["SHALL"],
+    "requirement" : "The Measure resource **SHALL** conform to the [CQLMeasure](StructureDefinition-cqm-cqlmeasure.html) profile."
+  },
+  {
+    "key" : "deqm-111",
+    "conformance" : ["SHALL"],
+    "requirement" : "The Library resource(s) **SHALL** conform to the [CQLLibrary](http://hl7.org/fhir/uv/cql/STU2/StructureDefinition-cql-library.html)"
+  },
+  {
+    "key" : "deqm-112",
+    "conformance" : ["SHALL"],
+    "requirement" : "The Measure resource **SHALL** conform to the [CQMExecutableMeasure](StructureDefinition-cqm-executablemeasure.html) profile."
+  },
+  {
+    "key" : "deqm-113",
+    "conformance" : ["SHALL"],
+    "requirement" : "The Library resource(s) **SHALL** conform to the [CRMIExecutableLibrary](http://hl7.org/fhir/uv/crmi/STU1/StructureDefinition-crmi-executablelibrary.html) profile."
+  },
+  {
+    "key" : "deqm-114",
+    "conformance" : ["SHALL"],
+    "requirement" : "The Measure resource **SHALL** conform to the [ELMMeasure](StructureDefinition-cqm-elmmeasure.html) profile."
+  },
+  {
+    "key" : "deqm-115",
+    "conformance" : ["SHALL"],
+    "requirement" : "The Library resource(s) **SHALL** conform to one (or both) of the [ELMXMLLibrary](http://hl7.org/fhir/uv/cql/STU2/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary](http://hl7.org/fhir/uv/cql/STU2/StructureDefinition-elm-json-library.html) profiles."
+  },
+  {
+    "key" : "deqm-116",
+    "conformance" : ["SHALL"],
+    "requirement" : "The first entry in a TestCase bundle **SHALL** be a MeasureReport resource representing the expected outcome of evaluating the measure, given the test data provided as part of the test case"
+  },
+  {
+    "key" : "deqm-117",
+    "conformance" : ["SHALL"],
+    "requirement" : "TestCase bundles **SHALL** include any resource data required to evaluate the test case"
+  },
+  {
+    "key" : "deqm-118",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL used by a Measure **SHALL** be contained in a CQL library"
+  },
+  {
+    "key" : "deqm-119",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.1 (Library Declaration)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-1)"
+  },
+  {
+    "key" : "deqm-120",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** include a version as part of the library declaration"
+  },
+  {
+    "key" : "deqm-121",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.2 (Library Versioning)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-2)"
+  },
+  {
+    "key" : "deqm-122",
+    "conformance" : ["SHALL"],
+    "requirement" : "In addition, CQL libraries used by Measures **SHALL** follow the convention :"
+  },
+  {
+    "key" : "deqm-123",
+    "conformance" : ["MAY"],
+    "requirement" : "For measures in **draft** status, a version label **MAY** be included"
+  },
+  {
+    "key" : "deqm-124",
+    "conformance" : ["SHALL"],
+    "requirement" : "If a version label is included, it **SHALL** follow the convention:"
+  },
+  {
+    "key" : "deqm-125",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by measures **SHALL** conform to [UCWF:2.3 (Nested Libraries)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-3)"
+  },
+  {
+    "key" : "deqm-126",
+    "conformance" : ["SHALL"],
+    "requirement" : "In addition, CQL libraries used by measures **SHALL** be structured such that all CQL expressions referenced by the Measure are contained within a single library."
+  },
+  {
+    "key" : "deqm-127",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.4 (Library Namespaces)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-4)"
+  },
+  {
+    "key" : "deqm-128",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.5 (Data Models)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-5)"
+  },
+  {
+    "key" : "deqm-129",
+    "conformance" : ["SHALL"],
+    "requirement" : "All libraries and CQL expressions used directly or indirectly within a measure **SHALL** use FHIR based data models."
+  },
+  {
+    "key" : "deqm-130",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.6 (Code System Specification)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-6)"
+  },
+  {
+    "key" : "deqm-131",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.7 (Value Set Specification)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-7)"
+  },
+  {
+    "key" : "deqm-132",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.8 (Value Set Specification Including Version)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-8)"
+  },
+  {
+    "key" : "deqm-133",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.9 (Value Set Expansion)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-9)"
+  },
+  {
+    "key" : "deqm-134",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.10 (String-based Membership Testing)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-10)"
+  },
+  {
+    "key" : "deqm-135",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.11 (Direct-reference Codes)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-11)"
+  },
+  {
+    "key" : "deqm-136",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.12 (Concepts)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-12)"
+  },
+  {
+    "key" : "deqm-137",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.13 (Library-level Identifiers)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-13)"
+  },
+  {
+    "key" : "deqm-138",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.14 (Data Type Names)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-14)"
+  },
+  {
+    "key" : "deqm-139",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.15 (Element Names)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-15)"
+  },
+  {
+    "key" : "deqm-140",
+    "conformance" : ["SHALL"],
+    "requirement" : "CQL libraries used by Measures **SHALL** conform to [UCWF:2.16 (Aliases and Argument Names)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-16)"
+  }]
 }

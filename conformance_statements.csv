@@ -1,0 +1,141 @@
+reference,statement,sourcefile,line,location
+§deqm-01,Composite Measures SHALL conform to the CQMCompositeMeasure profile,input/pages/composite-measures.md,10,Markdown narrative
+§deqm-02,Composite Measures SHALL specify a composite measure scoring method,input/pages/composite-measures.md,11,Markdown narrative
+§deqm-03,"The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT, MAY, and NEED NOT in this document are to be interpreted as defined in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).",input/pages/introduction.md,42,Markdown narrative
+§deqm-04,* SHALL: an absolute requirement for all implementations,input/pages/introduction.md,44,Markdown narrative
+§deqm-05,* SHALL NOT: an absolute prohibition against inclusion for all implementations,input/pages/introduction.md,45,Markdown narrative
+§deqm-06,"* SHOULD/SHOULD NOT: a best practice or recommendation to be considered by implementers within the context of their particular implementation; there may be valid reasons to ignore an item, but the full implications must be understood and carefully weighed before choosing a different course",input/pages/introduction.md,46,Markdown narrative
+§deqm-07,* MAY/NEED NOT: truly optional; can be included or omitted as the implementer decides with no implications,input/pages/introduction.md,47,Markdown narrative
+§deqm-08,FHIR-based quality measures SHALL consist of a FHIR Measure resource conforming to at least the [CRMIShareableMeasure profile]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablemeasure.html).,input/pages/measure-conformance.md,60,Markdown narrative
+§deqm-09,"In addition, measures with a status of active SHALL conform to the [CRMIPublishableMeasure profile]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-publishablemeasure.html) in particular.",input/pages/measure-conformance.md,61,Markdown narrative
+§deqm-10,FHIR-based measures SHALL contain a narrative containing a human-readable representation of the measure content.,input/pages/measure-conformance.md,62,Markdown narrative
+§deqm-11,"Note that for string-valued description elements, these elements are markdown valued in future versions so systems SHOULD be able to render markdown content when it appears in these elements:",input/pages/measure-conformance.md,66,Markdown narrative
+§deqm-12,FHIR-based measures that make use of CQL SHALL use the [CQLLibrary](http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library) profile.,input/pages/measure-conformance.md,107,Markdown narrative
+§deqm-13,"FHIR-based measures that use CQL MAY reference other CQL libraries, but only the primary measure library is specified in the library element of the measure.",input/pages/measure-conformance.md,108,Markdown narrative
+§deqm-14,"To support implementations that cannot compile CQL, an ELM translation SHOULD be provided, in either XML or JSON format.",input/pages/measure-conformance.md,212,Markdown narrative
+§deqm-15,FHIR-based measures that make use of ELM SHALL use the [ELMLibrary](http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library) or [ELMJSONLibrary](http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library) profile.,input/pages/measure-conformance.md,213,Markdown narrative
+§deqm-16,"When ELM translations are provided, they SHALL be semantically equivalent to the corresponding CQL library",input/pages/measure-conformance.md,214,Markdown narrative
+§deqm-17,SHALL reference exactly one expression.,input/pages/measure-conformance.md,580,Markdown narrative
+§deqm-18,SHALL reference the same library.,input/pages/measure-conformance.md,581,Markdown narrative
+§deqm-19,"For measures that use CQL, references to expressions SHALL use the `text/cql-identifier` media type defined in the [CQL specification](https://cql.hl7.org/07-physicalrepresentation.html#media-types-and-namespaces).",input/pages/measure-conformance.md,582,Markdown narrative
+§deqm-20,The name of an expression specifying a population criteria within a measure SHOULD always be the name of the criteria type††:,input/pages/measure-conformance.md,593,Markdown narrative
+§deqm-21,"The [`cqm-populationBasis`](StructureDefinition-cqm-populationBasis.html) extension SHALL be used to identify the result type of population criteria used in the measure, group, or population",input/pages/measure-conformance.md,639,Markdown narrative
+§deqm-22,"Expressions used in population criteria SHALL have a return type as specified by the populationBasis for the measure, group, or population.",input/pages/measure-conformance.md,640,Markdown narrative
+§deqm-23,"If a DataRequirement is used to specify an allowed type for a population, the `type` SHALL be present and `profile`, and `codeFilter` elements MAY be present.",input/pages/measure-conformance.md,643,Markdown narrative
+§deqm-24,Other elements SHALL NOT be present.,input/pages/measure-conformance.md,643,Markdown narrative
+§deqm-25,"If a DataRequirement is used to specify an allowed type for a population, instances SHALL be:",input/pages/measure-conformance.md,644,Markdown narrative
+§deqm-26,"Expressions used as measure population criteria SHALL be evaluated taking relevant dependencies into account, as specified by the membership determination formulas defined for each scoring type.",input/pages/measure-conformance.md,724,Markdown narrative
+§deqm-27,Expressions MAY include explicit criteria that duplicate the implicit measure population dependencies.,input/pages/measure-conformance.md,725,Markdown narrative
+§deqm-28,Expressions SHALL use a FHIR resource type (e.g.,input/pages/measure-conformance.md,726,Markdown narrative
+§deqm-29,"Patient) as the context, and SHALL be expressed within the context of a single subject record of that type.",input/pages/measure-conformance.md,726,Markdown narrative
+§deqm-30,Proportion measures SHALL conform to the [CQM Proportion Measure](StructureDefinition-cqm-proportionmeasure.html) profile.,input/pages/measure-conformance.md,796,Markdown narrative
+§deqm-31,Population criteria SHALL each reference a single expression as defined by [Conformance Requirement 3.8](#conformance-requirement-3-8).,input/pages/measure-conformance.md,797,Markdown narrative
+§deqm-32,Expressions for subject-based measures SHALL return a Boolean to indicate whether a patient matches the population criteria (true) or not (false).,input/pages/measure-conformance.md,798,Markdown narrative
+§deqm-33,"Expressions for non-subject-based measures SHALL return a List of events of the same type, such as an Encounter or Procedure.",input/pages/measure-conformance.md,799,Markdown narrative
+§deqm-34,Ratio measures SHALL conform to the [CQM Ratio Measure](StructureDefinition-cqm-ratiomeasure.html) profile.,input/pages/measure-conformance.md,929,Markdown narrative
+§deqm-35,Population criteria SHALL each reference a single expression as defined by [Conformance Requirement 3.8](#conformance-requirement-3-8).,input/pages/measure-conformance.md,930,Markdown narrative
+§deqm-36,"measure-observation criteria SHALL reference expressions as defined by [Conformance Requirement 3.14](#conformance-requirement-3-14), with the exception that instead of a measure-population, the criteriaReference element SHALL reference a numerator or denominator criteria.",input/pages/measure-conformance.md,931,Markdown narrative
+§deqm-37,Expressions for subject-based criteria SHALL return a Boolean to indicate whether a patient matches the population criteria (true) or not (false).,input/pages/measure-conformance.md,932,Markdown narrative
+§deqm-38,"Expressions for non-subject-based criteria SHALL return a List of events of the same type, such as an Encounter or Procedure.",input/pages/measure-conformance.md,933,Markdown narrative
+§deqm-39,Population basis SHALL be consistent across denominator and numerator criteria:,input/pages/measure-conformance.md,934,Markdown narrative
+§deqm-40,Population basis SHALL be specified on each initial-population criteria if it is different from the population basis for the group or measure.,input/pages/measure-conformance.md,935,Markdown narrative
+§deqm-41,"Criteria reference SHALL be specified on denominator, denominator exclusion, numerator, numerator exclusion, and measure observation criteria if the input source is different for the denominator and numerator criteria sets.",input/pages/measure-conformance.md,936,Markdown narrative
+§deqm-42,Continuous variable measures SHALL conform to the [CQM Continuous Variable Measure](StructureDefinition-cqm-cvmeasure.html) profile.,input/pages/measure-conformance.md,1169,Markdown narrative
+§deqm-43,Population criteria SHALL each reference a single expression as defined by [Conformance Requirement 3.8](#conformance-requirement-3-8).,input/pages/measure-conformance.md,1170,Markdown narrative
+§deqm-44,The aggregateMethod extension SHALL be used on the measureObservation criteria to indicate the aggregate method for the observations.,input/pages/measure-conformance.md,1171,Markdown narrative
+§deqm-45,Expressions referenced from measure-observation criteria elements SHALL be consistent with the context used for the population criteria of the measure.,input/pages/measure-conformance.md,1171,Markdown narrative
+§deqm-46,The population element of a measure-observation criteria SHALL contain a criteriaReference extension that refers to the population criteria within the same population group that is the target population criteria for the measure-observation,input/pages/measure-conformance.md,1172,Markdown narrative
+§deqm-47,Functions referenced from a measure-observation criteria SHALL:,input/pages/measure-conformance.md,1173,Markdown narrative
+§deqm-48,Cohort Measures SHALL conform to the [CQMCohortMeasure](StructureDefinition-cqm-cohortmeasure.html) profile,input/pages/measure-conformance.md,1274,Markdown narrative
+§deqm-49,When specifying multiple populations and/or multiple population groups the following naming scheme SHOULD be used,input/pages/measure-conformance.md,1334,Markdown narrative
+§deqm-50,Stratifier criteria SHALL be either criteria-based or value-based.,input/pages/measure-conformance.md,1350,Markdown narrative
+§deqm-51,SHALL be on the root.,input/pages/measure-conformance.md,1352,Markdown narrative
+§deqm-52,Results SHALL be in the same type as the basis of the measure.,input/pages/measure-conformance.md,1353,Markdown narrative
+§deqm-53,SHALL be on the component.,input/pages/measure-conformance.md,1355,Markdown narrative
+§deqm-54,Results in a type that MAY be different than the basis of the measure.,input/pages/measure-conformance.md,1356,Markdown narrative
+§deqm-55,Stratification descriptions SHOULD be in markdown (see [Conformance statement 3.1](#conformance-requirement-3-1) item 4 for more information),input/pages/measure-conformance.md,1357,Markdown narrative
+§deqm-56,Supplemental Data Elements SHALL be included within the supplementalData element using a usage element of supplemental-data.,input/pages/measure-conformance.md,1398,Markdown narrative
+§deqm-57,"Supplemental Data Elements SHOULD reference a single expression definition, with a name beginning with SDE.",input/pages/measure-conformance.md,1399,Markdown narrative
+§deqm-58,"Supplemental data element criteria expressions MAY be of any type, including lists",input/pages/measure-conformance.md,1400,Markdown narrative
+§deqm-59,Supplemental data elements descriptions SHOULD be in markdown (see [Conformance statement 3.1](#conformance-requirement-3-1) item 4 for more information),input/pages/measure-conformance.md,1401,Markdown narrative
+§deqm-60,Risk Adjustment Data SHALL be included within the supplementalData element using a usage element of risk-adjustment-factor,input/pages/measure-conformance.md,1454,Markdown narrative
+§deqm-61,"Risk Adjustment Data SHOULD reference a single CQL expression definition, with a name beginning with RAF",input/pages/measure-conformance.md,1455,Markdown narrative
+§deqm-62,"This flag is used to indicate that the element plays a critical role in defining and sharing quality measures, and implementations SHALL understand and process the element.",input/pages/measure-conformance.md,1573,Markdown narrative
+§deqm-63,"For resource instances claiming to conform to Quality Measure IG profiles, Must Support on any profile data element SHALL be interpreted as follows:",input/pages/measure-conformance.md,1581,Markdown narrative
+§deqm-64,Authoring systems and knowledge repositories SHALL be capable of populating all Must Support data elements.,input/pages/measure-conformance.md,1583,Markdown narrative
+§deqm-65,Evaluating systems SHALL be capable of processing resource instances containing Must Support data elements without generating an error or causing the evaluation to fail.,input/pages/measure-conformance.md,1584,Markdown narrative
+§deqm-66,"In situations where information on a particular data element is not present and the reason for absence is unknown, authoring and repository systems SHALL NOT include the data elements in the resource instance.",input/pages/measure-conformance.md,1585,Markdown narrative
+§deqm-67,"When consuming resource instances, evaluating systems SHALL interpret missing data elements within resource instances as data not present for the artifact.",input/pages/measure-conformance.md,1587,Markdown narrative
+§deqm-68,Submitting and receiving systems using quality measure artifacts to perform data exchange or artifact evaluation operations SHALL respect the must support requirements of the profiles used by the artifact to describe the data involved in the operation.,input/pages/measure-conformance.md,1588,Markdown narrative
+§deqm-69,"As a best practice, measure and library versions SHOULD follow semantic versioning.",input/pages/measure-repository-service.md,24,Markdown narrative
+§deqm-70,"SHALL Represent basic Library information, as specified by the [CRMIShareableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablelibrary.html) profile, which includes URL, identifier, version, name, title, type, status, experimental, date, publisher, contact, description, useContext, and jurisdiction.",input/pages/measure-repository-service.md,35,Markdown narrative
+§deqm-71,"For computable libraries, SHALL represent computable Library information, as specified by the [CRMIComputableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-computablelibrary.html) profile.",input/pages/measure-repository-service.md,36,Markdown narrative
+§deqm-72,"For executable libraries, SHALL represent executable Library information, as specified by the [ELMLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profile.",input/pages/measure-repository-service.md,37,Markdown narrative
+§deqm-73,"For published libraries, SHALL represent publishable Library information, as specified by the [CRMIPublishableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-publishablelibrary.html) profile.",input/pages/measure-repository-service.md,38,Markdown narrative
+§deqm-74,"SHALL Represent basic Measure information, as specified by the [CRMIShareableMeasure]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablemeasure.html) profile, which includes URL, identifier, version, name, title, type, status, experimental, date, publisher, contact, description, useContext, and jurisdiction.",input/pages/measure-repository-service.md,39,Markdown narrative
+§deqm-75,"For computable measures, SHALL represent computable Measure information, as specified by the [CQMComputableMeasure](StructureDefinition-cqm-computablemeasure.html) profile.",input/pages/measure-repository-service.md,40,Markdown narrative
+§deqm-76,"For published measures, SHALL represent publishable Measure information, as specified by the [CQMPublishableMeasure](StructureDefinition-cqm-publishablemeasure.html) profile.",input/pages/measure-repository-service.md,41,Markdown narrative
+§deqm-77,SHALL support library packaging: [Library/$package]({{site.data.fhir.ver.crmi}}/OperationDefinition-crmi-package.html) operation,input/pages/measure-repository-service.md,51,Markdown narrative
+§deqm-78,SHALL support library requirements analysis: [Library/$data-requirements](OperationDefinition-cqm-data-requirements.html) operation,input/pages/measure-repository-service.md,52,Markdown narrative
+§deqm-79,SHALL support measure packaging: [Measure/$package]({{site.data.fhir.ver.crmi}}/OperationDefinition-crmi-package.html) operation,input/pages/measure-repository-service.md,53,Markdown narrative
+§deqm-80,SHALL support measure requirements analysis: [Measure/$data-requirements](OperationDefinition-cqm-data-requirements.html) operation,input/pages/measure-repository-service.md,54,Markdown narrative
+§deqm-81,SHOULD support measure search using additional publishable metadata,input/pages/measure-repository-service.md,55,Markdown narrative
+§deqm-82,SHOULD support library search using additional publishable metadata,input/pages/measure-repository-service.md,56,Markdown narrative
+§deqm-83,"SHOULD support minimum measure write capability (Publish, Retire, Archive)",input/pages/measure-repository-service.md,57,Markdown narrative
+§deqm-84,"SHOULD support minimum library write capability (Publish, Retire, Archive)",input/pages/measure-repository-service.md,58,Markdown narrative
+§deqm-85,MAY support representation of test cases using the [CQMTestCase](StructureDefinition-cqm-testcase.html) profile.,input/pages/measure-repository-service.md,66,Markdown narrative
+§deqm-86,MAY support retrieval of test cases by server-specific id through the MeasureReport/read interaction,input/pages/measure-repository-service.md,67,Markdown narrative
+§deqm-87,MAY support searching of test cases by the measure search parameter,input/pages/measure-repository-service.md,68,Markdown narrative
+§deqm-88,MAY support including test cases in measure packages.,input/pages/measure-repository-service.md,69,Markdown narrative
+§deqm-89,MAY support test case packaging: [MeasureReport/$package](OperationDefinition-cqm-package.html) operation,input/pages/measure-repository-service.md,70,Markdown narrative
+§deqm-90,SHALL support **Submit**: Post a new library in draft status,input/pages/measure-repository-service.md,78,Markdown narrative
+§deqm-91,SHALL support **Revise**: Update an existing library in draft status,input/pages/measure-repository-service.md,79,Markdown narrative
+§deqm-92,SHALL support **Draft**: Draft a new version of an existing library in active status,input/pages/measure-repository-service.md,80,Markdown narrative
+§deqm-93,SHALL support **Release**: Update an existing draft library to active,input/pages/measure-repository-service.md,81,Markdown narrative
+§deqm-94,SHOULD support **Clone**: Clone a new library based on the contents of an existing library(regardless of status),input/pages/measure-repository-service.md,82,Markdown narrative
+§deqm-95,SHOULD support **Withdraw**: Delete a draft library,input/pages/measure-repository-service.md,83,Markdown narrative
+§deqm-96,SHOULD support **Review**: Review and provide comments on an existing library (regardless of status),input/pages/measure-repository-service.md,84,Markdown narrative
+§deqm-97,SHOULD support **Approve**: Approve and provide comments on an existing library (regardless of status),input/pages/measure-repository-service.md,85,Markdown narrative
+§deqm-98,The first entry in a Library bundle SHALL be a Library resource conforming,input/pages/packaging.md,25,Markdown narrative
+§deqm-99,Library bundles MAY include any libraries referenced by the primary library,input/pages/packaging.md,26,Markdown narrative
+§deqm-100,Library bundles MAY include any code systems and value sets referenced by the primary library or any required libraries.,input/pages/packaging.md,27,Markdown narrative
+§deqm-101,"If the target environment supports the use of CQL directly, Library resources SHOULD conform to the [CQLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-cql-library.html) profile.",input/pages/packaging.md,29,Markdown narrative
+§deqm-102,"If the target environment supports the use of ELM directly, Library resources SHOULD conform to one (or both) of the [ELMXMLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profiles.",input/pages/packaging.md,30,Markdown narrative
+§deqm-103,The first entry in a Measure bundle SHALL be a Measure resource,input/pages/packaging.md,51,Markdown narrative
+§deqm-104,The second entry in a Measure bundle SHALL be the primary Library resource for the measure,input/pages/packaging.md,52,Markdown narrative
+§deqm-105,Measure bundles MAY include any libraries referenced by the primary library,input/pages/packaging.md,53,Markdown narrative
+§deqm-106,Measure bundles MAY include any code systems and value sets referenced by the primary library or any required libraries.,input/pages/packaging.md,54,Markdown narrative
+§deqm-107,Measure bundles MAY include any test case bundles defined for the measure,input/pages/packaging.md,55,Markdown narrative
+§deqm-108,The Measure resource SHALL conform to the [CQMComputableMeasure](StructureDefinition-cqm-computablemeasure.html) profile.,input/pages/packaging.md,57,Markdown narrative
+§deqm-109,The Library resource(s) SHALL conform to the [CRMIComputableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-computablelibrary.html) profile.,input/pages/packaging.md,58,Markdown narrative
+§deqm-110,The Measure resource SHALL conform to the [CQLMeasure](StructureDefinition-cqm-cqlmeasure.html) profile.,input/pages/packaging.md,60,Markdown narrative
+§deqm-111,The Library resource(s) SHALL conform to the [CQLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-cql-library.html),input/pages/packaging.md,61,Markdown narrative
+§deqm-112,The Measure resource SHALL conform to the [CQMExecutableMeasure](StructureDefinition-cqm-executablemeasure.html) profile.,input/pages/packaging.md,63,Markdown narrative
+§deqm-113,The Library resource(s) SHALL conform to the [CRMIExecutableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-executablelibrary.html) profile.,input/pages/packaging.md,64,Markdown narrative
+§deqm-114,The Measure resource SHALL conform to the [ELMMeasure](StructureDefinition-cqm-elmmeasure.html) profile.,input/pages/packaging.md,66,Markdown narrative
+§deqm-115,The Library resource(s) SHALL conform to one (or both) of the [ELMXMLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profiles.,input/pages/packaging.md,67,Markdown narrative
+§deqm-116,"The first entry in a TestCase bundle SHALL be a MeasureReport resource representing the expected outcome of evaluating the measure, given the test data provided as part of the test case",input/pages/packaging.md,82,Markdown narrative
+§deqm-117,TestCase bundles SHALL include any resource data required to evaluate the test case,input/pages/packaging.md,83,Markdown narrative
+§deqm-118,CQL used by a Measure SHALL be contained in a CQL library,input/pages/using-cql.md,16,Markdown narrative
+§deqm-119,CQL libraries used by Measures SHALL conform to [UCWF:2.1 (Library Declaration)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-1),input/pages/using-cql.md,17,Markdown narrative
+§deqm-120,CQL libraries used by Measures SHALL include a version as part of the library declaration,input/pages/using-cql.md,35,Markdown narrative
+§deqm-121,CQL libraries used by Measures SHALL conform to [UCWF:2.2 (Library Versioning)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-2),input/pages/using-cql.md,36,Markdown narrative
+§deqm-122,"In addition, CQL libraries used by Measures SHALL follow the convention :",input/pages/using-cql.md,37,Markdown narrative
+§deqm-123,"For measures in _draft_ status, a version label MAY be included",input/pages/using-cql.md,39,Markdown narrative
+§deqm-124,"If a version label is included, it SHALL follow the convention:",input/pages/using-cql.md,40,Markdown narrative
+§deqm-125,CQL libraries used by measures SHALL conform to [UCWF:2.3 (Nested Libraries)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-3),input/pages/using-cql.md,73,Markdown narrative
+§deqm-126,"In addition, CQL libraries used by measures SHALL be structured such that all CQL expressions referenced by the Measure are contained within a single library.",input/pages/using-cql.md,74,Markdown narrative
+§deqm-127,CQL libraries used by Measures SHALL conform to [UCWF:2.4 (Library Namespaces)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-4),input/pages/using-cql.md,91,Markdown narrative
+§deqm-128,CQL libraries used by Measures SHALL conform to [UCWF:2.5 (Data Models)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-5),input/pages/using-cql.md,108,Markdown narrative
+§deqm-129,All libraries and CQL expressions used directly or indirectly within a measure SHALL use FHIR based data models.,input/pages/using-cql.md,109,Markdown narrative
+§deqm-130,CQL libraries used by Measures SHALL conform to [UCWF:2.6 (Code System Specification)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-6),input/pages/using-cql.md,128,Markdown narrative
+§deqm-131,CQL libraries used by Measures SHALL conform to [UCWF:2.7 (Value Set Specification)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-7),input/pages/using-cql.md,151,Markdown narrative
+§deqm-132,CQL libraries used by Measures SHALL conform to [UCWF:2.8 (Value Set Specification Including Version)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-8),input/pages/using-cql.md,199,Markdown narrative
+§deqm-133,CQL libraries used by Measures SHALL conform to [UCWF:2.9 (Value Set Expansion)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-9),input/pages/using-cql.md,224,Markdown narrative
+§deqm-134,CQL libraries used by Measures SHALL conform to [UCWF:2.10 (String-based Membership Testing)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-10),input/pages/using-cql.md,238,Markdown narrative
+§deqm-135,CQL libraries used by Measures SHALL conform to [UCWF:2.11 (Direct-reference Codes)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-11),input/pages/using-cql.md,247,Markdown narrative
+§deqm-136,CQL libraries used by Measures SHALL conform to [UCWF:2.12 (Concepts)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-12),input/pages/using-cql.md,275,Markdown narrative
+§deqm-137,CQL libraries used by Measures SHALL conform to [UCWF:2.13 (Library-level Identifiers)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-13),input/pages/using-cql.md,284,Markdown narrative
+§deqm-138,CQL libraries used by Measures SHALL conform to [UCWF:2.14 (Data Type Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-14),input/pages/using-cql.md,293,Markdown narrative
+§deqm-139,CQL libraries used by Measures SHALL conform to [UCWF:2.15 (Element Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-15),input/pages/using-cql.md,317,Markdown narrative
+§deqm-140,CQL libraries used by Measures SHALL conform to [UCWF:2.16 (Aliases and Argument Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-16),input/pages/using-cql.md,336,Markdown narrative
