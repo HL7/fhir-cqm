@@ -13,8 +13,8 @@ Consistent with the UCWF IG, Measures that make use of CQL use [Libraries]({{sit
 
 **Conformance Requirement 4.1 (Library Usage):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-1)
 {: #conformance-requirement-4-1}
-  1. CQL used by a Measure SHALL be contained in a CQL library
-  2. CQL libraries used by Measures SHALL conform to [UCWF:2.1 (Library Declaration)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-1)
+  1. §deqm-118: CQL used by a Measure **SHALL** be contained in a CQL library §
+  2. §deqm-119: CQL libraries used by Measures **SHALL** conform to [UCWF:2.1 (Library Declaration)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-1) §
 
 For example:
 
@@ -32,12 +32,12 @@ The approach recommended here is based on the [Semantic Versioning Scheme](https
 
 **Conformance Requirement 4.2 (Library Versioning):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-2)
 {: #conformance-requirement-4-2}
-  1. CQL libraries used by Measures SHALL include a version as part of the library declaration
-  1. CQL libraries used by Measures SHALL conform to [UCWF:2.2 (Library Versioning)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-2)
-  2. In addition, CQL libraries used by Measures SHALL follow the convention :
+  1. §deqm-120: CQL libraries used by Measures **SHALL** include a version as part of the library declaration §
+  1. §deqm-121: CQL libraries used by Measures **SHALL** conform to [UCWF:2.2 (Library Versioning)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-2) §
+  2. §deqm-122: In addition, CQL libraries used by Measures **SHALL** follow the convention : §
     < major >.< minor >.< patch >
-  3. For measures in _draft_ status, a version label MAY be included
-    1. If a version label is included, it SHALL follow the convention:
+  3. §deqm-123: For measures in _draft_ status, a version label **MAY** be included §
+    1. §deqm-124: If a version label is included, it **SHALL** follow the convention: §
       < major >.< minor >.< patch >-< label >
 
 For example:
@@ -70,8 +70,8 @@ Consistent with the UCWF IG, this IG allows measures to use [Nested Libraries]({
 
 **Conformance Requirement 4.3 (Nested Libraries):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-3)
 {: #conformance-requirement-4-3}
-  1. CQL libraries used by measures SHALL conform to [UCWF:2.3 (Nested Libraries)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-3)
-  2. In addition, CQL libraries used by measures SHALL be structured such that all CQL expressions referenced by the Measure are contained within a single library.
+  1. §deqm-125: CQL libraries used by measures **SHALL** conform to [UCWF:2.3 (Nested Libraries)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-3) §
+  2. §deqm-126: In addition, CQL libraries used by measures **SHALL** be structured such that all CQL expressions referenced by the Measure are contained within a single library. §
 
 For example:
 
@@ -88,7 +88,7 @@ Consistent with the UCWF IG, this IG recommends the use of [Library Namespaces](
 
 **Conformance Requirement 4.4 (Library Namespaces):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-4)
 {: #conformance-requirement-4-4}
-  1. CQL libraries used by Measures SHALL conform to [UCWF:2.4 (Library Namespaces)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-4)
+  1. §deqm-127: CQL libraries used by Measures **SHALL** conform to [UCWF:2.4 (Library Namespaces)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-4) §
 
 For example, the following library declaration illustrates the use of a namespace:
 
@@ -105,8 +105,8 @@ CQL can be used with any [Data Model]({{site.data.fhir.ver.cql}}/using-cql.html#
 
 **Conformance Requirement 4.5 (CQL Data Model):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-5)
 {: #conformance-requirement-4-5}
-1. CQL libraries used by Measures SHALL conform to [UCWF:2.5 (Data Models)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-5)
-2. All libraries and CQL expressions used directly or indirectly within a measure SHALL use FHIR based data models. For example, one could use QI Core and SDOH IGs.
+1. §deqm-128: CQL libraries used by Measures **SHALL** conform to [UCWF:2.5 (Data Models)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-5) §
+2. §deqm-129: All libraries and CQL expressions used directly or indirectly within a measure **SHALL** use FHIR based data models. § For example, one could use QI Core and SDOH IGs.
 
 For example:
 
@@ -125,7 +125,7 @@ Consistent with the UCWF IG, [Code Systems]({{site.data.fhir.ver.cql}}/using-cql
 
 **Conformance Requirement 4.6 (Code System Specification):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-6)
 {: #conformance-requirement-4-6}
-1. CQL libraries used by Measures SHALL conform to [UCWF:2.6 (Code System Specification)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-6)
+1. §deqm-130: CQL libraries used by Measures **SHALL** conform to [UCWF:2.6 (Code System Specification)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-6) §
 
 For example:
 
@@ -148,7 +148,7 @@ Consistent with the UCWF IG, [Value Sets]({{site.data.fhir.ver.cql}}/using-cql.h
 
 **Conformance Requirement 4.7 (Value Set Specification):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-7)
 {: #conformance-requirement-4-7}
-1. CQL libraries used by Measures SHALL conform to [UCWF:2.7 (Value Set Specification)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-7)
+1. §deqm-131: CQL libraries used by Measures **SHALL** conform to [UCWF:2.7 (Value Set Specification)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-7) §
 
 For example:
 
@@ -196,7 +196,7 @@ Consistent with the UCWF IG, [Value Set Version]({{site.data.fhir.ver.cql}}/usin
 
 **Conformance Requirement 4.8 (Value Set Specification By Version):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-8)
 {: #conformance-requirement-4-8}
-1. CQL libraries used by Measures SHALL conform to [UCWF:2.8 (Value Set Specification Including Version)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-8)
+1. §deqm-132: CQL libraries used by Measures **SHALL** conform to [UCWF:2.8 (Value Set Specification Including Version)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-8) §
 
 For example:
 
@@ -221,7 +221,7 @@ Measures that make use of CQL must do so in accordance with [Value Set Expansion
 
 **Conformance Requirement 4.9 (Value Set Expansion):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-9)
 {: #conformance-requirement-4-9}
-1. CQL libraries used by Measures SHALL conform to [UCWF:2.9 (Value Set Expansion)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-9)
+1. §deqm-133: CQL libraries used by Measures **SHALL** conform to [UCWF:2.9 (Value Set Expansion)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-9) §
 
 #### Representation in a Library
 {: #representation-in-a-library}
@@ -235,7 +235,7 @@ Consistent with the UCWF IG, this implementation guide recommends against the us
 
 **Conformance Requirement 4.10 (String-based Membership Testing):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-10)
 {: #conformance-requirement-4-10}
-1. CQL libraries used by Measures SHALL conform to [UCWF:2.10 (String-based Membership Testing)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-10)
+1. §deqm-134: CQL libraries used by Measures **SHALL** conform to [UCWF:2.10 (String-based Membership Testing)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-10) §
 
 ### Codes
 {: #codes}
@@ -244,7 +244,7 @@ Consistent with the UCWF IG, CQL used with Measures can make use of [_direct-ref
 
 **Conformance Requirement 4.11 (Direct-reference Codes):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-11)
 {: #conformance-requirement-4-11}
-1. CQL libraries used by Measures SHALL conform to [UCWF:2.11 (Direct-reference Codes)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-11)
+1. §deqm-135: CQL libraries used by Measures **SHALL** conform to [UCWF:2.11 (Direct-reference Codes)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-11) §
 
 For example:
 
@@ -272,7 +272,7 @@ Consistent with the UCWF IG, CQL used with Measures may make use of the CQL [_co
 **Conformance Requirement 4.12 (Concepts):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-12)
 {: #conformance-requirement-4-12}
 
-1. CQL libraries used by Measures SHALL conform to [UCWF:2.12 (Concepts)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-12)
+1. §deqm-136: CQL libraries used by Measures **SHALL** conform to [UCWF:2.12 (Concepts)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-12) §
 
 ### Library-level Identifiers
 {: #library-level-identifiers}
@@ -281,7 +281,7 @@ Consistent with the UCWF IG, CQL used by Measures should use descriptive and mea
 
 **Conformance Requirement 4.13 (Library-level Identifiers):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-13)
 {: #conformance-requirement-4-13}
-1. CQL libraries used by Measures SHALL conform to [UCWF:2.13 (Library-level Identifiers)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-13)
+1. §deqm-137: CQL libraries used by Measures **SHALL** conform to [UCWF:2.13 (Library-level Identifiers)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-13) §
 
 ### Data Type Names
 {: #data-type-names}
@@ -290,7 +290,7 @@ Consistent with the UCWF IG, CQL used by Measures must refer to [Data Type Names
 
 **Conformance Requirement 4.14 (Data Type Names):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-14)
 {: #conformance-requirement-4-14}
-1. CQL libraries used by Measures SHALL conform to [UCWF:2.14 (Data Type Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-14)
+1. §deqm-138: CQL libraries used by Measures **SHALL** conform to [UCWF:2.14 (Data Type Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-14) §
 
 For example:
 
@@ -314,7 +314,7 @@ Note that when FHIR and FHIR IGs are used as the data model, the term "element" 
 
 **Conformance Requirement 4.15 (Element Names):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-15)
 {: #conformance-requirement-4-15}
-1. CQL libraries used by Measures SHALL conform to [UCWF:2.15 (Element Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-15)
+1. §deqm-139: CQL libraries used by Measures **SHALL** conform to [UCWF:2.15 (Element Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-15) §
 
 Examples of elements (i.e. attributes) conforming to Conformance Requirement 4.15 are given below. For a full list of valid names of attributes for a data model, refer to an appropriate data model specification such as QI-Core.
 
@@ -333,7 +333,7 @@ Consistent with the UCWF IG, CQL used by Measures must follow conventions for na
 
 **Conformance Requirement 4.16 (Aliases and Argument Names):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-4-16)
 {: #conformance-requirement-4-16}
-1. CQL libraries used by Measures SHALL conform to [UCWF:2.16 (Aliases and Argument Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-16)
+1. §deqm-140: CQL libraries used by Measures **SHALL** conform to [UCWF:2.16 (Aliases and Argument Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-16) §
 
 For example:
 

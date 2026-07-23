@@ -146,3 +146,9 @@ Additional variables required for risk adjustment or other purposes of data aggr
 | URI | --- |	Uniform Resource Identifier |
 | URL | --- |	Uniform Resource Locater |
 | XML | --- |	eXtensible Markup Language |
+
+### Narrative Conformance
+
+This table consolidates all conformance statements that are included in the narrative of the Implementation Guide.
+
+§§§

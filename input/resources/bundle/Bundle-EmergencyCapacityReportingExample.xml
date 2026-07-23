@@ -87,7 +87,8 @@
                 <date value="2026-03-12T13:53:49-04:00"/>
                 <publisher value="HL7 International / Clinical Quality Information"/>
                 <description
-                    value="Bed Capacity Measure that is reported on a daily cadence. &#10; Note- This Measure is identical to the BedCapacityMeasure-monthly Measure. FHIR IG tooling does not support multiple versions of the same canonical resource within a single IG, so their Measure/ids have been modified for this IG example purposes."/>
+                    value="Bed Capacity Measure that is reported on a daily cadence. 
+ Note- This Measure is identical to the BedCapacityMeasure-monthly Measure. FHIR IG tooling does not support multiple versions of the same canonical resource within a single IG, so their Measure/ids have been modified for this IG example purposes."/>
                 <scoring>
                     <coding>
                         <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"/>
@@ -2172,7 +2173,8 @@
                 <date value="2026-03-12T13:53:49-04:00"/>
                 <publisher value="HL7 International / Clinical Quality Information"/>
                 <description
-                    value="Bed Capacity Measure that is reported on a monthly cadence. &#10; Note- This Measure is identical to the BedCapacityMeasure-daily Measure. FHIR IG tooling does not support multiple versions of the same canonical resource within a single IG, so their Measure/ids have been modified for this IG example purposes."/>
+                    value="Bed Capacity Measure that is reported on a monthly cadence. 
+ Note- This Measure is identical to the BedCapacityMeasure-daily Measure. FHIR IG tooling does not support multiple versions of the same canonical resource within a single IG, so their Measure/ids have been modified for this IG example purposes."/>
                 <scoring>
                     <coding>
                         <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"/>

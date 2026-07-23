@@ -39,12 +39,12 @@ Member attribution is a significant component of measuring performance of health
 ### Conventions
 {: #conventions}
 
-The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT, MAY, and NEED NOT in this document are to be interpreted as defined in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt). Unlike RFC 2119, this specification acknowledges that varying use of optional features may prevent interoperability between applications. In particular
+§deqm-03: The keywords **SHALL**, **SHALL NOT**, **SHOULD**, **SHOULD NOT**, **MAY**, and NEED NOT in this document are to be interpreted as defined in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt). § Unlike RFC 2119, this specification acknowledges that varying use of optional features may prevent interoperability between applications. In particular
 
-* SHALL: an absolute requirement for all implementations
-* SHALL NOT: an absolute prohibition against inclusion for all implementations
-* SHOULD/SHOULD NOT: a best practice or recommendation to be considered by implementers within the context of their particular implementation; there may be valid reasons to ignore an item, but the full implications must be understood and carefully weighed before choosing a different course
-* MAY/NEED NOT: truly optional; can be included or omitted as the implementer decides with no implications
+* §deqm-04: **SHALL**: an absolute requirement for all implementations §
+* §deqm-05: **SHALL NOT**: an absolute prohibition against inclusion for all implementations §
+* §deqm-06: **SHOULD**/**SHOULD NOT**: a best practice or recommendation to be considered by implementers within the context of their particular implementation; there may be valid reasons to ignore an item, but the full implications must be understood and carefully weighed before choosing a different course §
+* §deqm-07: **MAY**/NEED NOT: truly optional; can be included or omitted as the implementer decides with no implications §
 
 ### Previous Non-FHIR quality measurement standards [Example: HL7 v3 Based Standards]
 {: #background}

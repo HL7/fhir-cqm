@@ -22,12 +22,12 @@ The following are conformance requirements when packaging a Library:
 **Conformance Requirement 6.1 (Library Packaging):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-6-1)
 {: #conformance-requirement-6-1}
 
-  1. The first entry in a Library bundle SHALL be a Library resource conforming
-  2. Library bundles MAY include any libraries referenced by the primary library
-  3. Library bundles MAY include any code systems and value sets referenced by the primary library or any required libraries.
+  1. §deqm-98: The first entry in a Library bundle **SHALL** be a Library resource conforming §
+  2. §deqm-99: Library bundles **MAY** include any libraries referenced by the primary library §
+  3. §deqm-100: Library bundles **MAY** include any code systems and value sets referenced by the primary library or any required libraries. §
   4. For CQL Library resources
-      1. If the target environment supports the use of CQL directly, Library resources SHOULD conform to the [CQLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-cql-library.html) profile.
-      2. If the target environment supports the use of ELM directly, Library resources SHOULD conform to one (or both) of the [ELMXMLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profiles.
+      1. §deqm-101: If the target environment supports the use of CQL directly, Library resources **SHOULD** conform to the [CQLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-cql-library.html) profile. §
+      2. §deqm-102: If the target environment supports the use of ELM directly, Library resources **SHOULD** conform to one (or both) of the [ELMXMLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profiles. §
 
 ### Packaging Measures
 {: #packaging-measures}
@@ -48,23 +48,23 @@ The following are conformance requirements when packaging a Measure:
 **Conformance Requirement 6.2 (Measure Packaging):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-6-2)
 {: #conformance-requirement-6-2}
 
-  1. The first entry in a Measure bundle SHALL be a Measure resource
-  2. The second entry in a Measure bundle SHALL be the primary Library resource for the measure
-  3. Measure bundles MAY include any libraries referenced by the primary library
-  4. Measure bundles MAY include any code systems and value sets referenced by the primary library or any required libraries.
-  5. Measure bundles MAY include any test case bundles defined for the measure
+  1. §deqm-103: The first entry in a Measure bundle **SHALL** be a Measure resource §
+  2. §deqm-104: The second entry in a Measure bundle **SHALL** be the primary Library resource for the measure §
+  3. §deqm-105: Measure bundles **MAY** include any libraries referenced by the primary library §
+  4. §deqm-106: Measure bundles **MAY** include any code systems and value sets referenced by the primary library or any required libraries. §
+  5. §deqm-107: Measure bundles **MAY** include any test case bundles defined for the measure §
   6. If the capabilities parameter of the package request includes `computable`:
-      a. The Measure resource SHALL conform to the [CQMComputableMeasure](StructureDefinition-cqm-computablemeasure.html) profile.
-      b. The Library resource(s) SHALL conform to the [CRMIComputableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-computablelibrary.html) profile.
+      a. §deqm-108: The Measure resource **SHALL** conform to the [CQMComputableMeasure](StructureDefinition-cqm-computablemeasure.html) profile. §
+      b. §deqm-109: The Library resource(s) **SHALL** conform to the [CRMIComputableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-computablelibrary.html) profile. §
       b. For Measures using CQL:
-          i. The Measure resource SHALL conform to the [CQLMeasure](StructureDefinition-cqm-cqlmeasure.html) profile.
-          ii. The Library resource(s) SHALL conform to the [CQLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-cql-library.html)
+          i. §deqm-110: The Measure resource **SHALL** conform to the [CQLMeasure](StructureDefinition-cqm-cqlmeasure.html) profile. §
+          ii. §deqm-111: The Library resource(s) **SHALL** conform to the [CQLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-cql-library.html) §
   7. If the capabilities parameter of the package request includes `executable`: 
-      a. The Measure resource SHALL conform to the [CQMExecutableMeasure](StructureDefinition-cqm-executablemeasure.html) profile.
-      b. The Library resource(s) SHALL conform to the [CRMIExecutableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-executablelibrary.html) profile.
+      a. §deqm-112: The Measure resource **SHALL** conform to the [CQMExecutableMeasure](StructureDefinition-cqm-executablemeasure.html) profile. §
+      b. §deqm-113: The Library resource(s) **SHALL** conform to the [CRMIExecutableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-executablelibrary.html) profile. §
       a. For Measures using CQL
-          i. The Measure resource SHALL conform to the [ELMMeasure](StructureDefinition-cqm-elmmeasure.html) profile.
-          ii. The Library resource(s) SHALL conform to one (or both) of the [ELMXMLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profiles.
+          i. §deqm-114: The Measure resource **SHALL** conform to the [ELMMeasure](StructureDefinition-cqm-elmmeasure.html) profile. §
+          ii. §deqm-115: The Library resource(s) **SHALL** conform to one (or both) of the [ELMXMLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profiles. §
 
 ### Packaging Terminology
 {: #packaging-terminology}
@@ -79,5 +79,5 @@ Basic testing of measure logic should involve at least one positive and negative
 **Conformance Requirement 6.3 (Test Case Packaging):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-6-3)
 {: #conformance-requirement-6-3}
 
-  1. The first entry in a TestCase bundle SHALL be a MeasureReport resource representing the expected outcome of evaluating the measure, given the test data provided as part of the test case
-  2. TestCase bundles SHALL include any resource data required to evaluate the test case
+  1. §deqm-116: The first entry in a TestCase bundle **SHALL** be a MeasureReport resource representing the expected outcome of evaluating the measure, given the test data provided as part of the test case §
+  2. §deqm-117: TestCase bundles **SHALL** include any resource data required to evaluate the test case §

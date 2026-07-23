@@ -21,7 +21,7 @@ Measure and library identity directly follows [CRMI Artifact Identity guidance](
 
 #### Versioning
 
-As a best practice, measure and library versions SHOULD follow semantic versioning. This approach is summarized in [CRMI Artifact Versioning.]()
+§deqm-69: As a best practice, measure and library versions **SHOULD** follow semantic versioning. § This approach is summarized in [CRMI Artifact Versioning.]()
 
 #### Metadata
 In addition to identity, lifecycle, and versioning, measure and libraries typically have additional metadata such as descriptive content, documentation, justification, and source. This is especially true of _published_ measures and libraries, which make this type of information available to enable consumers to find, understand, and ultimately implement the content. In FHIR, measures and libraries generally follow the [Metadata Resource](https://hl7.org/fhir/clinicalreasoning-knowledge-artifact-representation.html#metadata) pattern. 
@@ -32,13 +32,13 @@ The [ShareableMeasureRepository capability statement](CapabilityStatement-sharea
 
 A ShareableMeasureRepository: 
 
-1. SHALL Represent basic Library information, as specified by the [CRMIShareableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablelibrary.html) profile, which includes URL, identifier, version, name, title, type, status, experimental, date, publisher, contact, description, useContext, and jurisdiction. 
-2. For computable libraries, SHALL represent computable Library information, as specified by the [CRMIComputableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-computablelibrary.html) profile. 
-3. For executable libraries, SHALL represent executable Library information, as specified by the [ELMLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profile. 
-4. For published libraries, SHALL represent publishable Library information, as specified by the [CRMIPublishableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-publishablelibrary.html) profile. 
-5. SHALL Represent basic Measure information, as specified by the [CRMIShareableMeasure]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablemeasure.html) profile, which includes URL, identifier, version, name, title, type, status, experimental, date, publisher, contact, description, useContext, and jurisdiction. 
-6. For computable measures, SHALL represent computable Measure information, as specified by the [CQMComputableMeasure](StructureDefinition-cqm-computablemeasure.html) profile. 
-7. For published measures, SHALL represent publishable Measure information, as specified by the [CQMPublishableMeasure](StructureDefinition-cqm-publishablemeasure.html) profile.
+1. §deqm-70: **SHALL** Represent basic Library information, as specified by the [CRMIShareableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablelibrary.html) profile, which includes URL, identifier, version, name, title, type, status, experimental, date, publisher, contact, description, useContext, and jurisdiction. § 
+2. §deqm-71: For computable libraries, **SHALL** represent computable Library information, as specified by the [CRMIComputableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-computablelibrary.html) profile. § 
+3. §deqm-72: For executable libraries, **SHALL** represent executable Library information, as specified by the [ELMLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profile. § 
+4. §deqm-73: For published libraries, **SHALL** represent publishable Library information, as specified by the [CRMIPublishableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-publishablelibrary.html) profile. § 
+5. §deqm-74: **SHALL** Represent basic Measure information, as specified by the [CRMIShareableMeasure]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablemeasure.html) profile, which includes URL, identifier, version, name, title, type, status, experimental, date, publisher, contact, description, useContext, and jurisdiction. § 
+6. §deqm-75: For computable measures, **SHALL** represent computable Measure information, as specified by the [CQMComputableMeasure](StructureDefinition-cqm-computablemeasure.html) profile. § 
+7. §deqm-76: For published measures, **SHALL** represent publishable Measure information, as specified by the [CQMPublishableMeasure](StructureDefinition-cqm-publishablemeasure.html) profile. §
 
 The CQMShareableMeasureRepository capability statement captures these requirements formally.
 
@@ -48,14 +48,14 @@ The [PublishableMeasureRepository capability statement](CapabilityStatement-publ
 
 A PublishableMeasureRepository:  
 
-1. SHALL support library packaging: [Library/$package]({{site.data.fhir.ver.crmi}}/OperationDefinition-crmi-package.html) operation 
-2. SHALL support library requirements analysis: [Library/$data-requirements](OperationDefinition-cqm-data-requirements.html) operation 
-3. SHALL support measure packaging: [Measure/$package]({{site.data.fhir.ver.crmi}}/OperationDefinition-crmi-package.html) operation 
-4. SHALL support measure requirements analysis: [Measure/$data-requirements](OperationDefinition-cqm-data-requirements.html) operation
-5. SHOULD support measure search using additional publishable metadata
-6. SHOULD support library search using additional publishable metadata
-7. SHOULD support minimum measure write capability (Publish, Retire, Archive)
-8. SHOULD support minimum library write capability (Publish, Retire, Archive) 
+1. §deqm-77: **SHALL** support library packaging: [Library/$package]({{site.data.fhir.ver.crmi}}/OperationDefinition-crmi-package.html) operation § 
+2. §deqm-78: **SHALL** support library requirements analysis: [Library/$data-requirements](OperationDefinition-cqm-data-requirements.html) operation § 
+3. §deqm-79: **SHALL** support measure packaging: [Measure/$package]({{site.data.fhir.ver.crmi}}/OperationDefinition-crmi-package.html) operation § 
+4. §deqm-80: **SHALL** support measure requirements analysis: [Measure/$data-requirements](OperationDefinition-cqm-data-requirements.html) operation §
+5. §deqm-81: **SHOULD** support measure search using additional publishable metadata §
+6. §deqm-82: **SHOULD** support library search using additional publishable metadata §
+7. §deqm-83: **SHOULD** support minimum measure write capability (Publish, Retire, Archive) §
+8. §deqm-84: **SHOULD** support minimum library write capability (Publish, Retire, Archive) § 
 
 The CQMPublishableMeasureRepository capability statement captures these requirements formally. 
 
@@ -63,11 +63,11 @@ The CQMPublishableMeasureRepository capability statement captures these requirem
 
 A PublishableMeasureRepository: 
 
-1. MAY support representation of test cases using the [CQMTestCase](StructureDefinition-cqm-testcase.html) profile. 
-2. MAY support retrieval of test cases by server-specific id through the MeasureReport/read interaction 
-3. MAY support searching of test cases by the measure search parameter 
-4. MAY support including test cases in measure packages. 
-5. MAY support test case packaging: [MeasureReport/$package](OperationDefinition-cqm-package.html) operation 
+1. §deqm-85: **MAY** support representation of test cases using the [CQMTestCase](StructureDefinition-cqm-testcase.html) profile. § 
+2. §deqm-86: **MAY** support retrieval of test cases by server-specific id through the MeasureReport/read interaction § 
+3. §deqm-87: **MAY** support searching of test cases by the measure search parameter § 
+4. §deqm-88: **MAY** support including test cases in measure packages. § 
+5. §deqm-89: **MAY** support test case packaging: [MeasureReport/$package](OperationDefinition-cqm-package.html) operation § 
 
 ### Authoring Measure Repository 
 
@@ -75,14 +75,14 @@ The AuthoringMeasureRepository capability statement defines additional capabilit
 
 For libraries and measures, an AuthoringMeasureRepository: 
 
-1. SHALL support **Submit**: Post a new library in draft status 
-2. SHALL support **Revise**: Update an existing library in draft status 
-3. SHALL support **Draft**: Draft a new version of an existing library in active status 
-4. SHALL support **Release**: Update an existing draft library to active 
-5. SHOULD support **Clone**: Clone a new library based on the contents of an existing library(regardless of status) 
-6. SHOULD support **Withdraw**: Delete a draft library 
-7. SHOULD support **Review**: Review and provide comments on an existing library (regardless of status) 
-8. SHOULD support **Approve**: Approve and provide comments on an existing library (regardless of status) 
+1. §deqm-90: **SHALL** support **Submit**: Post a new library in draft status § 
+2. §deqm-91: **SHALL** support **Revise**: Update an existing library in draft status § 
+3. §deqm-92: **SHALL** support **Draft**: Draft a new version of an existing library in active status § 
+4. §deqm-93: **SHALL** support **Release**: Update an existing draft library to active § 
+5. §deqm-94: **SHOULD** support **Clone**: Clone a new library based on the contents of an existing library(regardless of status) § 
+6. §deqm-95: **SHOULD** support **Withdraw**: Delete a draft library § 
+7. §deqm-96: **SHOULD** support **Review**: Review and provide comments on an existing library (regardless of status) § 
+8. §deqm-97: **SHOULD** support **Approve**: Approve and provide comments on an existing library (regardless of status) § 
 
 
 The [CRMIAuthoringArtifactRepository]({{site.data.fhir.ver.crmi}}/CapabilityStatement-crmi-authoring-artifact-repository.html) capability statement captures these requirements formally, while the following sections provide a narrative description of them. 
