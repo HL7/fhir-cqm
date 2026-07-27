@@ -1473,7 +1473,7 @@ Measures may define variables used to adjust scores based on a measure of “ris
     },
     "criteria": {
       "language": "text/cql-identifier",
-      "expression": "Hepatic Failure"
+      "expression": "RAF Hepatic Failure"
     }
   }
 ]
@@ -1482,7 +1482,7 @@ Measures may define variables used to adjust scores based on a measure of “ris
 Snippet 3-35: Sample Risk Adjustment Data
 
 ```cql
-define "Hepatic Failure":
+define "RAF Hepatic Failure":
   exists ("Cirrhosis Dx")
     and exists ("Bilirubin Test")
     and exists ("Serum Albumin Test")
