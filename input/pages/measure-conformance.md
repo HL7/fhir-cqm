@@ -1565,7 +1565,11 @@ Refer to the [ConceptMap Resources section](terminology.html#conceptmap-resource
 
 ### Attribution
 
-Member Attribution (ATR) lists are often used between Payers and Providers for implementing risk-based contracts, value-based contracts, care gap closures and quality reporting. Creation of a Member Attribution List typically starts with a need to identify the patients for a specific purpose such as Quality Reporting. Refer to the [Member Attribution Lists Workflows and Definitions](http://hl7.org/fhir/us/davinci-atr/usecases.html#member-attribution-list-workflows-and-definitions) within the Da Vinci - Member Attribution (ATR) List IG for more information on representing groups of patients for attribution within quality reporting.  
+Member attribution (ATR) lists are often used between payers and providers to support value-based care, quality reporting, care gap closure, and other reporting workflows. Creation of a member attribution list typically begins with identifying the population of patients for a specific program or reporting purpose.
+
+While attribution is an important component of many quality measurement programs, attribution models are highly dependent on program-specific business rules, contractual relationships, and operational policies. For that reason, the QM IG does not define a standard representation for attribution metadata or attribution models within reusable measure specifications. This allows the same measure specification to be reused across diverse quality programs and reporting environments while allowing implementers to apply attribution approaches appropriate to their specific use case. Individual quality programs may incorporate attribution into their implementation or measure logic as appropriate for their use case, but those approaches are not standardized by the QM IG.
+
+Refer to the [Da Vinci - Member Attribution (ATR) List IG](https://hl7.org/fhir/us/davinci-atr/) for more information on representing groups of patients for attribution.
 
 ### Must Support
 {: #must-support}
