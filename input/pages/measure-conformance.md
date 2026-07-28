@@ -756,6 +756,61 @@ As Figure 3-2 illustrates, the measure scoring types all start with an initial p
 
 Crucially, measure populations are set-based, and the workflow illustrations do not depict duplicate elimination as a result of these set semantics.
 
+
+Note that if your basis is encounters, you can use the following approach to get to attribution: use the `provider` parameter of the R5 [$evaluate-measure](https://hl7.org/fhir/measure-operation-evaluate-measure.html) to identify the provider being reported:
+
+```
+GET [base]/Measure/<measure-id>/$evaluate-measure?subject=Patient/MultiProviderPatient&periodStart=2024-01-01&periodEnd=2024-12-31&provider=Organization/organization-a
+```
+
+This provides the needed input to the attribution criteria to determine what data should be attributed to the provider for the given patient.
+
+An `AttributionModel` library introduces two fluent functions, `isAttributable(Patient)` and `isAttributable(Encounter)`:
+
+```cql
+parameter "Measurement Period" Interval<DateTime> default Interval[@2024-01-01T00:00:00.0Z, @2024-12-31T23:59:59.999Z]
+parameter "Provider" String
+
+context Patient
+
+define fluent function isAttributable(patient Patient):
+  "Provider" is not null implies Patient.managingOrganization.reference.endsWith("Provider")
+
+define fluent function isAttributable(encounter Encounter):
+  encounter.period during "Measurement Period"
+    and "Provider" is not null implies encounter.serviceProvider.reference.endsWith("Provider")
+```
+
+These functions are then referenced in the initial population criteria for each of these measures:
+
+```cql
+define "Initial Population":
+  "Encounter with Principal Diagnosis and Age" Encounter
+    where Encounter.isAttributable()
+```
+
+```cql
+define "Has Qualifying Encounter During First 240 Days of Measurement Period":
+  exists ( ( ["Encounter": "Office Visit"]
+      union ["Encounter": "Outpatient Consultation"]
+      union ["Encounter": "Annual Wellness Visit"]
+      union ["Encounter": "Face-to-Face Interaction"]
+      union ["Encounter": "Home Healthcare Services"]
+      union ["Encounter": "Preventive Care Services Established Office Visit, 18 and Up"]
+      union ["Encounter": "Preventive Care Services Initial Office Visit, 18 and Up"]
+      union ["Encounter": "Preventive Care Services, Initial Office Visit, 0 to 17"]
+      union ["Encounter": "Preventive Care, Established Office Visit, 0 to 17"]
+      union ["Encounter": "Telephone Visits"]
+    ) QualifyingEncounter
+      where QualifyingEncounter.period during day of Interval[start of "Measurement Period", start of "Measurement Period" + 240 days]
+        and QualifyingEncounter.isAttributable()
+  )
+
+define "Initial Population":
+  "Has Qualifying Encounter During First 240 Days of Measurement Period"
+```
+
+
 For every scoring type, the membership for each population criteria is the criterion result **intersected with membership in its parent population(s)**. This means that a criterion can evaluate `true` and still contribute zero if the patient is not in the required parent set. As a summary:
 
 **Table 3.2: Scoring Behavior Overview**
