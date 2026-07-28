@@ -2,7 +2,7 @@
 
 {: #measure-packaging}
 
-To facilitate publishing and distribution of quality measures, this Implementation Guide provides guidance on how to package quality measures, either independently, or as part of a collection of related measures.
+Packaging provides a standardized mechanism for exchanging quality measures together with their dependent artifacts. Packaged measures may be produced or consumed by measure authoring environments, repositories, quality reporting systems, testing frameworks, and implementation tooling to support publication, distribution, implementation, validation, testing, and lifecycle management. By exchanging all required artifacts as a single package, implementers can more consistently deploy and evaluate quality measures across interoperable systems.
 
 Measure packages are a special case of the more general [Artifact Packaging]({{site.data.fhir.ver.crmi}}/packaging.html) capability described in the Canonical Resource Management Infrastructure (CRMI) implementation guide. Measures may be packaged using that approach, with additional considerations as discussed in the following topics.
 
@@ -54,17 +54,17 @@ The following are conformance requirements when packaging a Measure:
   4. Measure bundles MAY include any code systems and value sets referenced by the primary library or any required libraries.
   5. Measure bundles MAY include any test case bundles defined for the measure
   6. If the capabilities parameter of the package request includes `computable`:
-      a. The Measure resource SHALL conform to the [CQMComputableMeasure](StructureDefinition-cqm-computablemeasure.html) profile.
-      b. The Library resource(s) SHALL conform to the [CRMIComputableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-computablelibrary.html) profile.
-      b. For Measures using CQL:
-          i. The Measure resource SHALL conform to the [CQLMeasure](StructureDefinition-cqm-cqlmeasure.html) profile.
-          ii. The Library resource(s) SHALL conform to the [CQLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-cql-library.html)
+     1. The Measure resource SHALL conform to the [CQMComputableMeasure](StructureDefinition-cqm-computablemeasure.html) profile.
+     2. The Library resource(s) SHALL conform to the [CRMIComputableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-computablelibrary.html) profile
+     3. For Measures using CQL:
+        1. The Measure resource SHALL conform to the [CQLMeasure](StructureDefinition-cqm-cqlmeasure.html) profile.
+        2. The Library resource(s) SHALL conform to the [CQLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-cql-library.html)
   7. If the capabilities parameter of the package request includes `executable`: 
-      a. The Measure resource SHALL conform to the [CQMExecutableMeasure](StructureDefinition-cqm-executablemeasure.html) profile.
-      b. The Library resource(s) SHALL conform to the [CRMIExecutableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-executablelibrary.html) profile.
-      a. For Measures using CQL
-          i. The Measure resource SHALL conform to the [ELMMeasure](StructureDefinition-cqm-elmmeasure.html) profile.
-          ii. The Library resource(s) SHALL conform to one (or both) of the [ELMXMLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profiles.
+      1. The Measure resource SHALL conform to the [CQMExecutableMeasure](StructureDefinition-cqm-executablemeasure.html) profile.
+      2. The Library resource(s) SHALL conform to the [CRMIExecutableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-executablelibrary.html) profile.
+      3. For Measures using CQL
+          1. The Measure resource SHALL conform to the [ELMMeasure](StructureDefinition-cqm-elmmeasure.html) profile.
+          2. The Library resource(s) SHALL conform to one (or both) of the [ELMXMLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profiles.
 
 ### Packaging Terminology
 {: #packaging-terminology}
