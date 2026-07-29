@@ -66,6 +66,68 @@ The following are conformance requirements when packaging a Measure:
           1. The Measure resource SHALL conform to the [ELMMeasure](StructureDefinition-cqm-elmmeasure.html) profile.
           2. The Library resource(s) SHALL conform to one (or both) of the [ELMXMLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profiles.
 
+### CQM Package Operation
+{: #cqm-package-operation}
+
+A successful cqm-package operation returns a Bundle containing the requested Measure together with the dependent artifacts available on the responding server. Depending on the requested packaging options, the response may include referenced Library resources, terminology artifacts, conformance resources, test cases, examples, and other supporting knowledge artifacts required to implement and evaluate the measure. The returned Bundle provides a consistent mechanism for exchanging the complete set of artifacts necessary to support interoperable quality measure implementation. The Snippet 6-1 provides an example for the CQM Package operation.
+
+```json
+{
+  "resourceType":"Parameters",
+  "parameter":[
+    {
+      "name":"url",
+      "valueUri":"http://hl7.org/fhir/uv/cqm/Measure/EXMLogic-FHIR"
+    },
+    {
+      "name":"version",
+      "valueString":"2.0.0"
+    },
+    {
+      "name":"capability",
+      "valueString":"computable"
+    },
+    {
+      "name":"bundleType",
+      "valueCode":"collection"
+    },
+    {
+      "name":"include",
+      "valueCode":"artifact"
+    },
+    {
+      "name":"include",
+      "valueCode":"knowledge"
+    },
+    {
+      "name":"include",
+      "valueCode":"terminology"
+    },
+    {
+      "name":"include",
+      "valueCode":"profiles"
+    },
+    {
+      "name":"include",
+      "valueCode":"extensions"
+    },
+    {
+      "name":"include",
+      "valueCode":"tests"
+    },
+    {
+      "name":"packageOnly",
+      "valueBoolean":false
+    },
+    {
+      "name":"errorBehavior",
+      "valueCode":"loose"
+    }
+  ]
+}
+```
+Snippet 6-1: Example cqm-package request
+
 ### Packaging Terminology
 {: #packaging-terminology}
 
