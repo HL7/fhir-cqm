@@ -51,7 +51,7 @@ To illustrate the different composite scoring methods, an example Annual Wellnes
     1. Calculation logic for all-or-nothing composite measures SHALL be functionally equivalent to the calculation formulas defined in this section.
     2. Calculation logic for all-or-nothing composite measures SHOULD be written in the same way as the calculation formulas defined in this section.
     3. Narrative descriptions of population criteria for all-or-nothing composite measures SHOULD include the narrative descriptions of the corresponding population criteria for each component measure.
-    4. Narrative descriptions for all-or-nothing composite measures should include explanation of calculation, including risk adjustment variables, exclusions, and supporting evidence when applicable. For example: All numerators for component measures must be met to satisfy the overall composite numerator. Risk adjustment variables x, y, and z are applied to the overall performance rate.
+    4. Narrative descriptions for all-or-nothing composite measures SHOULD include explanation of calculation, including risk adjustment variables, exclusions, and supporting evidence when applicable. For example: All numerators for component measures must be met to satisfy the overall composite numerator. Risk adjustment variables x, y, and z are applied to the overall performance rate.
 
 All-or-nothing scoring includes an individual in the numerator of the composite measure if they are in the numerators of all of the component measures in which they are in the denominator.
 
@@ -174,7 +174,7 @@ Refer to the definition of ["implies" in CQL](https://cql.hl7.org/09-b-cqlrefere
     1. Calculation logic for opportunity composite measures SHALL be functionally equivalent to the calculation formulas defined in this section.
     2. Calculation logic for opportunity composite measures SHOULD be written in the same way as the calculation formulas defined in this section.
     3. Narrative descriptions of population criteria for opportunity composite measures SHOULD include the narrative descriptions of the corresponding population criteria for each component measure.
-    4. Narrative descriptions for opportunity composite measures should include explanation that the score is calculated by determining a percentage of the care opportunities provided from the total care opportunities a patient is eligible for.
+    4. Narrative descriptions for opportunity composite measures SHOULD include explanation that the score is calculated by determining a percentage of the care opportunities provided from the total care opportunities a patient is eligible for.
 
 Opportunity scoring considers the appearance of a patient in a denominator of a component measure as an opportunity to provide a service, and the appearance of that patient in the numerator of each component as the fulfillment of that opportunity. This means that each component measure is considered a “case” in the composite population. The denominator is then the set of cases in which patients appeared in the denominator for the component measures, and so on for each population criteria. This allows the composite to then be calculated as a standard proportion measure where the basis for the population criteria is membership in the population for each component.
 
