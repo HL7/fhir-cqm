@@ -13,6 +13,8 @@
    <experimental value="true"></experimental>
    <publisher value="National Committee for Quality Assurance"></publisher>
    <description value="This artifact is an example of a patient-level linear composite measure that uses a mixture of single-rate or multi-rate component measures that have different measure bases."></description>
+   <!-- Guidance added for FHIR-57188 -->
+   <guidance value="For each eligible clinician, a patient is included in the Preventive Care and Wellness (All-Or-Nothing) composite numerator only if the patient received all preventive services for which they were eligible during the measurement period. A patient eligible for breast cancer screening, colorectal cancer screening, and pneumococcal vaccination must satisfy the numerator criteria for each of these component measures to count toward the composite numerator. If the patient does not qualify or is excluded from the denominator of any of these component measures, they do not count against composite numerator fulfillment. Risk adjustment variables, such as patient age, comorbidity burden, and socioeconomic risk factors, are applied to the calculated composite performance rate when applicable."/>
    <useContext>
       <code>
          <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"></system>
