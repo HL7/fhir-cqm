@@ -1586,3 +1586,10 @@ For resource instances claiming to conform to Quality Measure IG profiles, Must 
     a. For example, for systems using '9999' to indicate unknown data values, do not include '9999' in the resource instance.
 4. When consuming resource instances, evaluating systems SHALL interpret missing data elements within resource instances as data not present for the artifact.
 5. Submitting and receiving systems using quality measure artifacts to perform data exchange or artifact evaluation operations SHALL respect the must support requirements of the profiles used by the artifact to describe the data involved in the operation.
+
+### Test Cases
+{: #test-cases}
+
+Test cases provide a mechanism for verifying that a quality measure is implemented and evaluated as intended. In addition to measure specifications, test cases may be packaged and exchanged as part of a measure package using the [CQMTestCase](StructureDefinition-cqm-testcase.html) profile. Refer to the [Packaging Test Cases](packaging.html#packaging-test-cases) section for guidance on test case conformance.
+
+Measure test cases may provide representative evaluation scenarios that exercise the intent of the measure logic, including CQL execution, terminology usage, population pathway evaluation, and should include at least one positive and negative test of each of the population criteria.

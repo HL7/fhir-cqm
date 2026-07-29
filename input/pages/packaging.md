@@ -74,7 +74,7 @@ The following are conformance requirements when packaging a Measure:
 ### Packaging Test Cases
 {: #packaging-test-cases}
 
-Basic testing of measure logic should involve at least one positive and negative test of each of the population criteria. A test case is represented as a set of test resources, together with a MeasureReport that conforms to the [CQMTestCase](StructureDefinition-cqm-testcase.html) profile to define the expected results. The test case bundle can then be used to package and distribute the test case.
+A test case is represented as a set of test resources, together with a MeasureReport that conforms to the [CQMTestCase](StructureDefinition-cqm-testcase.html) profile to define the expected results. The test case bundle can then be used to package and distribute the test case.
 
 **Conformance Requirement 6.3 (Test Case Packaging):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-6-3)
 {: #conformance-requirement-6-3}
