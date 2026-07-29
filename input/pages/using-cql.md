@@ -17,7 +17,7 @@ The Conformance Summary Table lists the conformance sections in this implementat
 | Library Versioning              | Yes                          | [QM IG 4.2 (Library Versioning)](https://hl7.org/fhir/uv/cqm/using-cql.html#conformance-requirement-4-2)                       |
 | Nested Libraries                | Yes                          | [QM IG 4.3 (Nested Libraries)](https://hl7.org/fhir/uv/cqm/using-cql.html#conformance-requirement-4-3)                         |
 | Library Namespaces              | No                           | [UCWF:2.4 (Library Namespaces)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-4)                        |
-| Data Model                      | No                           | [UCWF:2.5 (Data Models)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-5)                               |
+| Data Model                      | Yes                           | [UCWF:2.5 (Data Models)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-5)                               |
 | Code Systems                    | No                           | [UCWF:2.6 (Code System Specification)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-6)                 |
 | Value Sets                      | No                           | [UCWF:2.7 (Value Set Specification)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-7)                   |
 | Value Set Version               | No                           | [UCWF:2.8 (Value Set Specification Including Version)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-8) |
