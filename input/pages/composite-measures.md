@@ -55,11 +55,13 @@ To illustrate the different composite scoring methods, an example Annual Wellnes
 
 All-or-nothing scoring includes an individual in the numerator of the composite measure if they are in the numerators of all of the component measures in which they are in the denominator.
 
-Narrative descriptions for all-or-nothing composite measures **SHOULD** clearly describe the composite scoring methodology in plain language, including the criteria for satisfying the composite numerator, handling of exclusions and exceptions, application of risk adjustment variables, and supporting clinical or methodological evidence when applicable.
+Narrative approach:
+
+>Narrative descriptions for all-or-nothing composite measures **SHOULD** clearly describe the composite scoring methodology in plain language, including the criteria for satisfying the composite numerator, handling of exclusions and exceptions, application of risk adjustment variables, and supporting clinical or methodological evidence when applicable.
 
 For example:
 
-*“For each eligible clinician, a patient is included in the Preventative Care and Wellness (All-or-nothing) composite numerator only if the patient received all preventive services for which they were eligible during the measurement period. A patient eligible for breast cancer screening, colorectal cancer screening, and pneumococcal vaccination must satisfy the numerator criteria for each of these component measures to count toward the composite numerator. If the patient does not qualify or is excluded from the denominator of any of these component measures, they do not count against composite numerator fulfillment. Risk adjustment variables such as patient age, comorbidity burden, and socioeconomic risk factors are applied to the calculated composite performance rate when applicable.”*
+>*For each eligible clinician, a patient is included in the Preventative Care and Wellness (All-or-nothing) composite numerator only if the patient received all preventive services for which they were eligible during the measurement period. A patient eligible for breast cancer screening, colorectal cancer screening, and pneumococcal vaccination must satisfy the numerator criteria for each of these component measures to count toward the composite numerator. If the patient does not qualify or is excluded from the denominator of any of these component measures, they do not count against composite numerator fulfillment. Risk adjustment variables such as patient age, comorbidity burden, and socioeconomic risk factors are applied to the calculated composite performance rate when applicable.*
 
 <details open>
 <summary>
@@ -180,11 +182,11 @@ Opportunity scoring considers the appearance of a patient in a denominator of a 
 
 Narrative approach:
 
-Narrative descriptions for opportunity scoring composite measures **SHOULD** clearly describe the composite scoring methodology in plain language, including how eligible opportunities are counted, how numerator credit is assigned, handling of exclusions and exceptions, application of risk adjustment variables, and supporting clinical or methodological evidence when applicable.
+>Narrative descriptions for opportunity scoring composite measures **SHOULD** clearly describe the composite scoring methodology in plain language, including how eligible opportunities are counted, how numerator credit is assigned, handling of exclusions and exceptions, application of risk adjustment variables, and supporting clinical or methodological evidence when applicable.
 
 For example:
 
-The composite score is calculated as the proportion of completed care opportunities across all applicable component measures. Each eligible component measure contributes one opportunity to the composite denominator, and each satisfied component numerator contributes one completed opportunity to the composite numerator. Denominator exclusions and exceptions are evaluated at the component measure level and remove the associated opportunity from the calculation. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate.
+>*The composite score is calculated as the proportion of completed care opportunities across all applicable component measures. Each eligible component measure contributes one opportunity to the composite denominator, and each satisfied component numerator contributes one completed opportunity to the composite numerator. Denominator exclusions and exceptions are evaluated at the component measure level and remove the associated opportunity from the calculation. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate.*
 
 <details open>
 <summary>
@@ -266,11 +268,11 @@ Subject-level linear combination scoring is modeled as a continuous variable mea
 
 Narrative approach:
 
-Narrative descriptions for subject-level linear composite measures **SHOULD** clearly describe the composite scoring methodology in plain language, including how subject-level scores are calculated, handling of exclusions and exceptions, application of risk adjustment variables, and supporting clinical or methodological evidence when applicable.
+>Narrative descriptions for subject-level linear composite measures **SHOULD** clearly describe the composite scoring methodology in plain language, including how subject-level scores are calculated, handling of exclusions and exceptions, application of risk adjustment variables, and supporting clinical or methodological evidence when applicable.
 
 For example:
 
-The composite score is calculated by determining, for each subject, the proportion of applicable component measure numerators satisfied relative to the total number of applicable component measures. Each subject-level score is then aggregated across the population to determine the overall composite performance rate. Component measures for which the subject meets denominator exclusion or denominator exception criteria are excluded from the subject-level calculation. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate.
+>*The composite score is calculated by determining, for each subject, the proportion of applicable component measure numerators satisfied relative to the total number of applicable component measures. Each subject-level score is then aggregated across the population to determine the overall composite performance rate. Component measures for which the subject meets denominator exclusion or denominator exception criteria are excluded from the subject-level calculation. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate.*
 
 <details open>
 <summary>
@@ -414,13 +416,13 @@ Weighted scoring combines component measure scores using a weighting factor for 
 
 Note that as discussed in the section on composite scoring methods, this method is a component-based composite measure scoring method, meaning that the calculation of the composite is performed on the population-level result of the component measures. Narrative descriptions for weighted scoring composite measures should include explanation of the component weights.
 
-Narrative descriptions for weighted composite measures **SHOULD** clearly describe the composite scoring methodology in plain language, including how component measure scores are weighted and aggregated, handling of exclusions and exceptions, application of risk adjustment variables, and supporting clinical or methodological evidence when applicable.
+Narrative approach:
+
+>Narrative descriptions for weighted composite measures **SHOULD** clearly describe the composite scoring methodology in plain language, including how component measure scores are weighted and aggregated, handling of exclusions and exceptions, application of risk adjustment variables, and supporting clinical or methodological evidence when applicable.
 
 For example:
 
-The composite score is calculated as a weighted aggregation of component measure performance rates. Each component measure score is multiplied by its assigned weight, and the weighted component scores are combined to determine the overall composite performance rate. Denominator exclusions, denominator exceptions, and numerator exclusions are applied within each component measure prior to weighted aggregation. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate.
-
-In addition, the narrative associated to the examples will be updated to include this language in the guidance section within the human readable content.
+>*The composite score is calculated as a weighted aggregation of component measure performance rates. Each component measure score is multiplied by its assigned weight, and the weighted component scores are combined to determine the overall composite performance rate. Denominator exclusions, denominator exceptions, and numerator exclusions are applied within each component measure prior to weighted aggregation. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate.*
 
 <details open>
 <b>Figure 5-4. Component-level linear combination method</b>
