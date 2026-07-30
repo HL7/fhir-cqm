@@ -61,7 +61,7 @@ Narrative approach:
 
 For example:
 
->*For each eligible clinician, a patient is included in the Preventative Care and Wellness (All-or-nothing) composite numerator only if the patient received all preventive services for which they were eligible during the measurement period. A patient eligible for breast cancer screening, colorectal cancer screening, and pneumococcal vaccination must satisfy the numerator criteria for each of these component measures to count toward the composite numerator. If the patient does not qualify or is excluded from the denominator of any of these component measures, they do not count against composite numerator fulfillment. Risk adjustment variables such as patient age, comorbidity burden, and socioeconomic risk factors are applied to the calculated composite performance rate when applicable.*
+>*For each eligible clinician, a patient is included in the Preventive Care and Wellness (All-or-nothing) composite numerator only if the patient received all preventive services for which they were eligible during the measurement period. A patient eligible for breast cancer screening, colorectal cancer screening, and pneumococcal vaccination must satisfy the numerator criteria for each of these component measures to count toward the composite numerator. If the patient does not qualify or is excluded from the denominator of any of these component measures, they do not count against composite numerator fulfillment. Risk adjustment variables such as patient age, comorbidity burden, and socioeconomic risk factors are applied to the calculated composite performance rate when applicable.*
 
 <details open>
 <summary>
