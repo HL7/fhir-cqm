@@ -28,7 +28,7 @@
       </valueCodeableConcept>
    </useContext>
    <!-- Usage added for FHIR-57188 -->
-   <usage value="For each eligible clinician, a patient is included in the Preventive Care and Wellness (All-Or-Nothing) composite numerator only if the patient received all preventive services for which they were eligible during the measurement period. A patient eligible for breast cancer screening, colorectal cancer screening, and pneumococcal vaccination must satisfy the numerator criteria for each of these component measures to count toward the composite numerator. If the patient does not qualify or is excluded from the denominator of any of these component measures, they do not count against composite numerator fulfillment. Risk adjustment variables, such as patient age, comorbidity burden, and socioeconomic risk factors, are applied to the calculated composite performance rate when applicable."/>
+   <usage value="The composite score is calculated as the proportion of completed care opportunities across all applicable component measures. Each eligible component measure contributes one opportunity to the composite denominator, and each satisfied component numerator contributes one completed opportunity to the composite numerator. Denominator exclusions and exceptions are evaluated at the component measure level and remove the associated opportunity from the calculation. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate."/>
    <effectivePeriod>
       <start value="2022-01-01"></start>
       <end value="2022-12-31"></end>
@@ -97,5 +97,5 @@
       </coding>
    </improvementNotation>
    <!-- Guidance added for FHIR-57188 -->
-   <guidance value="For each eligible clinician, a patient is included in the Preventive Care and Wellness (All-Or-Nothing) composite numerator only if the patient received all preventive services for which they were eligible during the measurement period. A patient eligible for breast cancer screening, colorectal cancer screening, and pneumococcal vaccination must satisfy the numerator criteria for each of these component measures to count toward the composite numerator. If the patient does not qualify or is excluded from the denominator of any of these component measures, they do not count against composite numerator fulfillment. Risk adjustment variables, such as patient age, comorbidity burden, and socioeconomic risk factors, are applied to the calculated composite performance rate when applicable."/>
+   <guidance value="The composite score is calculated as the proportion of completed care opportunities across all applicable component measures. Each eligible component measure contributes one opportunity to the composite denominator, and each satisfied component numerator contributes one completed opportunity to the composite numerator. Denominator exclusions and exceptions are evaluated at the component measure level and remove the associated opportunity from the calculation. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate."/>
 </Measure>
