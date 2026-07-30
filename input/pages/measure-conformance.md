@@ -754,62 +754,9 @@ All the scoring types share the "Initial Population" criteria, allowing for comm
 
 As Figure 3-2 illustrates, the measure scoring types all start with an initial population criteria, and measure calculation can be thought of as starting from _all subjects_, optionally narrowed to the set of _attributed subjects_, then narrowed to the _initial population_ for the measure. The discussions for each scoring type that follow start from this assumption. An example population of 9 patients is used to explicitly demonstrate the calculation semantics for each of the scoring types.
 
+For more details on attribution, see the [Attribution] section below.
+
 Crucially, measure populations are set-based, and the workflow illustrations do not depict duplicate elimination as a result of these set semantics.
-
-
-Note that if your basis is encounters, you can use the following approach to get to attribution: use the `provider` parameter of the R5 [$evaluate-measure](https://hl7.org/fhir/measure-operation-evaluate-measure.html) to identify the provider being reported:
-
-```
-GET [base]/Measure/<measure-id>/$evaluate-measure?subject=Patient/MultiProviderPatient&periodStart=2024-01-01&periodEnd=2024-12-31&provider=Organization/organization-a
-```
-
-This provides the needed input to the attribution criteria to determine what data should be attributed to the provider for the given patient.
-
-An `AttributionModel` library introduces two fluent functions, `isAttributable(Patient)` and `isAttributable(Encounter)`:
-
-```cql
-parameter "Measurement Period" Interval<DateTime> default Interval[@2024-01-01T00:00:00.0Z, @2024-12-31T23:59:59.999Z]
-parameter "Provider" String
-
-context Patient
-
-define fluent function isAttributable(patient Patient):
-  "Provider" is not null implies Patient.managingOrganization.reference.endsWith("Provider")
-
-define fluent function isAttributable(encounter Encounter):
-  encounter.period during "Measurement Period"
-    and "Provider" is not null implies encounter.serviceProvider.reference.endsWith("Provider")
-```
-
-These functions are then referenced in the initial population criteria for each of these measures:
-
-```cql
-define "Initial Population":
-  "Encounter with Principal Diagnosis and Age" Encounter
-    where Encounter.isAttributable()
-```
-
-```cql
-define "Has Qualifying Encounter During First 240 Days of Measurement Period":
-  exists ( ( ["Encounter": "Office Visit"]
-      union ["Encounter": "Outpatient Consultation"]
-      union ["Encounter": "Annual Wellness Visit"]
-      union ["Encounter": "Face-to-Face Interaction"]
-      union ["Encounter": "Home Healthcare Services"]
-      union ["Encounter": "Preventive Care Services Established Office Visit, 18 and Up"]
-      union ["Encounter": "Preventive Care Services Initial Office Visit, 18 and Up"]
-      union ["Encounter": "Preventive Care Services, Initial Office Visit, 0 to 17"]
-      union ["Encounter": "Preventive Care, Established Office Visit, 0 to 17"]
-      union ["Encounter": "Telephone Visits"]
-    ) QualifyingEncounter
-      where QualifyingEncounter.period during day of Interval[start of "Measurement Period", start of "Measurement Period" + 240 days]
-        and QualifyingEncounter.isAttributable()
-  )
-
-define "Initial Population":
-  "Has Qualifying Encounter During First 240 Days of Measurement Period"
-```
-
 
 For every scoring type, the membership for each population criteria is the criterion result **intersected with membership in its parent population(s)**. This means that a criterion can evaluate `true` and still contribute zero if the patient is not in the required parent set. As a summary:
 
@@ -1625,6 +1572,59 @@ Member attribution (ATR) lists are often used between payers and providers to su
 While attribution is an important component of many quality measurement programs, attribution models are highly dependent on program-specific business rules, contractual relationships, and operational policies. For that reason, the QM IG does not define a standard representation for attribution metadata or attribution models within reusable measure specifications. This allows the same measure specification to be reused across diverse quality programs and reporting environments while allowing implementers to apply attribution approaches appropriate to their specific use case. Individual quality programs may incorporate attribution into their implementation or measure logic as appropriate for their use case, but those approaches are not standardized by the QM IG.
 
 Refer to the [Da Vinci - Member Attribution (ATR) List IG](https://hl7.org/fhir/us/davinci-atr/) for more information on representing groups of patients for attribution.
+
+Note that if your basis is encounters, you can use the following approach to get to attribution: use the `provider` parameter of the DEQM [$evaluate](https://hl7.org/fhir/uv/deqm/en/OperationDefinition-evaluate.html) to identify the provider being reported:
+
+```
+GET [base]/Measure/<measure-id>/$evaluate-measure?subject=Patient/MultiProviderPatient&periodStart=2024-01-01&periodEnd=2024-12-31&provider=Organization/organization-a
+```
+
+This provides the needed input to the attribution criteria to determine what data should be attributed to the provider for the given patient.
+
+An `AttributionModel` library introduces two fluent functions, `isAttributable(Patient)` and `isAttributable(Encounter)`:
+
+```cql
+parameter "Measurement Period" Interval<DateTime> default Interval[@2024-01-01T00:00:00.0Z, @2024-12-31T23:59:59.999Z]
+parameter "Provider" String
+
+context Patient
+
+define fluent function isAttributable(patient Patient):
+  "Provider" is not null implies Patient.managingOrganization.reference.endsWith("Provider")
+
+define fluent function isAttributable(encounter Encounter):
+  encounter.period during "Measurement Period"
+    and "Provider" is not null implies encounter.serviceProvider.reference.endsWith("Provider")
+```
+
+These functions are then referenced in the initial population criteria for each of these measures:
+
+```cql
+define "Initial Population":
+  "Encounter with Principal Diagnosis and Age" Encounter
+    where Encounter.isAttributable()
+```
+
+```cql
+define "Has Qualifying Encounter During First 240 Days of Measurement Period":
+  exists ( ( ["Encounter": "Office Visit"]
+      union ["Encounter": "Outpatient Consultation"]
+      union ["Encounter": "Annual Wellness Visit"]
+      union ["Encounter": "Face-to-Face Interaction"]
+      union ["Encounter": "Home Healthcare Services"]
+      union ["Encounter": "Preventive Care Services Established Office Visit, 18 and Up"]
+      union ["Encounter": "Preventive Care Services Initial Office Visit, 18 and Up"]
+      union ["Encounter": "Preventive Care Services, Initial Office Visit, 0 to 17"]
+      union ["Encounter": "Preventive Care, Established Office Visit, 0 to 17"]
+      union ["Encounter": "Telephone Visits"]
+    ) QualifyingEncounter
+      where QualifyingEncounter.period during day of Interval[start of "Measurement Period", start of "Measurement Period" + 240 days]
+        and QualifyingEncounter.isAttributable()
+  )
+
+define "Initial Population":
+  "Has Qualifying Encounter During First 240 Days of Measurement Period"
+```
 
 ### Must Support
 {: #must-support}
