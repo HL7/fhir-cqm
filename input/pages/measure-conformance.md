@@ -1320,10 +1320,12 @@ The measure is an attestation, derived from the base [Measure]({{site.data.fhir.
 
 [CQMAttestationMeasure](StructureDefinition-cqm-attestationmeasure.html) 
 
-#### Measures with Multiple Populations
-{: #measures-with-multiple-populations}
+#### Measures with Multiple Rates
+{: #measures-with-multiple-rates}
 
 The section discusses how to represent multiple rate measures where each rate is represented as a different `group` in the measure.  Given a set of rates related to a particular topic, multiple rate measures can be used in cases where the rates are tightly related such that they all change (and therefore version) together.  Examples include CMS 136 Follow-Up Care for Children Prescribed ADHD Medication (ADD) which looks for two rates depending on how long the patient remains on medication and the number of follow up visits performed. 
+
+When a measure has multiple rates (each represented as a different group in the measure), the groups should be named Group_1, Group_2, etc.
 
 For those cases where the rate specifications change independently, using an individual measure for each rate is the recommended approach.
 
