@@ -51,9 +51,17 @@ To illustrate the different composite scoring methods, an example Annual Wellnes
     1. Calculation logic for all-or-nothing composite measures SHALL be functionally equivalent to the calculation formulas defined in this section.
     2. Calculation logic for all-or-nothing composite measures SHOULD be written in the same way as the calculation formulas defined in this section.
     3. Narrative descriptions of population criteria for all-or-nothing composite measures SHOULD include the narrative descriptions of the corresponding population criteria for each component measure.
+    4. Narrative descriptions for all-or-nothing composite measures SHOULD include explanation of calculation, including risk adjustment variables, exclusions, and supporting evidence when applicable. For example: All numerators for component measures must be met to satisfy the overall composite numerator. Risk adjustment variables x, y, and z are applied to the overall performance rate.
 
 All-or-nothing scoring includes an individual in the numerator of the composite measure if they are in the numerators of all of the component measures in which they are in the denominator.
 
+Narrative approach:
+
+>Narrative descriptions for all-or-nothing composite measures **SHOULD** clearly describe the composite scoring methodology in plain language, including the criteria for satisfying the composite numerator, handling of exclusions and exceptions, application of risk adjustment variables, and supporting clinical or methodological evidence when applicable.
+
+For example:
+
+>*For each eligible clinician, a patient is included in the Preventive Care and Wellness (All-or-nothing) composite numerator only if the patient received all preventive services for which they were eligible during the measurement period. A patient eligible for breast cancer screening, colorectal cancer screening, and pneumococcal vaccination must satisfy the numerator criteria for each of these component measures to count toward the composite numerator. If the patient does not qualify or is excluded from the denominator of any of these component measures, they do not count against composite numerator fulfillment. Risk adjustment variables such as patient age, comorbidity burden, and socioeconomic risk factors are applied to the calculated composite performance rate when applicable.*
 
 <details open>
 <summary>
@@ -168,8 +176,17 @@ Refer to the definition of ["implies" in CQL](https://cql.hl7.org/09-b-cqlrefere
     1. Calculation logic for opportunity composite measures SHALL be functionally equivalent to the calculation formulas defined in this section.
     2. Calculation logic for opportunity composite measures SHOULD be written in the same way as the calculation formulas defined in this section.
     3. Narrative descriptions of population criteria for opportunity composite measures SHOULD include the narrative descriptions of the corresponding population criteria for each component measure.
+    4. Narrative descriptions for opportunity composite measures SHOULD include explanation that the score is calculated by determining a percentage of the care opportunities provided from the total care opportunities a patient is eligible for.
 
 Opportunity scoring considers the appearance of a patient in a denominator of a component measure as an opportunity to provide a service, and the appearance of that patient in the numerator of each component as the fulfillment of that opportunity. This means that each component measure is considered a “case” in the composite population. The denominator is then the set of cases in which patients appeared in the denominator for the component measures, and so on for each population criteria. This allows the composite to then be calculated as a standard proportion measure where the basis for the population criteria is membership in the population for each component.
+
+Narrative approach:
+
+>Narrative descriptions for opportunity scoring composite measures **SHOULD** clearly describe the composite scoring methodology in plain language, including how eligible opportunities are counted, how numerator credit is assigned, handling of exclusions and exceptions, application of risk adjustment variables, and supporting clinical or methodological evidence when applicable.
+
+For example:
+
+>*The composite score is calculated as the proportion of completed care opportunities across all applicable component measures. Each eligible component measure contributes one opportunity to the composite denominator, and each satisfied component numerator contributes one completed opportunity to the composite numerator. Denominator exclusions and exceptions are evaluated at the component measure level and remove the associated opportunity from the calculation. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate.*
 
 <details open>
 <summary>
@@ -245,8 +262,17 @@ Note that this approach is using component measures where the improvement notati
     1. Calculation logic for subject-level linear combination composite measures SHALL be functionally equivalent to the calculation formulas defined in this section.
     2. Calculation logic for subject-level linear combination composite measures SHOULD be written in the same way as the calculation formulas defined in this section.
     3. Narrative descriptions of population criteria for subject-level linear combination composite measures SHOULD include the narrative descriptions of the corresponding population criteria for each component measure.
+    4. Narrative descriptions for subject-level linear composite measures should include explanation that the ratio of opportunities met for a patient is combined with other patient scores to determine overall performance.
 
 Subject-level linear combination scoring is modeled as a continuous variable measure that gives numerator credit for the proportion of patients in the numerators of composite measures.
+
+Narrative approach:
+
+>Narrative descriptions for subject-level linear composite measures **SHOULD** clearly describe the composite scoring methodology in plain language, including how subject-level scores are calculated, handling of exclusions and exceptions, application of risk adjustment variables, and supporting clinical or methodological evidence when applicable.
+
+For example:
+
+>*The composite score is calculated by determining, for each subject, the proportion of applicable component measure numerators satisfied relative to the total number of applicable component measures. Each subject-level score is then aggregated across the population to determine the overall composite performance rate. Component measures for which the subject meets denominator exclusion or denominator exception criteria are excluded from the subject-level calculation. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate.*
 
 <details open>
 <summary>
@@ -388,7 +414,15 @@ To calculate the <b>overall opportunity</b> score, divide the total number of pa
 
 Weighted scoring combines component measure scores using a weighting factor for each component. In the special case that the weighting factor for each component measure is 1, this is also called component-level linear combination scoring.
 
-Note that as discussed in the section on composite scoring methods, this method is a component-based composite measure scoring method, meaning that the calculation of the composite is performed on the population-level result of the component measures.
+Note that as discussed in the section on composite scoring methods, this method is a component-based composite measure scoring method, meaning that the calculation of the composite is performed on the population-level result of the component measures. Narrative descriptions for weighted scoring composite measures should include explanation of the component weights.
+
+Narrative approach:
+
+>Narrative descriptions for weighted composite measures **SHOULD** clearly describe the composite scoring methodology in plain language, including how component measure scores are weighted and aggregated, handling of exclusions and exceptions, application of risk adjustment variables, and supporting clinical or methodological evidence when applicable.
+
+For example:
+
+>*The composite score is calculated as a weighted aggregation of component measure performance rates. Each component measure score is multiplied by its assigned weight, and the weighted component scores are combined to determine the overall composite performance rate. Denominator exclusions, denominator exceptions, and numerator exclusions are applied within each component measure prior to weighted aggregation. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate.*
 
 <details open>
 <b>Figure 5-4. Component-level linear combination method</b>
