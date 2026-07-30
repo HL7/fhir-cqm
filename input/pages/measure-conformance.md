@@ -754,7 +754,7 @@ All the scoring types share the "Initial Population" criteria, allowing for comm
 
 As Figure 3-2 illustrates, the measure scoring types all start with an initial population criteria, and measure calculation can be thought of as starting from _all subjects_, optionally narrowed to the set of _attributed subjects_, then narrowed to the _initial population_ for the measure. The discussions for each scoring type that follow start from this assumption. An example population of 9 patients is used to explicitly demonstrate the calculation semantics for each of the scoring types.
 
-For more details on attribution, see the [Attribution] section below.
+For more details on attribution, see the [Attribution](#attribution) section below.
 
 Crucially, measure populations are set-based, and the workflow illustrations do not depict duplicate elimination as a result of these set semantics.
 
