@@ -13,7 +13,9 @@ library EXM108 version '8.2.000'
 using FHIR version '4.0.1'
 
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
+include hl7.fhir.uv.cql.FHIRCommon version '2.0.0' called FHIRCommon
 
+include EXMCommon version '2.0.0'
 include MATGlobalCommonFunctions version '5.0.000' called Global
 include SupplementalDataElements version '2.0.000' called SDE
 include VTEICU version '5.0.000' called VTEICU
@@ -111,30 +113,29 @@ define "Denominator Exclusion":
 
 define "Encounter Less Than 2 Days":
   "Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter
-  	where Global."LengthInDays"(QualifyingEncounter.period)< 2
+  	where QualifyingEncounter.period.lengthInDays() < 2
 
 define "Encounter With ICU Location Stay 1 Day or More":
   "Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter
     where exists ( QualifyingEncounter.location Location
-    		where Global.GetLocation(Location.location).type in "Intensive Care Unit"
-    			and Global."LengthInDays"(Location.period)>= 1
-    			and Location.period starts during TJC."CalendarDayOfOrDayAfter"(start of QualifyingEncounter.period)
-	    )
+   		where Global.GetLocation(Location.location).type in "Intensive Care Unit"
+   			and Location.period.lengthInDays() >= 1
+   			and Location.period starts during TJC."CalendarDayOfOrDayAfter"(start of QualifyingEncounter.period)
+    )
 
 define "Encounter With Principal Diagnosis of Mental Disorder or Stroke":
   "Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter
-    where Global."PrincipalDiagnosis"(QualifyingEncounter).code in "Mental Health Diagnoses"
-        or Global."PrincipalDiagnosis"(QualifyingEncounter).code in "Hemorrhagic Stroke"
-        or Global."PrincipalDiagnosis"(QualifyingEncounter).code in "Ischemic Stroke"
+    where QualifyingEncounter.principalDiagnosis().diagnosis in "Mental Health Diagnoses"
+      or QualifyingEncounter.principalDiagnosis().diagnosis in "Hemorrhagic Stroke"
+      or QualifyingEncounter.principalDiagnosis().diagnosis in "Ischemic Stroke"
 
 define "Encounter With Principal Procedure of SCIP VTE Selected Surgery":
   from
     "Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
     "SCIP VTE Selected Surgery" SelectedProcedure
-  let EncounterProcedure: Global.GetExtension(QualifyingEncounter, 'qicore-encounter-procedure')
-  where FHIRHelpers.ToInteger(Global.GetExtension(EncounterProcedure, 'rank').value as FHIR.positiveInt) = 1
-    and Global.GetId(FHIRHelpers.ToString((Global.GetExtension(EncounterProcedure, 'procedure').value as FHIR.Reference).reference)) = SelectedProcedure.id
-    and Global."Normalize Interval"(SelectedProcedure.performed) during QualifyingEncounter.period
+  let EncounterProcedure: QualifyingEncounter.principalProcedure()
+  where EncounterProcedure.procedure.references(SelectedProcedure)
+    and SelectedProcedure.performed.toInterval() during QualifyingEncounter.period
 
 define "SCIP VTE Selected Surgery":
   (	["Procedure": "General Surgery"]
@@ -149,11 +150,11 @@ define "SCIP VTE Selected Surgery":
 define "Encounter With Intervention Comfort Measures From Day of Start of Hospitalization To Day After Admission":
 	"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter
 		with "Intervention Comfort Measures" ComfortMeasure
-		such that Coalesce(start of Global."Normalize Interval"(ComfortMeasure.performed), ComfortMeasure.authoredOn) during VTEICU."FromDayOfStartOfHospitalizationToDayAfterAdmission"(QualifyingEncounter)
+		such that Coalesce(start of ComfortMeasure.performed.toInterval(), ComfortMeasure.authoredOn) during VTEICU."FromDayOfStartOfHospitalizationToDayAfterAdmission"(QualifyingEncounter)
 
 define "Intervention Comfort Measures":
 	(["ServiceRequest": "Comfort Measures"] P
-    		where P.intent = 'order'
+ 		where P.intent = 'order'
   )
   	union
     	(["Procedure": "Comfort Measures"] InterventionPerformed
@@ -165,17 +166,17 @@ define "Encounter With Intervention Comfort Measures on Day of or Day After Proc
     ["Procedure": "General or Neuraxial Anesthesia"] AnesthesiaProcedure,
     "Intervention Comfort Measures" ComfortMeasure
   where AnesthesiaProcedure.status = 'completed'
-      and Global."Normalize Interval"(AnesthesiaProcedure.performed) ends 1 day after day of start of QualifyingEncounter.period
-      and Coalesce(start of Global."Normalize Interval"(ComfortMeasure.performed), ComfortMeasure.authoredOn) during TJC."CalendarDayOfOrDayAfter"(end of Global."Normalize Interval"(AnesthesiaProcedure.performed))
+    and AnesthesiaProcedure.performed.toInterval() ends 1 day after day of start of QualifyingEncounter.period
+    and Coalesce(start of ComfortMeasure.performed.toInterval(), ComfortMeasure.authoredOn) during TJC."CalendarDayOfOrDayAfter"(end of AnesthesiaProcedure.performed.toInterval())
   return QualifyingEncounter
 
 define "Numerator":
   "Encounter With VTE Prophylaxis Received on Day of or Day After Admission or Procedure"
     union ( "Encounter With Medication Oral Factor Xa Inhibitor Administered on Day of or Day After Admission or Procedure"
-    			  intersect ( "Encounter With Prior or Present Diagnosis of Atrial Fibrillation or VTE"
-    						    union "Encounter With Prior or Present Procedure of Hip or Knee Replacement Surgery"
-    			            )
-          )
+  	  intersect ( "Encounter With Prior or Present Diagnosis of Atrial Fibrillation or VTE"
+  	    union "Encounter With Prior or Present Procedure of Hip or Knee Replacement Surgery"
+      )
+    )
     union "Encounter With Low Risk for VTE or Anticoagulant Administered"
     union "Encounter With No VTE Prophylaxis Due to Medical Reason"
     union "Encounter With No VTE Prophylaxis Due to Patient Refusal"
@@ -184,7 +185,7 @@ define "Encounter With VTE Prophylaxis Received on Day of or Day After Admission
  	( from
       "Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
       "VTE Prophylaxis by Medication Administered or Device Applied" VTEProphylaxis
-    where Coalesce(Global."Normalize Interval"(VTEProphylaxis.effective), Global."Normalize Interval"(VTEProphylaxis.performed)) starts during TJC."CalendarDayOfOrDayAfter"(start of QualifyingEncounter.period)
+    where Coalesce(VTEProphylaxis.effective.toInterval(), VTEProphylaxis.performed.toInterval()) starts during TJC."CalendarDayOfOrDayAfter"(start of QualifyingEncounter.period)
     return QualifyingEncounter
  	)
  	union (
@@ -192,8 +193,8 @@ define "Encounter With VTE Prophylaxis Received on Day of or Day After Admission
       "Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
       ["Procedure": "General or Neuraxial Anesthesia"] AnesthesiaProcedure,
       "VTE Prophylaxis by Medication Administered or Device Applied" VTEProphylaxis
-    where Global."Normalize Interval"(AnesthesiaProcedure.performed) ends 1 day after day of start of QualifyingEncounter.period
-      and Coalesce(Global."Normalize Interval"(VTEProphylaxis.effective), Global."Normalize Interval"(VTEProphylaxis.performed)) starts during TJC."CalendarDayOfOrDayAfter"(end of Global."Normalize Interval"(AnesthesiaProcedure.performed))
+    where AnesthesiaProcedure.performed.toInterval() ends 1 day after day of start of QualifyingEncounter.period
+      and Coalesce(VTEProphylaxis.effective.toInterval(), VTEProphylaxis.performed.toInterval()) starts during TJC."CalendarDayOfOrDayAfter"(end of AnesthesiaProcedure.performed.toInterval())
     return QualifyingEncounter
 	)
 
@@ -201,61 +202,69 @@ define "Encounter With VTE Prophylaxis Received on Day of or Day After Admission
 define "VTE Prophylaxis by Medication Administered or Device Applied":
   ( ["MedicationAdministration": medication in "Low Dose Unfractionated Heparin for VTE Prophylaxis"] VTEMedication
       where VTEMedication.status ='completed'
-			     and VTEMedication.dosage.route in "Subcutaneous route"
+        and VTEMedication.dosage.route in "Subcutaneous route"
   )
    union (["MedicationAdministration": medication in "Low Molecular Weight Heparin for VTE Prophylaxis"] LMWH where LMWH.status = 'completed')
-    union (["MedicationAdministration": medication in "Injectable Factor Xa Inhibitor for VTE Prophylaxis"] FactorXa where FactorXa.status = 'completed')
-     union (["MedicationAdministration": medication in "Warfarin"] Warfarin where Warfarin.status = 'completed')
-      union (
-          ["Procedure": "Device Application"] DeviceApplied
-          where DeviceApplied.status = 'complete'
-                and (DeviceApplied.usedCode in "Intermittent pneumatic compression devices (IPC)"
-                    or DeviceApplied.usedCode in"Venous foot pumps (VFP)"
-                    or DeviceApplied.usedCode in "Graduated compression stockings (GCS)"
-                    )
-          )
+   union (["MedicationAdministration": medication in "Injectable Factor Xa Inhibitor for VTE Prophylaxis"] FactorXa where FactorXa.status = 'completed')
+   union (["MedicationAdministration": medication in "Warfarin"] WarfarinAdmin where WarfarinAdmin.status = 'completed')
+   union (
+    ["Procedure": "Device Application"] DeviceApplied
+      where DeviceApplied.status = 'complete'
+        and (
+          DeviceApplied.usedCode in "Intermittent pneumatic compression devices (IPC)"
+            or DeviceApplied.usedCode in"Venous foot pumps (VFP)"
+            or DeviceApplied.usedCode in "Graduated compression stockings (GCS)"
+        )
+  )
 
 define "Encounter With Medication Oral Factor Xa Inhibitor Administered on Day of or Day After Admission or Procedure":
 	( from
-    		"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
-  			["MedicationAdministration": medication in "Oral Factor Xa Inhibitor for VTE Prophylaxis or VTE Treatment"] FactorXaMedication
+   		"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
+			["MedicationAdministration": medication in "Oral Factor Xa Inhibitor for VTE Prophylaxis or VTE Treatment"] FactorXaMedication
     where FactorXaMedication.status = 'completed'
-      and Global."Normalize Interval"(FactorXaMedication.effective) starts during TJC."CalendarDayOfOrDayAfter"(start of QualifyingEncounter.period)
+      and FactorXaMedication.effective.toInterval() starts during TJC."CalendarDayOfOrDayAfter"(start of QualifyingEncounter.period)
     return QualifyingEncounter
-    )
-    union ( from
-    				  "Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
-      				["Procedure": "General or Neuraxial Anesthesia"] AnesthesiaProcedure,
-      				["MedicationAdministration": medication in "Oral Factor Xa Inhibitor for VTE Prophylaxis or VTE Treatment"] FactorXaMedication
-      			where FactorXaMedication.status = 'completed'
-                and AnesthesiaProcedure.status = 'completed'
-      			    and Global."Normalize Interval"(AnesthesiaProcedure.performed) ends 1 day after day of start of QualifyingEncounter.period
-      					and Global."Normalize Interval"(FactorXaMedication.effective) starts during TJC."CalendarDayOfOrDayAfter"(end of Global."Normalize Interval"(AnesthesiaProcedure.performed))
-      			return QualifyingEncounter
-      		)
+  )
+    union ( 
+      from
+			  "Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
+ 				["Procedure": "General or Neuraxial Anesthesia"] AnesthesiaProcedure,
+ 				["MedicationAdministration": medication in "Oral Factor Xa Inhibitor for VTE Prophylaxis or VTE Treatment"] FactorXaMedication
+ 			where FactorXaMedication.status = 'completed'
+        and AnesthesiaProcedure.status = 'completed'
+  	    and AnesthesiaProcedure.performed.toInterval() ends 1 day after day of start of QualifyingEncounter.period
+				and FactorXaMedication.effective.toInterval() starts during TJC."CalendarDayOfOrDayAfter"(end of AnesthesiaProcedure.performed.toInterval())
+   		return QualifyingEncounter
+ 		)
 
 define "Encounter With Prior or Present Diagnosis of Atrial Fibrillation or VTE":
 	( "Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter
 		with ["Condition": code in "Atrial Fibrillation/Flutter"] AtrialFibrillation
-		such that FHIRHelpers.ToConcept(AtrialFibrillation.clinicalStatus) in { Global."active", Global."recurrence", Global."relapse" }
-			and Global."Normalize Interval"(AtrialFibrillation.onset) starts on or before end of QualifyingEncounter.period
+      such that AtrialFibrillation.prevalenceInterval() starts on or before end of QualifyingEncounter.period
     )
-    union ( "Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter
-    				where Global.EncounterDiagnosis(QualifyingEncounter).code in "Atrial Fibrillation/Flutter"
-    			)
-    union ( "Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter
-    				with ["Condition": code in "Venous Thromboembolism"] VTEDiagnosis
-    				such that  FHIRHelpers.ToConcept(VTEDiagnosis.clinicalStatus) in { Global."inactive", Global."remission", Global."resolved" }
-      					//and VTEDiagnosis.verificationStatus = 'confirmed'
-    				and Global."Normalize Interval"(VTEDiagnosis.onset) before start of QualifyingEncounter.period
-      		)
+    union ( 
+      "Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter
+    	  where Global.EncounterDiagnosis(QualifyingEncounter).code in "Atrial Fibrillation/Flutter"
+		)
+    union ( 
+      "Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter
+				with ["Condition": code in "Venous Thromboembolism"] VTEDiagnosis
+  				such that (
+            VTEDiagnosis.clinicalStatus ~ Global."inactive"
+              or VTEDiagnosis.clinicalStatus ~ Global."remission"
+              or VTEDiagnosis.clinicalStatus ~ Global."resolved" 
+          )
+   	  			and VTEDiagnosis.onset.toInterval() before start of QualifyingEncounter.period
+ 		)
 
 define "Encounter With Prior or Present Procedure of Hip or Knee Replacement Surgery":
 	"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter
-	with ( ["Procedure": "Hip Replacement Surgery"]
-    			union ["Procedure": "Knee Replacement Surgery"] ) HipKneeProcedure
-	such that HipKneeProcedure.status = 'completed'
-	     and Global."Normalize Interval"(HipKneeProcedure.performed) starts on or before end of QualifyingEncounter.period
+	with ( 
+    ["Procedure": "Hip Replacement Surgery"]
+    	union ["Procedure": "Knee Replacement Surgery"] 
+  ) HipKneeProcedure
+  	such that HipKneeProcedure.status = 'completed'
+	    and HipKneeProcedure.performed.toInterval() starts on or before end of QualifyingEncounter.period
 
 
 define "Encounter With Low Risk for VTE or Anticoagulant Administered":
@@ -265,7 +274,7 @@ define "Encounter With Low Risk for VTE or Anticoagulant Administered":
 define "Low Risk for VTE or Anticoagulant Administered From Day of Start of Hospitalization To Day After Admission":
  	"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter
     with "Is In Low Risk for VTE or On Anticoagulant" VTERiskAssessment
-    such that Global."Normalize Interval"(VTERiskAssessment.effective) starts during VTEICU."FromDayOfStartOfHospitalizationToDayAfterAdmission"(QualifyingEncounter)
+    such that VTERiskAssessment.effective.toInterval() starts during VTEICU."FromDayOfStartOfHospitalizationToDayAfterAdmission"(QualifyingEncounter)
 
 define "Is In Low Risk for VTE or On Anticoagulant":
 	  ( ["Observation": "Risk for venous thromboembolism"] VTERiskAssessment
@@ -288,63 +297,57 @@ define "Is In Low Risk for VTE or On Anticoagulant":
 
 define "Low Risk for VTE or Anticoagulant Administered on Day of or Day After Procedure":
  	from
-   		"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
-   		["Procedure": "General or Neuraxial Anesthesia"] AnesthesiaProcedure,
-   		"Is In Low Risk for VTE or On Anticoagulant" VTERiskAssessment
-	where Global."Normalize Interval"(AnesthesiaProcedure.performed) ends 1 day after day of start of QualifyingEncounter.period
- 			and Global."Normalize Interval"(VTERiskAssessment.effective) starts during TJC."CalendarDayOfOrDayAfter"(end of Global."Normalize Interval"(AnesthesiaProcedure.performed))
+ 		"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
+ 		["Procedure": "General or Neuraxial Anesthesia"] AnesthesiaProcedure,
+ 		"Is In Low Risk for VTE or On Anticoagulant" VTERiskAssessment
+  where AnesthesiaProcedure.performed.toInterval() ends 1 day after day of start of QualifyingEncounter.period
+		and VTERiskAssessment.effective.toInterval() starts during TJC."CalendarDayOfOrDayAfter"(end of AnesthesiaProcedure.performed.toInterval())
 	return QualifyingEncounter
 
 define "Encounter With No VTE Prophylaxis Due to Medical Reason":
-   ( "No VTE Prophylaxis Medication Due to Medical Reason From Day of Start of Hospitalization To Day After Admission"
-     intersect "No VTE Prophylaxis Device Due to Medical Reason From Day of Start of Hospitalization To Day After Admission"
-   )
-   union ( "No VTE Prophylaxis Medication Due to Medical Reason on Day of or Day After Procedure"
-       intersect "No VTE Prophylaxis Device Due to Medical Reason on Day of or Day After Procedure"
-       )
+  ( "No VTE Prophylaxis Medication Due to Medical Reason From Day of Start of Hospitalization To Day After Admission"
+      intersect "No VTE Prophylaxis Device Due to Medical Reason From Day of Start of Hospitalization To Day After Admission"
+  )
+    union ( 
+      "No VTE Prophylaxis Medication Due to Medical Reason on Day of or Day After Procedure"
+        intersect "No VTE Prophylaxis Device Due to Medical Reason on Day of or Day After Procedure"
+    )
 
 define "No VTE Prophylaxis Medication Due to Medical Reason From Day of Start of Hospitalization To Day After Admission":
-   	"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter
-       with	"No VTE Prophylaxis Medication Administered or Ordered" NoVTEMedication
-     	such that Coalesce(NoVTEMedication.statusReason,NoVTEMedication.reasonCode) in "Medical Reason"
-      			and Coalesce(NoVTEMedication.authoredOn, start of Global."Normalize Interval"(NoVTEMedication.effective)) during VTEICU."FromDayOfStartOfHospitalizationToDayAfterAdmission"(QualifyingEncounter)
+ 	"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter
+    with	"No VTE Prophylaxis Medication Administered or Ordered" NoVTEMedication
+     	such that Coalesce(NoVTEMedication.statusReason, NoVTEMedication.reasonCode) in "Medical Reason"
+  			and Coalesce(NoVTEMedication.authoredOn, start of NoVTEMedication.effective.toInterval()) during VTEICU."FromDayOfStartOfHospitalizationToDayAfterAdmission"(QualifyingEncounter)
 
 define "No VTE Prophylaxis Medication Administered or Ordered":
-   ((	["MedicationAdministration": medication in "Low Dose Unfractionated Heparin for VTE Prophylaxis"]
-     union
-	    ["MedicationAdministration": medication in "Low Molecular Weight Heparin for VTE Prophylaxis"]
-     union
-	    ["MedicationAdministration": medication in "Injectable Factor Xa Inhibitor for VTE Prophylaxis"]
-     union
-	    ["MedicationAdministration": medication in "Warfarin"]
-       ) MedicationAdm
-       where MedicationAdm.status = 'not-done'
-        )
+  ((	
+    ["MedicationAdministration": medication in "Low Dose Unfractionated Heparin for VTE Prophylaxis"]
+     union ["MedicationAdministration": medication in "Low Molecular Weight Heparin for VTE Prophylaxis"]
+     union ["MedicationAdministration": medication in "Injectable Factor Xa Inhibitor for VTE Prophylaxis"]
+     union ["MedicationAdministration": medication in "Warfarin"]
+  ) MedicationAdm
+    where MedicationAdm.status = 'not-done'
+  )
   union
-	   ((	["MedicationRequest": medication in "Low Dose Unfractionated Heparin for VTE Prophylaxis"]
-  	union
-  	 ["MedicationRequest": medication in "Low Molecular Weight Heparin for VTE Prophylaxis"]
-    union
-    	["MedicationRequest": medication in "Injectable Factor Xa Inhibitor for VTE Prophylaxis"]
-    union
-    	["MedicationRequest": medication in "Warfarin"]
+  ((	
+    ["MedicationRequest": medication in "Low Dose Unfractionated Heparin for VTE Prophylaxis"]
+  	  union ["MedicationRequest": medication in "Low Molecular Weight Heparin for VTE Prophylaxis"]
+      union	["MedicationRequest": medication in "Injectable Factor Xa Inhibitor for VTE Prophylaxis"]
+      union	["MedicationRequest": medication in "Warfarin"]
     ) MedicationOrder
     	where	MedicationOrder.doNotPerform is true
         and MedicationOrder.status in {'completed', 'cancelled'}
-        //11/5 discussion: all expressions for QI-Core must include a status.
-        //Therefore, we need ServiceRequest.status = completed; and MedicationRequest.status = cancelled (or completed, since cancelled indicates it was once ordered but intentionally never filled).
-        //So the not done issue is handled by ServiceRequest.doNotPerform = True  Or MedicationRequest.doNotPerform = True
-    )
+  )
 
 define "No VTE Prophylaxis Medication Due to Medical Reason on Day of or Day After Procedure":
 	from
-  		"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
-  		["Procedure": "General or Neuraxial Anesthesia"] AnesthesiaProcedure,
-  		"No VTE Prophylaxis Medication Administered or Ordered" NoVTEMedication
+		"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
+		["Procedure": "General or Neuraxial Anesthesia"] AnesthesiaProcedure,
+		"No VTE Prophylaxis Medication Administered or Ordered" NoVTEMedication
 	where Coalesce(NoVTEMedication.statusReason,NoVTEMedication.reasonCode) in "Medical Reason"
-			and AnesthesiaProcedure.status = 'completed'
-			and Global."Normalize Interval"(AnesthesiaProcedure.performed) ends 1 day after day of start of QualifyingEncounter.period
-			and Coalesce(NoVTEMedication.authoredOn, start of Global."Normalize Interval"(NoVTEMedication.effective)) during TJC."CalendarDayOfOrDayAfter"(end of Global."Normalize Interval"(AnesthesiaProcedure.performed))
+  	and AnesthesiaProcedure.status = 'completed'
+	  and AnesthesiaProcedure.performed.toInterval() ends 1 day after day of start of QualifyingEncounter.period
+		and Coalesce(NoVTEMedication.authoredOn, start of NoVTEMedication.effective.toInterval()) during TJC."CalendarDayOfOrDayAfter"(end of AnesthesiaProcedure.performed.toInterval())
   return QualifyingEncounter
 
 define "No VTE Prophylaxis Device Due to Medical Reason From Day of Start of Hospitalization To Day After Admission":
@@ -353,68 +356,72 @@ define "No VTE Prophylaxis Device Due to Medical Reason From Day of Start of Hos
       such that NoVTEDevice.requestStatusReason in "Medical Reason"
         and  NoVTEDevice.authoredOn during VTEICU."FromDayOfStartOfHospitalizationToDayAfterAdmission"(QualifyingEncounter)
 
-//11/5: ServiceRequest not done reason is an extension in QI-Core R4 as ServiceRequest.extension:statusReason
-define function GetStatusReason(requestReason ServiceRequest):
-      Global.GetBaseExtension(requestReason, 'request-statusReason')
-
 define "No VTE Prophylaxis Device Applied or Ordered":
   ((
     ["ServiceRequest": "Venous foot pumps (VFP)"]
-    union ["ServiceRequest": "Intermittent pneumatic compression devices (IPC)"]
-    union ["ServiceRequest": "Graduated compression stockings (GCS)"]
-    ) DeviceOrder
+      union ["ServiceRequest": "Intermittent pneumatic compression devices (IPC)"]
+      union ["ServiceRequest": "Graduated compression stockings (GCS)"]
+  ) DeviceOrder
     where DeviceOrder.status = 'completed'
-        and DeviceOrder.doNotPerform is true
-    return {id: DeviceOrder.id, requestStatusReason: GetStatusReason(DeviceOrder), authoredOn: DeviceOrder.authoredOn}
-    )
-  union
-    (
+      and DeviceOrder.doNotPerform is true
+    return {
+      id: DeviceOrder.id, 
+      requestStatusReason: DeviceOrder.statusReason(), 
+      authoredOn: DeviceOrder.authoredOn
+    }
+  )
+    union (
       ["Procedure": "Device Application"] DeviceApplied
-      let DeviceNotDoneTiming: Global.GetExtension(DeviceApplied, 'qicore-recorded').value
-      where (DeviceApplied.usedCode in "Intermittent pneumatic compression devices (IPC)"
-            or DeviceApplied.usedCode in "Venous foot pumps (VFP)"
-            or DeviceApplied.usedCode in "Graduated compression stockings (GCS)"
-            )
-         and  DeviceApplied.status = 'not-done'
-         return {id: DeviceApplied.id, requestStatusReason: DeviceApplied.statusReason, authoredOn: DeviceNotDoneTiming}
+        where (DeviceApplied.usedCode in "Intermittent pneumatic compression devices (IPC)"
+          or DeviceApplied.usedCode in "Venous foot pumps (VFP)"
+          or DeviceApplied.usedCode in "Graduated compression stockings (GCS)"
+        )
+          and DeviceApplied.status = 'not-done'
+        return {
+          id: DeviceApplied.id, 
+          requestStatusReason: DeviceApplied.statusReason, 
+          authoredOn: DeviceApplied.recorded()
+        }
 
     )
 
 define "No VTE Prophylaxis Device Due to Medical Reason on Day of or Day After Procedure":
   from
-  		"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
-  		["Procedure": "General or Neuraxial Anesthesia"] AnesthesiaProcedure,
-  		"No VTE Prophylaxis Device Applied or Ordered" NoVTEDevice
-  where  NoVTEDevice.requestStatusReason in "Medical Reason"
-      and AnesthesiaProcedure.status = 'completed'
-  		and Global."Normalize Interval"(AnesthesiaProcedure.performed) ends 1 day after day of start of QualifyingEncounter.period
-      and NoVTEDevice.authoredOn during TJC."CalendarDayOfOrDayAfter"(end of Global."Normalize Interval"(AnesthesiaProcedure.performed))
+ 		"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
+ 		["Procedure": "General or Neuraxial Anesthesia"] AnesthesiaProcedure,
+ 		"No VTE Prophylaxis Device Applied or Ordered" NoVTEDevice
+  where NoVTEDevice.requestStatusReason in "Medical Reason"
+    and AnesthesiaProcedure.status = 'completed'
+		and AnesthesiaProcedure.performed.toInterval() ends 1 day after day of start of QualifyingEncounter.period
+    and NoVTEDevice.authoredOn during TJC."CalendarDayOfOrDayAfter"(end of AnesthesiaProcedure.performed.toInterval())
   return QualifyingEncounter
 
 define "Encounter With No VTE Prophylaxis Due to Patient Refusal":
- "No VTE Prophylaxis Due to Patient Refusal From Day of Start of Hospitalization To Day After Admission"
- 	union "No VTE Prophylaxis Due to Patient Refusal on Day of or Day After Procedure"
+  "No VTE Prophylaxis Due to Patient Refusal From Day of Start of Hospitalization To Day After Admission"
+ 	  union "No VTE Prophylaxis Due to Patient Refusal on Day of or Day After Procedure"
 
 define "No VTE Prophylaxis Due to Patient Refusal From Day of Start of Hospitalization To Day After Admission":
  	"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter
-	 with "No VTE Prophylaxis Medication or Device Due to Patient Refusal" PatientRefusal
-   such that Coalesce(start of Global."Normalize Interval"(PatientRefusal.effective), PatientRefusal.authoredOn)
-         during VTEICU."FromDayOfStartOfHospitalizationToDayAfterAdmission"(QualifyingEncounter)
+  	with "No VTE Prophylaxis Medication or Device Due to Patient Refusal" PatientRefusal
+      such that Coalesce(start of PatientRefusal.effective.toInterval(), PatientRefusal.authoredOn)
+        during VTEICU."FromDayOfStartOfHospitalizationToDayAfterAdmission"(QualifyingEncounter)
 
 define "No VTE Prophylaxis Medication or Device Due to Patient Refusal":
-    ( "No VTE Prophylaxis Medication Administered or Ordered" NoVTEMedication
-        where Coalesce(NoVTEMedication.statusReason,NoVTEMedication.reasonCode) in "Patient Refusal"
-    )
-  union ("No VTE Prophylaxis Device Applied or Ordered" NoVTEDevice
-           where NoVTEDevice.requestStatusReason in "Patient Refusal"
-        )
+  ( 
+    "No VTE Prophylaxis Medication Administered or Ordered" NoVTEMedication
+      where Coalesce(NoVTEMedication.statusReason,NoVTEMedication.reasonCode) in "Patient Refusal"
+  )
+  union (
+    "No VTE Prophylaxis Device Applied or Ordered" NoVTEDevice
+      where NoVTEDevice.requestStatusReason in "Patient Refusal"
+  )
 
 define "No VTE Prophylaxis Due to Patient Refusal on Day of or Day After Procedure":
  	from
-   		"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
-   		["Procedure": "General or Neuraxial Anesthesia"] AnesthesiaProcedure,
-   		"No VTE Prophylaxis Medication or Device Due to Patient Refusal" PatientRefusal
-	where Global."Normalize Interval"(AnesthesiaProcedure.performed) ends 1 day after day of start of QualifyingEncounter.period
- 			and Coalesce(start of Global."Normalize Interval"(PatientRefusal.effective), PatientRefusal.authoredOn)
-             during TJC."CalendarDayOfOrDayAfter"(end of Global."Normalize Interval"(AnesthesiaProcedure.performed))
+ 		"Encounter With Age Range and Without VTE Diagnosis or Obstetrical Conditions" QualifyingEncounter,
+ 		["Procedure": "General or Neuraxial Anesthesia"] AnesthesiaProcedure,
+ 		"No VTE Prophylaxis Medication or Device Due to Patient Refusal" PatientRefusal
+	where AnesthesiaProcedure.performed.toInterval() ends 1 day after day of start of QualifyingEncounter.period
+		and Coalesce(start of PatientRefusal.effective.toInterval(), PatientRefusal.authoredOn)
+      during TJC."CalendarDayOfOrDayAfter"(end of AnesthesiaProcedure.performed.toInterval())
 	return QualifyingEncounter
