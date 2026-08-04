@@ -306,7 +306,7 @@ code "Venous foot pump, device (physical object)": '442023007' from "SNOMED-CT:2
 
 Further discussion of codesystem, ValueSet, and code can be found in the [Using CQL Chapter](using-cql.html) of this IG, sections [4.3](using-cql.html#code-systems), [4.4](using-cql.html#value-sets), and [4.5](using-cql.html#codes).
 
-For measures that use CQL, ValueSets and direct-reference codes that are associated with data access expressions can be found in the `dataRequirement` elements of the effective data requirements Library for the Measure.
+The effective data requirements library provides a structured representation of both the data criteria and terminology dependencies for a quality measure. Regardless of whether a measure uses CQL, all ValueSets and direct-reference codes referenced by the measure are surfaced in the library. For measures that use CQL, these terminology dependencies are represented in the dataRequirement elements derived from the measure logic.
 
 ```json
 "dataRequirement": [
@@ -336,8 +336,6 @@ For measures that use CQL, ValueSets and direct-reference codes that are associa
 ```
 
 Snippet 3-9: Example Library terminology definitions (from [library-Terminology.json](Library-Terminology.json.html))
-
-Regardless of whether a measure uses CQL, all ValueSets and direct-reference codes referenced by the measure are surfaced in the [_effective data requirements_](StructureDefinition-cqm-computablemeasure-definitions.html#diff_Measure.extension:effectiveDataRequirements) library for a computable measure. 
 
 **Conformance Requirement 3.5 (Terminology Inclusion):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-5)
 {: #conformance-requirement-3-5}
