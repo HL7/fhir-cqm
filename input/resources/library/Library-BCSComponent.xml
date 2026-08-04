@@ -1,4 +1,9 @@
 <Library xmlns="http://hl7.org/fhir">
+   <meta>
+      <profile value="http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library"></profile>
+      <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"></profile>
+      <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablelibrary"></profile>
+   </meta>
    <id value="BCSComponent"></id>
    <url value="http://hl7.org/fhir/uv/cqm/Library/BCSComponent"></url>
    <version value="0.0.001"></version>

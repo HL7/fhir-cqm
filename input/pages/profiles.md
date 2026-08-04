@@ -58,11 +58,11 @@ This implementation guide makes use of Library resources in two ways:
 ##### Logic Library Profile Usage
 {: #logic-library-profile-usage}
 
-This implementation guide does not introduce any new logic library profiles, but makes use of library profiles defined in the Canonical Resource Management Infrastructure and Using CQL With FHIR implementation guides:
+This implementation guide defines a publishable logic library profile, as well as making use of library profiles defined in the Canonical Resource Management Infrastructure and Using CQL With FHIR implementation guides:
 
 | **Shareable** | **Computable** | **Publishable** | **Executable** |
 |----|----|----|----|
-| [CRMIShareableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablelibrary.html) | [CRMIComputableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-computablelibrary.html) | [CRMIPublishableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-publishablelibrary.html) | [CRMIExecutableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-executablelibrary.html)  |
+| [CRMIShareableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablelibrary.html) | [CRMIComputableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-computablelibrary.html) | [CQMPublishableLibrary](StructureDefinition-cqm-publishablelibrary.html) | [CRMIExecutableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-executablelibrary.html)  |
 {: .grid }
 
 For measures that use Clinical Quality Language to represent expression logic, the following profiles are used:

@@ -57,11 +57,11 @@ Snippet 3-1: FHIR Measure structure - abridged for clarity (from sample [Measure
 **Conformance Requirement 3.1 (Measure Specifications):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-1)
 {: #conformance-requirement-3-1}
 
-1. FHIR-based quality measures SHALL consist of a FHIR Measure resource conforming to at least the [CRMIShareableMeasure profile]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablemeasure.html).
-2. In addition, measures with a status of active SHALL conform to the [CRMIPublishableMeasure profile]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-publishablemeasure.html) in particular. 
+1. FHIR-based quality measures SHALL consist of a FHIR Measure resource conforming to at least the [CRMIShareableMeasure]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablemeasure.html) profile.
+2. In addition, measures with a status of active SHALL conform to the [CQMPublishableMeasure](StructureDefinition-cqm-publishablemeasure.html) profile. 
 3. FHIR-based measures SHALL contain a narrative containing a human-readable representation of the measure content.  
     a. Narrative should be consistent with the narratives in this IG. Liquid templates are provided as informative resources to facilitate consistency across measures. [Measure.liquid](https://github.com/cqframework/sample-content-ig/blob/master/templates/liquid/Measure.liquid)
-4. FHIR based measures should contain Measure.usage and Measure.description elements.  In addition, other elements may be needed based on measure structure and intent (stratifier, supplemental data, etc.)
+4. FHIR based measures should contain Measure.usage and Measure.description elements. In addition, other elements may be needed based on measure structure and intent (stratifier, supplemental data, etc.)
 
 Note that for string-valued description elements, these elements are markdown valued in future versions so systems SHOULD be able to render markdown content when it appears in these elements:
 
@@ -105,6 +105,8 @@ Snippet 3-3: `library` element from Snippet 3-1
 {: #conformance-requirement-3-2}
 
 1. FHIR-based measures that make use of CQL SHALL use the [CQLLibrary](http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library) profile.
+2. The primary measure library for a FHIR-based measure SHALL (and all referenced libraries SHOULD) conform to at least the [CRMIShareableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablemeasure.html) profile.
+3. In addition, when the primary measure library has a status of active, it SHALL (and other referenced active libraries SHOULD) conform to the [CQMPublishableLibrary](StructureDefinition-cqm-publishablelibrary.html) profile.
 4. FHIR-based measures that use CQL MAY reference other CQL libraries, but only the primary measure library is specified in the library element of the measure.
 
 Snippet 3-4 illustrates a FHIR Library resource containing a CQL library with a stable, globally unique, version-independent identifier for the library, the `url`. If the library has a version specified, the `version` element is used as well.

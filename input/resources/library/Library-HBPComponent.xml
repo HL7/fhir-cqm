@@ -1,7 +1,7 @@
 <Library xmlns="http://hl7.org/fhir">
    <id value="HBPComponent"></id>
    <meta>
-      <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary"></profile>
+      <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablelibrary"></profile>
       <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"></profile>
       <profile value="http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library"></profile>
       <profile value="http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library"></profile>

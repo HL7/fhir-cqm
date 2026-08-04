@@ -2,7 +2,7 @@
   "resourceType": "Measure",
   "id": "Terminology-FHIR",
   "meta": {
-    "profile": [ "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cohortmeasure", "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure", "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure" ]
+    "profile": [ "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cohortmeasure", "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure" ]
   },
   "extension": [ {
     "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis",

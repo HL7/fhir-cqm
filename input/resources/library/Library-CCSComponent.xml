@@ -1,5 +1,10 @@
 <Library xmlns="http://hl7.org/fhir">
    <id value="CCSComponent"></id>
+   <meta>
+      <profile value="http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library"></profile>
+      <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"></profile>
+      <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablelibrary"></profile>
+   </meta>
    <url value="http://hl7.org/fhir/uv/cqm/Library/CCSComponent"></url>
    <version value="0.0.001"></version>
    <name value="CCSComponent"></name>
