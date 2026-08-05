@@ -5,14 +5,14 @@ of finding conventions and usage patterns that meet the needs of the various sta
 in the measure development community.
 */
 
-library EXM55 version '5.0.0'
+library EXM55
 
 using FHIR version '4.0.1'
 
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
 include hl7.fhir.uv.cql.FHIRCommon version '2.0.0' called FHIRCommon
 
-include EXMCommon version '2.0.0'
+include EXMCommon
 
 valueset "Emergency Department Visit" : 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292'
 valueset "Psychiatric/Mental Health Patient" : 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.299'

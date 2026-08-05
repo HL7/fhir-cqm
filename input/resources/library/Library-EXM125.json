@@ -10,7 +10,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Library/Identifier",
     "value": "EXM125"
   } ],
-  "version": "8.0.000",
   "name": "EXM125",
   "title": "EXM125 - Breast Cancer Screening Library",
   "status": "active",

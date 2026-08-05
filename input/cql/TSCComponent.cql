@@ -4,14 +4,14 @@ or recommendation for guidance. This example will help guide and direct the proc
 of finding conventions and usage patterns that meet the needs of the various stakeholders
 in the measure development community.
 */
-library TSCComponent version '0.0.001'
+library TSCComponent
 
 using FHIR version '4.0.1'
 
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
 
-include SupplementalDataElements version '2.0.000' called SDE
-include MATGlobalCommonFunctions version '5.0.000' called Global
+include SupplementalDataElements called SDE
+include MATGlobalCommonFunctions called Global
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "CPT": 'http://www.ama-assn.org/go/cpt'

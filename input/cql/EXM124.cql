@@ -6,16 +6,16 @@ in the measure development community.
 
 Based on CMS124v9 - Cervical Cancer Screening
 */
-library EXM124 version '9.0.000'
+library EXM124
 
 using FHIR version '4.0.1'
 
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
 
-include Hospice version '2.0.000' called Hospice
-include AdultOutpatientEncounters version '2.0.000' called AdultOutpatientEncounters
-include MATGlobalCommonFunctions version '5.0.000' called Global
-include SupplementalDataElements version '2.0.000' called SDE
+include Hospice called Hospice
+include AdultOutpatientEncounters called AdultOutpatientEncounters
+include MATGlobalCommonFunctions called Global
+include SupplementalDataElements called SDE
 
 codesystem "SNOMEDCT:2017-09": 'http://snomed.info/sct' version 'http://snomed.info/sct/731000124108/version/201709'
 

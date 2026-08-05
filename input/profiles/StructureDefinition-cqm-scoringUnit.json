@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-scoringUnit",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoringUnit",
-  "version": "1.0.0",
   "name": "CQMScoringUnit",
   "title": "CQM Scoring Unit",
   "status": "active",

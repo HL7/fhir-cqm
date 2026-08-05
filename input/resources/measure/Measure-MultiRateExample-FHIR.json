@@ -9,7 +9,6 @@
     "valueCode": "Patient"
   } ],
   "url": "http://hl7.org/fhir/uv/cqm/Measure/MultiRateExample-FHIR",
-  "version": "0.1.0",
   "name": "MultiRateExample",
   "title": "Multi-Rate Example Measure",
   "status": "active",

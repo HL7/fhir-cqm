@@ -10,7 +10,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Library/Identifier",
     "value": "Hospice"
   } ],
-  "version": "2.0.000",
   "name": "Hospice",
   "title": "Hospice FHIR Library",
   "status": "active",

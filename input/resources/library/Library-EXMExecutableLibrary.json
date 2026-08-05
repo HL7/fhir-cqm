@@ -10,7 +10,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Library/Identifier",
     "value": "EXMExecutableLibrary"
   } ],
-  "version": "2.0.0",
   "name": "EXMExecutableLibrary",
   "title": "Example Executable Library",
   "status": "active",

@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-supplementalDataGuidance",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-supplementalDataGuidance",
-  "version": "2.0.0",
   "name": "CQMSupplementalDataGuidance",
   "title": "CQM Supplemental Data Guidance",
   "status": "active",

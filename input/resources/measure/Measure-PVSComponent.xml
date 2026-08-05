@@ -50,7 +50,6 @@
       </type>
       <value value="Pneumococcal Vaccination Status"></value>
    </identifier>
-   <version value="0.0.001"></version>
    <name value="PVSComponent"></name>
    <title value="Pneumococcal Vaccination Status for Older Adults"></title>
    <status value="active"></status>

@@ -63,7 +63,6 @@
       </type>
       <value value="High Blood Pressure Screening"></value>
    </identifier>
-   <version value="0.0.001"></version>
    <name value="HBPComponent"></name>
    <title value="Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented"></title>
    <status value="active"></status>

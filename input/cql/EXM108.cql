@@ -8,18 +8,18 @@ in the measure development community.
 Based on CMS108v8 2020 reporting year. QDM to QI-4
 Venous Thromboembolism Prophylaxis
 */
-library EXM108 version '8.2.000'
+library EXM108
 
 using FHIR version '4.0.1'
 
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
 include hl7.fhir.uv.cql.FHIRCommon version '2.0.0' called FHIRCommon
 
-include EXMCommon version '2.0.0'
-include MATGlobalCommonFunctions version '5.0.000' called Global
-include SupplementalDataElements version '2.0.000' called SDE
-include VTEICU version '5.0.000' called VTEICU
-include TJCOverall version '4.0.000' called TJC
+include EXMCommon
+include MATGlobalCommonFunctions called Global
+include SupplementalDataElements called SDE
+include VTEICU called VTEICU
+include TJCOverall called TJC
 
 codesystem "SNOMEDCT": 'http://snomed.info/sct'
 codesystem "LOINC": 'http://loinc.org'

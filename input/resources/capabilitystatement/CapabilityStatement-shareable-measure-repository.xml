@@ -2,7 +2,6 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
   <id value="shareable-measure-repository"/>
   <url value="http://hl7.org/fhir/uv/cqm/CapabilityStatement/shareable-measure-repository"/>
-  <version value="3.0.0"/>
   <name value="CQFMShareableMeasureRepository"/>
   <title value="CQF Measures Shareable Measure Repository Capability Statement"/>
   <status value="active"/>

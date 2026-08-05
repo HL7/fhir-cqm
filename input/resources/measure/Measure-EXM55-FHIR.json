@@ -19,7 +19,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Measure/Identifier/exm",
     "value": "55"
   } ],
-  "version": "5.0.0",
   "name": "EXM55",
   "title": "EXM55 - Median Emergency Department Visit Duration",
   "status": "active",

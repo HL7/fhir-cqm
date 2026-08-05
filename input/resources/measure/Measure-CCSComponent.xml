@@ -52,7 +52,6 @@
       </type>
       <value value="Colorectal Cancer Screening"></value>
    </identifier>
-   <version value="0.0.001"></version>
    <name value="CCSComponent"></name>
    <title value="Cervical Cancer Screening"></title>
    <status value="active"></status>

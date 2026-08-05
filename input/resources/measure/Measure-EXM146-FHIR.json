@@ -19,7 +19,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Measure/Identifier/exm",
     "value": "146"
   } ],
-  "version": "4.0.0",
   "name": "EXM146",
   "title": "EXM146 - Appropriate Testing for Children with Pharyngitis",
   "status": "active",

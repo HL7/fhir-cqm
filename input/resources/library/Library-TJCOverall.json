@@ -10,7 +10,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Library/Identifier",
     "value": "TJCOverall"
   } ],
-  "version": "4.0.000",
   "name": "TJCOverall",
   "title": "TJC Overall Library",
   "status": "active",

@@ -2,7 +2,6 @@
   "resourceType": "Library",
   "id": "Terminology",
   "url": "http://hl7.org/fhir/uv/cqm/Library/Terminology",
-  "version": "1.0.0",
   "name": "Terminology",
   "title": "Terminology Library",
   "type": {

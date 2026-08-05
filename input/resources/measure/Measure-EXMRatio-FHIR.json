@@ -26,7 +26,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Measure/Identifier/exm",
     "value": "EXMRatio-FHIR"
   } ],
-  "version": "2.0.0",
   "name": "EXMRatioMeasure",
   "title": "EXM Ratio Measure",
   "status": "active",

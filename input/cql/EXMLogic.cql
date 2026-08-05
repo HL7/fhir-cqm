@@ -4,14 +4,14 @@ FHIR-based quality measure are represented. It is intentionally simplified to sh
 specific aspects of a measure, and is not intended as an example of a clinically
 meaningful measure.
 */
-library EXMLogic version '2.0.0'
+library EXMLogic
 
 using FHIR version '4.0.1'
 
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
 include hl7.fhir.uv.cql.FHIRCommon version '2.0.0' called FHIRCommon
 
-include EXMCommon version '2.0.0'
+include EXMCommon
 
 valueset "Emergency Department Visit" : 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292'
 valueset "Psychiatric/Mental Health Patient" : 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.299'

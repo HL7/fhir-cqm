@@ -2,7 +2,6 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
   <id value="authoring-measure-repository"/>
   <url value="http://hl7.org/fhir/uv/cqm/CapabilityStatement/authoring-measure-repository"/>
-  <version value="3.0.0"/>
   <name value="CQFMAuthoringMeasureRepository"/>
   <title value="CQF Measures Authoring Measure Repository Capability Statement"/>
   <status value="active"/>

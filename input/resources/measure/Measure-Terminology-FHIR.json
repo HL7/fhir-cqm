@@ -14,7 +14,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Measure/Identifier/exm",
     "value": "Terminology_FHIR"
   } ],
-  "version": "1.0.0",
   "name": "Terminology_FHIR",
   "title": "Terminology FHIR",
   "status": "active",

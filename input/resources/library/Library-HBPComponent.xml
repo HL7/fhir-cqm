@@ -9,7 +9,6 @@
    </meta>
    <language value="en"></language>
    <url value="http://hl7.org/fhir/uv/cqm/Library/HBPComponent"></url>
-   <version value="0.0.001"></version>
    <name value="HBPComponent"></name>
    <title value="HBP Component Library"></title>
    <status value="active"></status>

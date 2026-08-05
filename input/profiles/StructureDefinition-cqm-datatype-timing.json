@@ -33,7 +33,6 @@
     }
   ],
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-datatype-timing",
-  "version": "1.0.0",
   "name": "CQMDataTypeTiming",
   "title": "CQM DataType Timing",
   "status": "active",

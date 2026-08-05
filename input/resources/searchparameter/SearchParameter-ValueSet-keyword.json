@@ -4,7 +4,6 @@
   "url" : "http://hl7.org/fhir/uv/cqm/SearchParameter/ValueSet-keyword",
   "name" : "ValuesetKeyword",
   "status" : "draft",
-  "version": "1.0.0",
   "experimental" : false,
   "date" : "2023-06-12T13:00:00-05:00",
   "publisher" : "Clinical Quality Information WG",

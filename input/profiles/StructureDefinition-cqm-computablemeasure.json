@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-computablemeasure",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure",
-  "version": "1.0.0",
   "name": "CQMComputableMeasure",
   "title": "CQM Computable Measure",
   "status": "active",

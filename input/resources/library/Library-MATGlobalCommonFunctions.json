@@ -10,7 +10,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Library/Identifier",
     "value": "MATGlobalCommonFunctions"
   } ],
-  "version": "5.0.000",
   "name": "MATGlobalCommonFunctions",
   "title": "MAT Global Common Functions FHIR Library",
   "status": "active",

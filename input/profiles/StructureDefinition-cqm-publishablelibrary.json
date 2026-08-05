@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-publishablelibrary",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablelibrary",
-  "version": "1.0.0",
   "name": "CQMPublishableLibrary",
   "title": "CQM Publishable Library",
   "status": "active",

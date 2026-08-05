@@ -6,7 +6,6 @@
    </meta>
    <language value="en"></language>
    <url value="http://hl7.org/fhir/uv/cqm/Measure/PreventiveCareandWellnessOpportunityComposite"></url>
-   <version value="0.0.001"></version>
    <name value="PreventiveCareandWellnessOpportunityComposite"></name>
    <title value="Preventive Care and Wellness Opportunity Composite"></title>
    <status value="active"></status>

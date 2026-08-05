@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-populationBasis",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis",
-  "version": "1.0.0",
   "name": "CQMPopulationBasis",
   "title": "CQM Population Basis",
   "status": "active",

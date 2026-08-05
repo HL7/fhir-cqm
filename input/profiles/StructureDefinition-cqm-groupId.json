@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-groupId",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId",
-  "version": "1.0.0",
   "name": "CQMGroupId",
   "title": "CQM Group Id",
   "status": "active",

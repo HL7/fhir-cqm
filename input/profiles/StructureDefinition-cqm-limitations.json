@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-limitations",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-limitations",
-  "version": "1.0.0",
   "name": "CQMLimitations",
   "title": "CQM Limitations",
   "status": "active",

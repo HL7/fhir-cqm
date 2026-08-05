@@ -1,4 +1,4 @@
-library EXMCommon version '2.0.0'
+library EXMCommon
 
 using FHIR version '4.0.1'
 

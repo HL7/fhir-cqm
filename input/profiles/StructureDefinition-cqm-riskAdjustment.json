@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-riskAdjustment",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-riskAdjustment",
-  "version": "1.0.0",
   "name": "CQMRiskAdjustment",
   "title": "CQM Risk Adjustment",
   "status": "active",

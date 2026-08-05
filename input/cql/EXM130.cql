@@ -6,16 +6,16 @@ in the measure development community.
 
 Based on CMS130v8 - Colorectal Cancer Screening
 */
-library EXM130 version '8.0.000'
+library EXM130
 
 using FHIR version '4.0.1'
 
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
 
-include Hospice version '2.0.000' called Hospice
-include AdultOutpatientEncounters version '2.0.000' called AdultOutpatientEncounters
-include MATGlobalCommonFunctions version '5.0.000' called Global
-include SupplementalDataElements version '2.0.000' called SDE
+include Hospice called Hospice
+include AdultOutpatientEncounters called AdultOutpatientEncounters
+include MATGlobalCommonFunctions called Global
+include SupplementalDataElements called SDE
 
 valueset "ONC Administrative Sex": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1'
 valueset "Race": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.836'

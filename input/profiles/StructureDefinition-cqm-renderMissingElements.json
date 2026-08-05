@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-renderMissingElements",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements",
-  "version": "1.0.0",
   "name": "CQMRenderMissingElements",
   "title": "CQM Render Missing Elements",
   "status": "active",

@@ -10,7 +10,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Library/Identifier",
     "value": "EXMLogic-ModuleDefinition"
   } ],
-  "version": "2.0.0",
   "name": "ModuleDefinitionEXMLogic",
   "title": "Example Logic Library - Module Definition",
   "status": "active",

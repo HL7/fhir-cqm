@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-effectivePeriodAnchor",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-effectivePeriodAnchor",
-  "version": "2.0.0",
   "name": "CQMEffectivePeriodAnchor",
   "title": "CQM Effective Period Anchor",
   "status": "active",

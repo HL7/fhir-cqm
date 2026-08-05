@@ -52,6 +52,7 @@
 <artifact id="OperationDefinition/cqm-package" key="OperationDefinition-cqm-package" name="CQM Package"/>
 <artifact id="StructureDefinition/cqm-populationBasis" key="StructureDefinition-cqm-populationBasis" name="CQM Population Basis"/>
 <artifact id="StructureDefinition/cqm-proportionmeasure" key="StructureDefinition-cqm-proportionmeasure" name="CQM Proportion Measure"/>
+<artifact id="StructureDefinition/cqm-publishablelibrary" key="StructureDefinition-cqm-publishablelibrary" name="CQM Publishable Library"/>
 <artifact id="StructureDefinition/cqm-publishablemeasure" key="StructureDefinition-cqm-publishablemeasure" name="CQM Publishable Measure"/>
 <artifact id="StructureDefinition/cqm-rateAggregation" key="StructureDefinition-cqm-rateAggregation" name="CQM Rate Aggregation"/>
 <artifact id="StructureDefinition/cqm-ratiomeasure" key="StructureDefinition-cqm-ratiomeasure" name="CQM Ratio Measure"/>
@@ -74,6 +75,7 @@
 <artifact id="Library/CommonTerminologies" key="Library-CommonTerminologies" name="Common Terminology Library"/>
 <artifact id="ConceptMap/composite-measure-scoring" key="ConceptMap-composite-measure-scoring" name="Composite Measure Scoring mapping"/>
 <artifact id="ConceptMap/data-usages" key="ConceptMap-data-usages" name="Data Usage Mapping"/>
+<artifact id="OperationDefinition/cqm-data-requirements" key="OperationDefinition-cqm-data-requirements" name="DataRequirements"/>
 <artifact id="Device/software-system-example" key="Device-software-system-example" name="Device - Software System Example"/>
 <artifact id="Library/EXMAggregate" key="Library-EXMAggregate" name="EXM Aggregate"/>
 <artifact id="Library/EXMIA" key="Library-EXMIA" name="EXM Improvement Activities"/>
@@ -93,6 +95,7 @@
 <artifact id="Library/EXM146" key="Library-EXM146-FHIR" name="EXM146 - Example Proportion Measure Library"/>
 <artifact id="Measure/EXM55-FHIR" key="Measure-EXM55-FHIR" name="EXM55 - Median Emergency Department Visit Duration"/>
 <artifact id="Library/EXM55" key="Library-EXM55-FHIR" name="EXM55 - Median Emergency Department Visit Duration Library (Example Continuous Variable Measure Library)"/>
+<artifact id="Library/EXMCommon" key="Library-EXMCommon" name="EXMCommon"/>
 <artifact id="Library/EXMRatio" key="Library-EXMRatio-FHIR" name="EXMRatio - Example Ratio Measure Library"/>
 <artifact id="Measure/CAUTIRateExample" key="Measure-CAUTIRateExample" name="Example Catheter-Associated Urinary Tract Infection Rate"/>
 <artifact id="Measure/CAUTISIRExample" key="Measure-CAUTISIRExample" name="Example Catheter-Associated Urinary Tract Infection Standardized Infection Ratio (SIR)"/>
@@ -186,7 +189,7 @@
 <artifact id="Subscription/covid-reporting-changes" key="Subscription-covid-reporting-changes" name="Reporting Program Subscription listener"/>
 <artifact deprecated="true" id="Measure/measure-risk-adjustment-FHIR2" key="Measure-measure-risk-adjustment-FHIR2" name="Risk Adjustment FHIR DSTU2"/>
 <artifact deprecated="true" id="Library/risk-adjustment-FHIR2" key="Library-risk-adjustment-FHIR2" name="RiskAdjustment_FHIR2"/>
-<artifact id="Bundle/scoring-patients" key="Bundle-scoring-patients" name="Scoring Test Patients"/>
+<artifact id="Bundle/scoring-test-patients" key="Bundle-scoring-test-patients" name="Scoring Test Patients"/>
 <artifact id="SearchParameter/Library-contained-parameter-name" key="SearchParameter-Library-contained-parameter-name" name="Search Parameter - Library contained parameter name"/>
 <artifact id="SearchParameter/Library-expansion-identifier" key="SearchParameter-Library-expansion-identifier" name="Search Parameter - Library expansion identifier"/>
 <artifact id="SearchParameter/ValueSet-keyword" key="SearchParameter-ValueSet-keyword" name="Search Parameter - Valuset Keyword"/>

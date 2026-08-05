@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-publishablemeasure",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablemeasure",
-  "version": "1.0.0",
   "name": "CQMPublishableMeasure",
   "title": "CQM Publishable Measure",
   "status": "active",

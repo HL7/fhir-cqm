@@ -2,7 +2,6 @@
   "resourceType": "Library",
   "id": "AdvancedIllnessandFrailtyExclusion",
   "url": "http://hl7.org/fhir/uv/cqm/Library/AdvancedIllnessandFrailtyExclusion",
-  "version": "5.12.000",
   "name": "AdvancedIllnessandFrailtyExclusion",
   "title": "Advanced Illness and Frailty Exclusion Library",
   "type": {

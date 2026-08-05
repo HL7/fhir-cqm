@@ -6,7 +6,6 @@
    </meta>
    <language value="en"></language>
    <url value="http://hl7.org/fhir/uv/cqm/Measure/PreventiveCareandWellnessWeightedComposite"></url>
-   <version value="0.0.001"></version>
    <name value="PreventiveCareandWellnessWeightedComposite"></name>
    <title value="Preventive Care and Wellness Weighted Composite"></title>
    <status value="active"></status>
