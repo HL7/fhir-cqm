@@ -224,7 +224,7 @@
       "sliceName" : "shortName",
       "short" : "Short name",
       "definition" : "The short name for the library (e.g. CQMCommon).",
-      "min" : 1,
+      "min" : 0,
       "max" : "1",
       "mustSupport" : true
     },
@@ -412,7 +412,7 @@
       "type" : [{
         "code" : "string"
       }],
-      "mustSupport" : false
+      "mustSupport" : true
     },
     {
       "id" : "Library.contact",
