@@ -464,15 +464,12 @@ WARNING: ValueSet.where(id = 'age-stratified-example'): Error from https://tx.fh
 
 # 2.0.0-ballot:012 - Accepted warning about identifier hiding
 %CCSComponent: An alias identifier Colonoscopy is hiding another identifier of the same name.
-%EXM108: An alias identifier Warfarin is hiding another identifier of the same name.
 %EXM130: An alias identifier Colonoscopy is hiding another identifier of the same name.
 %EXM146: An alias identifier Pharyngitis is hiding another identifier of the same name.
 %EXMComputableLibrary.cql: An operand identifier Encounter is hiding another identifier of the same name.
 %EXMComputableLibrary: An alias identifier Payer is hiding another identifier of the same name.
 %EXMExecutableLibrary.cql: An operand identifier Encounter is hiding another identifier of the same name.
 %EXMExecutableLibrary: An alias identifier Payer is hiding another identifier of the same name.
-%EXMLogic.cql: An operand identifier Encounter is hiding another identifier of the same name.
-%EXMLogic: An alias identifier Payer is hiding another identifier of the same name.
 %EXMPublishableLibrary.cql: An operand identifier Encounter is hiding another identifier of the same name.
 %EXMPublishableLibrary: An alias identifier Payer is hiding another identifier of the same name.
 %HBPComponent.cql: An operand identifier res is hiding another identifier of the same name.
