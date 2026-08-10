@@ -538,11 +538,10 @@ WARNING: Measure/EXMLogic-FHIR: Measure.group[0].stratifier[2].criteria: The exp
 WARNING: Measure/EXMLogic-FHIR: Measure.group[0].stratifier[3].criteria: The expression language text/cql-identifier is not supported, so can't be validated
 WARNING: Measure/age-stratified-example: Measure.group[0].stratifier[0].criteria: The expression language text/cql-identifier is not supported, so can't be validated
 
-# 2.0.0-ballot:019 - Intentionally depending on ballot3-tc1 to address some extensions updates
-WARNING: ImplementationGuide/hl7.fhir.uv.cqm: ImplementationGuide.dependsOn[1]: The ImplementationGuide uses package hl7.fhir.uv.extensions.r4#5.3.0-ballot-tc1 released on 2025-08-03, but the most recent appropriate version is 5.2.0. This reference is getting old and the more recent version should be considered
+# 2.0.0-ballot:019 - Intentionally depending on ballot3-tc1 to address some extensions updates -- REMOVE this group if no linger needed for "ImplementationGuide.dependsOn[1]: The ImplementationGuide uses package hl7.fhir.uv.extensions.r4#5.3.0-ballot-tc1..."
 
-# 2.0.0-ballot:020 - This extension is defined in ci-build, but there is no publication that has it (Approved by FMG: https://confluence.hl7.org/spaces/FMG/pages/441130082/2026-04-01+FMG+Agenda+Minutes)
-%cqf-supportingEvidenceDefinition%
+# 2.0.0-ballot:020 - This extension is defined in ci-build, but there is no publication that has it (Approved by FMG: https://confluence.hl7.org/spaces/FMG/pages/441130082/2026-04-01+FMG+Agenda+Minutes) -- REMOVE this group if no longer needed for "%cqf-supportingEvidenceDefinition%"
+
 
 
 
