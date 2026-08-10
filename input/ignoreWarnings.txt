@@ -307,34 +307,16 @@ INFORMATION: ValueSet/measure-stratifier-type: ValueSet.extension[2]: This eleme
 
 
 # 1.0.0:011 - These are due to the templates not being able to determine unique identifiers for function overloads in CQL. An issue has been logged to the CQL translator to address this (https://github.com/cqframework/clinical_quality_language/issues/1598)
-%Bundle-sde-example-artifact-bundle.html: The html source has duplicate anchor Ids: cql-content
-%Measure-BCSComponent.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
-%Measure-CCSComponent.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
-%Measure-EXM108-FHIR.html: The html source has duplicate anchor Ids: fhirhelpers-todatetime,fhirhelpers-tostring,matglobalcommonfunctions-getextension,matglobalcommonfunctions-getextensions
-%Measure-EXM124-FHIR.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
-%Measure-EXM125-FHIR.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
-%Measure-EXM130-FHIR.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
 %Measure-EXM146-FHIR.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
-%Measure-EXM55-FHIR.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
-%Measure-EXMLogic-FHIR.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
 %Measure-HBPComponent.html: The html source has duplicate anchor Ids: fhirhelpers-todatetime,fhirhelpers-tointerval,fhirhelpers-tostring
 %Measure-MultiRateExample-FHIR.html: The html source has duplicate anchor Ids: Beds-primary-multirateexample-beds-measure-observation-population,Patients-primary-multirateexample-tonumber,Practitioners-primary-multirateexample-measure-observation,Screening-procedures-primary-multirateexample-procedures-measure-observation-population,fhirhelpers-tostring,multirateexample-tonumber
-%Measure-PVSComponent.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
 %Measure-TSCComponent.html: The html source has duplicate anchor Ids: fhirhelpers-todatetime,fhirhelpers-tostring
 %Measure-measure-publishable-exm.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
 WARNING: Measure/CAUTIRateExample: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhircommon-references (2x), fhirhelpers-todatetime (2x), fhirhelpers-tostring (3x)
 WARNING: Measure/CAUTISIRExample: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhircommon-references (2x), fhirhelpers-todatetime (2x), fhirhelpers-tostring (3x)
-WARNING: Measure/BCSComponent: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-tostring (7x)
-WARNING: Measure/CCSComponent: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-tostring (7x)
 WARNING: Measure/CCSComponent: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-todatetime (2x), fhirhelpers-tostring (7x)
 WARNING: Measure/BCSComponent: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-todatetime (2x), fhirhelpers-tostring (7x)
-WARNING: Measure/EXM108-FHIR: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-todatetime (2x), fhirhelpers-tostring (10x), matglobalcommonfunctions-getextension (2x), matglobalcommonfunctions-getextensions (2x)
-WARNING: Measure/EXM124-FHIR: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-tostring (6x)
-WARNING: Measure/EXM125-FHIR: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-tostring (6x)
-WARNING: Measure/EXM130-FHIR: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-tostring (6x)
 WARNING: Measure/EXM146-FHIR: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-tostring (3x)
-WARNING: Measure/EXM55-FHIR: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-tostring (2x)
-WARNING: Measure/EXMLogic-FHIR: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-tostring (4x)
 WARNING: Measure/HBPComponent: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-todatetime (2x), fhirhelpers-tointerval (2x), fhirhelpers-tostring (4x)
 WARNING: Measure/MultiRateExample-FHIR: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: Beds-primary-multirateexample-beds-measure-observation-population (3x), Patients-primary-multirateexample-tonumber (3x), Practitioners-primary-multirateexample-measure-observation (3x), Screening-procedures-primary-multirateexample-procedures-measure-observation-population (3x), fhirhelpers-tostring (2x), multirateexample-tonumber (3x)
 WARNING: Measure/MultiRateExample-FHIR: Measure.text.div: Hyperlink '#Patients-primary-multirateexample-tonumber' at 'div/table/tbody/tr/td/a' for 'ToNumber' resolves to multiple targets ($/text/div/table/tbody/tr[82]/td/a[0]/@name, $/text/div/table/tbody/tr[84]/td/a[0]/@name, $/text/div/table/tbody/tr[86]/td/a[0]/@name)
@@ -342,7 +324,6 @@ WARNING: Measure/MultiRateExample-FHIR: Measure.text.div: Hyperlink '#Practition
 WARNING: Measure/MultiRateExample-FHIR: Measure.text.div: Hyperlink '#Beds-primary-multirateexample-beds-measure-observation-population' at 'div/table/tbody/tr/td/a' for 'ToNumber' resolves to multiple targets ($/text/div/table/tbody/tr[104]/td/a[0]/@name, $/text/div/table/tbody/tr[106]/td/a[0]/@name, $/text/div/table/tbody/tr[108]/td/a[0]/@name)
 WARNING: Measure/MultiRateExample-FHIR: Measure.text.div: Hyperlink '#Screening-procedures-primary-multirateexample-procedures-measure-observation-population' at 'div/table/tbody/tr/td/a' for 'ToNumber' resolves to multiple targets ($/text/div/table/tbody/tr[115]/td/a[0]/@name, $/text/div/table/tbody/tr[117]/td/a[0]/@name, $/text/div/table/tbody/tr[119]/td/a[0]/@name)
 WARNING: Measure/MultiRateExample-FHIR: Measure.text.div: Hyperlink '#multirateexample-tonumber' at 'div/table/tbody/tr/td/a' for 'Definition' resolves to multiple targets ($/text/div/table/tbody/tr[144]/td/a/@name, $/text/div/table/tbody/tr[146]/td/a/@name, $/text/div/table/tbody/tr[148]/td/a/@name)
-WARNING: Measure/PVSComponent: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-tostring (6x)
 WARNING: Measure/TSCComponent: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-todatetime (2x), fhirhelpers-tostring (8x)
 WARNING: Measure/measure-publishable-exm: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-tostring (3x)
 WARNING: Measure/EXM124-FHIR: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-todatetime (2x), fhirhelpers-tostring (6x)
@@ -360,6 +341,7 @@ WARNING: Measure/PVSComponent: Measure.text.div: The XHTML  the resource contain
 %Measure-PVSComponent.html: The html source has duplicate anchor Ids: fhirhelpers-todatetime,fhirhelpers-tostring
 %Measure-CAUTIRateExample.html: The html source has duplicate anchor Ids: fhircommon-references,fhirhelpers-todatetime,fhirhelpers-tostring
 %Measure-CAUTISIRExample.html: The html source has duplicate anchor Ids: fhircommon-references,fhirhelpers-todatetime,fhirhelpers-tostring
+
 
 # 2.0.0-ballot:001 - Conformance language is in the structure definition. Note that this is repeated language for ease of reference within the structure definition, it is stated in conformance narrative on the quality measures page as well
 INFORMATION: en/StructureDefinition-cqm-computablemeasure.html: The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause: ' The CQM Computable Measure Profile describes minimum expectations for a computable electronic Quality Measure (QM), including the use of a computable library. For more information on the usage of this profile, refer to the Profiles and Packaging pages in this implementation guide. Implementations SHOULD support using the id elements of group, population, stratifier, and supplementalData as a backwards-compatible mechanism for linking between Measure and MeasureReport  '
