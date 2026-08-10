@@ -480,10 +480,8 @@ WARNING: ValueSet.where(id = 'age-stratified-example'): Error from https://tx.fh
 %VTEICU.cql: An operand identifier Encounter is hiding another identifier of the same name.
 
 # 2.0.0-ballot:014 - Accepted membership operator, data access layers can resolve this
-WARNING: EXM55: Could not resolve membership operator for terminology target of the retrieve.
 WARNING: EXMComputableLibrary: Could not resolve membership operator for terminology target of the retrieve.
 WARNING: EXMExecutableLibrary: Could not resolve membership operator for terminology target of the retrieve.
-WARNING: EXMLogic: Could not resolve membership operator for terminology target of the retrieve.
 WARNING: EXMPublishableLibrary: Could not resolve membership operator for terminology target of the retrieve.
 WARNING: MATGlobalCommonFunctions: Could not resolve membership operator for terminology target of the retrieve.
 WARNING: TSCComponent: Could not resolve membership operator for terminology target of the retrieve.
