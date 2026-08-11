@@ -15,10 +15,6 @@ WARNING: Measure/EXM55-FHIR: Measure.group[0].stratifier[0].code.coding[0].syste
 WARNING: Measure/EXM55-FHIR: Measure.group[0].stratifier[1].code.coding[0]: A definition for CodeSystem 'http://example.org/stratification' could not be found, so the code cannot be validated
 WARNING: Measure/EXM55-FHIR: Measure.group[0].stratifier[2].code.coding[0]: A definition for CodeSystem 'http://example.org/stratification' could not be found, so the code cannot be validated
 WARNING: Measure/EXMLogic-FHIR: Measure.group[0].code.coding[0].system: A definition for CodeSystem 'http://example.org/group' could not be found, so the code cannot be validated
-WARNING: MeasureReport/testcase-example: MeasureReport.group[0].code.coding[0].system: A definition for CodeSystem 'http://example.org/group' could not be found, so the code cannot be validated
-WARNING: Measure/EXM55-FHIR: Measure.group[0].stratifier[0].code.coding[0]: A definition for CodeSystem 'http://example.org/stratification' could not be found, so the code cannot be validated
-WARNING: Measure/measure-publishable-exm: Measure.extension[2].extension[0].value.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'http://example.org/fhir/CodeSystem/measure-terms' could not be found, so the code cannot be validated
-INFORMATION: Measure/EXM55-FHIR: Measure.group[0].stratifier[0].code: None of the codings provided are in the value set 'Measure Stratifier Type' (http://terminology.hl7.org/ValueSet/measure-stratifier-type|1.0.0), and a coding is recommended to come from this value set (codes = http://example.org/stratification#Stratification 1)
 INFORMATION: Measure/EXM55-FHIR: Measure.group[0].stratifier[1].code: None of the codings provided are in the value set 'Measure Stratifier Type' (http://terminology.hl7.org/ValueSet/measure-stratifier-type|1.0.0), and a coding is recommended to come from this value set (codes = http://example.org/stratification#Stratification 2)
 INFORMATION: Measure/EXM55-FHIR: Measure.group[0].stratifier[2].code: None of the codings provided are in the value set 'Measure Stratifier Type' (http://terminology.hl7.org/ValueSet/measure-stratifier-type|1.0.0), and a coding is recommended to come from this value set (codes = http://example.org/stratification#Stratification 3)
 
@@ -552,7 +548,8 @@ WARNING: Measure/age-stratified-example: Measure.group[0].stratifier[0].criteria
 
 # 2.0.0-ballot:020 - This extension is defined in ci-build, but there is no publication that has it (Approved by FMG: https://confluence.hl7.org/spaces/FMG/pages/441130082/2026-04-01+FMG+Agenda+Minutes) -- REMOVE this group if no longer needed for "%cqf-supportingEvidenceDefinition%"
 
-
-
-
-
+# 2.0.0:001 - The terminology server is not able validate these codes
+WARNING: MeasureReport/testcase-example: MeasureReport.group[0].code.coding[0].system: A definition for CodeSystem 'http://example.org/group' could not be found, so the code cannot be validated
+WARNING: Measure/EXM55-FHIR: Measure.group[0].stratifier[0].code.coding[0]: A definition for CodeSystem 'http://example.org/stratification' could not be found, so the code cannot be validated
+WARNING: Measure/measure-publishable-exm: Measure.extension[2].extension[0].value.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'http://example.org/fhir/CodeSystem/measure-terms' could not be found, so the code cannot be validated
+INFORMATION: Measure/EXM55-FHIR: Measure.group[0].stratifier[0].code: None of the codings provided are in the value set 'Measure Stratifier Type' (http://terminology.hl7.org/ValueSet/measure-stratifier-type|1.0.0), and a coding is recommended to come from this value set (codes = http://example.org/stratification#Stratification 1)
