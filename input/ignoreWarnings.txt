@@ -263,7 +263,6 @@ INFORMATION: Measure/TSCComponent: Measure.supplementalData[1].extension[0]: Thi
 INFORMATION: Measure/TSCComponent: Measure.supplementalData[2].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablemeasure|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Measure/TSCComponent: Measure.supplementalData[3].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablemeasure|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Measure/TSCComponent: Measure.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Measure/TSCComponent: Measure.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cqm/Structu011reDefinition/cqm-proportionmeasure|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Measure/measure-cqm-publishable-example: Measure.identifier[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablemeasure|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Measure/measure-publishable-exm: Measure.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablemeasure|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Measure/measure-publishable-exm: Measure.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablemeasure|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -314,10 +313,6 @@ INFORMATION: Library/EXM130: Library.extension[0]: This element does not match a
 INFORMATION: Measure/EXM55-FHIR: Measure.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cvmeasure|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Measure/TSCComponent: Measure.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-proportionmeasure|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
-
-
-
-
 # 1.0.0:011 - These are due to the templates not being able to determine unique identifiers for function overloads in CQL. An issue has been logged to the CQL translator to address this (https://github.com/cqframework/clinical_quality_language/issues/1598)
 %Measure-EXM146-FHIR.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
 %Measure-HBPComponent.html: The html source has duplicate anchor Ids: fhirhelpers-todatetime,fhirhelpers-tointerval,fhirhelpers-tostring
@@ -353,18 +348,19 @@ WARNING: Measure/PVSComponent: Measure.text.div: The XHTML  the resource contain
 %Measure-PVSComponent.html: The html source has duplicate anchor Ids: fhirhelpers-todatetime,fhirhelpers-tostring
 %Measure-CAUTIRateExample.html: The html source has duplicate anchor Ids: fhircommon-references,fhirhelpers-todatetime,fhirhelpers-tostring
 %Measure-CAUTISIRExample.html: The html source has duplicate anchor Ids: fhircommon-references,fhirhelpers-todatetime,fhirhelpers-tostring
-
+WARNING: Measure/EXM108-FHIR: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhircommon-references (2x), fhirhelpers-todatetime (2x), fhirhelpers-tostring (12x)
+WARNING: Measure/EXM55-FHIR: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhircommon-references (2x), fhirhelpers-tostring (4x)
 
 # 2.0.0-ballot:001 - Conformance language is in the structure definition. Note that this is repeated language for ease of reference within the structure definition, it is stated in conformance narrative on the quality measures page as well
 INFORMATION: en/StructureDefinition-cqm-computablemeasure.html: The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause: ' The CQM Computable Measure Profile describes minimum expectations for a computable electronic Quality Measure (QM), including the use of a computable library. For more information on the usage of this profile, refer to the Profiles and Packaging pages in this implementation guide. Implementations SHOULD support using the id elements of group, population, stratifier, and supplementalData as a backwards-compatible mechanism for linking between Measure and MeasureReport  '
 
 # 2.0.0-ballot:002 - We plan to update conformance language tracking to this mechanism but did not make it in this ballot cycle (we have our own way of doing this in this IG already and have not yet decided how we are going to adopt the new conformance clause capabilities of the publisher)
-INFORMATION: en/composite-measures.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: ''
-INFORMATION: en/introduction.html: The html source contains the word 'SHALL NOT' but it is not in a text phrase marked as a conformance clause: 'The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT, MAY, and NEED NOT in this document are to be interpreted as defined in RFC 2119. Unlike RFC 2119, however, this specification allows that different applications may not be able to interoperate because of how they use optional features. In particular'
 INFORMATION: en/measure-conformance.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'FHIR-based Quality Measures SHALL consist of a FHIR Measure resource conforming to at least the CRMIShareableMeasure profile.'
 INFORMATION: en/measure-repository-service.html: The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause: 'As a best practice, measure and library versions SHOULD follow semantic versioning. This approach is summarized in CRMI Artifact Versioning.'
 INFORMATION: en/packaging.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'The first entry in a Library bundle SHALL be a Library resource conforming'
-INFORMATION: en/using-cql.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'CQL used by a Measure SHALL be contained in a CQL library'
+INFORMATION: en/composite-measures.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'Composite Measures SHALL conform to the CQMCompositeMeasure profile'
+INFORMATION: en/introduction.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT, MAY, and NEED NOT in this document are to be interpreted as defined in RFC 2119. Unlike RFC 2119, this specification acknowledges that varying use of optional features may prevent interoperability between applications. In particular'
+INFORMATION: en/using-cql.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'UCWF:2.1 (Library Declaration)1. Any CQL library used by a FHIR artifact SHALL contain a library declaration.2. The library identifier SHALL be a valid un-quoted identifier and SHALL NOT contain underscores. The library identifier SHALL only contain alphanumeric characters.'
 
 # 2.0.0-ballot:003 - The path-liquid-ig parameter is a temporary workaround for getting the IG to make use of liquid templates in the IG when the fhir template includes liquid templates for the same resources. See https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Errors.20in.20rendering.20Measures.20and.20PlanDefinitions/near/534068493
 ERROR: ImplementationGuide/hl7.fhir.uv.cqm: ImplementationGuide.definition.extension[7].extension[0].value.ofType(string): The System URI could not be determined for the code 'path-liquid-ig' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2'
@@ -440,7 +436,8 @@ WARNING: ConceptMap/measure-types: ConceptMap.group[0]: There are multiple diffe
 WARNING: ConceptMap/measure-types: ConceptMap.group[0]: There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/v3-ObservationValue'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '6.0.0', found versions: 2.1.0 (from hl7.terminology.r4#5.0.0), 3.0.0 (from hl7.terminology#5.4.0), 4.0.0 (from hl7.terminology.r4#6.5.0), 5.0.0 (from hl7.terminology.r4#7.1.0), 6.0.0 (from hl7.terminology.r4#7.3.0). Suggested fix: change the canonical reference from 'http://terminology.hl7.org/CodeSystem/v3-ObservationValue' to 'http://terminology.hl7.org/CodeSystem/v3-ObservationValue|6.0.0'
 
 # 2.0.0-ballot:006 - Inherited regex warning
-INFORMATION: StructureDefinition/cqm-publishablemeasure: StructureDefinition.snapshot.element[168].type[0].extension[1]: The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0-ballot-tc1 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
+INFORMATION: StructureDefinition/cqm-publishablemeasure: StructureDefinition.snapshot.element[186].type[0].extension[1]: The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
+
 
 # 2.0.0-ballot:007 - These are known valid LOINC codes in 2.82 -- REMOVE this grouping if no LOINC issues.
 
@@ -463,7 +460,6 @@ WARNING: Measure/EXM130-FHIR: Measure.contained[0]/*Library/effective-data-requi
 WARNING: Measure/PVSComponent: Measure.contained[0]/*Library/effective-data-requirements*/.extension[0].value.ofType(Coding): The code cannot be checked because codeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/731000124108/version/201709' is not supported (The server does not support this code system)
 WARNING: Measure/PVSComponent: Measure.contained[0]/*Library/effective-data-requirements*/.extension[1].value.ofType(Coding): The code cannot be checked because codeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/731000124108/version/201709' is not supported (The server does not support this code system)
 ERROR: ValueSet/chronic-liver-disease-legacy-example: ValueSet.compose.include[1].concept[0]: The code '111370006' is not valid in the system http://snomed.info/sct version http://snomed.info/sct/731000124108/version/20150301 (111370006)
-
 
 # 2.0.0-ballot:010 - Accepted reference to deprecated value set
 INFORMATION: SubscriptionTopic/covid-reporting-program-changes: SubscriptionTopic.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
@@ -539,6 +535,8 @@ INFORMATION: Measure/EXMRatio-FHIR: Measure.contained[0]/*Library/effective-data
 INFORMATION: Measure/HBPComponent: Measure.contained[0]/*Library/effective-data-requirements*/.extension[48].extension[2].value.ofType(string): The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 INFORMATION: Measure/PVSComponent: Measure.contained[0]/*Library/effective-data-requirements*/.extension[29].extension[2].value.ofType(string): The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 INFORMATION: Measure/TSCComponent: Measure.contained[0]/*Library/effective-data-requirements*/.extension[31].extension[2].value.ofType(string): The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+INFORMATION: Measure/EXM108-FHIR: Measure.contained[0]/*Library/effective-data-requirements*/.extension[66].extension[2].value.ofType(string): The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+
 
 # 2.0.0-ballot:018 - Measure stratifier validation does not recognize cql-identifier
 WARNING: Measure/EXM55-FHIR: Measure.group[0].stratifier[0].criteria: The expression language text/cql-identifier is not supported, so can't be validated
