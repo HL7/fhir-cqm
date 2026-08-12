@@ -981,10 +981,12 @@
       "resource": {
         "resourceType": "Practitioner",
         "id" : "practitioner-1",
-        "identifier": {
+        "identifier": [
+        {
           "system" : "http://hl7.org/fhir/sid/us-npi",
           "value" : "9941339100"
-         },
+         }
+         ],
         "name" : [{
     "family" : "Bone",
     "given" : ["Ronald"],
