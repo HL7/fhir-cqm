@@ -87,9 +87,15 @@
       "valueInteger": 2,
       "subject": {
         "reference": "http://example.org/fhir/Patient/ada"
+      },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
-    }
-  ],
+    ],
   "evaluatedResource": [
     {
       "reference": "#ada-mobs"

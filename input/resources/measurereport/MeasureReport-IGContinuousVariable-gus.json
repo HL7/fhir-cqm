@@ -87,8 +87,8 @@
       "valueInteger": 3,
       "subject": {
         "reference": "http://example.org/fhir/Patient/gus"
-      }
-              "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+      },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
         "performer" : [
           {
           "reference": "Practitioner/practitioner-1"
