@@ -38,7 +38,7 @@
           "code": "AMB"
         },
         "subject": {
-          "reference": "Patient/ada"
+          "reference": "http://example.org/fhir/Patient/ada"
         }
       }
     },
@@ -49,7 +49,7 @@
         "id": "ada-proc-0",
         "status": "completed",
         "subject": {
-          "reference": "Patient/ada"
+          "reference": "http://example.org/fhir/Patient/ada"
         }
       }
     },
@@ -63,8 +63,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/ada"
-        }
+          "reference": "http://example.org/fhir/Patient/ada"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -77,8 +83,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/ada"
-        }
+          "reference": "http://example.org/fhir/Patient/ada"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -91,7 +103,7 @@
           "text": "example vaccine"
         },
         "patient": {
-          "reference": "Patient/ada"
+          "reference": "http://example.org/fhir/Patient/ada"
         },
         "occurrenceDateTime": "2024-01-01"
       }
@@ -122,7 +134,7 @@
           "code": "AMB"
         },
         "subject": {
-          "reference": "Patient/ben"
+          "reference": "http://example.org/fhir/Patient/ben"
         }
       }
     },
@@ -133,7 +145,7 @@
         "id": "ben-proc-0",
         "status": "completed",
         "subject": {
-          "reference": "Patient/ben"
+          "reference": "http://example.org/fhir/Patient/ben"
         }
       }
     },
@@ -159,7 +171,7 @@
         "id": "cyd-proc-0",
         "status": "completed",
         "subject": {
-          "reference": "Patient/cyd"
+          "reference": "http://example.org/fhir/Patient/cyd"
         }
       }
     },
@@ -173,8 +185,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/cyd"
-        }
+          "reference": "http://example.org/fhir/Patient/cyd"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -187,8 +205,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/cyd"
-        }
+          "reference": "http://example.org/fhir/Patient/cyd"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -201,8 +225,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/cyd"
-        }
+          "reference": "http://example.org/fhir/Patient/cyd"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -215,8 +245,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/cyd"
-        }
+          "reference": "http://example.org/fhir/Patient/cyd"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -229,8 +265,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/cyd"
-        }
+          "reference": "http://example.org/fhir/Patient/cyd"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -243,8 +285,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/cyd"
-        }
+          "reference": "http://example.org/fhir/Patient/cyd"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -257,8 +305,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/cyd"
-        }
+          "reference": "http://example.org/fhir/Patient/cyd"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -271,8 +325,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/cyd"
-        }
+          "reference": "http://example.org/fhir/Patient/cyd"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -285,8 +345,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/cyd"
-        }
+          "reference": "http://example.org/fhir/Patient/cyd"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -299,7 +365,7 @@
           "text": "example vaccine"
         },
         "patient": {
-          "reference": "Patient/cyd"
+          "reference": "http://example.org/fhir/Patient/cyd"
         },
         "occurrenceDateTime": "2024-01-01"
       }
@@ -331,7 +397,7 @@
           "code": "AMB"
         },
         "subject": {
-          "reference": "Patient/dev"
+          "reference": "http://example.org/fhir/Patient/dev"
         }
       }
     },
@@ -342,7 +408,7 @@
         "id": "dev-proc-0",
         "status": "completed",
         "subject": {
-          "reference": "Patient/dev"
+          "reference": "http://example.org/fhir/Patient/dev"
         }
       }
     },
@@ -356,8 +422,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/dev"
-        }
+          "reference": "http://example.org/fhir/Patient/dev"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -370,8 +442,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/dev"
-        }
+          "reference": "http://example.org/fhir/Patient/dev"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -384,8 +462,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/dev"
-        }
+          "reference": "http://example.org/fhir/Patient/dev"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -398,8 +482,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/dev"
-        }
+          "reference": "http://example.org/fhir/Patient/dev"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -412,7 +502,7 @@
           "text": "example vaccine"
         },
         "patient": {
-          "reference": "Patient/dev"
+          "reference": "http://example.org/fhir/Patient/dev"
         },
         "occurrenceDateTime": "2024-01-01"
       }
@@ -443,7 +533,7 @@
           "code": "AMB"
         },
         "subject": {
-          "reference": "Patient/eve"
+          "reference": "http://example.org/fhir/Patient/eve"
         }
       }
     },
@@ -454,7 +544,7 @@
         "id": "eve-proc-0",
         "status": "completed",
         "subject": {
-          "reference": "Patient/eve"
+          "reference": "http://example.org/fhir/Patient/eve"
         }
       }
     },
@@ -468,8 +558,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/eve"
-        }
+          "reference": "http://example.org/fhir/Patient/eve"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -482,7 +578,7 @@
           "text": "example vaccine"
         },
         "patient": {
-          "reference": "Patient/eve"
+          "reference": "http://example.org/fhir/Patient/eve"
         },
         "occurrenceDateTime": "2024-01-01"
       }
@@ -497,7 +593,7 @@
           "reference": "ResearchStudy/cqm-example-study"
         },
         "individual": {
-          "reference": "Patient/eve"
+          "reference": "http://example.org/fhir/Patient/eve"
         }
       }
     },
@@ -527,7 +623,7 @@
           "code": "AMB"
         },
         "subject": {
-          "reference": "Patient/fin"
+          "reference": "http://example.org/fhir/Patient/fin"
         }
       }
     },
@@ -538,7 +634,7 @@
         "id": "fin-proc-0",
         "status": "completed",
         "subject": {
-          "reference": "Patient/fin"
+          "reference": "http://example.org/fhir/Patient/fin"
         }
       }
     },
@@ -556,7 +652,7 @@
           ]
         },
         "subject": {
-          "reference": "Patient/fin"
+          "reference": "http://example.org/fhir/Patient/fin"
         }
       }
     },
@@ -586,7 +682,7 @@
           "code": "AMB"
         },
         "subject": {
-          "reference": "Patient/gus"
+          "reference": "http://example.org/fhir/Patient/gus"
         }
       }
     },
@@ -597,7 +693,7 @@
         "id": "gus-proc-0",
         "status": "completed",
         "subject": {
-          "reference": "Patient/gus"
+          "reference": "http://example.org/fhir/Patient/gus"
         }
       }
     },
@@ -611,8 +707,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/gus"
-        }
+          "reference": "http://example.org/fhir/Patient/gus"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -625,8 +727,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/gus"
-        }
+          "reference": "http://example.org/fhir/Patient/gus"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -639,8 +747,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/gus"
-        }
+          "reference": "http://example.org/fhir/Patient/gus"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -657,7 +771,7 @@
           ]
         },
         "subject": {
-          "reference": "Patient/gus"
+          "reference": "http://example.org/fhir/Patient/gus"
         }
       }
     },
@@ -671,7 +785,7 @@
           "text": "example vaccine"
         },
         "patient": {
-          "reference": "Patient/gus"
+          "reference": "http://example.org/fhir/Patient/gus"
         },
         "occurrenceDateTime": "2024-01-01"
       }
@@ -718,7 +832,7 @@
           "code": "AMB"
         },
         "subject": {
-          "reference": "Patient/ivy"
+          "reference": "http://example.org/fhir/Patient/ivy"
         }
       }
     },
@@ -732,8 +846,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/ivy"
-        }
+          "reference": "http://example.org/fhir/Patient/ivy"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -746,8 +866,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/ivy"
-        }
+          "reference": "http://example.org/fhir/Patient/ivy"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -760,8 +886,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/ivy"
-        }
+          "reference": "http://example.org/fhir/Patient/ivy"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -774,8 +906,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/ivy"
-        }
+          "reference": "http://example.org/fhir/Patient/ivy"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -788,8 +926,14 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/ivy"
-        }
+          "reference": "http://example.org/fhir/Patient/ivy"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
     {
@@ -802,11 +946,17 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/ivy"
-        }
+          "reference": "http://example.org/fhir/Patient/ivy"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
     },
-    {
+        {
       "fullUrl": "http://example.org/fhir/Observation/ivy-obs-6",
       "resource": {
         "resourceType": "Observation",
@@ -816,9 +966,41 @@
           "text": "example observation"
         },
         "subject": {
-          "reference": "Patient/ivy"
-        }
+          "reference": "http://example.org/fhir/Patient/ivy"
+            },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Practitioner/practitioner-1",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id" : "practitioner-1",
+        "identifier": [
+        {
+          "system" : "http://hl7.org/fhir/sid/us-npi",
+          "value" : "9941339100"
+         }
+         ],
+        "name" : [{
+    "family" : "Bone",
+    "given" : ["Ronald"],
+    "prefix" : ["Dr"]
+  }],
+        "address" : [{
+    "use" : "work",
+    "line" : ["1003 HEALTHCARE DR"],
+    "city" : "AMHERST",
+    "state" : "MA",
+    "postalCode" : "01002"
+  }]
       }
     }
   ]
 }
+  

@@ -17,7 +17,7 @@
   "type": "individual",
   "measure": "http://hl7.org/fhir/uv/cqm/Measure/IGContinuousVariable",
   "subject": {
-    "reference": "Patient/gus"
+    "reference": "http://example.org/fhir/Patient/gus"
   },
   "period": {
     "start": "2024-01-01",
@@ -86,10 +86,16 @@
       },
       "valueInteger": 3,
       "subject": {
-        "reference": "Patient/gus"
+        "reference": "http://example.org/fhir/Patient/gus"
+      },
+        "effectiveDateTime" : "2022-08-24T10:39:52+00:00",
+        "performer" : [
+          {
+          "reference": "Practitioner/practitioner-1"
+           }
+        ]
       }
-    }
-  ],
+    ],
   "evaluatedResource": [
     {
       "reference": "#gus-mobs"

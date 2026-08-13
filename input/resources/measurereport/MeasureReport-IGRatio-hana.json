@@ -17,7 +17,7 @@
   "type": "individual",
   "measure": "http://hl7.org/fhir/uv/cqm/Measure/IGRatio",
   "subject": {
-    "reference": "Patient/hana"
+    "reference": "http://example.org/fhir/Patient/hana"
   },
   "period": {
     "start": "2024-01-01",
