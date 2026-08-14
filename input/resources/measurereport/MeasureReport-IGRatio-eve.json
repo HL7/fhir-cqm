@@ -94,7 +94,10 @@
           },
           "count": 1
         }
-      ]
+      ],
+      "measureScore": {
+        "value": 0.0
+      }
     }
   ]
 }

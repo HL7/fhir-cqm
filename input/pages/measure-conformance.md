@@ -764,8 +764,8 @@ For every scoring type, the membership for each population criteria is the crite
 |---|---|---|---|
 | Proportion | numerator is a subset of denominator; exception fires only if the numerator was not met | score **0.5** = (3 − 1) / (6 − 1 − 1) | [`Proportion Measures`](#proportion-measures) |
 | Ratio | numerator and denominator are independent branches, each with its own initial population | ratio **0.8** = (5 − 1) / (6 − 1) | [`Ratio Measures`](#ratio-measures) |
-| Continuous variable | no numerator or denominator; a measure observation runs per member and is aggregated | median **1** over [0, 0, 1, 2, 3] | [`Continuous Variable Measures`](#continuous-variable-measures) |
-| Cohort | initial population only; membership equals the criterion, so nothing is ever gated | count **7** | [`Cohort Measures`](#cohort-measures) |
+| Continuous variable | no numerator or denominator; a measure observation runs per member and is aggregated | median **1** over [0, 0, 1, 2, 3] | [`Continuous Variable Measures`](#continuous-variable-measure) |
+| Cohort | initial population only; membership equals the criterion, so nothing is ever gated | count **7** | [`Cohort Measures`](#cohort-definitions) |
 {: .grid}
 
 #### Proportion Measures

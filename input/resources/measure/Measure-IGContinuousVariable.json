@@ -6,7 +6,7 @@
   "title": "IG Continuous Variable Measure",
   "status": "active",
   "experimental": true,
-  "description": "Continuous Variable",
+  "description": "Continuous variable scoring example",
   "effectivePeriod": {
     "start": "2027-01-01",
     "end": "2027-12-31"

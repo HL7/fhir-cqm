@@ -592,7 +592,7 @@ Because composite measure scoring for individual-based composites effectively ig
 **Conformance Requirement 5.8 (Composite Measure Rates):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-8)
 {: #conformance-requirement-5-8}
 1. Component measures used in a composite **SHOULD** contain a single rate definition (i.e. `Measure.group`)
-2. For component measures that contain multiple rates (i.e. more than one `Measure.group`), the composite measure **SHALL** specify the specific group to be used in the composite using the [groupId](StructureDefinition-cqm-groupId) extension
+2. For component measures that contain multiple rates (i.e. more than one `Measure.group`), the composite measure **SHALL** specify the specific group to be used in the composite using the [groupId](StructureDefinition-cqm-groupId.html) extension
 
 To simplify expression and implementation of composite measures, all component measures used within a composite **SHOULD** have a single rate. In addition, the composite measure itself **SHOULD** only contain a single composite specification (using the _relatedArtifact_ elements of the Measure directly). Note that for ratio measures with two initial populations, the initial population would have to be constructed using the appropriate initial population from the component measures.
 
@@ -614,7 +614,7 @@ For individual-based composite scoring methods, additional data elements are col
 1. Component quality measures **SHALL** be referenced using a relatedArtifact element with a type of _composed-of_
 2. Component quality measures **SHALL** be referenced using the canonical URL of the Measure resource
     a. A composite measure **MAY** point to a group in the same Measure resource
-    b. If the component measure contains multiple groups, the [groupId] extension **SHALL** be used to reference a specific group
+    b. If the component measure contains multiple groups, the [groupId](StructureDefinition-cqm-groupId.html) extension **SHALL** be used to reference a specific group
     c. Multiple groups within the same measure may be referenced as different components of the same composite
 3. A composite quality measure **SHALL** have at least two components
 

@@ -310,6 +310,8 @@ INFORMATION: Measure/EXM55-FHIR: Measure.extension[1]: This element does not mat
 INFORMATION: Measure/TSCComponent: Measure.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-proportionmeasure|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # 1.0.0:011 - These are due to the templates not being able to determine unique identifiers for function overloads in CQL. An issue has been logged to the CQL translator to address this (https://github.com/cqframework/clinical_quality_language/issues/1598)
+%Measure-EXM108-FHIR.html: The html source has duplicate anchor Ids: fhircommon-references,fhirhelpers-todatetime,fhirhelpers-tostring
+%Measure-EXM55-FHIR.html: The html source has duplicate anchor Ids: fhircommon-references,fhirhelpers-tostring
 %Measure-EXM146-FHIR.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
 %Measure-HBPComponent.html: The html source has duplicate anchor Ids: fhirhelpers-todatetime,fhirhelpers-tointerval,fhirhelpers-tostring
 %Measure-MultiRateExample-FHIR.html: The html source has duplicate anchor Ids: Beds-primary-multirateexample-beds-measure-observation-population,Patients-primary-multirateexample-tonumber,Practitioners-primary-multirateexample-measure-observation,Screening-procedures-primary-multirateexample-procedures-measure-observation-population,fhirhelpers-tostring,multirateexample-tonumber
@@ -456,6 +458,8 @@ WARNING: Measure/EXM130-FHIR: Measure.contained[0]/*Library/effective-data-requi
 WARNING: Measure/PVSComponent: Measure.contained[0]/*Library/effective-data-requirements*/.extension[0].value.ofType(Coding): The code cannot be checked because codeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/731000124108/version/201709' is not supported (The server does not support this code system)
 WARNING: Measure/PVSComponent: Measure.contained[0]/*Library/effective-data-requirements*/.extension[1].value.ofType(Coding): The code cannot be checked because codeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/731000124108/version/201709' is not supported (The server does not support this code system)
 ERROR: ValueSet/chronic-liver-disease-legacy-example: ValueSet.compose.include[1].concept[0]: The code '111370006' is not valid in the system http://snomed.info/sct version http://snomed.info/sct/731000124108/version/20150301 (111370006)
+ERROR: ValueSet/chronic-liver-disease-legacy-example: ValueSet.compose.include[1].concept[0].system: A definition for CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/731000124108/version/20150301' could not be found, so the code cannot be validated. Valid versions: http://snomed.info/sct/11000146104/version/20240930, http://snomed.info/sct/2011000195101/version/20230607, http://snomed.info/sct/554471000005108/version/20260331, http://snomed.info/sct/731000124108/version/20230301, http://snomed.info/sct/731000124108/version/20240301, http://snomed.info/sct/731000124108/version/20250901, http://snomed.info/sct/827022005/version/20241216, http://snomed.info/sct/83821000000107/version/20230412, http://snomed.info/sct/900000000000207008/version/20240201, http://snomed.info/sct/900000000000207008/version/20250201 and http://snomed.info/xsct/31000003106/version/20250909
+INFORMATION: ValueSet/chronic-liver-disease-legacy-example: ValueSet.expansion: This expansion has no identifier. Identifiers are recommended to help with audit and traceability
 
 # 2.0.0-ballot:010 - Accepted reference to deprecated value set
 INFORMATION: SubscriptionTopic/covid-reporting-program-changes: SubscriptionTopic.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
@@ -467,6 +471,7 @@ WARNING: Measure/age-stratified-example: Measure.contained[0]/*Library/effective
 WARNING: ValueSet.where(id = 'age-stratified-example'): Error from https://tx.fhir.org/r4: Error: The code system definition for http://terminology.hl7.org/CodeSystem/time-period-ranges has no content, so this expansion cannot be performed
 
 # 2.0.0-ballot:012 - Accepted warning about identifier hiding
+%EXMCommon.cql: An operand identifier encounter is hiding another identifier of the same name.
 %CCSComponent: An alias identifier Colonoscopy is hiding another identifier of the same name.
 %EXM130: An alias identifier Colonoscopy is hiding another identifier of the same name.
 %EXM146: An alias identifier Pharyngitis is hiding another identifier of the same name.
@@ -482,6 +487,10 @@ WARNING: ValueSet.where(id = 'age-stratified-example'): Error from https://tx.fh
 %TSCComponent.cql: An operand identifier res is hiding another identifier of the same name.
 %TSCComponent.cql: An operand identifier url is hiding another identifier of the same name.
 %VTEICU.cql: An operand identifier Encounter is hiding another identifier of the same name.
+%IGCohort.cql: An operand identifier reference is hiding another identifier of the same name.
+%IGContinuousVariable.cql: An operand identifier reference is hiding another identifier of the same name.
+%IGProportion.cql: An operand identifier reference is hiding another identifier of the same name.
+%IGRatio.cql: An operand identifier reference is hiding another identifier of the same name.
 
 # 2.0.0-ballot:014 - Accepted membership operator, data access layers can resolve this
 WARNING: EXMComputableLibrary: Could not resolve membership operator for terminology target of the retrieve.
@@ -494,6 +503,10 @@ WARNING: TSCComponent: Could not resolve membership operator for terminology tar
 %is not supported; implementations may not be able to use the result of this expression
 
 # 2.0.0-ballot:015 - Accepted warning about loading the right FHIR ModelInfo
+%Measure-IGCohort.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-IGContinuousVariable.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-IGProportion.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+%Measure-IGRatio.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
 %Measure-BCSComponent.xml: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
 %Measure-CAUTIRateExample.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
 %Measure-CAUTISIRExample.json: Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
@@ -553,3 +566,11 @@ WARNING: MeasureReport/testcase-example: MeasureReport.group[0].code.coding[0].s
 WARNING: Measure/EXM55-FHIR: Measure.group[0].stratifier[0].code.coding[0]: A definition for CodeSystem 'http://example.org/stratification' could not be found, so the code cannot be validated
 WARNING: Measure/measure-publishable-exm: Measure.extension[2].extension[0].value.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'http://example.org/fhir/CodeSystem/measure-terms' could not be found, so the code cannot be validated
 INFORMATION: Measure/EXM55-FHIR: Measure.group[0].stratifier[0].code: None of the codings provided are in the value set 'Measure Stratifier Type' (http://terminology.hl7.org/ValueSet/measure-stratifier-type|1.0.0), and a coding is recommended to come from this value set (codes = http://example.org/stratification#Stratification 1)
+
+# 2.0.0:002 - This IG specifies scoring at the group level using the cqm-scoring extension, so Measure.scoring is absent at the root. The validator only reads root Measure.scoring, and so reports the scoring as unknown for every MeasureReport of a group-scored measure -- REMOVE this group when the validator resolves group-level scoring
+%The scoring system in this measure is unknown, so the measureScore values cannot be checked%
+
+# 2.0.0:003 - Ratio measures declare two initial-population criteria, tied to the denominator and numerator with cqf-criteriaReference. The validator matches MeasureReport populations to Measure populations by code, and can only disambiguate duplicate codes using linkId, which does not exist on R4 MeasureReport.group.population and is not read from the R5 cross-version extension. Both initial populations therefore resolve to the first Measure population, which is reported as a duplicate, leaving the second unmatched -- REMOVE this group when the validator can disambiguate duplicate population codes in R4
+%The code for this group population is duplicated with another group%
+%The MeasureReport does not include a population for the population with linkId%
+

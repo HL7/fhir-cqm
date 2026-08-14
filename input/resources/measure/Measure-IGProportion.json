@@ -6,7 +6,7 @@
   "title": "IG Proportion Measure",
   "status": "active",
   "experimental": true,
-  "description": "Proportion Measure",
+  "description": "Proportion measure scoring example",
   "effectivePeriod": {
     "start": "2027-01-01",
     "end": "2027-12-31"

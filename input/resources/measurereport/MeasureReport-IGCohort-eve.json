@@ -37,7 +37,10 @@
           },
           "count": 1
         }
-      ]
+      ],
+      "measureScore": {
+        "value": 1
+      }
     }
   ]
 }

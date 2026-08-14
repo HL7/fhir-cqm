@@ -6,7 +6,7 @@
   "title": "IG Ratio Measure",
   "status": "active",
   "experimental": true,
-  "description": "None",
+  "description": "Ratio measure scoring example",
   "effectivePeriod": {
     "start": "2027-01-01",
     "end": "2027-12-31"
