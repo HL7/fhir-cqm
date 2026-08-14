@@ -11,5 +11,3 @@ This implementation guide is web-based and is intended to be browsed online. How
 * Example files: [json](../examples.json.zip), [ttl](../examples.ttl.zip), and [xml](../examples.xml.zip)
 * The full [FHIR R4 core]({{site.data.fhir.path}}fhir-spec.zip) specifications and other [FHIR core downloads]({{site.data.fhir.path}}downloads.html)
 * A [validator](https://fhir.github.io/latest-ig-validator/org.hl7.fhir.validator.jar) that can be used to check FHIR resource instance validity and [instructions on how to use it](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator)
-
-{% lang-fragment cross-version-analysis-inline.xhtml %}

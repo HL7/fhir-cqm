@@ -16,6 +16,8 @@
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-7f4d233b-2ed0-4ac8-8d40-bd94663c5a91.json"
   },
+  "http://hl7.org/fhir/uv/cqm/Measure/EXM124-FHIR|9.0.000" : null,
+  "http://hl7.org/fhir/uv/cqm/Library/TJCOverall|4.0.000" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-0701fe2c-af42-4808-b894-5afc0880225e.json"
@@ -91,10 +93,12 @@
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-c0360bd9-6de0-45bc-a256-3eb04dedace9.json"
   },
+  "http://hl7.org/fhir/uv/cql/Library/FHIRCommon|2.0.0" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.509" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-0de58f6d-a408-4f63-895f-50c9380017f4.json"
   },
+  "http://hl7.org/fhir/uv/cqm/Measure/EXM130-FHIR|8.0.000" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.52|20220219" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-af6b99a3-b864-4263-9f46-93d9e81186cf.json"
@@ -136,6 +140,7 @@
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-715b80ed-3b6a-425f-8663-6acaecf251b4.json"
   },
+  "http://example.org/fhir/ValueSet/inpatient" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.263" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-90ad6a83-538c-4c5f-b7a3-e92dbab793c4.json"
@@ -156,6 +161,7 @@
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-66314714-16fc-4bbe-97b7-d365b672bc45.json"
   },
+  "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20240901" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1016" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-f5f64ae4-d675-4ac4-975f-a35d686437b3.json"
@@ -222,6 +228,7 @@
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-ffa464a2-1f08-403c-a321-535831398b63.json"
   },
+  "http://example.org/ValueSet/urine-culture" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1278" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-fbe1adfb-7ed9-470a-be4a-50d1e2b59654.json"
@@ -246,6 +253,7 @@
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-090a7250-98d4-41fd-9e45-8064a27d64a8.json"
   },
+  "http://hl7.org/fhir/uv/cqm/Measure/EXM125-FHIR|8.0.000" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1020" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-8ffa566a-d63f-4631-be78-e8cabedc9728.json"
@@ -273,6 +281,7 @@
   },
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.48" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1027" : null,
+  "http://snomed.info/sct|http://snomed.info/sct/900000000000207008" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1240" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-bc15fd9f-9718-4403-af67-ca2d2c4db1be.json"
@@ -293,6 +302,7 @@
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-0133d51d-10e1-47fb-b4e3-68c12f34abdc.json"
   },
+  "http://hl7.org/fhir/uv/cql/Library/FHIRHelpers|4.0.1" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1034" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.211" : {
     "server" : "http://tx.fhir.org/r4",
@@ -314,6 +324,8 @@
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-17d1783e-8c2c-42fd-8bce-6136f292db18.json"
   },
+  "http://example.org/ValueSet/bacterium-presence" : null,
+  "http://hl7.org/fhir/uv/cqm/Library/Common|2.0.000" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1025" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-607bd847-0ce4-4834-960a-036b1c1f6479.json"
@@ -334,6 +346,7 @@
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-511505e4-65b9-4745-b155-e281da09a936.json"
   },
+  "http://hl7.org/fhir/uv/cqm/Library/SupplementalDataElements|2.0.0" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1038" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-ed52417e-543c-48d3-8645-bd9aed5767a0.json"
@@ -346,6 +359,8 @@
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-07988bc9-13f1-43f2-b941-1b4b3aff72de.json"
   },
+  "http://example.org/fhir/ValueSet/attestation-question" : null,
+  "http://example.org/fhir/ValueSet/TBD" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1070" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-c42ae06a-a09c-47c6-b377-4d425d90efe5.json"
@@ -358,6 +373,7 @@
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-d892d35a-e972-45b1-9a3b-41fb8764d28f.json"
   },
+  "http://example.org/ValueSet/catheter-inserted" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.39" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-d9fdaa40-ed93-4d75-9cd3-b13ffe7581dd.json"
@@ -380,6 +396,7 @@
   },
   "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1030" : null,
+  "http://loinc.org|2.76" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1190.58" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-4d6a69e5-a2aa-46be-ac92-3d1b2b70bf11.json"
@@ -392,6 +409,7 @@
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-8868f594-e81a-466b-beeb-7a53c4bba6bb.json"
   },
+  "http://hl7.org/fhir/uv/cqm/Measure/EXM55-FHIR|5.0.0" : null,
   "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20150301" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1074" : {
     "server" : "http://tx.fhir.org/r4",
@@ -414,6 +432,7 @@
     "filename" : "vs-fc452aef-3e39-4c61-800a-5b040c918be2.json"
   },
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591|20221118" : null,
+  "http://hl7.org/fhir/uv/cqm/Measure/EXM146-FHIR|4.0.0" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1581" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-565cfbc4-763f-4da4-83ff-c2226d59a901.json"
@@ -423,6 +442,8 @@
     "filename" : "vs-ce39b3e6-7af2-4ad8-afb4-0c2327c82f2c.json"
   },
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.424|20210220" : null,
+  "http://loinc.org|2.74" : null,
+  "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20230901" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.272" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-2a624fbb-a1f4-400b-8ee1-c99aa6567e4d.json"
@@ -439,12 +460,15 @@
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-a77dc08a-5cc5-411d-87f3-670b39597e1d.json"
   },
+  "http://hl7.org/fhir/uv/cqm/Measure/EXM108-FHIR|8.2.000" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.1577" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-371ae720-1df9-4dbe-b382-c52ae08c010d.json"
   },
+  "http://example.org/ValueSet/catheter-removed" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1061" : null,
   "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner" : null,
+  "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/201709" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93|20230117" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.209" : {
     "server" : "http://tx.fhir.org/r4",
@@ -499,10 +523,12 @@
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-35a5fe4f-a601-4639-8ba6-14b28ae00b63.json"
   },
+  "http://example.org/fhir/ValueSet/fall" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.1743" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-a0063826-d907-4284-a6bb-b83ca35deeb8.json"
   },
+  "http://hl7.org/fhir/uv/cql/Library/FHIR-ModelInfo|4.0.1" : null,
   "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "vs-29a78ad2-95ac-4a1e-af1e-8deaf0baa75a.json"
