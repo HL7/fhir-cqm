@@ -857,7 +857,7 @@
       <value value="input/cql"/>
     </parameter>
     <parameter>
-      <code value="path-liquid-ig"/>
+      <code value="path-liquid"/>
       <value value="templates/liquid"/>
     </parameter>
     <parameter>
