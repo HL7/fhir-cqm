@@ -600,7 +600,7 @@ The name of an expression specifying a population criteria within a measure **SH
 * "Measure Observation"
 * "Stratification"
 
-†† When using multiple populations and/or multiple population groups, see Section 3.4.8
+†† When using multiple populations and/or multiple rates (groups), see Section 3.4.8
 
 Note that the Measure Observation criteria is the name of a function used in the Continuous Variable Measure. See the [Continuous Variable Measure](measure-conformance.html#continuous-variable-measure) section for more.
 
@@ -842,6 +842,7 @@ Performance rate = (Numerator - Numerator Exclusion) / (Denominator – Denomina
 Table 3.5 illustrates the result of evaluating the [IGProportion](Measure-IGProportion.html) measure against the [Scoring Test Patients](Bundle-scoring-test-patients.html):
 
 **Table 3.5: Scoring Behavior for Proportion Measures**
+{: #proportion-measure-scoring-table}
 
 Cell legend: **✓** counted in the `MeasureReport`, **⚠** criterion met but gated out, **–** criterion false.
 
@@ -975,6 +976,7 @@ Population counts are then determined by simply counting the number of cases tha
 Table 3.7 illustrates the result of evaluating the [IGRatio](Measure-IGRatio.html) measure against the [Scoring Test Patients](Bundle-scoring-test-patients.html):
 
 **Table 3.7: Scoring Behavior for Ratio Measures**
+{: #ratio-measure-scoring-table}
 
 Cell legend: **✓** counted in the `MeasureReport`, **⚠** criterion met but gated out, **–** criterion false.
 
@@ -1169,7 +1171,7 @@ Snippet 3-28: Definition from Snippet 3-23 (Sample CQL (from [EXM55.cql](Library
 1. Continuous variable measures **SHALL** conform to the [CQM Continuous Variable Measure](StructureDefinition-cqm-cvmeasure.html) profile.
 2. Population criteria **SHALL** each reference a single expression as defined by [Conformance Requirement 3.8](#conformance-requirement-3-8).
 3. The aggregateMethod extension **SHALL** be used on the measureObservation criteria to indicate the aggregate method for the observations. Expressions referenced from measure-observation criteria elements **SHALL** be consistent with the context used for the population criteria of the measure.
-4. The population element of a measure-observation criteria **SHALL** contain a criteriaReference extension that refers to the population criteria within the same population group that is the target population criteria for the measure-observation
+4. The population element of a measure-observation criteria **SHALL** contain a criteriaReference extension that refers to a population criteria within the same rate (group)
 5. Functions referenced from a measure-observation criteria **SHALL**:  
       a. be in the same library as the expression in the measure-population criteria referenced from the criteriaReference extension of the measure-observation criteria  
       b. accept a single argument whose type matches the elements of the list returned by the expression referenced from the criteriaReference extension of the measure-observation criteria  
@@ -1211,6 +1213,7 @@ Population counts are then determined by simply counting the number of cases tha
 Table 3.9 illustrates the result of evaluating the [IGContinuousVariable](Measure-IGContinuousVariable.html) measure against the [Scoring Test Patients](Bundle-scoring-test-patients.html):
 
 **Table 3.9: Scoring Behavior for Continuous Variable Measures**
+{: #continuous-variable-measure-scoring-table}
 
 Cell legend: **✓** counted in the `MeasureReport`, **⚠** criterion met but gated out, **–** criterion false.
 
@@ -1266,7 +1269,7 @@ Snippet 3-28: Continuous variable measure scoring semantics
 
 For cohort definitions, only the Initial Population criteria type is used. For subject-based cohort definitions, the criteria should return a true or false (or null). For other types of cohort definitions, the criteria may return any type.
 
-In a cohort measure, a population is identified from the population of all items being counted. For example, one might identify all the patients who have had H1N1 symptoms. The identified population is very similar to the Initial Population but is called a Cohort Population for public health purposes. In the Constrained Information Model (CIM), the population will be expressed using the InitialPopulationCriteria act. The Cohort Population result is used by public health agencies to trigger specific public health activities. Figure 3-6 depicts the population for a Cohort measure, Table 3-10 provides the definitions for cohort measure population criteria.
+In a cohort measure, a population is identified from the population of all items being counted. For example, one might identify all the patients who have had H1N1 symptoms. The identified population is very similar to the Initial Population but is called a Cohort Population for public health purposes. The Cohort Population result is used by public health agencies to trigger specific public health activities. Figure 3-6 depicts the population for a Cohort measure, Table 3-10 provides the definitions for cohort measure population criteria.
 
 **Conformance Requirement 3.15 (Cohort Definitions):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-15)
 {: #conformance-requirement-3-15}
@@ -1291,6 +1294,7 @@ In a cohort measure, a population is identified from the population of all items
 Table 3.11 illustrates the result of evaluating the [IGCohort](Measure-IGCohort.html) measure against the [Scoring Test Patients](Bundle-scoring-test-patients.html):
 
 **Table 3.11: Scoring Behavior for Cohort Measures**
+{: #cohort-measure-scoring-table}
 
 Cell legend: **✓** counted in the `MeasureReport`, **⚠** criterion met but gated out, **–** criterion false.
 
@@ -1327,21 +1331,31 @@ When a measure has multiple rates (each represented as a different group in the 
 
 For those cases where the rate specifications change independently, using an individual measure for each rate is the recommended approach.
 
-When a measure has multiple population groups (multiple group elements), the criteria names will follow the convention above, adding the number of the population group to each criterion, e.g. "Initial Population 1", "Denominator 1", etc. Note that when multiple population groups are present, the number of the group is added to all population groups, not just the groups other than the first.
+When a measure has multiple rates (multiple group elements), the criteria names will follow the convention above, adding the number of the rate to each criterion, e.g. "Initial Population 1", "Denominator 1", etc. Note that when multiple rates are present, the number of the group is added to all groups, not just the groups other than the first.
 
-For multiple population ratio measures that specify 2 initial populations, the populations would be named with an additional "\_X" to distinguish the initial populations, e.g. "Initial Population 1_1", "Initial Population 1_2", "Initial Population 2_1", "Initial Population 2_2".
+For multiple population ratio measures that specify 2 initial populations, the populations should be named with an additional "\_X" to distinguish the initial populations, e.g. "Initial Population 1_1", "Initial Population 1_2", "Initial Population 2_1", "Initial Population 2_2".
 
 **Conformance Requirement 3.16 (Multiple Population Indexing):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-16)
 {: #conformance-requirement-3-16}
-1. When specifying multiple populations and/or multiple population groups the following naming scheme **SHOULD** be used
+1. When specifying multiple populations and/or multiple rates the following naming scheme **SHOULD** be used
 
 ```
-(Criteria Name) (population group number) (population number)
+(Criteria Name) (rate number) (population number)
 ```
 
-Note when a measure has a single population group but multiple populations (such as a ratio measure), the underscore ("\_") is dropped. For example, "Initial Population 1", "Initial Population 2" refers to the populations NOT population groups.
+Note when a measure has a single rate but multiple populations (such as a ratio measure), the underscore ("\_") is dropped. For example, "Initial Population 1", "Initial Population 2" refers to the populations NOT rates.
 
-Note also that when a measure has multiple population groups, the expectation is that the measure would have multiple scores, one for each population group. The formulas for calculation of the groups do not change; they are the same as for single group measures, just calculated using the criteria for each group.
+Note also that when a measure has multiple rates, the expectation is that the measure report will have multiple scores, one for each rate. The formulas for calculation of the rates do not change; they are the same as for single rate measures, just calculated using the criteria for each group defining the rate.
+
+> STU NOTE: In FHIR Release 6, the Measure and MeasureReport resources remove the root-level calculation elements:
+> * `subject`
+> * `basis`
+> * `scoring`
+> * `scoringUnit`
+> * `compositeScoring`
+> The measure profiles in this implementation guide still allow these elements to be specified at the root or on each group.
+> To align with R6, implementations are recommended to use group-level specification of these calculation elements.
+{: .stu-note}
 
 #### Stratification
 {: #stratification}

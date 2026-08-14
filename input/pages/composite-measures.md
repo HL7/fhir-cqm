@@ -586,15 +586,15 @@ As with single measures, composite measures may be subject-based, or use some ot
 
 Because composite measure scoring for individual-based composites effectively ignores component scores, stratifiers defined on component measures are not applicable to the composite measure score. As such, stratifiers are supported in composite measures, just as they are with non-composites, but stratifiers of the component measures are ignored.
 
-### Multiple Populations
-{: #multiple-populations}
+### Multiple Rates
+{: #multiple-rates}
 
-**Conformance Requirement 5.8 (Composite Measure Population Groups):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-8)
+**Conformance Requirement 5.8 (Composite Measure Rates):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-8)
 {: #conformance-requirement-5-8}
-1. Component measures used in a composite **SHOULD** contain a single population group
-2. For component measures that contain multiple population groups, the composite measure **SHALL** specify the specific group to be used in the composite using the [groupId](StructureDefinition-cqm-groupId) extension
+1. Component measures used in a composite **SHOULD** contain a single rate definition (i.e. `Measure.group`)
+2. For component measures that contain multiple rates (i.e. more than one `Measure.group`), the composite measure **SHALL** specify the specific group to be used in the composite using the [groupId](StructureDefinition-cqm-groupId) extension
 
-To simplify expression and implementation of composite measures, all component measures used within a composite **SHOULD** have a single population group. In addition, the composite measure itself **SHOULD** only contain a single composite specification (using the _relatedArtifact_ elements of the Measure directly). Note that for ratio measures with two initial populations, the initial population would have to be constructed using the appropriate initial population from the component measures.
+To simplify expression and implementation of composite measures, all component measures used within a composite **SHOULD** have a single rate. In addition, the composite measure itself **SHOULD** only contain a single composite specification (using the _relatedArtifact_ elements of the Measure directly). Note that for ratio measures with two initial populations, the initial population would have to be constructed using the appropriate initial population from the component measures.
 
 ### Supplemental Data Elements and Risk Adjustment Variables
 {: #supplemental-data-elements-and-risk-adjustment-variables}
