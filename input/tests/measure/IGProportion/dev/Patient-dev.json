@@ -1,0 +1,13 @@
+{
+  "resourceType": "Patient",
+  "id": "dev",
+  "name": [
+    {
+      "family": "Example",
+      "given": [
+        "Dev"
+      ]
+    }
+  ],
+  "deceasedBoolean": true
+}

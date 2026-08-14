@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-weight",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight",
-  "version": "1.0.0",
   "name": "CQMWeight",
   "title": "CQM Weight",
   "status": "active",

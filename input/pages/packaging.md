@@ -2,7 +2,7 @@
 
 {: #measure-packaging}
 
-To facilitate publishing and distribution of quality measures, this Implementation Guide provides guidance on how to package quality measures, either independently, or as part of a collection of related measures.
+Packaging provides a standardized mechanism for exchanging quality measures together with their dependent artifacts. Packaged measures may be produced or consumed by measure authoring environments, repositories, quality reporting systems, testing frameworks, and implementation tooling to support publication, distribution, implementation, validation, testing, and lifecycle management. By exchanging all required artifacts as a single package, implementers can more consistently deploy and evaluate quality measures across interoperable systems.
 
 Measure packages are a special case of the more general [Artifact Packaging]({{site.data.fhir.ver.crmi}}/packaging.html) capability described in the Canonical Resource Management Infrastructure (CRMI) implementation guide. Measures may be packaged using that approach, with additional considerations as discussed in the following topics.
 
@@ -22,12 +22,12 @@ The following are conformance requirements when packaging a Library:
 **Conformance Requirement 6.1 (Library Packaging):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-6-1)
 {: #conformance-requirement-6-1}
 
-  1. The first entry in a Library bundle SHALL be a Library resource conforming
-  2. Library bundles MAY include any libraries referenced by the primary library
-  3. Library bundles MAY include any code systems and value sets referenced by the primary library or any required libraries.
+  1. The first entry in a Library bundle **SHALL** be a Library resource conforming
+  2. Library bundles **MAY** include any libraries referenced by the primary library
+  3. Library bundles **MAY** include any code systems and value sets referenced by the primary library or any required libraries.
   4. For CQL Library resources
-      1. If the target environment supports the use of CQL directly, Library resources SHOULD conform to the [CQLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-cql-library.html) profile.
-      2. If the target environment supports the use of ELM directly, Library resources SHOULD conform to one (or both) of the [ELMXMLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profiles.
+      1. If the target environment supports the use of CQL directly, Library resources **SHOULD** conform to the [CQLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-cql-library.html) profile.
+      2. If the target environment supports the use of ELM directly, Library resources **SHOULD** conform to one (or both) of the [ELMXMLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profiles.
 
 ### Packaging Measures
 {: #packaging-measures}
@@ -48,23 +48,85 @@ The following are conformance requirements when packaging a Measure:
 **Conformance Requirement 6.2 (Measure Packaging):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-6-2)
 {: #conformance-requirement-6-2}
 
-  1. The first entry in a Measure bundle SHALL be a Measure resource
-  2. The second entry in a Measure bundle SHALL be the primary Library resource for the measure
-  3. Measure bundles MAY include any libraries referenced by the primary library
-  4. Measure bundles MAY include any code systems and value sets referenced by the primary library or any required libraries.
-  5. Measure bundles MAY include any test case bundles defined for the measure
+  1. The first entry in a Measure bundle **SHALL** be a Measure resource
+  2. The second entry in a Measure bundle **SHALL** be the primary Library resource for the measure
+  3. Measure bundles **MAY** include any libraries referenced by the primary library
+  4. Measure bundles **MAY** include any code systems and value sets referenced by the primary library or any required libraries.
+  5. Measure bundles **MAY** include any test case bundles defined for the measure
   6. If the capabilities parameter of the package request includes `computable`:
-      a. The Measure resource SHALL conform to the [CQMComputableMeasure](StructureDefinition-cqm-computablemeasure.html) profile.
-      b. The Library resource(s) SHALL conform to the [CRMIComputableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-computablelibrary.html) profile.
-      b. For Measures using CQL:
-          i. The Measure resource SHALL conform to the [CQLMeasure](StructureDefinition-cqm-cqlmeasure.html) profile.
-          ii. The Library resource(s) SHALL conform to the [CQLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-cql-library.html)
+     1. The Measure resource **SHALL** conform to the [CQMComputableMeasure](StructureDefinition-cqm-computablemeasure.html) profile.
+     2. The Library resource(s) **SHALL** conform to the [CRMIComputableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-computablelibrary.html) profile
+     3. For Measures using CQL:
+        1. The Measure resource **SHALL** conform to the [CQLMeasure](StructureDefinition-cqm-cqlmeasure.html) profile.
+        2. The Library resource(s) **SHALL** conform to the [CQLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-cql-library.html)
   7. If the capabilities parameter of the package request includes `executable`: 
-      a. The Measure resource SHALL conform to the [CQMExecutableMeasure](StructureDefinition-cqm-executablemeasure.html) profile.
-      b. The Library resource(s) SHALL conform to the [CRMIExecutableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-executablelibrary.html) profile.
-      a. For Measures using CQL
-          i. The Measure resource SHALL conform to the [ELMMeasure](StructureDefinition-cqm-elmmeasure.html) profile.
-          ii. The Library resource(s) SHALL conform to one (or both) of the [ELMXMLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profiles.
+      1. The Measure resource **SHALL** conform to the [CQMExecutableMeasure](StructureDefinition-cqm-executablemeasure.html) profile.
+      2. The Library resource(s) **SHALL** conform to the [CRMIExecutableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-executablelibrary.html) profile.
+      3. For Measures using CQL
+          1. The Measure resource **SHALL** conform to the [ELMMeasure](StructureDefinition-cqm-elmmeasure.html) profile.
+          2. The Library resource(s) **SHALL** conform to one (or both) of the [ELMXMLLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-xml-library.html) or [ELMJSONLibrary]({{site.data.fhir.ver.cql}}/StructureDefinition-elm-json-library.html) profiles.
+
+### CQM Package Operation
+{: #cqm-package-operation}
+
+A successful cqm-package operation returns a Bundle containing the requested Measure together with the dependent artifacts available on the responding server. Depending on the requested packaging options, the response may include referenced Library resources, terminology artifacts, conformance resources, test cases, examples, and other supporting knowledge artifacts required to implement and evaluate the measure. The returned Bundle provides a consistent mechanism for exchanging the complete set of artifacts necessary to support interoperable quality measure implementation. The Snippet 6-1 provides an example for the CQM Package operation.
+
+```json
+{
+  "resourceType":"Parameters",
+  "parameter":[
+    {
+      "name":"url",
+      "valueUri":"http://hl7.org/fhir/uv/cqm/Measure/EXMLogic-FHIR"
+    },
+    {
+      "name":"version",
+      "valueString":"2.0.0"
+    },
+    {
+      "name":"capability",
+      "valueString":"computable"
+    },
+    {
+      "name":"bundleType",
+      "valueCode":"collection"
+    },
+    {
+      "name":"include",
+      "valueCode":"artifact"
+    },
+    {
+      "name":"include",
+      "valueCode":"knowledge"
+    },
+    {
+      "name":"include",
+      "valueCode":"terminology"
+    },
+    {
+      "name":"include",
+      "valueCode":"profiles"
+    },
+    {
+      "name":"include",
+      "valueCode":"extensions"
+    },
+    {
+      "name":"include",
+      "valueCode":"tests"
+    },
+    {
+      "name":"packageOnly",
+      "valueBoolean":false
+    },
+    {
+      "name":"errorBehavior",
+      "valueCode":"loose"
+    }
+  ]
+}
+```
+Snippet 6-1: Example cqm-package request
 
 ### Packaging Terminology
 {: #packaging-terminology}
@@ -74,10 +136,10 @@ The following are conformance requirements when packaging a Measure:
 ### Packaging Test Cases
 {: #packaging-test-cases}
 
-Basic testing of measure logic should involve at least one positive and negative test of each of the population criteria. A test case is represented as a set of test resources, together with a MeasureReport that conforms to the [CQMTestCase](StructureDefinition-cqm-testcase.html) profile to define the expected results. The test case bundle can then be used to package and distribute the test case.
+A test case is represented as a set of test resources, together with a MeasureReport that conforms to the [CQMTestCase](StructureDefinition-cqm-testcase.html) profile to define the expected results. The test case bundle can then be used to package and distribute the test case.
 
 **Conformance Requirement 6.3 (Test Case Packaging):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-6-3)
 {: #conformance-requirement-6-3}
 
-  1. The first entry in a TestCase bundle SHALL be a MeasureReport resource representing the expected outcome of evaluating the measure, given the test data provided as part of the test case
-  2. TestCase bundles SHALL include any resource data required to evaluate the test case
+  1. The first entry in a TestCase bundle **SHALL** be a MeasureReport resource representing the expected outcome of evaluating the measure, given the test data provided as part of the test case
+  2. TestCase bundles **SHALL** include any resource data required to evaluate the test case

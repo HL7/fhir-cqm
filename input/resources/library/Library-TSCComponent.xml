@@ -1,7 +1,7 @@
 <Library xmlns="http://hl7.org/fhir">
    <id value="TSCComponent"></id>
    <meta>
-      <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary"></profile>
+      <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablelibrary"></profile>
       <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"></profile>
       <profile value="http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library"></profile>
       <profile value="http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library"></profile>
@@ -9,7 +9,6 @@
    </meta>
    <language value="en"></language>
    <url value="http://hl7.org/fhir/uv/cqm/Library/TSCComponent"></url>
-   <version value="0.0.001"></version>
    <name value="TSCComponent"></name>
    <title value="TSC Component Library"></title>
    <status value="active"></status>

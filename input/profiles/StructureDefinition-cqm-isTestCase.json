@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-isTestCase",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-isTestCase",
-  "version": "1.0.0",
   "name": "CQMIsTestCase",
   "title": "CQM Is Test Case",
   "status": "active",

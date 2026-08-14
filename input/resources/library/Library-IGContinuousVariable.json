@@ -1,0 +1,24 @@
+{
+  "resourceType": "Library",
+  "id": "IGContinuousVariable",
+  "url": "http://hl7.org/fhir/uv/cqm/Library/IGContinuousVariable",
+  "name": "IGContinuousVariable",
+  "title": "IG Continuous Variable Measure Logic",
+  "status": "active",
+  "experimental": true,
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/library-type",
+      "code": "logic-library"
+    } ]
+  },
+  "description": "IGContinuousVariable",
+  "topic": [ {
+    "text": "FHIR"
+  }, {
+    "text": "CQL"
+  } ],
+  "content": [ {
+    "id": "ig-loader-IGContinuousVariable.cql"
+  } ]
+}

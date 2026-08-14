@@ -42,7 +42,7 @@ using FHIR version '4.0.1'
 
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
 
-include MATGlobalCommonFunctions version '5.0.000' called Global
+include MATGlobalCommonFunctions called Global
 
 valueset "Inpatient": 'http://example.org/fhir/ValueSet/inpatient'
 valueset "Fall": 'http://example.org/fhir/ValueSet/fall'

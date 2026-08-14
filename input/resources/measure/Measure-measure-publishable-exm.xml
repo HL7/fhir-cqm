@@ -88,7 +88,6 @@
          <display value="CMS"></display>
       </assigner>
    </identifier>
-   <version value="2.0.0"></version>
    <name value="PublishableMeasureEXM"></name>
    <title value="EXM Publishable Measure"></title>
    <status value="active"></status>

@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-proportionmeasure",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-proportionmeasure",
-  "version": "1.0.0",
   "name": "CQMProportionMeasure",
   "title": "CQM Proportion Measure",
   "status": "active",

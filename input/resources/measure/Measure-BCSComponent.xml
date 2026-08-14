@@ -52,7 +52,6 @@
       </type>
       <value value="Breast Cancer Screening"></value>
    </identifier>
-   <version value="0.0.001"></version>
    <name value="BCSComponent"></name>
    <title value="Breast Cancer Screening"></title>
    <status value="active"></status>

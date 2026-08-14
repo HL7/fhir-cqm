@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-reportingTiming",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-reportingTiming",
-  "version": "1.0.0",
   "name": "CQMReportingTiming",
   "title": "CQM Reporting Timing",
   "status": "active",

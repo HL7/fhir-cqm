@@ -4,14 +4,14 @@ FHIR-based quality measure are represented. It is intentionally simplified to sh
 specific aspects of a measure, and is not intended as an example of a clinically
 meaningful measure.
 */
-library Terminology version '1.0.0'
+library Terminology
 
 using FHIR version '4.0.1'
 
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
 include hl7.fhir.uv.cql.FHIRCommon version '2.0.0' called FHIRCommon
 
-include CommonTerminologies version '1.0.0' called Common
+include CommonTerminologies called Common
 
 // NOTE: Versioning is used in this example to illustrate completely how versioning is applied
 // References to specific versions of code systems and value sets should be used only when necessary

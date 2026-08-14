@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-trendingIssues",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-trendingIssues",
-  "version": "1.0.0",
   "name": "CQMTrendingIssues",
   "title": "CQM Trending Issues",
   "status": "active",

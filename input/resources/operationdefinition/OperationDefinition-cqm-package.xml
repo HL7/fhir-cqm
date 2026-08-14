@@ -51,13 +51,11 @@
     <use value="in"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation value="A desired capability of the resulting package. `computable` to include
-computable elements in packaged content; `executable` to include executable
-elements in packaged content; `publishable` to include publishable elements in
-packaged content."/>
+    <documentation value="A desired capability of the resulting package. `computable` to include computable elements in packaged content; `executable` to include executable elements in packaged content; `publishable` to include publishable elements in packaged content."/>
     <type value="string"/>
   </parameter>
-  <parameter>
+  <!--  Updated for FHIR-56819-->
+  <!--  <parameter>
     <name value="canonicalVersion"/>
     <use value="in"/>
     <min value="0"/>
@@ -67,8 +65,8 @@ the resource does not already specify a version. The format is the same as a can
 [url]|[version] - e.g. http://loinc.org|2.56 Note that this is a generalization of the `system-version`
 parameter to the $expand operation to apply to any canonical resource, including code systems."/>
     <type value="canonical"/>
-  </parameter>
-  <parameter>
+  </parameter>-->
+  <!--  <parameter>
     <name value="checkCanonicalVersion"/>
     <use value="in"/>
     <min value="0"/>
@@ -79,8 +77,8 @@ format is the same as a canonical URL: [url]|[version] - e.g. http://loinc.org|2
 this is a generalization of the `check-system-version` parameter to the $expand operation to
 apply to any canonical resource, including code systems."/>
     <type value="canonical"/>
-  </parameter>
-  <parameter>
+  </parameter>-->
+  <!--  <parameter>
     <name value="forceCanonicalVersion"/>
     <use value="in"/>
     <min value="0"/>
@@ -97,19 +95,38 @@ explicitly be represented in the expansion parameters. Note that this is a gener
 `force-system-version` parameter to the $expand operation to apply to any canonical resource,
 including code systems."/>
     <type value="canonical"/>
+  </parameter>-->
+  <parameter>
+    <name value="artifactVersion"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Specifies a version to use for a canonical or artifact resource if the artifact referencing the resource does not already specify a version. The format is the same as a canonical URL: [url]|[version] - e.g. http://loinc.org|2.56 &#xA;&#xA;Note that this is a generalization of the `system-version` parameter to the $expand operation to apply to any canonical resource, including code systems."/>
+    <type value="uri"/>
   </parameter>
+  <parameter>
+    <name value="checkArtifactVersion"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Edge Case: Specifies a version to use for a canonical or artifact resource. If the artifact referencing the resource specifies a different version, an error is returned instead of the package. The format is the same as a canonical URL: [url]|[version] - e.g. http://loinc.org|2.56 &#xA;&#xA;Note that this is a generalization of the `check-system-version` parameter to the $expand operation to  apply to any canonical resource, including code systems."/>
+    <type value="uri"/>
+  </parameter>
+  <parameter>
+    <name value="forceArtifactVersion"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Edge Case: Specifies a version to use for a canonical or artifact resource. This parameter overrides any specified version in the artifact (and any artifacts it depends on). The format is the same as a canonical URL: [system]|[version] - e.g. http://loinc.org|2.56. &#xA;&#xA;Note that this has obvious safety issues, in that it may result in a value set expansion giving a different list of codes that is both wrong and unsafe, and implementers **SHOULD** only use this capability reluctantly. It primarily exists to deal with situations where specifications have fallen into decay as time passes. If the version of a canonical is overridden, the version used **SHALL** explicitly be represented in the expansion parameters. &#xA;&#xA;Note that this is a generalization of the `force-system-version` parameter to the $expand operation to apply to any canonical resource, including code systems."/>
+    <type value="uri"/>
+  </parameter>
+  <!--  End of updates for FHIR-56819-->
   <parameter>
     <name value="manifest"/>
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="Specifies an asset-collection library that defines version bindings for code
-systems and other canonical resources referenced by the value set(s) being expanded
-and other canonical resources referenced by the artifact. When specified, code
-systems and other canonical resources identified as `depends-on` related artifacts
-in the manifest library have the same meaning as specifying that code system or other
-canonical version in the `system-version` parameter of an expand or the `canonicalVersion`
-parameter."/>
+    <documentation value="Specifies an asset-collection library that defines version bindings for code systems and other canonical resources referenced by the value set(s) being expanded and other canonical resources referenced by the artifact. When specified, code systems and other canonical resources identified as `depends-on` related artifacts in the manifest library have the same meaning as specifying that code system or other canonical version in the `system-version` parameter of an expand or the `canonicalVersion` parameter."/>
     <type value="canonical"/>
   </parameter>
   <parameter>
@@ -117,8 +134,7 @@ parameter."/>
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="Paging support - where to start if a subset is desired (default = 0). Offset is
-number of records (not number of pages)"/>
+    <documentation value="Paging support - where to start if a subset is desired (default = 0). Offset is number of records (not number of pages)"/>
     <type value="integer"/>
   </parameter>
   <parameter>
@@ -126,8 +142,7 @@ number of records (not number of pages)"/>
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="Paging support - how many resources should be provided in a partial page view.
-If count = 0, the client is asking how large the package is."/>
+    <documentation value="Paging support - how many resources **SHOULD** be provided in a partial page view. If count = 0, the client is asking how large the package is."/>
     <type value="integer"/>
   </parameter>
   <parameter>
@@ -135,19 +150,7 @@ If count = 0, the client is asking how large the package is."/>
     <use value="in"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation value="Specifies what contents should be included in the resulting package. The codes indicate which types of resources should be included, but note that
-the set of possible resources is determined as all known (i.e. present on the server) dependencies and related artifacts. Possible
-values are:
-* all (default) - all resource types
-* artifact - the specified artifact
-* canonical - canonical resources (i.e. resources with a defined url element or that can be canonical resources using the artifact-url extension)
-* terminology - terminology resources (i.e. CodeSystem, ValueSet, NamingSystem, ConceptMap)
-* conformance - conformance resources (i.e. StructureDefinition, StructureMap, SearchParameter, CompartmentDefinition)
-* profiles - profile definitions (i.e. StructureDefinition resources that define profiles)
-* extensions - extension definitions (i.e. StructureDefinition resources that define extensions)
-* knowledge - knowledge artifacts (i.e. ActivityDefinition, Library, PlanDefinition, Measure, Questionnaire)
-* tests - test cases and data (i.e. test cases as defined by the testing specification in this implementation guide)
-* examples - example resources (i.e. resources identified as examples in the implementation guide)"/>
+    <documentation value="Specifies what contents **SHOULD** be included in the resulting package. The codes indicate which types of resources **SHOULD** be included, but note that the set of possible resources is determined as all known (i.e. present on the server) dependencies and related artifacts. Possible values are:&#xA;* `all` (default) - all resource types&#xA;* `artifact` - the specified artifact&#xA;* `canonical` - canonical resources (i.e. resources with a defined url element or that can be canonical resources using the artifact-url extension)&#xA;* `terminology` - terminology resources (i.e. CodeSystem, ValueSet, NamingSystem, ConceptMap)&#xA;* `conformance` - conformance resources (i.e. StructureDefinition, StructureMap, SearchParameter, CompartmentDefinition)&#xA;* `profiles` - profile definitions (i.e. StructureDefinition resources that define profiles)&#xA;* `extensions` - extension definitions (i.e. StructureDefinition resources that define extensions)&#xA;* `knowledge` - knowledge artifacts (i.e. ActivityDefinition, Library, PlanDefinition, Measure, Questionnaire)&#xA;* `tests` - test cases and data (i.e. test cases as defined by the testing specification in this implementation guide)&#xA;* `examples` - example resources (i.e. resources identified as examples in the implementation guide)"/>
     <type value="string"/>
   </parameter>
   <parameter>
@@ -155,9 +158,7 @@ values are:
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="True to indicate that the resulting package should only include resources that are defined in the implementation guide
-or specification that defines the artifact being packaged. False (default) to indicate that the resulting package should
-include resources regardless of what implementation guide or specification they are defined in."/>
+    <documentation value="True to indicate that the resulting package **SHOULD** only include resources that are defined in the implementation guide or specification that defines the artifact being packaged. False (default) to indicate that the resulting package **SHOULD** include resources regardless of what implementation guide or specification they are defined in."/>
     <type value="boolean"/>
   </parameter>
   <parameter>
@@ -165,9 +166,7 @@ include resources regardless of what implementation guide or specification they 
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="An endpoint to use to access content (i.e. libraries, activities, measures, questionnaires, and plans) referenced by the
-artifact. If no content endpoint is supplied the evaluation will attempt to
-retrieve content from the server on which the operation is being performed."/>
+    <documentation value="An endpoint to use to access content (i.e. libraries, activities, measures, questionnaires, and plans) referenced by the artifact. If no content endpoint is supplied the evaluation will attempt to retrieve content from the server on which the operation is being performed."/>
     <type value="Endpoint"/>
   </parameter>
   <parameter>
@@ -175,24 +174,71 @@ retrieve content from the server on which the operation is being performed."/>
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="An endpoint to use to access terminology (i.e. valuesets, codesystems, naming systems, concept maps, and
-membership testing) referenced by the Resource. If no terminology endpoint is
-supplied, the evaluation will attempt to use the server on which the operation
-is being performed as the terminology server."/>
+    <documentation value="An endpoint to use to access terminology (i.e. valuesets, codesystems, naming systems, concept maps, and membership testing) referenced by the Resource. If no terminology endpoint is supplied, the evaluation will attempt to use the server on which the operation is being performed as the terminology server."/>
     <type value="Endpoint"/>
   </parameter>
+
+  <!--  New IN parameters for FHIR-56819  -->
+  <parameter>
+    <name value="terminologyCapabilities"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="A TerminologyCapabilities resource describing the expected terminology capabilities  of the target environment. For example, an environment may be capable of processing  specific types of value set definitions, but not others (e.g. LOINC panel definitions,  but not SNOMED hierarchies)."/>
+    <type value="TerminologyCapabilities"/>
+  </parameter>
+  <parameter>
+    <name value="requestMethod"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Indicates the request method (POST or PUT) that **SHOULD** be used for entries in the resulting package bundle. If not specified, the request method is at the discretion of the server."/>
+    <type value="code"/>
+  </parameter>
+  <parameter>
+    <name value="bundleType"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Determines the type of the output Bundle, **MAY** be either collection, or transaction. If not specified, the output bundle will be a transaction bundle, unless paging is used, or determined to be necessary by the server.&#xA;&#xA;If paging is used, the bundle type **SHALL** be searchset, and the resulting bundles **SHALL** conform to the paging guidance here: https://hl7.org/fhir/R4/http.html#paging&#xA;&#xA;It is an error to request a transaction or collection bundle and use paging. Servers are  free to return a TOO-COSTLY error if a transaction or collection bundle is requested for a package that is deemed to be too large by the server."/>
+    <type value="code"/>
+  </parameter>
+  <parameter>
+    <name value="artifactEndpointConfiguration"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Configuration information to resolve canonical artifacts&#xA;* `artifactRoute`: An optional route used to determine whether this endpoint is expected to be able to resolve artifacts that match the route (i.e. start with the route, up to and including the entire url)&#xA;* `endpointUri`: The URI of the endpoint, exclusive with the `endpoint` parameter&#xA;* `endpoint`: An Endpoint resource describing the endpoint, exclusive with the `endpointUri` parameter&#xA;&#xA;**Processing semantics**:&#xA;&#xA;Create a canonical-like reference (e.g. `{canonical.url}|{canonical.version}` or similar extensions for non-canonical artifacts).&#xA;&#xA;* Given a single `artifactEndpointConfiguration`&#xA;  * When `artifactRoute` is present&#xA;    * And canonical or artifact reference *starts with* `artifactRoute`&#xA;    * Then attempt to resolve with `endpointUri` or `endpoint`&#xA;  * When `artifactRoute` is not present&#xA;    * Then attempt to resolve with `endpointUri` or `endpoint`&#xA;* Given multiple `artifactEndpointConfiguration`s&#xA;  * Then rank order each configuration (see below)&#xA;  * And attempt to resolve with `endpointUri` or `endpoint` in order until resolved&#xA;&#xA;Rank each `artifactEndpointConfiguration` such that:&#xA;* if `artifactRoute` is present *and* canonical or artifact reference *starts with* `artifactRoute`: rank based on number of matching characters &#xA;* if `artifactRoute` is *not* present: include but rank lower&#xA;&#xA;NOTE: For evenly ranked `artifactEndpointConfiguration`s, order as defined in the&#xA;OperationDefinition."/>
+    <part>
+      <name value="artifactRoute"/>
+      <use value="in"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type value="uri"/>
+    </part>
+    <part>
+      <name value="endpointUri"/>
+      <use value="in"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type value="uri"/>
+    </part>
+    <part>
+      <name value="endpoint"/>
+      <use value="in"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type value="Endpoint"/>
+    </part>
+  </parameter>
+  <!-- End of New parameters for FHIR-56819  -->
+
   <parameter>
     <name value="return"/>
     <use value="out"/>
     <min value="1"/>
     <max value="1"/>
-    <documentation value="The result of the packaging. Servers generating packages SHALL include all the
-dependency resources referenced by the artifact that are known to the server and
-specified by the include parameters.
-
-For example, a measure repository SHALL include
-all the required library resources, but would not necessarily have the
-ValueSet resources referenced by the measure."/>
+    <documentation value="The result of the packaging. Servers generating packages **SHALL** include all the dependency resources referenced by the artifact that are known to the server and specified by the include parameters. &#xA;&#xA;For example, a measure repository **SHALL** include all the required library resources, but would not necessarily have the ValueSet resources referenced by the measure."/>
     <type value="Bundle"/>
   </parameter>
 </OperationDefinition>

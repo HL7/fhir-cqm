@@ -4,7 +4,7 @@ FHIR-based quality measure are represented. It is intentionally simplified to sh
 specific aspects of a measure, and is not intended as an example of a clinically
 meaningful measure.
 */
-library CommonTerminologies version '1.0.0'
+library CommonTerminologies
 
 using FHIR version '4.0.1'
 

@@ -4,15 +4,15 @@ or recommendation for guidance. This example will help guide and direct the proc
 of finding conventions and usage patterns that meet the needs of the various stakeholders
 in the measure development community.
 */
-library PVSComponent version '0.0.001'
+library PVSComponent
 
 using FHIR version '4.0.1'
 
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
 
-include SupplementalDataElements version '2.0.000' called SDE
-include MATGlobalCommonFunctions version '5.0.000' called Global
-include Hospice version '2.0.000' called Hospice
+include SupplementalDataElements called SDE
+include MATGlobalCommonFunctions called Global
+include Hospice called Hospice
 
 codesystem "LOINC": 'http://loinc.org'
 

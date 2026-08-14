@@ -1,0 +1,8 @@
+{
+  "resourceType": "Procedure",
+  "id": "ben-proc-0",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/ben"
+  }
+}

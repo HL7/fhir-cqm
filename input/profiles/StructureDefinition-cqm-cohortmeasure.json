@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-cohortmeasure",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cohortmeasure",
-  "version": "1.0.0",
   "name": "CQMCohortMeasure",
   "title": "CQM Cohort Measure",
   "status": "active",

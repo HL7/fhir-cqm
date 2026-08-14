@@ -10,7 +10,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Library/Identifier",
     "value": "EXMPublishableLibrary"
   } ],
-  "version": "2.0.0",
   "name": "EXMPublishableLibrary",
   "title": "Example Publishable Library",
   "status": "active",

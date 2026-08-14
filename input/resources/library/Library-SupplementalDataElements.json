@@ -2,7 +2,6 @@
   "resourceType": "Library",
   "id": "SupplementalDataElements",
   "url": "http://hl7.org/fhir/uv/cqm/Library/SupplementalDataElements",
-  "version": "2.0.000",
   "name": "SupplementalDataElements",
   "title": "Supplemental Data Elements",
   "status": "active",

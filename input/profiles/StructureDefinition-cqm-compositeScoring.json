@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-compositeScoring",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositeScoring",
-  "version": "1.0.0",
   "name": "CQMCompositeScoring",
   "title": "CQM Composite Scoring",
   "status": "active",

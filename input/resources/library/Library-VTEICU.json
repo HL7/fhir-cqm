@@ -10,7 +10,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Library/Identifier",
     "value": "VTEICU"
   } ],
-  "version": "5.0.000",
   "name": "VTEICU",
   "title": "VTE ICU Library",
   "status": "active",

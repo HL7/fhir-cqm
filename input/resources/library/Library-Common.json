@@ -10,7 +10,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Library/Identifier",
     "value": "Common"
   } ],
-  "version": "2.0.0",
   "name": "Common",
   "title": "Common Library",
   "status": "active",

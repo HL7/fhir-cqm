@@ -1,0 +1,8 @@
+{
+  "resourceType": "Procedure",
+  "id": "fin-proc-0",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/fin"
+  }
+}

@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-type",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-type",
-  "version": "1.0.0",
   "name": "CQMType",
   "title": "CQM Type",
   "status": "active",

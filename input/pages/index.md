@@ -72,6 +72,14 @@ The dependency on QI-Core is included for the purposes of example validation onl
 
 {% lang-fragment dependency-table-nontech.xhtml %}
 
+### Cross Version Analysis
+
+{% include cross-version-analysis-en.xhtml %}
+
+### Global Profiles
+
+{% include globals-table-en.xhtml %}
+
 ### IP Statements
 
 {% lang-fragment ip-statements.xhtml %}

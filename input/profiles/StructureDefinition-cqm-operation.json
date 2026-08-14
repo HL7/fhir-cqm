@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-operation",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-operation",
-  "version": "1.0.0",
   "name": "CQMOperation",
   "title": "CQM Operation",
   "status": "active",

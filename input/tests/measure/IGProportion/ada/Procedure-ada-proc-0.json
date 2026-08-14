@@ -1,0 +1,8 @@
+{
+  "resourceType": "Procedure",
+  "id": "ada-proc-0",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/ada"
+  }
+}

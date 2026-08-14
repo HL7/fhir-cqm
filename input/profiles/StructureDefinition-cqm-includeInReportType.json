@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-includeInReportType",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-includeInReportType",
-  "version": "1.0.0",
   "name": "CQMIncludeInReportType",
   "title": "CQM Include In Report Type",
   "status": "active",

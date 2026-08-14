@@ -1,0 +1,64 @@
+CQL: c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\cql
+Extension version: 0.9.8
+Clinical Reasoning version: 4.8.0
+Engine version: 4.9.0
+Language Server version: 4.10.0
+Translator version: 4.9.0
+Terminology: c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\vocabulary\valueset
+Test cases:
+ada - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGContinuousVariable\ada
+ben - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGContinuousVariable\ben
+cyd - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGContinuousVariable\cyd
+dev - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGContinuousVariable\dev
+eve - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGContinuousVariable\eve
+fin - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGContinuousVariable\fin
+gus - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGContinuousVariable\gus
+hana - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGContinuousVariable\hana
+ivy - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGContinuousVariable\ivy
+
+Initial Population=true
+Measure Population=true
+Measure Population Exclusion=false
+Patient=Patient(id=ada)
+
+Initial Population=true
+Measure Population=true
+Measure Population Exclusion=false
+Patient=Patient(id=ben)
+
+Initial Population=false
+Measure Population=true
+Measure Population Exclusion=false
+Patient=Patient(id=cyd)
+
+Initial Population=true
+Measure Population=true
+Measure Population Exclusion=true
+Patient=Patient(id=dev)
+
+Initial Population=true
+Measure Population=true
+Measure Population Exclusion=false
+Patient=Patient(id=eve)
+
+Initial Population=true
+Measure Population=true
+Measure Population Exclusion=false
+Patient=Patient(id=fin)
+
+Initial Population=true
+Measure Population=true
+Measure Population Exclusion=false
+Patient=Patient(id=gus)
+
+Initial Population=false
+Measure Population=false
+Measure Population Exclusion=true
+Patient=Patient(id=hana)
+
+Initial Population=true
+Measure Population=false
+Measure Population Exclusion=false
+Patient=Patient(id=ivy)
+
+elapsed: 0.971 seconds

@@ -2,7 +2,6 @@
   "resourceType": "Library",
   "id": "CommonTerminologies",
   "url": "http://hl7.org/fhir/uv/cqm/Library/CommonTerminologies",
-  "version": "1.0.0",
   "name": "CommonTerminologies",
   "title": "Common Terminology Library",
   "type": {

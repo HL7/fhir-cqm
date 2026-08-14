@@ -23,7 +23,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Measure/Identifier/nqf",
     "value": "0034"
   } ],
-  "version": "8.0.000",
   "name": "EXM130",
   "title": "EXM130 - Colorectal Cancer Screening Measure",
   "status": "active",

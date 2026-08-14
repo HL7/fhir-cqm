@@ -57,20 +57,18 @@ Snippet 3-1: FHIR Measure structure - abridged for clarity (from sample [Measure
 **Conformance Requirement 3.1 (Measure Specifications):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-1)
 {: #conformance-requirement-3-1}
 
-1. FHIR-based quality measures SHALL consist of a FHIR Measure resource conforming to at least the [CRMIShareableMeasure profile]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablemeasure.html).
-2. In addition, measures with a status of active SHALL conform to the [CRMIPublishableMeasure profile]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-publishablemeasure.html) in particular. 
-3. FHIR-based measures SHALL contain a narrative containing a human-readable representation of the measure content.
-    a. Narrative should be consistent with the narratives in this IG. Liquid templates are provided as informative resources to facilitate consistency across measures. [Measure.liquid](https://github.com/cqframework/sample-content-ig/blob/master/templates/liquid/Measure.liquid)
-4. FHIR based measures should contain Measure.usage and Measure.description elements.  In addition, other elements may be needed based on measure structure and intent (stratifier, supplemental data, etc.)
-
-Note that for string-valued description elements, these elements are markdown valued in future versions so systems SHOULD be able to render markdown content when it appears in these elements:
-
-* Measure.usage
-* Measure.group.description
-* Measure.population.description
-* Measure.stratifier.description
-* Measure.stratifier.component.description
-* Measure.supplementalData.description
+1. FHIR-based quality measures **SHALL** consist of a FHIR Measure resource conforming to at least the [CRMIShareableMeasure]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablemeasure.html) profile.
+2. In addition, measures with a status of active **SHALL** conform to the [CQMPublishableMeasure](StructureDefinition-cqm-publishablemeasure.html) profile. 
+3. FHIR-based measures **SHALL** contain a narrative containing a human-readable representation of the measure content.  
+    a. Narrative **SHOULD** be consistent with the narratives in this IG. Liquid templates are provided as informative resources to facilitate consistency across measures. [Measure.liquid](https://github.com/cqframework/sample-content-ig/blob/master/templates/liquid/Measure.liquid)
+4. FHIR based measures **SHOULD** contain `Measure.usage` and `Measure.description` elements. In addition, other elements may be needed based on measure structure and intent (`stratifier`, `supplementalData`, etc.)
+5. For the following string-valued description elements, these elements are markdown-valued in future versions so systems **SHOULD** be able to render markdown content when it appears in these elements:
+    * `Measure.usage`
+    * `Measure.group.description`
+    * `Measure.population.description`
+    * `Measure.stratifier.description`
+    * `Measure.stratifier.component.description`
+    * `Measure.supplementalData.description`
 
 ### Metadata
 {: #metadata}
@@ -104,8 +102,10 @@ Snippet 3-3: `library` element from Snippet 3-1
 **Conformance Requirement 3.2 (Referencing CQL Documents):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-2)
 {: #conformance-requirement-3-2}
 
-1. FHIR-based measures that make use of CQL SHALL use the [CQLLibrary](http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library) profile.
-4. FHIR-based measures that use CQL MAY reference other CQL libraries, but only the primary measure library is specified in the library element of the measure.
+1. FHIR-based measures that make use of CQL **SHALL** use the [CQLLibrary](http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library) profile.
+2. The primary measure library for a FHIR-based measure **SHALL** (and all referenced libraries **SHOULD**) conform to at least the [CRMIShareableLibrary]({{site.data.fhir.ver.crmi}}/StructureDefinition-crmi-shareablemeasure.html) profile.
+3. In addition, when the primary measure library has a status of active, it **SHALL** (and other referenced active libraries **SHOULD**) conform to the [CQMPublishableLibrary](StructureDefinition-cqm-publishablelibrary.html) profile.
+4. FHIR-based measures that use CQL **MAY** reference other CQL libraries, but only the primary measure library is specified in the library element of the measure.
 
 Snippet 3-4 illustrates a FHIR Library resource containing a CQL library with a stable, globally unique, version-independent identifier for the library, the `url`. If the library has a version specified, the `version` element is used as well.
 
@@ -209,9 +209,9 @@ Both CQL and ELM representations may be included in the Library resource dependi
 **Conformance Requirement 3.3 (Referencing ELM Documents):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-3)
 {: #conformance-requirement-3-3}
 
-1. To support implementations that cannot compile CQL, an ELM translation SHOULD be provided, in either XML or JSON format.
-2. FHIR-based measures that make use of ELM SHALL use the [ELMLibrary](http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library) or [ELMJSONLibrary](http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library) profile.
-3. When ELM translations are provided, they SHALL be semantically equivalent to the corresponding CQL library
+1. To support implementations that cannot compile CQL, an ELM translation **SHOULD** be provided, in either XML or JSON format.
+2. FHIR-based measures that make use of ELM **SHALL** use the [ELMLibrary](http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library) or [ELMJSONLibrary](http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library) profile.
+3. When ELM translations are provided, they **SHALL** be semantically equivalent to the corresponding CQL library
 
 The content elements in Snippet 3-4 provide an example of how a Library resource would contain both the CQL and the ELM as base-64-encoded strings (conforming to the CQLLibrary, ELMXMLLibrary, and ELMJSONLibrary profiles). More information on using ELM can be found in the [Using ELM]({{site.data.fhir.ver.cql}}/using-elm.html) topic in the Using CQL With FHIR implementation guide. 
 
@@ -265,8 +265,8 @@ Snippet 3-7: Example of [effectivePeriodAnchor extension](StructureDefinition-cq
 **Conformance Requirement 3.4 (Measurement Period):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-4)
 {: #conformance-requirement-3-4}
 
-1. FHIR-based quality measures SHALL provide either an `effectivePeriod` element, or an `cqm-effectivePeriodAnchor` and `cqm-effectivePeriodDuration` extension
-2. Measurement Period SHALL be either the `effectivePeriod` as specified, or an appropriate interval of length duration, starting at the specified anchor
+1. FHIR-based quality measures **SHALL** provide either an `effectivePeriod` element, or an `cqm-effectivePeriodAnchor` and `cqm-effectivePeriodDuration` extension
+2. Measurement Period **SHALL** be either the `effectivePeriod` as specified, or an appropriate interval of length duration, starting at the specified anchor
 
 #### Subscription-based Support for Changes to Measure Specifications
 
@@ -306,7 +306,7 @@ code "Venous foot pump, device (physical object)": '442023007' from "SNOMED-CT:2
 
 Further discussion of codesystem, ValueSet, and code can be found in the [Using CQL Chapter](using-cql.html) of this IG, sections [4.3](using-cql.html#code-systems), [4.4](using-cql.html#value-sets), and [4.5](using-cql.html#codes).
 
-For measures that use CQL, ValueSets and direct-reference codes that are associated with data access expressions can be found in the `dataRequirement` elements of the effective data requirements Library for the Measure.
+The effective data requirements library provides a structured representation of both the data criteria and terminology dependencies for a quality measure. Regardless of whether a measure uses CQL, all ValueSets and direct-reference codes referenced by the measure are surfaced in the library. For measures that use CQL, these terminology dependencies are represented in the dataRequirement elements derived from the measure logic.
 
 ```json
 "dataRequirement": [
@@ -337,23 +337,21 @@ For measures that use CQL, ValueSets and direct-reference codes that are associa
 
 Snippet 3-9: Example Library terminology definitions (from [library-Terminology.json](Library-Terminology.json.html))
 
-Regardless of whether a measure uses CQL, all ValueSets and direct-reference codes referenced by the measure are surfaced in the [_effective data requirements_](StructureDefinition-cqm-computablemeasure-definitions.html#diff_Measure.extension:effectiveDataRequirements) library for a computable measure. 
-
 **Conformance Requirement 3.5 (Terminology Inclusion):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-5)
 {: #conformance-requirement-3-5}
 
-Measures using ValueSet and/or direct-reference codes SHALL conform to the requirements of Conformance Requirement 3.5.
+Measures using ValueSet and/or direct-reference codes **SHALL** conform to the requirements of Conformance Requirement 3.5.
 
-1. All ValueSets referenced by the measure SHALL be included in the _effective data requirements_ Library using relatedArtifact elements:
-  a. The code element of the relatedArtifact SHALL be depends-on
-  b. The resource element of the relatedArtifact SHALL be the canonical URL of the referenced value set.
-  c. If the library ValueSet declaration includes a version, the canonical URL SHALL include the version specified in the declaration using canonical URL version syntax (i.e. `|version`)
-  d. The display element of the relatedArtifact SHALL include either
-    1. The identifier of the ValueSet declaration in the CQL, if the measure is using CQL
-    2. The `name` of the ValueSet
-2. All direct-reference codes referenced by the measure SHALL be included in the _effective data requirements_ Library using the cqf-directReferenceCode extension:
-  a. The code and system elements of the Coding SHALL be set to the code and system of the declaration, if the measure is using CQL
-  b. If the code declaration includes a display, it SHALL be used as the display of the Coding, otherwise, the identifier of the code declaration SHALL be used as the display
+1. All ValueSets referenced by the measure **SHALL** be included in the _effective data requirements_ Library using relatedArtifact elements:  
+  a. The code element of the relatedArtifact **SHALL** be depends-on  
+  b. The resource element of the relatedArtifact **SHALL** be the canonical URL of the referenced value set.  
+  c. If the library ValueSet declaration includes a version, the canonical URL **SHALL** include the version specified in the declaration using canonical URL version syntax (i.e. `|version`)  
+  d. The display element of the relatedArtifact **SHALL** include either  
+    1. The identifier of the ValueSet declaration in the CQL, if the measure is using CQL  
+    2. The `name` of the ValueSet  
+2. All direct-reference codes referenced by the measure **SHALL** be included in the _effective data requirements_ Library using the cqf-directReferenceCode extension:
+  a. The code and system elements of the Coding **SHALL** be set to the code and system of the declaration, if the measure is using CQL  
+  b. If the code declaration includes a display, it **SHALL** be used as the display of the Coding, otherwise, the identifier of the code declaration **SHALL** be used as the display  
 
 For example, in the following CQL, the reference to the code `"Venous foot pump, device (physical object)"` occurs in the `"DeviceUseStatement"` retrieve, while the reference to the code `"Right foot"` occurs outside the context of the retrieve:
 
@@ -396,7 +394,7 @@ Snippet 3-11: Example data criteria (from [library-Terminology.json](Library-Ter
 **Conformance Requirement 3.6 (Data Criteria Inclusion):**[<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-6)
 {: #conformance-requirement-3-6}
 
-1. `dataRequirement` entries SHALL be included in the _effective data requirements_ Library for each data element referenced by the measure
+1. `dataRequirement` entries **SHALL** be included in the _effective data requirements_ Library for each data element referenced by the measure
 
 For measures that use CQL, these data requirements may be inferred by analysis of the retrieve expressions used by the measure criteria. As discussed in the Using CQL With FHIR implementation guide, Library resources used to contain CQL libraries should surface the dependencies, terminologies, and data requirements of the CQL. Whether using CQL or some other expression representation, the dependencies, terminologies, and data requirements used by expressions referenced by the measure are surfaced in the _effective data requirements_ Library for the measure to promote structured review of the data criteria for a Library (and by examining Libraries referenced by a Measure, for a Measure or set of Measures) for the following use cases:
 
@@ -413,11 +411,11 @@ For measures that use CQL, the canonical representation of ELM makes it straight
 **Conformance Requirement 3.7** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-7) 
 {: #conformance-requirement-3-7}
 
-1. Systems SHOULD populate dataRequirements for each ELM Retrieve element. Each dataRequirement:
-  - SHALL have a `type` element representing the type of the retrieve
-  - SHALL have a profile element with the value of the templateId attribute of the retrieve, if present
-  - If the Retrieve element has a `codes` element referencing a ValueSet, the dataRequirement SHALL have a codeFilter.valueSet element
-  - If the Retrieve element has a `codes` element with a direct reference code, the dataRequirement SHALL have a codeFilter.code element
+1. Systems **SHOULD** populate dataRequirements for each ELM Retrieve element. Each dataRequirement:
+  - **SHALL** have a `type` element representing the type of the retrieve
+  - **SHALL** have a profile element with the value of the templateId attribute of the retrieve, if present
+  - If the Retrieve element has a `codes` element referencing a ValueSet, the dataRequirement **SHALL** have a codeFilter.valueSet element
+  - If the Retrieve element has a `codes` element with a direct reference code, the dataRequirement **SHALL** have a codeFilter.code element
 
 Systems that can optimize terminology restrictions may include filters that can be inferred from the CQL in the data requirements to provide more selective data requirements.
 
@@ -478,7 +476,7 @@ Snippet 3-13: dataRequirement for Condition: Acute Pharyngitis (from [library-EX
 ### Population Criteria
 {: #population-criteria}
 
-The Population Criteria (Snippet 3-14) includes definitions of criteria used to specify populations. For computable measures, these criteria SHALL be represented using a formal expression language. Measures SHOULD use CQL for this purpose, and this implementation guide describes conformance expectations for measures that use CQL. Other expression languages MAY be used, but the conformance expectations for other expression languages would need to be defined in a related implementation guide.
+The Population Criteria (Snippet 3-14) includes definitions of criteria used to specify populations. For computable measures, these criteria **SHALL** be represented using a formal expression language. Measures **SHOULD** use CQL for this purpose, and this implementation guide describes conformance expectations for measures that use CQL. Other expression languages **MAY** be used, but the conformance expectations for other expression languages would need to be defined in a related implementation guide.
 
 ```xml
 <group>
@@ -532,7 +530,7 @@ CQL provides the logical expression language that is used to define population c
     },
     "criteria": {
       "language": "text/cql-identifier",
-      "expression": "\"Initial Population\""
+      "expression": "Initial Population"
   }
   }
 ]
@@ -543,12 +541,13 @@ Snippet 3-15: Defining a population via reference to a CQL expression (from [mea
 Snippet 3-16 shows several examples of a CQL expression calling another, e.g. the "Initial Population" expression references another CQL expression: "Pharyngitis Encounters With Antibiotics". In this example the referenced expressions are all contained within the same CQL file (EXM146.cql) and some are included above. The "Is Between 2 and 17 Years of Age at Start of Measurement Period" expression uses the built-in CQL function AgeInYearsAt(). The definition of "Pharyngitis Encounters With Antibiotics" uses the function "Includes Or Starts During", defined in another CQL library (Common as described in Common.cql), further explanation of nested libraries is given in the “Nested Libraries” section of the Using CQL topic of this IG.
 
 ```cql
-library EXM146_FHIR version '4.0.0'
+library EXM146 version '4.0.0'
 
-using FHIR version '3.0.0'
+using FHIR version '4.0.1'
 
-include FHIRHelpers version '3.0.0' called FHIRHelpers
-include Common_FHIR version '2.0.0' called Common
+include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
+
+include Common version '2.0.0' called Common
 
 define "Is Between 2 and 17 Years of Age at Start of Measurement Period":
    AgeInYearsAt(start of "Measurement Period") >= 2
@@ -575,10 +574,10 @@ Snippet 3-16: CQL definition of the "Initial Population" criteria (from [EXM146.
 
 **Conformance Requirement 3.8 (Referential Integrity):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-8)
 {: #conformance-requirement-3-8}
-1. All Measure population criteria components
-    a. SHALL reference exactly one expression.
-    b. SHALL reference the same library.
-2. For measures that use CQL, references to expressions SHALL use the `text/cql-identifier` media type defined in the [CQL specification](https://cql.hl7.org/07-physicalrepresentation.html#media-types-and-namespaces).
+1. All Measure population criteria components  
+    a. **SHALL** reference exactly one expression.  
+    b. **SHALL** reference the same library.
+2. For measures that use CQL, references to expressions **SHALL** use the `text/cql-identifier` media type defined in the [CQL specification](https://cql.hl7.org/07-physicalrepresentation.html#media-types-and-namespaces).
 
 #### Criteria Names
 {: #criteria-names}
@@ -589,7 +588,7 @@ The codes within the [MeasurePopulationType]({{site.data.fhir.path}}codesystem-m
 
 **Conformance Requirement 3.9 (Criteria Names):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-9)
 {: #conformance-requirement-3-9}
-The name of an expression specifying a population criteria within a measure SHOULD always be the name of the criteria type††:
+The name of an expression specifying a population criteria within a measure **SHOULD** always be the name of the criteria type††:
 * "Initial Population"
 * "Denominator"
 * "Denominator Exclusion"
@@ -601,7 +600,7 @@ The name of an expression specifying a population criteria within a measure SHOU
 * "Measure Observation"
 * "Stratification"
 
-†† When using multiple populations and/or multiple population groups, see Section 3.4.8
+†† When using multiple populations and/or multiple rates (groups), see Section 3.4.8
 
 Note that the Measure Observation criteria is the name of a function used in the Continuous Variable Measure. See the [Continuous Variable Measure](measure-conformance.html#continuous-variable-measure) section for more.
 
@@ -635,13 +634,15 @@ In addition to the measure scoring, measures generally fall into two categories,
 **Conformance Requirement 3.10 (Population Basis):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-10)
 {: #conformance-requirement-3-10}
 
-1. The [`cqm-populationBasis`](StructureDefinition-cqm-populationBasis.html) extension SHALL be used to identify the result type of population criteria used in the measure, group, or population
-2. Expressions used in population criteria SHALL return a value of the type specified by the populationBasis for the measure, group, or population.
-3. If a DataRequirement is used to specify an allowed type for a population, the `type` SHALL be present and `profile`, and `codeFilter` elements MAY be present. Other elements SHALL NOT be present.
-4. If a DataRequirement is used to specify an allowed type for a population, instances SHALL be:
-    a. of the type specified in `type`
-    b. conform to ALL the profiles specified in `profile`
-    c. match ALL the codeFilters specified
+1. The [`cqm-populationBasis`](StructureDefinition-cqm-populationBasis.html) extension **SHALL** be used to identify the result type of population criteria used in the measure, group, or population
+2. Expressions used in population criteria **SHALL** have a return type as specified by the populationBasis for the measure, group, or population.  
+    a. For subject-based measures, a null result is interpreted as false.  
+    b. For non-subject-based measures, a null result is interpreted as an empty list, and null elements within the resulting list do not contribute to the result.  
+3. If a DataRequirement is used to specify an allowed type for a population, the `type` **SHALL** be present and `profile`, and `codeFilter` elements **MAY** be present. Other elements **SHALL NOT** be present.
+4. If a DataRequirement is used to specify an allowed type for a population, instances **SHALL** be:  
+    a. of the type specified in `type`  
+    b. conform to ALL the profiles specified in `profile`  
+    c. match ALL the codeFilters specified  
 
 Snippet 3-16 illustrates the use of the populationBasis extension for a subject-based measure:
 
@@ -709,18 +710,18 @@ Snippet 3-19: illustrates the use of the populationBasis extension for a non-pat
 
 Snippet 3-19: Population basis for an non-patient-based measure with a valueDataRequirement
 
-Note that this extension is specifically bound to the FHIRAllTypes ValueSet (i.e. the set of all types in FHIR, including data types and resource types, both abstract and concrete). The FHIRAllTypes value set is appropriate for the specification since it's possible to have population criteria that result in "abstract" types. Authoring environments may wish to limit the selection of population basis based on the content implementation guides used in authoring the measure, but that would be a content-driven validation, not a restriction enforced by the specification.
+Note that this extension is specifically bound to the FHIRAllTypes ValueSet (i.e. the set of all types in FHIR, including data types and resource types, both abstract and concrete). The FHIRAllTypes value set is appropriate for the specification since it is possible to have population criteria that result in "abstract" types. Authoring environments may wish to limit the selection of population basis based on the content implementation guides used in authoring the measure, but that would be a content-driven validation, not a restriction enforced by the specification.
 
 #### Measure Population Semantics
 
-The base FHIR Measure resource defines a set of measure population components that are used to construct measures. Measure populations have implicit relationships to each other depending on the measure scoring type. For example, for proportion measures, denominator criteria have an implicit dependency on initial population criteria, i.e. the criteria for inclusion in the denominator of a measure implicitly include the criteria for inclusion in the initial population.  Similarly, numerator criteria have an implicit dependency on denominator criteria, i.e. the criteria for inclusion in the numerator of a measure implicitly include the criteria for inclusion in the denominator. Expressions referenced by Measure population criteria are evaluated within the context of these implicit dependencies.
+The base FHIR Measure resource defines a set of measure population components that are used to construct measures. Each population is defined using a measure criteria that establishes the population. Each scoring type starts by defining the _initial population_, and then membership in subsequent populations is generally defined as a subset. For example, for proportion measures, the denominator is defined as a subset of the initial population. However, for authoring convenience, the denominator criteria does not need to restate the initial population criteria. In other words, the criteria for inclusion in the denominator of a proportion measure implicitly include the criteria for inclusion in the initial population.  Similarly, numerator criteria have an implicit dependency on denominator criteria, i.e. the criteria for inclusion in the numerator of a measure implicitly include the criteria for inclusion in the denominator. Expressions referenced by Measure population criteria are evaluated within the context of these implicit dependencies.
 
 **Conformance Requirement 3.11 (Measure Population Semantics):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-11)
 {: #conformance-requirement-3-11}
 
-1. Expressions used as measure population criteria SHALL be evaluated taking relevant dependencies into account, as specified by the membership determination formulas defined for each scoring type.
-2. Expressions MAY include explicit dependencies that duplicate the implicit FHIR-based quality measure population dependencies.
-3. Expressions SHALL use a FHIR resource type (e.g. Patient) as the context, and SHALL be expressed within the context of a single subject record of that type.
+1. Expressions used as measure population criteria **SHALL** be evaluated taking relevant dependencies into account, as specified by the membership determination formulas defined for each scoring type.
+2. Expressions **MAY** include explicit criteria that duplicate the implicit measure population dependencies.
+3. Expressions **SHALL** use a FHIR resource type (e.g. Patient) as the context, and **SHALL** be expressed within the context of a single subject record of that type.
 
 For example, Snippet 3-18 defines the "Initial Population" and "Denominator" for a measure.
 
@@ -733,7 +734,7 @@ define "Denominator": "Initial Population"
 
 Snippet 3-18: Explicit definition of the initial population and denominator.
 
-In this snippet, the relationship between the "Denominator" and the "Initial Population" is made explicit even though the FHIR Measure specification defines the "Denominator" to be a subset of the "Initial Population". With respect to the measure population definitions, the following CQL code has identical meaning:
+In this snippet, the relationship between the "Denominator" and the "Initial Population" is made explicit even though the FHIR Measure specification defines the "Denominator" to be a subset of the "Initial Population". With respect to the measure population definitions, the following CQL logic has identical meaning:
 
 ```cql
 define "Denominator": true
@@ -741,18 +742,42 @@ define "Denominator": true
 
 In this variant, the "Denominator" is utilizing the measure dependencies but this dependency is not explicitly expressed in the CQL; this is referred to as an implicit dependency.
 
-For subject-based measures, a null result is interpreted as false. For non-subject-based measures, a null result is interpreted as an empty list, and null elements within the resulting list do not contribute to the result.
+All the scoring types share the "Initial Population" criteria, allowing for common treatment across the scoring types. In addition, subject attribution is deliberately out of scope to ensure that the same measure specification can be used across different attribution models. Specifically:
+
+**Figure 3-2: Measure Attribution Calculation**
+
+<div>
+<img src="measure-attribution-calculation.png">
+</div>
+
+As Figure 3-2 illustrates, the measure scoring types all start with an initial population criteria, and measure calculation can be thought of as starting from _all subjects_, optionally narrowed to the set of _attributed subjects_, then narrowed to the _initial population_ for the measure. The discussions for each scoring type that follow start from this assumption. An example population of 9 patients is used to explicitly demonstrate the calculation semantics for each of the scoring types.
+
+For more details on attribution, see the [Attribution](#attribution) section below.
+
+Crucially, measure populations are set-based, and the workflow illustrations do not depict duplicate elimination as a result of these set semantics.
+
+For every scoring type, the membership for each population criteria is the criterion result **intersected with membership in its parent population(s)**. This means that a criterion can evaluate `true` and still contribute zero if the patient is not in the required parent set. As a summary:
+
+**Table 3.2: Scoring Behavior Overview**
+
+| Scoring type | Distinguishing mechanic | Summary result | Section |
+|---|---|---|---|
+| Proportion | numerator is a subset of denominator; exception fires only if the numerator was not met | score **0.5** = (3 − 1) / (6 − 1 − 1) | [`Proportion Measures`](#proportion-measures) |
+| Ratio | numerator and denominator are independent branches, each with its own initial population | ratio **0.8** = (5 − 1) / (6 − 1) | [`Ratio Measures`](#ratio-measures) |
+| Continuous variable | no numerator or denominator; a measure observation runs per member and is aggregated | median **1** over [0, 0, 1, 2, 3] | [`Continuous Variable Measures`](#continuous-variable-measure) |
+| Cohort | initial population only; membership equals the criterion, so nothing is ever gated | count **7** | [`Cohort Measures`](#cohort-definitions) |
+{: .grid}
 
 #### Proportion Measures
 {: #proportion-measures}
 
-A FHIR Measure resource representing a proportion measure will include one or more population criteria sections as described in Table 3-2.
+A FHIR Measure resource representing a proportion measure will include one or more population criteria sections as described in Table 3-3.
 
 The semantics of these components are unchanged from the base [Measure]({{site.data.fhir.path}}measure.html) specification; the only difference is that each component references a single criterion encoded as a formal expression.
 
 The referenced expressions return either an indication that a patient meets the population criteria (subject-based measures) or the events that a particular patient contributes to the population (non-subject-based measures). For example, consider two measures:
 
-**Table 3-2: Subject-based and non-subject-based Measure Examples**
+**Table 3-3: Subject-based and non-subject-based Measure Examples**
 
 | Measure | Denominator | Numerator |
 |:--------|:------------:|:----------:|
@@ -761,31 +786,31 @@ The referenced expressions return either an indication that a patient meets the 
 | Non-subject-based | All encounters where patients have condition A during the measurement period. | All encounters where patients have condition A during the measurement period and procedure B was performed during the encounter. |
 {: .grid}
 
-In Table 3-2, the first measure is an example of a subject-based measure. Each patient may contribute at most one count to the denominator and numerator, regardless of how many encounters they had. The second measure is a non-subject-based measure where each patient may contribute zero or more CT scans to the denominator and numerator counts. The third measure is another non-subject-based measure where each patient may contribute zero or more encounters to the denominator and numerator counts.
+In Table 3-3, the first measure is an example of a subject-based measure. Each patient may contribute at most one count to the denominator and numerator, regardless of how many encounters they had. The second measure is a non-subject-based measure where each patient may contribute zero or more CT scans to the denominator and numerator counts. The third measure is another non-subject-based measure where each patient may contribute zero or more encounters to the denominator and numerator counts.
 
 For complete examples of subject-based proportion measures, see the Screening Measure [Examples](examples.html). For a complete example of an non-subject-based proportion measure, see the [EXM108](Measure-EXM108-FHIR.html) measure included in this implementation guide.
 
 **Conformance Requirement 3.12 (Proportion Measures):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-12)
 {: #conformance-requirement-3-12}
 
-1. Proportion measures SHALL conform to the [CQM Proportion Measure](StructureDefinition-cqm-proportionmeasure.html) profile.
-2. Population criteria SHALL each reference a single expression as defined by [Conformance Requirement 3.8](#conformance-requirement-3-8).
-3. Expressions for subject-based measures SHALL return a Boolean to indicate whether a patient matches the population criteria (true) or not (false).
-4. Expressions for non-subject-based measures SHALL return a List of events of the same type, such as an Encounter or Procedure.
+1. Proportion measures **SHALL** conform to the [CQM Proportion Measure](StructureDefinition-cqm-proportionmeasure.html) profile.
+2. Population criteria **SHALL** each reference a single expression as defined by [Conformance Requirement 3.8](#conformance-requirement-3-8).
+3. Expressions for subject-based measures **SHALL** return a Boolean to indicate whether a patient matches the population criteria (true) or not (false).
+4. Expressions for non-subject-based measures **SHALL** return a List of events of the same type, such as an Encounter or Procedure.
 
 ##### Proportion measure scoring
 {: #proportion-measure-scoring}
 
-The population types for a Proportion measure are "Initial Population", "Denominator", "Denominator Exclusion", "Numerator", "Numerator Exclusion" and "Denominator Exception". The following diagram shows the relationships between the populations for proportion measures and the table below provides their definitions.
+The population types for a Proportion measure are "Initial Population", "Denominator", "Denominator Exclusion", "Numerator", "Numerator Exclusion" and "Denominator Exception". Figure 3-3 shows the relationships between the populations for proportion measures, Table 3-4 provides the definitions for poportion measure population criteria.
 
-**Figure 3-2: Population criteria relationships for Proportion measures illustration**
+**Figure 3-3: Population criteria relationships for Proportion measures illustration**
 
 <div>
-<img src="OutcomeFlow__Proportion_version.png">
+<img src="proportion-measure-calculation.png">
 </div>
 <br>
 
-**Table 3-3: Population Criteria Definitions for Proportion Measures**
+**Table 3-4: Population Criteria Definitions for Proportion Measures**
 {: #proportion-measure-table}
 
 | Population | Definition |
@@ -814,13 +839,27 @@ The “performance rate” is a ratio of patients in the Numerator (accounting f
 Performance rate = (Numerator - Numerator Exclusion) / (Denominator – Denominator Exclusion – Denominator Exception)
 ```
 
-Here is an example of using population types to select data on diabetes patients for a Proportion measure:
+Table 3.5 illustrates the result of evaluating the [IGProportion](Measure-IGProportion.html) measure against the [Scoring Test Patients](Bundle-scoring-test-patients.html):
 
-* Initial Population: Patient is between the age of 16 and 74
-* Denominator: Patient has Diabetes Type II
-* Denominator Exclusion: Patient is in Hospice Care
-* Numerator: Patient is between the age of 16 and 74, has Diabetes Type II, and the most recent laboratory result has hbA1C value > 9%
-* Denominator Exception: Patient meets the Denominator criteria and does NOT meet the Numerator criteria, and is designated as having "Steroid Induced Diabetes" or "Gestational Diabetes"
+**Table 3.5: Scoring Behavior for Proportion Measures**
+{: #proportion-measure-scoring-table}
+
+Cell legend: **✓** counted in the `MeasureReport`, **⚠** criterion met but gated out, **–** criterion false.
+
+| Patient | IP (Encounter) | DENOM (Procedure) | DENEX (deceased) | NUMER (Observation) | NUMEX (ResearchSubject) | DENEXCEP (Condition) | Outcome |
+|---|:--:|:--:|:--:|:--:|:--:|:--:|---|
+| Ada | ✓ | ✓ | – | ✓ | – | – | [numerator](MeasureReport-IGProportion-ada.html) |
+| Ben | ✓ | ✓ | – | – | – | – | [numer miss](MeasureReport-IGProportion-ben.html) |
+| Cyd | – | ⚠ | – | ⚠ | – | – | [out of scope](MeasureReport-IGProportion-cyd.html) |
+| Dev | ✓ | ✓ | ✓ | ⚠ | – | – | [excluded](MeasureReport-IGProportion-dev.html) |
+| Eve | ✓ | ✓ | – | ✓ | ✓ | – | [numer excluded](MeasureReport-IGProportion-eve.html) |
+| Fin | ✓ | ✓ | – | – | – | ✓ | [exception](MeasureReport-IGProportion-fin.html) |
+| Gus | ✓ | ✓ | – | ✓ | – | ⚠ | [numerator](MeasureReport-IGProportion-gus.html) |
+| Hana | – | – | ⚠ | – | – | – | [out of scope](MeasureReport-IGProportion-hana.html) |
+| Ivy | ✓ | – | – | ⚠ | – | – | [init pop only](MeasureReport-IGProportion-ivy.html) |
+{: .grid}
+
+[Report](MeasureReport-IGProportion-summary.html): IP 7, DENOM 6, DENEX 1, NUMER 3, NUMEX 1, DENEXCEP 1 · score = (3 − 1) / (6 − 1 − 1) = **2/4 = 0.5**
 
 ##### Subject-based Calculation
 
@@ -888,14 +927,14 @@ The difference between a ratio measure and a proportion measure is that in a pro
 **Conformance Requirement 3.13 (Ratio Measures):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-13)
 {: #conformance-requirement-3-13}
 
-1. Ratio measures SHALL conform to the [CQM Ratio Measure](StructureDefinition-cqm-ratiomeasure.html) profile.
-2. Population criteria SHALL each reference a single expression as defined by [Conformance Requirement 3.8](#conformance-requirement-3-8).
-3. measure-observation criteria SHALL reference expressions as defined by [Conformance Requirement 3.14](#conformance-requirement-3-14), with the exception that instead of a measure-population, the criteriaReference element SHALL reference a numerator or denominator criteria.
-4. Expressions for subject-based criteria SHALL return a Boolean to indicate whether a patient matches the population criteria (true) or not (false).
-5. Expressions for non-subject-based criteria SHALL return a List of events of the same type, such as an Encounter or Procedure.
-6. Population basis SHALL be consistent across denominator and numerator criteria:
-      * Population basis SHALL be specified on each initial-population criteria if it is different from the population basis for the group or measure.
-      * Criteria reference SHALL be specified on denominator, denominator exclusion, numerator, numerator exclusion, and measure observation criteria if the input source is different for the denominator and numerator criteria sets.
+1. Ratio measures **SHALL** conform to the [CQM Ratio Measure](StructureDefinition-cqm-ratiomeasure.html) profile.
+2. Population criteria **SHALL** each reference a single expression as defined by [Conformance Requirement 3.8](#conformance-requirement-3-8).
+3. measure-observation criteria **SHALL** reference expressions as defined by [Conformance Requirement 3.14](#conformance-requirement-3-14), with the exception that instead of a measure-population, the criteriaReference element **SHALL** reference a numerator or denominator criteria.
+4. Expressions for subject-based criteria **SHALL** return a Boolean to indicate whether a patient matches the population criteria (true) or not (false).
+5. Expressions for non-subject-based criteria **SHALL** return a List of events of the same type, such as an Encounter or Procedure.
+6. Population basis **SHALL** be consistent across denominator and numerator criteria:  
+      a. Population basis **SHALL** be specified on each initial-population criteria if it is different from the population basis for the group or measure.  
+      b. Criteria reference **SHALL** be specified on denominator, denominator exclusion, numerator, numerator exclusion, and measure observation criteria if the input source is different for the denominator and numerator criteria sets.
 
 For ratio measures that include a Measure Observation, the measure observation is defined as a function that takes a single parameter of the type of elements returned by the population criteria. This is also how it is specified for continuous variable measures. In particular, for non-patient based ratio measures the Measure Observation is defined as a function that takes a single argument of the same type as the elements returned by all the population criteria, and the aggregation method is specified in the Measure resource. For patient based ratio measures the Measure Observation is defined as a function that takes no parameters.
 
@@ -904,18 +943,15 @@ Common use cases for ratio measures include reporting measures such as [Catheter
 ##### Ratio measure scoring
 {: #ratio-measure-scoring}
 
-The population types for a Ratio measure are "Initial Population", "Denominator", "Denominator Exclusion", "Numerator" and "Numerator Exclusion". The following diagrams✧ show the relationships between the populations for Ratio measures and the table below provides their definitions
+The population types for a Ratio measure are "Initial Population", "Denominator", "Denominator Exclusion", "Numerator" and "Numerator Exclusion". Figure 3-4 shows the relationships between the populations for Ratio measures, Table 3.6 provides the definitions for ratio measure population criteria.
 
-
-**Figure 3-3: The two initial populations from which the denominator and numerator are derived.**
+**Figure 3-4: The two initial populations from which the denominator and numerator are derived.**
 
 <div>
-<img src="OutcomeFlow_Ratio_DenNum.png">
+<img src="ratio-measure-calculation.png">
 </div>
 
-✧ The ratio diagrams depict a ratio measure. Ratio measures may also include continuous variable calculations for the numerator and denominator (continuous variable ratio measures) but the diagrams do not depict the continuous variable ratio measures.
-
-**Table 3-4: Population Criteria Definitions for Ratio Measures**
+**Table 3-6: Population Criteria Definitions for Ratio Measures**
 {: #ratio-measure-table}
 
 | Population | Definition |
@@ -937,14 +973,27 @@ Take the following steps to add labels to each case to determine population memb
 
 Population counts are then determined by simply counting the number of cases that are labeled with each population type code.
 
-Here is an example of using the population types to select data on patients with central line catheters for a ratio measure:
+Table 3.7 illustrates the result of evaluating the [IGRatio](Measure-IGRatio.html) measure against the [Scoring Test Patients](Bundle-scoring-test-patients.html):
 
-* Initial Population: Patient is aged 65 years or older and admitted to hospital
-* Denominator: Patient has a central line
-* Denominator Exclusion: Patient is immunosuppressed
-* Numerator: Patient has a central line blood stream infection
-* Numerator Exclusion: Patient's central line blood stream infection is deemed to be a contaminant
+**Table 3.7: Scoring Behavior for Ratio Measures**
+{: #ratio-measure-scoring-table}
 
+Cell legend: **✓** counted in the `MeasureReport`, **⚠** criterion met but gated out, **–** criterion false.
+
+| Patient | IP 1 (Encounter) | DENOM (Procedure) | DENEX (deceased) | IP 2 (Immunization) | NUMER (Observation) | NUMEX (ResearchSubject) | Denominator side | Numerator side |
+|---|:--:|:--:|:--:|:--:|:--:|:--:|---|---|
+| [Ada](MeasureReport-IGRatio-ada.html) | ✓ | ✓ | – | ✓ | ✓ | – | denominator | numerator |
+| [Ben](MeasureReport-IGRatio-ben.html) | ✓ | ✓ | – | – | – | – | denominator | — |
+| [Cyd](MeasureReport-IGRatio-cyd.html) | – | ⚠ | – | ✓ | ✓ | – | — | numerator |
+| [Dev](MeasureReport-IGRatio-dev.html) | ✓ | ✓ | ✓ | ✓ | ✓ | – | excluded | numerator |
+| [Eve](MeasureReport-IGRatio-eve.html) | ✓ | ✓ | – | ✓ | ✓ | ✓ | denominator | excluded |
+| [Fin](MeasureReport-IGRatio-fin.html) | ✓ | ✓ | – | – | – | – | denominator | — |
+| [Gus](MeasureReport-IGRatio-gus.html) | ✓ | ✓ | – | ✓ | ✓ | – | denominator | numerator |
+| [Hana](MeasureReport-IGRatio-hana.html) | – | – | ⚠ | – | – | – | — | — |
+| [Ivy](MeasureReport-IGRatio-ivy.html) | ✓ | – | – | – | ⚠ | – | ip only | — |
+{: .grid}
+
+[Report](MeasureReport-IGRatio-summary.html): IP 1 = 7, DENOM 6, DENEX 1, IP 2 = 5, NUMER 5, NUMEX 1 · ratio = (5 − 1) / (6 − 1) = **4/5 = 0.8**
 
 ##### Individual Observations
 
@@ -1054,7 +1103,7 @@ The criteria referenced from the measure-observation component refers to an expr
       }
     ]
   },
-  "criteria": "\"Measure Observation\""
+  "criteria": "Measure Observation"
 }
 ```
 
@@ -1119,14 +1168,14 @@ Snippet 3-28: Definition from Snippet 3-23 (Sample CQL (from [EXM55.cql](Library
 **Conformance Requirement 3.14 (Continuous Variable Measures):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-14)
 {: #conformance-requirement-3-14}
 
-1. Continuous variable measures SHALL conform to the [CQM Continuous Variable Measure](StructureDefinition-cqm-cvmeasure.html) profile.
-2. Population criteria SHALL each reference a single expression as defined by [Conformance Requirement 3.8](#conformance-requirement-3-8).
-3. The aggregateMethod extension SHALL be used on the measureObservation criteria to indicate the aggregate method for the observations. Expressions referenced from measure-observation criteria elements SHALL be consistent with the context used for the population criteria of the measure.
-4. The population element of a measure-observation criteria SHALL contain a criteriaReference extension that refers to the population criteria within the same population group that is the target population criteria for the measure-observation
-5. Functions referenced from a measure-observation criteria SHALL:
-      a. be in the same library as the expression in the measure-population criteria referenced from the criteriaReference extension of the measure-observation criteria
-      b. accept a single argument whose type matches the elements of the list returned by the expression referenced from the criteriaReference extension of the measure-observation criteria
-      c. return either an Integer, a Decimal, or a Quantity
+1. Continuous variable measures **SHALL** conform to the [CQM Continuous Variable Measure](StructureDefinition-cqm-cvmeasure.html) profile.
+2. Population criteria **SHALL** each reference a single expression as defined by [Conformance Requirement 3.8](#conformance-requirement-3-8).
+3. The aggregateMethod extension **SHALL** be used on the measureObservation criteria to indicate the aggregate method for the observations. Expressions referenced from measure-observation criteria elements **SHALL** be consistent with the context used for the population criteria of the measure.
+4. The population element of a measure-observation criteria **SHALL** contain a criteriaReference extension that refers to a population criteria within the same rate (group)
+5. Functions referenced from a measure-observation criteria **SHALL**:  
+      a. be in the same library as the expression in the measure-population criteria referenced from the criteriaReference extension of the measure-observation criteria  
+      b. accept a single argument whose type matches the elements of the list returned by the expression referenced from the criteriaReference extension of the measure-observation criteria  
+      c. return either an Integer, a Decimal, or a Quantity  
 
 For non-subject-based continuous variable measures, the measure observation is defined as a function that takes a single parameter of the type of elements returned by the population criteria. The Initial Population, Measure Population, and Measure Population Exclusion criteria expressions must all return a list of elements of the same type.
 
@@ -1137,20 +1186,20 @@ Note that the criteria reference in the measure observation definition is presen
 ##### Continuous Variable Measure Scoring
 {: #continuous-variable-measure-scoring}
 
-The population types for a Continuous Variable measure are "Initial Population", "Measure Population", and "Measure Population Exclusion". In addition to these populations, a Measure Observation is defined which contains one or more Continuous Variable statements that are used to score one or more particular aspects of performance. The following diagram shows the relationships between the populations for Continuous Variable measures and the table below provides their definitions.
+The population types for a Continuous Variable measure are "Initial Population", "Measure Population", and "Measure Population Exclusion". In addition to these populations, a Measure Observation is defined which contains one or more Continuous Variable statements that are used to score one or more particular aspects of performance. Figure 3-5 shows the relationships between the populations for Continuous Variable measures, Table 3-8 provides the definitions for continuous variable population criteria.
 
-**Figure 3-4: Population criteria for Continuous Variable measures illustration**
+**Figure 3-5: Population criteria for Continuous Variable measures illustration**
 
 <div>
-<img src="OutcomeFlow_CV_Version.png">
+<img src="continuous-variable-measure-calculation.png">
 </div>
 
-**Table 3-5: Population Criteria Definitions for Continuous Variable Measures**
+**Table 3-8: Population Criteria Definitions for Continuous Variable Measures**
 
 | Population | Definition |
 |:----|:----|
 | Initial Population | All entities to be evaluated by a quality measure which may but are not required to share a common set of specified characteristics within a named measurement set to which the quality measure belongs. |
-| Measure Population | Continuous Variable measures do not have a Denominator, but instead define a Measure Population, as shown in the figure above. Rather than reporting a Numerator and Denominator, a Continuous Variable measure defines variables that are computed across the Measure Population (e.g., average wait time in the emergency department). A Measure Population may be the same as the Initial Population or a subset of the Initial Population to further constrain the population for the purpose of the quality measure. |
+| Measure Population | Continuous Variable measures do not have a Denominator, but instead define a Measure Population, as shown in Figure 3-5 above. Rather than reporting a Numerator and Denominator, a Continuous Variable measure defines variables that are computed across the Measure Population (e.g., average wait time in the emergency department). A Measure Population may be the same as the Initial Population or a subset of the Initial Population to further constrain the population for the purpose of the quality measure. |
 | Measure Population Exclusion | Patients who should be removed from the quality measure's Initial Population and Measure Population before determining the outcome of one or more continuous variables defined within a Measure Observation. Measure Population Exclusions are used in Continuous Variable measures to help narrow the Measure Population. |
 {: .grid}
 
@@ -1161,11 +1210,29 @@ Take the following steps to add labels to each case to determine population memb
 
 Population counts are then determined by simply counting the number of cases that are labeled with each population type code.
 
-Here is an example of using the population types to select data on emergency department patients for a Continuous Variable measure:
+Table 3.9 illustrates the result of evaluating the [IGContinuousVariable](Measure-IGContinuousVariable.html) measure against the [Scoring Test Patients](Bundle-scoring-test-patients.html):
 
-* Initial Population: Patient had an emergency department (ED) encounter
-* Measure Population: Same as Initial Population
-* Measure Population Exclusion: Patient had an inpatient encounter that was within 6 hours of the ED encounter or expired in the ED
+**Table 3.9: Scoring Behavior for Continuous Variable Measures**
+{: #continuous-variable-measure-scoring-table}
+
+Cell legend: **✓** counted in the `MeasureReport`, **⚠** criterion met but gated out, **–** criterion false.
+
+`Measure Observation` = `Count([Observation])` per member; membership decides whether the value feeds the aggregate.
+
+| Patient | IP (Encounter) | MPOP (Procedure) | MPOPEX (deceased) | Observation | Feeds score |
+|---|:--:|:--:|:--:|:--:|---|
+| Ada | ✓ | ✓ | – | 2 | [in population](MeasureReport-IGContinuousVariable-ada.html) |
+| Ben | ✓ | ✓ | – | 0 | [in population](MeasureReport-IGContinuousVariable-ben.html) |
+| Cyd | – | ⚠ | – | 9 | [out of scope](MeasureReport-IGContinuousVariable-cyd.html) |
+| Dev | ✓ | ✓ | ✓ | 4 | [excluded](MeasureReport-IGContinuousVariable-dev.html) |
+| Eve | ✓ | ✓ | – | 1 | [in population](MeasureReport-IGContinuousVariable-eve.html) |
+| Fin | ✓ | ✓ | – | 0 | [in population](MeasureReport-IGContinuousVariable-fin.html) |
+| Gus | ✓ | ✓ | – | 3 | [in population](MeasureReport-IGContinuousVariable-gus.html) |
+| Hana | – | – | ⚠ | 0 | [out of scope](MeasureReport-IGContinuousVariable-hana.html) |
+| Ivy | ✓ | – | – | 7 | [init pop only](MeasureReport-IGContinuousVariable-ivy.html) |
+{: .grid}
+
+[Report](MeasureReport-IGContinuousVariable-summary.html): IP 7, MPOP 6, MPOPEX 1 · aggregated values [0, 0, 1, 2, 3] · median = **1** (sum 6, mean 1.2, count 5)
 
 ##### Individual Observations
 
@@ -1202,20 +1269,20 @@ Snippet 3-28: Continuous variable measure scoring semantics
 
 For cohort definitions, only the Initial Population criteria type is used. For subject-based cohort definitions, the criteria should return a true or false (or null). For other types of cohort definitions, the criteria may return any type.
 
-In a cohort measure, a population is identified from the population of all items being counted. For example, one might identify all the patients who have had H1N1 symptoms. The identified population is very similar to the Initial Population but is called a Cohort Population for public health purposes. In the Constrained Information Model (CIM), the population will be expressed using the InitialPopulationCriteria act. The Cohort Population result is used by public health agencies to trigger specific public health activities. The following diagram depicts the population for a Cohort measure and the table below provides its definition.
+In a cohort measure, a population is identified from the population of all items being counted. For example, one might identify all the patients who have had H1N1 symptoms. The identified population is very similar to the Initial Population but is called a Cohort Population for public health purposes. The Cohort Population result is used by public health agencies to trigger specific public health activities. Figure 3-6 depicts the population for a Cohort measure, Table 3-10 provides the definitions for cohort measure population criteria.
 
 **Conformance Requirement 3.15 (Cohort Definitions):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-15)
 {: #conformance-requirement-3-15}
 
-1. Cohort Measures SHALL conform to the [CQMCohortMeasure](StructureDefinition-cqm-cohortmeasure.html) profile
+1. Cohort Measures **SHALL** conform to the [CQMCohortMeasure](StructureDefinition-cqm-cohortmeasure.html) profile
 
-**Figure 3-5: Population criteria for Cohort measures illustration**
+**Figure 3-6: Population criteria for Cohort measures illustration**
 
 <div>
-<img src="Cohort1.png">
+<img src="cohort-measure-calculation.png">
 </div>
 
-**Table 3-6: Population Criteria Definitions for Cohort Measures**
+**Table 3-10: Population Criteria Definitions for Cohort Measures**
 
 | Population | Definition |
 |:----|:----|
@@ -1224,9 +1291,29 @@ In a cohort measure, a population is identified from the population of all items
 
 * Initial population: Identify those cases that meet the Initial Population criteria.
 
-Here is an example of using the population types to select data on patients who have received immunizations for a Cohort measure:
+Table 3.11 illustrates the result of evaluating the [IGCohort](Measure-IGCohort.html) measure against the [Scoring Test Patients](Bundle-scoring-test-patients.html):
 
-* Initial Population: All patients who had an immunization
+**Table 3.11: Scoring Behavior for Cohort Measures**
+{: #cohort-measure-scoring-table}
+
+Cell legend: **✓** counted in the `MeasureReport`, **⚠** criterion met but gated out, **–** criterion false.
+
+Only the `Initial Population` criterion exists — membership equals the criterion, so the **⚠** state cannot occur.
+
+| Patient | Initial Population (Encounter) | Other data (not evaluated) | Cohort |
+|---|:--:|---|---|
+| Ada | ✓ | Procedure, Observation, Immunization | [in cohort](MeasureReport-IGCohort-ada.html) |
+| Ben | ✓ | Procedure | [in cohort](MeasureReport-IGCohort-ben.html) |
+| Cyd | – | Procedure, Observation, Immunization | [out of scope](MeasureReport-IGCohort-cyd.html) |
+| Dev | ✓ | deceased, Procedure, Observation, Immunization | [in cohort](MeasureReport-IGCohort-dev.html) |
+| Eve | ✓ | Procedure, Observation, ResearchSubject, Immunization | [in cohort](MeasureReport-IGCohort-eve.html) |
+| Fin | ✓ | Procedure, Condition | [in cohort](MeasureReport-IGCohort-fin.html) |
+| Gus | ✓ | Procedure, Observation, Condition, Immunization | [in cohort](MeasureReport-IGCohort-gus.html) |
+| Hana | – | deceased | [out of scope](MeasureReport-IGCohort-hana.html) |
+| Ivy | ✓ | Observation | [in cohort](MeasureReport-IGCohort-ivy.html) |
+{: .grid}
+
+[Report](MeasureReport-IGCohort-summary.html): initial-population 7 · cohort score (count) = **7**
 
 #### Attestation Measures
 {: #Attestation Measures}
@@ -1235,28 +1322,40 @@ The measure is an attestation, derived from the base [Measure]({{site.data.fhir.
 
 [CQMAttestationMeasure](StructureDefinition-cqm-attestationmeasure.html) 
 
-#### Measures with Multiple Populations
-{: #measures-with-multiple-populations}
+#### Measures with Multiple Rates
+{: #measures-with-multiple-rates}
 
 The section discusses how to represent multiple rate measures where each rate is represented as a different `group` in the measure.  Given a set of rates related to a particular topic, multiple rate measures can be used in cases where the rates are tightly related such that they all change (and therefore version) together.  Examples include CMS 136 Follow-Up Care for Children Prescribed ADHD Medication (ADD) which looks for two rates depending on how long the patient remains on medication and the number of follow up visits performed. 
 
+When a measure has multiple rates (each represented as a different group in the measure), the groups should be named Group_1, Group_2, etc.
+
 For those cases where the rate specifications change independently, using an individual measure for each rate is the recommended approach.
 
-When a measure has multiple population groups (multiple group elements), the criteria names will follow the convention above, adding the number of the population group to each criterion, e.g. "Initial Population 1", "Denominator 1", etc. Note that when multiple population groups are present, the number of the group is added to all population groups, not just the groups other than the first.
+When a measure has multiple rates (multiple group elements), the criteria names will follow the convention above, adding the number of the rate to each criterion, e.g. "Initial Population 1", "Denominator 1", etc. Note that when multiple rates are present, the number of the group is added to all groups, not just the groups other than the first.
 
-For multiple population ratio measures that specify 2 initial populations, the populations would be named with an additional "\_X" to distinguish the initial populations, e.g. "Initial Population 1_1", "Initial Population 1_2", "Initial Population 2_1", "Initial Population 2_2".
+For multiple population ratio measures that specify 2 initial populations, the populations should be named with an additional "\_X" to distinguish the initial populations, e.g. "Initial Population 1_1", "Initial Population 1_2", "Initial Population 2_1", "Initial Population 2_2".
 
 **Conformance Requirement 3.16 (Multiple Population Indexing):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-16)
 {: #conformance-requirement-3-16}
-1. When specifying multiple populations and/or multiple population groups the following naming scheme SHOULD be used
+1. When specifying multiple populations and/or multiple rates the following naming scheme **SHOULD** be used
 
 ```
-(Criteria Name) (population group number) (population number)
+(Criteria Name) (rate number) (population number)
 ```
 
-Note when a measure has a single population group but multiple populations (such as a ratio measure), the underscore ("\_") is dropped. For example, "Initial Population 1", "Initial Population 2" refers to the populations NOT population groups.
+Note when a measure has a single rate but multiple populations (such as a ratio measure), the underscore ("\_") is dropped. For example, "Initial Population 1", "Initial Population 2" refers to the populations NOT rates.
 
-Note also that when a measure has multiple population groups, the expectation is that the measure would have multiple scores, one for each population group. The formulas for calculation of the groups do not change; they are the same as for single group measures, just calculated using the criteria for each group.
+Note also that when a measure has multiple rates, the expectation is that the measure report will have multiple scores, one for each rate. The formulas for calculation of the rates do not change; they are the same as for single rate measures, just calculated using the criteria for each group defining the rate.
+
+> STU NOTE: In FHIR Release 6, the Measure and MeasureReport resources remove the root-level calculation elements:
+> * `subject`
+> * `basis`
+> * `scoring`
+> * `scoringUnit`
+> * `compositeScoring`
+> The measure profiles in this implementation guide still allow these elements to be specified at the root or on each group.
+> To align with R6, implementations are recommended to use group-level specification of these calculation elements.
+{: .stu-note}
 
 #### Stratification
 {: #stratification}
@@ -1264,14 +1363,14 @@ Note also that when a measure has multiple population groups, the expectation is
 **Conformance Requirement 3.17 (Stratification Criteria):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-17)
 {: #conformance-requirement-3-17}
 
-1. Stratifier criteria SHALL be either criteria-based or value-based.
+1. Stratifier criteria **SHALL** be either criteria-based or value-based.
 2. Criteria-based stratification: 
-    1. SHALL be on the root.
-    2. Results SHALL be in the same type as the basis of the measure.
+    1. **SHALL** be on the root.
+    2. Results **SHALL** be in the same type as the basis of the measure.
 3. Value-based stratification: 
-    1. SHALL be on the component.
-    2. Results in a type that MAY be different than the basis of the measure.
-4. Stratification descriptions SHOULD be in markdown (see [Conformance statement 3.1](#conformance-requirement-3-1) item 4 for more information)
+    1. **SHALL** be on the component.
+    2. Results in a type that **MAY** be different than the basis of the measure.
+4. Stratification descriptions **SHOULD** be in markdown (see [Conformance statement 3.1](#conformance-requirement-3-1) item 4 for more information)
 
 Stratification is represented using the `stratifier` element. The semantics of this element are unchanged from Quality Reporting ([Section 17.6.1.4.1](https://hl7.org/fhir/6.0.0-ballot4/clinicalreasoning-quality-reporting.html#stratification)) where there is a complete explanation of stratifiers.
 
@@ -1312,10 +1411,10 @@ The stratum value for a given Patient would be the gender value.
 **Conformance Requirement 3.18 (Supplemental Data Elements):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-18)
 {: #conformance-requirement-3-18}
 
-1. Supplemental Data Elements SHALL be included within the supplementalData element using a usage element of supplemental-data.
-2. Supplemental Data Elements SHOULD reference a single expression definition, with a name beginning with SDE.
-3. Supplemental data element criteria expressions MAY be of any type, including lists
-4. Supplemental data elements descriptions SHOULD be in markdown (see [Conformance statement 3.1](#conformance-requirement-3-1) item 4 for more information)
+1. Supplemental Data Elements **SHALL** be included within the supplementalData element using a usage element of supplemental-data.
+2. Supplemental Data Elements **SHOULD** reference a single expression definition, with a name beginning with SDE.
+3. Supplemental data element criteria expressions **MAY** be of any type, including lists
+4. Supplemental data elements descriptions **SHOULD** be in markdown (see [Conformance statement 3.1](#conformance-requirement-3-1) item 4 for more information)
 
 
 Part of the definition of a quality measure involves the ability to specify additional information to be returned for each member of a population. Within a FHIR-based quality measure, these supplemental data elements are specified using expressions, typically involving patient characteristics (such as Race, Ethnicity, Payer, and Administrative Sex) and then marking them with an SDE code within the FHIR Measure resource. Snippet 3-33 demonstrates an example supplemental data definition using the `supplementalData` element.
@@ -1368,8 +1467,8 @@ By convention, the name of each supplemental data element expression should star
 **Conformance Requirement 3.19 (Risk Adjustment Criteria):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-19)
 {: #conformance-requirement-3-19}
 
-1. Risk Adjustment Data SHALL be included within the supplementalData element using a usage element of risk-adjustment-factor
-2. Risk Adjustment Data SHOULD reference a single CQL expression definition, with a name beginning with RAF
+1. Risk Adjustment Data **SHALL** be included within the supplementalData element using a usage element of risk-adjustment-factor
+2. Risk Adjustment Data **SHOULD** reference a single CQL expression definition, with a name beginning with RAF
 
 
 Measures may define variables used to adjust scores based on a measure of “risk” observed in the population. Such variables are referred to as risk adjustment data. Risk adjustment data are included in the supplementalData section and may be defined using CQL; such inclusions must adhere to Conformance Requirement 3.19.
@@ -1390,7 +1489,7 @@ Measures may define variables used to adjust scores based on a measure of “ris
     },
     "criteria": {
       "language": "text/cql-identifier",
-      "expression": "Hepatic Failure"
+      "expression": "RAF Hepatic Failure"
     }
   }
 ]
@@ -1399,7 +1498,7 @@ Measures may define variables used to adjust scores based on a measure of “ris
 Snippet 3-35: Sample Risk Adjustment Data
 
 ```cql
-define "Hepatic Failure":
+define "RAF Hepatic Failure":
   exists ("Cirrhosis Dx")
     and exists ("Bilirubin Test")
     and exists ("Serum Albumin Test")
@@ -1482,12 +1581,69 @@ Refer to the [ConceptMap Resources section](terminology.html#conceptmap-resource
 
 ### Attribution
 
-Member Attribution (ATR) lists are often used between Payers and Providers for implementing risk-based contracts, value-based contracts, care gap closures and quality reporting. Creation of a Member Attribution List typically starts with a need to identify the patients for a specific purpose such as Quality Reporting. Refer to the [Member Attribution Lists Workflows and Definitions](http://hl7.org/fhir/us/davinci-atr/usecases.html#member-attribution-list-workflows-and-definitions) within the Da Vinci - Member Attribution (ATR) List IG for more information on representing groups of patients for attribution within quality reporting.  
+Member attribution (ATR) lists are often used between payers and providers to support value-based care, quality reporting, care gap closure, and other reporting workflows. Creation of a member attribution list typically begins with identifying the population of patients for a specific program or reporting purpose.
+
+While attribution is an important component of many quality measurement programs, attribution models are highly dependent on program-specific business rules, contractual relationships, and operational policies. For that reason, the QM IG does not define a standard representation for attribution metadata or attribution models within reusable measure specifications. This allows the same measure specification to be reused across diverse quality programs and reporting environments while allowing implementers to apply attribution approaches appropriate to their specific use case. Individual quality programs may incorporate attribution into their implementation or measure logic as appropriate for their use case, but those approaches are not standardized by the QM IG.
+
+Refer to the [Da Vinci - Member Attribution (ATR) List IG](https://hl7.org/fhir/us/davinci-atr/) for more information on representing groups of patients for attribution.
+
+Note that if your basis is encounters, you can use the following approach to get to attribution: use the `provider` parameter of the DEQM [$evaluate](https://hl7.org/fhir/uv/deqm/en/OperationDefinition-evaluate.html) to identify the provider being reported:
+
+```
+GET [base]/Measure/<measure-id>/$evaluate-measure?subject=Patient/MultiProviderPatient&periodStart=2024-01-01&periodEnd=2024-12-31&provider=Organization/organization-a
+```
+
+This provides the needed input to the attribution criteria to determine what data should be attributed to the provider for the given patient.
+
+An `AttributionModel` library introduces two fluent functions, `isAttributable(Patient)` and `isAttributable(Encounter)`:
+
+```cql
+parameter "Measurement Period" Interval<DateTime> default Interval[@2024-01-01T00:00:00.0Z, @2024-12-31T23:59:59.999Z]
+parameter "Provider" String
+
+context Patient
+
+define fluent function isAttributable(patient Patient):
+  "Provider" is not null implies Patient.managingOrganization.reference.endsWith("Provider")
+
+define fluent function isAttributable(encounter Encounter):
+  encounter.period during "Measurement Period"
+    and "Provider" is not null implies encounter.serviceProvider.reference.endsWith("Provider")
+```
+
+These functions are then referenced in the initial population criteria for each of these measures:
+
+```cql
+define "Initial Population":
+  "Encounter with Principal Diagnosis and Age" Encounter
+    where Encounter.isAttributable()
+```
+
+```cql
+define "Has Qualifying Encounter During First 240 Days of Measurement Period":
+  exists ( ( ["Encounter": "Office Visit"]
+      union ["Encounter": "Outpatient Consultation"]
+      union ["Encounter": "Annual Wellness Visit"]
+      union ["Encounter": "Face-to-Face Interaction"]
+      union ["Encounter": "Home Healthcare Services"]
+      union ["Encounter": "Preventive Care Services Established Office Visit, 18 and Up"]
+      union ["Encounter": "Preventive Care Services Initial Office Visit, 18 and Up"]
+      union ["Encounter": "Preventive Care Services, Initial Office Visit, 0 to 17"]
+      union ["Encounter": "Preventive Care, Established Office Visit, 0 to 17"]
+      union ["Encounter": "Telephone Visits"]
+    ) QualifyingEncounter
+      where QualifyingEncounter.period during day of Interval[start of "Measurement Period", start of "Measurement Period" + 240 days]
+        and QualifyingEncounter.isAttributable()
+  )
+
+define "Initial Population":
+  "Has Qualifying Encounter During First 240 Days of Measurement Period"
+```
 
 ### Must Support
 {: #must-support}
 
-Certain elements in the profiles defined in this implementation guide are marked as _Must Support_. This flag is used to indicate that the element plays a critical role in defining and sharing quality measures, and implementations SHALL understand and process the element.
+Certain elements in the profiles defined in this implementation guide are marked as _Must Support_. This flag is used to indicate that the element plays a critical role in defining and sharing quality measures, and implementations **SHALL** understand and process the element.
 
 In addition, because measure specifications typically make use of data implementation guides (e.g. US Core, QI-Core), the implications of the Must Support flag for profiles used from those implementation guides must be considered.
 
@@ -1495,11 +1651,18 @@ For more information, see the definition of [Must Support]({{site.data.fhir.path
 
 **Conformance Requirement 3.20 (Must Support Elements):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-20)
 {: #conformance-requirement-3-20}
-For resource instances claiming to conform to Quality Measure IG profiles, Must Support on any profile data element SHALL be interpreted as follows:
+For resource instances claiming to conform to Quality Measure IG profiles, Must Support on any profile data element **SHALL** be interpreted as follows:
 
-* Authoring systems and knowledge repositories SHALL be capable of populating all Must Support data elements.
-* Evaluating systems SHALL be capable of processing resource instances containing Must Support data elements without generating an error or causing the evaluation to fail.
-* In situations where information on a particular data element is not present and the reason for absence is unknown, authoring and repository systems SHALL NOT include the data elements in the resource instance.
-  * For example, for systems using '9999' to indicate unknown data values, do not include '9999' in the resource instance.
-* When consuming resource instances, evaluating systems SHALL interpret missing data elements within resource instances as data not present for the artifact.
-* Submitting and receiving systems using quality measure artifacts to perform data exchange or artifact evaluation operations SHALL respect the must support requirements of the profiles used by the artifact to describe the data involved in the operation.
+1. Authoring systems and knowledge repositories **SHALL** be capable of populating all Must Support data elements.
+2. Evaluating systems **SHALL** be capable of processing resource instances containing Must Support data elements without generating an error or causing the evaluation to fail.
+3. In situations where information on a particular data element is not present and the reason for absence is unknown, authoring and repository systems **SHALL NOT** include the data elements in the resource instance.  
+    a. For example, for systems using '9999' to indicate unknown data values, do not include '9999' in the resource instance.
+4. When consuming resource instances, evaluating systems **SHALL** interpret missing data elements within resource instances as data not present for the artifact.
+5. Submitting and receiving systems using quality measure artifacts to perform data exchange or artifact evaluation operations **SHALL** respect the must support requirements of the profiles used by the artifact to describe the data involved in the operation.
+
+### Test Cases
+{: #test-cases}
+
+Test cases provide a mechanism for verifying that a quality measure is implemented and evaluated as intended. In addition to measure specifications, test cases may be packaged and exchanged as part of a measure package using the [CQMTestCase](StructureDefinition-cqm-testcase.html) profile. Refer to the [Packaging Test Cases](packaging.html#packaging-test-cases) section for guidance on test case conformance.
+
+Measure test cases may provide representative evaluation scenarios that exercise the intent of the measure logic, including CQL execution, terminology usage, population pathway evaluation, and should include at least one positive and negative test of each of the population criteria.

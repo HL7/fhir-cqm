@@ -1,0 +1,8 @@
+{
+  "resourceType": "Procedure",
+  "id": "cyd-proc-0",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/cyd"
+  }
+}

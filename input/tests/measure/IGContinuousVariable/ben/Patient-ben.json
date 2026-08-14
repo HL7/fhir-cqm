@@ -1,0 +1,12 @@
+{
+  "resourceType": "Patient",
+  "id": "ben",
+  "name": [
+    {
+      "family": "Example",
+      "given": [
+        "Ben"
+      ]
+    }
+  ]
+}

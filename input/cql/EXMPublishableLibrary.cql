@@ -9,7 +9,7 @@ NOTE: This is the same library as EXMLogic, being used to illustrate the differe
 * Executable: Focusing on run-time aspects
 * Publishable: Focusing on knowledge management aspects
 */
-library EXMPublishableLibrary version '2.0.0'
+library EXMPublishableLibrary
 
 using FHIR version '4.0.1'
 

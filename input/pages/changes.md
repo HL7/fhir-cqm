@@ -38,7 +38,7 @@
 
 * [FHIR-51242](https://jira.hl7.org/browse/FHIR-51242): Not all types of measures are represented in the current Measure Type ValueSet. (Applied ([here](StructureDefinition-cqm-type.html))))
 * [FHIR-50925](https://jira.hl7.org/browse/FHIR-50925): Provide guidance regarding description elements (Applied ([here](measure-conformance.html)), ([here](StructureDefinition-cqm-publishablemeasure.html)), and ([here](StructureDefinition-cqm-computablemeasure.html)))
-* [FHIR-49978](https://jira.hl7.org/browse/FHIR-49978): Measures With Multiple Populations (Applied ([here](measure-conformance.html#measures-with-multiple-populations)))
+* [FHIR-49978](https://jira.hl7.org/browse/FHIR-49978): Measures With Multiple Populations (Applied ([here](measure-conformance.html#measures-with-multiple-rates)))
 * [FHIR-49859](https://jira.hl7.org/browse/FHIR-49859): align deqm-2/4 and cmp-4/9 (Applied ([here](StructureDefinition-cqm-computablemeasure.html)))
 * [FHIR-49756](https://jira.hl7.org/browse/FHIR-49756): Allow specification of a ValueSet for stratifiers and supplemental data (Applied ([here](StructureDefinition-cqm-computablemeasure.html)), ([here](StructureDefinition-cqm-valueSet.html)), ([here](ValueSet-measure-stratifier-type.html)), ([here](CodeSystem-measure-stratifier-type.html)), ([here](Library-AgeStratificationExample.html)), and ([here](Measure-age-stratified-example.html)))
 * [FHIR-49669](https://jira.hl7.org/browse/FHIR-49669): Clarify guidance on linking support to MeasureReport (Applied ([here](StructureDefinition-cqm-computablemeasure.html)))

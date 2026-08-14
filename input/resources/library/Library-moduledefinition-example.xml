@@ -9,7 +9,6 @@
       <system value="http://example.org/fhir/cqi/ecqm/Library/Identifier"></system>
       <value value="EXMLogic"></value>
    </identifier>
-   <version value="1.0.0"></version>
    <name value="EXMLogicModuleDefinition"></name>
    <title value="Module Definition Example Logic Library"></title>
    <status value="active"></status>

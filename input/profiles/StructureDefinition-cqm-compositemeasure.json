@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-compositemeasure",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositemeasure",
-  "version": "1.0.0",
   "name": "CQMCompositeMeasure",
   "title": "CQM Composite Measure",
   "status": "active",

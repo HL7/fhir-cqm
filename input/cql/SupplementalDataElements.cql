@@ -4,7 +4,7 @@ or recommendation for guidance. This example will help guide and direct the proc
 of finding conventions and usage patterns that meet the needs of the various stakeholders
 in the measure development community.
 */
-library SupplementalDataElements version '2.0.000'
+library SupplementalDataElements
 
 using FHIR version '4.0.1'
 

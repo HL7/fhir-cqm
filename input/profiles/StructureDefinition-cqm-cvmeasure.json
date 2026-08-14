@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-cvmeasure",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cvmeasure",
-  "version": "1.0.0",
   "name": "CQMContinuousVariableMeasure",
   "title": "CQM Continuous Variable Measure",
   "status": "active",

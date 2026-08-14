@@ -10,7 +10,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Library/Identifier",
     "value": "AdultOutpatientEncounters"
   } ],
-  "version": "2.0.000",
   "name": "AdultOutpatientEncounters",
   "title": "Adult Outpatient Encounters Common Library",
   "status": "active",

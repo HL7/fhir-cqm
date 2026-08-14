@@ -1,0 +1,11 @@
+{
+  "resourceType": "Observation",
+  "id": "dev-obs-2",
+  "status": "final",
+  "code": {
+    "text": "example observation"
+  },
+  "subject": {
+    "reference": "Patient/dev"
+  }
+}

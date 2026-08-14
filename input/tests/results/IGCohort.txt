@@ -1,0 +1,46 @@
+CQL: c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\cql
+Extension version: 0.9.8
+Clinical Reasoning version: 4.8.0
+Engine version: 4.9.0
+Language Server version: 4.10.0
+Translator version: 4.9.0
+Terminology: c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\vocabulary\valueset
+Test cases:
+ada - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGCohort\ada
+ben - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGCohort\ben
+cyd - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGCohort\cyd
+dev - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGCohort\dev
+eve - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGCohort\eve
+fin - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGCohort\fin
+gus - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGCohort\gus
+hana - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGCohort\hana
+ivy - c:\Users\Bryn\Documents\Src\HL7\Specifications\fhir-cqm\input\tests\measure\IGCohort\ivy
+
+Initial Population=true
+Patient=Patient(id=ada)
+
+Initial Population=true
+Patient=Patient(id=ben)
+
+Initial Population=false
+Patient=Patient(id=cyd)
+
+Initial Population=true
+Patient=Patient(id=dev)
+
+Initial Population=true
+Patient=Patient(id=eve)
+
+Initial Population=true
+Patient=Patient(id=fin)
+
+Initial Population=true
+Patient=Patient(id=gus)
+
+Initial Population=false
+Patient=Patient(id=hana)
+
+Initial Population=true
+Patient=Patient(id=ivy)
+
+elapsed: 1.614 seconds

@@ -6,14 +6,13 @@
    </meta>
    <language value="en"></language>
    <url value="http://hl7.org/fhir/uv/cqm/Measure/PreventiveCareandWellnessWeightedComposite"></url>
-   <version value="0.0.001"></version>
    <name value="PreventiveCareandWellnessWeightedComposite"></name>
    <title value="Preventive Care and Wellness Weighted Composite"></title>
    <status value="active"></status>
    <experimental value="true"></experimental>
    <publisher value="National Committee for Quality Assurance"></publisher>
    <description value="This artifact is an example of a weighted composite measure that uses a mixture of single-rate or multi-rate component measures that have different measure bases."></description>
-   <useContext>
+<useContext>
       <code>
          <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"></system>
          <code value="venue"></code>
@@ -27,6 +26,8 @@
          </coding>
       </valueCodeableConcept>
    </useContext>
+   <!-- Usage added for FHIR-57188 -->
+   <usage value="The composite score is calculated as a weighted aggregation of component measure performance rates. Each component measure score is multiplied by its assigned weight, and the weighted component scores are combined to determine the overall composite performance rate. Denominator exclusions, denominator exceptions, and numerator exclusions are applied within each component measure prior to weighted aggregation. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate."/>
    <effectivePeriod>
       <start value="2022-01-01"></start>
       <end value="2022-12-31"></end>
@@ -112,4 +113,6 @@
          <code value="increase"></code>
       </coding>
    </improvementNotation>
+   <!-- Guidance added for FHIR-57188 -->
+   <guidance value="The composite score is calculated as a weighted aggregation of component measure performance rates. Each component measure score is multiplied by its assigned weight, and the weighted component scores are combined to determine the overall composite performance rate. Denominator exclusions, denominator exceptions, and numerator exclusions are applied within each component measure prior to weighted aggregation. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate."/>
 </Measure>

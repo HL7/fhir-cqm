@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-elmmeasure",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-elmmeasure",
-  "version": "1.0.0",
   "name": "CQMELMMeasure",
   "title": "CQM ELM Measure",
   "status": "active",

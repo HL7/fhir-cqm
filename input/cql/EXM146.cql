@@ -4,14 +4,14 @@ or recommendation for guidance. This example will help guide and direct the proc
 of finding conventions and usage patterns that meet the needs of the various stakeholders
 in the measure development community.
 */
-library EXM146 version '4.0.0'
+library EXM146
 
 using FHIR version '4.0.1'
 
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
 
-include Common version '2.0.0' called Common
-include MATGlobalCommonFunctions version '5.0.000' called Global
+include Common called Common
+include MATGlobalCommonFunctions called Global
 
 valueset "Acute Pharyngitis": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.102.12.1011'
 valueset "Acute Tonsillitis": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.102.12.1012'

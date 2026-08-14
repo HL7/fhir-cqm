@@ -13,6 +13,13 @@
 * [**Age Stratified Example**](Measure-age-stratified-example.html) Measure illustrating value-based stratification by age group - [Library](Library-AgeStratificationExample.html)
 * [**Supporting Evidence Example**](Measure-SupportingEvidenceExample.html) Measure illustrating the use of supporting evidence - [Library](Library-SupportingEvidenceExample.html)
 
+### Scoring Examples
+
+* [**IGProportion**](Measure-IGProportion.html) - See the [Scoring Table](measure-conformance.html#proportion-measure-scoring-table) for detailed examples
+* [**IGRatio**](Measure-IGRatio.html) - See the [Scoring Table](measure-conformance.html#ratio-measure-scoring-table) for detailed examples
+* [**IGContinuousVariable**](Measure-IGContinuousVariable.html) - See the [Scoring Table](measure-conformance.html#continuous-variable-measure-scoring-table) for detailed examples
+* [**IGCohort**](Measure-IGCohort.html) - See the [Scoring Table](measure-conformance.html#cohort-measure-scoring-table) for detailed examples
+
 ### Screening Measures
 
 These examples illustrate subject-based screening measures

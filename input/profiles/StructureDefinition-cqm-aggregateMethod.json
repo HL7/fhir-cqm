@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-aggregateMethod",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-aggregateMethod",
-  "version": "1.0.0",
   "name": "CQMAggregateMethod",
   "title": "CQM Aggregate Method",
   "status": "active",

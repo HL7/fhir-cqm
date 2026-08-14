@@ -1,0 +1,12 @@
+{
+  "resourceType": "Immunization",
+  "id": "dev-imm-0",
+  "status": "completed",
+  "vaccineCode": {
+    "text": "example vaccine"
+  },
+  "patient": {
+    "reference": "Patient/dev"
+  },
+  "occurrenceDateTime": "2024-01-01"
+}

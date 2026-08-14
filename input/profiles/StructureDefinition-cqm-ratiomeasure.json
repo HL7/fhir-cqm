@@ -2,7 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "cqm-ratiomeasure",
   "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-ratiomeasure",
-  "version": "1.0.0",
   "name": "CQMRatioMeasure",
   "title": "CQM Ratio Measure",
   "status": "active",

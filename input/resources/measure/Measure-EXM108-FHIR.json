@@ -14,7 +14,6 @@
     "system": "http://example.org/fhir/cqi/ecqm/Measure/Identifier/cms",
     "value": "108"
   } ],
-  "version": "8.2.000",
   "name": "EXM108",
   "title": "EXM108 - Venous Thromboembolism Prophylaxis",
   "status": "active",

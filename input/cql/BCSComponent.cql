@@ -4,17 +4,17 @@ or recommendation for guidance. This example will help guide and direct the proc
 of finding conventions and usage patterns that meet the needs of the various stakeholders
 in the measure development community.
 */
-library BCSComponent version '0.0.001'
+library BCSComponent
 
 using FHIR version '4.0.1'
 
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
 
-include SupplementalDataElements version '2.0.000' called SDE
-include MATGlobalCommonFunctions version '5.0.000' called Global
-include AdultOutpatientEncounters version '2.0.000' called AdultOutpatientEncounters
-include Hospice version '2.0.000' called Hospice
-include AdvancedIllnessandFrailtyExclusion version '5.12.000' called Frailty
+include SupplementalDataElements called SDE
+include MATGlobalCommonFunctions called Global
+include AdultOutpatientEncounters called AdultOutpatientEncounters
+include Hospice called Hospice
+include AdvancedIllnessandFrailtyExclusion called Frailty
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "SNOMEDCT": 'http://snomed.info/sct'
