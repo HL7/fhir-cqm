@@ -568,4 +568,6 @@ INFORMATION: Measure/EXM55-FHIR: Measure.group[0].stratifier[0].code: None of th
 %The code for this group population is duplicated with another group%
 %The MeasureReport does not include a population for the population with linkId%
 
+# 2.0.0:004 - The globals table is listing QI Core profiles, but this is an internal dependency. See https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Global.20profiles.20inherited.3F
+WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
 
