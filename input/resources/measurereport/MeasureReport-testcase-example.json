@@ -183,26 +183,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "stratifier-4",
-          "extension": [ {
-            "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.stratifier.linkId",
-            "valueString": "primary-exmlogic-stratification-4"
-          } ],
-          "code": [ {
-            "text": "Stratifier 4"
-          } ],
-          "stratum": [
-            {
-              "value": {
-                "text": "true"
-              },
-              "measureScore": {
-                "value": 0.0
-              }
-            }
-          ]
         }
       ]
     }

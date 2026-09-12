@@ -61,8 +61,8 @@
       },
       "description": "All inpatient encounters, as well as ED and OBS encounters that end within 1 hour of the start of the inpatient encounter, for patients of all ages where at least one antidiabetic drug (ADD) was ordered or administered during the encounter that is during the measurement period.",
       "criteria": {
-        "language": "text/cql-identifier",
-        "expression": "Initial Population"
+        "language": "text/plain",
+        "expression": "Inpatient encounters, including immediately prior ED and OBS encounters, for patients with antidiabetic drug orders or administrations"
       }
     } ]
   } ]

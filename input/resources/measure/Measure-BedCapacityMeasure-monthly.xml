@@ -56,7 +56,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="All Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -84,7 +84,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="All Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -112,7 +112,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -140,7 +140,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -168,7 +168,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult ICU Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -196,7 +196,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult ICU Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -224,7 +224,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult ICULOC Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -252,7 +252,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult NonICU Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -280,7 +280,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult NonICU Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -308,7 +308,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult PCU Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -336,7 +336,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult PCU Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -364,7 +364,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult MTMS Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -392,7 +392,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult MTMS Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -420,7 +420,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult Obs Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -448,7 +448,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult Obs Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -476,7 +476,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds Total Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -504,7 +504,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds Total Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -532,7 +532,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds ICU Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -560,7 +560,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds ICU Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -588,7 +588,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds ICULOC Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -616,7 +616,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds NonICU Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -644,7 +644,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds NonICU Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -672,7 +672,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds PCU Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -700,7 +700,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds PCU Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -728,7 +728,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds MTMS Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -756,7 +756,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds MTMS Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -784,7 +784,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds Obs Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -812,7 +812,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds Obs Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -840,7 +840,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Specialty Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -868,7 +868,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Specialty Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -896,7 +896,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Specialty NonCrib Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -924,7 +924,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Specialty NonCrib Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -952,7 +952,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="OB Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -980,7 +980,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="OB Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1008,7 +1008,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="NICU Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1036,7 +1036,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="NICU Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1064,7 +1064,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="NICU4 Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1092,7 +1092,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="NICU4 Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1120,7 +1120,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="NICU3Plus Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1148,7 +1148,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="NICU3Plus Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1176,7 +1176,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="NICU3 Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1204,7 +1204,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="NICU3 Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1232,7 +1232,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="NICU2 Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1260,7 +1260,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="NICU2 Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1288,7 +1288,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="NICU1 Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1316,7 +1316,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="NICU1 Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1344,7 +1344,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Nursery Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1372,7 +1372,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Nursery Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1400,7 +1400,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult Psych Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1428,7 +1428,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult Psych Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1456,7 +1456,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds Psych Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1484,7 +1484,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds Psych Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1512,7 +1512,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Rehab Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1540,7 +1540,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Rehab Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1568,7 +1568,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Surge Active Total Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1596,7 +1596,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Surge Active Total Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1624,7 +1624,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Surge Inactive Total Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1652,7 +1652,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Surge Active ICU Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1680,7 +1680,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Surge Active ICU Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1708,7 +1708,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Surge Inactive ICU Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1736,7 +1736,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Surge Active NonICU Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1764,7 +1764,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Surge Active NonICU Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1792,7 +1792,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Surge Inactive NonICU Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1820,7 +1820,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Burn Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1848,7 +1848,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Burn Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1876,7 +1876,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Negative Pressure Beds Occupied Initial Population"/>
          </criteria>
       </population>
@@ -1904,7 +1904,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Negative Pressure Beds Unoccupied Initial Population"/>
          </criteria>
       </population>
@@ -1932,7 +1932,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult ED Census Initial Population"/>
          </criteria>
       </population>
@@ -1960,7 +1960,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Adult ED Admitted Census Initial Population"/>
          </criteria>
       </population>
@@ -1988,7 +1988,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds ED Total Census Initial Population"/>
          </criteria>
       </population>
@@ -2016,7 +2016,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Peds ED Admitted Census Initial Population"/>
          </criteria>
       </population>
@@ -2044,7 +2044,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Total ED Census Initial Population"/>
          </criteria>
       </population>
@@ -2072,7 +2072,7 @@
             </coding>
          </code>
          <criteria>
-            <language value="text/cql-identifier"/>
+            <language value="text/plain"/>
             <expression value="Total ED Admitted Census Initial Population"/>
          </criteria>
       </population>

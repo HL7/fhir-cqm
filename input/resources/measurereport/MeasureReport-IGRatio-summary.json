@@ -33,7 +33,7 @@
             ]
           },
           "count": 7,
-          "id": "ipp-1"
+          "id": "InitialPopulation_1"
         },
         {
           "code": {
@@ -45,7 +45,7 @@
             ]
           },
           "count": 5,
-          "id": "ipp-2"
+          "id": "InitialPopulation_2"
         },
         {
           "code": {
@@ -93,7 +93,8 @@
         }
       ],
       "measureScore": {
-        "value": 0.8
+        "value": 0.8,
+        "unit": "{immunizations}/{encounters}"
       }
     }
   ]
