@@ -8,6 +8,7 @@ WARNING: Measure/MultiRateExample-FHIR: Measure.group[5]: Measure Groups should 
 
 # 1.0.0-ballot:004 - The following messages are generated from code systems and value sets currently in 'draft' status within the inherited/base resource snapshot.
 Reference to draft CodeSystem http://hl7.org/fhir/search-comparator|4.0.1
+INFORMATION: Bundle/measurereport-bundle-example: Bundle.entry[4].resource/*Observation/null*/.category[0]: Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/observation-category|0.1.0
 
 # 1.0.0-ballot:005 - The validator is trying to resolve an "example.org" artifact which by convention does not exist
 WARNING: Bundle/measurereport-bundle-example: Bundle.entry[0].resource/*MeasureReport/47709cc7-b3ec-4abc-9d26-3df3d3d57904*/.group[0].code.coding[0].system: A definition for CodeSystem 'http://example.org/fhir/' could not be found, so the code cannot be validated
@@ -320,6 +321,7 @@ INFORMATION: Measure/TSCComponent: Measure.extension[1]: This element does not m
 %Measure-MultiRateExample-FHIR.html: The html source has duplicate anchor Ids: Beds-primary-multirateexample-beds-measure-observation-population,Patients-primary-multirateexample-tonumber,Practitioners-primary-multirateexample-measure-observation,Screening-procedures-primary-multirateexample-procedures-measure-observation-population,fhirhelpers-tostring,multirateexample-tonumber
 %Measure-TSCComponent.html: The html source has duplicate anchor Ids: fhirhelpers-todatetime,fhirhelpers-tostring
 %Measure-measure-publishable-exm.html: The html source has duplicate anchor Ids: fhirhelpers-tostring
+WARNING: Measure/EXMLogic-FHIR: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhircommon-references (2x), fhirhelpers-tostring (4x)
 WARNING: Measure/CAUTIRateExample: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhircommon-references (2x), fhirhelpers-todatetime (2x), fhirhelpers-tostring (3x)
 WARNING: Measure/CAUTISIRExample: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhircommon-references (2x), fhirhelpers-todatetime (2x), fhirhelpers-tostring (3x)
 WARNING: Measure/CCSComponent: Measure.text.div: The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-todatetime (2x), fhirhelpers-tostring (7x)
@@ -582,4 +584,16 @@ ERROR: Subscription/covid-reporting-changes: Subscription.channel.payload: The v
 
 # 2.0.0:006 - These examples are illustrating measure structures with plain language description of criteria, so the expressions can't be validated formally
 %The expression language text/plain is not supported, so can't be validated
+
+# 2.0.0:007 - Accepted warnings about units on ratio scores
+WARNING: MeasureReport/IGRatio-ada: MeasureReport.group[0].measureScore: A unit should be present when the scoring type is ratio
+WARNING: MeasureReport/IGRatio-ben: MeasureReport.group[0].measureScore: A unit should be present when the scoring type is ratio
+WARNING: MeasureReport/IGRatio-cyd: MeasureReport.group[0].measureScore: A unit should be present when the scoring type is ratio
+WARNING: MeasureReport/IGRatio-dev: MeasureReport.group[0].measureScore: A unit should be present when the scoring type is ratio
+WARNING: MeasureReport/IGRatio-eve: MeasureReport.group[0].measureScore: A unit should be present when the scoring type is ratio
+WARNING: MeasureReport/IGRatio-fin: MeasureReport.group[0].measureScore: A unit should be present when the scoring type is ratio
+WARNING: MeasureReport/IGRatio-gus: MeasureReport.group[0].measureScore: A unit should be present when the scoring type is ratio
+WARNING: MeasureReport/IGRatio-hana: MeasureReport.group[0].measureScore: A unit should be present when the scoring type is ratio
+WARNING: MeasureReport/IGRatio-ivy: MeasureReport.group[0].measureScore: A unit should be present when the scoring type is ratio
+WARNING: MeasureReport/IGRatio-summary: MeasureReport.group[0].measureScore: A unit should be present when the scoring type is ratio
 

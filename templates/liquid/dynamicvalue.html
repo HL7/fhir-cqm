@@ -11,7 +11,7 @@
     {% endif %}
     
     {% if dynamicvalue.expression.language.startsWith('text/cql') %}
-    {% assign logicDefAnchor = '#' + include.library.first().replaceMatches('.*/Library/', '').lower().replace(' ', '-')
+    {% assign logicDefAnchor = '#' + include.library.first().replaceMatches('.*/Library/', '').replaceMatches('[|].*', '').lower().replace(' ', '-')
     + '-' + dynamicvalue.expression.expression.lower().replace(' ', '-') %}
     <em>Logic Definition</em>: <a href="{{logicDefAnchor}}">{{dynamicvalue.expression.expression}}</a>
     {% endif %}

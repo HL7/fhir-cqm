@@ -54,7 +54,7 @@
       {% if sde.criteria.language.startsWith('text/cql') and sde.criteria.expression.exists() %}
         <br />
         {% if include.measure.library.exists() and include.measure.contained.where(id.contains('effective-data-requirements')).exists() %}
-          {% assign logicDefAnchor = '#' + include.measure.library.first().replaceMatches('.*/Library/', '').lower().replace(' ', '-') + '-' + sde.criteria.expression.lower().replace(' ', '-') %}
+          {% assign logicDefAnchor = '#' + include.measure.library.first().replaceMatches('.*/Library/', '').replaceMatches('[|].*', '').lower().replace(' ', '-') + '-' + sde.criteria.expression.lower().replace(' ', '-') %}
           <em>Logic Definition</em>: <a href="{{logicDefAnchor}}">{{sde.criteria.expression}}</a> 
         {% else %}
           <em>Logic Definition</em>: {{sde.criteria.expression}}
