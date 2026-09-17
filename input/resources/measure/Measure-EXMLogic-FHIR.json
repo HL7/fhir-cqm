@@ -212,7 +212,7 @@
       },
       "criteria": {
         "language": "text/cql-identifier",
-        "expression": "Stratifier 1"
+        "expression": "Stratification 1"
       }
     }, {
       "id": "stratifier-2",
@@ -235,7 +235,7 @@
       },
       "criteria": {
         "language": "text/cql-identifier",
-        "expression": "Stratifier 2"
+        "expression": "Stratification 2"
       }
     }, {
       "id": "stratifier-3",
@@ -258,30 +258,7 @@
       },
       "criteria": {
         "language": "text/cql-identifier",
-        "expression": "Stratifier 3"
-      }
-    }, {
-      "id": "stratifier-4",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.stratifier.linkId",
-        "valueString": "primary-exmlogic-stratification-4"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-appliesTo",
-        "valueCodeableConcept": {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-            "code": "initial-population",
-            "display": "Initial Population"
-          } ],
-          "text": "initial-population"
-        }
-      } ],
-      "code": {
-        "text": "Stratifier 4"
-      },
-      "criteria": {
-        "language": "text/cql-identifier",
-        "expression": "Stratifier 4"
+        "expression": "Stratification 3"
       }
     } ]
   } ]

@@ -70,7 +70,17 @@
           },
           "count": 0
         }
-      ]
+      ],
+      "measureScore": {
+        "_value": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+              "valueCode": "unknown"
+            }
+          ]
+        }
+      }
     }
   ]
 }

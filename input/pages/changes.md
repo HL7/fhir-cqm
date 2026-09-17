@@ -3,6 +3,70 @@
 
 {: #changes}
 
+### Changes for STU 2
+
+#### Non-Compatible Changes
+
+* [FHIR-56819](https://jira.hl7.org/browse/FHIR-56819): Aligned operation parameters with CRMI operation profiles
+* [FHIR-53286](https://jira.hl7.org/browse/FHIR-53286): Composite measure elements should be at the group level
+* [FHIR-53140](https://jira.hl7.org/browse/FHIR-53140): Value-based stratifiers always and only use stratifier component elements
+
+#### Compatible Substantive Changes
+
+* [FHIR-58060](https://jira.hl7.org/browse/FHIR-58060): Add a CQMLibrary profile
+* [FHIR-57727](https://jira.hl7.org/browse/FHIR-57727): Allow data requirements to be invoked on multiple measures
+* [FHIR-56009](https://jira.hl7.org/browse/FHIR-56009): Expand context of "limitations" and "trendingIssues" extensions
+* [FHIR-55982](https://jira.hl7.org/browse/FHIR-55982): Add MeasureReport.group to context of use for compositeScoring
+* [FHIR-53432](https://jira.hl7.org/browse/FHIR-53432): Consider the ability to return supporting evidence throughout a measure
+* [FHIR-51395](https://jira.hl7.org/browse/FHIR-51395): Subscription Approach
+
+
+#### Non-substantive Changes
+
+* [FHIR-58297](https://jira.hl7.org/browse/FHIR-58297): Clarify the term "population group"
+* [FHIR-57879](https://jira.hl7.org/browse/FHIR-57879): Clarify the Group naming convention in Measures with Multiple Rates (3.4.8)
+* [FHIR-57861](https://jira.hl7.org/browse/FHIR-57861): Ensure topic search parameter is supported in publishable repository
+* [FHIR-57509](https://jira.hl7.org/browse/FHIR-57509): Additional clarity for calculation semantics
+* [FHIR-57499](https://jira.hl7.org/browse/FHIR-57499): Continuous variable semantics should use return all
+* [FHIR-57197](https://jira.hl7.org/browse/FHIR-57197): Measure Calculation Service Capability Statement Example has an very old published date
+* [FHIR-57196](https://jira.hl7.org/browse/FHIR-57196): Global profiles
+* [FHIR-57195](https://jira.hl7.org/browse/FHIR-57195): Quality Measurement and Data Model Standards Landscapes
+* [FHIR-57190](https://jira.hl7.org/browse/FHIR-57190): The reference to QI-Core in universal realm
+* [FHIR-57189](https://jira.hl7.org/browse/FHIR-57189): Package Procedure-Based Test Cases
+* [FHIR-57188](https://jira.hl7.org/browse/FHIR-57188): Explain Composite and Risk Scores
+* [FHIR-57187](https://jira.hl7.org/browse/FHIR-57187): Attribution Metadata Guardrails
+* [FHIR-57185](https://jira.hl7.org/browse/FHIR-57185): Terminology Inventory for Measures
+* [FHIR-57155](https://jira.hl7.org/browse/FHIR-57155): Diagram is a cycle, not a system
+* [FHIR-57090](https://jira.hl7.org/browse/FHIR-57090): Should we add US Quality Core in the Quality Measurement Landscape
+* [FHIR-57037](https://jira.hl7.org/browse/FHIR-57037): Expansion Parameters table is confusing 
+* [FHIR-57012](https://jira.hl7.org/browse/FHIR-57012): Fix link to CRMI CI Build
+* [FHIR-57009](https://jira.hl7.org/browse/FHIR-57009): Using CQL: Consider Summarizing Differences w/ Using CQL IG
+* [FHIR-56929](https://jira.hl7.org/browse/FHIR-56929): Duplicate entries in QA "Filename" List
+* [FHIR-56928](https://jira.hl7.org/browse/FHIR-56928): QA report shows 568 validation errors
+* [FHIR-56889](https://jira.hl7.org/browse/FHIR-56889): Risk Adjustment example CQL definitions
+* [FHIR-56887](https://jira.hl7.org/browse/FHIR-56887): Update links to uv DEQM
+* [FHIR-56884](https://jira.hl7.org/browse/FHIR-56884): eCQI Link (Section 2.1)
+* [FHIR-56868](https://jira.hl7.org/browse/FHIR-56868): Alignment of terms
+* [FHIR-56867](https://jira.hl7.org/browse/FHIR-56867): Consider these revisions to correct the fragments, align tense and simplify wordiness- 
+* [FHIR-56866](https://jira.hl7.org/browse/FHIR-56866): Change in how referenced 
+* [FHIR-56864](https://jira.hl7.org/browse/FHIR-56864): Readability & Clarity
+* [FHIR-56863](https://jira.hl7.org/browse/FHIR-56863): Abbreviations and Acronyms
+* [FHIR-56862](https://jira.hl7.org/browse/FHIR-56862): Clarification of Alias
+* [FHIR-56818](https://jira.hl7.org/browse/FHIR-56818): Elaborate on Subscriptions use case for jurisdictional reporting
+* [FHIR-56817](https://jira.hl7.org/browse/FHIR-56817): Fix misc. typos, grammar
+* [FHIR-56816](https://jira.hl7.org/browse/FHIR-56816): Support Conformance verb tagging
+* [FHIR-56810](https://jira.hl7.org/browse/FHIR-56810): continuous variable measure example using outdated principal diagnosis modeling
+* [FHIR-56809](https://jira.hl7.org/browse/FHIR-56809): VTE example principal diagnosis modeling needs to be updated
+* [FHIR-56808](https://jira.hl7.org/browse/FHIR-56808): example using old modeling of principal diagnosis
+* [FHIR-56278](https://jira.hl7.org/browse/FHIR-56278): Clarify population counting semantics for non-subject-based measures
+* [FHIR-55969](https://jira.hl7.org/browse/FHIR-55969): Update quality improvement ecosystem diagram
+* [FHIR-55952](https://jira.hl7.org/browse/FHIR-55952): Add examples of risk-adjusted measures
+* [FHIR-52882](https://jira.hl7.org/browse/FHIR-52882): Mention CRMI operations on operations page
+* [FHIR-52881](https://jira.hl7.org/browse/FHIR-52881): Add note about CRMI on introduction page
+* [FHIR-52821](https://jira.hl7.org/browse/FHIR-52821): Restore the note about data requirements parameters
+* [FHIR-51841](https://jira.hl7.org/browse/FHIR-51841): Clarify cqf-criteriaReference with linkId
+
+
 ### Changes for STU 2 Ballot
 
 #### Non-Compatible Changes

@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "description": "Indicates the type of quality measure based on the observation value.",
+  "description": "Indicates whether the measure is used to examine a process, an outcome over time, a patient-reported outcome, or a structure measure such as utilization.",
   "jurisdiction": [
       {
         "coding": [
@@ -52,7 +52,8 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "definition": "Indicates the type of quality measure based on the observation value.",
+        "short": "process | outcome | structure | patient-reported-outcome",
+        "definition": "Indicates whether the measure is used to examine a process, an outcome over time, a patient-reported outcome, or a structure measure such as utilization.",
         "min": 0,
         "max": "*"
       },
@@ -65,19 +66,19 @@
           }
         ],
         "fixedUri": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-type"
-            },
-            {
-              "id": "Extension.value[x]",
-              "path": "Extension.value[x]",
-              "type": [
-                {
-                  "code": "CodeableConcept"
-                }
-              ],
-              "binding": {
-                "strength": "extensible",
-                "description": "Indicates the type of quality measure based on the observation value.",
-          "valueSet": "http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "description": "Indicates whether the measure is used to examine a process, an outcome over time, a patient-reported outcome, or a structure measure such as utilization.",
+          "valueSet": "http://terminology.hl7.org/ValueSet/measure-type"
         }
       }
     ]

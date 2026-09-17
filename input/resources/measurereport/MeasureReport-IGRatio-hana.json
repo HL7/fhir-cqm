@@ -36,7 +36,7 @@
             ]
           },
           "count": 0,
-          "id": "ipp-1"
+          "id": "InitialPopulation_1"
         },
         {
           "code": {
@@ -48,7 +48,7 @@
             ]
           },
           "count": 0,
-          "id": "ipp-2"
+          "id": "InitialPopulation_2"
         },
         {
           "code": {
@@ -94,7 +94,18 @@
           },
           "count": 0
         }
-      ]
+      ],
+      "measureScore": {
+        "_value": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+              "valueCode": "not-a-number"
+            }
+          ]
+        },
+        "unit": "{immunizations}/{encounters}"
+      }
     }
   ]
 }

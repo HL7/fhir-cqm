@@ -1325,7 +1325,7 @@ The measure is an attestation, derived from the base [Measure]({{site.data.fhir.
 #### Measures with Multiple Rates
 {: #measures-with-multiple-rates}
 
-The section discusses how to represent multiple rate measures where each rate is represented as a different `group` in the measure.  Given a set of rates related to a particular topic, multiple rate measures can be used in cases where the rates are tightly related such that they all change (and therefore version) together.  Examples include CMS 136 Follow-Up Care for Children Prescribed ADHD Medication (ADD) which looks for two rates depending on how long the patient remains on medication and the number of follow up visits performed. 
+The section discusses how to represent multiple rate measures where each rate is represented as a different `group` in the measure. Note that the Measure resource in FHIR is intended to support a broad set of use cases, and allows multiple computations to be specified. Each computation is specified as a different  group  element on the resource. Within this implementation guide, we use the term  rate  to refer directly to these groups. Given a set of rates related to a particular topic, multiple rate measures can be used in cases where the rates are tightly related such that they all change (and therefore version) together.  Examples include CMS 136 Follow-Up Care for Children Prescribed ADHD Medication (ADD) which looks for two rates depending on how long the patient remains on medication and the number of follow up visits performed. 
 
 When a measure has multiple rates (each represented as a different group in the measure), the groups should be named Group_1, Group_2, etc.
 
@@ -1353,6 +1353,7 @@ Note also that when a measure has multiple rates, the expectation is that the me
 > * `scoring`
 > * `scoringUnit`
 > * `compositeScoring`
+>
 > The measure profiles in this implementation guide still allow these elements to be specified at the root or on each group.
 > To align with R6, implementations are recommended to use group-level specification of these calculation elements.
 {: .stu-note}
