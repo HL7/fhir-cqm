@@ -1,0 +1,32 @@
+{
+  "resourceType": "Condition",
+  "id": "olga-terminal-illness",
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "162607003"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/olga"
+  },
+  "onsetDateTime": "2024-08-01"
+}

@@ -98,6 +98,42 @@ Interpretation: For each Eligible Clinician (EC), percentage of patients who rec
 
 [**Preventive Care and Wellness (Component-level weighted)**](Measure-PreventiveCareandWellnessWeightedComposite.html)
 
+#### Preventive Care and Wellness test cases
+
+Test cases for the Preventive Care and Wellness composites use a [bundle of thirteen test patients](Bundle-preventive-care-test-patients.html). Between them, the patients exercise each population criterion of the components, as well as the cases that distinguish the composite scoring methods: a patient excluded from some components but not others (Mona), a patient excluded from every component in whose denominator they appear (Uma), a denominator exception that is overridden by meeting the numerator (Olga's blood pressure screening), and an encounter-based component in which only some of a patient's encounters meet the numerator (Liam). Each component and composite has an individual test case for each patient (except the weighted composite, which is calculated only at the population level), and a summary test case:
+
+|Measure | Summary test case | Expected score |
+|--------|-------------------|----------------|
+|Breast Cancer Screening | [BCS summary](MeasureReport-BCSComponent-summary.html) | 0.75 |
+|Colorectal Cancer Screening | [CCS summary](MeasureReport-CCSComponent-summary.html) | 0.6667 |
+|High Blood Pressure Screening | [HBP summary](MeasureReport-HBPComponent-summary.html) | 0.7647 (encounters) |
+|Pneumococcal Vaccination | [PVS summary](MeasureReport-PVSComponent-summary.html) | 0.75 |
+|Tobacco Screening | [TSC summary](MeasureReport-TSCComponent-summary.html) | 0.8889 (group 1), 0.6667 (group 2), 0.7778 (group 3) |
+|All-or-nothing | [All-or-nothing summary](MeasureReport-PreventiveCareandWellnessAllOrNothingComposite-summary.html) | 0.3636 |
+|Opportunity | [Opportunity summary](MeasureReport-PreventiveCareandWellnessOpportunityComposite-summary.html) | 0.7778 |
+|Patient-level linear | [Patient-level linear summary](MeasureReport-PreventiveCareandWellnessPatientLevelLinearComposite-summary.html) | 0.7712 |
+|Component-level weighted | [Weighted summary](MeasureReport-PreventiveCareandWellnessWeightedComposite-summary.html) | 0.7418 |
+{: .grid}
+
+#### Component-level weighted with mixed component scoring
+
+The Preventive Care and Wellness composites above use only proportion components. Component-based composites may also include ratio and continuous variable components, whose scores must be normalized to a common scale before they are weighted (see [Score Normalization](composite-measures.html#score-normalization)). The Diabetes Care composite illustrates this using three component measures with different scoring types:
+
+* [**Diabetes: Hemoglobin A1c (HbA1c) Poor Control (> 9%) (DHC)**](Measure-DHCComponent.html) - Subject-based proportion measure, decrease improvement notation
+* [**Diabetes: Emergency Department Visits per 1,000 Patient-Months (DEV)**](Measure-DEVComponent.html) - Subject-based ratio measure with numerator and denominator observations, decrease improvement notation
+* [**Diabetes: Days to Follow-up After Hospital Discharge (DFU)**](Measure-DFUComponent.html) - Encounter-based continuous variable measure (median), decrease improvement notation
+
+Interpretation: For each Eligible Clinician (EC), a weighted summary of diabetes care quality across glycemic control, emergency department utilization, and timeliness of follow-up after hospital discharge, where each component score is normalized to a scale of 0 to 1 using its score range.
+
+[**Diabetes Care (Component-level weighted)**](Measure-DiabetesCareWeightedComposite.html)
+
+Test cases for the Diabetes Care composite use a [bundle of eight test patients](Bundle-diabetes-care-test-patients.html) who exercise each population criterion of the components. Each component has an individual test case for each patient, and a summary test case:
+
+* [**DHC summary**](MeasureReport-DHCComponent-summary.html) - expected score 0.4
+* [**DEV summary**](MeasureReport-DEVComponent-summary.html) - expected score 50 per 1,000 patient-months
+* [**DFU summary**](MeasureReport-DFUComponent-summary.html) - expected score of 9 days (median)
+* [**Diabetes Care composite summary**](MeasureReport-DiabetesCareWeightedComposite-summary.html) - expected composite score 0.6, calculated from the component summaries
+
 ### Manifest Examples
 
 Manifests are used to communicate sets of measures together with all the information about their use. See the [Manifest](measure-conformance.html#manifest) topic for more information on these examples:

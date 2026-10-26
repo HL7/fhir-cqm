@@ -1,0 +1,229 @@
+{
+  "resourceType": "MeasureReport",
+  "id": "TSCComponent-summary",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testCaseDescription",
+      "valueMarkdown": "Summary test case for the Tobacco Use Screening and Cessation component over the thirteen preventive care and wellness test patients. Group 1: expected initial-population 10, denominator 10, denominator-exception 1, numerator 8; score 8 / (10 - 1) = 0.8889. Group 2: expected initial-population 10, denominator 3, denominator-exception 0, numerator 2; score 2 / (3 - 0) = 0.6667. Group 3: expected initial-population 10, denominator 10, denominator-exception 1, numerator 7; score 7 / (10 - 1) = 0.7778."
+    }
+  ],
+  "modifierExtension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-isTestCase",
+      "valueBoolean": true
+    }
+  ],
+  "status": "complete",
+  "type": "summary",
+  "measure": "http://hl7.org/fhir/uv/cqm/Measure/TSCComponent",
+  "period": {
+    "start": "2024-01-01",
+    "end": "2024-12-31"
+  },
+  "group": [
+    {
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population"
+              }
+            ]
+          },
+          "count": 10
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator"
+              }
+            ]
+          },
+          "count": 10
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator-exception"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "numerator"
+              }
+            ]
+          },
+          "count": 8
+        }
+      ],
+      "measureScore": {
+        "value": 0.8889
+      },
+      "id": "group-1",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId",
+          "valueString": "primary"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://example.org/fhir/measure-group",
+            "code": "group-1",
+            "display": "Group 1"
+          }
+        ],
+        "text": "Group 1"
+      }
+    },
+    {
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population"
+              }
+            ]
+          },
+          "count": 10
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator"
+              }
+            ]
+          },
+          "count": 3
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator-exception"
+              }
+            ]
+          },
+          "count": 0
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "numerator"
+              }
+            ]
+          },
+          "count": 2
+        }
+      ],
+      "measureScore": {
+        "value": 0.6667
+      },
+      "id": "group-2",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId",
+          "valueString": "group-2"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://example.org/fhir/measure-group",
+            "code": "group-2",
+            "display": "Group 2"
+          }
+        ],
+        "text": "Group 2"
+      }
+    },
+    {
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population"
+              }
+            ]
+          },
+          "count": 10
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator"
+              }
+            ]
+          },
+          "count": 10
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator-exception"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "numerator"
+              }
+            ]
+          },
+          "count": 7
+        }
+      ],
+      "measureScore": {
+        "value": 0.7778
+      },
+      "id": "group-3",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId",
+          "valueString": "group-3"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://example.org/fhir/measure-group",
+            "code": "group-3",
+            "display": "Group 3"
+          }
+        ],
+        "text": "Group 3"
+      }
+    }
+  ]
+}

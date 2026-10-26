@@ -1,0 +1,17 @@
+{
+  "resourceType": "Immunization",
+  "id": "jack-pneumococcal",
+  "status": "completed",
+  "vaccineCode": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/sid/cvx",
+        "code": "33"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "Patient/jack"
+  },
+  "occurrenceDateTime": "2021-10-01T10:00:00Z"
+}

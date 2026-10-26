@@ -1,0 +1,21 @@
+{
+  "resourceType": "Procedure",
+  "id": "esme-hospice-0",
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "385763009",
+        "display": "Hospice care (regime/therapy)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/esme"
+  },
+  "performedPeriod": {
+    "start": "2024-05-01T00:00:00Z",
+    "end": "2024-12-31T00:00:00Z"
+  }
+}
