@@ -1,0 +1,17 @@
+{
+  "resourceType": "Immunization",
+  "id": "olga-pneumococcal",
+  "status": "completed",
+  "vaccineCode": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/sid/cvx",
+        "code": "33"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "Patient/olga"
+  },
+  "occurrenceDateTime": "2023-01-05T10:00:00Z"
+}

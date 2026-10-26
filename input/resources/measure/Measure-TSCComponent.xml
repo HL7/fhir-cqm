@@ -100,6 +100,11 @@
          <valueString value="primary"></valueString>
       </extension>
       <code>
+         <coding>
+            <system value="http://example.org/fhir/measure-group"></system>
+            <code value="group-1"></code>
+            <display value="Group 1"></display>
+         </coding>
          <text value="Group 1"></text>
       </code>
       <population id="1DE7294A-72AE-42D1-A2A6-BCAE23DBA8A6">
@@ -172,6 +177,11 @@
          <valueString value="group-2"></valueString>
       </extension>
       <code>
+         <coding>
+            <system value="http://example.org/fhir/measure-group"></system>
+            <code value="group-2"></code>
+            <display value="Group 2"></display>
+         </coding>
          <text value="Group 2"></text>
       </code>
       <population id="DD346C87-5D2B-4319-B41D-7BF64ADF95D0">
@@ -244,6 +254,11 @@
          <valueString value="group-3"></valueString>
       </extension>
       <code>
+         <coding>
+            <system value="http://example.org/fhir/measure-group"></system>
+            <code value="group-3"></code>
+            <display value="Group 3"></display>
+         </coding>
          <text value="Group 3"></text>
       </code>
       <population id="EA2696EE-326B-490A-82B5-E4D8FC581E77">

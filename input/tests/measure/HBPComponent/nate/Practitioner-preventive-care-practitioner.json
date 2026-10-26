@@ -1,0 +1,15 @@
+{
+  "resourceType": "Practitioner",
+  "id": "preventive-care-practitioner",
+  "name": [
+    {
+      "family": "Example",
+      "given": [
+        "Robin"
+      ],
+      "prefix": [
+        "Dr."
+      ]
+    }
+  ]
+}

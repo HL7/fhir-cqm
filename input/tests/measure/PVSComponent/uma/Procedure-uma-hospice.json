@@ -1,0 +1,20 @@
+{
+  "resourceType": "Procedure",
+  "id": "uma-hospice",
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "385763009"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/uma"
+  },
+  "performedPeriod": {
+    "start": "2024-08-01T00:00:00Z",
+    "end": "2024-12-31T00:00:00Z"
+  }
+}

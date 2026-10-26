@@ -1,0 +1,17 @@
+{
+  "resourceType": "Procedure",
+  "id": "quinn-flexsig",
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "44441009"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/quinn"
+  },
+  "performedDateTime": "2021-03-15T10:00:00Z"
+}

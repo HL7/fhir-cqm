@@ -1,0 +1,76 @@
+{
+  "resourceType": "MeasureReport",
+  "id": "PreventiveCareandWellnessPatientLevelLinearComposite-summary",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testCaseDescription",
+      "valueMarkdown": "Summary test case for Preventive Care and Wellness (Patient-level linear) over the thirteen preventive care and wellness test patients. Expected initial-population 12, measure-population 12, measure-population-exclusion 1, measure-observation 11; observations [1, 0.8, 0.6, 0.5, 1, 0.5, 0.75, 0.6667, 1, 1, 0.6667] aggregated by average = 0.7712."
+    }
+  ],
+  "modifierExtension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-isTestCase",
+      "valueBoolean": true
+    }
+  ],
+  "status": "complete",
+  "type": "summary",
+  "measure": "http://hl7.org/fhir/uv/cqm/Measure/PreventiveCareandWellnessPatientLevelLinearComposite",
+  "period": {
+    "start": "2024-01-01",
+    "end": "2024-12-31"
+  },
+  "group": [
+    {
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population"
+              }
+            ]
+          },
+          "count": 12
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "measure-population"
+              }
+            ]
+          },
+          "count": 12
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "measure-population-exclusion"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "measure-observation"
+              }
+            ]
+          },
+          "count": 11
+        }
+      ],
+      "measureScore": {
+        "value": 0.7712
+      }
+    }
+  ]
+}

@@ -120,7 +120,7 @@ An example of an “All-or-nothing” scored composite measure has been included
 
 Snippet 23: Components of an example All-or-nothing scored composite measure from Preventive Care and Wellness (All-or-nothing).
 
-Computationally, this method amounts to expressing each population criteria for the composite measure as the union (logical ‘or’ for subject-based measures) of the respective population criteria for each component measure, except for the numerator, which is expressed as the intersection (logical ‘and’ for subject-based measures) of the numerators of the component measures. Note that in this requires that an individual is considered for the numerator only if they meet the denominator, which is accomplished using an `implies` operator in the component measure numerator membership criteria.
+Computationally, this method amounts to expressing the initial population and denominator of the composite measure as the union (logical ‘or’ for subject-based measures) of the respective population criteria for each component measure, and the numerator as the intersection (logical ‘and’ for subject-based measures) of the numerator membership of the component measures. An individual is considered for the numerator of a component only if they are a member of the denominator of that component, which is accomplished using an `implies` operator in the component measure numerator membership criteria. Membership in the denominator of a component takes into account the denominator exclusions and exceptions of that component, so a component for which an individual meets the denominator exclusion (or the denominator exception, without meeting the numerator) does not count against the composite numerator. An individual is excluded from the composite only if they meet the denominator exclusion of every component in which they are in the denominator, and is a denominator exception of the composite only if they are not excluded and are not a member of the denominator of any component.
 
 Formally, this means the population criteria for the composite measure are expressed in terms of the population criteria for each component measure, as in:
 
@@ -128,36 +128,41 @@ Formally, this means the population criteria for the composite measure are expre
 define "Initial Population":
   ComponentMeasure1."Initial Population"
     or ComponentMeasure2."Initial Population"
-    or ComponentMeasure3"."Initial Population"
+    or ComponentMeasure3."Initial Population"
 
 define "Denominator":
   ComponentMeasure1."Denominator"
     or ComponentMeasure2."Denominator"
     or ComponentMeasure3."Denominator"
 
-define "Denominator Exclusion":
-  ComponentMeasure1."Denominator Exclusion"
-    or ComponentMeasure2."Denominator Exclusion"
-    or ComponentMeasure3."Denominator Exclusion"
-
-define "Denominator Exception":
-  ComponentMeasure1."Denominator Exception"
-    or ComponentMeasure2."Denominator Exception"
-    or ComponentMeasure3."Denominator Exception"
+define "ComponentMeasure1 Denominator Membership": // Repeat for each component
+  ComponentMeasure1."Denominator"
+    and not ComponentMeasure1."Denominator Exclusion"
+    and not ( ComponentMeasure1."Denominator Exception"
+      and not ComponentMeasure1."Numerator" )
 
 define "ComponentMeasure1 Numerator Membership": // Repeat for each component
-  ComponentMeasure1."Denominator Membership"
-   implies ComponentMeasure1."Numerator Membership"
+  "ComponentMeasure1 Denominator Membership"
+    implies ( ComponentMeasure1."Numerator"
+      and not ComponentMeasure1."Numerator Exclusion" )
+
+define "Denominator Exclusion":
+  "Denominator"
+    and ( ComponentMeasure1."Denominator" implies ComponentMeasure1."Denominator Exclusion" )
+    and ( ComponentMeasure2."Denominator" implies ComponentMeasure2."Denominator Exclusion" )
+    and ( ComponentMeasure3."Denominator" implies ComponentMeasure3."Denominator Exclusion" )
+
+define "Denominator Exception":
+  "Denominator"
+    and not "Denominator Exclusion"
+    and not ( "ComponentMeasure1 Denominator Membership"
+      or "ComponentMeasure2 Denominator Membership"
+      or "ComponentMeasure3 Denominator Membership" )
 
 define "Numerator":
   "ComponentMeasure1 Numerator Membership"
-    and not "ComponentMeasure2 Numerator Membership"
+    and "ComponentMeasure2 Numerator Membership"
     and "ComponentMeasure3 Numerator Membership"
-
-define "Numerator Exclusion":
-  ComponentMeasure1."Numerator Exclusion"
-    or ComponentMeasure2."Numerator Exclusion"
-    or ComponentMeasure3."Numerator Exclusion"
 ```
 
 Snippet 24: Formal criteria for a subject-based All-or-nothing composite measure
@@ -305,6 +310,7 @@ define "Is In Component 1 Numerator":
     ComponentMeasure1."Initial Population"
         and ComponentMeasure1."Denominator"
         and not ComponentMeasure1."Denominator Exclusion"
+        and ComponentMeasure1."Numerator"
         and not ComponentMeasure1."Numerator Exclusion"
 
 define "Is In Component 2 Denominator":
@@ -318,6 +324,7 @@ define "Is In Component 2 Numerator":
     ComponentMeasure2."Initial Population"
         and ComponentMeasure2."Denominator"
         and not ComponentMeasure2."Denominator Exclusion"
+        and ComponentMeasure2."Numerator"
         and not ComponentMeasure2."Numerator Exclusion"
 ```
 
@@ -343,7 +350,7 @@ define function "ToScore"(value Boolean):
 
 Snippet 27: Formal criteria for a service-based opportunity composite measure
 
-And finally, the population criteria for the initial population is defined to return the patient record if the patient is in the initial population of any component measure; the measure population if the patient is in any component denominator; and the measure population exclusion if the patient is in all the denominator exclusions of the component measures:
+And finally, the population criteria for the initial population is defined to return the patient record if the patient is in the initial population of any component measure; the measure population if the patient is in any component denominator; and the measure population exclusion if the patient is in the denominator exclusion of every component measure in whose denominator they appear:
 
 ```cql
 define "Initial Population":
@@ -356,8 +363,9 @@ define "Measure Population":
         or ComponentMeasure2."Denominator"
 
 define "Measure Population Exclusion":
-    ComponentMeasure1."Denominator Exclusion"
-        and ComponentMeasure2."Denominator Exclusion"
+    "Measure Population"
+        and ( ComponentMeasure1."Denominator" implies ComponentMeasure1."Denominator Exclusion" )
+        and ( ComponentMeasure2."Denominator" implies ComponentMeasure2."Denominator Exclusion" )
 ```
 
 Snippet 28: Formal criteria for a subject-based linear combination composite measure
@@ -412,9 +420,17 @@ To calculate the <b>overall opportunity</b> score, divide the total number of pa
 ### Weighted Scoring
 {: weighted-scoring}
 
+**Conformance Requirement 5.5 (Weighted Scoring):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-5)
+{: #conformance-requirement-5-5}
+1. Calculation logic for weighted composite measures **SHALL** be functionally equivalent to the calculation formulas defined in this section.
+2. Weighted composite measures **SHALL** specify the weight of each component using the [weight](StructureDefinition-cqm-weight.html) extension. A component that does not specify a weight has a weight of 1.
+3. For components that use Ratio or Continuous Variable scoring, weighted composite measures **SHALL** specify the range used to normalize the component score using the [scoreRange](StructureDefinition-cqm-scoreRange.html) extension.
+4. For components that use Proportion scoring, weighted composite measures **MAY** specify a score range. A component that does not specify a score range has a score range of 0 to 1.
+5. Narrative descriptions for weighted composite measures **SHOULD** include explanation of the component weights and, when score ranges are specified, of how component scores are normalized.
+
 Weighted scoring combines component measure scores using a weighting factor for each component. In the special case that the weighting factor for each component measure is 1, this is also called component-level linear combination scoring.
 
-Note that as discussed in the section on composite scoring methods, this method is a component-based composite measure scoring method, meaning that the calculation of the composite is performed on the population-level result of the component measures. Narrative descriptions for weighted scoring composite measures should include explanation of the component weights.
+Note that as discussed in the section on composite scoring methods, this method is a component-based composite measure scoring method, meaning that the calculation of the composite is performed on the population-level result of the component measures.
 
 Narrative approach:
 
@@ -438,7 +454,9 @@ For example:
 
 </details>
 
-Computationally, this method is simply the weighted average of the component measure scores. In the simplest case where the weights are all 1, this method is simply the average score of the component measures. Note that these definitions are based on component measures whose improvement notation is an increase in the measure score. If any component measure has an improvement notation of decrease in score, the scoring for that measure needs to be adjusted using a 1- equation approach to ensure all improvement notations have the same polarity. This will be shown in [Section 5.5](#improvement-notation) below.
+Computationally, this method is the weighted average of the component measure scores. In the simplest case where the weights are all 1, this method is simply the average score of the component measures. Note that these definitions are based on component measures whose improvement notation is an increase in the measure score. If any component measure has an improvement notation of decrease in score, the scoring for that measure needs to be adjusted using a 1- equation approach to ensure all improvement notations have the same polarity. This will be shown in [Section 5.5](#improvement-notation) below.
+
+The weighted average divides the sum of the weighted component scores by the sum of the weights. When the weights sum to 1, as in the Preventive Care and Wellness example, the result is the same as the sum of the weighted component scores.
 
 A "weighted" score composite measure specifies the weights of each component using the [weight](StructureDefinition-cqm-weight.html) extension on each component measure, as in the example below:
 
@@ -501,6 +519,100 @@ A "weighted" score composite measure specifies the weights of each component usi
 
 Snippet 29: Weighted composite measure relatedArtifact elements
 
+#### Score Normalization
+{: #score-normalization}
+
+The scores of proportion components are between 0 and 1, so they can be weighted and combined directly. The scores of ratio and continuous variable components are not, in general, on that scale. A ratio component may report a rate per 1,000 patient-months, and a continuous variable component may report a median number of days. A weighted average of a proportion, a rate, and a number of days is not meaningful, so each component score is first normalized to a value between 0 and 1 using a score range for that component.
+
+The score range is specified separately from the weight. The weight expresses the relative importance of a component, which is a policy decision made by the measure developer. The score range expresses the scale of the component score, which is a property of the component measure. Keeping the two separate allows each to be reviewed and changed independently. Note also that a weight alone cannot be used to normalize a component score: normalization requires an offset as well as a scaling factor, and a scaling factor included in a weight would also change the sum of the weights.
+
+For each component *i* with score *s<sub>i</sub>*, score range [*low<sub>i</sub>*, *high<sub>i</sub>*], and weight *w<sub>i</sub>*, the weighted composite score is calculated as follows:
+
+1. Normalize the component score to a value between 0 and 1, limiting values that fall outside the score range to the nearest end of the range:<br/>
+   *n<sub>i</sub>* = min(1, max(0, (*s<sub>i</sub>* - *low<sub>i</sub>*) / (*high<sub>i</sub>* - *low<sub>i</sub>*)))
+2. Adjust the normalized score for the improvement notation of the component, so that a higher value always indicates better quality:<br/>
+   *a<sub>i</sub>* = *n<sub>i</sub>* if the improvement notation of the component is increase, and *a<sub>i</sub>* = 1 - *n<sub>i</sub>* if it is decrease
+3. Calculate the weighted average of the adjusted scores:<br/>
+   composite score = (*w<sub>1</sub>a<sub>1</sub>* + *w<sub>2</sub>a<sub>2</sub>* + ... + *w<sub>n</sub>a<sub>n</sub>*) / (*w<sub>1</sub>* + *w<sub>2</sub>* + ... + *w<sub>n</sub>*)
+
+For a proportion component with no score range, the normalized score is the component score, and these steps produce the same result as the calculation shown in [Improvement Notation](#improvement-notation).
+
+The score range of a component is specified using the [scoreRange](StructureDefinition-cqm-scoreRange.html) extension on the relatedArtifact for the component. The units of the range are the scoring units of the component measure. The [Diabetes Care Weighted Composite](Measure-DiabetesCareWeightedComposite.html) example combines a proportion component, a ratio component, and a continuous variable component:
+
+```xml
+<relatedArtifact>
+   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+      <valueDecimal value="0.4"/>
+   </extension>
+   <type value="composed-of"/>
+   <display value="Diabetes: Hemoglobin A1c (HbA1c) Poor Control (> 9%)"/>
+   <resource value="http://hl7.org/fhir/uv/cqm/Measure/DHCComponent"/>
+</relatedArtifact>
+<relatedArtifact>
+   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+      <valueDecimal value="0.3"/>
+   </extension>
+   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoreRange">
+      <valueRange>
+         <low>
+            <value value="0"/>
+            <unit value="per 1,000 patient-months"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="/1000.mo"/>
+         </low>
+         <high>
+            <value value="100"/>
+            <unit value="per 1,000 patient-months"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="/1000.mo"/>
+         </high>
+      </valueRange>
+   </extension>
+   <type value="composed-of"/>
+   <display value="Diabetes: Emergency Department Visits per 1,000 Patient-Months"/>
+   <resource value="http://hl7.org/fhir/uv/cqm/Measure/DEVComponent"/>
+</relatedArtifact>
+<relatedArtifact>
+   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+      <valueDecimal value="0.3"/>
+   </extension>
+   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoreRange">
+      <valueRange>
+         <low>
+            <value value="0"/>
+            <unit value="days"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="d"/>
+         </low>
+         <high>
+            <value value="30"/>
+            <unit value="days"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="d"/>
+         </high>
+      </valueRange>
+   </extension>
+   <type value="composed-of"/>
+   <display value="Diabetes: Days to Follow-up After Hospital Discharge"/>
+   <resource value="http://hl7.org/fhir/uv/cqm/Measure/DFUComponent"/>
+</relatedArtifact>
+```
+
+Snippet 30: Weighted composite measure relatedArtifact elements with score ranges
+
+All three components of this example have an improvement notation of decrease: a lower rate of poor HbA1c control, fewer emergency department visits, and fewer days to follow-up all indicate better quality. For an Eligible Clinician with the following component scores, the composite score is calculated as shown:
+
+| Component | Scoring | Improvement Notation | Component Score | Score Range | Normalized Score | Adjusted Score | Weight |
+| --------- | ------- | -------------------- | --------------- | ----------- | ---------------- | -------------- | ------ |
+| HbA1c Poor Control | Proportion | Decrease | 0.25 | 0 to 1 (default) | 0.25 | 0.75 | 0.4 |
+| ED Visits | Ratio | Decrease | 42 per 1,000 patient-months | 0 to 100 per 1,000 patient-months | 0.42 | 0.58 | 0.3 |
+| Days to Follow-up | Continuous Variable | Decrease | 9 days (median) | 0 to 30 days | 0.30 | 0.70 | 0.3 |
+{: .grid}
+
+((0.4 x 0.75) + (0.3 x 0.58) + (0.3 x 0.70)) / (0.4 + 0.3 + 0.3) = 0.684 (68.4%)
+
+The score range of a component should reflect the range of scores that is meaningful for comparing performance, such as a range established from benchmark data or clinical targets. When a component score falls outside the score range, it receives the minimum or maximum normalized score, so the choice of score range affects how much credit is given for performance at either end of the range.
+
 ### Improvement Notation
 {: #improvement-notation}
 
@@ -519,6 +631,8 @@ For component based scoring methods, consider the following example:
 ((Comp A Numerator/Comp A Denominator)+(Comp B Numerator/Comp B Denominator)+(1-(Comp C Numerator/Comp C Denominator)))/3=Average Performance of components
 ((80/100)+(80/100)+(1-(20/100))/3= 0.8 (80%)
 
+For components that use Ratio or Continuous Variable scoring, the component score is first normalized using the score range of the component, and the 1- adjustment is applied to the normalized score, as described in [Score Normalization](#score-normalization).
+
 For individual level scoring methods, consider the following example:
 
 | Composite Components | Improvement Notation | Numerator Count | Denominator Count | Population for Calculation |
@@ -535,8 +649,8 @@ For individual level scoring methods, consider the following example:
 ### Measure Types
 {: #measure-types}
 
-**Conformance Requirement 5.5 (Composite Measure Scoring):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-5)
-{: #conformance-requirement-5-5}
+**Conformance Requirement 5.6 (Composite Measure Scoring):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-6)
+{: #conformance-requirement-5-6}
 1. For composite measures using Opportunity scoring
     a. The measure scoring method **SHALL** be Composite
     b. All component measures **SHALL** use Proportion or Ratio scoring
@@ -545,12 +659,12 @@ For individual level scoring methods, consider the following example:
     b. All component measures **SHALL** use Proportion or Ratio scoring
 3. For composite measures using Subject-level linear scoring
     a. The measure scoring method **SHALL** be Composite
-    b. All component measures **SHALL** use Proportion, Ratio, or Continuous Variable Scoring
+    b. All component measures **SHALL** use Proportion or Ratio scoring
 4. For composite measures using Component-level scoring
     a. The measure scoring method **SHALL** be Composite
     b. All component measures **SHALL** use Proportion, Ratio, or Continuous Variable Scoring
 
-For composite measures, the composite score calculation method specifies the measure scoring. The component measures in a composite can also be proportion, ratio, or continuous variable measures.
+For composite measures, the composite score calculation method specifies the measure scoring. The component measures in a composite can also be proportion, ratio, or continuous variable measures. Continuous variable components are only allowed in composites that use weighted (component-level) scoring. The other scoring methods determine the contribution of each subject from the numerator and denominator membership of that subject in each component, and continuous variable measures do not define numerator and denominator populations.
 
 The following table summarizes the allowable measure scoring for each of the composite scoring methods:
 
@@ -558,16 +672,16 @@ The following table summarizes the allowable measure scoring for each of the com
 |:-----------------------------------------------------:|:----:|:----:|
 |                      Opportunity                      | Composite | Proportion/Ratio |
 |                    All-or-nothing                     | Composite | Proportion/Ratio |
-|                Subject-level Linear                   | Composite | Proportion/Ratio/Continuous Variable |
+|                Subject-level Linear                   | Composite | Proportion/Ratio |
 |                    Component-level                    | Composite | Proportion/Ratio/Continuous Variable |
 
-Note that these requirements are about ensuring that the population criteria expressions among the components use similar sets of population criteria. This means that all the components of a given composite measure don’t necessarily have to use the same scoring type, just that they have to have similar population criteria. For example, a Proportion composite may use a Proportion component and a Ratio component.
+Note that these requirements are about ensuring that the population criteria expressions among the components use similar sets of population criteria. This means that all the components of a given composite measure don’t necessarily have to use the same scoring type, just that they have to have similar population criteria. For example, a Proportion composite may use a Proportion component and a Ratio component. For component-based composites that use Ratio or Continuous Variable components, the component scores must also be normalized to a common scale, as described in [Score Normalization](#score-normalization).
 
 ### Measure Basis
 {: #measure-basis}
 
-**Conformance Requirement 5.6 (Composite Measure Basis):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-6)
-{: #conformance-requirement-5-6}
+**Conformance Requirement 5.7 (Composite Measure Basis):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-7)
+{: #conformance-requirement-5-7}
 1. All component measures used within a composite measure **SHALL** have the same measure subject type
 2. All component measures used within an individual-level composite measure **SHALL** use the same measure basis, except that
     a. Subject-based composite measures **MAY** reference non-subject-based components, but the scoring method
@@ -580,8 +694,8 @@ As with single measures, composite measures may be subject-based, or use some ot
 ### Stratification
 {: #stratification}
 
-**Conformance Requirement 5.7 (Composite Measure Stratification):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-7)
-{: #conformance-requirement-5-7}
+**Conformance Requirement 5.8 (Composite Measure Stratification):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-8)
+{: #conformance-requirement-5-8}
 1. Stratifiers of components in a composite measure **SHALL NOT** be used to stratify the composite measure
 
 Because composite measure scoring for individual-based composites effectively ignores component scores, stratifiers defined on component measures are not applicable to the composite measure score. As such, stratifiers are supported in composite measures, just as they are with non-composites, but stratifiers of the component measures are ignored.
@@ -589,8 +703,8 @@ Because composite measure scoring for individual-based composites effectively ig
 ### Multiple Rates
 {: #multiple-rates}
 
-**Conformance Requirement 5.8 (Composite Measure Rates):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-8)
-{: #conformance-requirement-5-8}
+**Conformance Requirement 5.9 (Composite Measure Rates):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-9)
+{: #conformance-requirement-5-9}
 1. Component measures used in a composite **SHOULD** contain a single rate definition (i.e. `Measure.group`)
 2. For component measures that contain multiple rates (i.e. more than one `Measure.group`), the composite measure **SHALL** specify the specific group to be used in the composite using the [groupId](StructureDefinition-cqm-groupId.html) extension
 
@@ -599,8 +713,8 @@ To simplify expression and implementation of composite measures, all component m
 ### Supplemental Data Elements and Risk Adjustment Variables
 {: #supplemental-data-elements-and-risk-adjustment-variables}
 
-**Conformance Requirement 5.9 (Composite Measure Supplemental Data Elements and Risk Adjustment Variables):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-9)
-{: #conformance-requirement-5-9}
+**Conformance Requirement 5.10 (Composite Measure Supplemental Data Elements and Risk Adjustment Variables):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-10)
+{: #conformance-requirement-5-10}
 1. Composite measure results **SHALL** include supplemental data elements and risk adjustment variables from all component measures, as well as those defined in the composite directly.
 2. Supplemental data elements and risk adjustment variables that appear in the multiple components or a component and the composite by name **SHALL** be of the same type
 
@@ -609,8 +723,8 @@ For individual-based composite scoring methods, additional data elements are col
 ### Component Quality Measures
 {: #component-quality-measures}
 
-**Conformance Requirement 5.10 (Component Quality Measures):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-10)
-{: #conformance-requirement-5-10}
+**Conformance Requirement 5.11 (Component Quality Measures):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-11)
+{: #conformance-requirement-5-11}
 1. Component quality measures **SHALL** be referenced using a relatedArtifact element with a type of _composed-of_
 2. Component quality measures **SHALL** be referenced using the canonical URL of the Measure resource
     a. A composite measure **MAY** point to a group in the same Measure resource
@@ -677,4 +791,4 @@ Regardless of the scoring method, a composite quality measure will include any n
 </relatedArtifact>
  ```
 
-Snippet 30: Composite measure relatedArtifacts
+Snippet 31: Composite measure relatedArtifacts

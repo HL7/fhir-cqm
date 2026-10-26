@@ -34,6 +34,7 @@ valueset "Referral to Primary Care or Alternate Provider": 'http://cts.nlm.nih.g
 valueset "Weight Reduction Recommended": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1510'
 
 code "Birth date": '21112-8' from "LOINC" display 'Birth date'
+code "Blood pressure panel": '85354-9' from "LOINC" display 'Blood pressure panel with all children optional'
 code "Diastolic blood pressure": '8462-4' from "LOINC" display 'Diastolic blood pressure'
 code "12 lead EKG panel": '34534-8' from "LOINC" display '12 lead EKG panel'
 code "EKG study": '11524-6' from "LOINC" display 'EKG study'
@@ -141,8 +142,7 @@ define "Encounter with Order for Hypertension Follow Up Declined by Patient":
 
 define "Encounter with Medical Reason for Not Obtaining or Patient Declined Blood Pressure Measurement":
   "Qualifying Encounter During Measurement Period" QualifyingEncounter
-      with ( [Observation: "Systolic blood pressure"]
-        union [Observation: "Diastolic blood pressure"] ) NoBPScreen
+      with [Observation: "Blood pressure panel"] NoBPScreen
         such that ( NoBPScreen.code in "Medical Reason"
             or NoBPScreen.code in "Patient Declined"
         )
@@ -179,63 +179,55 @@ define "Encounter with Order for Intervention for Hypertension":
 
 define "Encounter with High Blood Pressure Reading":
   "Qualifying Encounter During Measurement Period" QualifyingEncounter
-      let EncounterLastSystolicBP: Last([Observation: "Systolic blood pressure"] SystolicBP
-          where SystolicBP.effective during QualifyingEncounter.period
+      let EncounterLastBP: Last([Observation: "Blood pressure panel"] BloodPressure
+          where BloodPressure.effective during QualifyingEncounter.period
           sort by effective
       ),
-      EncounterLastDiastolicBP: Last([Observation: "Diastolic blood pressure"] DiastolicBP
-          where DiastolicBP.effective during QualifyingEncounter.period
-          sort by effective
-      )
-      where EncounterLastSystolicBP.value > 0 'mm[Hg]'
-        and EncounterLastDiastolicBP.value > 0 'mm[Hg]'
-        and ( EncounterLastSystolicBP.value >= 140 'mm[Hg]'
-            or EncounterLastDiastolicBP.value >= 90 'mm[Hg]'
+      EncounterLastSystolicBP: singleton from ( EncounterLastBP.component C where C.code ~ "Systolic blood pressure" ),
+      EncounterLastDiastolicBP: singleton from ( EncounterLastBP.component C where C.code ~ "Diastolic blood pressure" )
+      where ( EncounterLastSystolicBP.value as Quantity ) > 0 'mm[Hg]'
+        and ( EncounterLastDiastolicBP.value as Quantity ) > 0 'mm[Hg]'
+        and ( ( EncounterLastSystolicBP.value as Quantity ) >= 140 'mm[Hg]'
+            or ( EncounterLastDiastolicBP.value as Quantity ) >= 90 'mm[Hg]'
         )
 
 define "Encounter with High Blood Pressure Reading Within Year Prior":
   "Qualifying Encounter During Measurement Period" QualifyingEncounter
-      let EncounterLastSystolicBP: Last([Observation: "Systolic blood pressure"] SystolicBP
-          where SystolicBP.effective 1 year or less before start of QualifyingEncounter.period
+      let EncounterLastBP: Last([Observation: "Blood pressure panel"] BloodPressure
+          where BloodPressure.effective 1 year or less before start of QualifyingEncounter.period
           sort by effective
       ),
-      EncounterLastDiastolicBP: Last([Observation: "Diastolic blood pressure"] DiastolicBP
-          where DiastolicBP.effective 1 year or less before start of QualifyingEncounter.period
-          sort by effective
-      )
-      where EncounterLastSystolicBP.value > 0 'mm[Hg]'
-        and EncounterLastDiastolicBP.value > 0 'mm[Hg]'
-        and ( EncounterLastSystolicBP.value >= 140 'mm[Hg]'
-            or EncounterLastDiastolicBP.value >= 90 'mm[Hg]'
+      EncounterLastSystolicBP: singleton from ( EncounterLastBP.component C where C.code ~ "Systolic blood pressure" ),
+      EncounterLastDiastolicBP: singleton from ( EncounterLastBP.component C where C.code ~ "Diastolic blood pressure" )
+      where ( EncounterLastSystolicBP.value as Quantity ) > 0 'mm[Hg]'
+        and ( EncounterLastDiastolicBP.value as Quantity ) > 0 'mm[Hg]'
+        and ( ( EncounterLastSystolicBP.value as Quantity ) >= 140 'mm[Hg]'
+            or ( EncounterLastDiastolicBP.value as Quantity ) >= 90 'mm[Hg]'
         )
 
 define "Encounter with Normal Blood Pressure Reading":
   "Qualifying Encounter During Measurement Period" QualifyingEncounter
-      let EncounterLastSystolicBP: Last([Observation: "Systolic blood pressure"] SystolicBP
-          where SystolicBP.effective during QualifyingEncounter.period
+      let EncounterLastBP: Last([Observation: "Blood pressure panel"] BloodPressure
+          where BloodPressure.effective during QualifyingEncounter.period
           sort by effective
       ),
-      EncounterLastDiastolicBP: Last([Observation: "Diastolic blood pressure"] DiastolicBP
-          where DiastolicBP.effective during QualifyingEncounter.period
-          sort by effective
-      )
-      where EncounterLastSystolicBP.value included in Interval[1 'mm[Hg]', 120 'mm[Hg]' )
-        and EncounterLastDiastolicBP.value included in Interval[1 'mm[Hg]', 80 'mm[Hg]' )
+      EncounterLastSystolicBP: singleton from ( EncounterLastBP.component C where C.code ~ "Systolic blood pressure" ),
+      EncounterLastDiastolicBP: singleton from ( EncounterLastBP.component C where C.code ~ "Diastolic blood pressure" )
+      where ( EncounterLastSystolicBP.value as Quantity ) included in Interval[1 'mm[Hg]', 120 'mm[Hg]' )
+        and ( EncounterLastDiastolicBP.value as Quantity ) included in Interval[1 'mm[Hg]', 80 'mm[Hg]' )
 
 define "Encounter with Prehypertensive Blood Pressure Reading":
   "Qualifying Encounter During Measurement Period" QualifyingEncounter
-      let EncounterLastSystolicBP: Last([Observation: "Systolic blood pressure"] SystolicBP
-          where SystolicBP.effective during QualifyingEncounter.period
+      let EncounterLastBP: Last([Observation: "Blood pressure panel"] BloodPressure
+          where BloodPressure.effective during QualifyingEncounter.period
           sort by effective
       ),
-      EncounterLastDiastolicBP: Last([Observation: "Diastolic blood pressure"] DiastolicBP
-          where DiastolicBP.effective during QualifyingEncounter.period
-          sort by effective
-      )
-      where EncounterLastSystolicBP.value included in Interval[1 'mm[Hg]', 140 'mm[Hg]' )
-        and EncounterLastDiastolicBP.value included in Interval[1 'mm[Hg]', 90 'mm[Hg]' )
-        and ( EncounterLastSystolicBP.value >= 120 'mm[Hg]'
-            or EncounterLastDiastolicBP.value >= 80 'mm[Hg]'
+      EncounterLastSystolicBP: singleton from ( EncounterLastBP.component C where C.code ~ "Systolic blood pressure" ),
+      EncounterLastDiastolicBP: singleton from ( EncounterLastBP.component C where C.code ~ "Diastolic blood pressure" )
+      where ( EncounterLastSystolicBP.value as Quantity ) included in Interval[1 'mm[Hg]', 140 'mm[Hg]' )
+        and ( EncounterLastDiastolicBP.value as Quantity ) included in Interval[1 'mm[Hg]', 90 'mm[Hg]' )
+        and ( ( EncounterLastSystolicBP.value as Quantity ) >= 120 'mm[Hg]'
+            or ( EncounterLastDiastolicBP.value as Quantity ) >= 80 'mm[Hg]'
         )
 
 define "Qualifying Encounter During Measurement Period":

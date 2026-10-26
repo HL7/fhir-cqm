@@ -1,0 +1,30 @@
+{
+  "resourceType": "Observation",
+  "id": "iris-tobacco-0",
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "72166-2"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/iris"
+  },
+  "effectiveDateTime": "2024-03-04T14:10:00Z",
+  "performer": [
+    {
+      "reference": "Practitioner/preventive-care-practitioner"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "266919005"
+      }
+    ]
+  }
+}

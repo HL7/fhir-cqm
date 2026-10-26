@@ -1,0 +1,230 @@
+<Measure xmlns="http://hl7.org/fhir">
+   <id value="DHCComponent"></id>
+   <meta>
+      <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure"></profile>
+      <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure"></profile>
+      <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablemeasure"></profile>
+      <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-proportionmeasure"></profile>
+      <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cqlmeasure"></profile>
+   </meta>
+   <language value="en"></language>
+   <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+      <valueCode value="boolean"></valueCode>
+   </extension>
+   <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem">
+      <valueReference>
+         <reference value="Device/software-system-example"></reference>
+      </valueReference>
+   </extension>
+   <url value="http://hl7.org/fhir/uv/cqm/Measure/DHCComponent"></url>
+   <identifier>
+      <use value="official"></use>
+      <type>
+         <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/artifact-identifier-type"></system>
+            <code value="version-independent"></code>
+            <display value="Version Independent"></display>
+         </coding>
+      </type>
+      <system value="urn:ietf:rfc:3986"></system>
+      <value value="http://example.org/fhir/us/cqm/Measure/DHCComponent"></value>
+   </identifier>
+   <identifier>
+      <use value="official"></use>
+      <type>
+         <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/artifact-identifier-type"></system>
+            <code value="version-specific"></code>
+            <display value="Version Specific"></display>
+         </coding>
+      </type>
+      <system value="urn:ietf:rfc:3986"></system>
+      <value value="http://example.org/fhir/us/cqm/Measure/DHCComponent|0.0.001"></value>
+   </identifier>
+   <identifier>
+      <use value="usual"></use>
+      <type>
+         <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/artifact-identifier-type"></system>
+            <code value="short-name"></code>
+            <display value="Short Name"></display>
+         </coding>
+      </type>
+      <value value="Diabetes HbA1c Poor Control"></value>
+   </identifier>
+   <name value="DHCComponent"></name>
+   <title value="Diabetes: Hemoglobin A1c (HbA1c) Poor Control (> 9%)"></title>
+   <status value="active"></status>
+   <experimental value="true"></experimental>
+   <date value="2026-10-25"></date>
+   <publisher value="National Committee for Quality Assurance"></publisher>
+   <description value="Percentage of patients 18-75 years of age with diabetes who had hemoglobin A1c > 9.0% during the measurement period. This is an example only."></description>
+   <useContext>
+      <code>
+         <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"></system>
+         <code value="venue"></code>
+         <display value="Clinical Venue"></display>
+      </code>
+      <valueCodeableConcept>
+         <coding>
+            <system value="http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes"></system>
+            <code value="ec"></code>
+            <display value="EC"></display>
+         </coding>
+      </valueCodeableConcept>
+   </useContext>
+   <effectivePeriod>
+      <start value="2022-01-01"></start>
+      <end value="2022-12-31"></end>
+   </effectivePeriod>
+   <library value="http://hl7.org/fhir/uv/cqm/Library/DHCComponent"></library>
+   <scoring>
+      <coding>
+         <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"></system>
+         <code value="proportion"></code>
+         <display value="Proportion"></display>
+      </coding>
+   </scoring>
+   <type>
+      <coding>
+         <system value="http://terminology.hl7.org/CodeSystem/measure-type"></system>
+         <code value="outcome"></code>
+         <display value="Outcome"></display>
+      </coding>
+   </type>
+   <improvementNotation>
+      <coding>
+         <system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"></system>
+         <code value="decrease"></code>
+      </coding>
+   </improvementNotation>
+   <group>
+      <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
+         <valueString value="primary"></valueString>
+      </extension>
+      <population id="initial-population">
+         <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId">
+            <valueString value="primary-dhccomponent-initial-population"></valueString>
+         </extension>
+         <code>
+            <coding>
+               <system value="http://terminology.hl7.org/CodeSystem/measure-population"></system>
+               <code value="initial-population"></code>
+               <display value="Initial Population"></display>
+            </coding>
+         </code>
+         <criteria>
+            <language value="text/cql-identifier"></language>
+            <expression value="Initial Population"></expression>
+         </criteria>
+      </population>
+      <population id="denominator">
+         <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId">
+            <valueString value="primary-dhccomponent-denominator"></valueString>
+         </extension>
+         <code>
+            <coding>
+               <system value="http://terminology.hl7.org/CodeSystem/measure-population"></system>
+               <code value="denominator"></code>
+               <display value="Denominator"></display>
+            </coding>
+         </code>
+         <criteria>
+            <language value="text/cql-identifier"></language>
+            <expression value="Denominator"></expression>
+         </criteria>
+      </population>
+      <population id="denominator-exclusion">
+         <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId">
+            <valueString value="primary-dhccomponent-denominator-exclusion"></valueString>
+         </extension>
+         <code>
+            <coding>
+               <system value="http://terminology.hl7.org/CodeSystem/measure-population"></system>
+               <code value="denominator-exclusion"></code>
+               <display value="Denominator Exclusion"></display>
+            </coding>
+         </code>
+         <criteria>
+            <language value="text/cql-identifier"></language>
+            <expression value="Denominator Exclusion"></expression>
+         </criteria>
+      </population>
+      <population id="numerator">
+         <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId">
+            <valueString value="primary-dhccomponent-numerator"></valueString>
+         </extension>
+         <code>
+            <coding>
+               <system value="http://terminology.hl7.org/CodeSystem/measure-population"></system>
+               <code value="numerator"></code>
+               <display value="Numerator"></display>
+            </coding>
+         </code>
+         <criteria>
+            <language value="text/cql-identifier"></language>
+            <expression value="Numerator"></expression>
+         </criteria>
+      </population>
+   </group>
+   <supplementalData id="sde-ethnicity">
+      <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.supplementalData.linkId">
+         <valueString value="dhccomponent-sde-ethnicity"></valueString>
+      </extension>
+      <usage>
+         <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"></system>
+            <code value="supplemental-data"></code>
+         </coding>
+      </usage>
+      <criteria>
+         <language value="text/cql-identifier"></language>
+         <expression value="SDE Ethnicity"></expression>
+      </criteria>
+   </supplementalData>
+   <supplementalData id="sde-payer">
+      <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.supplementalData.linkId">
+         <valueString value="dhccomponent-sde-payer"></valueString>
+      </extension>
+      <usage>
+         <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"></system>
+            <code value="supplemental-data"></code>
+         </coding>
+      </usage>
+      <criteria>
+         <language value="text/cql-identifier"></language>
+         <expression value="SDE Payer"></expression>
+      </criteria>
+   </supplementalData>
+   <supplementalData id="sde-race">
+      <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.supplementalData.linkId">
+         <valueString value="dhccomponent-sde-race"></valueString>
+      </extension>
+      <usage>
+         <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"></system>
+            <code value="supplemental-data"></code>
+         </coding>
+      </usage>
+      <criteria>
+         <language value="text/cql-identifier"></language>
+         <expression value="SDE Race"></expression>
+      </criteria>
+   </supplementalData>
+   <supplementalData id="sde-sex">
+      <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.supplementalData.linkId">
+         <valueString value="dhccomponent-sde-sex"></valueString>
+      </extension>
+      <usage>
+         <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/measure-data-usage"></system>
+            <code value="supplemental-data"></code>
+         </coding>
+      </usage>
+      <criteria>
+         <language value="text/cql-identifier"></language>
+         <expression value="SDE Sex"></expression>
+      </criteria>
+   </supplementalData>
+</Measure>

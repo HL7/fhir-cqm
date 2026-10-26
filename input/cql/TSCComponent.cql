@@ -136,7 +136,7 @@ define "Numerator 2":
       //or exists "Active Pharmacotherapy for Tobacco Cessation"
 
 define "Has Limited Life Expectancy":
-  exists ( ["Condition"] LimitedLifeExpectancy
+  exists ( ["Condition": "Limited Life Expectancy"] LimitedLifeExpectancy
         where Global."Prevalence Period" ( LimitedLifeExpectancy ) overlaps after "Measurement Period"
           and LimitedLifeExpectancy.clinicalStatus ~ ToConcept(Global."active")
     )
@@ -176,14 +176,14 @@ define "Most Recent Tobacco Use Screening Indicates Tobacco Non User":
         where Global."Normalize Interval"(TobaccoUseScreening.effective)overlaps "Measurement Period"
         sort by start of Global."Normalize Interval"(effective)
     )) MostRecentTobaccoUseScreening
-      where MostRecentTobaccoUseScreening.value in "Tobacco Non-User"
+      where ( MostRecentTobaccoUseScreening.value as CodeableConcept ) in "Tobacco Non-User"
 
 define "Most Recent Tobacco Use Screening Indicates Tobacco User":
   ( Last(["Observation": "Tobacco Use Screening"] TobaccoUseScreening
         where Global."Normalize Interval"(TobaccoUseScreening.effective)overlaps "Measurement Period"
         sort by start of Global."Normalize Interval"(effective)
     )) MostRecentTobaccoUseScreening
-      where MostRecentTobaccoUseScreening.value in "Tobacco User"
+      where ( MostRecentTobaccoUseScreening.value as CodeableConcept ) in "Tobacco User"
 
 define "Denominator 2":
   "Initial Population"
@@ -210,7 +210,7 @@ define function "Not Done"(res DomainResource ):
 
 define function "Not Done Reason in Medical Reason"(res DomainResource ):
   if ( res R
-      where "GetModiferExtension"(R, 'http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-notDoneReason').value in "Medical Reason"
+      where ( "GetModiferExtension"(R, 'http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-notDoneReason').value as CodeableConcept ) in "Medical Reason"
   ) is not null then true
     else false
 

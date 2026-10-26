@@ -1,0 +1,106 @@
+{
+  "resourceType": "MeasureReport",
+  "id": "DEVComponent-boris",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testCaseDescription",
+      "valueMarkdown": "Diabetes: Emergency Department Visits per 1,000 Patient-Months test case. Boris (62) has diabetes. His most recent HbA1c (10.1%) indicates poor control, although an earlier result (7.5%) was controlled. He has two emergency department visits, and an inpatient discharge on March 10 followed by an office visit 7 days later. Expected denominator observation 12 patient-months and numerator observation 2 emergency department visits."
+    }
+  ],
+  "modifierExtension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-isTestCase",
+      "valueBoolean": true
+    }
+  ],
+  "status": "complete",
+  "type": "individual",
+  "measure": "http://hl7.org/fhir/uv/cqm/Measure/DEVComponent",
+  "subject": {
+    "reference": "Patient/boris"
+  },
+  "period": {
+    "start": "2024-01-01",
+    "end": "2024-12-31"
+  },
+  "group": [
+    {
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator-exclusion"
+              }
+            ]
+          },
+          "count": 0
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "numerator"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "measure-observation"
+              }
+            ]
+          },
+          "count": 1,
+          "id": "denominator-observation"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "measure-observation"
+              }
+            ]
+          },
+          "count": 1,
+          "id": "numerator-observation"
+        }
+      ],
+      "measureScore": {
+        "value": 166.6667,
+        "unit": "per 1,000 patient-months",
+        "system": "http://unitsofmeasure.org",
+        "code": "/1000.mo"
+      }
+    }
+  ]
+}
