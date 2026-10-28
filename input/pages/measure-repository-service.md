@@ -49,9 +49,9 @@ The PublishableMeasureRepository capability statement expresses additional funct
 A PublishableMeasureRepository:  
 
 1. **SHALL** support library packaging: [Library/$package]({{site.data.fhir.ver.crmi}}/OperationDefinition-crmi-package.html) operation 
-2. **SHALL** support library requirements analysis: [Library/$data-requirements](OperationDefinition-cqm-data-requirements.html) operation 
+2. **SHALL** support library requirements analysis: [Library/$data-requirements]({{site.data.fhir.ver.crmi}}/OperationDefinition-crmi-data-requirements.html) operation 
 3. **SHALL** support measure packaging: [Measure/$package]({{site.data.fhir.ver.crmi}}/OperationDefinition-crmi-package.html) operation 
-4. **SHALL** support measure requirements analysis: [Measure/$data-requirements](OperationDefinition-cqm-data-requirements.html) operation
+4. **SHALL** support measure requirements analysis: [Measure/$data-requirements]({{site.data.fhir.ver.crmi}}/OperationDefinition-crmi-data-requirements.html) operation
 5. **SHOULD** support measure search using additional publishable metadata
 6. **SHOULD** support library search using additional publishable metadata
 7. **SHOULD** support minimum measure write capability (Publish, Retire, Archive)
