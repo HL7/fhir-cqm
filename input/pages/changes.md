@@ -23,6 +23,7 @@
 
 #### Non-substantive Changes
 
+* [FHIR-59647](https://jira.hl7.org/browse/FHIR-59647): Document using data requirements to determine the aggregate data requirements for a measure program (Applied ([here](measure-conformance.html#program-data-requirements)))
 * [FHIR-58297](https://jira.hl7.org/browse/FHIR-58297): Clarify the term "population group"
 * [FHIR-57879](https://jira.hl7.org/browse/FHIR-57879): Clarify the Group naming convention in Measures with Multiple Rates (3.4.8)
 * [FHIR-57861](https://jira.hl7.org/browse/FHIR-57861): Ensure topic search parameter is supported in publishable repository

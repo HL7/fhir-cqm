@@ -154,7 +154,7 @@
                     <valueCode value="SHALL"/>
                 </extension>
                 <name value="data-requirements"/>
-                <definition value="http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-data-requirements"/>
+                <definition value="http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-data-requirements"/>
             </operation>
         </resource>
         <resource>
@@ -275,7 +275,7 @@
                     <valueCode value="SHALL"/>
                 </extension>
                 <name value="data-requirements"/>
-                <definition value="http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-data-requirements"/>
+                <definition value="http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-data-requirements"/>
             </operation>
         </resource>
         <resource>
@@ -317,7 +317,7 @@
                 <valueCode value="SHALL"/>
             </extension>
             <name value="data-requirements"/>
-            <definition value="http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-data-requirements"/>
+            <definition value="http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-data-requirements"/>
         </operation>
     </rest>
 </CapabilityStatement>
