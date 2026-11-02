@@ -1574,6 +1574,142 @@ A content release can be used to meet many different use cases for packaging a c
 
 In all these cases, a Library conforming to the CRMIManifestLibrary profile can be used to communicate the details of the content release.
 
+#### Data Requirements for a Measure Program
+{: #program-data-requirements}
+
+Measures are typically reported as part of a measure program, a set of measures that a reporting organization is required (or has chosen) to report for a given reporting period. Before data can be submitted for a program, an implementer needs to know what data the receiving system needs in order to calculate every measure in the program: which resources, which elements of those resources, which codes and value sets are used to select them, and over what time frames. Determining this one measure at a time produces a separate set of data requirements for each measure, with considerable overlap between them, because measures in a program frequently share the same encounters, demographics, diagnoses, and terminology.
+
+The CRMI [$data-requirements]({{site.data.fhir.ver.crmi}}/OperationDefinition-crmi-data-requirements.html) operation determines the effective data requirements of one or more artifacts, including their components and dependencies. When multiple artifacts are specified, the result is the aggregate data requirements for all the artifacts, returned as a single _module-definition_ Library that describes the parameters, data requirements, and dependencies of all the measures involved. Because the requirements are gathered across all the measures, implementations can collapse overlapping requirements, so that the result describes the combined data needed for the set of measures as a whole, rather than a concatenation of the requirements of each measure.
+
+There are two ways a client can request the aggregate data requirements for a set of measures, and which to use is the client's choice:
+
+* **The measures in a manifest**: When the program is described by a manifest (see [Content Release](#content-release)), the manifest identifies the measures in the program (`relatedArtifact` elements with `type` = `composed-of`), as well as the code system and value set versions to be used to calculate them. Requesting the data requirements of the manifest itself returns the aggregate data requirements of all its component measures, because gathering data requirements traces the components and dependencies of the artifact.
+* **Any set of measures**: The canonical URL of each measure can be specified using repeating `url` parameters. This allows a client to determine the aggregate data requirements for a set of measures that is not described by a Library, such as the subset of the measures in a program that an organization intends to report, or a set of measures drawn from multiple programs. When the measures belong to a program described by a manifest, the manifest can be specified using the `manifest` parameter, so that unversioned references to value sets, code systems, and libraries are resolved using the versions established for the program.
+
+In either case, the reporting period is provided as the value of the `Measurement Period` parameter, using the `parameters` parameter of the operation, so that date filters in the data requirements reflect the reporting period.
+
+For example, the following request determines the aggregate data requirements for all the measures in the [Manifest - Release](Library-Manifest-Release.html) example:
+
+```
+POST [base]/Library/Manifest-Release/$data-requirements
+```
+
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "parameters",
+      "resource": {
+        "resourceType": "Parameters",
+        "parameter": [
+          {
+            "name": "Measurement Period",
+            "valuePeriod": { "start": "2024-01-01", "end": "2024-12-31" }
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+Snippet 3-37: Request for the aggregate data requirements of the measures in a content release
+
+The following request determines the aggregate data requirements for just two of the measures in the same program, using the version bindings established by the manifest:
+
+```
+POST [base]/Measure/$data-requirements
+```
+
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    { "name": "url", "valueUri": "http://hl7.org/fhir/uv/cqm/Measure/EXM124-FHIR|9.0.000" },
+    { "name": "url", "valueUri": "http://hl7.org/fhir/uv/cqm/Measure/EXM130-FHIR|8.0.000" },
+    { "name": "manifest", "valueCanonical": "http://hl7.org/fhir/uv/cqm/Library/Manifest-Release" },
+    {
+      "name": "parameters",
+      "resource": {
+        "resourceType": "Parameters",
+        "parameter": [
+          {
+            "name": "Measurement Period",
+            "valuePeriod": { "start": "2024-01-01", "end": "2024-12-31" }
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+Snippet 3-38: Request for the aggregate data requirements of a subset of the measures in a content release
+
+The response is a module-definition Library. The following abbreviated example shows one data requirement that is shared by several measures in the program (qualifying office visits), represented once in the aggregate result, together with the value set it depends on:
+
+```json
+{
+  "resourceType": "Library",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/library-type",
+        "code": "module-definition"
+      }
+    ]
+  },
+  "relatedArtifact": [
+    {
+      "type": "depends-on",
+      "display": "Value set Office Visit",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1001|20180310"
+    }
+  ],
+  "parameter": [
+    { "name": "Measurement Period", "use": "in", "min": 0, "max": "1", "type": "Period" }
+  ],
+  "dataRequirement": [
+    {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "type", "status", "period" ],
+      "codeFilter": [
+        {
+          "path": "type",
+          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1001|20180310"
+        }
+      ]
+    }
+  ]
+}
+```
+
+Snippet 3-39: Abbreviated aggregate data requirements for a measure program
+
+To illustrate the effect of aggregation using the examples in this implementation guide: determined separately, the effective data requirements of EXM124 (Cervical Cancer Screening) and EXM130 (Colorectal Cancer Screening) contain 31 data requirements that reference 26 value sets. Because the two measures share the same qualifying encounters, patient demographics, and payer information, the aggregate requirements for the two measures can be collapsed into 21 distinct data requirements (by resource type and code filter), referencing 18 distinct value sets.
+
+##### Using Program Data Requirements
+
+The aggregate data requirements tell an implementer what data they need to provide for the measures in the program to be calculated:
+
+* **What resources**: Each `dataRequirement` identifies a resource type (`type`) and the profile the data is expected to conform to (`profile`).
+* **What elements**: The `mustSupport` element of each data requirement lists the elements of the resource that are referenced by the measure logic, and so must be populated (when known) for the measures to be calculated correctly.
+* **Which data**: The `codeFilter` elements identify the value sets or codes used to select the relevant data, and `dateFilter` elements identify the time frames (relative to the reporting period) for which the data is needed.
+* **What terminology**: The `relatedArtifact` elements identify the value sets and code systems the measures depend on, using the versions established by the manifest. These can be expanded using a terminology service (see [Terminology](#terminology)) to determine the specific codes the data must use in order to be recognized.
+* **What parameters**: The `parameter` elements identify the inputs (such as the measurement period) the measures expect.
+
+Implementers can use this information to:
+
+* Identify gaps between the data their systems capture and the data the program requires, before reporting begins
+* Configure data extraction and mapping, so that the required resources and elements are populated using the expected codes
+* Scope the data submitted for reporting, for example by restricting a FHIR Bulk Data export using `_type` and `_typeFilter` parameters derived from the data requirements, or by limiting the data included in a submission to a receiving system (see the [Data Exchange for Quality Measures](http://hl7.org/fhir/uv/deqm) implementation guide)
+* Detect the impact of a program update, by comparing the aggregate data requirements of the previous and updated versions of the program
+
+Note that data requirements describe the data that is referenced by the measure logic, across all the populations, stratifiers, supplemental data elements, and risk adjustment variables of the measures. They identify the data a receiving system needs to calculate the measures, not the subset of that data that is relevant for any particular patient, and a program may have additional reporting requirements (such as submission formats or attestation) that are not described by the data requirements of its measures.
+
 ### HQMF Mapping
 
 HQMF is a normative HL7 V3 based standard that defines a header for classification and management of the quality measure, a document body that carries the content of the quality measure as well as important metadata. It standardizes a measure’s structure, metadata, definitions, and logic, the HQMF ensures measure consistency and unambiguous interpretation. The approach of representing quality measures using FHIR and specifically the FHIR Clinical Reasoning Module have generated code systems and value sets based on the FHIR R4 specification.
