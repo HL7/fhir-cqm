@@ -48,7 +48,7 @@
       ]
     }
   ],
-  "description": "Quality Measure IG constraints on the Timing datatype used in reportingTiming.",
+  "description": "This profile constraints the timing datatype to elements that only support frequency.",
   "jurisdiction": [
     {
       "coding": [

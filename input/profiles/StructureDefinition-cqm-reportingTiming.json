@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "description": "Specifies the reporting period of a measure as a Timing datatype. This extension allows more complex reporting periods to be communicated as part of the measure specification.",
+  "description": "Specifies the reporting frequency of a measure as a Timing datatype. This extension is used to indicate how often the report should occur. Specifications may use other elements of the timing type (such as bounds) to indicate when reporting occurs, but this specification only places conformance expectations on the use of reporting frequency.",
   "jurisdiction": [
     {
       "coding": [
