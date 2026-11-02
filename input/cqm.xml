@@ -37,20 +37,20 @@
   <packageId value="hl7.fhir.uv.cqm"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
-  <dependsOn id="ext">
+  <!--dependsOn id="ext">
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
      <packageId value="hl7.fhir.uv.extensions.r4"/>
     <version value="5.3.0"/>
-  </dependsOn>
+  </dependsOn-->
   <dependsOn id="crmi">
     <uri value="http://hl7.org/fhir/uv/crmi/ImplementationGuide/hl7.fhir.uv.crmi"/>
      <packageId value="hl7.fhir.uv.crmi"/>
-     <version value="2.0.0"/>
+     <version value="3.0.0-ballot"/>
   </dependsOn>
   <dependsOn id="cql">
     <uri value="http://hl7.org/fhir/uv/cql/ImplementationGuide/hl7.fhir.uv.cql"/>
      <packageId value="hl7.fhir.uv.cql"/>
-     <version value="2.0.0"/>
+     <version value="3.0.0-ballot"/>
   </dependsOn>
   <definition>
    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
@@ -894,9 +894,13 @@
     </parameter>
     <parameter>
       <code value="pin-canonicals"/>
-      <value value="pin-all"/>
+      <value value="pin-none"/>
     </parameter>
     <!--parameter>
+      <code value="pin-canonicals"/>
+      <value value="pin-all"/>
+    </parameter>
+    <parameter>
       <code value="pin-manifest"/>
       <value value="manifest"/>
     </parameter-->
