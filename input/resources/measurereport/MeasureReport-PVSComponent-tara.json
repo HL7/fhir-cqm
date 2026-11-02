@@ -1,0 +1,86 @@
+{
+  "resourceType": "MeasureReport",
+  "id": "PVSComponent-tara",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testCaseDescription",
+      "valueMarkdown": "Pneumococcal Vaccination Status test case. Tara (50) is eligible for colorectal cancer screening but has none. She is not yet old enough for breast cancer screening (51-74), so her mammogram does not count. She has normal blood pressure and tobacco screening (never smoked)."
+    }
+  ],
+  "modifierExtension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-isTestCase",
+      "valueBoolean": true
+    }
+  ],
+  "status": "complete",
+  "type": "individual",
+  "measure": "http://hl7.org/fhir/uv/cqm/Measure/PVSComponent",
+  "subject": {
+    "reference": "http://example.org/fhir/Patient/tara"
+  },
+  "period": {
+    "start": "2024-01-01",
+    "end": "2024-12-31"
+  },
+  "group": [
+    {
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population"
+              }
+            ]
+          },
+          "count": 0
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator"
+              }
+            ]
+          },
+          "count": 0
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator-exclusion"
+              }
+            ]
+          },
+          "count": 0
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "numerator"
+              }
+            ]
+          },
+          "count": 0
+        }
+      ],
+      "measureScore": {
+        "_value": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+              "valueCode": "not-a-number"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

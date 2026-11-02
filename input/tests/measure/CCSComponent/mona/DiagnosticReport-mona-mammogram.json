@@ -1,0 +1,17 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "mona-mammogram",
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "24606-6"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/mona"
+  },
+  "effectiveDateTime": "2023-11-20T10:00:00Z"
+}

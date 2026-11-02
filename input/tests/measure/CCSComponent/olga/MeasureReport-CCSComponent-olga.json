@@ -1,0 +1,79 @@
+{
+  "resourceType": "MeasureReport",
+  "id": "CCSComponent-olga",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testCaseDescription",
+      "valueMarkdown": "Colorectal Cancer Screening test case. Olga (66) has a mammogram within 27 months and pneumococcal vaccination, but her most recent colonoscopy is more than 10 years old. Her blood pressure was not obtained for a medical reason at her first visit (a denominator exception) but was normal at her preventive visit. She has a limited life expectancy, which is a denominator exception for tobacco screening."
+    }
+  ],
+  "modifierExtension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-isTestCase",
+      "valueBoolean": true
+    }
+  ],
+  "status": "complete",
+  "type": "individual",
+  "measure": "http://hl7.org/fhir/uv/cqm/Measure/CCSComponent",
+  "subject": {
+    "reference": "Patient/olga"
+  },
+  "period": {
+    "start": "2024-01-01",
+    "end": "2024-12-31"
+  },
+  "group": [
+    {
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator-exclusion"
+              }
+            ]
+          },
+          "count": 0
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "numerator"
+              }
+            ]
+          },
+          "count": 0
+        }
+      ],
+      "measureScore": {
+        "value": 0.0
+      }
+    }
+  ]
+}

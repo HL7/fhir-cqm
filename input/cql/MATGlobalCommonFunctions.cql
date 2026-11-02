@@ -191,7 +191,7 @@ define function "Normalize Abatement"(condition Condition):
 	else null
 
 define function "Prevalence Period"(condition Condition):
-  Interval[start of "Normalize Interval"(condition.onset), end of "Normalize Abatement"(condition))
+  Interval[start of "Normalize Interval"(condition.onset), end of "Normalize Abatement"(condition)]
 
 define function "GetId"(uri String):
 	Last(Split(uri, '/'))

@@ -1,0 +1,79 @@
+{
+  "resourceType": "MeasureReport",
+  "id": "BCSComponent-iris",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testCaseDescription",
+      "valueMarkdown": "Breast Cancer Screening test case. Iris (60) receives every preventive service she is eligible for: a mammogram, a colonoscopy, normal blood pressure at both visits, and tobacco screening (never smoked). She is not old enough for pneumococcal vaccination."
+    }
+  ],
+  "modifierExtension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-isTestCase",
+      "valueBoolean": true
+    }
+  ],
+  "status": "complete",
+  "type": "individual",
+  "measure": "http://hl7.org/fhir/uv/cqm/Measure/BCSComponent",
+  "subject": {
+    "reference": "http://example.org/fhir/Patient/iris"
+  },
+  "period": {
+    "start": "2024-01-01",
+    "end": "2024-12-31"
+  },
+  "group": [
+    {
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator-exclusion"
+              }
+            ]
+          },
+          "count": 0
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "numerator"
+              }
+            ]
+          },
+          "count": 1
+        }
+      ],
+      "measureScore": {
+        "value": 1.0
+      }
+    }
+  ]
+}

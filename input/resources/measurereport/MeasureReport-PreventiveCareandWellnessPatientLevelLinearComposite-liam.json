@@ -1,0 +1,79 @@
+{
+  "resourceType": "MeasureReport",
+  "id": "PreventiveCareandWellnessPatientLevelLinearComposite-liam",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testCaseDescription",
+      "valueMarkdown": "Preventive Care and Wellness (Patient-level linear) test case. Liam (45) has two visits: a normal blood pressure at the first, and a prehypertensive reading without follow-up at the second, so one of his two encounters meets the blood pressure screening numerator. He is not screened for tobacco use. Component status: BCS: n/a; HBP: met; CCS: n/a; PVS: n/a; TSC group 1: not met; TSC group 2: n/a. Expected measure observation 1 / 2 = 0.5."
+    }
+  ],
+  "modifierExtension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-isTestCase",
+      "valueBoolean": true
+    }
+  ],
+  "status": "complete",
+  "type": "individual",
+  "measure": "http://hl7.org/fhir/uv/cqm/Measure/PreventiveCareandWellnessPatientLevelLinearComposite",
+  "subject": {
+    "reference": "http://example.org/fhir/Patient/liam"
+  },
+  "period": {
+    "start": "2024-01-01",
+    "end": "2024-12-31"
+  },
+  "group": [
+    {
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "measure-population"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "measure-population-exclusion"
+              }
+            ]
+          },
+          "count": 0
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "measure-observation"
+              }
+            ]
+          },
+          "count": 1
+        }
+      ],
+      "measureScore": {
+        "value": 0.5
+      }
+    }
+  ]
+}

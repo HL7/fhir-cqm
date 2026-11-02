@@ -1,0 +1,17 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "tara-mammogram",
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "24606-6"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/tara"
+  },
+  "effectiveDateTime": "2024-02-26T10:00:00Z"
+}

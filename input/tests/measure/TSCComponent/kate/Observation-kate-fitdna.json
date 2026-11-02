@@ -1,0 +1,30 @@
+{
+  "resourceType": "Observation",
+  "id": "kate-fitdna",
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "77353-1"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/kate"
+  },
+  "effectiveDateTime": "2022-05-10T14:10:00Z",
+  "performer": [
+    {
+      "reference": "Practitioner/preventive-care-practitioner"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "260385009"
+      }
+    ]
+  }
+}

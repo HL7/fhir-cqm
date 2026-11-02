@@ -1,0 +1,17 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "rosa-mammogram",
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "24606-6"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/rosa"
+  },
+  "effectiveDateTime": "2024-07-15T10:00:00Z"
+}

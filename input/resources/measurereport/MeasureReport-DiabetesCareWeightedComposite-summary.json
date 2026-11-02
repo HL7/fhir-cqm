@@ -1,0 +1,41 @@
+{
+  "resourceType": "MeasureReport",
+  "id": "DiabetesCareWeightedComposite-summary",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testCaseDescription",
+      "valueMarkdown": "Summary test case for the Diabetes Care Weighted Composite over the eight diabetes care test patients, calculated from the component summary test cases ([HbA1c poor control](MeasureReport-DHCComponent-summary.html), [emergency department visits](MeasureReport-DEVComponent-summary.html), and [days to follow-up](MeasureReport-DFUComponent-summary.html)).\n\n| Component | Component Score | Score Range | Normalized Score | Adjusted Score (decrease) | Weight |\n| --- | --- | --- | --- | --- | --- |\n| HbA1c Poor Control | 0.4 | 0 to 1 (default) | 0.4 | 0.6 | 0.4 |\n| ED Visits | 50 per 1,000 patient-months | 0 to 100 per 1,000 patient-months | 0.5 | 0.5 | 0.3 |\n| Days to Follow-up | 9 days (median) | 0 to 30 days | 0.3 | 0.7 | 0.3 |\n\nExpected composite score ((0.4 x 0.6) + (0.3 x 0.5) + (0.3 x 0.7)) / (0.4 + 0.3 + 0.3) = 0.6."
+    }
+  ],
+  "modifierExtension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-isTestCase",
+      "valueBoolean": true
+    }
+  ],
+  "status": "complete",
+  "type": "summary",
+  "measure": "http://hl7.org/fhir/uv/cqm/Measure/DiabetesCareWeightedComposite",
+  "period": {
+    "start": "2024-01-01",
+    "end": "2024-12-31"
+  },
+  "group": [
+    {
+      "measureScore": {
+        "value": 0.6
+      }
+    }
+  ],
+  "evaluatedResource": [
+    {
+      "reference": "MeasureReport/DHCComponent-summary"
+    },
+    {
+      "reference": "MeasureReport/DEVComponent-summary"
+    },
+    {
+      "reference": "MeasureReport/DFUComponent-summary"
+    }
+  ]
+}

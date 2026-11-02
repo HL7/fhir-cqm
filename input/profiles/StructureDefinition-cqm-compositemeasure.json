@@ -135,6 +135,22 @@
         "mustSupport": true
       },
       {
+        "id": "Measure.relatedArtifact:component.extension:scoreRange",
+        "path": "Measure.relatedArtifact.extension",
+        "sliceName": "scoreRange",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoreRange"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "Measure.relatedArtifact:component.type",
         "path": "Measure.relatedArtifact.type",
         "short": "Component measure",
@@ -324,6 +340,22 @@
             "code": "Extension",
             "profile": [
               "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.group.extension:component.extension:scoreRange",
+        "path": "Measure.group.extension.extension",
+        "sliceName": "scoreRange",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoreRange"
             ]
           }
         ],

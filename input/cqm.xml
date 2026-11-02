@@ -210,6 +210,38 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Measure/DHCComponent"/>
+      </reference>
+      <name value="Diabetes: Hemoglobin A1c (HbA1c) Poor Control (> 9%)"/>
+      <description value="This is an example only."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Measure/DEVComponent"/>
+      </reference>
+      <name value="Diabetes: Emergency Department Visits per 1,000 Patient-Months"/>
+      <description value="This is an example only."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Measure/DFUComponent"/>
+      </reference>
+      <name value="Diabetes: Days to Follow-up After Hospital Discharge"/>
+      <description value="This is an example only."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Measure/DiabetesCareWeightedComposite"/>
+      </reference>
+      <name value="Diabetes Care Weighted Composite"/>
+      <description value="This artifact is an example of a weighted composite measure that combines proportion, ratio, and continuous variable component measures, using score ranges to normalize the component scores to a common scale before they are weighted."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Measure/measure-cqm-publishable-example"/>
       </reference>
       <name value="MeasureCQMPublishableExample"/>
@@ -686,6 +718,1150 @@
       </reference>
       <name value="MeasureReport IGRatio Summary"/>
       <description value="Summary test case for ratio measure IGRatio over the nine shared example patients. Expected initial-population 1 (denominator branch) 7, initial-population 2 (numerator branch) 5, denominator 6, denominator-exclusion 1, numerator 5, numerator-exclusion 1; ratio 0.8 = (5 − 1) / (6 − 1), counted independently."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/diabetes-care-test-patients"/>
+      </reference>
+      <name value="Diabetes Care Test Patients"/>
+      <description value="Bundle of eight (8) test patients and associated data for the Diabetes Care Weighted Composite and its HbA1c poor control (proportion), emergency department visit rate (ratio), and days to follow-up after discharge (continuous variable) components."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DHCComponent-alma"/>
+      </reference>
+      <name value="MeasureReport DHC Alma"/>
+      <description value="Diabetes: Hemoglobin A1c (HbA1c) Poor Control (&gt; 9%) test case. Alma (50) has diabetes and an office visit. Her most recent HbA1c (7.2%) is controlled, although an earlier result (9.8%) was not. She has no emergency department visits and no inpatient stays."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DHCComponent-boris"/>
+      </reference>
+      <name value="MeasureReport DHC Boris"/>
+      <description value="Diabetes: Hemoglobin A1c (HbA1c) Poor Control (&gt; 9%) test case. Boris (62) has diabetes. His most recent HbA1c (10.1%) indicates poor control, although an earlier result (7.5%) was controlled. He has two emergency department visits, and an inpatient discharge on March 10 followed by an office visit 7 days later."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DHCComponent-cleo"/>
+      </reference>
+      <name value="MeasureReport DHC Cleo"/>
+      <description value="Diabetes: Hemoglobin A1c (HbA1c) Poor Control (&gt; 9%) test case. Cleo (45) has diabetes but no HbA1c test during the measurement period, so she meets the numerator of the (inverse) HbA1c poor control measure. She has one emergency department visit, and an inpatient discharge on June 1 followed by an office visit 11 days later."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DHCComponent-dmitri"/>
+      </reference>
+      <name value="MeasureReport DHC Dmitri"/>
+      <description value="Diabetes: Hemoglobin A1c (HbA1c) Poor Control (&gt; 9%) test case. Dmitri (70) has diabetes and a controlled HbA1c (8.1%). He has no emergency department visits. He has an inpatient discharge on September 5, but his first office visit afterwards is 45 days later, so the discharge is in the initial population but not the measure population of the follow-up measure."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DHCComponent-esme"/>
+      </reference>
+      <name value="MeasureReport DHC Esme"/>
+      <description value="Diabetes: Hemoglobin A1c (HbA1c) Poor Control (&gt; 9%) test case. Esme (58) has diabetes and receives hospice care during the measurement period, so she meets the denominator exclusion of the HbA1c and emergency department visit measures, and her discharge (followed by an office visit 5 days later) meets the measure population exclusion of the follow-up measure."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DHCComponent-felix"/>
+      </reference>
+      <name value="MeasureReport DHC Felix"/>
+      <description value="Diabetes: Hemoglobin A1c (HbA1c) Poor Control (&gt; 9%) test case. Felix (80) has diabetes, a poorly controlled HbA1c (11.0%), an emergency department visit, and a discharge with timely follow-up, but is older than 75 and so is not in the initial population of any component."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DHCComponent-greta"/>
+      </reference>
+      <name value="MeasureReport DHC Greta"/>
+      <description value="Diabetes: Hemoglobin A1c (HbA1c) Poor Control (&gt; 9%) test case. Greta (40) has an elevated HbA1c (10.0%), an emergency department visit, and a discharge with timely follow-up, but does not have a diagnosis of diabetes and so is not in the initial population of any component."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DHCComponent-hugo"/>
+      </reference>
+      <name value="MeasureReport DHC Hugo"/>
+      <description value="Diabetes: Hemoglobin A1c (HbA1c) Poor Control (&gt; 9%) test case. Hugo (33) has diabetes and a controlled HbA1c (6.5%), and no emergency department visits. He has two inpatient discharges, followed by office visits 3 and 12 days later, so he contributes two observations to the follow-up measure."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DHCComponent-summary"/>
+      </reference>
+      <name value="MeasureReport DHC Summary"/>
+      <description value="Summary test case for the HbA1c poor control component over the eight diabetes care test patients. Expected initial-population 6, denominator 6, denominator-exclusion 1, numerator 2; score 0.4 = 2 / (6 - 1)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DEVComponent-alma"/>
+      </reference>
+      <name value="MeasureReport DEV Alma"/>
+      <description value="Diabetes: Emergency Department Visits per 1,000 Patient-Months test case. Alma (50) has diabetes and an office visit. Her most recent HbA1c (7.2%) is controlled, although an earlier result (9.8%) was not. She has no emergency department visits and no inpatient stays. Expected denominator observation 12 patient-months."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DEVComponent-boris"/>
+      </reference>
+      <name value="MeasureReport DEV Boris"/>
+      <description value="Diabetes: Emergency Department Visits per 1,000 Patient-Months test case. Boris (62) has diabetes. His most recent HbA1c (10.1%) indicates poor control, although an earlier result (7.5%) was controlled. He has two emergency department visits, and an inpatient discharge on March 10 followed by an office visit 7 days later. Expected denominator observation 12 patient-months and numerator observation 2 emergency department visits."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DEVComponent-cleo"/>
+      </reference>
+      <name value="MeasureReport DEV Cleo"/>
+      <description value="Diabetes: Emergency Department Visits per 1,000 Patient-Months test case. Cleo (45) has diabetes but no HbA1c test during the measurement period, so she meets the numerator of the (inverse) HbA1c poor control measure. She has one emergency department visit, and an inpatient discharge on June 1 followed by an office visit 11 days later. Expected denominator observation 12 patient-months and numerator observation 1 emergency department visit."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DEVComponent-dmitri"/>
+      </reference>
+      <name value="MeasureReport DEV Dmitri"/>
+      <description value="Diabetes: Emergency Department Visits per 1,000 Patient-Months test case. Dmitri (70) has diabetes and a controlled HbA1c (8.1%). He has no emergency department visits. He has an inpatient discharge on September 5, but his first office visit afterwards is 45 days later, so the discharge is in the initial population but not the measure population of the follow-up measure. Expected denominator observation 12 patient-months."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DEVComponent-esme"/>
+      </reference>
+      <name value="MeasureReport DEV Esme"/>
+      <description value="Diabetes: Emergency Department Visits per 1,000 Patient-Months test case. Esme (58) has diabetes and receives hospice care during the measurement period, so she meets the denominator exclusion of the HbA1c and emergency department visit measures, and her discharge (followed by an office visit 5 days later) meets the measure population exclusion of the follow-up measure."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DEVComponent-felix"/>
+      </reference>
+      <name value="MeasureReport DEV Felix"/>
+      <description value="Diabetes: Emergency Department Visits per 1,000 Patient-Months test case. Felix (80) has diabetes, a poorly controlled HbA1c (11.0%), an emergency department visit, and a discharge with timely follow-up, but is older than 75 and so is not in the initial population of any component."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DEVComponent-greta"/>
+      </reference>
+      <name value="MeasureReport DEV Greta"/>
+      <description value="Diabetes: Emergency Department Visits per 1,000 Patient-Months test case. Greta (40) has an elevated HbA1c (10.0%), an emergency department visit, and a discharge with timely follow-up, but does not have a diagnosis of diabetes and so is not in the initial population of any component."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DEVComponent-hugo"/>
+      </reference>
+      <name value="MeasureReport DEV Hugo"/>
+      <description value="Diabetes: Emergency Department Visits per 1,000 Patient-Months test case. Hugo (33) has diabetes and a controlled HbA1c (6.5%), and no emergency department visits. He has two inpatient discharges, followed by office visits 3 and 12 days later, so he contributes two observations to the follow-up measure. Expected denominator observation 12 patient-months."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DEVComponent-summary"/>
+      </reference>
+      <name value="MeasureReport DEV Summary"/>
+      <description value="Summary test case for the emergency department visit rate component over the eight diabetes care test patients. Expected initial-population 6, denominator 6, denominator-exclusion 1, numerator 2; numerator observations [2, 1] sum to 3 visits and denominator observations sum to 60 patient-months (5 patients x 12 months), for a rate of 3 / 60 = 0.05 visits per patient-month = 50 per 1,000 patient-months."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DFUComponent-alma"/>
+      </reference>
+      <name value="MeasureReport DFU Alma"/>
+      <description value="Diabetes: Days to Follow-up After Hospital Discharge test case. Alma (50) has diabetes and an office visit. Her most recent HbA1c (7.2%) is controlled, although an earlier result (9.8%) was not. She has no emergency department visits and no inpatient stays."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DFUComponent-boris"/>
+      </reference>
+      <name value="MeasureReport DFU Boris"/>
+      <description value="Diabetes: Days to Follow-up After Hospital Discharge test case. Boris (62) has diabetes. His most recent HbA1c (10.1%) indicates poor control, although an earlier result (7.5%) was controlled. He has two emergency department visits, and an inpatient discharge on March 10 followed by an office visit 7 days later. Expected measure observation of 7 days."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DFUComponent-cleo"/>
+      </reference>
+      <name value="MeasureReport DFU Cleo"/>
+      <description value="Diabetes: Days to Follow-up After Hospital Discharge test case. Cleo (45) has diabetes but no HbA1c test during the measurement period, so she meets the numerator of the (inverse) HbA1c poor control measure. She has one emergency department visit, and an inpatient discharge on June 1 followed by an office visit 11 days later. Expected measure observation of 11 days."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DFUComponent-dmitri"/>
+      </reference>
+      <name value="MeasureReport DFU Dmitri"/>
+      <description value="Diabetes: Days to Follow-up After Hospital Discharge test case. Dmitri (70) has diabetes and a controlled HbA1c (8.1%). He has no emergency department visits. He has an inpatient discharge on September 5, but his first office visit afterwards is 45 days later, so the discharge is in the initial population but not the measure population of the follow-up measure."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DFUComponent-esme"/>
+      </reference>
+      <name value="MeasureReport DFU Esme"/>
+      <description value="Diabetes: Days to Follow-up After Hospital Discharge test case. Esme (58) has diabetes and receives hospice care during the measurement period, so she meets the denominator exclusion of the HbA1c and emergency department visit measures, and her discharge (followed by an office visit 5 days later) meets the measure population exclusion of the follow-up measure."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DFUComponent-felix"/>
+      </reference>
+      <name value="MeasureReport DFU Felix"/>
+      <description value="Diabetes: Days to Follow-up After Hospital Discharge test case. Felix (80) has diabetes, a poorly controlled HbA1c (11.0%), an emergency department visit, and a discharge with timely follow-up, but is older than 75 and so is not in the initial population of any component."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DFUComponent-greta"/>
+      </reference>
+      <name value="MeasureReport DFU Greta"/>
+      <description value="Diabetes: Days to Follow-up After Hospital Discharge test case. Greta (40) has an elevated HbA1c (10.0%), an emergency department visit, and a discharge with timely follow-up, but does not have a diagnosis of diabetes and so is not in the initial population of any component."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DFUComponent-hugo"/>
+      </reference>
+      <name value="MeasureReport DFU Hugo"/>
+      <description value="Diabetes: Days to Follow-up After Hospital Discharge test case. Hugo (33) has diabetes and a controlled HbA1c (6.5%), and no emergency department visits. He has two inpatient discharges, followed by office visits 3 and 12 days later, so he contributes two observations to the follow-up measure. Expected measure observations of 3, 12 days."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DFUComponent-summary"/>
+      </reference>
+      <name value="MeasureReport DFU Summary"/>
+      <description value="Summary test case for the days to follow-up component over the eight diabetes care test patients. Expected initial-population 6, measure-population 5, measure-population-exclusion 1, measure-observation 4 (counts are inpatient discharges); observations [3, 7, 11, 12] aggregated by median = 9 days."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/DiabetesCareWeightedComposite-summary"/>
+      </reference>
+      <name value="MeasureReport Diabetes Care Weighted Composite Summary"/>
+      <description value="Summary test case for the Diabetes Care Weighted Composite, calculated from the component summary test cases. Component scores 0.4 (HbA1c poor control), 50 per 1,000 patient-months (ED visits), and 9 days (median days to follow-up) normalize to 0.4, 0.5, and 0.3, adjust (decrease) to 0.6, 0.5, and 0.7, and with weights 0.4, 0.3, and 0.3 give an expected composite score of 0.6."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/preventive-care-test-patients"/>
+      </reference>
+      <name value="Preventive Care and Wellness Test Patients"/>
+      <description value="Bundle of thirteen (13) test patients and associated data for the Preventive Care and Wellness composite measures and their breast cancer screening, colorectal cancer screening, high blood pressure screening, pneumococcal vaccination, and tobacco use screening and cessation components."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/BCSComponent-iris"/>
+      </reference>
+      <name value="MeasureReport BCS Iris"/>
+      <description value="Breast Cancer Screening test case. Iris (60) receives every preventive service she is eligible for: a mammogram, a colonoscopy, normal blood pressure at both visits, and tobacco screening (never smoked). She is not old enough for pneumococcal vaccination."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/BCSComponent-jack"/>
+      </reference>
+      <name value="MeasureReport BCS Jack"/>
+      <description value="Breast Cancer Screening test case. Jack (68) has a fecal occult blood test and pneumococcal vaccination, and is a tobacco user who receives cessation counseling, but his prehypertensive blood pressure readings have no documented follow-up at either visit."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/BCSComponent-kate"/>
+      </reference>
+      <name value="MeasureReport BCS Kate"/>
+      <description value="Breast Cancer Screening test case. Kate (55) has a FIT-DNA test within 3 years and normal blood pressure, but no mammogram, and is a tobacco user who does not receive cessation intervention."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/BCSComponent-liam"/>
+      </reference>
+      <name value="MeasureReport BCS Liam"/>
+      <description value="Breast Cancer Screening test case. Liam (45) has two visits: a normal blood pressure at the first, and a prehypertensive reading without follow-up at the second, so one of his two encounters meets the blood pressure screening numerator. He is not screened for tobacco use."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/BCSComponent-mona"/>
+      </reference>
+      <name value="MeasureReport BCS Mona"/>
+      <description value="Breast Cancer Screening test case. Mona (70) receives hospice care, so she meets the denominator exclusion of the breast cancer, colorectal cancer, and pneumococcal vaccination components (even though she has the services). Blood pressure and tobacco screening have no hospice exclusion, and she meets both."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/BCSComponent-nate"/>
+      </reference>
+      <name value="MeasureReport BCS Nate"/>
+      <description value="Breast Cancer Screening test case. Nate (72) has an existing diagnosis of hypertension, which excludes his encounters from the blood pressure screening component, and colon cancer, which excludes him from colorectal cancer screening. He has not received pneumococcal vaccination. These ongoing conditions are not limited life expectancy conditions, so they do not make him a tobacco screening denominator exception."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/BCSComponent-olga"/>
+      </reference>
+      <name value="MeasureReport BCS Olga"/>
+      <description value="Breast Cancer Screening test case. Olga (66) has a mammogram within 27 months and pneumococcal vaccination, but her most recent colonoscopy is more than 10 years old. Her blood pressure was not obtained for a medical reason at her first visit (a denominator exception) but was normal at her preventive visit. She has a limited life expectancy, which is a denominator exception for tobacco screening."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/BCSComponent-paul"/>
+      </reference>
+      <name value="MeasureReport BCS Paul"/>
+      <description value="Breast Cancer Screening test case. Paul (30) has a single preventive visit, with a first hypertensive blood pressure reading and no documented follow-up. He is a tobacco user who receives cessation counseling."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/BCSComponent-quinn"/>
+      </reference>
+      <name value="MeasureReport BCS Quinn"/>
+      <description value="Breast Cancer Screening test case. Quinn (52) receives every preventive service she is eligible for: a mammogram, a flexible sigmoidoscopy within 5 years, normal blood pressure at both visits, and tobacco screening (never smoked)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/BCSComponent-rosa"/>
+      </reference>
+      <name value="MeasureReport BCS Rosa"/>
+      <description value="Breast Cancer Screening test case. Rosa (80) is too old for breast and colorectal cancer screening, and has only one office visit, so she is not in the tobacco screening initial population. She has pneumococcal vaccination and a normal blood pressure."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/BCSComponent-sam"/>
+      </reference>
+      <name value="MeasureReport BCS Sam"/>
+      <description value="Breast Cancer Screening test case. Sam (17) is younger than 18 at the start of the measurement period, so he is not in the initial population of any component."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/BCSComponent-summary"/>
+      </reference>
+      <name value="MeasureReport BCS Summary"/>
+      <description value="Summary test case for the Breast Cancer Screening component over the thirteen preventive care and wellness test patients. expected initial-population 6, denominator 6, denominator-exclusion 2, numerator 3; score 3 / (6 - 2) = 0.75."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/BCSComponent-tara"/>
+      </reference>
+      <name value="MeasureReport BCS Tara"/>
+      <description value="Breast Cancer Screening test case. Tara (50) is eligible for colorectal cancer screening but has none. She is not yet old enough for breast cancer screening (51-74), so her mammogram does not count. She has normal blood pressure and tobacco screening (never smoked)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/BCSComponent-uma"/>
+      </reference>
+      <name value="MeasureReport BCS Uma"/>
+      <description value="Breast Cancer Screening test case. Uma (68) receives hospice care and has an existing diagnosis of hypertension, so she meets the denominator exclusion of every component in which she is in the denominator. She has only one office visit, so she is not in the tobacco screening initial population."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/CCSComponent-iris"/>
+      </reference>
+      <name value="MeasureReport CCS Iris"/>
+      <description value="Colorectal Cancer Screening test case. Iris (60) receives every preventive service she is eligible for: a mammogram, a colonoscopy, normal blood pressure at both visits, and tobacco screening (never smoked). She is not old enough for pneumococcal vaccination."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/CCSComponent-jack"/>
+      </reference>
+      <name value="MeasureReport CCS Jack"/>
+      <description value="Colorectal Cancer Screening test case. Jack (68) has a fecal occult blood test and pneumococcal vaccination, and is a tobacco user who receives cessation counseling, but his prehypertensive blood pressure readings have no documented follow-up at either visit."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/CCSComponent-kate"/>
+      </reference>
+      <name value="MeasureReport CCS Kate"/>
+      <description value="Colorectal Cancer Screening test case. Kate (55) has a FIT-DNA test within 3 years and normal blood pressure, but no mammogram, and is a tobacco user who does not receive cessation intervention."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/CCSComponent-liam"/>
+      </reference>
+      <name value="MeasureReport CCS Liam"/>
+      <description value="Colorectal Cancer Screening test case. Liam (45) has two visits: a normal blood pressure at the first, and a prehypertensive reading without follow-up at the second, so one of his two encounters meets the blood pressure screening numerator. He is not screened for tobacco use."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/CCSComponent-mona"/>
+      </reference>
+      <name value="MeasureReport CCS Mona"/>
+      <description value="Colorectal Cancer Screening test case. Mona (70) receives hospice care, so she meets the denominator exclusion of the breast cancer, colorectal cancer, and pneumococcal vaccination components (even though she has the services). Blood pressure and tobacco screening have no hospice exclusion, and she meets both."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/CCSComponent-nate"/>
+      </reference>
+      <name value="MeasureReport CCS Nate"/>
+      <description value="Colorectal Cancer Screening test case. Nate (72) has an existing diagnosis of hypertension, which excludes his encounters from the blood pressure screening component, and colon cancer, which excludes him from colorectal cancer screening. He has not received pneumococcal vaccination. These ongoing conditions are not limited life expectancy conditions, so they do not make him a tobacco screening denominator exception."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/CCSComponent-olga"/>
+      </reference>
+      <name value="MeasureReport CCS Olga"/>
+      <description value="Colorectal Cancer Screening test case. Olga (66) has a mammogram within 27 months and pneumococcal vaccination, but her most recent colonoscopy is more than 10 years old. Her blood pressure was not obtained for a medical reason at her first visit (a denominator exception) but was normal at her preventive visit. She has a limited life expectancy, which is a denominator exception for tobacco screening."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/CCSComponent-paul"/>
+      </reference>
+      <name value="MeasureReport CCS Paul"/>
+      <description value="Colorectal Cancer Screening test case. Paul (30) has a single preventive visit, with a first hypertensive blood pressure reading and no documented follow-up. He is a tobacco user who receives cessation counseling."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/CCSComponent-quinn"/>
+      </reference>
+      <name value="MeasureReport CCS Quinn"/>
+      <description value="Colorectal Cancer Screening test case. Quinn (52) receives every preventive service she is eligible for: a mammogram, a flexible sigmoidoscopy within 5 years, normal blood pressure at both visits, and tobacco screening (never smoked)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/CCSComponent-rosa"/>
+      </reference>
+      <name value="MeasureReport CCS Rosa"/>
+      <description value="Colorectal Cancer Screening test case. Rosa (80) is too old for breast and colorectal cancer screening, and has only one office visit, so she is not in the tobacco screening initial population. She has pneumococcal vaccination and a normal blood pressure."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/CCSComponent-sam"/>
+      </reference>
+      <name value="MeasureReport CCS Sam"/>
+      <description value="Colorectal Cancer Screening test case. Sam (17) is younger than 18 at the start of the measurement period, so he is not in the initial population of any component."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/CCSComponent-summary"/>
+      </reference>
+      <name value="MeasureReport CCS Summary"/>
+      <description value="Summary test case for the Colorectal Cancer Screening component over the thirteen preventive care and wellness test patients. expected initial-population 9, denominator 9, denominator-exclusion 3, numerator 4; score 4 / (9 - 3) = 0.6667."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/CCSComponent-tara"/>
+      </reference>
+      <name value="MeasureReport CCS Tara"/>
+      <description value="Colorectal Cancer Screening test case. Tara (50) is eligible for colorectal cancer screening but has none. She is not yet old enough for breast cancer screening (51-74), so her mammogram does not count. She has normal blood pressure and tobacco screening (never smoked)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/CCSComponent-uma"/>
+      </reference>
+      <name value="MeasureReport CCS Uma"/>
+      <description value="Colorectal Cancer Screening test case. Uma (68) receives hospice care and has an existing diagnosis of hypertension, so she meets the denominator exclusion of every component in which she is in the denominator. She has only one office visit, so she is not in the tobacco screening initial population."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/HBPComponent-iris"/>
+      </reference>
+      <name value="MeasureReport HBP Iris"/>
+      <description value="High Blood Pressure Screening test case. Iris (60) receives every preventive service she is eligible for: a mammogram, a colonoscopy, normal blood pressure at both visits, and tobacco screening (never smoked). She is not old enough for pneumococcal vaccination. Counts are encounters."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/HBPComponent-jack"/>
+      </reference>
+      <name value="MeasureReport HBP Jack"/>
+      <description value="High Blood Pressure Screening test case. Jack (68) has a fecal occult blood test and pneumococcal vaccination, and is a tobacco user who receives cessation counseling, but his prehypertensive blood pressure readings have no documented follow-up at either visit. Counts are encounters."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/HBPComponent-kate"/>
+      </reference>
+      <name value="MeasureReport HBP Kate"/>
+      <description value="High Blood Pressure Screening test case. Kate (55) has a FIT-DNA test within 3 years and normal blood pressure, but no mammogram, and is a tobacco user who does not receive cessation intervention. Counts are encounters."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/HBPComponent-liam"/>
+      </reference>
+      <name value="MeasureReport HBP Liam"/>
+      <description value="High Blood Pressure Screening test case. Liam (45) has two visits: a normal blood pressure at the first, and a prehypertensive reading without follow-up at the second, so one of his two encounters meets the blood pressure screening numerator. He is not screened for tobacco use. Counts are encounters."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/HBPComponent-mona"/>
+      </reference>
+      <name value="MeasureReport HBP Mona"/>
+      <description value="High Blood Pressure Screening test case. Mona (70) receives hospice care, so she meets the denominator exclusion of the breast cancer, colorectal cancer, and pneumococcal vaccination components (even though she has the services). Blood pressure and tobacco screening have no hospice exclusion, and she meets both. Counts are encounters."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/HBPComponent-nate"/>
+      </reference>
+      <name value="MeasureReport HBP Nate"/>
+      <description value="High Blood Pressure Screening test case. Nate (72) has an existing diagnosis of hypertension, which excludes his encounters from the blood pressure screening component, and colon cancer, which excludes him from colorectal cancer screening. He has not received pneumococcal vaccination. These ongoing conditions are not limited life expectancy conditions, so they do not make him a tobacco screening denominator exception. Counts are encounters."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/HBPComponent-olga"/>
+      </reference>
+      <name value="MeasureReport HBP Olga"/>
+      <description value="High Blood Pressure Screening test case. Olga (66) has a mammogram within 27 months and pneumococcal vaccination, but her most recent colonoscopy is more than 10 years old. Her blood pressure was not obtained for a medical reason at her first visit (a denominator exception) but was normal at her preventive visit. She has a limited life expectancy, which is a denominator exception for tobacco screening. Counts are encounters."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/HBPComponent-paul"/>
+      </reference>
+      <name value="MeasureReport HBP Paul"/>
+      <description value="High Blood Pressure Screening test case. Paul (30) has a single preventive visit, with a first hypertensive blood pressure reading and no documented follow-up. He is a tobacco user who receives cessation counseling. Counts are encounters."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/HBPComponent-quinn"/>
+      </reference>
+      <name value="MeasureReport HBP Quinn"/>
+      <description value="High Blood Pressure Screening test case. Quinn (52) receives every preventive service she is eligible for: a mammogram, a flexible sigmoidoscopy within 5 years, normal blood pressure at both visits, and tobacco screening (never smoked). Counts are encounters."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/HBPComponent-rosa"/>
+      </reference>
+      <name value="MeasureReport HBP Rosa"/>
+      <description value="High Blood Pressure Screening test case. Rosa (80) is too old for breast and colorectal cancer screening, and has only one office visit, so she is not in the tobacco screening initial population. She has pneumococcal vaccination and a normal blood pressure. Counts are encounters."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/HBPComponent-sam"/>
+      </reference>
+      <name value="MeasureReport HBP Sam"/>
+      <description value="High Blood Pressure Screening test case. Sam (17) is younger than 18 at the start of the measurement period, so he is not in the initial population of any component. Counts are encounters."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/HBPComponent-summary"/>
+      </reference>
+      <name value="MeasureReport HBP Summary"/>
+      <description value="Summary test case for the High Blood Pressure Screening component over the thirteen preventive care and wellness test patients. expected initial-population 21, denominator 21, denominator-exclusion 3, denominator-exception 1, numerator 13; score 13 / (21 - 4) = 0.7647. Counts are encounters."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/HBPComponent-tara"/>
+      </reference>
+      <name value="MeasureReport HBP Tara"/>
+      <description value="High Blood Pressure Screening test case. Tara (50) is eligible for colorectal cancer screening but has none. She is not yet old enough for breast cancer screening (51-74), so her mammogram does not count. She has normal blood pressure and tobacco screening (never smoked). Counts are encounters."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/HBPComponent-uma"/>
+      </reference>
+      <name value="MeasureReport HBP Uma"/>
+      <description value="High Blood Pressure Screening test case. Uma (68) receives hospice care and has an existing diagnosis of hypertension, so she meets the denominator exclusion of every component in which she is in the denominator. She has only one office visit, so she is not in the tobacco screening initial population. Counts are encounters."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PVSComponent-iris"/>
+      </reference>
+      <name value="MeasureReport PVS Iris"/>
+      <description value="Pneumococcal Vaccination Status test case. Iris (60) receives every preventive service she is eligible for: a mammogram, a colonoscopy, normal blood pressure at both visits, and tobacco screening (never smoked). She is not old enough for pneumococcal vaccination."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PVSComponent-jack"/>
+      </reference>
+      <name value="MeasureReport PVS Jack"/>
+      <description value="Pneumococcal Vaccination Status test case. Jack (68) has a fecal occult blood test and pneumococcal vaccination, and is a tobacco user who receives cessation counseling, but his prehypertensive blood pressure readings have no documented follow-up at either visit."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PVSComponent-kate"/>
+      </reference>
+      <name value="MeasureReport PVS Kate"/>
+      <description value="Pneumococcal Vaccination Status test case. Kate (55) has a FIT-DNA test within 3 years and normal blood pressure, but no mammogram, and is a tobacco user who does not receive cessation intervention."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PVSComponent-liam"/>
+      </reference>
+      <name value="MeasureReport PVS Liam"/>
+      <description value="Pneumococcal Vaccination Status test case. Liam (45) has two visits: a normal blood pressure at the first, and a prehypertensive reading without follow-up at the second, so one of his two encounters meets the blood pressure screening numerator. He is not screened for tobacco use."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PVSComponent-mona"/>
+      </reference>
+      <name value="MeasureReport PVS Mona"/>
+      <description value="Pneumococcal Vaccination Status test case. Mona (70) receives hospice care, so she meets the denominator exclusion of the breast cancer, colorectal cancer, and pneumococcal vaccination components (even though she has the services). Blood pressure and tobacco screening have no hospice exclusion, and she meets both."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PVSComponent-nate"/>
+      </reference>
+      <name value="MeasureReport PVS Nate"/>
+      <description value="Pneumococcal Vaccination Status test case. Nate (72) has an existing diagnosis of hypertension, which excludes his encounters from the blood pressure screening component, and colon cancer, which excludes him from colorectal cancer screening. He has not received pneumococcal vaccination. These ongoing conditions are not limited life expectancy conditions, so they do not make him a tobacco screening denominator exception."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PVSComponent-olga"/>
+      </reference>
+      <name value="MeasureReport PVS Olga"/>
+      <description value="Pneumococcal Vaccination Status test case. Olga (66) has a mammogram within 27 months and pneumococcal vaccination, but her most recent colonoscopy is more than 10 years old. Her blood pressure was not obtained for a medical reason at her first visit (a denominator exception) but was normal at her preventive visit. She has a limited life expectancy, which is a denominator exception for tobacco screening."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PVSComponent-paul"/>
+      </reference>
+      <name value="MeasureReport PVS Paul"/>
+      <description value="Pneumococcal Vaccination Status test case. Paul (30) has a single preventive visit, with a first hypertensive blood pressure reading and no documented follow-up. He is a tobacco user who receives cessation counseling."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PVSComponent-quinn"/>
+      </reference>
+      <name value="MeasureReport PVS Quinn"/>
+      <description value="Pneumococcal Vaccination Status test case. Quinn (52) receives every preventive service she is eligible for: a mammogram, a flexible sigmoidoscopy within 5 years, normal blood pressure at both visits, and tobacco screening (never smoked)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PVSComponent-rosa"/>
+      </reference>
+      <name value="MeasureReport PVS Rosa"/>
+      <description value="Pneumococcal Vaccination Status test case. Rosa (80) is too old for breast and colorectal cancer screening, and has only one office visit, so she is not in the tobacco screening initial population. She has pneumococcal vaccination and a normal blood pressure."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PVSComponent-sam"/>
+      </reference>
+      <name value="MeasureReport PVS Sam"/>
+      <description value="Pneumococcal Vaccination Status test case. Sam (17) is younger than 18 at the start of the measurement period, so he is not in the initial population of any component."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PVSComponent-summary"/>
+      </reference>
+      <name value="MeasureReport PVS Summary"/>
+      <description value="Summary test case for the Pneumococcal Vaccination Status component over the thirteen preventive care and wellness test patients. expected initial-population 6, denominator 6, denominator-exclusion 2, numerator 3; score 3 / (6 - 2) = 0.75."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PVSComponent-tara"/>
+      </reference>
+      <name value="MeasureReport PVS Tara"/>
+      <description value="Pneumococcal Vaccination Status test case. Tara (50) is eligible for colorectal cancer screening but has none. She is not yet old enough for breast cancer screening (51-74), so her mammogram does not count. She has normal blood pressure and tobacco screening (never smoked)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PVSComponent-uma"/>
+      </reference>
+      <name value="MeasureReport PVS Uma"/>
+      <description value="Pneumococcal Vaccination Status test case. Uma (68) receives hospice care and has an existing diagnosis of hypertension, so she meets the denominator exclusion of every component in which she is in the denominator. She has only one office visit, so she is not in the tobacco screening initial population."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/TSCComponent-iris"/>
+      </reference>
+      <name value="MeasureReport TSC Iris"/>
+      <description value="Tobacco Use Screening and Cessation test case. Iris (60) receives every preventive service she is eligible for: a mammogram, a colonoscopy, normal blood pressure at both visits, and tobacco screening (never smoked). She is not old enough for pneumococcal vaccination."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/TSCComponent-jack"/>
+      </reference>
+      <name value="MeasureReport TSC Jack"/>
+      <description value="Tobacco Use Screening and Cessation test case. Jack (68) has a fecal occult blood test and pneumococcal vaccination, and is a tobacco user who receives cessation counseling, but his prehypertensive blood pressure readings have no documented follow-up at either visit."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/TSCComponent-kate"/>
+      </reference>
+      <name value="MeasureReport TSC Kate"/>
+      <description value="Tobacco Use Screening and Cessation test case. Kate (55) has a FIT-DNA test within 3 years and normal blood pressure, but no mammogram, and is a tobacco user who does not receive cessation intervention."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/TSCComponent-liam"/>
+      </reference>
+      <name value="MeasureReport TSC Liam"/>
+      <description value="Tobacco Use Screening and Cessation test case. Liam (45) has two visits: a normal blood pressure at the first, and a prehypertensive reading without follow-up at the second, so one of his two encounters meets the blood pressure screening numerator. He is not screened for tobacco use."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/TSCComponent-mona"/>
+      </reference>
+      <name value="MeasureReport TSC Mona"/>
+      <description value="Tobacco Use Screening and Cessation test case. Mona (70) receives hospice care, so she meets the denominator exclusion of the breast cancer, colorectal cancer, and pneumococcal vaccination components (even though she has the services). Blood pressure and tobacco screening have no hospice exclusion, and she meets both."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/TSCComponent-nate"/>
+      </reference>
+      <name value="MeasureReport TSC Nate"/>
+      <description value="Tobacco Use Screening and Cessation test case. Nate (72) has an existing diagnosis of hypertension, which excludes his encounters from the blood pressure screening component, and colon cancer, which excludes him from colorectal cancer screening. He has not received pneumococcal vaccination. These ongoing conditions are not limited life expectancy conditions, so they do not make him a tobacco screening denominator exception."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/TSCComponent-olga"/>
+      </reference>
+      <name value="MeasureReport TSC Olga"/>
+      <description value="Tobacco Use Screening and Cessation test case. Olga (66) has a mammogram within 27 months and pneumococcal vaccination, but her most recent colonoscopy is more than 10 years old. Her blood pressure was not obtained for a medical reason at her first visit (a denominator exception) but was normal at her preventive visit. She has a limited life expectancy, which is a denominator exception for tobacco screening."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/TSCComponent-paul"/>
+      </reference>
+      <name value="MeasureReport TSC Paul"/>
+      <description value="Tobacco Use Screening and Cessation test case. Paul (30) has a single preventive visit, with a first hypertensive blood pressure reading and no documented follow-up. He is a tobacco user who receives cessation counseling."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/TSCComponent-quinn"/>
+      </reference>
+      <name value="MeasureReport TSC Quinn"/>
+      <description value="Tobacco Use Screening and Cessation test case. Quinn (52) receives every preventive service she is eligible for: a mammogram, a flexible sigmoidoscopy within 5 years, normal blood pressure at both visits, and tobacco screening (never smoked)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/TSCComponent-rosa"/>
+      </reference>
+      <name value="MeasureReport TSC Rosa"/>
+      <description value="Tobacco Use Screening and Cessation test case. Rosa (80) is too old for breast and colorectal cancer screening, and has only one office visit, so she is not in the tobacco screening initial population. She has pneumococcal vaccination and a normal blood pressure."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/TSCComponent-sam"/>
+      </reference>
+      <name value="MeasureReport TSC Sam"/>
+      <description value="Tobacco Use Screening and Cessation test case. Sam (17) is younger than 18 at the start of the measurement period, so he is not in the initial population of any component."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/TSCComponent-summary"/>
+      </reference>
+      <name value="MeasureReport TSC Summary"/>
+      <description value="Summary test case for the Tobacco Use Screening and Cessation component over the thirteen preventive care and wellness test patients. Group 1: expected initial-population 10, denominator 10, denominator-exception 1, numerator 8; score 8 / (10 - 1) = 0.8889. Group 2: expected initial-population 10, denominator 3, denominator-exception 0, numerator 2; score 2 / (3 - 0) = 0.6667. Group 3: expected initial-population 10, denominator 10, denominator-exception 1, numerator 7; score 7 / (10 - 1) = 0.7778."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/TSCComponent-tara"/>
+      </reference>
+      <name value="MeasureReport TSC Tara"/>
+      <description value="Tobacco Use Screening and Cessation test case. Tara (50) is eligible for colorectal cancer screening but has none. She is not yet old enough for breast cancer screening (51-74), so her mammogram does not count. She has normal blood pressure and tobacco screening (never smoked)."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/TSCComponent-uma"/>
+      </reference>
+      <name value="MeasureReport TSC Uma"/>
+      <description value="Tobacco Use Screening and Cessation test case. Uma (68) receives hospice care and has an existing diagnosis of hypertension, so she meets the denominator exclusion of every component in which she is in the denominator. She has only one office visit, so she is not in the tobacco screening initial population."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessAllOrNothingComposite-iris"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness All-or-nothing Iris"/>
+      <description value="Preventive Care and Wellness (All-or-nothing) test case. Iris (60) receives every preventive service she is eligible for: a mammogram, a colonoscopy, normal blood pressure at both visits, and tobacco screening (never smoked). She is not old enough for pneumococcal vaccination. Component status: BCS: met; HBP: met; CCS: met; PVS: n/a; TSC group 1: met; TSC group 2: n/a. Expected composite numerator: all components for which they remain in the denominator are met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessAllOrNothingComposite-jack"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness All-or-nothing Jack"/>
+      <description value="Preventive Care and Wellness (All-or-nothing) test case. Jack (68) has a fecal occult blood test and pneumococcal vaccination, and is a tobacco user who receives cessation counseling, but his prehypertensive blood pressure readings have no documented follow-up at either visit. Component status: BCS: n/a; HBP: not met; CCS: met; PVS: met; TSC group 1: met; TSC group 2: met. Expected not to meet the composite numerator: at least one component in whose denominator they remain is not met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessAllOrNothingComposite-kate"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness All-or-nothing Kate"/>
+      <description value="Preventive Care and Wellness (All-or-nothing) test case. Kate (55) has a FIT-DNA test within 3 years and normal blood pressure, but no mammogram, and is a tobacco user who does not receive cessation intervention. Component status: BCS: not met; HBP: met; CCS: met; PVS: n/a; TSC group 1: met; TSC group 2: not met. Expected not to meet the composite numerator: at least one component in whose denominator they remain is not met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessAllOrNothingComposite-liam"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness All-or-nothing Liam"/>
+      <description value="Preventive Care and Wellness (All-or-nothing) test case. Liam (45) has two visits: a normal blood pressure at the first, and a prehypertensive reading without follow-up at the second, so one of his two encounters meets the blood pressure screening numerator. He is not screened for tobacco use. Component status: BCS: n/a; HBP: met; CCS: n/a; PVS: n/a; TSC group 1: not met; TSC group 2: n/a. Expected not to meet the composite numerator: at least one component in whose denominator they remain is not met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessAllOrNothingComposite-mona"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness All-or-nothing Mona"/>
+      <description value="Preventive Care and Wellness (All-or-nothing) test case. Mona (70) receives hospice care, so she meets the denominator exclusion of the breast cancer, colorectal cancer, and pneumococcal vaccination components (even though she has the services). Blood pressure and tobacco screening have no hospice exclusion, and she meets both. Component status: BCS: excluded; HBP: met; CCS: excluded; PVS: excluded; TSC group 1: met; TSC group 2: n/a. Expected composite numerator: all components for which they remain in the denominator are met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessAllOrNothingComposite-nate"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness All-or-nothing Nate"/>
+      <description value="Preventive Care and Wellness (All-or-nothing) test case. Nate (72) has an existing diagnosis of hypertension, which excludes his encounters from the blood pressure screening component, and colon cancer, which excludes him from colorectal cancer screening. He has not received pneumococcal vaccination. These ongoing conditions are not limited life expectancy conditions, so they do not make him a tobacco screening denominator exception. Component status: BCS: n/a; HBP: excluded; CCS: excluded; PVS: not met; TSC group 1: met; TSC group 2: n/a. Expected not to meet the composite numerator: at least one component in whose denominator they remain is not met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessAllOrNothingComposite-olga"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness All-or-nothing Olga"/>
+      <description value="Preventive Care and Wellness (All-or-nothing) test case. Olga (66) has a mammogram within 27 months and pneumococcal vaccination, but her most recent colonoscopy is more than 10 years old. Her blood pressure was not obtained for a medical reason at her first visit (a denominator exception) but was normal at her preventive visit. She has a limited life expectancy, which is a denominator exception for tobacco screening. Component status: BCS: met; HBP: met; CCS: not met; PVS: met; TSC group 1: exception; TSC group 2: n/a. Expected not to meet the composite numerator: at least one component in whose denominator they remain is not met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessAllOrNothingComposite-paul"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness All-or-nothing Paul"/>
+      <description value="Preventive Care and Wellness (All-or-nothing) test case. Paul (30) has a single preventive visit, with a first hypertensive blood pressure reading and no documented follow-up. He is a tobacco user who receives cessation counseling. Component status: BCS: n/a; HBP: not met; CCS: n/a; PVS: n/a; TSC group 1: met; TSC group 2: met. Expected not to meet the composite numerator: at least one component in whose denominator they remain is not met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessAllOrNothingComposite-quinn"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness All-or-nothing Quinn"/>
+      <description value="Preventive Care and Wellness (All-or-nothing) test case. Quinn (52) receives every preventive service she is eligible for: a mammogram, a flexible sigmoidoscopy within 5 years, normal blood pressure at both visits, and tobacco screening (never smoked). Component status: BCS: met; HBP: met; CCS: met; PVS: n/a; TSC group 1: met; TSC group 2: n/a. Expected composite numerator: all components for which they remain in the denominator are met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessAllOrNothingComposite-rosa"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness All-or-nothing Rosa"/>
+      <description value="Preventive Care and Wellness (All-or-nothing) test case. Rosa (80) is too old for breast and colorectal cancer screening, and has only one office visit, so she is not in the tobacco screening initial population. She has pneumococcal vaccination and a normal blood pressure. Component status: BCS: n/a; HBP: met; CCS: n/a; PVS: met; TSC group 1: n/a; TSC group 2: n/a. Expected composite numerator: all components for which they remain in the denominator are met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessAllOrNothingComposite-sam"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness All-or-nothing Sam"/>
+      <description value="Preventive Care and Wellness (All-or-nothing) test case. Sam (17) is younger than 18 at the start of the measurement period, so he is not in the initial population of any component. Component status: BCS: n/a; HBP: n/a; CCS: n/a; PVS: n/a; TSC group 1: n/a; TSC group 2: n/a. Not in the composite initial population."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessAllOrNothingComposite-summary"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness All-or-nothing Summary"/>
+      <description value="Summary test case for Preventive Care and Wellness (All-or-nothing) over the thirteen preventive care and wellness test patients. Expected initial-population 12, denominator 12, denominator-exclusion 1, denominator-exception 0, numerator 4; score 4 / (12 - 1) = 0.3636."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessAllOrNothingComposite-tara"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness All-or-nothing Tara"/>
+      <description value="Preventive Care and Wellness (All-or-nothing) test case. Tara (50) is eligible for colorectal cancer screening but has none. She is not yet old enough for breast cancer screening (51-74), so her mammogram does not count. She has normal blood pressure and tobacco screening (never smoked). Component status: BCS: n/a; HBP: met; CCS: not met; PVS: n/a; TSC group 1: met; TSC group 2: n/a. Expected not to meet the composite numerator: at least one component in whose denominator they remain is not met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessAllOrNothingComposite-uma"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness All-or-nothing Uma"/>
+      <description value="Preventive Care and Wellness (All-or-nothing) test case. Uma (68) receives hospice care and has an existing diagnosis of hypertension, so she meets the denominator exclusion of every component in which she is in the denominator. She has only one office visit, so she is not in the tobacco screening initial population. Component status: BCS: excluded; HBP: excluded; CCS: excluded; PVS: excluded; TSC group 1: n/a; TSC group 2: n/a. Expected composite denominator exclusion: excluded from every component in whose denominator they appear."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessOpportunityComposite-iris"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Opportunity Iris"/>
+      <description value="Preventive Care and Wellness (Opportunity) test case. Iris (60) receives every preventive service she is eligible for: a mammogram, a colonoscopy, normal blood pressure at both visits, and tobacco screening (never smoked). She is not old enough for pneumococcal vaccination. Component status: BCS: met; HBP: met; CCS: met; PVS: n/a; TSC group 1: met; TSC group 2: n/a. Counts are care opportunities (components): 4 in the denominator, 0 excluded, 0 exception, 4 met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessOpportunityComposite-jack"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Opportunity Jack"/>
+      <description value="Preventive Care and Wellness (Opportunity) test case. Jack (68) has a fecal occult blood test and pneumococcal vaccination, and is a tobacco user who receives cessation counseling, but his prehypertensive blood pressure readings have no documented follow-up at either visit. Component status: BCS: n/a; HBP: not met; CCS: met; PVS: met; TSC group 1: met; TSC group 2: met. Counts are care opportunities (components): 5 in the denominator, 0 excluded, 0 exception, 4 met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessOpportunityComposite-kate"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Opportunity Kate"/>
+      <description value="Preventive Care and Wellness (Opportunity) test case. Kate (55) has a FIT-DNA test within 3 years and normal blood pressure, but no mammogram, and is a tobacco user who does not receive cessation intervention. Component status: BCS: not met; HBP: met; CCS: met; PVS: n/a; TSC group 1: met; TSC group 2: not met. Counts are care opportunities (components): 5 in the denominator, 0 excluded, 0 exception, 3 met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessOpportunityComposite-liam"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Opportunity Liam"/>
+      <description value="Preventive Care and Wellness (Opportunity) test case. Liam (45) has two visits: a normal blood pressure at the first, and a prehypertensive reading without follow-up at the second, so one of his two encounters meets the blood pressure screening numerator. He is not screened for tobacco use. Component status: BCS: n/a; HBP: met; CCS: n/a; PVS: n/a; TSC group 1: not met; TSC group 2: n/a. Counts are care opportunities (components): 2 in the denominator, 0 excluded, 0 exception, 1 met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessOpportunityComposite-mona"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Opportunity Mona"/>
+      <description value="Preventive Care and Wellness (Opportunity) test case. Mona (70) receives hospice care, so she meets the denominator exclusion of the breast cancer, colorectal cancer, and pneumococcal vaccination components (even though she has the services). Blood pressure and tobacco screening have no hospice exclusion, and she meets both. Component status: BCS: excluded; HBP: met; CCS: excluded; PVS: excluded; TSC group 1: met; TSC group 2: n/a. Counts are care opportunities (components): 5 in the denominator, 3 excluded, 0 exception, 2 met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessOpportunityComposite-nate"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Opportunity Nate"/>
+      <description value="Preventive Care and Wellness (Opportunity) test case. Nate (72) has an existing diagnosis of hypertension, which excludes his encounters from the blood pressure screening component, and colon cancer, which excludes him from colorectal cancer screening. He has not received pneumococcal vaccination. These ongoing conditions are not limited life expectancy conditions, so they do not make him a tobacco screening denominator exception. Component status: BCS: n/a; HBP: excluded; CCS: excluded; PVS: not met; TSC group 1: met; TSC group 2: n/a. Counts are care opportunities (components): 4 in the denominator, 2 excluded, 0 exception, 1 met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessOpportunityComposite-olga"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Opportunity Olga"/>
+      <description value="Preventive Care and Wellness (Opportunity) test case. Olga (66) has a mammogram within 27 months and pneumococcal vaccination, but her most recent colonoscopy is more than 10 years old. Her blood pressure was not obtained for a medical reason at her first visit (a denominator exception) but was normal at her preventive visit. She has a limited life expectancy, which is a denominator exception for tobacco screening. Component status: BCS: met; HBP: met; CCS: not met; PVS: met; TSC group 1: exception; TSC group 2: n/a. Counts are care opportunities (components): 5 in the denominator, 0 excluded, 1 exception, 3 met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessOpportunityComposite-paul"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Opportunity Paul"/>
+      <description value="Preventive Care and Wellness (Opportunity) test case. Paul (30) has a single preventive visit, with a first hypertensive blood pressure reading and no documented follow-up. He is a tobacco user who receives cessation counseling. Component status: BCS: n/a; HBP: not met; CCS: n/a; PVS: n/a; TSC group 1: met; TSC group 2: met. Counts are care opportunities (components): 3 in the denominator, 0 excluded, 0 exception, 2 met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessOpportunityComposite-quinn"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Opportunity Quinn"/>
+      <description value="Preventive Care and Wellness (Opportunity) test case. Quinn (52) receives every preventive service she is eligible for: a mammogram, a flexible sigmoidoscopy within 5 years, normal blood pressure at both visits, and tobacco screening (never smoked). Component status: BCS: met; HBP: met; CCS: met; PVS: n/a; TSC group 1: met; TSC group 2: n/a. Counts are care opportunities (components): 4 in the denominator, 0 excluded, 0 exception, 4 met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessOpportunityComposite-rosa"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Opportunity Rosa"/>
+      <description value="Preventive Care and Wellness (Opportunity) test case. Rosa (80) is too old for breast and colorectal cancer screening, and has only one office visit, so she is not in the tobacco screening initial population. She has pneumococcal vaccination and a normal blood pressure. Component status: BCS: n/a; HBP: met; CCS: n/a; PVS: met; TSC group 1: n/a; TSC group 2: n/a. Counts are care opportunities (components): 2 in the denominator, 0 excluded, 0 exception, 2 met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessOpportunityComposite-sam"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Opportunity Sam"/>
+      <description value="Preventive Care and Wellness (Opportunity) test case. Sam (17) is younger than 18 at the start of the measurement period, so he is not in the initial population of any component. Component status: BCS: n/a; HBP: n/a; CCS: n/a; PVS: n/a; TSC group 1: n/a; TSC group 2: n/a. Counts are care opportunities (components): 0 in the denominator, 0 excluded, 0 exception, 0 met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessOpportunityComposite-summary"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Opportunity Summary"/>
+      <description value="Summary test case for Preventive Care and Wellness (Opportunity) over the thirteen preventive care and wellness test patients. Counts are care opportunities (components). Expected initial-population 53, denominator 46, denominator-exclusion 9, denominator-exception 1, numerator 28; score 28 / (46 - 10) = 0.7778."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessOpportunityComposite-tara"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Opportunity Tara"/>
+      <description value="Preventive Care and Wellness (Opportunity) test case. Tara (50) is eligible for colorectal cancer screening but has none. She is not yet old enough for breast cancer screening (51-74), so her mammogram does not count. She has normal blood pressure and tobacco screening (never smoked). Component status: BCS: n/a; HBP: met; CCS: not met; PVS: n/a; TSC group 1: met; TSC group 2: n/a. Counts are care opportunities (components): 3 in the denominator, 0 excluded, 0 exception, 2 met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessOpportunityComposite-uma"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Opportunity Uma"/>
+      <description value="Preventive Care and Wellness (Opportunity) test case. Uma (68) receives hospice care and has an existing diagnosis of hypertension, so she meets the denominator exclusion of every component in which she is in the denominator. She has only one office visit, so she is not in the tobacco screening initial population. Component status: BCS: excluded; HBP: excluded; CCS: excluded; PVS: excluded; TSC group 1: n/a; TSC group 2: n/a. Counts are care opportunities (components): 4 in the denominator, 4 excluded, 0 exception, 0 met."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessPatientLevelLinearComposite-iris"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Patient-level Linear Iris"/>
+      <description value="Preventive Care and Wellness (Patient-level linear) test case. Iris (60) receives every preventive service she is eligible for: a mammogram, a colonoscopy, normal blood pressure at both visits, and tobacco screening (never smoked). She is not old enough for pneumococcal vaccination. Component status: BCS: met; HBP: met; CCS: met; PVS: n/a; TSC group 1: met; TSC group 2: n/a. Expected measure observation 4 / 4 = 1."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessPatientLevelLinearComposite-jack"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Patient-level Linear Jack"/>
+      <description value="Preventive Care and Wellness (Patient-level linear) test case. Jack (68) has a fecal occult blood test and pneumococcal vaccination, and is a tobacco user who receives cessation counseling, but his prehypertensive blood pressure readings have no documented follow-up at either visit. Component status: BCS: n/a; HBP: not met; CCS: met; PVS: met; TSC group 1: met; TSC group 2: met. Expected measure observation 4 / 5 = 0.8."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessPatientLevelLinearComposite-kate"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Patient-level Linear Kate"/>
+      <description value="Preventive Care and Wellness (Patient-level linear) test case. Kate (55) has a FIT-DNA test within 3 years and normal blood pressure, but no mammogram, and is a tobacco user who does not receive cessation intervention. Component status: BCS: not met; HBP: met; CCS: met; PVS: n/a; TSC group 1: met; TSC group 2: not met. Expected measure observation 3 / 5 = 0.6."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessPatientLevelLinearComposite-liam"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Patient-level Linear Liam"/>
+      <description value="Preventive Care and Wellness (Patient-level linear) test case. Liam (45) has two visits: a normal blood pressure at the first, and a prehypertensive reading without follow-up at the second, so one of his two encounters meets the blood pressure screening numerator. He is not screened for tobacco use. Component status: BCS: n/a; HBP: met; CCS: n/a; PVS: n/a; TSC group 1: not met; TSC group 2: n/a. Expected measure observation 1 / 2 = 0.5."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessPatientLevelLinearComposite-mona"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Patient-level Linear Mona"/>
+      <description value="Preventive Care and Wellness (Patient-level linear) test case. Mona (70) receives hospice care, so she meets the denominator exclusion of the breast cancer, colorectal cancer, and pneumococcal vaccination components (even though she has the services). Blood pressure and tobacco screening have no hospice exclusion, and she meets both. Component status: BCS: excluded; HBP: met; CCS: excluded; PVS: excluded; TSC group 1: met; TSC group 2: n/a. Expected measure observation 2 / 2 = 1."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessPatientLevelLinearComposite-nate"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Patient-level Linear Nate"/>
+      <description value="Preventive Care and Wellness (Patient-level linear) test case. Nate (72) has an existing diagnosis of hypertension, which excludes his encounters from the blood pressure screening component, and colon cancer, which excludes him from colorectal cancer screening. He has not received pneumococcal vaccination. These ongoing conditions are not limited life expectancy conditions, so they do not make him a tobacco screening denominator exception. Component status: BCS: n/a; HBP: excluded; CCS: excluded; PVS: not met; TSC group 1: met; TSC group 2: n/a. Expected measure observation 1 / 2 = 0.5."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessPatientLevelLinearComposite-olga"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Patient-level Linear Olga"/>
+      <description value="Preventive Care and Wellness (Patient-level linear) test case. Olga (66) has a mammogram within 27 months and pneumococcal vaccination, but her most recent colonoscopy is more than 10 years old. Her blood pressure was not obtained for a medical reason at her first visit (a denominator exception) but was normal at her preventive visit. She has a limited life expectancy, which is a denominator exception for tobacco screening. Component status: BCS: met; HBP: met; CCS: not met; PVS: met; TSC group 1: exception; TSC group 2: n/a. Expected measure observation 3 / 4 = 0.75."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessPatientLevelLinearComposite-paul"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Patient-level Linear Paul"/>
+      <description value="Preventive Care and Wellness (Patient-level linear) test case. Paul (30) has a single preventive visit, with a first hypertensive blood pressure reading and no documented follow-up. He is a tobacco user who receives cessation counseling. Component status: BCS: n/a; HBP: not met; CCS: n/a; PVS: n/a; TSC group 1: met; TSC group 2: met. Expected measure observation 2 / 3 = 0.6667."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessPatientLevelLinearComposite-quinn"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Patient-level Linear Quinn"/>
+      <description value="Preventive Care and Wellness (Patient-level linear) test case. Quinn (52) receives every preventive service she is eligible for: a mammogram, a flexible sigmoidoscopy within 5 years, normal blood pressure at both visits, and tobacco screening (never smoked). Component status: BCS: met; HBP: met; CCS: met; PVS: n/a; TSC group 1: met; TSC group 2: n/a. Expected measure observation 4 / 4 = 1."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessPatientLevelLinearComposite-rosa"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Patient-level Linear Rosa"/>
+      <description value="Preventive Care and Wellness (Patient-level linear) test case. Rosa (80) is too old for breast and colorectal cancer screening, and has only one office visit, so she is not in the tobacco screening initial population. She has pneumococcal vaccination and a normal blood pressure. Component status: BCS: n/a; HBP: met; CCS: n/a; PVS: met; TSC group 1: n/a; TSC group 2: n/a. Expected measure observation 2 / 2 = 1."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessPatientLevelLinearComposite-sam"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Patient-level Linear Sam"/>
+      <description value="Preventive Care and Wellness (Patient-level linear) test case. Sam (17) is younger than 18 at the start of the measurement period, so he is not in the initial population of any component. Component status: BCS: n/a; HBP: n/a; CCS: n/a; PVS: n/a; TSC group 1: n/a; TSC group 2: n/a. Not in the composite initial population."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessPatientLevelLinearComposite-summary"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Patient-level Linear Summary"/>
+      <description value="Summary test case for Preventive Care and Wellness (Patient-level linear) over the thirteen preventive care and wellness test patients. Expected initial-population 12, measure-population 12, measure-population-exclusion 1, measure-observation 11; observations [1, 0.8, 0.6, 0.5, 1, 0.5, 0.75, 0.6667, 1, 1, 0.6667] aggregated by average = 0.7712."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessPatientLevelLinearComposite-tara"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Patient-level Linear Tara"/>
+      <description value="Preventive Care and Wellness (Patient-level linear) test case. Tara (50) is eligible for colorectal cancer screening but has none. She is not yet old enough for breast cancer screening (51-74), so her mammogram does not count. She has normal blood pressure and tobacco screening (never smoked). Component status: BCS: n/a; HBP: met; CCS: not met; PVS: n/a; TSC group 1: met; TSC group 2: n/a. Expected measure observation 2 / 3 = 0.6667."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessPatientLevelLinearComposite-uma"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Patient-level Linear Uma"/>
+      <description value="Preventive Care and Wellness (Patient-level linear) test case. Uma (68) receives hospice care and has an existing diagnosis of hypertension, so she meets the denominator exclusion of every component in which she is in the denominator. She has only one office visit, so she is not in the tobacco screening initial population. Component status: BCS: excluded; HBP: excluded; CCS: excluded; PVS: excluded; TSC group 1: n/a; TSC group 2: n/a. Expected measure population exclusion: excluded from every component in whose denominator they appear."/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/PreventiveCareandWellnessWeightedComposite-summary"/>
+      </reference>
+      <name value="MeasureReport Preventive Care and Wellness Weighted Summary"/>
+      <description value="Summary test case for Preventive Care and Wellness (Weighted) over the thirteen preventive care and wellness test patients, calculated from the component summary test cases. All components are proportions with an improvement notation of increase, so no normalization or adjustment is needed. The high blood pressure screening score is encounter-based."/>
       <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
     </resource>
     <page>

@@ -1,0 +1,17 @@
+{
+  "resourceType": "Procedure",
+  "id": "mona-colonoscopy",
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "73761001"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/mona"
+  },
+  "performedDateTime": "2019-05-02T10:00:00Z"
+}

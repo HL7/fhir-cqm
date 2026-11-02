@@ -1,0 +1,30 @@
+{
+  "resourceType": "Observation",
+  "id": "paul-tobacco-0",
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "72166-2"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/paul"
+  },
+  "effectiveDateTime": "2024-05-20T14:10:00Z",
+  "performer": [
+    {
+      "reference": "Practitioner/preventive-care-practitioner"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "449868002"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "resourceType": "Observation",
+  "id": "dmitri-a1c-0",
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "4548-4",
+        "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/dmitri"
+  },
+  "effectiveDateTime": "2024-01-15T09:00:00Z",
+  "performer": [
+    {
+      "reference": "Practitioner/diabetes-care-practitioner"
+    }
+  ],
+  "valueQuantity": {
+    "value": 8.1,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%"
+  }
+}

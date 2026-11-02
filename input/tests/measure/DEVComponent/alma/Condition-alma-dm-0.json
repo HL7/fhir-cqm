@@ -1,0 +1,33 @@
+{
+  "resourceType": "Condition",
+  "id": "alma-dm-0",
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "44054006",
+        "display": "Diabetes mellitus type 2 (disorder)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/alma"
+  },
+  "onsetDateTime": "2020-05-01"
+}

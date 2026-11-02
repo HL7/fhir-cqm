@@ -1,0 +1,80 @@
+{
+  "resourceType": "Observation",
+  "id": "olga-bp-0",
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "85354-9"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "183932001"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/olga"
+  },
+  "effectiveDateTime": "2024-04-15T14:10:00Z",
+  "performer": [
+    {
+      "reference": "Practitioner/preventive-care-practitioner"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs"
+        }
+      ]
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8480-6"
+          }
+        ]
+      },
+      "dataAbsentReason": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "not-performed"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8462-4"
+          }
+        ]
+      },
+      "dataAbsentReason": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "not-performed"
+          }
+        ]
+      }
+    }
+  ],
+  "modifierExtension": [
+    {
+      "url": "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-notDone",
+      "valueBoolean": true
+    }
+  ]
+}

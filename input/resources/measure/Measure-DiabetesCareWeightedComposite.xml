@@ -1,0 +1,118 @@
+<Measure xmlns="http://hl7.org/fhir">
+   <id value="DiabetesCareWeightedComposite"></id>
+   <meta>
+      <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositemeasure"></profile>
+      <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure"></profile>
+   </meta>
+   <language value="en"></language>
+   <url value="http://hl7.org/fhir/uv/cqm/Measure/DiabetesCareWeightedComposite"></url>
+   <name value="DiabetesCareWeightedComposite"></name>
+   <title value="Diabetes Care Weighted Composite"></title>
+   <status value="active"></status>
+   <experimental value="true"></experimental>
+   <publisher value="National Committee for Quality Assurance"></publisher>
+   <description value="This artifact is an example of a weighted composite measure that combines proportion, ratio, and continuous variable component measures, using score ranges to normalize the component scores to a common scale before they are weighted."></description>
+   <useContext>
+      <code>
+         <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"></system>
+         <code value="venue"></code>
+         <display value="Clinical Venue"></display>
+      </code>
+      <valueCodeableConcept>
+         <coding>
+            <system value="http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes"></system>
+            <code value="ec"></code>
+            <display value="EC"></display>
+         </coding>
+      </valueCodeableConcept>
+   </useContext>
+   <usage value="The composite score is calculated as a weighted average of normalized component measure scores. Each component measure score is first normalized to a value between 0 and 1 using the score range for that component: the HbA1c poor control proportion is used as is, the emergency department visit rate is normalized over a range of 0 to 100 visits per 1,000 patient-months, and the median days to follow-up after discharge is normalized over a range of 0 to 30 days. Because all three components have an improvement notation of decrease, each normalized score is then subtracted from 1 so that a higher value indicates better quality. The adjusted component scores are multiplied by their weights (0.4, 0.3, and 0.3), and the sum is divided by the sum of the weights to determine the overall composite performance rate. Denominator exclusions and measure population exclusions are applied within each component measure prior to normalization and weighting. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate."/>
+   <effectivePeriod>
+      <start value="2022-01-01"></start>
+      <end value="2022-12-31"></end>
+   </effectivePeriod>
+   <relatedArtifact>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+         <valueDecimal value="0.4"></valueDecimal>
+      </extension>
+      <type value="composed-of"></type>
+      <display value="Diabetes: Hemoglobin A1c (HbA1c) Poor Control (> 9%)"></display>
+      <resource value="http://hl7.org/fhir/uv/cqm/Measure/DHCComponent"></resource>
+   </relatedArtifact>
+   <relatedArtifact>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+         <valueDecimal value="0.3"></valueDecimal>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoreRange">
+         <valueRange>
+            <low>
+               <value value="0"></value>
+               <unit value="per 1,000 patient-months"></unit>
+               <system value="http://unitsofmeasure.org"></system>
+               <code value="/1000.mo"></code>
+            </low>
+            <high>
+               <value value="100"></value>
+               <unit value="per 1,000 patient-months"></unit>
+               <system value="http://unitsofmeasure.org"></system>
+               <code value="/1000.mo"></code>
+            </high>
+         </valueRange>
+      </extension>
+      <type value="composed-of"></type>
+      <display value="Diabetes: Emergency Department Visits per 1,000 Patient-Months"></display>
+      <resource value="http://hl7.org/fhir/uv/cqm/Measure/DEVComponent"></resource>
+   </relatedArtifact>
+   <relatedArtifact>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight">
+         <valueDecimal value="0.3"></valueDecimal>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoreRange">
+         <valueRange>
+            <low>
+               <value value="0"></value>
+               <unit value="days"></unit>
+               <system value="http://unitsofmeasure.org"></system>
+               <code value="d"></code>
+            </low>
+            <high>
+               <value value="30"></value>
+               <unit value="days"></unit>
+               <system value="http://unitsofmeasure.org"></system>
+               <code value="d"></code>
+            </high>
+         </valueRange>
+      </extension>
+      <type value="composed-of"></type>
+      <display value="Diabetes: Days to Follow-up After Hospital Discharge"></display>
+      <resource value="http://hl7.org/fhir/uv/cqm/Measure/DFUComponent"></resource>
+   </relatedArtifact>
+   <scoring>
+      <coding>
+         <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"></system>
+         <code value="composite"></code>
+         <display value="Composite"></display>
+      </coding>
+   </scoring>
+   <compositeScoring>
+      <coding>
+         <system value="http://terminology.hl7.org/CodeSystem/composite-measure-scoring"></system>
+         <code value="weighted"></code>
+         <display value="Weighted"></display>
+      </coding>
+   </compositeScoring>
+   <type>
+      <coding>
+         <system value="http://terminology.hl7.org/CodeSystem/measure-type"></system>
+         <code value="outcome"></code>
+         <display value="Outcome"></display>
+      </coding>
+   </type>
+   <improvementNotation>
+      <coding>
+         <system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"></system>
+         <code value="increase"></code>
+      </coding>
+   </improvementNotation>
+   <guidance value="Component scores are normalized before weighting because they are reported on different scales: the HbA1c poor control component is a proportion between 0 and 1, the emergency department visit component is a rate per 1,000 patient-months, and the follow-up component is a median number of days. For each component, the normalized score is (score - low) / (high - low), limited to the interval [0, 1], where low and high are given by the score range of the component (a range of 0 to 1 is assumed when no score range is specified). For components with an improvement notation of decrease, the normalized score is subtracted from 1. The composite score is the sum of the weighted adjusted component scores divided by the sum of the weights. For example, a clinician with an HbA1c poor control rate of 25%, 42 emergency department visits per 1,000 patient-months, and a median of 9 days to follow-up would have adjusted component scores of 0.75, 0.58, and 0.70, and a composite score of ((0.4 x 0.75) + (0.3 x 0.58) + (0.3 x 0.70)) / 1.0 = 0.684 (68.4%)."/>
+</Measure>

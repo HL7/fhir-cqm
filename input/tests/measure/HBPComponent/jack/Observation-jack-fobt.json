@@ -1,0 +1,30 @@
+{
+  "resourceType": "Observation",
+  "id": "jack-fobt",
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "2335-8"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/jack"
+  },
+  "effectiveDateTime": "2024-02-12T14:10:00Z",
+  "performer": [
+    {
+      "reference": "Practitioner/preventive-care-practitioner"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "260385009"
+      }
+    ]
+  }
+}

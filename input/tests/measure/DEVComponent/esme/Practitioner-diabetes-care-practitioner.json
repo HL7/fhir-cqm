@@ -1,0 +1,15 @@
+{
+  "resourceType": "Practitioner",
+  "id": "diabetes-care-practitioner",
+  "name": [
+    {
+      "family": "Example",
+      "given": [
+        "Pat"
+      ],
+      "prefix": [
+        "Dr."
+      ]
+    }
+  ]
+}

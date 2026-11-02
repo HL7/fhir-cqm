@@ -1,0 +1,21 @@
+<Library xmlns="http://hl7.org/fhir">
+   <meta>
+      <profile value="http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library"></profile>
+      <profile value="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary"></profile>
+      <profile value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablelibrary"></profile>
+   </meta>
+   <id value="DHCComponent"></id>
+   <url value="http://hl7.org/fhir/uv/cqm/Library/DHCComponent"></url>
+   <name value="DHCComponent"></name>
+   <title value="DHC Component Library"></title>
+   <type>
+      <coding>
+         <system value="http://terminology.hl7.org/CodeSystem/library-type"></system>
+         <code value="logic-library"></code>
+      </coding>
+   </type>
+   <publisher value="National Committee for Quality Assurance"></publisher>
+   <description value="This library is the primary measure library for the Diabetes: Hemoglobin A1c (HbA1c) Poor Control component of the diabetes care composite measure example in this implementation guide."></description>
+   <content id="ig-loader-DHCComponent.cql">
+   </content>
+</Library>

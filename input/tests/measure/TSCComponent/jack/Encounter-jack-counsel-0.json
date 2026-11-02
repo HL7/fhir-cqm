@@ -1,0 +1,26 @@
+{
+  "resourceType": "Encounter",
+  "id": "jack-counsel-0",
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.ama-assn.org/go/cpt",
+          "code": "99406"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/jack"
+  },
+  "period": {
+    "start": "2024-02-12T15:00:00Z",
+    "end": "2024-02-12T15:15:00Z"
+  }
+}

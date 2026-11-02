@@ -1,0 +1,99 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cqm-scoreRange",
+  "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoreRange",
+  "name": "CQMScoreRange",
+  "title": "CQM Score Range",
+  "status": "active",
+  "experimental": false,
+  "publisher": "Clinical Quality Information WG",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cqi/index.cfm"
+        }
+      ]
+    }
+  ],
+  "description": "The range of component measure scores used to normalize the component score to a value between 0 and 1 before it is combined into a component-based composite score.",
+  "jurisdiction": [
+      {
+        "coding": [
+          {
+            "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+            "code": "001"
+          }
+        ]
+      }
+    ],
+  "purpose": "When computing weighted composite measures that include ratio or continuous variable components, the component scores are not on a common scale, so the range used to normalize each component score must be specified.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "RelatedArtifact"
+    },
+    {
+      "type": "extension",
+      "expression": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Score range for normalization",
+        "definition": "The range of component measure scores used to normalize the component score to a value between 0 and 1 before it is combined into a component-based composite score. The normalized score is (score - low) / (high - low), limited to the interval [0, 1].",
+        "comment": "If the score range of a component is not specified, a range of 0 to 1 is assumed (i.e. the component score is used as is). The score range is applied before the improvement notation of the component is taken into account. A score range is required for ratio and continuous variable components of component-based composites, since the scores of those components are not, in general, between 0 and 1.",
+        "min": 0,
+        "max": "1",
+        "constraint": [
+          {
+            "key": "cmp-15",
+            "severity": "error",
+            "human": "A score range must specify both a low and a high value, and the high value must be greater than the low value",
+            "expression": "value.low.value.exists() and value.high.value.exists() and value.high.value > value.low.value",
+            "source": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoreRange"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoreRange"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "The low and high scores used to normalize the component score",
+        "definition": "The low and high component measure scores used to normalize the component score. The units of the range, if specified, are the scoring units of the component measure.",
+        "min": 1,
+        "type": [
+          {
+            "code": "Range"
+          }
+        ]
+      }
+    ]
+  }
+}

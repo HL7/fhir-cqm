@@ -1,0 +1,47 @@
+{
+  "resourceType": "MeasureReport",
+  "id": "PreventiveCareandWellnessWeightedComposite-summary",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testCaseDescription",
+      "valueMarkdown": "Summary test case for Preventive Care and Wellness (Weighted) over the thirteen preventive care and wellness test patients, calculated from the component summary test cases. All components are proportions with an improvement notation of increase, so no normalization or adjustment is needed. The high blood pressure screening score is encounter-based.\n\n| Component | Component Score | Weight |\n| --- | --- | --- |\n| BCS | 0.75 | 0.2 |\n| HBP | 0.7647 | 0.2 |\n| CCS | 0.6667 | 0.2 |\n| PVS | 0.75 | 0.2 |\n| TSC group 1 | 0.8889 | 0.1 |\n| TSC group 2 | 0.6667 | 0.1 |\n\nExpected composite score (sum of weighted component scores) / (sum of weights) = 0.7418."
+    }
+  ],
+  "modifierExtension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-isTestCase",
+      "valueBoolean": true
+    }
+  ],
+  "status": "complete",
+  "type": "summary",
+  "measure": "http://hl7.org/fhir/uv/cqm/Measure/PreventiveCareandWellnessWeightedComposite",
+  "period": {
+    "start": "2024-01-01",
+    "end": "2024-12-31"
+  },
+  "group": [
+    {
+      "measureScore": {
+        "value": 0.7418
+      }
+    }
+  ],
+  "evaluatedResource": [
+    {
+      "reference": "MeasureReport/BCSComponent-summary"
+    },
+    {
+      "reference": "MeasureReport/HBPComponent-summary"
+    },
+    {
+      "reference": "MeasureReport/CCSComponent-summary"
+    },
+    {
+      "reference": "MeasureReport/PVSComponent-summary"
+    },
+    {
+      "reference": "MeasureReport/TSCComponent-summary"
+    }
+  ]
+}

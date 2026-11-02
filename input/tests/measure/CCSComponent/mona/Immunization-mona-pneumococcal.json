@@ -1,0 +1,17 @@
+{
+  "resourceType": "Immunization",
+  "id": "mona-pneumococcal",
+  "status": "completed",
+  "vaccineCode": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/sid/cvx",
+        "code": "33"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "Patient/mona"
+  },
+  "occurrenceDateTime": "2020-10-15T10:00:00Z"
+}

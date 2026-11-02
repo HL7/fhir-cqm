@@ -1,0 +1,14 @@
+{
+  "resourceType": "Patient",
+  "id": "rosa",
+  "gender": "female",
+  "birthDate": "1943-10-30",
+  "name": [
+    {
+      "family": "Example",
+      "given": [
+        "Rosa"
+      ]
+    }
+  ]
+}

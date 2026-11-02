@@ -1,0 +1,106 @@
+{
+  "resourceType": "MeasureReport",
+  "id": "DEVComponent-cleo",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testCaseDescription",
+      "valueMarkdown": "Diabetes: Emergency Department Visits per 1,000 Patient-Months test case. Cleo (45) has diabetes but no HbA1c test during the measurement period, so she meets the numerator of the (inverse) HbA1c poor control measure. She has one emergency department visit, and an inpatient discharge on June 1 followed by an office visit 11 days later. Expected denominator observation 12 patient-months and numerator observation 1 emergency department visit."
+    }
+  ],
+  "modifierExtension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-isTestCase",
+      "valueBoolean": true
+    }
+  ],
+  "status": "complete",
+  "type": "individual",
+  "measure": "http://hl7.org/fhir/uv/cqm/Measure/DEVComponent",
+  "subject": {
+    "reference": "http://example.org/fhir/Patient/cleo"
+  },
+  "period": {
+    "start": "2024-01-01",
+    "end": "2024-12-31"
+  },
+  "group": [
+    {
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator-exclusion"
+              }
+            ]
+          },
+          "count": 0
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "numerator"
+              }
+            ]
+          },
+          "count": 1
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "measure-observation"
+              }
+            ]
+          },
+          "count": 1,
+          "id": "denominator-observation"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "measure-observation"
+              }
+            ]
+          },
+          "count": 1,
+          "id": "numerator-observation"
+        }
+      ],
+      "measureScore": {
+        "value": 83.3333,
+        "unit": "per 1,000 patient-months",
+        "system": "http://unitsofmeasure.org",
+        "code": "/1000.mo"
+      }
+    }
+  ]
+}
