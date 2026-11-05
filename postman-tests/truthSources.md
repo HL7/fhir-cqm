@@ -1,4 +1,4 @@
-The following lists test sections and the required resources for those sections. This file was generated using sot.sh at 2025-05-09 10:41:48
+The following lists test sections and the required resources for those sections. This file was generated using sot.sh at 2026-09-17 14:00:35
 /
 ## CodeSystem 1 Shareable 
  https://hl7.org/fhir/R4/codesystem-request-intent.json 
@@ -34,6 +34,8 @@ The following lists test sections and the required resources for those sections.
  https://terminology.hl7.org/3.1.0/ValueSet-v3-ActEncounterCode.json 
  https://hl7.org/fhir/us/core/STU3.1.1/ValueSet-us-core-condition-category.json 
  https://hl7.org/fhir/us/qicore/STU4.1.1/ValueSet-qicore-appropriateness-score.json 
+## ValueSet 2 Computable 
+ http://cts.nlm.nih.gov/fhir/ValueSet/1.1.1|20201019 
 ## ValueSet 5 Executable 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20240105 
 ## ValueSet 6 Publishable 
@@ -45,24 +47,39 @@ The following lists test sections and the required resources for those sections.
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.73|20230217 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1926|20230217 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1926|20230217 
-## ValueSet 2 Computable 
- http://cts.nlm.nih.gov/fhir/ValueSet/1.1.1|20201019 
 ## ValueSet 7 Read 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20190315 
+ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.877 
 ## ValueSet 8 Search 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005 
+ ValueSet 8.1.2 Search By Url with _elements 
+ https://terminology.hl7.org/3.1.0/ValueSet-v3-ActEncounterCode.json version: \"2.0.0\"
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 
+ ValueSet 8.2.1 Search By Version with _elements 
+ https://terminology.hl7.org/3.1.0/ValueSet-v3-ActEncounterCode.json 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 
+ ValueSet 8.2.1 Search By Version with _elements 
+ https://terminology.hl7.org/3.1.0/ValueSet-v3-ActEncounterCode.json 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611 
+ ValueSet 8.2.1 Search By Version with _elements 
+ https://terminology.hl7.org/3.1.0/ValueSet-v3-ActEncounterCode.json 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1213.11|20190917 
+ ValueSet 8.5.1 Search By Version with _elements 
+ https://terminology.hl7.org/3.1.0/ValueSet-v3-ActEncounterCode.json 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1489|20230217 
+ ValueSet 8.7.1 Search By Title with _elements 
+ https://terminology.hl7.org/3.1.0/ValueSet-v3-ActEncounterCode.json 
+ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.105|20210611 
+ https://uat-cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.649 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20240105 
+ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.649-20210121 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20190315 
+ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.649-20210121 
 ## ValueSet 10 ValidateCode 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 
@@ -72,12 +89,16 @@ The following lists test sections and the required resources for those sections.
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.611|20200319 
 ## ValueSet 11 GET 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20240105 
+## ValueSet 11 GET 
+ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20240105 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20190315 
+ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.359|20230122 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.359|20230122 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20240105 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005|20190315 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1499 
+ http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.877 
 ## ValueSet 12 POST 
  http://hl7.org/fhir/ValueSet/care-team-status|4.0.1 
  http://hl7.org/fhir/ValueSet/care-team-status 
@@ -97,5 +118,11 @@ The following lists test sections and the required resources for those sections.
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1407 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.1004.28 
  http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.199.11.1104 
- https://github.com/cqframework/ecqm-content-qicore-2024-subset/blob/main/input/resources/library/Manifest-Final-Draft.json 
- https://github.com/cqframework/ecqm-content-qicore-2024-subset/blob/main/input/resources/library/Manifest-Final-Draft.json 
+## Manifest Version Pinning 
+ https://hl7.org/fhir/uv/crmi/version-manifest.html#canonical-resolution-with-a-manifest 
+ https://hl7.org/fhir/uv/crmi/artifact-terminology-service.html#expansion-rules 
+ measure-conformance.html#manifest 
+## Quality Program 7 Package 
+ https://madie.cms.gov/Library/PCSDepressionScreenAndFollowUpFHIR 
+## ValueSet 8.1 POST Manifest Library 
+ http://hl7.org/fhir/ValueSet/care-team-status|4.0.1 
