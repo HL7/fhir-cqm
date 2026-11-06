@@ -12,6 +12,7 @@
 * [**Supplemental Data Elements Example**](Library-SupplementalDataElements.html) Library illustrating common supplemental data elements
 * [**Age Stratified Example**](Measure-age-stratified-example.html) Measure illustrating value-based stratification by age group - [Library](Library-AgeStratificationExample.html)
 * [**Supporting Evidence Example**](Measure-SupportingEvidenceExample.html) Measure illustrating the use of supporting evidence - [Library](Library-SupportingEvidenceExample.html)
+* [**Cohort Example**](Measure-ANCCohort.html) Measure identifying patients with confirmed pregnancy for whom antenatal care (ANC) is applicable - [Library](http://hl7.org/fhir/uv/cql/Library/ANCCohort)
 
 ### Scoring Examples
 

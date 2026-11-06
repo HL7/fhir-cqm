@@ -1267,9 +1267,15 @@ Snippet 3-28: Continuous variable measure scoring semantics
 #### Cohort Definitions
 {: #cohort-definitions}
 
-For cohort definitions, only the Initial Population criteria type is used. For subject-based cohort definitions, the criteria should return a true or false (or null). For other types of cohort definitions, the criteria may return any type.
+Cohort measures identify a population of patients or other entities that meet specified criteria for clinical, quality improvement, public health, or other population-based purposes. Unlike proportion or ratio measures, cohort measures do not evaluate performance using numerator and denominator criteria. Instead, the Initial Population criteria define membership in the cohort, and the resulting count represents the population meeting those criteria.
 
-In a cohort measure, a population is identified from the population of all items being counted. For example, one might identify all the patients who have had H1N1 symptoms. The identified population is very similar to the Initial Population but is called a Cohort Population for public health purposes. The Cohort Population result is used by public health agencies to trigger specific public health activities. Figure 3-6 depicts the population for a Cohort measure, Table 3-10 provides the definitions for cohort measure population criteria.
+Cohort measures may support a variety of use cases, including:
+* Public health surveillance: A cohort measure may identify patients presenting with symptoms consistent with H1N1 influenza, supporting surveillance of potentially affected populations and monitoring of disease activity. Cohort results may also inform additional monitoring, infection prevention precautions, or public health follow-up, as appropriate.
+* Clinical population identification: An antenatal care cohort may identify patients with a confirmed pregnancy for whom antenatal care is applicable, as in the [Antenatal Care Cohort](Measure-ANCCohort.html) example. The cohort criteria may use clinical information, such as pregnancy confirmation observations, to determine population membership and support subsequent care planning or quality improvement activities. A cohort measure may also define supplemental data elements to capture additional patient characteristics or clinical information that can be used in further evaluation of the identified population, as in the [NHSN Glycemic Control: Hyperglycemic Initial Population](Bundle-sde-example-artifact-bundle.html) example.
+
+In these use cases, cohort measures establish population membership but do not independently determine or initiate subsequent clinical or public health interventions. The resulting cohort may inform downstream activities according to applicable clinical protocols, organizational policies, or public health requirements.
+
+Figure 3-6 depicts the population for a Cohort measure, Table 3-10 provides the definitions for cohort measure population criteria.
 
 **Conformance Requirement 3.15 (Cohort Definitions):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-15)
 {: #conformance-requirement-3-15}
