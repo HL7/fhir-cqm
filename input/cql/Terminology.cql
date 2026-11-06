@@ -8,8 +8,8 @@ library Terminology
 
 using FHIR version '4.0.1'
 
-include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
-include hl7.fhir.uv.cql.FHIRCommon version '2.0.0' called FHIRCommon
+include hl7.fhir.uv.cql.FHIRHelpers version '4.0.2-ballot' called FHIRHelpers
+include hl7.fhir.uv.cql.FHIRCommon version '3.0.0-ballot' called FHIRCommon
 
 include CommonTerminologies called Common
 

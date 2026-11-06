@@ -8,7 +8,7 @@ library HBPComponent
 
 using FHIR version '4.0.1'
 
-include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
+include hl7.fhir.uv.cql.FHIRHelpers version '4.0.2-ballot' called FHIRHelpers
 
 include SupplementalDataElements called SDE
 include MATGlobalCommonFunctions called Global

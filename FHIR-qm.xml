@@ -80,7 +80,7 @@
 <artifact id="Library/DFUComponent" key="Library-DFUComponent" name="DFU Component Library"/>
 <artifact id="Library/DHCComponent" key="Library-DHCComponent" name="DHC Component Library"/>
 <artifact id="ConceptMap/data-usages" key="ConceptMap-data-usages" name="Data Usage Mapping"/>
-<artifact id="OperationDefinition/cqm-data-requirements" key="OperationDefinition-cqm-data-requirements" name="DataRequirements"/>
+<artifact deprecated="true" id="OperationDefinition/cqm-data-requirements" key="OperationDefinition-cqm-data-requirements" name="DataRequirements"/>
 <artifact id="Device/software-system-example" key="Device-software-system-example" name="Device - Software System Example"/>
 <artifact id="Bundle/diabetes-care-test-patients" key="Bundle-diabetes-care-test-patients" name="Diabetes Care Test Patients"/>
 <artifact id="Measure/DiabetesCareWeightedComposite" key="Measure-DiabetesCareWeightedComposite" name="Diabetes Care Weighted Composite"/>

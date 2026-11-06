@@ -2,7 +2,7 @@ library AgeStratificationExample
 
 using FHIR version '4.0.1'
 
-include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
+include hl7.fhir.uv.cql.FHIRHelpers version '4.0.2-ballot' called FHIRHelpers
 
 codesystem "Time Period Ranges": 'http://terminology.hl7.org/CodeSystem/time-period-ranges' // { 'P0Y--P1Y', 'P1Y--P5Y', ... }
 

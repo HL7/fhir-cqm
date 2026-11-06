@@ -2,7 +2,7 @@ library MultiRateExample
 
 using FHIR version '4.0.1'
 
-include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
+include hl7.fhir.uv.cql.FHIRHelpers version '4.0.2-ballot' called FHIRHelpers
 
 valueset "Bed Device Types": 'http://example.org/fhir/ValueSet/TBD'
 valueset "Screening Procedure Types": 'http://example.org/fhir/ValueSet/TBD'
