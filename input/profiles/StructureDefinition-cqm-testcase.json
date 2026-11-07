@@ -254,7 +254,7 @@
           {
             "code": "Extension",
             "profile": [
-              " http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.stratifier.linkId"
+              "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.stratifier.linkId"
             ]
           }
         ],
@@ -290,7 +290,7 @@
           {
             "code": "Extension",
             "profile": [
-              "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.stratifier.stratum.component.linkId "
+              "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.stratifier.stratum.component.linkId"
             ]
           }
         ],
