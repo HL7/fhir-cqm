@@ -164,6 +164,22 @@
         "mustSupport": true
       },
       {
+        "id": "MeasureReport.group.extension:linkID",
+         "path": "MeasureReport.group.extension",
+         "sliceName": "group-linkId",
+         "min": 1,
+        "max": "1",
+         "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "MeasureReport.group.population",
         "path": "MeasureReport.group.population",
         "constraint": [
@@ -176,11 +192,26 @@
         ],
         "mustSupport": true
       },
+            {
+        "id": "MeasureReport.group.population.extension:linkID",
+         "path": "MeasureReport.group.population.extension",
+         "sliceName": "group-pop-linkId",
+         "min": 1,
+        "max": "1",
+         "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
       {
         "id": "MeasureReport.group.population.extension:countQuantity",
         "path": "MeasureReport.group.population.extension",
         "sliceName": "countQuantity",
-
         "min": 0,
         "max": "1",
         "type": [
@@ -213,6 +244,22 @@
         "path": "MeasureReport.group.stratifier",
         "mustSupport": true
       },
+                  {
+        "id": "MeasureReport.group.stratifier.extension:linkID",
+         "path": "MeasureReport.group.stratifier.extension",
+         "sliceName": "group-stratifier-linkId",
+         "min": 1,
+        "max": "1",
+         "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              " http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.stratifier.linkId"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
       {
         "id": "MeasureReport.group.stratifier.code",
         "path": "MeasureReport.group.stratifier.code",
@@ -231,6 +278,22 @@
       {
         "id": "MeasureReport.group.stratifier.stratum.component",
         "path": "MeasureReport.group.stratifier.stratum.component",
+        "mustSupport": true
+      },
+                        {
+        "id": "MeasureReport.group.stratifier.stratum.component.extension:linkID",
+         "path": "MeasureReport.group.stratifier.stratum.component.extension",
+         "sliceName": "group-stratifier-stratum-component-linkId",
+         "min": 1,
+        "max": "1",
+         "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.stratifier.stratum.component.linkId "
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
