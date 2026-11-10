@@ -33,11 +33,13 @@ Snippet 22: Sample Risk Adjustment Variable from TestRiskAdj eCQM.xml
 
 Broadly speaking, composite measure scoring methods fall into two categories:
 {: #conformance-requirement-component-based}
-1.	Individual-Based: Scoring methods that operate at the individual level by combining members of component populations and then calculating the measure score using standard measure scoring techniques on the combined populations. Examples include all-or-nothing and opportunity scoring.
+1.	Individual-Based: Scoring methods that operate at the individual level by combining members of component populations and then calculating the measure score using standard measure scoring techniques on the combined populations. <span class="new-content">Examples include all-or-nothing, opportunity, and subject-level linear scoring.</span>
     1.	A note regarding improvement notation – when mixing increase and decrease improvement notations for individual based composite scoring mechanisms, those component measures that do not match the improvement notation of the composite measure will need to make an adjustment in polarity.  For example, in an individual based composite with an improvement notation of increase, components with a decrease improvement notation will have their population criteria reversed (i.e. the absence of a patient in the component numerator would represent fulfillment).  
-2.	Component-Based: Scoring methods that operate at the population level by combining the summary scores of component measures. Examples include subject level linear and weighted scoring.
+2.	Component-Based: Scoring methods that operate at the population level by combining the summary scores of component measures. <span class="new-content">Examples include weighted scoring (also called component-level linear combination scoring when all the weights are 1).</span>
     1.	A note regarding improvement notation – when mixing increase and decrease notations for component base scoring mechanisms, those component measures that do not match the improvement notation of the composite measure will need to make an adjustment in polarity.  For example, in a component-based composite with an improvement notation of increase, those with a decrease notation will have their calculations converted by applying a 1 – equation approach.  This will be demonstrated in [Section 5.5](#improvement-notation) below.
 
+Composites that determine population membership for each individual (all-or-nothing, opportunity, and subject-level linear scoring) **MAY** define population criteria on the composite group that describe the composite populations, such as the narrative (`text/plain`) criteria used in the [Preventive Care and Wellness](examples.html#composite-measures) examples. This allows the results of these composites to be reported and tested using the same population structure as any other measure. Weighted composites combine the summary scores of the component measures, and so **SHALL NOT** define population criteria.
+{: .new-content}
 
 Architecturally, environments that are already capable of calculating measures using the measure scoring methods already described in this implementation guide can readily consume composite measure specifications that use the first approach (individual-based) but would require additional support in order to calculate component-based measures. Specifically, completely generic support for component-based calculation methods would require that an environment be able to evaluate CQL logic in the Population context. However, by restricting composite calculation support to those methods specified by this implementation guide, environments can calculate composites by operating on the results of individual-level scores. It is important to note that each scoring method should work for any subject for which the measure is developed - e.g., patient or encounter.
 
@@ -121,8 +123,11 @@ An example of an “All-or-nothing” scored composite measure has been included
 Snippet 23: Components of an example All-or-nothing scored composite measure from Preventive Care and Wellness (All-or-nothing).
 
 Computationally, this method amounts to expressing the initial population and denominator of the composite measure as the union (logical ‘or’ for subject-based measures) of the respective population criteria for each component measure, and the numerator as the intersection (logical ‘and’ for subject-based measures) of the numerator membership of the component measures. An individual is considered for the numerator of a component only if they are a member of the denominator of that component, which is accomplished using an `implies` operator in the component measure numerator membership criteria. Membership in the denominator of a component takes into account the denominator exclusions and exceptions of that component, so a component for which an individual meets the denominator exclusion (or the denominator exception, without meeting the numerator) does not count against the composite numerator. An individual is excluded from the composite only if they meet the denominator exclusion of every component in which they are in the denominator, and is a denominator exception of the composite only if they are not excluded and are not a member of the denominator of any component.
+{: .new-content}
 
 Formally, this means the population criteria for the composite measure are expressed in terms of the population criteria for each component measure, as in:
+
+<div class="new-content" markdown="1">
 
 ```cql
 define "Initial Population":
@@ -167,6 +172,8 @@ define "Numerator":
 
 Snippet 24: Formal criteria for a subject-based All-or-nothing composite measure
 
+</div>
+
 Consider this example of a composite that includes a breast cancer screening measure and a colorectal cancer screening measure. For an individual that is male, they are only eligible for the colorectal cancer screening measure, so the fact that they do not appear in the denominator or numerator of the breast cancer screening measure should not remove them from the numerator of the composite measure. Note that this approach is using component measures where the improvement notation for the component is that an increase in the score represents an improvement. If the improvement notation is decreasing for a component, its population criteria would be reversed (i.e. the absence of a patient in the component numerator would represent fulfillment). This will be shown in [Section 5.5](#improvement-notation) below.
 
 *Note that `implies` is a logical operator within CQL. "X implies Y" roughly translates to narrative text as "if X is true, then Y must be as well"
@@ -174,7 +181,7 @@ Consider this example of a composite that includes a breast cancer screening mea
 Refer to the definition of ["implies" in CQL](https://cql.hl7.org/09-b-cqlreference.html#implies) for more information.
 
 ### Opportunity Scoring
-{: opportunity-scoring}
+{: #opportunity-scoring}
 
 **Conformance Requirement 5.3 (Opportunity Scoring):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-3)
 {: #conformance-requirement-5-3}
@@ -260,7 +267,7 @@ The populations in an opportunity composite are then lists of “services” the
 Note that this approach is using component measures where the improvement notation for the component is that an increase in the score represents an improvement. If the improvement notation is decreasing for a component, its population criteria would be reversed (i.e. the absence of a patient in the component numerator would represent fulfillment). This will be shown in [Section 5.5](#improvement-notation) below.
 
 ### Subject-level Linear Combination Scoring
-{: subject-level-linear-combination-scoring}
+{: #subject-level-linear-combination-scoring}
 
 **Conformance Requirement 5.4 (Subject-level Linear Combination Scoring):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-4)
 {: #conformance-requirement-5-4}
@@ -298,6 +305,8 @@ Computationally, this method is a continuous variable measure using average, whe
 
 Formally, this is done by considering the membership test for each component measure as a 0 (if the patient is not in the population) or a 1 (if the patient is in the population) and adding the values for each component:
 
+<div class="new-content" markdown="1">
+
 ```cql
 define "Is In Component 1 Denominator":
     ComponentMeasure1."Initial Population"
@@ -330,6 +339,8 @@ define "Is In Component 2 Numerator":
 
 Snippet 26: Formal criteria for a service-based opportunity composite measure
 
+</div>
+
 With these definitions, we can then express the measure observation for each patient as a calculation of the proportion of measures in which they were in the numerator:
 
 ```cql
@@ -351,6 +362,9 @@ define function "ToScore"(value Boolean):
 Snippet 27: Formal criteria for a service-based opportunity composite measure
 
 And finally, the population criteria for the initial population is defined to return the patient record if the patient is in the initial population of any component measure; the measure population if the patient is in any component denominator; and the measure population exclusion if the patient is in the denominator exclusion of every component measure in whose denominator they appear:
+{: .new-content}
+
+<div class="new-content" markdown="1">
 
 ```cql
 define "Initial Population":
@@ -370,9 +384,11 @@ define "Measure Population Exclusion":
 
 Snippet 28: Formal criteria for a subject-based linear combination composite measure
 
+</div>
+
 Note that this approach is using component measures where the improvement notation for the component is that an increase in the score represents an improvement. If the improvement notation is decreasing for a component, its population criteria would be negated (i.e. the absence of a patient in the component numerator would represent fulfillment). This will be shown in [Section 5.5](#improvement-notation) below.
 
-<div class="new-content">
+<div>
 Linear Combination scoring vs. Opportunity scoring
 </div>
 
@@ -418,7 +434,9 @@ To calculate the <b>overall opportunity</b> score, divide the total number of pa
 
 
 ### Weighted Scoring
-{: weighted-scoring}
+{: #weighted-scoring}
+
+<div class="new-content" markdown="1">
 
 **Conformance Requirement 5.5 (Weighted Scoring):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-5-5)
 {: #conformance-requirement-5-5}
@@ -427,6 +445,8 @@ To calculate the <b>overall opportunity</b> score, divide the total number of pa
 3. For components that use Ratio or Continuous Variable scoring, weighted composite measures **SHALL** specify the range used to normalize the component score using the [scoreRange](StructureDefinition-cqm-scoreRange.html) extension.
 4. For components that use Proportion scoring, weighted composite measures **MAY** specify a score range. A component that does not specify a score range has a score range of 0 to 1.
 5. Narrative descriptions for weighted composite measures **SHOULD** include explanation of the component weights and, when score ranges are specified, of how component scores are normalized.
+
+</div>
 
 Weighted scoring combines component measure scores using a weighting factor for each component. In the special case that the weighting factor for each component measure is 1, this is also called component-level linear combination scoring.
 
@@ -457,6 +477,7 @@ For example:
 Computationally, this method is the weighted average of the component measure scores. In the simplest case where the weights are all 1, this method is simply the average score of the component measures. Note that these definitions are based on component measures whose improvement notation is an increase in the measure score. If any component measure has an improvement notation of decrease in score, the scoring for that measure needs to be adjusted using a 1- equation approach to ensure all improvement notations have the same polarity. This will be shown in [Section 5.5](#improvement-notation) below.
 
 The weighted average divides the sum of the weighted component scores by the sum of the weights. When the weights sum to 1, as in the Preventive Care and Wellness example, the result is the same as the sum of the weighted component scores.
+{: .new-content}
 
 A "weighted" score composite measure specifies the weights of each component using the [weight](StructureDefinition-cqm-weight.html) extension on each component measure, as in the example below:
 
@@ -521,6 +542,8 @@ Snippet 29: Weighted composite measure relatedArtifact elements
 
 #### Score Normalization
 {: #score-normalization}
+
+<div class="new-content" markdown="1">
 
 The scores of proportion components are between 0 and 1, so they can be weighted and combined directly. The scores of ratio and continuous variable components are not, in general, on that scale. A ratio component may report a rate per 1,000 patient-months, and a continuous variable component may report a median number of days. A weighted average of a proportion, a rate, and a number of days is not meaningful, so each component score is first normalized to a value between 0 and 1 using a score range for that component.
 
@@ -613,6 +636,8 @@ All three components of this example have an improvement notation of decrease: a
 
 The score range of a component should reflect the range of scores that is meaningful for comparing performance, such as a range established from benchmark data or clinical targets. When a component score falls outside the score range, it receives the minimum or maximum normalized score, so the choice of score range affects how much credit is given for performance at either end of the range.
 
+</div>
+
 ### Improvement Notation
 {: #improvement-notation}
 
@@ -632,6 +657,7 @@ For component based scoring methods, consider the following example:
 ((80/100)+(80/100)+(1-(20/100))/3= 0.8 (80%)
 
 For components that use Ratio or Continuous Variable scoring, the component score is first normalized using the score range of the component, and the 1- adjustment is applied to the normalized score, as described in [Score Normalization](#score-normalization).
+{: .new-content}
 
 For individual level scoring methods, consider the following example:
 
@@ -659,12 +685,13 @@ For individual level scoring methods, consider the following example:
     b. All component measures **SHALL** use Proportion or Ratio scoring
 3. For composite measures using Subject-level linear scoring
     a. The measure scoring method **SHALL** be Composite
-    b. All component measures **SHALL** use Proportion or Ratio scoring
+    b. <span class="new-content">All component measures **SHALL** use Proportion or Ratio scoring</span>
 4. For composite measures using Component-level scoring
     a. The measure scoring method **SHALL** be Composite
     b. All component measures **SHALL** use Proportion, Ratio, or Continuous Variable Scoring
 
 For composite measures, the composite score calculation method specifies the measure scoring. The component measures in a composite can also be proportion, ratio, or continuous variable measures. Continuous variable components are only allowed in composites that use weighted (component-level) scoring. The other scoring methods determine the contribution of each subject from the numerator and denominator membership of that subject in each component, and continuous variable measures do not define numerator and denominator populations.
+{: .new-content}
 
 The following table summarizes the allowable measure scoring for each of the composite scoring methods:
 
@@ -672,10 +699,10 @@ The following table summarizes the allowable measure scoring for each of the com
 |:-----------------------------------------------------:|:----:|:----:|
 |                      Opportunity                      | Composite | Proportion/Ratio |
 |                    All-or-nothing                     | Composite | Proportion/Ratio |
-|                Subject-level Linear                   | Composite | Proportion/Ratio |
+|                Subject-level Linear                   | Composite | <span class="new-content">Proportion/Ratio</span> |
 |                    Component-level                    | Composite | Proportion/Ratio/Continuous Variable |
 
-Note that these requirements are about ensuring that the population criteria expressions among the components use similar sets of population criteria. This means that all the components of a given composite measure don’t necessarily have to use the same scoring type, just that they have to have similar population criteria. For example, a Proportion composite may use a Proportion component and a Ratio component. For component-based composites that use Ratio or Continuous Variable components, the component scores must also be normalized to a common scale, as described in [Score Normalization](#score-normalization).
+Note that these requirements are about ensuring that the population criteria expressions among the components use similar sets of population criteria. This means that all the components of a given composite measure don’t necessarily have to use the same scoring type, just that they have to have similar population criteria. For example, a Proportion composite may use a Proportion component and a Ratio component. <span class="new-content">For component-based composites that use Ratio or Continuous Variable components, the component scores must also be normalized to a common scale, as described in [Score Normalization](#score-normalization).</span>
 
 ### Measure Basis
 {: #measure-basis}

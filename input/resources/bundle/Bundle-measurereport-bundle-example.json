@@ -68,6 +68,12 @@
         },
         "group": [
           {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId",
+                "valueString": "primary"
+              }
+            ],
             "measureScore": {
               "value": 1
             },
@@ -82,6 +88,12 @@
             },
             "population": [
               {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+                    "valueString": "primary-exm130-initial-population"
+                  }
+                ],
                 "code": {
                   "coding": [
                     {
@@ -94,6 +106,12 @@
                 "count": 1
               },
               {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+                    "valueString": "primary-exm130-numerator"
+                  }
+                ],
                 "code": {
                   "coding": [
                     {
@@ -106,6 +124,12 @@
                 "count": 1
               },
               {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+                    "valueString": "primary-exm130-denominator"
+                  }
+                ],
                 "code": {
                   "coding": [
                     {
@@ -118,6 +142,12 @@
                 "count": 1
               },
               {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+                    "valueString": "primary-exm130-denominator-exclusion"
+                  }
+                ],
                 "code": {
                   "coding": [
                     {
@@ -132,20 +162,20 @@
             ]
           }
         ],
-		"evaluatedResource": [
-			{
-				"reference": "urn:uuid:47709cc7-b3ec-4abc-9d26-3df3d3d57905"
-			},
-      {
-				"reference": "urn:uuid:47709cc7-b3ec-4abc-9d26-3df3d3d57906"
-			},
-      {
-				"reference": "urn:uuid:47709cc7-b3ec-4abc-9d26-3df3d3d57907"
-			},
-      {
-				"reference": "urn:uuid:47709cc7-b3ec-4abc-9d26-3df3d3d57908"
-			}
-		]
+        "evaluatedResource": [
+          {
+            "reference": "urn:uuid:47709cc7-b3ec-4abc-9d26-3df3d3d57905"
+          },
+          {
+            "reference": "urn:uuid:47709cc7-b3ec-4abc-9d26-3df3d3d57906"
+          },
+          {
+            "reference": "urn:uuid:47709cc7-b3ec-4abc-9d26-3df3d3d57907"
+          },
+          {
+            "reference": "urn:uuid:47709cc7-b3ec-4abc-9d26-3df3d3d57908"
+          }
+        ]
       },
       "request": {
         "method": "POST",

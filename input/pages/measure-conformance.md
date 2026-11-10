@@ -1267,6 +1267,8 @@ Snippet 3-28: Continuous variable measure scoring semantics
 #### Cohort Definitions
 {: #cohort-definitions}
 
+<div class="new-content" markdown="1">
+
 Cohort measures identify a population of patients or other entities that meet specified criteria for clinical, quality improvement, public health, or other population-based purposes. Unlike proportion or ratio measures, cohort measures do not evaluate performance using numerator and denominator criteria. Instead, the Initial Population criteria define membership in the cohort, and the resulting count represents the population meeting those criteria.
 
 Cohort measures may support a variety of use cases, including:
@@ -1274,6 +1276,8 @@ Cohort measures may support a variety of use cases, including:
 * Clinical population identification: An antenatal care cohort may identify patients with a confirmed pregnancy for whom antenatal care is applicable, as in the [Antenatal Care Cohort](Measure-ANCCohort.html) example. The cohort criteria may use clinical information, such as pregnancy confirmation observations, to determine population membership and support subsequent care planning or quality improvement activities. A cohort measure may also define supplemental data elements to capture additional patient characteristics or clinical information that can be used in further evaluation of the identified population, as in the [NHSN Glycemic Control: Hyperglycemic Initial Population](Bundle-sde-example-artifact-bundle.html) example.
 
 In these use cases, cohort measures establish population membership but do not independently determine or initiate subsequent clinical or public health interventions. The resulting cohort may inform downstream activities according to applicable clinical protocols, organizational policies, or public health requirements.
+
+</div>
 
 Figure 3-6 depicts the population for a Cohort measure, Table 3-10 provides the definitions for cohort measure population criteria.
 
@@ -1583,6 +1587,8 @@ In all these cases, a Library conforming to the CRMIManifestLibrary profile can 
 #### Data Requirements for a Measure Program
 {: #program-data-requirements}
 
+<div class="new-content" markdown="1">
+
 Measures are typically reported as part of a measure program, a set of measures that a reporting organization is required (or has chosen) to report for a given reporting period. Before data can be submitted for a program, an implementer needs to know what data the receiving system needs in order to calculate every measure in the program: which resources, which elements of those resources, which codes and value sets are used to select them, and over what time frames. Determining this one measure at a time produces a separate set of data requirements for each measure, with considerable overlap between them, because measures in a program frequently share the same encounters, demographics, diagnoses, and terminology.
 
 The CRMI [$data-requirements]({{site.data.fhir.ver.crmi}}/OperationDefinition-crmi-data-requirements.html) operation determines the effective data requirements of one or more artifacts, including their components and dependencies. When multiple artifacts are specified, the result is the aggregate data requirements for all the artifacts, returned as a single _module-definition_ Library that describes the parameters, data requirements, and dependencies of all the measures involved. Because the requirements are gathered across all the measures, implementations can collapse overlapping requirements, so that the result describes the combined data needed for the set of measures as a whole, rather than a concatenation of the requirements of each measure.
@@ -1697,7 +1703,11 @@ Snippet 3-39: Abbreviated aggregate data requirements for a measure program
 
 To illustrate the effect of aggregation using the examples in this implementation guide: determined separately, the effective data requirements of EXM124 (Cervical Cancer Screening) and EXM130 (Colorectal Cancer Screening) contain 31 data requirements that reference 26 value sets. Because the two measures share the same qualifying encounters, patient demographics, and payer information, the aggregate requirements for the two measures can be collapsed into 21 distinct data requirements (by resource type and code filter), referencing 18 distinct value sets.
 
+</div>
+
 ##### Using Program Data Requirements
+
+<div class="new-content" markdown="1">
 
 The aggregate data requirements tell an implementer what data they need to provide for the measures in the program to be calculated:
 
@@ -1715,6 +1725,8 @@ Implementers can use this information to:
 * Detect the impact of a program update, by comparing the aggregate data requirements of the previous and updated versions of the program
 
 Note that data requirements describe the data that is referenced by the measure logic, across all the populations, stratifiers, supplemental data elements, and risk adjustment variables of the measures. They identify the data a receiving system needs to calculate the measures, not the subset of that data that is relevant for any particular patient, and a program may have additional reporting requirements (such as submission formats or attestation) that are not described by the data requirements of its measures.
+
+</div>
 
 ### HQMF Mapping
 

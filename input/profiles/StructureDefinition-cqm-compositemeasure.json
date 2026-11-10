@@ -226,8 +226,8 @@
         {
           "key" : "cmp-10",
           "severity" : "error",
-          "human" : "Composite measures may not specify population criteria",
-          "expression" : "extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring').exists() and extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring').value.coding.code contains 'composite' implies population.count() = 0"
+          "human" : "Component-based (weighted) composite measures may not specify population criteria",
+          "expression" : "extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring').exists() and extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring').value.coding.code contains 'composite' and extension('http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositeScoring').value.coding.code contains 'weighted' implies population.count() = 0"
         },
         {
           "key" : "cmp-11",

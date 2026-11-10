@@ -564,3 +564,6 @@ WARNING: MeasureReport/IGRatio-hana: MeasureReport.group[0].measureScore: A unit
 WARNING: MeasureReport/IGRatio-ivy: MeasureReport.group[0].measureScore: A unit should be present when the scoring type is ratio
 WARNING: MeasureReport/IGRatio-summary: MeasureReport.group[0].measureScore: A unit should be present when the scoring type is ratio
 
+# 3.0.0-ballot:001 - Weighted composites combine the summary scores of their components, so their groups SHALL NOT define populations (cmp-10)
+WARNING: Measure/DiabetesCareWeightedComposite: Measure.group[0]: Measure Groups should have at least one population
+WARNING: Measure/PreventiveCareandWellnessWeightedComposite: Measure.group[0]: Measure Groups should have at least one population

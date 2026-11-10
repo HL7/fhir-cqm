@@ -68,13 +68,6 @@
       <display value="Tobacco Use Screening and Cessation, Group 2"></display>
       <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent"></resource>
    </relatedArtifact>
-   <scoring>
-      <coding>
-         <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"></system>
-         <code value="composite"></code>
-         <display value="Composite"></display>
-      </coding>
-   </scoring>
    <compositeScoring>
       <coding>
          <system value="http://terminology.hl7.org/CodeSystem/composite-measure-scoring"></system>
@@ -97,4 +90,152 @@
    </improvementNotation>
    <!-- Guidance added for FHIR-57188 -->
    <guidance value="The composite score is calculated by determining, for each subject, the proportion of applicable component measure numerators satisfied relative to the total number of applicable component measures. Each subject-level score is then aggregated across the population to determine the overall composite performance rate. Component measures for which the subject meets denominator exclusion or denominator exception criteria are excluded from the subject-level calculation. Risk adjustment variables X, Y, and Z are applied to the calculated composite performance rate."/>
+   <group>
+      <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.linkId">
+         <valueString value="primary"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis">
+         <valueCode value="boolean"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring">
+         <valueCodeableConcept>
+            <coding>
+               <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"/>
+               <code value="composite"/>
+               <display value="Composite"/>
+            </coding>
+         </valueCodeableConcept>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositeScoring">
+         <valueCodeableConcept>
+            <coding>
+               <system value="http://terminology.hl7.org/CodeSystem/composite-measure-scoring"></system>
+               <code value="linear"></code>
+               <display value="Linear"></display>
+            </coding>
+         </valueCodeableConcept>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <valueRelatedArtifact>
+            <type value="composed-of"></type>
+            <display value="Breast Cancer Screening"></display>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/BCSComponent"></resource>
+         </valueRelatedArtifact>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <valueRelatedArtifact>
+            <type value="composed-of"></type>
+            <display value="High Blood Pressure Screening"></display>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/HBPComponent"></resource>
+         </valueRelatedArtifact>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <valueRelatedArtifact>
+            <type value="composed-of"></type>
+            <display value="Colorectal Cancer Screening"></display>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/CCSComponent"></resource>
+         </valueRelatedArtifact>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <valueRelatedArtifact>
+            <type value="composed-of"></type>
+            <display value="Pneumococcal Vaccination Status"></display>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/PVSComponent"></resource>
+         </valueRelatedArtifact>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+               <valueString value="group-1"></valueString>
+            </extension>
+            <type value="composed-of"></type>
+            <display value="Tobacco Use Screening and Cessation, Group 1"></display>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent"></resource>
+         </valueRelatedArtifact>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component">
+         <valueRelatedArtifact>
+            <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId">
+               <valueString value="group-2"></valueString>
+            </extension>
+            <type value="composed-of"></type>
+            <display value="Tobacco Use Screening and Cessation, Group 2"></display>
+            <resource value="http://hl7.org/fhir/uv/cqm/Measure/TSCComponent"></resource>
+         </valueRelatedArtifact>
+      </extension>
+      <population id="initial-population">
+         <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId">
+            <valueString value="initial-population"/>
+         </extension>
+         <code>
+            <coding>
+               <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+               <code value="initial-population"/>
+               <display value="Initial Population"/>
+            </coding>
+         </code>
+         <description value="Patients in the initial population of any component measure"/>
+         <criteria>
+            <language value="text/plain"/>
+            <expression value="Patients in the initial population of any component measure"/>
+         </criteria>
+      </population>
+      <population id="measure-population">
+         <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId">
+            <valueString value="measure-population"/>
+         </extension>
+         <code>
+            <coding>
+               <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+               <code value="measure-population"/>
+               <display value="Measure Population"/>
+            </coding>
+         </code>
+         <description value="Patients in the denominator of any component measure"/>
+         <criteria>
+            <language value="text/plain"/>
+            <expression value="Patients in the denominator of any component measure"/>
+         </criteria>
+      </population>
+      <population id="measure-population-exclusion">
+         <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId">
+            <valueString value="measure-population-exclusion"/>
+         </extension>
+         <code>
+            <coding>
+               <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+               <code value="measure-population-exclusion"/>
+               <display value="Measure Population Exclusion"/>
+            </coding>
+         </code>
+         <description value="Patients who meet the denominator exclusion of every component measure in whose denominator they appear"/>
+         <criteria>
+            <language value="text/plain"/>
+            <expression value="Patients who meet the denominator exclusion of every component measure in whose denominator they appear"/>
+         </criteria>
+      </population>
+      <population id="measure-observation">
+         <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Measure.group.population.linkId">
+            <valueString value="measure-observation"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference">
+            <valueString value="measure-population"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-aggregateMethod">
+            <valueCode value="average"/>
+         </extension>
+         <code>
+            <coding>
+               <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+               <code value="measure-observation"/>
+               <display value="Measure Observation"/>
+            </coding>
+         </code>
+         <description value="For each patient, the number of component measure numerators the patient meets, divided by the number of component measure denominators of which the patient is a member"/>
+         <criteria>
+            <language value="text/plain"/>
+            <expression value="For each patient, the number of component measure numerators the patient meets, divided by the number of component measure denominators of which the patient is a member"/>
+         </criteria>
+      </population>
+   </group>
 </Measure>
