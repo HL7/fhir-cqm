@@ -25,8 +25,20 @@
   },
   "group": [
     {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId",
+          "valueString": "primary"
+        }
+      ],
       "population": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "primary-pvscomponent-initial-population"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -38,6 +50,12 @@
           "count": 0
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "primary-pvscomponent-denominator"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -49,6 +67,12 @@
           "count": 0
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "primary-pvscomponent-denominator-exclusion"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -60,6 +84,12 @@
           "count": 0
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "primary-pvscomponent-numerator"
+            }
+          ],
           "code": {
             "coding": [
               {

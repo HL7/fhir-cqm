@@ -3,6 +3,31 @@
 
 {: #changes}
 
+### Changes for STU 3 Ballot
+
+#### Non-Compatible Changes
+
+* [FHIR-59400](https://jira.hl7.org/browse/FHIR-59400): Clarify the use of continuous variable components in composite measures. Subject-level linear composites are restricted to Proportion and Ratio components, and weighted composites with Ratio or Continuous Variable components must specify a score range to normalize each component score, using the new [scoreRange](StructureDefinition-cqm-scoreRange.html) extension (Applied: [Weighted Scoring](composite-measures.html#conformance-requirement-5-5), [Score Normalization](composite-measures.html#score-normalization), [Improvement Notation](composite-measures.html#improvement-notation), [Measure Types](composite-measures.html#measure-types), [CQM Score Range](StructureDefinition-cqm-scoreRange.html), [CQM Composite Measure](StructureDefinition-cqm-compositemeasure.html), [Diabetes Care example](examples.html#mixed-component-scoring))
+* [FHIR-58885](https://jira.hl7.org/browse/FHIR-58885): Require linkId on test case MeasureReport groups, populations, stratifiers, and stratum components, using the R5 cross-version extensions, and add linkIds to the example test cases (Applied: [CQM Test Case](StructureDefinition-cqm-testcase.html), [Test Case examples](examples.html#preventive-care-and-wellness-test-cases))
+
+#### Compatible, Substantive Changes
+
+* [FHIR-59504](https://jira.hl7.org/browse/FHIR-59504): Provide worked examples of composite measure calculation, with individual and summary test cases for each component and composite. Building the test cases identified corrections to the formal criteria for composite exclusions and exceptions: a component in which an individual is excluded (or is an exception without meeting the numerator) no longer counts against the composite, and an individual is excluded from the composite only if excluded from every component in whose denominator they appear (Applied: [All-or-nothing Scoring](composite-measures.html#all-or-nothing-scoring), [Opportunity Scoring](composite-measures.html#opportunity-scoring), [Subject-level Linear Combination Scoring](composite-measures.html#subject-level-linear-combination-scoring), [Preventive Care and Wellness test cases](examples.html#preventive-care-and-wellness-test-cases), [Diabetes Care test cases](examples.html#mixed-component-scoring))
+
+* Allow composites that determine population membership for each individual (all-or-nothing, opportunity, and subject-level linear) to define population criteria on the composite group, and express the composite elements of the composite examples at the group level. Also corrects the classification of subject-level linear scoring as an individual-based (not component-based) scoring method (Applied: [Composite Measures](composite-measures.html#composite-measures), [CQM Composite Measure](StructureDefinition-cqm-compositemeasure.html), [All-or-nothing example](Measure-PreventiveCareandWellnessAllOrNothingComposite.html), [Opportunity example](Measure-PreventiveCareandWellnessOpportunityComposite.html), [Patient-level linear example](Measure-PreventiveCareandWellnessPatientLevelLinearComposite.html))
+
+#### Non-substantive Changes
+
+* [FHIR-59665](https://jira.hl7.org/browse/FHIR-59665): Update the description of the CQM Reporting Timing extension to indicate that it specifies reporting frequency (Applied: [CQM Reporting Timing](StructureDefinition-cqm-reportingTiming.html), [CQM DataType Timing](StructureDefinition-cqm-datatype-timing.html))
+* [FHIR-59647](https://jira.hl7.org/browse/FHIR-59647): Document using data requirements to determine the aggregate data requirements for a measure program (Applied: [Data Requirements for a Measure Program](measure-conformance.html#program-data-requirements), [Operations](operations.html#data-requirements), [Capabilities](capabilities.html))
+* [FHIR-58747](https://jira.hl7.org/browse/FHIR-58747): Expand the description of cohort definitions with example use cases, and add an antenatal care cohort example (Applied: [Cohort Definitions](measure-conformance.html#cohort-definitions), [Antenatal Care Cohort](Measure-ANCCohort.html), [Examples](examples.html))
+
+#### Technical Corrections
+
+* Corrected references to the `$data-requirements` operation to use the CRMI [$data-requirements]({{site.data.fhir.ver.crmi}}/OperationDefinition-crmi-data-requirements.html) operation, and removed the unused CQM Data Requirements OperationDefinition (Applied: [Measure Repository Service](measure-repository-service.html), [Publishable Measure Repository](CapabilityStatement-publishable-measure-repository.html))
+* Updated dependencies to the CRMI and Using CQL with FHIR ballot versions, and updated the CQL libraries to include FHIRHelpers 4.0.2-ballot and FHIRCommon 3.0.0-ballot
+* Corrected the `"Prevalence Period"` function of the [MATGlobalCommonFunctions](Library-MATGlobalCommonFunctions.html) example library to use a closed interval, so that conditions without an abatement are treated as ongoing
+
 ### Changes for STU 2
 
 #### Non-Compatible Changes
@@ -23,7 +48,6 @@
 
 #### Non-substantive Changes
 
-* [FHIR-59647](https://jira.hl7.org/browse/FHIR-59647): Document using data requirements to determine the aggregate data requirements for a measure program (Applied ([here](measure-conformance.html#program-data-requirements)))
 * [FHIR-58297](https://jira.hl7.org/browse/FHIR-58297): Clarify the term "population group"
 * [FHIR-57879](https://jira.hl7.org/browse/FHIR-57879): Clarify the Group naming convention in Measures with Multiple Rates (3.4.8)
 * [FHIR-57861](https://jira.hl7.org/browse/FHIR-57861): Ensure topic search parameter is supported in publishable repository

@@ -25,8 +25,21 @@
   },
   "group": [
     {
+      "id": "group-1",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId",
+          "valueString": "primary"
+        }
+      ],
       "population": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "primary-tsccomponent-initial-population"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -38,6 +51,12 @@
           "count": 1
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "primary-tsccomponent-denominator"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -49,6 +68,12 @@
           "count": 1
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "primary-tsccomponent-denominator-exception"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -60,6 +85,12 @@
           "count": 1
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "primary-tsccomponent-numerator"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -81,13 +112,6 @@
           ]
         }
       },
-      "id": "group-1",
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId",
-          "valueString": "primary"
-        }
-      ],
       "code": {
         "coding": [
           {
@@ -100,8 +124,21 @@
       }
     },
     {
+      "id": "group-2",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId",
+          "valueString": "group-2"
+        }
+      ],
       "population": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "group-2-tsccomponent-initial-population"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -113,6 +150,12 @@
           "count": 1
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "group-2-tsccomponent-denominator"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -124,6 +167,12 @@
           "count": 0
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "group-2-tsccomponent-denominator-exception"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -135,6 +184,12 @@
           "count": 0
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "group-2-tsccomponent-numerator"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -156,13 +211,6 @@
           ]
         }
       },
-      "id": "group-2",
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId",
-          "valueString": "group-2"
-        }
-      ],
       "code": {
         "coding": [
           {
@@ -175,8 +223,21 @@
       }
     },
     {
+      "id": "group-3",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId",
+          "valueString": "group-3"
+        }
+      ],
       "population": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "group-3-tsccomponent-initial-population"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -188,6 +249,12 @@
           "count": 1
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "group-3-tsccomponent-denominator"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -199,6 +266,12 @@
           "count": 1
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "group-3-tsccomponent-denominator-exception"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -210,6 +283,12 @@
           "count": 1
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "group-3-tsccomponent-numerator"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -231,13 +310,6 @@
           ]
         }
       },
-      "id": "group-3",
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId",
-          "valueString": "group-3"
-        }
-      ],
       "code": {
         "coding": [
           {

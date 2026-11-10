@@ -22,6 +22,12 @@
   },
   "group": [
     {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId",
+          "valueString": "primary"
+        }
+      ],
       "measureScore": {
         "value": 0.7418
       }

@@ -12,7 +12,7 @@
 * [**Supplemental Data Elements Example**](Library-SupplementalDataElements.html) Library illustrating common supplemental data elements
 * [**Age Stratified Example**](Measure-age-stratified-example.html) Measure illustrating value-based stratification by age group - [Library](Library-AgeStratificationExample.html)
 * [**Supporting Evidence Example**](Measure-SupportingEvidenceExample.html) Measure illustrating the use of supporting evidence - [Library](Library-SupportingEvidenceExample.html)
-* [**Cohort Example**](Measure-ANCCohort.html) Measure identifying patients with confirmed pregnancy for whom antenatal care (ANC) is applicable - [Library](http://hl7.org/fhir/uv/cql/Library/ANCCohort)
+* {:.new-content}[**Cohort Example**](Measure-ANCCohort.html) Measure identifying patients with confirmed pregnancy for whom antenatal care (ANC) is applicable - [Library](Library-ANCCohort.html)
 
 ### Scoring Examples
 
@@ -100,6 +100,9 @@ Interpretation: For each Eligible Clinician (EC), percentage of patients who rec
 [**Preventive Care and Wellness (Component-level weighted)**](Measure-PreventiveCareandWellnessWeightedComposite.html)
 
 #### Preventive Care and Wellness test cases
+{: #preventive-care-and-wellness-test-cases}
+
+<div class="new-content" markdown="1">
 
 Test cases for the Preventive Care and Wellness composites use a [bundle of thirteen test patients](Bundle-preventive-care-test-patients.html). Between them, the patients exercise each population criterion of the components, as well as the cases that distinguish the composite scoring methods: a patient excluded from some components but not others (Mona), a patient excluded from every component in whose denominator they appear (Uma), a denominator exception that is overridden by meeting the numerator (Olga's blood pressure screening), and an encounter-based component in which only some of a patient's encounters meet the numerator (Liam). Each component and composite has an individual test case for each patient (except the weighted composite, which is calculated only at the population level), and a summary test case:
 
@@ -116,7 +119,12 @@ Test cases for the Preventive Care and Wellness composites use a [bundle of thir
 |Component-level weighted | [Weighted summary](MeasureReport-PreventiveCareandWellnessWeightedComposite-summary.html) | 0.7418 |
 {: .grid}
 
+</div>
+
 #### Component-level weighted with mixed component scoring
+{: #mixed-component-scoring}
+
+<div class="new-content" markdown="1">
 
 The Preventive Care and Wellness composites above use only proportion components. Component-based composites may also include ratio and continuous variable components, whose scores must be normalized to a common scale before they are weighted (see [Score Normalization](composite-measures.html#score-normalization)). The Diabetes Care composite illustrates this using three component measures with different scoring types:
 
@@ -134,6 +142,8 @@ Test cases for the Diabetes Care composite use a [bundle of eight test patients]
 * [**DEV summary**](MeasureReport-DEVComponent-summary.html) - expected score 50 per 1,000 patient-months
 * [**DFU summary**](MeasureReport-DFUComponent-summary.html) - expected score of 9 days (median)
 * [**Diabetes Care composite summary**](MeasureReport-DiabetesCareWeightedComposite-summary.html) - expected composite score 0.6, calculated from the component summaries
+
+</div>
 
 ### Manifest Examples
 

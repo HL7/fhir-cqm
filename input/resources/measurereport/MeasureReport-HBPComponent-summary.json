@@ -22,8 +22,20 @@
   },
   "group": [
     {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId",
+          "valueString": "primary"
+        }
+      ],
       "population": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "primary-hbpcomponent-initial-population"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -35,6 +47,12 @@
           "count": 21
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "primary-hbpcomponent-denominator"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -46,6 +64,12 @@
           "count": 21
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "primary-hbpcomponent-denominator-exclusion"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -57,6 +81,12 @@
           "count": 3
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "primary-hbpcomponent-denominator-exception"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -68,6 +98,12 @@
           "count": 1
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "primary-hbpcomponent-numerator"
+            }
+          ],
           "code": {
             "coding": [
               {

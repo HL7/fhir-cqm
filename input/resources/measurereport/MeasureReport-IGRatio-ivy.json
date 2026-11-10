@@ -25,8 +25,21 @@
   },
   "group": [
     {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.linkId",
+          "valueString": "Group_1"
+        }
+      ],
       "population": [
         {
+          "id": "InitialPopulation_1",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "InitialPopulation_1"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -35,10 +48,16 @@
               }
             ]
           },
-          "count": 1,
-          "id": "InitialPopulation_1"
+          "count": 1
         },
         {
+          "id": "InitialPopulation_2",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "InitialPopulation_2"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -47,10 +66,15 @@
               }
             ]
           },
-          "count": 0,
-          "id": "InitialPopulation_2"
+          "count": 0
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "Denominator_1"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -62,6 +86,12 @@
           "count": 0
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "DenominatorExclusion_1"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -73,6 +103,12 @@
           "count": 0
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "Numerator_1"
+            }
+          ],
           "code": {
             "coding": [
               {
@@ -84,6 +120,12 @@
           "count": 0
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.group.population.linkId",
+              "valueString": "NumeratorExclusion_1"
+            }
+          ],
           "code": {
             "coding": [
               {
