@@ -8,12 +8,14 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="Library/ANCCohort" key="Library-ANCCohort" name="ANC Cohort"/>
 <artifact id="Library/AdultOutpatientEncounters" key="Library-AdultOutpatientEncounters" name="Adult Outpatient Encounters Common Library"/>
 <artifact id="Library/AdvancedIllnessandFrailtyExclusion" key="Library-AdvancedIllnessandFrailtyExclusion" name="Advanced Illness and Frailty Exclusion Library"/>
 <artifact id="Library/AgeStratificationExample" key="Library-AgeStratificationExample" name="Age Stratification Example"/>
 <artifact id="Measure/age-stratified-example" key="Measure-age-stratified-example" name="Age Stratified Example"/>
 <artifact id="ValueSet/age-stratified-example" key="ValueSet-age-stratified-example" name="Age Stratified Example Age Groups"/>
 <artifact id="ConceptMap/aggregate-method" key="ConceptMap-aggregate-method" name="Aggregate Method mapping"/>
+<artifact id="Measure/ANCCohort" key="Measure-ANCCohort" name="Antenatal Care Cohort"/>
 <artifact id="Library/BCSComponent" key="Library-BCSComponent" name="BCS Component Library"/>
 <artifact id="Measure/BedCapacityMeasure-daily" key="Measure-BedCapacityMeasure-daily" name="Bed Capacity Measure - Daily Reporting"/>
 <artifact id="Measure/BedCapacityMeasure-monthly" key="Measure-BedCapacityMeasure-monthly" name="Bed Capacity Measure - Monthly Reporting"/>

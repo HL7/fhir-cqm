@@ -166,7 +166,7 @@
       {
         "id": "MeasureReport.group.extension:linkID",
          "path": "MeasureReport.group.extension",
-         "sliceName": "group-linkId",
+         "sliceName": "linkId",
          "min": 1,
         "max": "1",
          "type": [
@@ -195,7 +195,7 @@
             {
         "id": "MeasureReport.group.population.extension:linkID",
          "path": "MeasureReport.group.population.extension",
-         "sliceName": "group-pop-linkId",
+         "sliceName": "linkId",
          "min": 1,
         "max": "1",
          "type": [
@@ -247,7 +247,7 @@
                   {
         "id": "MeasureReport.group.stratifier.extension:linkID",
          "path": "MeasureReport.group.stratifier.extension",
-         "sliceName": "group-stratifier-linkId",
+         "sliceName": "linkId",
          "min": 1,
         "max": "1",
          "type": [
@@ -283,7 +283,7 @@
                         {
         "id": "MeasureReport.group.stratifier.stratum.component.extension:linkID",
          "path": "MeasureReport.group.stratifier.stratum.component.extension",
-         "sliceName": "group-stratifier-stratum-component-linkId",
+         "sliceName": "linkId",
          "min": 1,
         "max": "1",
          "type": [
