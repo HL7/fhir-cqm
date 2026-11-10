@@ -1865,80 +1865,128 @@
       <exampleCanonical value="http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase"/>
     </resource>
     <page>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="informative"/>
+      </extension>
       <nameUrl value="index.html"/>
       <title value="Quality Measure Implementation Guide Homepage"/>
       <generation value="markdown"/>
     <page>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="informative"/>
+    </extension>
     <nameUrl value="introduction.html"/>
     <title value="Introduction"/>
     <generation value="markdown"/>
   </page>
   <page>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="trial-use"/>
+    </extension>
     <nameUrl value="measure-conformance.html"/>
     <title value="Quality Measures"/>
     <generation value="markdown"/>
   </page>
   <page>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="trial-use"/>
+    </extension>
     <nameUrl value="using-cql.html"/>
     <title value="Using CQL"/>
     <generation value="markdown"/>
   </page>
   <page>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="trial-use"/>
+    </extension>
     <nameUrl value="composite-measures.html"/>
     <title value="Composites"/>
     <generation value="markdown"/>
   </page>
   <page>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="trial-use"/>
+    </extension>
     <nameUrl value="packaging.html"/>
     <title value="Packaging"/>
     <generation value="markdown"/>
   </page>
   <page>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="trial-use"/>
+    </extension>
     <nameUrl value="profiles.html"/>
     <title value="Profiles"/>
     <generation value="markdown"/>
   </page>
   <page>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="trial-use"/>
+    </extension>
     <nameUrl value="terminology.html"/>
     <title value="Terminology"/>
     <generation value="markdown"/>
   </page>
   <page>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="trial-use"/>
+    </extension>
     <nameUrl value="capabilities.html"/>
     <title value="Capabilities"/>
     <generation value="markdown"/>
     <page>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="trial-use"/>
+      </extension>
       <nameUrl value="measure-repository-service.html"/>
       <title value="Measure Repository Service"/>
       <generation value="markdown"/>
     </page>
   </page>
   <page>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="trial-use"/>
+    </extension>
     <nameUrl value="operations.html"/>
     <title value="Operations"/>
     <generation value="markdown"/>
   </page>
   <page>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="informative"/>
+    </extension>
     <nameUrl value="examples.html"/>
     <title value="Examples"/>
     <generation value="markdown"/>
   </page>
   <page>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="informative"/>
+    </extension>
     <nameUrl value="glossary.html"/>
     <title value="Glossary"/>
     <generation value="markdown"/>
   </page>
   <page>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="informative"/>
+    </extension>
     <nameUrl value="downloads.html"/>
     <title value="Downloads"/>
     <generation value="markdown"/>
   </page>
   <page>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="informative"/>
+    </extension>
     <nameUrl value="acknowledgements.html"/>
     <title value="Acknowledgements"/>
     <generation value="markdown"/>
   </page>
   <page>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="informative"/>
+    </extension>
     <nameUrl value="changes.html"/>
     <title value="Changes"/>
     <generation value="markdown"/>
@@ -1954,11 +2002,15 @@
     </parameter>
     <parameter>
       <code value="releaselabel"/>
-      <value value="STU 2"/>
+      <value value="STU 3"/>
     </parameter>
     <parameter>
       <code value="copyrightyear"/>
       <value value="2019+"/>
+    </parameter>
+    <parameter>
+      <code value="toggle-changes"/>
+      <value value="true"/>
     </parameter>
     <parameter>
       <code value="path-expansion-params"/>
