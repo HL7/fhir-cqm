@@ -7002,7 +7002,6 @@
 													"    if (pm.environment.get(\"VALUESET_DEBUG\") === true){",
 													"       console.log(pm.response.json());",
 													"    }",
-
 													"// profile\r",
 													"pm.testUtils.assertMetaProfilesPresent(pm.response.json(), { label: \"Executable profile is present in meta\", path: \"meta.profile\", STU4: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"], STU5: [\"http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-valueset-cqfm\"] });",
 													"\r",
@@ -10071,42 +10070,55 @@
 							"response": []
 						},
 						{
-							"name": "Quality Program Manifest Support 6.6 Expand With Manifest",
+							"name": "Quality Program Manifest Support 6.2 GET Manifest Library (extract value set version pin)",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"exec": [
-											"\r",
-											"pm.test(\"Response status code is 200\", function () {\r",
-											"    pm.expect(pm.response.code).to.equal(200);\r",
-											"});\r",
-											"\r",
-											"// url\r",
-											"pm.test(\"Resource url equal to http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010\", function () {\r",
-											"    const responseData = pm.response.json();\r",
-											"\r",
-											"    pm.expect(responseData.url).equal(\"http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010\");\r",
-											"});\r",
-											"\r",
-											"// version\r",
-											"// NOTE: This is based on latest as of this test date\r",
-											"pm.test(\"Version is 20200306\", function () {\r",
-											"    const responseData = pm.response.json();\r",
-											"\r",
-											"    pm.expect(responseData.version).to.equal(\"20200306\", \"Invalid version\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Expansion is present\", function () {\r",
-											"    const responseData = pm.response.json();\r",
-											"\r",
-											"    pm.expect(responseData.expansion).exist;\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Code is present\", function() {\r",
-											"    const responseData = pm.response.json();\r",
-											"\r",
-											"    pm.expect(responseData.expansion.contains.find(function(obj) { return obj.system == \"http://snomed.info/sct\" && obj.code == \"107691000119101\" && obj.version != \"http://snomed.info/sct/731000124108/version/20230901\" })).exist;\r",
+											"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
+											"//SOT@## Manifest Version Pinning @SOT",
+											"// Requirement - the manifest determines the value set version to expand:",
+											"// SOT@ https://hl7.org/fhir/uv/crmi/version-manifest.html#canonical-resolution-with-a-manifest @SOT",
+											"// SOT@ https://hl7.org/fhir/uv/crmi/artifact-terminology-service.html#expansion-rules @SOT",
+											"// SOT@ measure-conformance.html#manifest @SOT",
+											"// CRMI 2.0.0: \"search for a version-specific reference to that URL, and return the",
+											"// version-specific reference for resolution ... predictably bound to the specific version of",
+											"// the value set required for the release.\" Falling back to latest is the no-manifest path.",
+											"",
+											"var body = pm.testUtils.safeJson(pm.response);",
+											"// pm.variables.get honours the full precedence chain (data > environment > collection),",
+											"// so a --env-var override of the target value set reaches the script and not just the URL.",
+											"var VS = pm.variables.get('MANIFEST_VS_CANONICAL');",
+											"",
+											"pm.test('Manifest Library read returns 200', function () {",
+											"  pm.expect(pm.response.code).to.equal(200);",
+											"});",
+											"",
+											"pm.test('Manifest is a Library', function () {",
+											"  pm.expect(body.resourceType, 'Expected a Library resource').to.equal('Library');",
+											"});",
+											"",
+											"var pin = pm.testUtils.findValueSetPin(body, VS);",
+											"pm.collectionVariables.set('PINNED_VS_VERSION', pin.version || '');",
+											"pm.collectionVariables.set('PIN_SOURCE', pin.source || 'none');",
+											"",
+											"if (pm.environment.get('QUALITY_PROGRAM_DEBUG') === true) {",
+											"  console.log('manifest:', body.url, body.version);",
+											"  console.log('relatedArtifact entries:', (body.relatedArtifact || []).length);",
+											"  console.log('contained:', (body.contained || []).map(function (c) { return c.resourceType; }));",
+											"}",
+											"console.log('pin for ' + VS + ': ' + (pin.version || 'NONE') +",
+											"            ' (via ' + (pin.source || 'n/a') + '; ' + pin.candidates.length + ' candidate(s))');",
+											"",
+											"pm.test('Manifest pins a definition version for the target value set', function () {",
+											"  pm.expect(pin.version,",
+											"    'No version pin for ' + VS + ' in manifest ' + (body.url || '') +",
+											"    '. Checked relatedArtifact.depends-on versioned canonicals and contained Parameters ' +",
+											"    '(default-valueset-version / canonicalVersion / force-valueset-version). ' +",
+											"    'Without a pin the rest of these requests cannot test anything - point MANIFEST_VS_CANONICAL / ' +",
+											"    'MANIFEST_VS_OID at a value set this manifest pins, or use a manifest that pins it.'",
+											"  ).to.be.a('string').and.not.empty;",
 											"});"
 										],
 										"type": "text/javascript"
@@ -10117,17 +10129,280 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{SERVER_URL}}ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010&manifest=http://cts.nlm.nih.gov/fhir/Library/ecqm-update-2023-05-04",
+									"raw": "{{SERVER_URL}}Library/{{MANIFEST_ID}}",
+									"host": ["{{SERVER_URL}}Library"],
+									"path": ["{{MANIFEST_ID}}"]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Quality Program Manifest Support 6.3 Expand Without Manifest (record latest version)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
+											"// Baseline: no manifest, so the server is entitled to serve its latest version.",
+											"// Recorded only so the manifest tests below can prove the manifest changed the outcome.",
+											"",
+											"var body = pm.testUtils.safeJson(pm.response);",
+											"",
+											"pm.test('Baseline $expand returns 200', function () {",
+											"  pm.expect(pm.response.code).to.equal(200);",
+											"});",
+											"",
+											"pm.test('Baseline $expand returns a ValueSet', function () {",
+											"  pm.expect(body.resourceType).to.equal('ValueSet');",
+											"});",
+											"",
+											"pm.test('Baseline $expand reports a version', function () {",
+											"  pm.expect(body.version, 'ValueSet.version missing - cannot establish a baseline')",
+											"    .to.be.a('string').and.not.empty;",
+											"});",
+											"",
+											"pm.collectionVariables.set('LATEST_VS_VERSION', body.version || '');",
+											"console.log('baseline (no manifest) version: ' + (body.version || 'NONE'));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER_URL}}ValueSet/{{MANIFEST_VS_OID}}/$expand",
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": [
+										"{{MANIFEST_VS_OID}}",
+										"$expand"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Quality Program Manifest Support 6.4 Expand With Manifest On Instance Honours Pinned Version",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
+											"// THE REQUIREMENT: with a manifest supplied, the expansion uses the version the manifest",
+											"// binds for this value set - not the server's latest. See SOT markers in Manifest 1.",
+											"// Request form under test: instance form",
+											"",
+											"var body = pm.testUtils.safeJson(pm.response);",
+											"var pinned = pm.collectionVariables.get('PINNED_VS_VERSION');",
+											"var latest = pm.collectionVariables.get('LATEST_VS_VERSION');",
+											"var source = pm.collectionVariables.get('PIN_SOURCE');",
+											"",
+											"pm.test('$expand with manifest returns 200 (instance form)', function () {",
+											"  pm.expect(pm.response.code).to.equal(200);",
+											"});",
+											"",
+											"pm.test('Pin was extracted from the manifest (prerequisite)', function () {",
+											"  pm.expect(pinned, 'Manifest 1 found no pin; this result proves nothing')",
+											"    .to.be.a('string').and.not.empty;",
+											"});",
+											"",
+											"// If the version the manifest pins is the same version the server would serve anyway, this",
+											"// value set cannot tell \"manifest honoured\" apart from \"manifest ignored\" - both give the",
+											"// same answer. That is exactly how Quality Program 6.6 stayed green while the behaviour",
+											"// was wrong, so fail here rather than report a pass that means nothing.",
+											"pm.test('Manifest pinned version differs from the server latest version', function () {",
+											"  pm.expect(pinned,",
+											"    'The manifest pins ' + pinned + ', which is also the version the server serves with no ' +",
+											"    'manifest at all, so passing the next check would prove nothing. Use a value set whose ' +",
+											"    'manifest-pinned version differs from its latest published version.'",
+											"  ).to.not.equal(latest);",
+											"});",
+											"",
+											"pm.test('$expand with manifest serves the manifest-pinned version (instance form)', function () {",
+											"  pm.expect(body.version,",
+											"    'Expected the manifest-pinned version ' + pinned + ' (bound via ' + source + '), got ' +",
+											"    body.version + '. Latest is ' + latest + '.'",
+											"  ).to.equal(pinned);",
+											"});",
+											"",
+											"if (pinned && latest && pinned !== latest) {",
+											"  pm.test('$expand with manifest did not fall back to latest (instance form)', function () {",
+											"    pm.expect(body.version, 'Server served its latest version (' + latest +",
+											"      ') despite the manifest pinning ' + pinned).to.not.equal(latest);",
+											"  });",
+											"}",
+											"",
+											"// Informational only. A server can echo the manifest parameter while ignoring the version it",
+											"// binds - VSAC does exactly that - so an echo assertion is NOT evidence the pin was applied.",
+											"var echoed = (((body.expansion || {}).parameter) || []).filter(function (p) {",
+											"  return p && p.name === 'manifest';",
+											"});",
+											"console.log('expansion.parameter echoes manifest: ' + (echoed.length > 0) +",
+											"            ' | served version: ' + (body.version || 'NONE') +",
+											"            ' | pinned: ' + pinned + ' | latest: ' + latest);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER_URL}}ValueSet/{{MANIFEST_VS_OID}}/$expand?manifest={{MANIFEST_CANONICAL}}",
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": [
+										"{{MANIFEST_VS_OID}}",
+										"$expand"
+									],
+									"query": [
+										{
+											"key": "manifest",
+											"value": "{{MANIFEST_CANONICAL}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Quality Program Manifest Support 6.6 Expand With Manifest",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
+											"// THE REQUIREMENT: with a manifest supplied, the expansion uses the version the manifest",
+											"// binds for this value set - not the server's latest. See SOT markers in Manifest 1.",
+											"// Request form under test: canonical form",
+											"",
+											"var body = pm.testUtils.safeJson(pm.response);",
+											"var pinned = pm.collectionVariables.get('PINNED_VS_VERSION');",
+											"var latest = pm.collectionVariables.get('LATEST_VS_VERSION');",
+											"var source = pm.collectionVariables.get('PIN_SOURCE');",
+											"",
+											"pm.test('$expand with manifest returns 200 (canonical form)', function () {",
+											"  pm.expect(pm.response.code).to.equal(200);",
+											"});",
+											"",
+											"pm.test('Pin was extracted from the manifest (prerequisite)', function () {",
+											"  pm.expect(pinned, 'Manifest 1 found no pin; this result proves nothing')",
+											"    .to.be.a('string').and.not.empty;",
+											"});",
+											"",
+											"// If the version the manifest pins is the same version the server would serve anyway, this",
+											"// value set cannot tell \"manifest honoured\" apart from \"manifest ignored\" - both give the",
+											"// same answer. That is exactly how Quality Program 6.6 stayed green while the behaviour",
+											"// was wrong, so fail here rather than report a pass that means nothing.",
+											"pm.test('Manifest pinned version differs from the server latest version', function () {",
+											"  pm.expect(pinned,",
+											"    'The manifest pins ' + pinned + ', which is also the version the server serves with no ' +",
+											"    'manifest at all, so passing the next check would prove nothing. Use a value set whose ' +",
+											"    'manifest-pinned version differs from its latest published version.'",
+											"  ).to.not.equal(latest);",
+											"});",
+											"",
+											"pm.test('$expand with manifest serves the manifest-pinned version (canonical form)', function () {",
+											"  pm.expect(body.version,",
+											"    'Expected the manifest-pinned version ' + pinned + ' (bound via ' + source + '), got ' +",
+											"    body.version + '. Latest is ' + latest + '.'",
+											"  ).to.equal(pinned);",
+											"});",
+											"",
+											"if (pinned && latest && pinned !== latest) {",
+											"  pm.test('$expand with manifest did not fall back to latest (canonical form)', function () {",
+											"    pm.expect(body.version, 'Server served its latest version (' + latest +",
+											"      ') despite the manifest pinning ' + pinned).to.not.equal(latest);",
+											"  });",
+											"}",
+											"",
+											"// Informational only. A server can echo the manifest parameter while ignoring the version it",
+											"// binds - VSAC does exactly that - so an echo assertion is NOT evidence the pin was applied.",
+											"var echoed = (((body.expansion || {}).parameter) || []).filter(function (p) {",
+											"  return p && p.name === 'manifest';",
+											"});",
+											"console.log('expansion.parameter echoes manifest: ' + (echoed.length > 0) +",
+											"            ' | served version: ' + (body.version || 'NONE') +",
+											"            ' | pinned: ' + pinned + ' | latest: ' + latest);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER_URL}}ValueSet/$expand?url={{MANIFEST_VS_CANONICAL}}&manifest={{MANIFEST_CANONICAL}}",
 									"host": ["{{SERVER_URL}}ValueSet"],
 									"path": ["$expand"],
 									"query": [
 										{
 											"key": "url",
-											"value": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010"
+											"value": "{{MANIFEST_VS_CANONICAL}}"
 										},
 										{
 											"key": "manifest",
-											"value": "http://cts.nlm.nih.gov/fhir/Library/ecqm-update-2023-05-04"
+											"value": "{{MANIFEST_CANONICAL}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Quality Program Manifest Support 6.7 Control Expand With Explicit valueSetVersion",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"eval(pm.collectionVariables.get(\"TESTUTILS_BOOTSTRAP\"));",
+											"// Control. Asks for the pinned version explicitly via valueSetVersion, which CRMI precedence",
+											"// rule 1 treats as an override supplied directly to the operation.",
+											"//",
+											"// Purpose is to separate two failures that look alike:",
+											"//   this passes + manifest tests fail -> server CAN serve the pinned version but does not",
+											"//                                        honour the manifest (the VSAC finding)",
+											"//   this fails  + manifest tests fail -> the pinned version is not retained at all",
+											"",
+											"var body = pm.testUtils.safeJson(pm.response);",
+											"var pinned = pm.collectionVariables.get('PINNED_VS_VERSION');",
+											"",
+											"pm.test('Control $expand with explicit valueSetVersion returns 200', function () {",
+											"  pm.expect(pm.response.code).to.equal(200);",
+											"});",
+											"",
+											"pm.test('Control: explicit valueSetVersion serves the pinned version', function () {",
+											"  pm.expect(body.version,",
+											"    'Asked for valueSetVersion=' + pinned + ', got ' + body.version",
+											"  ).to.equal(pinned);",
+											"});",
+											"",
+											"console.log('control (explicit valueSetVersion=' + pinned + ') served: ' + (body.version || 'NONE'));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVER_URL}}ValueSet/{{MANIFEST_VS_OID}}/$expand?valueSetVersion={{PINNED_VS_VERSION}}",
+									"host": ["{{SERVER_URL}}ValueSet"],
+									"path": [
+										"{{MANIFEST_VS_OID}}",
+										"$expand"
+									],
+									"query": [
+										{
+											"key": "valueSetVersion",
+											"value": "{{PINNED_VS_VERSION}}"
 										}
 									]
 								}
@@ -10264,12 +10539,8 @@
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}Library/",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										""
-									]
+									"host": ["{{SERVER_URL}}Library"],
+									"path": [""]
 								}
 							},
 							"response": []
@@ -10307,12 +10578,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/{{LIB_ID}}",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										"{{LIB_ID}}"
-									]
+									"host": ["{{SERVER_URL}}Library"],
+									"path": ["{{LIB_ID}}"]
 								}
 							}
 						},
@@ -10346,9 +10613,7 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/{{VS_OID}}/$expand?_format=json",
-									"host": [
-										"{{SERVER_URL}}ValueSet"
-									],
+									"host": ["{{SERVER_URL}}ValueSet"],
 									"path": [
 										"{{VS_OID}}",
 										"$expand"
@@ -10392,9 +10657,7 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}ValueSet/{{VS_OID}}/$expand?manifest={{LATEST_ACTIVE_MANIFEST}}&_format=json",
-									"host": [
-										"{{SERVER_URL}}ValueSet"
-									],
+									"host": ["{{SERVER_URL}}ValueSet"],
 									"path": [
 										"{{VS_OID}}",
 										"$expand"
@@ -10458,12 +10721,8 @@
 								},
 								"url": {
 									"raw": "{{SERVER_URL}}Library/{{LIB_ID}}",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										"{{LIB_ID}}"
-									]
+									"host": ["{{SERVER_URL}}Library"],
+									"path": ["{{LIB_ID}}"]
 								}
 							}
 						},
@@ -10507,12 +10766,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/{{LIB_ID}}",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										"{{LIB_ID}}"
-									]
+									"host": ["{{SERVER_URL}}Library"],
+									"path": ["{{LIB_ID}}"]
 								}
 							}
 						},
@@ -10674,12 +10929,8 @@
 								"header": [],
 								"url": {
 									"raw": "{{SERVER_URL}}Library/{{LIB_ID}}",
-									"host": [
-										"{{SERVER_URL}}Library"
-									],
-									"path": [
-										"{{LIB_ID}}"
-									]
+									"host": ["{{SERVER_URL}}Library"],
+									"path": ["{{LIB_ID}}"]
 								}
 							}
 						}
@@ -11185,6 +11436,82 @@
 					"    }",
 					"  });",
 					"};",
+					"",
+					"if (!pm.testUtils.safeJson) {",
+					"  pm.testUtils.safeJson = function (response) {",
+					"    try {",
+					"      var text = response && response.text ? response.text() : '';",
+					"      if (!text) { return {}; }",
+					"      return JSON.parse(text);",
+					"    } catch (e) {",
+					"      return {};",
+					"    }",
+					"  };",
+					"}",
+					"if (!pm.testUtils.findValueSetPin) {",
+					"// Find the version a manifest (CRMIManifestLibrary / quality-program-cqfm Library) binds for a",
+					"// value set canonical. Two mechanisms are supported, because manifests in the wild use either:",
+					"//",
+					"//   1. relatedArtifact.depends-on with a versioned canonical (\"<url>|<version>\").",
+					"//      This is the shape VSAC's ecqm-update-* manifests use (711 such entries in",
+					"//      ecqm-update-2022-05-05, and no contained Parameters at all). CRMI describes resolution",
+					"//      for exactly this shape under \"Canonical Resolution With a Manifest\".",
+					"//   2. A manifest-parameters entry in a contained Parameters resource: default-valueset-version",
+					"//      (CRMI 2.0.0) or canonicalVersion (the CRMI STU1 spelling, which is what our own",
+					"//      Quality Program 6.1 request sends).",
+					"//",
+					"// Precedence follows CRMI: force- beats an explicit reference version, which beats default-.",
+					"// Returns { version, source, candidates } - version is null when the manifest pins nothing.",
+					"pm.testUtils.findValueSetPin = function (manifest, vsCanonical) {",
+					"  var candidates = [];",
+					"  var base = function (canonical) { return String(canonical || '').split('|')[0]; };",
+					"  var ver = function (canonical) {",
+					"    var parts = String(canonical || '').split('|');",
+					"    return parts.length > 1 ? parts.slice(1).join('|') : null;",
+					"  };",
+					"",
+					"  var related = (manifest && manifest.relatedArtifact) || [];",
+					"  if (Array.isArray(related)) {",
+					"    related.forEach(function (ra) {",
+					"      if (!ra || !ra.resource) { return; }",
+					"      if (base(ra.resource) !== vsCanonical) { return; }",
+					"      var v = ver(ra.resource);",
+					"      if (v) { candidates.push({ version: v, source: 'relatedArtifact:' + (ra.type || 'unknown') }); }",
+					"    });",
+					"  }",
+					"",
+					"  var PARAM_NAMES = {",
+					"    'force-valueset-version': 3,",
+					"    'forceCanonicalVersion': 3,",
+					"    'force-canonical-version': 3,",
+					"    'default-valueset-version': 1,",
+					"    'canonicalVersion': 1,",
+					"    'default-canonical-version': 1",
+					"  };",
+					"  var contained = (manifest && manifest.contained) || [];",
+					"  if (Array.isArray(contained)) {",
+					"    contained.forEach(function (res) {",
+					"      if (!res || res.resourceType !== 'Parameters') { return; }",
+					"      (res.parameter || []).forEach(function (p) {",
+					"        if (!p || !(p.name in PARAM_NAMES)) { return; }",
+					"        var value = p.valueCanonical || p.valueUri || p.valueString || '';",
+					"        if (base(value) !== vsCanonical) { return; }",
+					"        var v = ver(value);",
+					"        if (v) { candidates.push({ version: v, source: 'manifest parameter:' + p.name }); }",
+					"      });",
+					"    });",
+					"  }",
+					"",
+					"  var rank = function (c) {",
+					"    if (c.source.indexOf('force') !== -1) { return 3; }",
+					"    if (c.source.indexOf('relatedArtifact') === 0) { return 2; }",
+					"    return 1;",
+					"  };",
+					"  candidates.sort(function (a, b) { return rank(b) - rank(a); });",
+					"  var winner = candidates.length ? candidates[0] : { version: null, source: null };",
+					"  return { version: winner.version, source: winner.source, candidates: candidates };",
+					"};",
+					"}",
 					"// END injected Postman helper library"
 				]
 			}
@@ -11193,7 +11520,42 @@
 	"variable": [
 		{
 			"key": "TESTUTILS_BOOTSTRAP",
-			"value": "// Ensure helper exists at request scope\npm.testUtils = pm.testUtils || {};\nif (!pm.testUtils.getByPath) {\n  pm.testUtils.getByPath = function (obj, path) {\n    return String(path || '').split('.').reduce(function (acc, key) {\n      return acc == null ? undefined : acc[key];\n    }, obj);\n  };\n}\nif (!pm.testUtils.assertMetaProfilesPresent) {\n  pm.testUtils.assertMetaProfilesPresent = function (resource, opts) {\n    var version = pm.environment.get('VERSION');\n    var expected = opts[version] || [];\n    var profiles = pm.testUtils.getByPath(resource, opts.path) || [];\n    pm.test(opts.label || 'Expected meta.profile values are present', function () {\n      pm.expect(profiles, 'meta.profile should be an array at path: ' + opts.path).to.be.an('array');\n      expected.forEach(function (profile) {\n        pm.expect(profiles).to.include(profile);\n      });\n    });\n  };\n}",
+			"value": "// Ensure helper exists at request scope\npm.testUtils = pm.testUtils || {};\nif (!pm.testUtils.getByPath) {\n  pm.testUtils.getByPath = function (obj, path) {\n    return String(path || '').split('.').reduce(function (acc, key) {\n      return acc == null ? undefined : acc[key];\n    }, obj);\n  };\n}\nif (!pm.testUtils.assertMetaProfilesPresent) {\n  pm.testUtils.assertMetaProfilesPresent = function (resource, opts) {\n    var version = pm.environment.get('VERSION');\n    var expected = opts[version] || [];\n    var profiles = pm.testUtils.getByPath(resource, opts.path) || [];\n    pm.test(opts.label || 'Expected meta.profile values are present', function () {\n      pm.expect(profiles, 'meta.profile should be an array at path: ' + opts.path).to.be.an('array');\n      expected.forEach(function (profile) {\n        pm.expect(profiles).to.include(profile);\n      });\n    });\n  };\n}\nif (!pm.testUtils.safeJson) {\n  pm.testUtils.safeJson = function (response) {\n    try {\n      var text = response && response.text ? response.text() : '';\n      if (!text) { return {}; }\n      return JSON.parse(text);\n    } catch (e) {\n      return {};\n    }\n  };\n}\nif (!pm.testUtils.findValueSetPin) {\n// Find the version a manifest (CRMIManifestLibrary / quality-program-cqfm Library) binds for a\n// value set canonical. Two mechanisms are supported, because manifests in the wild use either:\n//\n//   1. relatedArtifact.depends-on with a versioned canonical (\"<url>|<version>\").\n//      This is the shape VSAC's ecqm-update-* manifests use (711 such entries in\n//      ecqm-update-2022-05-05, and no contained Parameters at all). CRMI describes resolution\n//      for exactly this shape under \"Canonical Resolution With a Manifest\".\n//   2. A manifest-parameters entry in a contained Parameters resource: default-valueset-version\n//      (CRMI 2.0.0) or canonicalVersion (the CRMI STU1 spelling, which is what our own\n//      Quality Program 6.1 request sends).\n//\n// Precedence follows CRMI: force- beats an explicit reference version, which beats default-.\n// Returns { version, source, candidates } - version is null when the manifest pins nothing.\npm.testUtils.findValueSetPin = function (manifest, vsCanonical) {\n  var candidates = [];\n  var base = function (canonical) { return String(canonical || '').split('|')[0]; };\n  var ver = function (canonical) {\n    var parts = String(canonical || '').split('|');\n    return parts.length > 1 ? parts.slice(1).join('|') : null;\n  };\n\n  var related = (manifest && manifest.relatedArtifact) || [];\n  if (Array.isArray(related)) {\n    related.forEach(function (ra) {\n      if (!ra || !ra.resource) { return; }\n      if (base(ra.resource) !== vsCanonical) { return; }\n      var v = ver(ra.resource);\n      if (v) { candidates.push({ version: v, source: 'relatedArtifact:' + (ra.type || 'unknown') }); }\n    });\n  }\n\n  var PARAM_NAMES = {\n    'force-valueset-version': 3,\n    'forceCanonicalVersion': 3,\n    'force-canonical-version': 3,\n    'default-valueset-version': 1,\n    'canonicalVersion': 1,\n    'default-canonical-version': 1\n  };\n  var contained = (manifest && manifest.contained) || [];\n  if (Array.isArray(contained)) {\n    contained.forEach(function (res) {\n      if (!res || res.resourceType !== 'Parameters') { return; }\n      (res.parameter || []).forEach(function (p) {\n        if (!p || !(p.name in PARAM_NAMES)) { return; }\n        var value = p.valueCanonical || p.valueUri || p.valueString || '';\n        if (base(value) !== vsCanonical) { return; }\n        var v = ver(value);\n        if (v) { candidates.push({ version: v, source: 'manifest parameter:' + p.name }); }\n      });\n    });\n  }\n\n  var rank = function (c) {\n    if (c.source.indexOf('force') !== -1) { return 3; }\n    if (c.source.indexOf('relatedArtifact') === 0) { return 2; }\n    return 1;\n  };\n  candidates.sort(function (a, b) { return rank(b) - rank(a); });\n  var winner = candidates.length ? candidates[0] : { version: null, source: null };\n  return { version: winner.version, source: winner.source, candidates: candidates };\n};\n}\n",
+			"type": "string"
+		},
+		{
+			"key": "MANIFEST_ID",
+			"value": "ecqm-update-2026-05-14",
+			"type": "string"
+		},
+		{
+			"key": "MANIFEST_CANONICAL",
+			"value": "http://cts.nlm.nih.gov/fhir/Library/ecqm-update-2026-05-14",
+			"type": "string"
+		},
+		{
+			"key": "MANIFEST_VS_OID",
+			"value": "2.16.840.1.113762.1.4.1095.89",
+			"type": "string"
+		},
+		{
+			"key": "MANIFEST_VS_CANONICAL",
+			"value": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1095.89",
+			"type": "string"
+		},
+		{
+			"key": "PINNED_VS_VERSION",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "LATEST_VS_VERSION",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "PIN_SOURCE",
+			"value": "",
 			"type": "string"
 		}
 	]
