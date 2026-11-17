@@ -15,10 +15,10 @@
       "valueCanonical": "http://loinc.org|2.76"
     }, {
       "name": "system-version",
-      "valueCanonical": "http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0"
+      "valueCanonical": "http://terminology.hl7.org/CodeSystem/v3-ActCode|11.0.0"
     }, {
       "name": "system-version",
-      "valueCanonical": "http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender|3.0.0"
+      "valueCanonical": "http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender|4.0.0"
     }, {
       "name": "system-version",
       "valueCanonical": "http://terminology.hl7.org/CodeSystem/CD2|2.0.1"

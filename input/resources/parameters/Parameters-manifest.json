@@ -4,5 +4,13 @@
   "parameter" : [{
     "name" : "system-version",
     "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591|20250419"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93|20260211"
   }]
 }

@@ -545,7 +545,7 @@ library EXM146 version '4.0.0'
 
 using FHIR version '4.0.1'
 
-include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1' called FHIRHelpers
+include hl7.fhir.uv.cql.FHIRHelpers version '4.0.2-ballot' called FHIRHelpers
 
 include Common version '2.0.0' called Common
 
@@ -667,7 +667,7 @@ Snippet 3-17:  illustrates the use of the populationBasis extension with a value
             {
                 "type": "Patient",
                 "profile": [
-                    "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient"
+                    "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
                 ]
             }
       }
@@ -701,7 +701,7 @@ Snippet 3-19: illustrates the use of the populationBasis extension for a non-pat
          "type": "Encounter",  
          "profile": 
          [
-            "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
+            "https://fhir.org/guides/onc/us-quality-core/en/StructureDefinition-us-quality-core-encounter.html"
          ]
       }
     }

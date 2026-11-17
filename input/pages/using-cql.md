@@ -16,19 +16,19 @@ The Conformance Summary Table lists the conformance sections in this implementat
 | Library Usage                   | Yes                          | [QM IG 4.1 (Library Usage)](https://hl7.org/fhir/uv/cqm/using-cql.html#conformance-requirement-4-1)                            |
 | Library Versioning              | Yes                          | [QM IG 4.2 (Library Versioning)](https://hl7.org/fhir/uv/cqm/using-cql.html#conformance-requirement-4-2)                       |
 | Nested Libraries                | Yes                          | [QM IG 4.3 (Nested Libraries)](https://hl7.org/fhir/uv/cqm/using-cql.html#conformance-requirement-4-3)                         |
-| Library Namespaces              | No                           | [UCWF:2.4 (Library Namespaces)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-4)                        |
-| Data Model                      | Yes                           | [UCWF:2.5 (Data Models)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-5)                               |
-| Code Systems                    | No                           | [UCWF:2.6 (Code System Specification)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-6)                 |
-| Value Sets                      | No                           | [UCWF:2.7 (Value Set Specification)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-7)                   |
-| Value Set Version               | No                           | [UCWF:2.8 (Value Set Specification Including Version)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-8) |
-| Value Set Expansion             | No                           | [UCWF:2.9 (Value Set Expansion)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-9)                       |
-| String-based Membership Testing | No                           | [UCWF:2.10 (String-based Membership Testing)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-10)          |
-| Codes                           | No                           | [UCWF:2.11 (Direct-reference Codes)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-11)                   |
-| Concepts                        | No                           | [UCWF:2.12 (Concepts)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-12)                                 |
-| Library-level Identifiers       | No                           | [UCWF:2.13 (Library-level Identifiers)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-13)                |
-| Data Type Names                 | No                           | [UCWF:2.14 (Data Type Names)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-14)                          |
-| Element Names                   | No                           | [UCWF:2.15 (Element Names)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-15)                            |
-| Aliases and Argument Names      | No                           | [UCWF:2.16 (Aliases and Argument Names)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-16)               |
+| Library Namespaces              | No                           | [UCWF:2.4 (Library Namespaces)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-4)                        |
+| Data Model                      | Yes                           | [UCWF:2.5 (Data Models)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-5)                               |
+| Code Systems                    | No                           | [UCWF:2.6 (Code System Specification)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-6)                 |
+| Value Sets                      | No                           | [UCWF:2.7 (Value Set Specification)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-7)                   |
+| Value Set Version               | No                           | [UCWF:2.8 (Value Set Specification Including Version)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-8) |
+| Value Set Expansion             | No                           | [UCWF:2.9 (Value Set Expansion)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-9)                       |
+| String-based Membership Testing | No                           | [UCWF:2.10 (String-based Membership Testing)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-10)          |
+| Codes                           | No                           | [UCWF:2.11 (Direct-reference Codes)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-11)                   |
+| Concepts                        | No                           | [UCWF:2.12 (Concepts)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-12)                                 |
+| Library-level Identifiers       | No                           | [UCWF:2.13 (Library-level Identifiers)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-13)                |
+| Data Type Names                 | No                           | [UCWF:2.14 (Data Type Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-14)                          |
+| Element Names                   | No                           | [UCWF:2.15 (Element Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-15)                            |
+| Aliases and Argument Names      | No                           | [UCWF:2.16 (Aliases and Argument Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-16)               |
 {: .grid}
 
 
@@ -42,7 +42,7 @@ Consistent with the UCWF IG, Measures that make use of CQL use [Libraries]({{sit
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.1 (Library Declaration)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-1)<br>1. Any CQL library used by a FHIR artifact **SHALL** contain a [library declaration](https://cql.hl7.org/02-authorsguide.html#library).<br>2. The library identifier **SHALL** be a valid un-quoted identifier and **SHALL NOT** contain underscores. The library identifier **SHALL** only contain alphanumeric characters. | 1. CQL used by a Measure **SHALL** be contained in a CQL library. |
+| [UCWF:2.1 (Library Declaration)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-1)<br>1. Any CQL library used by a FHIR artifact **SHALL** contain a [library declaration](https://cql.hl7.org/02-authorsguide.html#library).<br>2. The library identifier **SHALL** be a valid un-quoted identifier and **SHALL NOT** contain underscores. The library identifier **SHALL** only contain alphanumeric characters. | 1. CQL used by a Measure **SHALL** be contained in a CQL library. |
 {: .grid}
 
 
@@ -65,7 +65,7 @@ The approach recommended here is based on the [Semantic Versioning Scheme](https
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.2 (Library Versioning)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-2)<br>1. The library declaration in the CQL source <b>NEED NOT</b> specify a version, since version can be provided as part of the translation and publishing process.<br>2.The library version <b>SHOULD</b> follow the convention: < major >.< minor >.< patch > <br>3. For artifacts in draft status, a version is not required, the versioning scheme <b>NEED NOT</b> apply, and there is no expectation that artifact contents are stable. <br>4. When an artifact moves to active status, a version is required in either the CQL source, the translated ELM (if included), or the containing FHIR Library resources.| 1. CQL libraries used by Measures <b>SHALL</b> include a version as part of the library declaration.<br>2. In addition, CQL libraries used by Measures <b>SHALL</b> follow the convention : < major >.< minor >.< patch ><br>3. For measures in _draft_ status, a version label **MAY** be included.<br>4. If a version label is included, it <b>SHALL</b> follow the convention: < major >.< minor >.< patch >-< label >|
+| [UCWF:2.2 (Library Versioning)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-2)<br>1. The library declaration in the CQL source <b>NEED NOT</b> specify a version, since version can be provided as part of the translation and publishing process.<br>2.The library version <b>SHOULD</b> follow the convention: < major >.< minor >.< patch > <br>3. For artifacts in draft status, a version is not required, the versioning scheme <b>NEED NOT</b> apply, and there is no expectation that artifact contents are stable. <br>4. When an artifact moves to active status, a version is required in either the CQL source, the translated ELM (if included), or the containing FHIR Library resources.| 1. CQL libraries used by Measures <b>SHALL</b> include a version as part of the library declaration.<br>2. In addition, CQL libraries used by Measures <b>SHALL</b> follow the convention : < major >.< minor >.< patch ><br>3. For measures in _draft_ status, a version label **MAY** be included.<br>4. If a version label is included, it <b>SHALL</b> follow the convention: < major >.< minor >.< patch >-< label >|
 {: .grid}
 
 For example:
@@ -101,7 +101,7 @@ Consistent with the UCWF IG, this IG allows measures to use [Nested Libraries]({
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.3 (Nested Libraries)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-3)<br>1. CQL libraries <b>SHOULD</b> be structured such that all CQL expressions referenced from a single FHIR resource are contained within a single library.<br> - If an artifact makes use of multiple libraries, expression references in that artifact <b>SHALL</b> be qualified with the name of the library (i.e., library-name.expression-identifier), or with the alias of the library as specified using the cqf-libraryAlias extension.<br>2. CQL libraries <b>SHALL</b> use a called clause for all included libraries.<br>3. The called-alias for an included library <b>SHOULD</b> be consistent for usages across libraries. | 1. In addition, CQL libraries used by measures <b>SHALL</b> be structured such that all CQL expressions referenced by the Measure are contained within a single library. |
+| [UCWF:2.3 (Nested Libraries)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-3)<br>1. CQL libraries <b>SHOULD</b> be structured such that all CQL expressions referenced from a single FHIR resource are contained within a single library.<br> - If an artifact makes use of multiple libraries, expression references in that artifact <b>SHALL</b> be qualified with the name of the library (i.e., library-name.expression-identifier), or with the alias of the library as specified using the cqf-libraryAlias extension.<br>2. CQL libraries <b>SHALL</b> use a called clause for all included libraries.<br>3. The called-alias for an included library <b>SHOULD</b> be consistent for usages across libraries. | 1. In addition, CQL libraries used by measures <b>SHALL</b> be structured such that all CQL expressions referenced by the Measure are contained within a single library. |
 {: .grid}
 
 For example:
@@ -122,7 +122,7 @@ Consistent with the UCWF IG, this IG recommends the use of [Library Namespaces](
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.4 (Library Namespaces)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-4)<br>1.CQL libraries <b>SHOULD</b> use namespaces.<br>2. When a namespace is not used, the library <b>SHALL</b> be considered part of a "public" global namespace for the purposes of resolution within a given environment.<br>3. The root of the CQL namespace <b>SHALL</b> match the root of the url of the Library resource housing the CQL library. | No additional conformances. |
+| [UCWF:2.4 (Library Namespaces)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-4)<br>1.CQL libraries <b>SHOULD</b> use namespaces.<br>2. When a namespace is not used, the library <b>SHALL</b> be considered part of a "public" global namespace for the purposes of resolution within a given environment.<br>3. The root of the CQL namespace <b>SHALL</b> match the root of the url of the Library resource housing the CQL library. | No additional conformances. |
 {: .grid}
 
 For example, the following library declaration illustrates the use of a namespace:
@@ -144,7 +144,7 @@ CQL can be used with any [Data Model]({{site.data.fhir.ver.cql}}/using-cql.html#
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.5 (Data Models)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-5)<br>1. All libraries and CQL expressions used directly or indirectly within a knowledge artifact <b>SHOULD</b> use FHIR-based data models.<br>2. Data Model declarations <b>SHALL</b> include a version declaration. | 1. All libraries and CQL expressions used directly or indirectly within a measure <b>SHALL</b> use FHIR based data models. For example, one could use QI Core and SDOH IGs. |
+| [UCWF:2.5 (Data Models)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-5)<br>1. All libraries and CQL expressions used directly or indirectly within a knowledge artifact <b>SHOULD</b> use FHIR-based data models.<br>2. Data Model declarations <b>SHALL</b> include a version declaration. | 1. All libraries and CQL expressions used directly or indirectly within a measure <b>SHALL</b> use FHIR based data models. For example, one could use QI Core and SDOH IGs. |
 {: .grid}
 
 For example:
@@ -167,7 +167,7 @@ Consistent with the UCWF IG, [Code Systems]({{site.data.fhir.ver.cql}}/using-cql
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.6 (Code System Specification)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-6)<br>1. Within CQL, the identifier of any code system reference <b>SHALL</b> be specified using a URI for the code system.<br>2. The URI <b>SHALL</b> be the canonical URL for the code system.<br>3. The Code System declaration <b>MAY</b> include a version, consistent with the URI specification for FHIR and the code system. | No additional conformances. |
+| [UCWF:2.6 (Code System Specification)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-6)<br>1. Within CQL, the identifier of any code system reference <b>SHALL</b> be specified using a URI for the code system.<br>2. The URI <b>SHALL</b> be the canonical URL for the code system.<br>3. The Code System declaration <b>MAY</b> include a version, consistent with the URI specification for FHIR and the code system. | No additional conformances. |
 {: .grid}
 
 For example:
@@ -180,7 +180,7 @@ codesystem "SNOMED CT:20240901": 'http://snomed.info/sct'
 Snippet 4-6: codesystem definition line from [Terminology.cql](Library-Terminology.html#cql-content).
 
 #### Representation in a Library
-{: #representation-in-a-library}
+{: #code-system-representation-in-a-library}
 
 The representation of codesystem declarations in a Library is discussed in the [Terminology](measure-conformance.html#terminology) topic of this IG.
 
@@ -194,7 +194,7 @@ Consistent with the UCWF IG, [Value Sets]({{site.data.fhir.ver.cql}}/using-cql.h
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.7 (Value Set Specification)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-7)<br>1. Within CQL, the identifier of any value set reference <b>SHALL</b> be specified using a URI for the value set.<br>2. The URI <b>SHALL</b> be the canonical URL for the value set.<br>3. The URI <b>MAY</b> include a version, consistent with versioned canonical URL references in FHIR | No additional conformances. |
+| [UCWF:2.7 (Value Set Specification)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-7)<br>1. Within CQL, the identifier of any value set reference <b>SHALL</b> be specified using a URI for the value set.<br>2. The URI <b>SHALL</b> be the canonical URL for the value set.<br>3. The URI <b>MAY</b> include a version, consistent with versioned canonical URL references in FHIR | No additional conformances. |
 {: .grid}
 
 For example:
@@ -246,7 +246,7 @@ Consistent with the UCWF IG, [Value Set Version]({{site.data.fhir.ver.cql}}/usin
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.8 (Value Set Specification Including Version)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-8)<br>1. When specifying the definition version of a value set to be used in a CQL library, use the version clause of the value set declaration. | No additional conformances. |
+| [UCWF:2.8 (Value Set Specification Including Version)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-8)<br>1. When specifying the definition version of a value set to be used in a CQL library, use the version clause of the value set declaration. | No additional conformances. |
 {: .grid}
 
 
@@ -276,11 +276,11 @@ Measures that make use of CQL must do so in accordance with [Value Set Expansion
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.9 (Value Set Expansion)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-9)<br>1. Value set membership testing <b>SHOULD</b> use the terminology membership operation in CQL (in(ValueSet)), as opposed to requiring computation on the lists of codes in a value set. See the <a href="http://cql.hl7.org/02-authorsguide.html#terminology-operators">Terminology Operators</a> section of the CQL specification for more information. | No additional conformances. |
+| [UCWF:2.9 (Value Set Expansion)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-9)<br>1. Value set membership testing <b>SHOULD</b> use the terminology membership operation in CQL (in(ValueSet)), as opposed to requiring computation on the lists of codes in a value set. See the <a href="http://cql.hl7.org/02-authorsguide.html#terminology-operators">Terminology Operators</a> section of the CQL specification for more information. | No additional conformances. |
 {: .grid}
 
 #### Representation in a Library
-{: #representation-in-a-library}
+{: #value-set-representation-in-a-library}
 
 The representation of `valueset` declarations in a Library is discussed in the [Terminology](measure-conformance.html#terminology) topic of this IG, consistent with the [Representation in Narrative]({{site.data.fhir.ver.cql}}/using-cql.html#valueset-representation-in-narrative) topic in the UCWF IG.
 
@@ -294,7 +294,7 @@ Consistent with the UCWF IG, this implementation guide recommends against the us
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.10 (String-based Membership Testing)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-10)<br>1. String-based membership testing <b>SHOULD NOT</b> be used in CQL libraries. | No additional conformances. |
+| [UCWF:2.10 (String-based Membership Testing)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-10)<br>1. String-based membership testing <b>SHOULD NOT</b> be used in CQL libraries. | No additional conformances. |
 {: .grid}
 
 ### Codes
@@ -307,7 +307,7 @@ Consistent with the UCWF IG, CQL used with Measures can make use of [_direct-ref
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.11 (Direct-reference Codes)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-11)<br>When direct-reference codes are represented within CQL, the logical identifier:<br>1. <b>SHALL</b> NOT be a URI.<br>2. <b>SHOULD</b> be a code from the code system. | No additional conformances. |
+| [UCWF:2.11 (Direct-reference Codes)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-11)<br>When direct-reference codes are represented within CQL, the logical identifier:<br>1. <b>SHALL</b> NOT be a URI.<br>2. <b>SHOULD</b> be a code from the code system. | No additional conformances. |
 {: .grid}
 
 For example:
@@ -319,7 +319,7 @@ code "Venous foot pump, device (physical object)": '442023007' from "SNOMED CT"
 Snippet 4-12: code definition from [Terminology.cql](Library-Terminology.html#cql-content).
 
 #### Representation in a Library
-{: #representation-in-a-library}
+{: #code-representation-in-a-library}
 
 The representation of code declarations in a Library is discussed in [Terminology](measure-conformance.html#terminology) of this IG, consistent with the [Representation in Narrative]({{site.data.fhir.ver.cql}}/using-cql.html#code-representation-in-narrative) topic in the UCWF IG.
 
@@ -338,7 +338,7 @@ Consistent with the UCWF IG, CQL used with Measures may make use of the CQL [_co
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.12 (Concepts)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-12)<br>1. The CQL concept construct <b>MAY</b> be used.<br>2. The CQL concept construct <b>SHALL NOT</b> be used as a surrogate for value set definition. | No additional conformances. |
+| [UCWF:2.12 (Concepts)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-12)<br>1. The CQL concept construct <b>MAY</b> be used.<br>2. The CQL concept construct <b>SHALL NOT</b> be used as a surrogate for value set definition. | No additional conformances. |
 {: .grid}
 
 ### Library-level Identifiers
@@ -351,7 +351,7 @@ Consistent with the UCWF IG, CQL used by Measures should use descriptive and mea
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.13 (Library-level Identifiers)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-13)<br>Library-level identifiers in CQL:<br>1. <b>SHOULD</b> have descriptive, meaningful names.<br>2. <b>SHOULD</b> avoid abbreviations.<br>3. <b>SHOULD</b> use quoted identifiers if necessary.<br>4. <b>SHOULD</b> use initial case<br>5. <b>MAY</b> include spaces. | No additional conformances. |
+| [UCWF:2.13 (Library-level Identifiers)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-13)<br>Library-level identifiers in CQL:<br>1. <b>SHOULD</b> have descriptive, meaningful names.<br>2. <b>SHOULD</b> avoid abbreviations.<br>3. <b>SHOULD</b> use quoted identifiers if necessary.<br>4. <b>SHOULD</b> use initial case<br>5. <b>MAY</b> include spaces. | No additional conformances. |
 {: .grid}
 
 ### Data Type Names
@@ -364,7 +364,7 @@ Consistent with the UCWF IG, CQL used by Measures must refer to [Data Type Names
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.14 (Data Type Names)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-14)<br>Data type names referenced in CQL:<br>1. <b>SHALL</b> use PascalCase (unless dictated by the name of the type in the model).<br>2. <b>SHALL NOT</b> use quoted identifiers (unless required because the name of the type in the model contains spaces or is otherwise not a valid identifier without quoting). | No additional conformances. |
+| [UCWF:2.14 (Data Type Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-14)<br>Data type names referenced in CQL:<br>1. <b>SHALL</b> use PascalCase (unless dictated by the name of the type in the model).<br>2. <b>SHALL NOT</b> use quoted identifiers (unless required because the name of the type in the model contains spaces or is otherwise not a valid identifier without quoting). | No additional conformances. |
 {: .grid}
 
 For example:
@@ -393,7 +393,7 @@ Note that when FHIR and FHIR IGs are used as the data model, the term "element" 
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.15 (Element Names)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-15)<br>Data model elements referenced in the CQL:<br>1. <b>SHALL NOT</b> use quoted identifiers (unless required due to the element name in the model not being a valid identifier in CQL).<br>2. <b>SHOULD</b> use camelCase (unless dictated by the element naming in the model being used). | No additional conformances. |
+| [UCWF:2.15 (Element Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-15)<br>Data model elements referenced in the CQL:<br>1. <b>SHALL NOT</b> use quoted identifiers (unless required due to the element name in the model not being a valid identifier in CQL).<br>2. <b>SHOULD</b> use camelCase (unless dictated by the element naming in the model being used). | No additional conformances. |
 {: .grid}
 
 Examples of elements (i.e. attributes) conforming to Conformance Requirement 4.15 are given below. For a full list of valid names of attributes for a data model, refer to an appropriate data model specification such as QI-Core.
@@ -416,7 +416,7 @@ Consistent with the UCWF IG, CQL used by Measures must follow conventions for na
 
 | Conformance from UCWF           | QM IG Differential           |
 |:--------------------------------|:----------------------------|
-| [UCWF:2.16 (Aliases and Argument Names)](http://hl7.org/fhir/uv/cql/STU2/using-cql.html#conformance-requirement-2-16)<br>Aliases and argument names referenced in the CQL:<br>1. <b>SHALL NOT</b> use quoted identifiers.<br>2. <b>SHOULD</b> use PascalCase for alias names.<br>3. <b>SHOULD</b> use camelCase for argument names.<br>4. <b>SHOULD</b> use descriptive names (rather than abbreviations). | No additional conformances. |
+| [UCWF:2.16 (Aliases and Argument Names)]({{site.data.fhir.ver.cql}}/using-cql.html#conformance-requirement-2-16)<br>Aliases and argument names referenced in the CQL:<br>1. <b>SHALL NOT</b> use quoted identifiers.<br>2. <b>SHOULD</b> use PascalCase for alias names.<br>3. <b>SHOULD</b> use camelCase for argument names.<br>4. <b>SHOULD</b> use descriptive names (rather than abbreviations). | No additional conformances. |
 {: .grid}
 
 For example:

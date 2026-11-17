@@ -147,8 +147,7 @@ define "Encounter with Medical Reason for Not Obtaining or Patient Declined Bloo
             or NoBPScreen.code in "Patient Declined"
         )
           and NoBPScreen.effective same day as start of QualifyingEncounter.period
-          and "Not Done"(NoBPScreen)
-          and NoBPScreen.status = 'final'
+          and NoBPScreen.status = 'cancelled'
 
 define "Denominator Exceptions":
   "Encounter with Medical Reason for Not Obtaining or Patient Declined Blood Pressure Measurement"
@@ -234,16 +233,3 @@ define "Qualifying Encounter During Measurement Period":
   [Encounter: "Encounter to Screen for Blood Pressure"] ValidEncounter
       where ValidEncounter.period during "Measurement Period"
 
-define function "Not Done"(res DomainResource ):
-  if ( res R
-      where ( "GetModiferExtension"(R, 'http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-notDone').value = true )
-  ) is not null then true
-    else false
-
-define function "GetModifierExtensions"(res DomainResource, url String ):
-  res.modifierExtension E
-    where E.url = ( url )
-    return E
-
-define function "GetModiferExtension"(res DomainResource, url String ):
-  singleton from "GetModifierExtensions"(res, url)

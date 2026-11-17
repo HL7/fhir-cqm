@@ -87,32 +87,21 @@ define "Initial Population":
 define "Medical Reason for Not Screening for Tobacco Use":
   ["Observation": "Tobacco Use Screening"] NoTobaccoUseScreening
       where NoTobaccoUseScreening.issued during "Measurement Period"
-        and "Not Done"(NoTobaccoUseScreening)
+        and NoTobaccoUseScreening.status = 'cancelled'
         and "Not Done Reason in Medical Reason"(NoTobaccoUseScreening)
-        and NoTobaccoUseScreening.status = 'final'
 
 define "Medical Reason for Not Ordering Tobacco Cessation Pharmacotherapy":
   ["MedicationRequest": "Tobacco Use Cessation Pharmacotherapy"] NoCessationPharmacotherapyOrdered
       where NoCessationPharmacotherapyOrdered.authoredOn during "Measurement Period"
         and NoCessationPharmacotherapyOrdered.status = 'completed'
-        and ( ( "Not Done"(NoCessationPharmacotherapyOrdered)
-              and "Not Done Reason in Medical Reason"(NoCessationPharmacotherapyOrdered)
-          )
-            or ( NoCessationPharmacotherapyOrdered.doNotPerform = true
-                and NoCessationPharmacotherapyOrdered.statusReason in "Medical Reason"
-            )
-        )
+        and NoCessationPharmacotherapyOrdered.doNotPerform = true
+        and NoCessationPharmacotherapyOrdered.statusReason in "Medical Reason"
 
 define "Medical Reason for Not Counseling Tobacco User":
   ["Procedure": "Tobacco Use Cessation Counseling"] NoTobaccoCessationCounseling
       where Global."Normalize Interval" ( NoTobaccoCessationCounseling.performed ) starts during "Measurement Period"
-        and ( ( NoTobaccoCessationCounseling.status = 'not-done'
-              and NoTobaccoCessationCounseling.statusReason in "Medical Reason"
-          )
-            or ( "Not Done"(NoTobaccoCessationCounseling)
-                and "Not Done Reason in Medical Reason"(NoTobaccoCessationCounseling)
-            )
-        )
+        and NoTobaccoCessationCounseling.status = 'not-done'
+        and NoTobaccoCessationCounseling.statusReason in "Medical Reason"
 
 define "Tobacco Cessation Pharmacotherapy Ordered":
   ["MedicationRequest": "Tobacco Use Cessation Pharmacotherapy"] CessationPharmacotherapyOrdered
@@ -202,22 +191,5 @@ define "Numerator 3":
           )
       )
 
-define function "Not Done"(res DomainResource ):
-  if ( res R
-      where ( "GetModiferExtension"(R, 'http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-notDone').value = true )
-  ) is not null then true
-    else false
-
-define function "Not Done Reason in Medical Reason"(res DomainResource ):
-  if ( res R
-      where ( "GetModiferExtension"(R, 'http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-notDoneReason').value as CodeableConcept ) in "Medical Reason"
-  ) is not null then true
-    else false
-
-define function "GetModifierExtensions"(res DomainResource, url String ):
-  res.modifierExtension E
-    where E.url = ( url )
-    return E
-
-define function "GetModiferExtension"(res DomainResource, url String ):
-  singleton from "GetModifierExtensions"(res, url)
+define function "Not Done Reason in Medical Reason"(res Observation ):
+  res.dataAbsentReason in "Medical Reason"

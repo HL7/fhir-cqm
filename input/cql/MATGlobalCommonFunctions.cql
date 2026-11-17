@@ -220,7 +220,7 @@ CQL model info.
 */
 define function "GetExtensions"(domainResource DomainResource, url String):
   domainResource.extension E
-	  where E.url = ('http://hl7.org/fhir/us/qicore/StructureDefinition/' + url)
+	  where E.url = ('http://fhir.org/guides/onc/us-quality-core/StructureDefinition/' + url)
 		return E
 
 define function "GetExtension"(domainResource DomainResource, url String):

@@ -187,9 +187,6 @@
       "resource": {
         "resourceType": "Organization",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization"
-          ],
           "source": "http://example.org/fhir/server"
         },
         "identifier": [
@@ -252,35 +249,8 @@
       "resource": {
         "resourceType": "Patient",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient"
-          ],
           "source": "http://example.org/fhir/server"
         },
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
-            "valueCode": "F"
-          },
-          {
-            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
-            "extension": [
-              {
-                "url": "text",
-                "valueString": "White"
-              }
-            ]
-          },
-          {
-            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
-            "extension": [
-              {
-                "url": "text",
-                "valueString": "Not Hispanic or Latino"
-              }
-            ]
-          }
-        ],
         "identifier": [
           {
             "use": "usual",
@@ -356,9 +326,6 @@
       "resource": {
         "resourceType": "Practitioner",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner"
-          ],
           "source": "http://example.org/fhir/server"
         },
         "identifier": [
@@ -401,9 +368,6 @@
       "resource": {
         "resourceType": "Observation",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-simple-observation"
-          ],
           "source": "http://example.org/fhir/server"
         },
         "status": "final",

@@ -53,9 +53,6 @@
      <version value="3.0.0-ballot"/>
   </dependsOn>
   <definition>
-   <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-    <valueCode value="hl7.fhir.us.qicore#6.0.0"/>
-   </extension>
    <resource>
       <reference>
         <reference value="Measure/EXM55-FHIR"/>
@@ -2122,16 +2119,12 @@
     </parameter>
     <parameter>
       <code value="pin-canonicals"/>
-      <value value="pin-none"/>
-    </parameter>
-    <!--parameter>
-      <code value="pin-canonicals"/>
       <value value="pin-all"/>
     </parameter>
     <parameter>
       <code value="pin-manifest"/>
       <value value="manifest"/>
-    </parameter-->
+    </parameter>
     <parameter>
       <code value="auto-oid-root"/>
       <value value="2.16.840.1.113883.4.642.40.61"/>

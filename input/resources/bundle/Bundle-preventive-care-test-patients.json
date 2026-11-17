@@ -1823,7 +1823,7 @@
       "resource": {
         "resourceType": "Observation",
         "id": "olga-bp-0",
-        "status": "final",
+        "status": "cancelled",
         "code": {
           "coding": [
             {
@@ -1891,12 +1891,6 @@
                 }
               ]
             }
-          }
-        ],
-        "modifierExtension": [
-          {
-            "url": "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-notDone",
-            "valueBoolean": true
           }
         ]
       }

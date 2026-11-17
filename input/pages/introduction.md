@@ -9,7 +9,6 @@
 
 * [Fast Healthcare Interoperability Resources (FHIR) R4](http://hl7.org/fhir/R4)
 * [Clinical Quality Language (CQL) R1+](http://cql.hl7.org)
-* [QI-Core Implementation Guide (QI-Core)](http://hl7.org/fhir/us/qicore)
 
 To avoid variation in the use of FHIR Resources and metadata across quality measures and clinical decision support (CDS), a quality-related implementation guide based on a logical data model is essential. Quality measures should use a standard data model that is compatible with FHIR to maintain consistency. Other FHIR-based data models are also acceptable for use.
 
@@ -22,7 +21,7 @@ As features and functionality are identified by this implementation guide that a
 ### Audience
 {: #audience}
 
-The audience for this IG includes software developers of measure authoring tools such as the US Centers for Medicare & Medicaid Services (CMS) [Measure Authoring Development Integrated Environment (MADiE)](https://www.emeasuretool.cms.gov/madie-mvp/); measure developers who will specify Clinical Quality Measures using FHIR and CQL; software developers and implementers who will implement the quality measures specified in FHIR and CQL in their institutions or in their vendor products; institutions and organizations who wish to use FHIR and CQL to express and implement quality measures within their health systems; and local, regional, and national quality reporting agencies who wish to receive and process quality reporting documents that are based on measures specified in FHIR and CQL.
+The audience for this IG includes software developers of measure authoring tools such as the US Centers for Medicare & Medicaid Services (CMS) [Measure Authoring Development Integrated Environment (MADiE)](https://www.emeasuretool.cms.gov/); measure developers who will specify Clinical Quality Measures using FHIR and CQL; software developers and implementers who will implement the quality measures specified in FHIR and CQL in their institutions or in their vendor products; institutions and organizations who wish to use FHIR and CQL to express and implement quality measures within their health systems; and local, regional, and national quality reporting agencies who wish to receive and process quality reporting documents that are based on measures specified in FHIR and CQL.
 
 ### Approach
 {: #approach}

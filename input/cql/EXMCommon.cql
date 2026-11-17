@@ -25,7 +25,7 @@ define fluent function statusReason(serviceRequest ServiceRequest):
   serviceRequest.ext('http://hl7.org/fhir/StructureDefinition/request-statusReason').value as FHIR.CodeableConcept
 
 define fluent function recorded(procedure Procedure):
-  procedure.ext('http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-recorded').value as FHIR.dateTime
+  procedure.ext('http://hl7.org/fhir/StructureDefinition/event-recorded').value as FHIR.dateTime
 
 define fluent function principalDiagnosis(encounter Encounter):
   singleton from (

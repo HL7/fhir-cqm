@@ -21,7 +21,7 @@ Quality measures are increasingly represented using standardized, computable app
 #### Examples
 {: #examples}
 
-Refer to the [QI-Core implementation guide](http://hl7.org/fhir/us/qicore) for examples of how to represent data involved in calculation of quality measures.
+Refer to the [US Quality Core implementation guide](http://fhir.org/guides/onc/us-quality-core) for examples of how to represent data involved in calculation of quality measures.
 
 ### How to Read this Guide
 {: #how-to-read-this-guide}

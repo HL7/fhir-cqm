@@ -59,7 +59,7 @@ A PublishableMeasureRepository:
 
 The [CQMPublishableMeasureRepository capability statement](CapabilityStatement-publishable-measure-repository.html) captures these requirements formally. 
 
-##### MeasureReports 
+#### MeasureReports 
 
 A PublishableMeasureRepository: 
 

@@ -79,7 +79,7 @@
                     {
                         "type": "depends-on",
                         "display": "Library FHIRHelpers",
-                        "resource": "http://hl7.org/fhir/uv/cql/Library/FHIRHelpers|4.0.1"
+                        "resource": "http://hl7.org/fhir/uv/cql/Library/FHIRHelpers|4.0.2-ballot"
                     },
                     {
                         "type": "depends-on",
@@ -198,7 +198,7 @@
                     {
                         "type": "depends-on",
                         "display": "Library FHIRHelpers",
-                        "resource": "http://hl7.org/fhir/uv/cql/Library/FHIRHelpers|4.0.1"
+                        "resource": "http://hl7.org/fhir/uv/cql/Library/FHIRHelpers|4.0.2-ballot"
                     },
                     {
                         "type": "depends-on",
@@ -423,7 +423,7 @@
                     {
                         "type": "depends-on",
                         "display": "Library FHIRHelpers",
-                        "resource": "http://hl7.org/fhir/uv/cql/Library/FHIRHelpers|4.0.1"
+                        "resource": "http://hl7.org/fhir/uv/cql/Library/FHIRHelpers|4.0.2-ballot"
                     },
                     {
                         "type": "depends-on",
@@ -561,7 +561,7 @@
                     {
                         "type": "depends-on",
                         "display": "Library FHIRHelpers",
-                        "resource": "http://hl7.org/fhir/uv/cql/Library/FHIRHelpers|4.0.1"
+                        "resource": "http://hl7.org/fhir/uv/cql/Library/FHIRHelpers|4.0.2-ballot"
                     },
                     {
                         "type": "depends-on",
@@ -586,7 +586,7 @@
                     {
                         "type": "depends-on",
                         "display": "Code system Specimen Type",
-                        "resource": "http://terminology.hl7.org/CodeSystem/v2-0487|2.3.0"
+                        "resource": "http://terminology.hl7.org/CodeSystem/v2-0487|3.0.0"
                     },
                     {
                         "type": "depends-on",
@@ -1427,7 +1427,7 @@
                             {
                                 "type": "depends-on",
                                 "display": "Library FHIRHelpers",
-                                "resource": "http://hl7.org/fhir/uv/cql/Library/FHIRHelpers|4.0.1"
+                                "resource": "http://hl7.org/fhir/uv/cql/Library/FHIRHelpers|4.0.2-ballot"
                             },
                             {
                                 "type": "depends-on",

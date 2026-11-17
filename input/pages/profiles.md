@@ -107,4 +107,4 @@ To support packaging, testing, and distribution of measure and library artifacts
 
 ### Alphabetical Listing
 
-See the [Artifact Index - Structures: Resource Profiles](artifacts.html#structures-resource-profiles) for an alphabetical index of profiles defined in this implementation guide.
+See the [Artifact Index - Structures: Resource Profiles](artifacts.html) for an alphabetical index of profiles defined in this implementation guide.
