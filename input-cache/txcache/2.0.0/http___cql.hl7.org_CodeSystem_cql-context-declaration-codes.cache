@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "language": "en", "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : false,
+    "include" : [{
+      "system" : "http://cql.hl7.org/CodeSystem/cql-context-declaration-codes",
+      "concept" : [{
+        "code" : "Unfiltered",
+        "display" : "Unfiltered"
+      }]
+    }]
+  }
+}}####
+e: {
+  "from-server" : true,
+  "class" : "UNKNOWN",
+  "error" : "Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'http://cql.hl7.org/CodeSystem/cql-context-declaration-codes' could not be found, so the value set cannot be expanded"
+}
+-------------------------------------------------------------------------------------

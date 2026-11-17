@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------------
-{"hierarchical" : false, "valueSet" :{
+{"hierarchical" : false, "language": "en", "valueSet" :{
   "resourceType" : "ValueSet",
   "compose" : {
     "inactive" : false,
@@ -32,13 +32,790 @@ e: {
   "display" : "10-14 years"
 }, "valueSet" :null, "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "externalSource":"ValueSet[http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example|1.0.0]", "profile": {
   "resourceType" : "Parameters",
+  "id" : "manifest",
   "parameter" : [{
     "name" : "system-version",
     "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008"
   },
   {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591|20250419"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93|20260211"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.2"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-computablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-expandedvalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes|4.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-stratifier-type|1.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/resource-types|4.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/ValueSet/subject-type|4.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-aggregate-method|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMethodAggregate|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-aggregate-method|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ObservationMethod|5.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/composite-measure-scoring|1.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-CompositeMeasureScoring|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/composite-measure-scoring|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ObservationValue|6.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/ValueSet/measure-data-usage|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-data-usage|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ActCode|11.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-improvement-notation|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-improvement-notation|1.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-population|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActCode|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-population|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-scoring|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMeasureScoring|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-scoring|4.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-type|4.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-type|4.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-authoring-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-package|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-capabilitystatement|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-description|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-identifier|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-title|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-topic|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-version|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/OperationDefinition/Measure-evaluate-measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-publishable-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-date|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-effective|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-jurisdiction|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type-quantity|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type-value|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-topic|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-composed-of|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-depends-on|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-derived-from|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-successor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-predecessor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-package|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-data-requirements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-date|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-effective|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-jurisdiction|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type-quantity|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type-value|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-composed-of|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-depends-on|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-derived-from|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-successor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-predecessor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/MeasureReport-measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-shareable-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-url|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-version|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-identifier|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-name|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-title|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-description|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cohortmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-proportionmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-ratiomeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cvmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-url|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-name|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystemdevice|3.0.0-ballot"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode|4.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/diagnosis-role|1.1.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/request-intent|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/medicationrequest-category|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-clinical|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-ver-status|2.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Condition|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Location|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Provenance|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Coverage|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/observation-category|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-category|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/encounter-discharge-disposition|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Medication|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/CodeSystem/example|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AdultOutpatientEncounters|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AdvancedIllnessandFrailtyExclusion|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/DiagnosticReport|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIElements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIParameters|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActPriority|3.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Common|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MeasureReport|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/ex-diagnosistype|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/ex-procedure-type|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Claim|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-moduledefinitionlibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/ValueSet/chronic-liver-disease-legacy-example|2020-05"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMCommon|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/ResearchStudy|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/administrative-gender|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Device|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/MATGlobalCommonFunctions|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Hospice|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/SupplementalDataElements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CommonTerminologies|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://fhir.org/guides/cqf/Library/NHSNGlycemicControlHypoglycemicInitialPopulation|0.0.002"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/observation-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/ANCCohort|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cqlmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/BCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIRate|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTISIR|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DEVComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DFUComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DHCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DHCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DEVComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DFUComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/TJCOverall|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/VTEICU|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM108|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM124|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM125|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM130|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM146|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM55|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-executablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-elmmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMLogic|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMRatio|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/HBPComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGCohort|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGContinuousVariable|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGProportion|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGRatio|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/MultiRateExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/PVSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/SupportingEvidenceExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/TSCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Terminology|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AgeStratificationExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example|1.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-attestationmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMPublishableLibrary|3.0.0-ballot"
   }]
 }}####
 v: {
@@ -46,7 +823,7 @@ v: {
   "system" : "http://terminology.hl7.org/CodeSystem/time-period-ranges",
   "version" : "1.0.0",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Validate \"[http://terminology.hl7.org/CodeSystem/time-period-ranges#P10Y--P15Y (\"10-14 years\")]\"\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Check \"http://terminology.hl7.org/CodeSystem/time-period-ranges#P10Y--P15Y\"\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: CodeSystem found: http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0 for http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: check code in (http://terminology.hl7.org/CodeSystem/time-period-ranges) at Coding\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Code \"P10Y--P15Y\" not found in http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0: undefined",
+  "diagnostics" : "0ms tx-op\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Validate \"[http://terminology.hl7.org/CodeSystem/time-period-ranges#P10Y--P15Y (\"10-14 years\")]\"\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Check \"http://terminology.hl7.org/CodeSystem/time-period-ranges#P10Y--P15Y\"\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: CodeSystem found: http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0 for http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: check code in (http://terminology.hl7.org/CodeSystem/time-period-ranges) at Coding\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Code \"P10Y--P15Y\" not found in http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0: undefined",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -79,13 +856,790 @@ v: {
   "display" : "15-19 years"
 }, "valueSet" :null, "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "externalSource":"ValueSet[http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example|1.0.0]", "profile": {
   "resourceType" : "Parameters",
+  "id" : "manifest",
   "parameter" : [{
     "name" : "system-version",
     "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008"
   },
   {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591|20250419"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93|20260211"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.2"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-computablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-expandedvalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes|4.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-stratifier-type|1.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/resource-types|4.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/ValueSet/subject-type|4.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-aggregate-method|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMethodAggregate|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-aggregate-method|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ObservationMethod|5.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/composite-measure-scoring|1.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-CompositeMeasureScoring|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/composite-measure-scoring|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ObservationValue|6.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/ValueSet/measure-data-usage|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-data-usage|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ActCode|11.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-improvement-notation|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-improvement-notation|1.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-population|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActCode|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-population|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-scoring|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMeasureScoring|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-scoring|4.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-type|4.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-type|4.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-authoring-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-package|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-capabilitystatement|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-description|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-identifier|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-title|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-topic|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-version|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/OperationDefinition/Measure-evaluate-measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-publishable-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-date|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-effective|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-jurisdiction|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type-quantity|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type-value|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-topic|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-composed-of|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-depends-on|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-derived-from|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-successor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-predecessor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-package|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-data-requirements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-date|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-effective|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-jurisdiction|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type-quantity|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type-value|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-composed-of|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-depends-on|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-derived-from|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-successor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-predecessor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/MeasureReport-measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-shareable-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-url|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-version|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-identifier|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-name|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-title|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-description|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cohortmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-proportionmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-ratiomeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cvmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-url|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-name|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystemdevice|3.0.0-ballot"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode|4.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/diagnosis-role|1.1.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/request-intent|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/medicationrequest-category|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-clinical|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-ver-status|2.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Condition|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Location|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Provenance|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Coverage|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/observation-category|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-category|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/encounter-discharge-disposition|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Medication|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/CodeSystem/example|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AdultOutpatientEncounters|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AdvancedIllnessandFrailtyExclusion|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/DiagnosticReport|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIElements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIParameters|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActPriority|3.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Common|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MeasureReport|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/ex-diagnosistype|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/ex-procedure-type|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Claim|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-moduledefinitionlibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/ValueSet/chronic-liver-disease-legacy-example|2020-05"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMCommon|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/ResearchStudy|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/administrative-gender|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Device|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/MATGlobalCommonFunctions|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Hospice|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/SupplementalDataElements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CommonTerminologies|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://fhir.org/guides/cqf/Library/NHSNGlycemicControlHypoglycemicInitialPopulation|0.0.002"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/observation-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/ANCCohort|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cqlmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/BCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIRate|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTISIR|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DEVComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DFUComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DHCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DHCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DEVComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DFUComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/TJCOverall|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/VTEICU|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM108|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM124|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM125|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM130|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM146|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM55|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-executablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-elmmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMLogic|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMRatio|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/HBPComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGCohort|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGContinuousVariable|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGProportion|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGRatio|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/MultiRateExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/PVSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/SupportingEvidenceExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/TSCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Terminology|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AgeStratificationExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example|1.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-attestationmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMPublishableLibrary|3.0.0-ballot"
   }]
 }}####
 v: {
@@ -125,13 +1679,790 @@ v: {
   "display" : "20+ years"
 }, "valueSet" :null, "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "externalSource":"ValueSet[http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example|1.0.0]", "profile": {
   "resourceType" : "Parameters",
+  "id" : "manifest",
   "parameter" : [{
     "name" : "system-version",
     "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008"
   },
   {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591|20250419"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93|20260211"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.2"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-computablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-expandedvalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes|4.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-stratifier-type|1.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/resource-types|4.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/ValueSet/subject-type|4.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-aggregate-method|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMethodAggregate|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-aggregate-method|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ObservationMethod|5.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/composite-measure-scoring|1.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-CompositeMeasureScoring|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/composite-measure-scoring|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ObservationValue|6.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/ValueSet/measure-data-usage|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-data-usage|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ActCode|11.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-improvement-notation|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-improvement-notation|1.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-population|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActCode|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-population|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-scoring|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMeasureScoring|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-scoring|4.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-type|4.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-type|4.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-authoring-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-package|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-capabilitystatement|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-description|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-identifier|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-title|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-topic|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-version|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/OperationDefinition/Measure-evaluate-measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-publishable-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-date|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-effective|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-jurisdiction|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type-quantity|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type-value|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-topic|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-composed-of|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-depends-on|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-derived-from|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-successor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-predecessor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-package|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-data-requirements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-date|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-effective|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-jurisdiction|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type-quantity|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type-value|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-composed-of|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-depends-on|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-derived-from|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-successor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-predecessor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/MeasureReport-measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-shareable-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-url|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-version|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-identifier|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-name|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-title|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-description|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cohortmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-proportionmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-ratiomeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cvmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-url|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-name|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystemdevice|3.0.0-ballot"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode|4.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/diagnosis-role|1.1.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/request-intent|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/medicationrequest-category|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-clinical|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-ver-status|2.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Condition|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Location|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Provenance|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Coverage|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/observation-category|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-category|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/encounter-discharge-disposition|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Medication|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/CodeSystem/example|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AdultOutpatientEncounters|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AdvancedIllnessandFrailtyExclusion|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/DiagnosticReport|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIElements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIParameters|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActPriority|3.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Common|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MeasureReport|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/ex-diagnosistype|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/ex-procedure-type|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Claim|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-moduledefinitionlibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/ValueSet/chronic-liver-disease-legacy-example|2020-05"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMCommon|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/ResearchStudy|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/administrative-gender|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Device|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/MATGlobalCommonFunctions|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Hospice|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/SupplementalDataElements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CommonTerminologies|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://fhir.org/guides/cqf/Library/NHSNGlycemicControlHypoglycemicInitialPopulation|0.0.002"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/observation-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/ANCCohort|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cqlmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/BCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIRate|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTISIR|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DEVComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DFUComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DHCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DHCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DEVComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DFUComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/TJCOverall|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/VTEICU|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM108|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM124|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM125|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM130|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM146|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM55|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-executablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-elmmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMLogic|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMRatio|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/HBPComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGCohort|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGContinuousVariable|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGProportion|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGRatio|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/MultiRateExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/PVSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/SupportingEvidenceExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/TSCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Terminology|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AgeStratificationExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example|1.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-attestationmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMPublishableLibrary|3.0.0-ballot"
   }]
 }}####
 v: {
@@ -171,13 +2502,790 @@ v: {
   "display" : "10-14 years"
 }, "valueSet" :null, "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
+  "id" : "manifest",
   "parameter" : [{
     "name" : "system-version",
     "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008"
   },
   {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591|20250419"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93|20260211"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.2"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-computablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-expandedvalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes|4.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-stratifier-type|1.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/resource-types|4.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/ValueSet/subject-type|4.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-aggregate-method|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMethodAggregate|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-aggregate-method|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ObservationMethod|5.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/composite-measure-scoring|1.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-CompositeMeasureScoring|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/composite-measure-scoring|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ObservationValue|6.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/ValueSet/measure-data-usage|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-data-usage|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ActCode|11.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-improvement-notation|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-improvement-notation|1.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-population|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActCode|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-population|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-scoring|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMeasureScoring|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-scoring|4.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-type|4.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-type|4.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-authoring-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-package|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-capabilitystatement|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-description|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-identifier|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-title|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-topic|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-version|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/OperationDefinition/Measure-evaluate-measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-publishable-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-date|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-effective|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-jurisdiction|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type-quantity|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type-value|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-topic|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-composed-of|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-depends-on|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-derived-from|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-successor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-predecessor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-package|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-data-requirements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-date|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-effective|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-jurisdiction|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type-quantity|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type-value|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-composed-of|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-depends-on|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-derived-from|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-successor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-predecessor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/MeasureReport-measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-shareable-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-url|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-version|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-identifier|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-name|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-title|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-description|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cohortmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-proportionmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-ratiomeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cvmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-url|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-name|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystemdevice|3.0.0-ballot"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode|4.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/diagnosis-role|1.1.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/request-intent|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/medicationrequest-category|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-clinical|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-ver-status|2.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Condition|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Location|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Provenance|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Coverage|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/observation-category|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-category|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/encounter-discharge-disposition|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Medication|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/CodeSystem/example|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AdultOutpatientEncounters|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AdvancedIllnessandFrailtyExclusion|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/DiagnosticReport|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIElements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIParameters|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActPriority|3.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Common|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MeasureReport|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/ex-diagnosistype|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/ex-procedure-type|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Claim|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-moduledefinitionlibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/ValueSet/chronic-liver-disease-legacy-example|2020-05"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMCommon|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/ResearchStudy|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/administrative-gender|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Device|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/MATGlobalCommonFunctions|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Hospice|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/SupplementalDataElements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CommonTerminologies|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://fhir.org/guides/cqf/Library/NHSNGlycemicControlHypoglycemicInitialPopulation|0.0.002"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/observation-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/ANCCohort|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cqlmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/BCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIRate|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTISIR|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DEVComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DFUComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DHCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DHCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DEVComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DFUComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/TJCOverall|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/VTEICU|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM108|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM124|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM125|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM130|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM146|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM55|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-executablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-elmmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMLogic|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMRatio|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/HBPComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGCohort|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGContinuousVariable|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGProportion|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGRatio|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/MultiRateExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/PVSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/SupportingEvidenceExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/TSCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Terminology|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AgeStratificationExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example|1.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-attestationmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMPublishableLibrary|3.0.0-ballot"
   }]
 }}####
 v: {
@@ -185,7 +3293,7 @@ v: {
   "system" : "http://terminology.hl7.org/CodeSystem/time-period-ranges",
   "version" : "1.0.0",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Validate \"[http://terminology.hl7.org/CodeSystem/time-period-ranges#P10Y--P15Y (\"10-14 years\")]\"\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Check \"http://terminology.hl7.org/CodeSystem/time-period-ranges#P10Y--P15Y\"\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: CodeSystem found: http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0 for http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: check code in (http://terminology.hl7.org/CodeSystem/time-period-ranges) at Coding\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Code \"P10Y--P15Y\" not found in http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0: undefined",
+  "diagnostics" : "0ms tx-op\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Validate \"[http://terminology.hl7.org/CodeSystem/time-period-ranges#P10Y--P15Y (\"10-14 years\")]\"\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Check \"http://terminology.hl7.org/CodeSystem/time-period-ranges#P10Y--P15Y\"\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: CodeSystem found: http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0 for http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: check code in (http://terminology.hl7.org/CodeSystem/time-period-ranges) at Coding\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Code \"P10Y--P15Y\" not found in http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0: undefined",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -218,13 +3326,790 @@ v: {
   "display" : "15-19 years"
 }, "valueSet" :null, "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
+  "id" : "manifest",
   "parameter" : [{
     "name" : "system-version",
     "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008"
   },
   {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591|20250419"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93|20260211"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.2"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-computablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-expandedvalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes|4.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-stratifier-type|1.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/resource-types|4.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/ValueSet/subject-type|4.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-aggregate-method|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMethodAggregate|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-aggregate-method|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ObservationMethod|5.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/composite-measure-scoring|1.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-CompositeMeasureScoring|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/composite-measure-scoring|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ObservationValue|6.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/ValueSet/measure-data-usage|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-data-usage|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ActCode|11.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-improvement-notation|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-improvement-notation|1.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-population|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActCode|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-population|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-scoring|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMeasureScoring|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-scoring|4.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-type|4.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-type|4.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-authoring-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-package|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-capabilitystatement|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-description|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-identifier|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-title|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-topic|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-version|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/OperationDefinition/Measure-evaluate-measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-publishable-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-date|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-effective|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-jurisdiction|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type-quantity|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type-value|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-topic|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-composed-of|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-depends-on|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-derived-from|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-successor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-predecessor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-package|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-data-requirements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-date|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-effective|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-jurisdiction|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type-quantity|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type-value|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-composed-of|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-depends-on|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-derived-from|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-successor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-predecessor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/MeasureReport-measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-shareable-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-url|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-version|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-identifier|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-name|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-title|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-description|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cohortmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-proportionmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-ratiomeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cvmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-url|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-name|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystemdevice|3.0.0-ballot"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode|4.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/diagnosis-role|1.1.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/request-intent|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/medicationrequest-category|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-clinical|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-ver-status|2.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Condition|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Location|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Provenance|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Coverage|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/observation-category|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-category|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/encounter-discharge-disposition|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Medication|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/CodeSystem/example|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AdultOutpatientEncounters|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AdvancedIllnessandFrailtyExclusion|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/DiagnosticReport|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIElements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIParameters|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActPriority|3.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Common|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MeasureReport|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/ex-diagnosistype|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/ex-procedure-type|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Claim|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-moduledefinitionlibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/ValueSet/chronic-liver-disease-legacy-example|2020-05"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMCommon|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/ResearchStudy|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/administrative-gender|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Device|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/MATGlobalCommonFunctions|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Hospice|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/SupplementalDataElements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CommonTerminologies|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://fhir.org/guides/cqf/Library/NHSNGlycemicControlHypoglycemicInitialPopulation|0.0.002"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/observation-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/ANCCohort|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cqlmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/BCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIRate|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTISIR|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DEVComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DFUComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DHCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DHCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DEVComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DFUComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/TJCOverall|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/VTEICU|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM108|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM124|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM125|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM130|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM146|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM55|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-executablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-elmmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMLogic|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMRatio|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/HBPComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGCohort|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGContinuousVariable|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGProportion|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGRatio|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/MultiRateExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/PVSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/SupportingEvidenceExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/TSCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Terminology|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AgeStratificationExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example|1.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-attestationmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMPublishableLibrary|3.0.0-ballot"
   }]
 }}####
 v: {
@@ -232,7 +4117,7 @@ v: {
   "system" : "http://terminology.hl7.org/CodeSystem/time-period-ranges",
   "version" : "1.0.0",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Validate \"[http://terminology.hl7.org/CodeSystem/time-period-ranges#P15Y--P20Y (\"15-19 years\")]\"\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Check \"http://terminology.hl7.org/CodeSystem/time-period-ranges#P15Y--P20Y\"\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: CodeSystem found: http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0 for http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: check code in (http://terminology.hl7.org/CodeSystem/time-period-ranges) at Coding\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Code \"P15Y--P20Y\" not found in http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Validate \"[http://terminology.hl7.org/CodeSystem/time-period-ranges#P15Y--P20Y (\"15-19 years\")]\"\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Check \"http://terminology.hl7.org/CodeSystem/time-period-ranges#P15Y--P20Y\"\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: CodeSystem found: http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0 for http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: check code in (http://terminology.hl7.org/CodeSystem/time-period-ranges) at Coding\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Code \"P15Y--P20Y\" not found in http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0: undefined",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -265,13 +4150,790 @@ v: {
   "display" : "20+ years"
 }, "valueSet" :null, "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
+  "id" : "manifest",
   "parameter" : [{
     "name" : "system-version",
     "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008"
   },
   {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591|20250419"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93|20260211"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.2"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-computablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablevalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-expandedvalueset|3.0.0-ballot"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes|4.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-stratifier-type|1.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/resource-types|4.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/ValueSet/subject-type|4.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-aggregate-method|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMethodAggregate|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-aggregate-method|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ObservationMethod|5.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/composite-measure-scoring|1.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-CompositeMeasureScoring|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/composite-measure-scoring|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ObservationValue|6.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/ValueSet/measure-data-usage|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-data-usage|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-ActCode|11.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-improvement-notation|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-improvement-notation|1.0.1"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-population|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActCode|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-population|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-scoring|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMeasureScoring|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-scoring|4.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/measure-type|4.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/measure-type|4.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-authoring-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/OperationDefinition/cqm-package|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-capabilitystatement|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-description|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-identifier|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-title|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-topic|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-version|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/OperationDefinition/Measure-evaluate-measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-publishable-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-date|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-effective|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-jurisdiction|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type-quantity|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-context-type-value|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-topic|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-composed-of|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-depends-on|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-derived-from|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-successor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-predecessor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-package|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-data-requirements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-date|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-effective|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-jurisdiction|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type-quantity|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-context-type-value|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-composed-of|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-depends-on|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-derived-from|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-successor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-predecessor|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-testcase|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/MeasureReport-measure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/CapabilityStatement/crmi-shareable-artifact-repository|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-url|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-version|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-identifier|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-name|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-title|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-description|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Library-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-computablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cohortmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-proportionmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-ratiomeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cvmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-url|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/SearchParameter/Measure-name|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystemdevice|3.0.0-ballot"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode|4.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/diagnosis-role|1.1.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/request-intent|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/medicationrequest-category|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-clinical|3.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-ver-status|2.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Condition|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Location|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Provenance|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Coverage|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/observation-category|2.0.0"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/condition-category|2.0.0"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/encounter-discharge-disposition|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Medication|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/CodeSystem/example|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-publishablelibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AdultOutpatientEncounters|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AdvancedIllnessandFrailtyExclusion|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/DiagnosticReport|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIElements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIParameters|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://terminology.hl7.org/ValueSet/v3-ActPriority|3.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Common|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/MeasureReport|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/ex-diagnosistype|1.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://terminology.hl7.org/CodeSystem/ex-procedure-type|1.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Claim|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-moduledefinitionlibrary|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/ValueSet/chronic-liver-disease-legacy-example|2020-05"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMCommon|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/ResearchStudy|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/administrative-gender|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/StructureDefinition/Device|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/MATGlobalCommonFunctions|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Hospice|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/SupplementalDataElements|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CommonTerminologies|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://fhir.org/guides/cqf/Library/NHSNGlycemicControlHypoglycemicInitialPopulation|0.0.002"
+  },
+  {
+    "name" : "system-version",
+    "valueCanonical" : "http://hl7.org/fhir/observation-status|4.0.1"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/ANCCohort|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-cqlmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/BCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTIRate|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CAUTISIR|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/CCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DEVComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DFUComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/DHCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DHCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DEVComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/DFUComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/TJCOverall|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/VTEICU|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM108|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM124|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM125|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM130|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM146|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXM55|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-executablemeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-elmmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMLogic|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMRatio|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/HBPComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGCohort|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGContinuousVariable|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGProportion|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/IGRatio|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/MultiRateExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/PVSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/BCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/HBPComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/CCSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Measure/PVSComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/SupportingEvidenceExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/TSCComponent|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/Terminology|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/AgeStratificationExample|3.0.0-ballot"
+  },
+  {
+    "name" : "default-valueset-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example|1.0.0"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-attestationmeasure|3.0.0-ballot"
+  },
+  {
+    "name" : "default-canonical-version",
+    "valueCanonical" : "http://hl7.org/fhir/uv/cqm/Library/EXMPublishableLibrary|3.0.0-ballot"
   }]
 }}####
 v: {
@@ -279,7 +4941,7 @@ v: {
   "system" : "http://terminology.hl7.org/CodeSystem/time-period-ranges",
   "version" : "1.0.0",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Validate \"[http://terminology.hl7.org/CodeSystem/time-period-ranges#P20Y--P9999Y (\"20+ years\")]\"\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Check \"http://terminology.hl7.org/CodeSystem/time-period-ranges#P20Y--P9999Y\"\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: CodeSystem found: http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0 for http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: check code in (http://terminology.hl7.org/CodeSystem/time-period-ranges) at Coding\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Code \"P20Y--P9999Y\" not found in http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0: undefined",
+  "diagnostics" : "0ms tx-op\n0ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Validate \"[http://terminology.hl7.org/CodeSystem/time-period-ranges#P20Y--P9999Y (\"20+ years\")]\"\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Check \"http://terminology.hl7.org/CodeSystem/time-period-ranges#P20Y--P9999Y\"\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: CodeSystem found: http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0 for http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: check code in (http://terminology.hl7.org/CodeSystem/time-period-ranges) at Coding\n1ms http://terminology.hl7.org/ValueSet/time-period-ranges|1.0.0: Code \"P20Y--P9999Y\" not found in http://terminology.hl7.org/CodeSystem/time-period-ranges|1.0.0: undefined",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -306,27 +4968,7 @@ v: {
 
 }
 -------------------------------------------------------------------------------------
-{"hierarchical" : true, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "inactive" : true,
-    "include" : [{
-      "system" : "http://terminology.hl7.org/CodeSystem/time-period-ranges",
-      "concept" : [{
-        "code" : "P10Y--P15Y",
-        "display" : "10-14 years"
-      },
-      {
-        "code" : "P15Y--P20Y",
-        "display" : "15-19 years"
-      },
-      {
-        "code" : "P20Y--P9999Y",
-        "display" : "20+ years"
-      }]
-    }]
-  }
-}}####
+{"hierarchical" : true, "language": "en", "url": "http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example", "version": "1.0.0"}####
 e: {
   "from-server" : true,
   "class" : "UNKNOWN",
