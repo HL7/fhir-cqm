@@ -2,6 +2,25 @@
 
 {:toc}
 
+{: .note-to-balloters}
+> This is the STU 3 ballot of the Quality Measure Implementation Guide. This ballot focuses on composite measure representation and calculation, test case conformance, and guidance for communicating the data requirements of a measure program. In summary, this ballot:
+>
+> * Allows composite measures to combine Proportion, Ratio, and Continuous Variable components, and requires weighted composites with Ratio or Continuous Variable components to specify a [score range](StructureDefinition-cqm-scoreRange.html) to normalize each component score (non-compatible)
+> * Requires `linkId` on test case MeasureReport groups, populations, stratifiers, and stratum components (non-compatible)
+> * Allows composites that determine population membership for each individual (all-or-nothing, opportunity, and subject-level linear) to define population criteria on the composite group, and corrects the formal criteria for composite exclusions and exceptions
+> * Provides worked examples of composite measure calculation, with test cases for each component and composite
+> * Documents how to determine the aggregate data requirements for a measure program, and expands the guidance on cohort definitions
+> * Updates dependencies to the ballot versions of [Canonical Resource Management Infrastructure (CRMI)]({{site.data.fhir.ver.crmi}}) and [Using CQL with FHIR]({{site.data.fhir.ver.cql}})
+>
+> For a complete list of changes, including the affected pages and artifacts, refer to the [Change Log](changes.html). Changed content is marked throughout the guide; use the change highlighting toggle to show or hide it.
+>
+> In addition to general review, balloters are asked to provide feedback on the following questions:
+>
+> 1. Is normalizing Ratio and Continuous Variable component scores using a score range, specified separately from the component weight, a suitable approach for weighted composites? Are there other normalization approaches that should be supported? (See [Score Normalization](composite-measures.html#score-normalization))
+> 2. Do the corrected criteria for composite exclusions and exceptions match the expected behavior for composite measures? (See [All-or-nothing Scoring](composite-measures.html#all-or-nothing-scoring) and [Opportunity Scoring](composite-measures.html#opportunity-scoring))
+> 3. Requiring `linkId` on test case MeasureReports is a non-compatible change for existing test cases. Is the use of the R5 cross-version extensions to carry the `linkId` acceptable? (See [CQM Test Case](StructureDefinition-cqm-testcase.html))
+> 4. The measure profiles continue to allow the calculation elements (such as `scoring` and `compositeScoring`) to be specified on the measure root or on each group. Should a future version require group-level specification, in alignment with FHIR R6? (See [Measures with Multiple Rates](measure-conformance.html#measures-with-multiple-rates))
+
 {: .stu-note}
 >  This implementation guide is the Universal Realm successor of the US-based [Quality Measure IG STU 5](http://hl7.org/fhir/us/cqfmeasures), and incorporates stakeholder feedback and implementation experience from that specification. 
 
