@@ -2119,7 +2119,7 @@
     </parameter>
     <parameter>
       <code value="pin-canonicals"/>
-      <value value="pin-all"/>
+      <value value="pin-multiples"/>
     </parameter>
     <parameter>
       <code value="pin-manifest"/>
