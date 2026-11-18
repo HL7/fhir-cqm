@@ -796,7 +796,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#85354-9 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#85354-9\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n4ms http://loinc.org/vs|2.83: Code \"85354-9\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#85354-9 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#85354-9\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n2ms http://loinc.org/vs|2.83: Code \"85354-9\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -1600,7 +1600,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#8480-6 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#8480-6\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n3ms http://loinc.org/vs|2.83: Code \"8480-6\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#8480-6 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#8480-6\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n2ms http://loinc.org/vs|2.83: Code \"8480-6\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2404,7 +2404,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#8462-4 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#8462-4\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n4ms http://loinc.org/vs|2.83: Code \"8462-4\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#8462-4 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#8462-4\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n3ms http://loinc.org/vs|2.83: Code \"8462-4\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -4012,7 +4012,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#72166-2 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#72166-2\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n3ms http://loinc.org/vs|2.83: Code \"72166-2\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#72166-2 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#72166-2\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n2ms http://loinc.org/vs|2.83: Code \"72166-2\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -6425,7 +6425,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n5ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#72136-5 (\"Risk for venous thromboembolism\")]\"\n6ms http://loinc.org/vs|2.83: Check \"http://loinc.org#72136-5\"\n6ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n6ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n6ms http://loinc.org/vs|2.83: Code \"72136-5\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#72136-5 (\"Risk for venous thromboembolism\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#72136-5\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n3ms http://loinc.org/vs|2.83: Code \"72136-5\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -7230,7 +7230,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#85354-9 (\"Blood pressure panel with all children optional\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#85354-9\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n4ms http://loinc.org/vs|2.83: Code \"85354-9\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#85354-9 (\"Blood pressure panel with all children optional\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#85354-9\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n3ms http://loinc.org/vs|2.83: Code \"85354-9\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -8035,7 +8035,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#34534-8 (\"12 lead EKG panel\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#34534-8\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n4ms http://loinc.org/vs|2.83: Code \"34534-8\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#34534-8 (\"12 lead EKG panel\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#34534-8\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n2ms http://loinc.org/vs|2.83: Code \"34534-8\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -8840,7 +8840,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#11524-6 (\"EKG study\")]\"\n5ms http://loinc.org/vs|2.83: Check \"http://loinc.org#11524-6\"\n5ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n5ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n5ms http://loinc.org/vs|2.83: Code \"11524-6\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#11524-6 (\"EKG study\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#11524-6\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n3ms http://loinc.org/vs|2.83: Code \"11524-6\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -9646,7 +9646,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112579-8 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112579-8\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112579-8\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112579-8 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112579-8\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112579-8\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -10452,7 +10452,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112578-0 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112578-0\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112578-0\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112578-0 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112578-0\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112578-0\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -11258,7 +11258,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112577-2 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112577-2\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112577-2\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112577-2 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112577-2\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112577-2\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -12064,7 +12064,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112576-4 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112576-4\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112576-4\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112576-4 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112576-4\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112576-4\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -12870,7 +12870,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112575-6 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112575-6\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112575-6\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112575-6 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112575-6\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112575-6\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -14482,7 +14482,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112573-1 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112573-1\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n4ms http://loinc.org/vs|2.83: Code \"112573-1\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112573-1 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112573-1\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112573-1\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -15288,7 +15288,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112572-3 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112572-3\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112572-3\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112572-3 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112572-3\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112572-3\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -16094,7 +16094,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112571-5 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112571-5\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112571-5\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112571-5 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112571-5\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112571-5\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -16900,7 +16900,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112570-7 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112570-7\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112570-7\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112570-7 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112570-7\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112570-7\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -17706,7 +17706,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112569-9 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112569-9\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112569-9\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112569-9 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112569-9\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112569-9\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -18512,7 +18512,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112568-1 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112568-1\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112568-1\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112568-1 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112568-1\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112568-1\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -19318,7 +19318,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112567-3 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112567-3\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n4ms http://loinc.org/vs|2.83: Code \"112567-3\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112567-3 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112567-3\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112567-3\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -20124,7 +20124,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112566-5 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112566-5\"\n5ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n5ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n5ms http://loinc.org/vs|2.83: Code \"112566-5\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112566-5 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112566-5\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112566-5\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -20930,7 +20930,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112565-7 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112565-7\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n4ms http://loinc.org/vs|2.83: Code \"112565-7\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112565-7 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112565-7\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112565-7\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -21736,7 +21736,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112564-0 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112564-0\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n4ms http://loinc.org/vs|2.83: Code \"112564-0\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112564-0 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112564-0\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112564-0\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -22542,7 +22542,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112563-2 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112563-2\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112563-2\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112563-2 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112563-2\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112563-2\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -23348,7 +23348,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112562-4 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112562-4\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n4ms http://loinc.org/vs|2.83: Code \"112562-4\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112562-4 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112562-4\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112562-4\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -24154,7 +24154,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112561-6 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112561-6\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112561-6\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112561-6 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112561-6\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112561-6\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -24960,7 +24960,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112560-8 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112560-8\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n4ms http://loinc.org/vs|2.83: Code \"112560-8\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112560-8 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112560-8\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112560-8\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -26572,7 +26572,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112558-2 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112558-2\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112558-2\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112558-2 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112558-2\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112558-2\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -28184,7 +28184,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112556-6 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112556-6\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112556-6\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112556-6 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112556-6\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112556-6\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -28990,7 +28990,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112555-8 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112555-8\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112555-8\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n5ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112555-8 (\"undefined\")]\"\n5ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112555-8\"\n5ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n5ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n5ms http://loinc.org/vs|2.83: Code \"112555-8\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -29796,7 +29796,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112554-1 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112554-1\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n4ms http://loinc.org/vs|2.83: Code \"112554-1\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112554-1 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112554-1\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112554-1\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -30602,7 +30602,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112553-3 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112553-3\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112553-3\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112553-3 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112553-3\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112553-3\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -31408,7 +31408,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112552-5 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112552-5\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n5ms http://loinc.org/vs|2.83: Code \"112552-5\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112552-5 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112552-5\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112552-5\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -32214,7 +32214,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112551-7 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112551-7\"\n5ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n5ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n5ms http://loinc.org/vs|2.83: Code \"112551-7\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112551-7 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112551-7\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112551-7\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -33020,7 +33020,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112550-9 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112550-9\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112550-9\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112550-9 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112550-9\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112550-9\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -34632,7 +34632,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112548-3 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112548-3\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112548-3\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112548-3 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112548-3\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112548-3\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -35438,7 +35438,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112547-5 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112547-5\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n4ms http://loinc.org/vs|2.83: Code \"112547-5\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112547-5 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112547-5\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112547-5\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -36244,7 +36244,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112546-7 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112546-7\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112546-7\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112546-7 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112546-7\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112546-7\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -37856,7 +37856,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112544-2 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112544-2\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n4ms http://loinc.org/vs|2.83: Code \"112544-2\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112544-2 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112544-2\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112544-2\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -38662,7 +38662,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112543-4 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112543-4\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n4ms http://loinc.org/vs|2.83: Code \"112543-4\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112543-4 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112543-4\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112543-4\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -39468,7 +39468,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112542-6 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112542-6\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112542-6\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112542-6 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112542-6\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112542-6\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -41080,7 +41080,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112539-2 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112539-2\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112539-2\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112539-2 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112539-2\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112539-2\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -41886,7 +41886,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112538-4 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112538-4\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112538-4\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112538-4 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112538-4\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112538-4\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -42692,7 +42692,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112541-8 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112541-8\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112541-8\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112541-8 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112541-8\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112541-8\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -43498,7 +43498,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112537-6 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112537-6\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112537-6\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112537-6 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112537-6\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112537-6\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -44304,7 +44304,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n5ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112536-8 (\"undefined\")]\"\n5ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112536-8\"\n5ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n5ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n5ms http://loinc.org/vs|2.83: Code \"112536-8\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112536-8 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112536-8\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112536-8\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -45110,7 +45110,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112533-5 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112533-5\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n4ms http://loinc.org/vs|2.83: Code \"112533-5\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112533-5 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112533-5\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112533-5\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -45916,7 +45916,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112532-7 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112532-7\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112532-7\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112532-7 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112532-7\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112532-7\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -46722,7 +46722,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112535-0 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112535-0\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112535-0\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112535-0 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112535-0\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112535-0\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -47528,7 +47528,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112534-3 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112534-3\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112534-3\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112534-3 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112534-3\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112534-3\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -48334,7 +48334,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112531-9 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112531-9\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112531-9\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112531-9 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112531-9\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112531-9\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -49140,7 +49140,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112530-1 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112530-1\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112530-1\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112530-1 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112530-1\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112530-1\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -49946,7 +49946,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112529-3 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112529-3\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112529-3\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112529-3 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112529-3\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112529-3\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -50752,7 +50752,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112528-5 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112528-5\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112528-5\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112528-5 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112528-5\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112528-5\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -51558,7 +51558,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112527-7 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112527-7\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112527-7\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112527-7 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112527-7\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112527-7\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -52364,7 +52364,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112526-9 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112526-9\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112526-9\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112526-9 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112526-9\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112526-9\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -53170,7 +53170,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112525-1 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112525-1\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112525-1\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112525-1 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112525-1\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112525-1\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -53976,7 +53976,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112524-4 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112524-4\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112524-4\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112524-4 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112524-4\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112524-4\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -54782,7 +54782,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112523-6 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112523-6\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112523-6\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112523-6 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112523-6\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112523-6\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -55588,7 +55588,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112522-8 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112522-8\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112522-8\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112522-8 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112522-8\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112522-8\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -57200,7 +57200,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n6ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112520-2 (\"undefined\")]\"\n6ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112520-2\"\n6ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n6ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n6ms http://loinc.org/vs|2.83: Code \"112520-2\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112520-2 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112520-2\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112520-2\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -58006,7 +58006,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112519-4 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112519-4\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n4ms http://loinc.org/vs|2.83: Code \"112519-4\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112519-4 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112519-4\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112519-4\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -58812,7 +58812,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112518-6 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112518-6\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112518-6\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n5ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112518-6 (\"undefined\")]\"\n5ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112518-6\"\n5ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n5ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n5ms http://loinc.org/vs|2.83: Code \"112518-6\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -59618,7 +59618,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112517-8 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112517-8\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n4ms http://loinc.org/vs|2.83: Code \"112517-8\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112517-8 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112517-8\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112517-8\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -61230,7 +61230,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112515-2 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112515-2\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112515-2\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112515-2 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112515-2\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112515-2\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -62036,7 +62036,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112514-5 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112514-5\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112514-5\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112514-5 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112514-5\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112514-5\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -62842,7 +62842,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112513-7 (\"undefined\")]\"\n4ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112513-7\"\n4ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n4ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n4ms http://loinc.org/vs|2.83: Code \"112513-7\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112513-7 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112513-7\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112513-7\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -63648,7 +63648,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112512-9 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112512-9\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112512-9\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112512-9 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112512-9\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112512-9\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -64454,7 +64454,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112511-1 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112511-1\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112511-1\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112511-1 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112511-1\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112511-1\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -65260,7 +65260,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n4ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112510-3 (\"undefined\")]\"\n5ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112510-3\"\n5ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n5ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n5ms http://loinc.org/vs|2.83: Code \"112510-3\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112510-3 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112510-3\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112510-3\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -66066,7 +66066,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112509-5 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112509-5\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112509-5\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112509-5 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112509-5\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112509-5\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -66872,7 +66872,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112508-7 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112508-7\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"112508-7\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112508-7 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112508-7\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112508-7\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -67678,7 +67678,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n6ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112507-9 (\"undefined\")]\"\n6ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112507-9\"\n6ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n6ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n6ms http://loinc.org/vs|2.83: Code \"112507-9\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#112507-9 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#112507-9\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"112507-9\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -68485,7 +68485,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#57024-2 (\"Health Quality Measure Document\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#57024-2\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"57024-2\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#57024-2 (\"Health Quality Measure Document\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#57024-2\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"57024-2\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -69292,7 +69292,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#57024-2 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#57024-2\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"57024-2\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#57024-2 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#57024-2\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"57024-2\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -70097,7 +70097,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#8480-6 (\"Systolic blood pressure\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#8480-6\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n2ms http://loinc.org/vs|2.83: Code \"8480-6\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#8480-6 (\"Systolic blood pressure\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#8480-6\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n3ms http://loinc.org/vs|2.83: Code \"8480-6\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -71711,7 +71711,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#LP6960-1 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#LP6960-1\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n3ms http://loinc.org/vs|2.83: Code \"LP6960-1\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n5ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#LP6960-1 (\"undefined\")]\"\n6ms http://loinc.org/vs|2.83: Check \"http://loinc.org#LP6960-1\"\n6ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n6ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n6ms http://loinc.org/vs|2.83: Code \"LP6960-1\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -72515,7 +72515,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#LP7753-9 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#LP7753-9\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n3ms http://loinc.org/vs|2.83: Code \"LP7753-9\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#LP7753-9 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#LP7753-9\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n2ms http://loinc.org/vs|2.83: Code \"LP7753-9\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -74938,7 +74938,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#77353-1 (\"Noninvasive colorectal cancer DNA and occult blood screening [Interpretation] in Stool Narrative\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#77353-1\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"77353-1\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#77353-1 (\"Noninvasive colorectal cancer DNA and occult blood screening [Interpretation] in Stool Narrative\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#77353-1\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"77353-1\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -75744,7 +75744,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Analysing http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1 for validation purposes\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Parameters: disp-lang=en, generate-narrative, default-to-latest\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/900000000000207008, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591#20250419, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93#20260211, default:http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes#4.0.0, default:http://terminology.hl7.org/CodeSystem/measure-stratifier-type#1.0.0, default:http://hl7.org/fhir/resource-types#4.0.1, default:http://hl7.org/fhir/ValueSet/subject-type#4.0.1, default:http://terminology.hl7.org/ValueSet/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMethodAggregate#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/CodeSystem/v3-ObservationMethod#5.0.0, default:http://terminology.hl7.org/ValueSet/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/ValueSet/v3-CompositeMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ObservationValue#6.0.0, default:http://hl7.org/fhir/ValueSet/measure-data-usage#4.0.1, default:http://terminology.hl7.org/CodeSystem/measure-data-usage#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ActCode#11.0.0, default:http://terminology.hl7.org/ValueSet/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/CodeSystem/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/ValueSet/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ActCode#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/measure-scoring#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-scoring#4.0.0, default:http://terminology.hl7.org/ValueSet/measure-type#4.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-type#4.0.0, default:http://terminology.hl7.org/CodeSystem/v3-RoleCode#4.0.0, default:http://terminology.hl7.org/CodeSystem/diagnosis-role#1.1.1, default:http://hl7.org/fhir/request-intent#4.0.1, default:http://terminology.hl7.org/CodeSystem/medicationrequest-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-clinical#3.0.0, default:http://terminology.hl7.org/CodeSystem/condition-ver-status#2.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#1.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#1.0.1, default:http://terminology.hl7.org/CodeSystem/observation-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-category#2.0.0, default:http://terminology.hl7.org/ValueSet/encounter-discharge-disposition#1.0.1, default:http://hl7.org/fhir/uv/cql/CodeSystem/example#3.0.0-ballot, default:http://terminology.hl7.org/ValueSet/v3-ActPriority#3.0.0, default:http://terminology.hl7.org/CodeSystem/ex-diagnosistype#1.0.1, default:http://terminology.hl7.org/CodeSystem/ex-procedure-type#1.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/chronic-liver-disease-legacy-example#2020-05, default:http://hl7.org/fhir/administrative-gender#4.0.1, default:http://hl7.org/fhir/observation-status#4.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example#1.0.0\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Prepare include[0]: \"(http://loinc.org)(85353-1,9279-1,8867-4,2708-6,8310-5,8302-2,9843-4,29463-7,39156-5,85354-9,8480-6,8462-4,8478-0)\"\n2ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: CodeSystem found: \"http://loinc.org|2.83\"\n2ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Validate \"[http://loinc.org#85354-9 (\"undefined\")]\"\n2ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Check \"http://loinc.org#85354-9\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: CodeSystem found: http://loinc.org|2.83 for http://loinc.org\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: check code in (http://loinc.org)(85353-1,9279-1,8867-4,2708-6,8310-5,8302-2,9843-4,29463-7,39156-5,85354-9,8480-6,8462-4,8478-0) at CodeableConcept.coding[0]\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Code \"85354-9\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Analysing http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1 for validation purposes\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Parameters: disp-lang=en, generate-narrative, default-to-latest\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/900000000000207008, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591#20250419, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93#20260211, default:http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes#4.0.0, default:http://terminology.hl7.org/CodeSystem/measure-stratifier-type#1.0.0, default:http://hl7.org/fhir/resource-types#4.0.1, default:http://hl7.org/fhir/ValueSet/subject-type#4.0.1, default:http://terminology.hl7.org/ValueSet/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMethodAggregate#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/CodeSystem/v3-ObservationMethod#5.0.0, default:http://terminology.hl7.org/ValueSet/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/ValueSet/v3-CompositeMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ObservationValue#6.0.0, default:http://hl7.org/fhir/ValueSet/measure-data-usage#4.0.1, default:http://terminology.hl7.org/CodeSystem/measure-data-usage#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ActCode#11.0.0, default:http://terminology.hl7.org/ValueSet/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/CodeSystem/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/ValueSet/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ActCode#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/measure-scoring#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-scoring#4.0.0, default:http://terminology.hl7.org/ValueSet/measure-type#4.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-type#4.0.0, default:http://terminology.hl7.org/CodeSystem/v3-RoleCode#4.0.0, default:http://terminology.hl7.org/CodeSystem/diagnosis-role#1.1.1, default:http://hl7.org/fhir/request-intent#4.0.1, default:http://terminology.hl7.org/CodeSystem/medicationrequest-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-clinical#3.0.0, default:http://terminology.hl7.org/CodeSystem/condition-ver-status#2.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#1.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#1.0.1, default:http://terminology.hl7.org/CodeSystem/observation-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-category#2.0.0, default:http://terminology.hl7.org/ValueSet/encounter-discharge-disposition#1.0.1, default:http://hl7.org/fhir/uv/cql/CodeSystem/example#3.0.0-ballot, default:http://terminology.hl7.org/ValueSet/v3-ActPriority#3.0.0, default:http://terminology.hl7.org/CodeSystem/ex-diagnosistype#1.0.1, default:http://terminology.hl7.org/CodeSystem/ex-procedure-type#1.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/chronic-liver-disease-legacy-example#2020-05, default:http://hl7.org/fhir/administrative-gender#4.0.1, default:http://hl7.org/fhir/observation-status#4.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example#1.0.0\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Prepare include[0]: \"(http://loinc.org)(85353-1,9279-1,8867-4,2708-6,8310-5,8302-2,9843-4,29463-7,39156-5,85354-9,8480-6,8462-4,8478-0)\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: CodeSystem found: \"http://loinc.org|2.83\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Validate \"[http://loinc.org#85354-9 (\"undefined\")]\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Check \"http://loinc.org#85354-9\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: CodeSystem found: http://loinc.org|2.83 for http://loinc.org\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: check code in (http://loinc.org)(85353-1,9279-1,8867-4,2708-6,8310-5,8302-2,9843-4,29463-7,39156-5,85354-9,8480-6,8462-4,8478-0) at CodeableConcept.coding[0]\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Code \"85354-9\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -76550,7 +76550,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Analysing http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1 for validation purposes\n1ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/900000000000207008, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591#20250419, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93#20260211, default:http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes#4.0.0, default:http://terminology.hl7.org/CodeSystem/measure-stratifier-type#1.0.0, default:http://hl7.org/fhir/resource-types#4.0.1, default:http://hl7.org/fhir/ValueSet/subject-type#4.0.1, default:http://terminology.hl7.org/ValueSet/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMethodAggregate#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/CodeSystem/v3-ObservationMethod#5.0.0, default:http://terminology.hl7.org/ValueSet/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/ValueSet/v3-CompositeMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ObservationValue#6.0.0, default:http://hl7.org/fhir/ValueSet/measure-data-usage#4.0.1, default:http://terminology.hl7.org/CodeSystem/measure-data-usage#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ActCode#11.0.0, default:http://terminology.hl7.org/ValueSet/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/CodeSystem/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/ValueSet/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ActCode#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/measure-scoring#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-scoring#4.0.0, default:http://terminology.hl7.org/ValueSet/measure-type#4.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-type#4.0.0, default:http://terminology.hl7.org/CodeSystem/v3-RoleCode#4.0.0, default:http://terminology.hl7.org/CodeSystem/diagnosis-role#1.1.1, default:http://hl7.org/fhir/request-intent#4.0.1, default:http://terminology.hl7.org/CodeSystem/medicationrequest-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-clinical#3.0.0, default:http://terminology.hl7.org/CodeSystem/condition-ver-status#2.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#1.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#1.0.1, default:http://terminology.hl7.org/CodeSystem/observation-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-category#2.0.0, default:http://terminology.hl7.org/ValueSet/encounter-discharge-disposition#1.0.1, default:http://hl7.org/fhir/uv/cql/CodeSystem/example#3.0.0-ballot, default:http://terminology.hl7.org/ValueSet/v3-ActPriority#3.0.0, default:http://terminology.hl7.org/CodeSystem/ex-diagnosistype#1.0.1, default:http://terminology.hl7.org/CodeSystem/ex-procedure-type#1.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/chronic-liver-disease-legacy-example#2020-05, default:http://hl7.org/fhir/administrative-gender#4.0.1, default:http://hl7.org/fhir/observation-status#4.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example#1.0.0\n1ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Prepare include[0]: \"(http://loinc.org)(85353-1,9279-1,8867-4,2708-6,8310-5,8302-2,9843-4,29463-7,39156-5,85354-9,8480-6,8462-4,8478-0)\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: CodeSystem found: \"http://loinc.org|2.83\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Validate \"[http://loinc.org#8480-6 (\"undefined\")]\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Check \"http://loinc.org#8480-6\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: CodeSystem found: http://loinc.org|2.83 for http://loinc.org\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: check code in (http://loinc.org)(85353-1,9279-1,8867-4,2708-6,8310-5,8302-2,9843-4,29463-7,39156-5,85354-9,8480-6,8462-4,8478-0) at CodeableConcept.coding[0]\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Code \"8480-6\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Analysing http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1 for validation purposes\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Parameters: disp-lang=en, generate-narrative, default-to-latest\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/900000000000207008, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591#20250419, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93#20260211, default:http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes#4.0.0, default:http://terminology.hl7.org/CodeSystem/measure-stratifier-type#1.0.0, default:http://hl7.org/fhir/resource-types#4.0.1, default:http://hl7.org/fhir/ValueSet/subject-type#4.0.1, default:http://terminology.hl7.org/ValueSet/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMethodAggregate#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/CodeSystem/v3-ObservationMethod#5.0.0, default:http://terminology.hl7.org/ValueSet/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/ValueSet/v3-CompositeMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ObservationValue#6.0.0, default:http://hl7.org/fhir/ValueSet/measure-data-usage#4.0.1, default:http://terminology.hl7.org/CodeSystem/measure-data-usage#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ActCode#11.0.0, default:http://terminology.hl7.org/ValueSet/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/CodeSystem/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/ValueSet/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ActCode#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/measure-scoring#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-scoring#4.0.0, default:http://terminology.hl7.org/ValueSet/measure-type#4.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-type#4.0.0, default:http://terminology.hl7.org/CodeSystem/v3-RoleCode#4.0.0, default:http://terminology.hl7.org/CodeSystem/diagnosis-role#1.1.1, default:http://hl7.org/fhir/request-intent#4.0.1, default:http://terminology.hl7.org/CodeSystem/medicationrequest-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-clinical#3.0.0, default:http://terminology.hl7.org/CodeSystem/condition-ver-status#2.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#1.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#1.0.1, default:http://terminology.hl7.org/CodeSystem/observation-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-category#2.0.0, default:http://terminology.hl7.org/ValueSet/encounter-discharge-disposition#1.0.1, default:http://hl7.org/fhir/uv/cql/CodeSystem/example#3.0.0-ballot, default:http://terminology.hl7.org/ValueSet/v3-ActPriority#3.0.0, default:http://terminology.hl7.org/CodeSystem/ex-diagnosistype#1.0.1, default:http://terminology.hl7.org/CodeSystem/ex-procedure-type#1.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/chronic-liver-disease-legacy-example#2020-05, default:http://hl7.org/fhir/administrative-gender#4.0.1, default:http://hl7.org/fhir/observation-status#4.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example#1.0.0\n1ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Prepare include[0]: \"(http://loinc.org)(85353-1,9279-1,8867-4,2708-6,8310-5,8302-2,9843-4,29463-7,39156-5,85354-9,8480-6,8462-4,8478-0)\"\n2ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: CodeSystem found: \"http://loinc.org|2.83\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Validate \"[http://loinc.org#8480-6 (\"undefined\")]\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Check \"http://loinc.org#8480-6\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: CodeSystem found: http://loinc.org|2.83 for http://loinc.org\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: check code in (http://loinc.org)(85353-1,9279-1,8867-4,2708-6,8310-5,8302-2,9843-4,29463-7,39156-5,85354-9,8480-6,8462-4,8478-0) at CodeableConcept.coding[0]\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Code \"8480-6\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -77356,7 +77356,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Analysing http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1 for validation purposes\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Parameters: disp-lang=en, generate-narrative, default-to-latest\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/900000000000207008, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591#20250419, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93#20260211, default:http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes#4.0.0, default:http://terminology.hl7.org/CodeSystem/measure-stratifier-type#1.0.0, default:http://hl7.org/fhir/resource-types#4.0.1, default:http://hl7.org/fhir/ValueSet/subject-type#4.0.1, default:http://terminology.hl7.org/ValueSet/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMethodAggregate#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/CodeSystem/v3-ObservationMethod#5.0.0, default:http://terminology.hl7.org/ValueSet/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/ValueSet/v3-CompositeMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ObservationValue#6.0.0, default:http://hl7.org/fhir/ValueSet/measure-data-usage#4.0.1, default:http://terminology.hl7.org/CodeSystem/measure-data-usage#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ActCode#11.0.0, default:http://terminology.hl7.org/ValueSet/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/CodeSystem/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/ValueSet/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ActCode#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/measure-scoring#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-scoring#4.0.0, default:http://terminology.hl7.org/ValueSet/measure-type#4.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-type#4.0.0, default:http://terminology.hl7.org/CodeSystem/v3-RoleCode#4.0.0, default:http://terminology.hl7.org/CodeSystem/diagnosis-role#1.1.1, default:http://hl7.org/fhir/request-intent#4.0.1, default:http://terminology.hl7.org/CodeSystem/medicationrequest-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-clinical#3.0.0, default:http://terminology.hl7.org/CodeSystem/condition-ver-status#2.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#1.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#1.0.1, default:http://terminology.hl7.org/CodeSystem/observation-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-category#2.0.0, default:http://terminology.hl7.org/ValueSet/encounter-discharge-disposition#1.0.1, default:http://hl7.org/fhir/uv/cql/CodeSystem/example#3.0.0-ballot, default:http://terminology.hl7.org/ValueSet/v3-ActPriority#3.0.0, default:http://terminology.hl7.org/CodeSystem/ex-diagnosistype#1.0.1, default:http://terminology.hl7.org/CodeSystem/ex-procedure-type#1.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/chronic-liver-disease-legacy-example#2020-05, default:http://hl7.org/fhir/administrative-gender#4.0.1, default:http://hl7.org/fhir/observation-status#4.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example#1.0.0\n0ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Prepare include[0]: \"(http://loinc.org)(85353-1,9279-1,8867-4,2708-6,8310-5,8302-2,9843-4,29463-7,39156-5,85354-9,8480-6,8462-4,8478-0)\"\n2ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: CodeSystem found: \"http://loinc.org|2.83\"\n2ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Validate \"[http://loinc.org#8462-4 (\"undefined\")]\"\n2ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Check \"http://loinc.org#8462-4\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: CodeSystem found: http://loinc.org|2.83 for http://loinc.org\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: check code in (http://loinc.org)(85353-1,9279-1,8867-4,2708-6,8310-5,8302-2,9843-4,29463-7,39156-5,85354-9,8480-6,8462-4,8478-0) at CodeableConcept.coding[0]\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Code \"8462-4\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Analysing http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1 for validation purposes\n1ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/900000000000207008, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591#20250419, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93#20260211, default:http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes#4.0.0, default:http://terminology.hl7.org/CodeSystem/measure-stratifier-type#1.0.0, default:http://hl7.org/fhir/resource-types#4.0.1, default:http://hl7.org/fhir/ValueSet/subject-type#4.0.1, default:http://terminology.hl7.org/ValueSet/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMethodAggregate#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/CodeSystem/v3-ObservationMethod#5.0.0, default:http://terminology.hl7.org/ValueSet/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/ValueSet/v3-CompositeMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ObservationValue#6.0.0, default:http://hl7.org/fhir/ValueSet/measure-data-usage#4.0.1, default:http://terminology.hl7.org/CodeSystem/measure-data-usage#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ActCode#11.0.0, default:http://terminology.hl7.org/ValueSet/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/CodeSystem/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/ValueSet/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ActCode#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/measure-scoring#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-scoring#4.0.0, default:http://terminology.hl7.org/ValueSet/measure-type#4.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-type#4.0.0, default:http://terminology.hl7.org/CodeSystem/v3-RoleCode#4.0.0, default:http://terminology.hl7.org/CodeSystem/diagnosis-role#1.1.1, default:http://hl7.org/fhir/request-intent#4.0.1, default:http://terminology.hl7.org/CodeSystem/medicationrequest-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-clinical#3.0.0, default:http://terminology.hl7.org/CodeSystem/condition-ver-status#2.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#1.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#1.0.1, default:http://terminology.hl7.org/CodeSystem/observation-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-category#2.0.0, default:http://terminology.hl7.org/ValueSet/encounter-discharge-disposition#1.0.1, default:http://hl7.org/fhir/uv/cql/CodeSystem/example#3.0.0-ballot, default:http://terminology.hl7.org/ValueSet/v3-ActPriority#3.0.0, default:http://terminology.hl7.org/CodeSystem/ex-diagnosistype#1.0.1, default:http://terminology.hl7.org/CodeSystem/ex-procedure-type#1.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/chronic-liver-disease-legacy-example#2020-05, default:http://hl7.org/fhir/administrative-gender#4.0.1, default:http://hl7.org/fhir/observation-status#4.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example#1.0.0\n1ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Prepare include[0]: \"(http://loinc.org)(85353-1,9279-1,8867-4,2708-6,8310-5,8302-2,9843-4,29463-7,39156-5,85354-9,8480-6,8462-4,8478-0)\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: CodeSystem found: \"http://loinc.org|2.83\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Validate \"[http://loinc.org#8462-4 (\"undefined\")]\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Check \"http://loinc.org#8462-4\"\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: CodeSystem found: http://loinc.org|2.83 for http://loinc.org\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: check code in (http://loinc.org)(85353-1,9279-1,8867-4,2708-6,8310-5,8302-2,9843-4,29463-7,39156-5,85354-9,8480-6,8462-4,8478-0) at CodeableConcept.coding[0]\n3ms http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1: Code \"8462-4\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -79787,7 +79787,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#8480-6 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#8480-6\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"8480-6\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#8480-6 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#8480-6\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"8480-6\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -81399,7 +81399,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: Analysing http://hl7.org/fhir/ValueSet/report-codes|4.0.1 for validation purposes\n0ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: Parameters: disp-lang=en, generate-narrative, default-to-latest\n0ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/900000000000207008, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591#20250419, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93#20260211, default:http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes#4.0.0, default:http://terminology.hl7.org/CodeSystem/measure-stratifier-type#1.0.0, default:http://hl7.org/fhir/resource-types#4.0.1, default:http://hl7.org/fhir/ValueSet/subject-type#4.0.1, default:http://terminology.hl7.org/ValueSet/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMethodAggregate#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/CodeSystem/v3-ObservationMethod#5.0.0, default:http://terminology.hl7.org/ValueSet/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/ValueSet/v3-CompositeMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ObservationValue#6.0.0, default:http://hl7.org/fhir/ValueSet/measure-data-usage#4.0.1, default:http://terminology.hl7.org/CodeSystem/measure-data-usage#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ActCode#11.0.0, default:http://terminology.hl7.org/ValueSet/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/CodeSystem/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/ValueSet/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ActCode#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/measure-scoring#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-scoring#4.0.0, default:http://terminology.hl7.org/ValueSet/measure-type#4.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-type#4.0.0, default:http://terminology.hl7.org/CodeSystem/v3-RoleCode#4.0.0, default:http://terminology.hl7.org/CodeSystem/diagnosis-role#1.1.1, default:http://hl7.org/fhir/request-intent#4.0.1, default:http://terminology.hl7.org/CodeSystem/medicationrequest-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-clinical#3.0.0, default:http://terminology.hl7.org/CodeSystem/condition-ver-status#2.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#1.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#1.0.1, default:http://terminology.hl7.org/CodeSystem/observation-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-category#2.0.0, default:http://terminology.hl7.org/ValueSet/encounter-discharge-disposition#1.0.1, default:http://hl7.org/fhir/uv/cql/CodeSystem/example#3.0.0-ballot, default:http://terminology.hl7.org/ValueSet/v3-ActPriority#3.0.0, default:http://terminology.hl7.org/CodeSystem/ex-diagnosistype#1.0.1, default:http://terminology.hl7.org/CodeSystem/ex-procedure-type#1.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/chronic-liver-disease-legacy-example#2020-05, default:http://hl7.org/fhir/administrative-gender#4.0.1, default:http://hl7.org/fhir/observation-status#4.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example#1.0.0\n0ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: Prepare include[0]: \"(http://loinc.org)\"\n2ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: CodeSystem found: \"http://loinc.org|2.83\"\n2ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: Validate \"[http://loinc.org#24606-6 (\"undefined\")]\"\n2ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: Check \"http://loinc.org#24606-6\"\n3ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: CodeSystem found: http://loinc.org|2.83 for http://loinc.org\n3ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: Code \"24606-6\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: Analysing http://hl7.org/fhir/ValueSet/report-codes|4.0.1 for validation purposes\n0ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: Parameters: disp-lang=en, generate-narrative, default-to-latest\n0ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/900000000000207008, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591#20250419, default:http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93#20260211, default:http://hl7.org/fhir/uv/cqm/CodeSystem/intended-venue-codes#4.0.0, default:http://terminology.hl7.org/CodeSystem/measure-stratifier-type#1.0.0, default:http://hl7.org/fhir/resource-types#4.0.1, default:http://hl7.org/fhir/ValueSet/subject-type#4.0.1, default:http://terminology.hl7.org/ValueSet/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMethodAggregate#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-aggregate-method#2.0.0, default:http://terminology.hl7.org/CodeSystem/v3-ObservationMethod#5.0.0, default:http://terminology.hl7.org/ValueSet/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/ValueSet/v3-CompositeMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/composite-measure-scoring#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ObservationValue#6.0.0, default:http://hl7.org/fhir/ValueSet/measure-data-usage#4.0.1, default:http://terminology.hl7.org/CodeSystem/measure-data-usage#1.0.1, default:http://terminology.hl7.org/CodeSystem/v3-ActCode#11.0.0, default:http://terminology.hl7.org/ValueSet/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/CodeSystem/measure-improvement-notation#1.0.1, default:http://terminology.hl7.org/ValueSet/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ActCode#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-population#2.0.0, default:http://terminology.hl7.org/ValueSet/measure-scoring#2.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureScoring#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-scoring#4.0.0, default:http://terminology.hl7.org/ValueSet/measure-type#4.0.0, default:http://terminology.hl7.org/ValueSet/v3-ObservationMeasureType#3.0.0, default:http://terminology.hl7.org/CodeSystem/measure-type#4.0.0, default:http://terminology.hl7.org/CodeSystem/v3-RoleCode#4.0.0, default:http://terminology.hl7.org/CodeSystem/diagnosis-role#1.1.1, default:http://hl7.org/fhir/request-intent#4.0.1, default:http://terminology.hl7.org/CodeSystem/medicationrequest-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-clinical#3.0.0, default:http://terminology.hl7.org/CodeSystem/condition-ver-status#2.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#1.0.1, default:http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#1.0.1, default:http://terminology.hl7.org/CodeSystem/observation-category#2.0.0, default:http://terminology.hl7.org/CodeSystem/condition-category#2.0.0, default:http://terminology.hl7.org/ValueSet/encounter-discharge-disposition#1.0.1, default:http://hl7.org/fhir/uv/cql/CodeSystem/example#3.0.0-ballot, default:http://terminology.hl7.org/ValueSet/v3-ActPriority#3.0.0, default:http://terminology.hl7.org/CodeSystem/ex-diagnosistype#1.0.1, default:http://terminology.hl7.org/CodeSystem/ex-procedure-type#1.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/chronic-liver-disease-legacy-example#2020-05, default:http://hl7.org/fhir/administrative-gender#4.0.1, default:http://hl7.org/fhir/observation-status#4.0.1, default:http://hl7.org/fhir/uv/cqm/ValueSet/age-stratified-example#1.0.0\n0ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: Prepare include[0]: \"(http://loinc.org)\"\n2ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: CodeSystem found: \"http://loinc.org|2.83\"\n2ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: Validate \"[http://loinc.org#24606-6 (\"undefined\")]\"\n3ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: Check \"http://loinc.org#24606-6\"\n3ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: CodeSystem found: http://loinc.org|2.83 for http://loinc.org\n3ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://hl7.org/fhir/ValueSet/report-codes|4.0.1: Code \"24606-6\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -82208,7 +82208,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#LP7750-5 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#LP7750-5\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n3ms http://loinc.org/vs|2.83: Code \"LP7750-5\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#LP7750-5 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#LP7750-5\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n3ms http://loinc.org/vs|2.83: Code \"LP7750-5\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -83014,7 +83014,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#72166-2 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#72166-2\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"72166-2\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n3ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#72166-2 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#72166-2\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"72166-2\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -83823,7 +83823,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#LP7751-3 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#LP7751-3\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n3ms http://loinc.org/vs|2.83: Code \"LP7751-3\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#LP7751-3 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#LP7751-3\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at Coding\n3ms http://loinc.org/vs|2.83: Code \"LP7751-3\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -84629,7 +84629,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#2335-8 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#2335-8\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"2335-8\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#2335-8 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#2335-8\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"2335-8\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -86239,7 +86239,7 @@ v: {
   "system" : "http://loinc.org",
   "version" : "2.83",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#77353-1 (\"undefined\")]\"\n2ms http://loinc.org/vs|2.83: Check \"http://loinc.org#77353-1\"\n2ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n2ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n2ms http://loinc.org/vs|2.83: Code \"77353-1\" found in http://loinc.org|2.83",
+  "diagnostics" : "0ms tx-op\n2ms http://loinc.org/vs|2.83: Validate \"[http://loinc.org#77353-1 (\"undefined\")]\"\n3ms http://loinc.org/vs|2.83: Check \"http://loinc.org#77353-1\"\n3ms http://loinc.org/vs|2.83: CodeSystem found: http://loinc.org|2.83 for http://loinc.org|2.83\n3ms http://loinc.org/vs|2.83: check code in (http://loinc.org) at CodeableConcept.coding[0]\n3ms http://loinc.org/vs|2.83: Code \"77353-1\" found in http://loinc.org|2.83",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
