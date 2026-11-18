@@ -278,7 +278,6 @@ WARNING: ImplementationGuide/hl7.fhir.uv.cqm: ImplementationGuide.dependsOn[3]: 
 
 # 3.0.0-ballot:006 - Colony forming units are inherently arbitrary units; the CAUTI example compares urine culture results using the units in which they are reported
 WARNING: CAUTIElements: The quantity unit '[CFU]/mL' is a UCUM arbitrary unit, whose meaning depends on the measurement procedure and is not comparable across contexts. Ensure that any comparison involving this unit is appropriate.
-WARNING: CAUTIElements: The quantity unit '[CFU]/ml' is a UCUM arbitrary unit, whose meaning depends on the measurement procedure and is not comparable across contexts. Ensure that any comparison involving this unit is appropriate.
 
 # 3.0.0-ballot:007 - 'eq' is a valid code in the search-comparator code system, which the R5 Value Filter Comparator value set (used by the cross-version dataRequirement valueFilter extension) includes; tx.fhir.org cannot resolve search-comparator|5.0.0 when validating against an R4 context, so the code cannot be checked. This is a terminology server issue, not an issue with the example. Discussion on Zulip: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Code.20system.20and.20value.20set.20versions.20from.20extensions.20pack/with/640882355
 %The value provided ('eq') was not found in the value set 'Value Filter Comparator' (http://hl7.org/fhir/ValueSet/value-filter-comparator|5.0.0)%
